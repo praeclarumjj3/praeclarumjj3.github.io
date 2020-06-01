@@ -7,7 +7,7 @@
     <description>Projects</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Wed, 20 May 2020 00:00:00 +0000</lastBuildDate>
     <image>
-      <url>https://praeclarumjj3.github.io/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png</url>
+      <url>https://praeclarumjj3.github.io/images/icon_hu4ad8c95e6c63df308e088b9efcfa89f3_55886_512x512_fill_lanczos_center_2.png</url>
       <title>Projects</title>
       <link>https://praeclarumjj3.github.io/project/</link>
     </image>
@@ -20,9 +20,17 @@
       <description>&lt;p&gt;Summaries by me:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;
-&lt;a href=&#34;https://github.com/vlgiitr/papers_we_read/blob/master/summaries/GrokNet.md&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;GrokNet: Unified Computer Vision Model Trunk and Embeddings For Commerce&lt;/a&gt;&lt;/li&gt;
+&lt;p&gt;
+&lt;a href=&#34;https://github.com/vlgiitr/papers_we_read/blob/master/summaries/GrokNet.md&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;GrokNet: Unified Computer Vision Model Trunk and Embeddings For Commerce, KDD 2020&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
 &lt;li&gt;
-&lt;a href=&#34;https://github.com/vlgiitr/papers_we_read/blob/master/summaries/You_only_train_once.md&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;You Only Train Once : Loss-conditional training of deep networks&lt;/a&gt;&lt;/li&gt;
+&lt;p&gt;
+&lt;a href=&#34;https://github.com/vlgiitr/papers_we_read/blob/master/summaries/You_only_train_once.md&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;You Only Train Once : Loss-conditional training of deep networks, ICLR 2020&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;
+&lt;a href=&#34;https://github.com/vlgiitr/papers_we_read/blob/master/summaries/Semantically_multi-modal_image_synthesis.md&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Semantically multi-modal image synthesis, CVPR 2020&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
 &lt;/ul&gt;
 </description>
     </item>
