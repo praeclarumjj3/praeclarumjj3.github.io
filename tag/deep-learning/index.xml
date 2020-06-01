@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Deep Learning | Jitesh Jain</title>
+    <link>https://praeclarumjj3.github.io/tag/deep-learning/</link>
+      <atom:link href="https://praeclarumjj3.github.io/tag/deep-learning/index.xml" rel="self" type="application/rss+xml" />
+    <description>Deep Learning</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Wed, 20 May 2020 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://praeclarumjj3.github.io/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png</url>
+      <title>Deep Learning</title>
+      <link>https://praeclarumjj3.github.io/tag/deep-learning/</link>
+    </image>
+    
+    <item>
+      <title>Paper Summaries</title>
+      <link>https://praeclarumjj3.github.io/project/summary_of_papers/</link>
+      <pubDate>Wed, 20 May 2020 00:00:00 +0000</pubDate>
+      <guid>https://praeclarumjj3.github.io/project/summary_of_papers/</guid>
+      <description>&lt;p&gt;Summaries by me:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;a href=&#34;https://github.com/vlgiitr/papers_we_read/blob/master/summaries/GrokNet.md&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;GrokNet: Unified Computer Vision Model Trunk and Embeddings For Commerce&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;a href=&#34;https://github.com/vlgiitr/papers_we_read/blob/master/summaries/You_only_train_once.md&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;You Only Train Once : Loss-conditional training of deep networks&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>VQ-VAE on MNIST</title>
+      <link>https://praeclarumjj3.github.io/project/vq_vae/</link>
+      <pubDate>Wed, 20 May 2020 00:00:00 +0000</pubDate>
+      <guid>https://praeclarumjj3.github.io/project/vq_vae/</guid>
+      <description>&lt;p&gt;I tried to implement 
+&lt;a href=&#34;https://arxiv.org/abs/1711.00937&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;VQ-VAE&lt;/a&gt; in Pytorch on the MNIST dataset.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

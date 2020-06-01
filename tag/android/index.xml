@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Android | Jitesh Jain</title>
+    <link>https://praeclarumjj3.github.io/tag/android/</link>
+      <atom:link href="https://praeclarumjj3.github.io/tag/android/index.xml" rel="self" type="application/rss+xml" />
+    <description>Android</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Wed, 08 Apr 2020 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://praeclarumjj3.github.io/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png</url>
+      <title>Android</title>
+      <link>https://praeclarumjj3.github.io/tag/android/</link>
+    </image>
+    
+    <item>
+      <title>Societyfy</title>
+      <link>https://praeclarumjj3.github.io/project/societyfy/</link>
+      <pubDate>Wed, 08 Apr 2020 00:00:00 +0000</pubDate>
+      <guid>https://praeclarumjj3.github.io/project/societyfy/</guid>
+      <description>&lt;p&gt;SOCIETYFY is an app showcase app developed during MDG’s SoC event in December, 2019. Societyfy lets you discover new people based on your interest at any moment of time and make new bonds with people you share an interest with at any point in time through its specific chatrooms for each category.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;PlayStore Link&lt;/strong&gt;: &lt;a href=&#34;https://play.google.com/store/apps/details?id=in.ac.mdg.iitr.societyfy&#34;&gt;https://play.google.com/store/apps/details?id=in.ac.mdg.iitr.societyfy&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Medium Blog&lt;/strong&gt;: 
+&lt;a href=&#34;https://medium.com/mobile-development-group/societyfy-an-app-made-for-finding-company-at-anytime-for-anything-842e18151551&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt; Societyfy: An app made for finding company at any time for anything&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
