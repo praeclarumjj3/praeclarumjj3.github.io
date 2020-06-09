@@ -5,7 +5,7 @@
     <link>https://praeclarumjj3.github.io/project/</link>
       <atom:link href="https://praeclarumjj3.github.io/project/index.xml" rel="self" type="application/rss+xml" />
     <description>Projects</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Wed, 20 May 2020 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sun, 07 Jun 2020 00:00:00 +0000</lastBuildDate>
     <image>
       <url>https://praeclarumjj3.github.io/images/icon_hu4ad8c95e6c63df308e088b9efcfa89f3_55886_512x512_fill_lanczos_center_2.png</url>
       <title>Projects</title>
@@ -15,7 +15,7 @@
     <item>
       <title>Paper Summaries</title>
       <link>https://praeclarumjj3.github.io/project/summary_of_papers/</link>
-      <pubDate>Wed, 20 May 2020 00:00:00 +0000</pubDate>
+      <pubDate>Sun, 07 Jun 2020 00:00:00 +0000</pubDate>
       <guid>https://praeclarumjj3.github.io/project/summary_of_papers/</guid>
       <description>&lt;p&gt;Summaries by me:&lt;/p&gt;
 &lt;ul&gt;
@@ -31,6 +31,10 @@
 &lt;p&gt;
 &lt;a href=&#34;https://github.com/vlgiitr/papers_we_read/blob/master/summaries/Semantically_multi-modal_image_synthesis.md&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Semantically multi-modal image synthesis, CVPR 2020&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;
+&lt;a href=&#34;https://github.com/vlgiitr/papers_we_read/blob/master/summaries/GameGAN.md&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Learning to Simulate Dynamic Environments with GameGAN, CVPR 2020&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
 &lt;/ul&gt;
 </description>
     </item>
@@ -42,6 +46,15 @@
       <guid>https://praeclarumjj3.github.io/project/vq_vae/</guid>
       <description>&lt;p&gt;I tried to implement 
 &lt;a href=&#34;https://arxiv.org/abs/1711.00937&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;VQ-VAE&lt;/a&gt; in Pytorch on the MNIST dataset.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Time Trace</title>
+      <link>https://praeclarumjj3.github.io/project/time_trace/</link>
+      <pubDate>Mon, 27 Apr 2020 00:00:00 +0000</pubDate>
+      <guid>https://praeclarumjj3.github.io/project/time_trace/</guid>
+      <description>&lt;p&gt;A Flutter application developed as a self-learning project to help people keep track of their time expenditure.&lt;/p&gt;
 </description>
     </item>
     

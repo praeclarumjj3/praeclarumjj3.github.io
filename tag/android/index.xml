@@ -5,12 +5,21 @@
     <link>https://praeclarumjj3.github.io/tag/android/</link>
       <atom:link href="https://praeclarumjj3.github.io/tag/android/index.xml" rel="self" type="application/rss+xml" />
     <description>Android</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Wed, 08 Apr 2020 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Mon, 27 Apr 2020 00:00:00 +0000</lastBuildDate>
     <image>
       <url>https://praeclarumjj3.github.io/images/icon_hu4ad8c95e6c63df308e088b9efcfa89f3_55886_512x512_fill_lanczos_center_2.png</url>
       <title>Android</title>
       <link>https://praeclarumjj3.github.io/tag/android/</link>
     </image>
+    
+    <item>
+      <title>Time Trace</title>
+      <link>https://praeclarumjj3.github.io/project/time_trace/</link>
+      <pubDate>Mon, 27 Apr 2020 00:00:00 +0000</pubDate>
+      <guid>https://praeclarumjj3.github.io/project/time_trace/</guid>
+      <description>&lt;p&gt;A Flutter application developed as a self-learning project to help people keep track of their time expenditure.&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Societyfy</title>
