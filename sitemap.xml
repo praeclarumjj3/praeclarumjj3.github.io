@@ -3,12 +3,22 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://praeclarumjj3.github.io/tag/deep-learning/</loc>
-    <lastmod>2020-06-07T00:00:00+00:00</lastmod>
+    <loc>https://praeclarumjj3.github.io/</loc>
+    <lastmod>2020-06-11T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://praeclarumjj3.github.io/</loc>
+    <loc>https://praeclarumjj3.github.io/post/</loc>
+    <lastmod>2020-06-11T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://praeclarumjj3.github.io/post/the-curse-of-dimensionality/</loc>
+    <lastmod>2020-06-11T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://praeclarumjj3.github.io/tag/deep-learning/</loc>
     <lastmod>2020-06-07T00:00:00+00:00</lastmod>
   </url>
   
@@ -48,6 +58,11 @@
   </url>
   
   <url>
+    <loc>https://praeclarumjj3.github.io/post/societyfy/</loc>
+    <lastmod>2020-02-19T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://praeclarumjj3.github.io/authors/</loc>
   </url>
   
@@ -57,10 +72,6 @@
   
   <url>
     <loc>https://praeclarumjj3.github.io/author/jitesh-jain/</loc>
-  </url>
-  
-  <url>
-    <loc>https://praeclarumjj3.github.io/post/</loc>
   </url>
   
   <url>

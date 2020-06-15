@@ -5,12 +5,21 @@
     <link>https://praeclarumjj3.github.io/</link>
       <atom:link href="https://praeclarumjj3.github.io/index.xml" rel="self" type="application/rss+xml" />
     <description>Jitesh Jain</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sun, 07 Jun 2020 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Thu, 11 Jun 2020 00:00:00 +0000</lastBuildDate>
     <image>
       <url>https://praeclarumjj3.github.io/images/icon_hu4ad8c95e6c63df308e088b9efcfa89f3_55886_512x512_fill_lanczos_center_2.png</url>
       <title>Jitesh Jain</title>
       <link>https://praeclarumjj3.github.io/</link>
     </image>
+    
+    <item>
+      <title>The Curse of Dimensionality</title>
+      <link>https://praeclarumjj3.github.io/post/the-curse-of-dimensionality/</link>
+      <pubDate>Thu, 11 Jun 2020 00:00:00 +0000</pubDate>
+      <guid>https://praeclarumjj3.github.io/post/the-curse-of-dimensionality/</guid>
+      <description>&lt;p&gt;Have you ever found yourself stuck in the middle of a problem having a large number of dimensions? You keep on trying harder and harder to come up with a solution that would satisfy all the dimensions of the problem. Still, every time one or another dimension makes ur efforts look futile! It turns out that you can solve a problem very efficiently when presented with not more than 2 or 3 dimensions. Nevertheless, this world is not kind to us every time! You might find yourself struggling amidst a problem, thinking&amp;hellip; Read more at: &lt;a href=&#34;https://medium.com/vlgiitr/the-curse-of-dimensionality-15f950e519d2&#34;&gt;https://medium.com/vlgiitr/the-curse-of-dimensionality-15f950e519d2&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Paper Summaries</title>
@@ -67,6 +76,15 @@
 &lt;p&gt;&lt;strong&gt;PlayStore Link&lt;/strong&gt;: &lt;a href=&#34;https://play.google.com/store/apps/details?id=in.ac.mdg.iitr.societyfy&#34;&gt;https://play.google.com/store/apps/details?id=in.ac.mdg.iitr.societyfy&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Medium Blog&lt;/strong&gt;: 
 &lt;a href=&#34;https://medium.com/mobile-development-group/societyfy-an-app-made-for-finding-company-at-anytime-for-anything-842e18151551&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt; Societyfy: An app made for finding company at any time for anything&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Societyfy: An app made for finding company at anytime for anything</title>
+      <link>https://praeclarumjj3.github.io/post/societyfy/</link>
+      <pubDate>Wed, 19 Feb 2020 00:00:00 +0000</pubDate>
+      <guid>https://praeclarumjj3.github.io/post/societyfy/</guid>
+      <description>&lt;p&gt;Imagine a situation where you are at a place where you don’t know many people and feel a bit left out. You feel hesitant to go out for lunch or hangout or even go to a movie alone. This is where the concept of Societyfy comes in to rescue you. Read more at: &lt;a href=&#34;https://medium.com/mobile-development-group/societyfy-an-app-made-for-finding-company-at-anytime-for-anything-842e18151551&#34;&gt;https://medium.com/mobile-development-group/societyfy-an-app-made-for-finding-company-at-anytime-for-anything-842e18151551&lt;/a&gt;&lt;/p&gt;
 </description>
     </item>
     
