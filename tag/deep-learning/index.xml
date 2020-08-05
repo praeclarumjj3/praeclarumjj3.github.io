@@ -5,7 +5,7 @@
     <link>https://praeclarumjj3.github.io/tag/deep-learning/</link>
       <atom:link href="https://praeclarumjj3.github.io/tag/deep-learning/index.xml" rel="self" type="application/rss+xml" />
     <description>Deep Learning</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Fri, 19 Jun 2020 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Tue, 07 Jul 2020 00:00:00 +0000</lastBuildDate>
     <image>
       <url>https://praeclarumjj3.github.io/images/icon_hu4ad8c95e6c63df308e088b9efcfa89f3_55886_512x512_fill_lanczos_center_2.png</url>
       <title>Deep Learning</title>
@@ -13,18 +13,9 @@
     </image>
     
     <item>
-      <title>ChatBot with Pytorch</title>
-      <link>https://praeclarumjj3.github.io/project/chatbot/</link>
-      <pubDate>Fri, 19 Jun 2020 00:00:00 +0000</pubDate>
-      <guid>https://praeclarumjj3.github.io/project/chatbot/</guid>
-      <description>&lt;p&gt;I implemented a chatbot in Pytorch on the Cornell Movie Dialog Corpus dataset using GRUs and Attention mechanism.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
       <title>Paper Summaries</title>
       <link>https://praeclarumjj3.github.io/project/summary_of_papers/</link>
-      <pubDate>Sun, 07 Jun 2020 00:00:00 +0000</pubDate>
+      <pubDate>Tue, 07 Jul 2020 00:00:00 +0000</pubDate>
       <guid>https://praeclarumjj3.github.io/project/summary_of_papers/</guid>
       <description>&lt;p&gt;Summaries:&lt;/p&gt;
 &lt;ul&gt;
@@ -57,6 +48,15 @@
 &lt;a href=&#34;https://github.com/vlgiitr/papers_we_read/blob/master/summaries/BYOL.md&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Bootstrap Your Own Latent: A New Approach to Self-Supervised Learning, CVPR 2020&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>ChatBot with Pytorch</title>
+      <link>https://praeclarumjj3.github.io/project/chatbot/</link>
+      <pubDate>Fri, 19 Jun 2020 00:00:00 +0000</pubDate>
+      <guid>https://praeclarumjj3.github.io/project/chatbot/</guid>
+      <description>&lt;p&gt;I implemented a chatbot in Pytorch on the Cornell Movie Dialog Corpus dataset using GRUs and Attention mechanism.&lt;/p&gt;
 </description>
     </item>
     
