@@ -1,16 +1,24 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Jitesh Jain</title>
+    <title>Jitesh Jain* | Jitesh Jain</title>
     <link>https://praeclarumjj3.github.io/author/jitesh-jain/</link>
       <atom:link href="https://praeclarumjj3.github.io/author/jitesh-jain/index.xml" rel="self" type="application/rss+xml" />
-    <description>Jitesh Jain</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language>
+    <description>Jitesh Jain*</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sat, 19 Sep 2020 00:00:00 +0530</lastBuildDate>
     <image>
       <url>https://praeclarumjj3.github.io/images/icon_hu4ad8c95e6c63df308e088b9efcfa89f3_55886_512x512_fill_lanczos_center_2.png</url>
-      <title>Jitesh Jain</title>
+      <title>Jitesh Jain*</title>
       <link>https://praeclarumjj3.github.io/author/jitesh-jain/</link>
     </image>
+    
+    <item>
+      <title>DEAP Cache: Deep Eviction Admission and Prefetching for Cache</title>
+      <link>https://praeclarumjj3.github.io/publication/cache_replacement/</link>
+      <pubDate>Sat, 19 Sep 2020 00:00:00 +0530</pubDate>
+      <guid>https://praeclarumjj3.github.io/publication/cache_replacement/</guid>
+      <description></description>
+    </item>
     
   </channel>
 </rss>
