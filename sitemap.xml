@@ -3,6 +3,31 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://praeclarumjj3.github.io/tag/deep-learning/</loc>
+    <lastmod>2020-09-28T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://praeclarumjj3.github.io/project/iitr_bot/</loc>
+    <lastmod>2020-09-28T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://praeclarumjj3.github.io/</loc>
+    <lastmod>2020-09-28T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://praeclarumjj3.github.io/project/</loc>
+    <lastmod>2020-09-28T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://praeclarumjj3.github.io/tags/</loc>
+    <lastmod>2020-09-28T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://praeclarumjj3.github.io/publication-type/1/</loc>
     <lastmod>2020-09-19T00:00:00+05:30</lastmod>
   </url>
@@ -19,11 +44,6 @@
   
   <url>
     <loc>https://praeclarumjj3.github.io/publication/cache_replacement/</loc>
-    <lastmod>2020-09-19T00:00:00+05:30</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://praeclarumjj3.github.io/</loc>
     <lastmod>2020-09-19T00:00:00+05:30</lastmod>
   </url>
   
@@ -53,6 +73,21 @@
   </url>
   
   <url>
+    <loc>https://praeclarumjj3.github.io/development_projects/</loc>
+    <lastmod>2020-09-05T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://praeclarumjj3.github.io/tag/flutter/</loc>
+    <lastmod>2020-09-05T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://praeclarumjj3.github.io/development_projects/security_app/</loc>
+    <lastmod>2020-09-05T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://praeclarumjj3.github.io/post/one_year_at_iitr/</loc>
     <lastmod>2020-08-02T00:00:00+00:00</lastmod>
   </url>
@@ -63,22 +98,7 @@
   </url>
   
   <url>
-    <loc>https://praeclarumjj3.github.io/tag/deep-learning/</loc>
-    <lastmod>2020-07-07T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://praeclarumjj3.github.io/project/summary_of_papers/</loc>
-    <lastmod>2020-07-07T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://praeclarumjj3.github.io/project/</loc>
-    <lastmod>2020-07-07T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://praeclarumjj3.github.io/tags/</loc>
     <lastmod>2020-07-07T00:00:00+00:00</lastmod>
   </url>
   
@@ -98,18 +118,23 @@
   </url>
   
   <url>
+    <loc>https://praeclarumjj3.github.io/development_projects/time_trace/</loc>
+    <lastmod>2020-04-27T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://praeclarumjj3.github.io/tag/android/</loc>
-    <lastmod>2020-04-27T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://praeclarumjj3.github.io/project/time_trace/</loc>
-    <lastmod>2020-04-27T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://praeclarumjj3.github.io/project/societyfy/</loc>
     <lastmod>2020-04-08T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://praeclarumjj3.github.io/development_projects/societyfy/</loc>
+    <lastmod>2020-04-08T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://praeclarumjj3.github.io/development_projects/geofile/</loc>
+    <lastmod>2020-04-05T00:00:00+00:00</lastmod>
   </url>
   
   <url>

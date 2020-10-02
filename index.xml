@@ -5,7 +5,7 @@
     <link>https://praeclarumjj3.github.io/</link>
       <atom:link href="https://praeclarumjj3.github.io/index.xml" rel="self" type="application/rss+xml" />
     <description>Jitesh Jain</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sat, 19 Sep 2020 00:00:00 +0530</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Mon, 28 Sep 2020 00:00:00 +0000</lastBuildDate>
     <image>
       <url>https://praeclarumjj3.github.io/images/icon_hu4ad8c95e6c63df308e088b9efcfa89f3_55886_512x512_fill_lanczos_center_2.png</url>
       <title>Jitesh Jain</title>
@@ -13,11 +13,35 @@
     </image>
     
     <item>
+      <title>IITR ChatBot</title>
+      <link>https://praeclarumjj3.github.io/project/iitr_bot/</link>
+      <pubDate>Mon, 28 Sep 2020 00:00:00 +0000</pubDate>
+      <guid>https://praeclarumjj3.github.io/project/iitr_bot/</guid>
+      <description>&lt;p&gt;We are developing an assistance bot for the 
+&lt;a href=&#34;https://www.iitr.ac.in/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;IITR website&lt;/a&gt; using the 
+&lt;a href=&#34;https://rasa.com/docs/rasa/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;RASA&lt;/a&gt; framework.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>DEAP Cache: Deep Eviction Admission and Prefetching for Cache</title>
       <link>https://praeclarumjj3.github.io/publication/cache_replacement/</link>
       <pubDate>Sat, 19 Sep 2020 00:00:00 +0530</pubDate>
       <guid>https://praeclarumjj3.github.io/publication/cache_replacement/</guid>
       <description></description>
+    </item>
+    
+    <item>
+      <title>IITR Security App</title>
+      <link>https://praeclarumjj3.github.io/development_projects/security_app/</link>
+      <pubDate>Sat, 05 Sep 2020 00:00:00 +0000</pubDate>
+      <guid>https://praeclarumjj3.github.io/development_projects/security_app/</guid>
+      <description>&lt;ul&gt;
+&lt;li&gt;IITR Security App was developed to eliminate the use of paper by the guards to record the details of the visitors at IIT Roorkee.&lt;/li&gt;
+&lt;li&gt;I worked on developing Front-End part of the app using Flutter.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Playstore Link&lt;/strong&gt;: &lt;a href=&#34;https://play.google.com/store/apps/details?id=in.ac.iitr.mdg.securityapp&#34;&gt;https://play.google.com/store/apps/details?id=in.ac.iitr.mdg.securityapp&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
     </item>
     
     <item>
@@ -99,23 +123,36 @@
     </item>
     
     <item>
-      <title>Time Trace</title>
-      <link>https://praeclarumjj3.github.io/project/time_trace/</link>
+      <title>Time Tracer</title>
+      <link>https://praeclarumjj3.github.io/development_projects/time_trace/</link>
       <pubDate>Mon, 27 Apr 2020 00:00:00 +0000</pubDate>
-      <guid>https://praeclarumjj3.github.io/project/time_trace/</guid>
+      <guid>https://praeclarumjj3.github.io/development_projects/time_trace/</guid>
       <description>&lt;p&gt;A Flutter application developed as a self-learning project to help people keep track of their time expenditure.&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>Societyfy</title>
-      <link>https://praeclarumjj3.github.io/project/societyfy/</link>
+      <link>https://praeclarumjj3.github.io/development_projects/societyfy/</link>
       <pubDate>Wed, 08 Apr 2020 00:00:00 +0000</pubDate>
-      <guid>https://praeclarumjj3.github.io/project/societyfy/</guid>
+      <guid>https://praeclarumjj3.github.io/development_projects/societyfy/</guid>
       <description>&lt;p&gt;SOCIETYFY is an app showcase app developed during MDG’s SoC event in December, 2019. Societyfy lets you discover new people based on your interest at any moment of time and make new bonds with people you share an interest with at any point in time through its specific chatrooms for each category.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;PlayStore Link&lt;/strong&gt;: &lt;a href=&#34;https://play.google.com/store/apps/details?id=in.ac.mdg.iitr.societyfy&#34;&gt;https://play.google.com/store/apps/details?id=in.ac.mdg.iitr.societyfy&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Medium Blog&lt;/strong&gt;: 
 &lt;a href=&#34;https://medium.com/mobile-development-group/societyfy-an-app-made-for-finding-company-at-anytime-for-anything-842e18151551&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt; Societyfy: An app made for finding company at any time for anything&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Geofile</title>
+      <link>https://praeclarumjj3.github.io/development_projects/geofile/</link>
+      <pubDate>Sun, 05 Apr 2020 00:00:00 +0000</pubDate>
+      <guid>https://praeclarumjj3.github.io/development_projects/geofile/</guid>
+      <description>&lt;ul&gt;
+&lt;li&gt;Geofile lets you couple files them with a specific location.&lt;/li&gt;
+&lt;li&gt;I worked on developing Front-End part of the app using Flutter.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Playstore Early Access&lt;/strong&gt;: You can test the beta version on the Playstore by searching for &lt;strong&gt;geofile&lt;/strong&gt;.&lt;/li&gt;
+&lt;/ul&gt;
 </description>
     </item>
     
