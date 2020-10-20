@@ -27,10 +27,10 @@
   
     
   
-  <meta name="description" content="2nd Year CS Undergraduate">
+  <meta name="description" content="Recent approaches for learning policies to improve caching, target just one out of the prefetching, admission and eviction processes. In contrast, we propose an end to end pipeline to learn all three policies using machine learning. We also take inspiration from the success of pretraining on large corpora to learn specialized embeddings for the task. We model prefetching as a sequence prediction task based on past misses. Following previous works suggesting that frequency and recency are the two orthogonal fundamental attributes for caching, we use an online reinforcement learning technique to learn the optimal policy distribution between two orthogonal eviction strategies based on them. While previous approaches used the past as an indicator of the future, we instead explicitly model the future frequency and recency in a multitask fashion with prefetching, leveraging the abilities of deep networks to capture futuristic trends and use them for learning eviction and admission. We also model the distribution of the data in an online fashion using Kernel Density Estimation in our approach, to deal with the problem of caching non-stationary data. We present our approach as a ”proof of concept” of learning all three components of cache strategies using machine learning and leave improving practical deployment for future work.">
 
   
-  <link rel="alternate" hreflang="en-us" href="https://praeclarumjj3.github.io/publication-type/1/">
+  <link rel="alternate" hreflang="en-us" href="https://praeclarumjj3.github.io/publication/deap/">
 
   
 
@@ -61,14 +61,6 @@
     
       
     
-    
-      
-      
-        
-          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/github.min.css" crossorigin="anonymous" title="hl-light">
-          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/dracula.min.css" crossorigin="anonymous" title="hl-dark" disabled>
-        
-      
     
 
     
@@ -215,14 +207,12 @@
   
 
   
-  <link rel="alternate" href="/publication-type/1/index.xml" type="application/rss+xml" title="Jitesh Jain">
-  
 
   <link rel="manifest" href="/index.webmanifest">
   <link rel="icon" type="image/png" href="/images/icon_hu4ad8c95e6c63df308e088b9efcfa89f3_55886_32x32_fill_lanczos_center_2.png">
   <link rel="apple-touch-icon" type="image/png" href="/images/icon_hu4ad8c95e6c63df308e088b9efcfa89f3_55886_192x192_fill_lanczos_center_2.png">
 
-  <link rel="canonical" href="https://praeclarumjj3.github.io/publication-type/1/">
+  <link rel="canonical" href="https://praeclarumjj3.github.io/publication/deap/">
 
   
   
@@ -238,18 +228,61 @@
   <meta property="twitter:card" content="summary">
   
   <meta property="og:site_name" content="Jitesh Jain">
-  <meta property="og:url" content="https://praeclarumjj3.github.io/publication-type/1/">
-  <meta property="og:title" content="1 | Jitesh Jain">
-  <meta property="og:description" content="2nd Year CS Undergraduate"><meta property="og:image" content="https://praeclarumjj3.github.io/images/icon_hu4ad8c95e6c63df308e088b9efcfa89f3_55886_512x512_fill_lanczos_center_2.png">
+  <meta property="og:url" content="https://praeclarumjj3.github.io/publication/deap/">
+  <meta property="og:title" content="DEAP Cache: Deep Eviction Admission and Prefetching for Cache | Jitesh Jain">
+  <meta property="og:description" content="Recent approaches for learning policies to improve caching, target just one out of the prefetching, admission and eviction processes. In contrast, we propose an end to end pipeline to learn all three policies using machine learning. We also take inspiration from the success of pretraining on large corpora to learn specialized embeddings for the task. We model prefetching as a sequence prediction task based on past misses. Following previous works suggesting that frequency and recency are the two orthogonal fundamental attributes for caching, we use an online reinforcement learning technique to learn the optimal policy distribution between two orthogonal eviction strategies based on them. While previous approaches used the past as an indicator of the future, we instead explicitly model the future frequency and recency in a multitask fashion with prefetching, leveraging the abilities of deep networks to capture futuristic trends and use them for learning eviction and admission. We also model the distribution of the data in an online fashion using Kernel Density Estimation in our approach, to deal with the problem of caching non-stationary data. We present our approach as a ”proof of concept” of learning all three components of cache strategies using machine learning and leave improving practical deployment for future work."><meta property="og:image" content="https://praeclarumjj3.github.io/images/icon_hu4ad8c95e6c63df308e088b9efcfa89f3_55886_512x512_fill_lanczos_center_2.png">
   <meta property="twitter:image" content="https://praeclarumjj3.github.io/images/icon_hu4ad8c95e6c63df308e088b9efcfa89f3_55886_512x512_fill_lanczos_center_2.png"><meta property="og:locale" content="en-us">
   
-    <meta property="og:updated_time" content="2020-09-19T00:00:00&#43;05:30">
+    
+      <meta property="article:published_time" content="2020-09-19T00:00:00&#43;05:30">
+    
+    <meta property="article:modified_time" content="2020-09-19T00:00:00&#43;05:30">
   
 
   
 
 
+    
 
+
+
+
+
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://praeclarumjj3.github.io/publication/deap/"
+  },
+  "headline": "DEAP Cache: Deep Eviction Admission and Prefetching for Cache",
+  
+  "datePublished": "2020-09-19T00:00:00+05:30",
+  "dateModified": "2020-09-19T00:00:00+05:30",
+  
+  "author": {
+    "@type": "Person",
+    "name": "Ayush Mangal*"
+  },
+  
+  "publisher": {
+    "@type": "Organization",
+    "name": "Jitesh Jain",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://praeclarumjj3.github.io/images/icon_hu4ad8c95e6c63df308e088b9efcfa89f3_55886_192x192_fill_lanczos_center_2.png"
+    }
+  },
+  "description": "Recent approaches for learning policies to improve caching, target just one out of the prefetching, admission and eviction processes. In contrast, we propose an end to end pipeline to learn all three policies using machine learning. We also take inspiration from the success of pretraining on large corpora to learn specialized embeddings for the task. We model prefetching as a sequence prediction task based on past misses. Following previous works suggesting that frequency and recency are the two orthogonal fundamental attributes for caching, we use an online reinforcement learning technique to learn the optimal policy distribution between two orthogonal eviction strategies based on them. While previous approaches used the past as an indicator of the future, we instead explicitly model the future frequency and recency in a multitask fashion with prefetching, leveraging the abilities of deep networks to capture futuristic trends and use them for learning eviction and admission. We also model the distribution of the data in an online fashion using Kernel Density Estimation in our approach, to deal with the problem of caching non-stationary data. We present our approach as a ”proof of concept” of learning all three components of cache strategies using machine learning and leave improving practical deployment for future work."
+}
+</script>
+
+  
 
   
 
@@ -257,10 +290,13 @@
   
 
 
+  
 
 
 
-  <title>1 | Jitesh Jain</title>
+
+
+  <title>DEAP Cache: Deep Eviction Admission and Prefetching for Cache | Jitesh Jain</title>
 
 </head>
 
@@ -600,56 +636,360 @@
 </nav>
 
 
+  <div class="pub">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+  
+  
+<div class="article-container pt-3">
+  <h1>DEAP Cache: Deep Eviction Admission and Prefetching for Cache</h1>
+
+  
+
+  
+    
+
+
+<div class="article-metadata">
+
+  
+  
+  
+  
+  <div>
+    
+
+  
+  <span>Ayush Mangal*</span>, <span>Jitesh Jain*</span>, <span>Keerat Kaur Gullani*</span>, <span>Omkar Bhalero*</span>
+  </div>
+  
+  
+
+  
+  <span class="article-date">
+    
+    
+      
+    
+    September 2020
+  </span>
+  
+
+  
+
+  
+
+  
+  
+  
+
+  
+  
+
+</div>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+<div class="btn-links mb-3">
+  
   
 
 
 
 
 
-
-
-
-
-
-
-
-  
-
-  
   
   
     
   
-<div class="universal-wrapper pt-3">
-  <h1>1</h1>
+<a class="btn btn-outline-primary my-1 mr-1" href="https://arxiv.org/abs/2009.09206" target="_blank" rel="noopener">
+  Preprint
+</a>
+
+
+
 
   
+
+
+
+
+
+<button type="button" class="btn btn-outline-primary my-1 mr-1 js-cite-modal"
+        data-filename="/publication/deap/cite.bib">
+  Cite
+</button>
+
+
+  
+  
+    
+  
+<a class="btn btn-outline-primary my-1 mr-1" href="https://github.com/vlgiitr/deep_cache_replacement" target="_blank" rel="noopener">
+  Code
+</a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
 
   
 </div>
 
 
 
-<div class="universal-wrapper">
-  
+  <div class="article-container">
 
-  
-  
     
+    <h3>Abstract</h3>
+    <p class="pub-abstract">Recent approaches for learning policies to improve caching, target just one out of the prefetching, admission and eviction processes. In contrast, we propose an end to end pipeline to learn all three policies using machine learning. We also take inspiration from the success of pretraining on large corpora to learn specialized embeddings for the task. We model prefetching as a sequence prediction task based on past misses. Following previous works suggesting that frequency and recency are the two orthogonal fundamental attributes for caching, we use an online reinforcement learning technique to learn the optimal policy distribution between two orthogonal eviction strategies based on them. While previous approaches used the past as an indicator of the future, we instead explicitly model the future frequency and recency in a multitask fashion with prefetching, leveraging the abilities of deep networks to capture futuristic trends and use them for learning eviction and admission. We also model the distribution of the data in an online fashion using Kernel Density Estimation in our approach, to deal with the problem of caching non-stationary data. We present our approach as a ”proof of concept” of learning all three components of cache strategies using machine learning and leave improving practical deployment for future work.</p>
     
+
     
-    <div>
-      <h2><a href="/publication/deap/" >DEAP Cache: Deep Eviction Admission and Prefetching for Cache</a></h2>
-      <div class="article-style">
-        
-          Recent approaches for learning policies to improve caching, target just one out of the prefetching, admission and eviction processes. In contrast, we propose an end to end pipeline to learn all three policies using machine learning. We also take …
-        
+    <div class="row">
+      <div class="col-md-1"></div>
+      <div class="col-md-10">
+        <div class="row">
+          <div class="col-12 col-md-3 pub-row-heading">Type</div>
+          <div class="col-12 col-md-9">
+            
+            
+            <a href="/publication/#1">
+              Conference paper
+            </a>
+            
+          </div>
+        </div>
       </div>
+      <div class="col-md-1"></div>
     </div>
+    <div class="d-md-none space-below"></div>
+    
+
+    
+    <div class="row">
+      <div class="col-md-1"></div>
+      <div class="col-md-10">
+        <div class="row">
+          <div class="col-12 col-md-3 pub-row-heading">Publication</div>
+          <div class="col-12 col-md-9">Under Review</div>
+        </div>
+      </div>
+      <div class="col-md-1"></div>
+    </div>
+    <div class="d-md-none space-below"></div>
+    
+
+    <div class="space-below"></div>
+
+    <div class="article-style"></div>
+
+    
+
+
+
+
+
+
+
+<div class="share-box" aria-hidden="true">
+  <ul class="share">
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://twitter.com/intent/tweet?url=https://praeclarumjj3.github.io/publication/deap/&amp;text=DEAP%20Cache:%20Deep%20Eviction%20Admission%20and%20Prefetching%20for%20Cache" target="_blank" rel="noopener" class="share-btn-twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.facebook.com/sharer.php?u=https://praeclarumjj3.github.io/publication/deap/&amp;t=DEAP%20Cache:%20Deep%20Eviction%20Admission%20and%20Prefetching%20for%20Cache" target="_blank" rel="noopener" class="share-btn-facebook">
+          <i class="fab fa-facebook"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="mailto:?subject=DEAP%20Cache:%20Deep%20Eviction%20Admission%20and%20Prefetching%20for%20Cache&amp;body=https://praeclarumjj3.github.io/publication/deap/" target="_blank" rel="noopener" class="share-btn-email">
+          <i class="fas fa-envelope"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.linkedin.com/shareArticle?url=https://praeclarumjj3.github.io/publication/deap/&amp;title=DEAP%20Cache:%20Deep%20Eviction%20Admission%20and%20Prefetching%20for%20Cache" target="_blank" rel="noopener" class="share-btn-linkedin">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="whatsapp://send?text=DEAP%20Cache:%20Deep%20Eviction%20Admission%20and%20Prefetching%20for%20Cache%20https://praeclarumjj3.github.io/publication/deap/" target="_blank" rel="noopener" class="share-btn-whatsapp">
+          <i class="fab fa-whatsapp"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://service.weibo.com/share/share.php?url=https://praeclarumjj3.github.io/publication/deap/&amp;title=DEAP%20Cache:%20Deep%20Eviction%20Admission%20and%20Prefetching%20for%20Cache" target="_blank" rel="noopener" class="share-btn-weibo">
+          <i class="fab fa-weibo"></i>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
   
+    
+    
+
+
+
+
 
   
 
+
+  
+    
+    
+
+
+
+
+
+  
+
+
+  
+    
+    
+
+
+
+
+
+  
+
+
+  
+    
+    
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+  </div>
 </div>
 
       
@@ -665,12 +1005,6 @@
       
 
       
-        
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/highlight.min.js" integrity="sha256-eOgo0OtLL4cdq7RdwRUiGKLX9XsIJ7nGhWEKbohmVAQ=" crossorigin="anonymous"></script>
-        
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/languages/r.min.js"></script>
-        
-      
 
     
 
@@ -681,7 +1015,7 @@
 
     
     
-    <script>const code_highlighting = true;</script>
+    <script>const code_highlighting = false;</script>
     
 
     
