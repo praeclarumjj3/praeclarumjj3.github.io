@@ -5,12 +5,21 @@
     <link>https://praeclarumjj3.github.io/</link>
       <atom:link href="https://praeclarumjj3.github.io/index.xml" rel="self" type="application/rss+xml" />
     <description>Jitesh Jain</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Mon, 28 Sep 2020 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Thu, 26 Nov 2020 00:00:00 +0000</lastBuildDate>
     <image>
       <url>https://praeclarumjj3.github.io/images/icon_hu4ad8c95e6c63df308e088b9efcfa89f3_55886_512x512_fill_lanczos_center_2.png</url>
       <title>Jitesh Jain</title>
       <link>https://praeclarumjj3.github.io/</link>
     </image>
+    
+    <item>
+      <title>ArxivApp</title>
+      <link>https://praeclarumjj3.github.io/development_projects/arxiv_app/</link>
+      <pubDate>Thu, 26 Nov 2020 00:00:00 +0000</pubDate>
+      <guid>https://praeclarumjj3.github.io/development_projects/arxiv_app/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;ArxivApp&lt;/strong&gt; lets you read, bookmark and download papers from arXiv.org. It also has a forum screen that lets you read and create notes/blogs about the different research papers you read!&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>IITR ChatBot</title>
