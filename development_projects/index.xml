@@ -22,6 +22,17 @@
     </item>
     
     <item>
+      <title>IITR ChatBot</title>
+      <link>https://praeclarumjj3.github.io/development_projects/iitr_bot/</link>
+      <pubDate>Mon, 28 Sep 2020 00:00:00 +0000</pubDate>
+      <guid>https://praeclarumjj3.github.io/development_projects/iitr_bot/</guid>
+      <description>&lt;p&gt;We are developing an assistance bot for the 
+&lt;a href=&#34;https://www.iitr.ac.in/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;IITR website&lt;/a&gt; using the 
+&lt;a href=&#34;https://rasa.com/docs/rasa/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;RASA&lt;/a&gt; framework.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>IITR Security App</title>
       <link>https://praeclarumjj3.github.io/development_projects/security_app/</link>
       <pubDate>Sat, 05 Sep 2020 00:00:00 +0000</pubDate>

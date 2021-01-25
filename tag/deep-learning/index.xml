@@ -5,7 +5,7 @@
     <link>https://praeclarumjj3.github.io/tag/deep-learning/</link>
       <atom:link href="https://praeclarumjj3.github.io/tag/deep-learning/index.xml" rel="self" type="application/rss+xml" />
     <description>Deep Learning</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Mon, 28 Sep 2020 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Mon, 28 Dec 2020 00:00:00 +0000</lastBuildDate>
     <image>
       <url>https://praeclarumjj3.github.io/images/icon_hu4ad8c95e6c63df308e088b9efcfa89f3_55886_512x512_fill_lanczos_center_2.png</url>
       <title>Deep Learning</title>
@@ -13,10 +13,42 @@
     </image>
     
     <item>
+      <title>BackBone Profile</title>
+      <link>https://praeclarumjj3.github.io/project/backbone/</link>
+      <pubDate>Mon, 28 Dec 2020 00:00:00 +0000</pubDate>
+      <guid>https://praeclarumjj3.github.io/project/backbone/</guid>
+      <description>&lt;p&gt;I performed experiments on various backbone networks:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;ResNet-18/34/50/101&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;MobileNetv2&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Xception Net&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;All the experiments were performed on a single &lt;strong&gt;RTX 2080Ti GPU&lt;/strong&gt;, a single &lt;strong&gt;TitanXP GPU&lt;/strong&gt; and a single &lt;strong&gt;CPU&lt;/strong&gt; &lt;em&gt;indivdually&lt;/em&gt;. For each model architecture, I collected the stats including:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Execution Time&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Memory Used&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Number of Parameters&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
       <title>IITR ChatBot</title>
-      <link>https://praeclarumjj3.github.io/project/iitr_bot/</link>
+      <link>https://praeclarumjj3.github.io/development_projects/iitr_bot/</link>
       <pubDate>Mon, 28 Sep 2020 00:00:00 +0000</pubDate>
-      <guid>https://praeclarumjj3.github.io/project/iitr_bot/</guid>
+      <guid>https://praeclarumjj3.github.io/development_projects/iitr_bot/</guid>
       <description>&lt;p&gt;We are developing an assistance bot for the 
 &lt;a href=&#34;https://www.iitr.ac.in/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;IITR website&lt;/a&gt; using the 
 &lt;a href=&#34;https://rasa.com/docs/rasa/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;RASA&lt;/a&gt; framework.&lt;/p&gt;
