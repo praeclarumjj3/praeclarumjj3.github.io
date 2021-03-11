@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Deep Learning on </title>
+    <link>/tags/deep-learning/</link>
+    <description>Recent content in Deep Learning on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Mon, 28 Dec 2020 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/deep-learning/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>BackBone Profile</title>
+      <link>/project/backbone/</link>
+      <pubDate>Mon, 28 Dec 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/project/backbone/</guid>
+      <description>I performed experiments on various backbone networks:
+ ResNet-18/34/50/101
+ MobileNetv2
+ Xception Net
+  All the experiments were performed on a single RTX 2080Ti GPU, a single TitanXP GPU and a single CPU indivdually. For each model architecture, I collected the stats including:
+ Execution Time
+ Memory Used
+ Number of Parameters
+  </description>
+    </item>
+    
+    <item>
+      <title>IITR ChatBot</title>
+      <link>/development_projects/iitr_bot/</link>
+      <pubDate>Mon, 28 Sep 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/development_projects/iitr_bot/</guid>
+      <description>We are developing an assistance bot for the IITR website using the RASA framework.</description>
+    </item>
+    
+    <item>
+      <title>Paper Summaries</title>
+      <link>/project/summary_of_papers/</link>
+      <pubDate>Tue, 07 Jul 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/project/summary_of_papers/</guid>
+      <description>Summaries:
+ You Only Train Once : Loss-conditional training of deep networks, ICLR 2020
+ GrokNet: Unified Computer Vision Model Trunk and Embeddings For Commerce, KDD 2020
+ Semantically multi-modal image synthesis, CVPR 2020
+ Learning to Simulate Dynamic Environments with GameGAN, CVPR 2020
+ Adversarial Policies : Attacking deep reinforcement learning, ICLR 2020
+ Unsupervised Learning of Probably Symmetric Deformable 3D Objects from Images in the Wild, CVPR 2020</description>
+    </item>
+    
+    <item>
+      <title>ChatBot with Pytorch</title>
+      <link>/project/chatbot/</link>
+      <pubDate>Fri, 19 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/project/chatbot/</guid>
+      <description>I implemented a chatbot in Pytorch on the Cornell Movie Dialog Corpus dataset using GRUs and Attention mechanism.</description>
+    </item>
+    
+    <item>
+      <title>VQ-VAE on MNIST</title>
+      <link>/project/vq_vae/</link>
+      <pubDate>Wed, 20 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/project/vq_vae/</guid>
+      <description>I tried to implement VQ-VAE in Pytorch on the MNIST dataset.</description>
+    </item>
+    
+  </channel>
+</rss>

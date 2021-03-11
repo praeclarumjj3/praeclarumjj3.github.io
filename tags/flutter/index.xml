@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Flutter on </title>
+    <link>/tags/flutter/</link>
+    <description>Recent content in Flutter on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Thu, 26 Nov 2020 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/flutter/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>ArxivApp</title>
+      <link>/development_projects/arxiv_app/</link>
+      <pubDate>Thu, 26 Nov 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/development_projects/arxiv_app/</guid>
+      <description>ArxivApp lets you read, bookmark and download papers from arXiv.org. It also has a forum screen that lets you read and create notes/blogs about the different research papers you read!</description>
+    </item>
+    
+    <item>
+      <title>IITR Security App</title>
+      <link>/development_projects/security_app/</link>
+      <pubDate>Sat, 05 Sep 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/development_projects/security_app/</guid>
+      <description> IITR Security App was developed to eliminate the use of paper by the guards to record the details of the visitors at IIT Roorkee. I worked on developing Front-End part of the app using Flutter. Playstore Link: https://play.google.com/store/apps/details?id=in.ac.iitr.mdg.securityapp  </description>
+    </item>
+    
+    <item>
+      <title>Time Tracer</title>
+      <link>/development_projects/time_trace/</link>
+      <pubDate>Mon, 27 Apr 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/development_projects/time_trace/</guid>
+      <description>A Flutter application developed as a self-learning project to help people keep track of their time expenditure.</description>
+    </item>
+    
+    <item>
+      <title>Geofile</title>
+      <link>/development_projects/geofile/</link>
+      <pubDate>Sun, 05 Apr 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/development_projects/geofile/</guid>
+      <description> Geofile lets you couple files them with a specific location. I worked on developing Front-End part of the app using Flutter. Playstore Early Access: You can test the beta version on the Playstore by searching for geofile.  </description>
+    </item>
+    
+  </channel>
+</rss>
