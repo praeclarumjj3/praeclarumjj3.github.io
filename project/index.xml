@@ -5,12 +5,37 @@
     <link>https://praeclarumjj3.github.io/project/</link>
       <atom:link href="https://praeclarumjj3.github.io/project/index.xml" rel="self" type="application/rss+xml" />
     <description>Projects</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Mon, 28 Dec 2020 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sat, 10 Apr 2021 00:00:00 +0000</lastBuildDate>
     <image>
       <url>https://praeclarumjj3.github.io/images/icon_hu4ad8c95e6c63df308e088b9efcfa89f3_55886_512x512_fill_lanczos_center_2.png</url>
       <title>Projects</title>
       <link>https://praeclarumjj3.github.io/project/</link>
     </image>
+    
+    <item>
+      <title>OLIE</title>
+      <link>https://praeclarumjj3.github.io/project/olie/</link>
+      <pubDate>Sat, 10 Apr 2021 00:00:00 +0000</pubDate>
+      <guid>https://praeclarumjj3.github.io/project/olie/</guid>
+      <description>&lt;p&gt;OLIE was aimed to reconstruct the original image with the objects removed (editing) by incorporating the mask features as input to the reconstructor.&lt;/p&gt;
+&lt;p&gt;After performing many experiments, we scrapped the idea. However, some of the experiments that I performed were:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Using a Perturbator Model:&lt;/strong&gt; Taking inspiration from 
+&lt;a href=&#34;https://ganpaint.io/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;GanPaint&lt;/a&gt;, I tried editing images using perturbations in the reconstructor, however it didn&amp;rsquo;t work well.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Using Gated Convolutions:&lt;/strong&gt; Taking inspiration from 
+&lt;a href=&#34;https://paperswithcode.com/paper/free-form-image-inpainting-with-gated&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Free-Form Image Inpainting with Gated Convolution&lt;/a&gt;, I used &lt;code&gt;Gated Modules&lt;/code&gt; instead of standard modules which gave even &lt;strong&gt;poorer results&lt;/strong&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Using Two Stage Model:&lt;/strong&gt; Getting hole images from the reconstructor and then passing that into an inpainting model gave somewhat good results as the generating the hole image could be learned accurately to an extent, however, the results were no better than the common inpainting ones.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Our aim was to come up with a &lt;strong&gt;Single Stage Model&lt;/strong&gt; for image editing using instance maps.&lt;/p&gt;
+&lt;p&gt;For more info, please see the Code on &lt;code&gt;GitHub&lt;/code&gt;.&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>BackBone Profile</title>

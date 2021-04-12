@@ -2,8 +2,29 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://praeclarumjj3.github.io/tag/deep-learning/</loc>
+    <lastmod>2021-04-10T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://praeclarumjj3.github.io/</loc>
-    <lastmod>2021-03-30T00:00:00+00:00</lastmod>
+    <lastmod>2021-04-10T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://praeclarumjj3.github.io/project/olie/</loc>
+    <lastmod>2021-04-10T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://praeclarumjj3.github.io/project/</loc>
+    <lastmod>2021-04-10T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://praeclarumjj3.github.io/tags/</loc>
+    <lastmod>2021-04-10T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://praeclarumjj3.github.io/development_projects/</loc>
+    <lastmod>2021-04-03T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://praeclarumjj3.github.io/development_projects/granim/</loc>
+    <lastmod>2021-04-03T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://praeclarumjj3.github.io/tag/manim/</loc>
+    <lastmod>2021-04-03T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://praeclarumjj3.github.io/post/</loc>
     <lastmod>2021-03-30T00:00:00+00:00</lastmod>
@@ -17,19 +38,7 @@
     <loc>https://praeclarumjj3.github.io/project/backbone/</loc>
     <lastmod>2020-12-28T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://praeclarumjj3.github.io/tag/deep-learning/</loc>
-    <lastmod>2020-12-28T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://praeclarumjj3.github.io/project/</loc>
-    <lastmod>2020-12-28T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://praeclarumjj3.github.io/tags/</loc>
-    <lastmod>2020-12-28T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://praeclarumjj3.github.io/development_projects/arxiv_app/</loc>
-    <lastmod>2020-11-26T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://praeclarumjj3.github.io/development_projects/</loc>
     <lastmod>2020-11-26T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://praeclarumjj3.github.io/tag/flutter/</loc>
