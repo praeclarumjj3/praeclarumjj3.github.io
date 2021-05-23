@@ -5,12 +5,40 @@
     <link>https://praeclarumjj3.github.io/tag/deep-learning/</link>
       <atom:link href="https://praeclarumjj3.github.io/tag/deep-learning/index.xml" rel="self" type="application/rss+xml" />
     <description>Deep Learning</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sat, 10 Apr 2021 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Wed, 19 May 2021 00:00:00 +0000</lastBuildDate>
     <image>
       <url>https://praeclarumjj3.github.io/images/icon_hu4ad8c95e6c63df308e088b9efcfa89f3_55886_512x512_fill_lanczos_center_2.png</url>
       <title>Deep Learning</title>
       <link>https://praeclarumjj3.github.io/tag/deep-learning/</link>
     </image>
+    
+    <item>
+      <title>AOT-GAN Experiments</title>
+      <link>https://praeclarumjj3.github.io/project/aot-gan-experiments/</link>
+      <pubDate>Wed, 19 May 2021 00:00:00 +0000</pubDate>
+      <guid>https://praeclarumjj3.github.io/project/aot-gan-experiments/</guid>
+      <description>&lt;p&gt;I conducted various experiments with &lt;strong&gt;AOT-GAN&lt;/strong&gt; proposed in the paper: 
+&lt;a href=&#34;https://arxiv.org/abs/2104.01431&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Aggregated Contextual Transformations for High-Resolution Image Inpainting&lt;/a&gt;) on the 
+&lt;a href=&#34;http://places2.csail.mit.edu/download.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Places2&lt;/a&gt; dataset using the 
+&lt;a href=&#34;https://nv-adlr.github.io/publication/partialconv-inpainting&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;PConv Free Form Masks for Inpainting&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;In particular, I focused on finding the effectivity of different losses while training the framework. I made several observations:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;The &lt;strong&gt;adversarial loss&lt;/strong&gt; doesn&amp;rsquo;t seem to be contributing to the learning of the model as it stays almost the same throughout the training.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Training for longer than &lt;code&gt;1e4&lt;/code&gt; iterations doesn&amp;rsquo;t add much improvement to the results.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Training &lt;strong&gt;without style loss&lt;/strong&gt; produces blurry results. Therefore, style loss is an important component for texture related synthesis of images.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Training &lt;strong&gt;without adversarial loss&lt;/strong&gt; also produces good quality results!&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;For more info, please see the Code on &lt;code&gt;GitHub&lt;/code&gt;.&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>OLIE</title>

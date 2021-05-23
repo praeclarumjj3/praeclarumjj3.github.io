@@ -27,10 +27,10 @@
   
     
   
-  <meta name="description" content="Pytorch Implementation for VQ-VAE on MNIST dataset.">
+  <meta name="description" content="Experiments conducted with AOT-GAN">
 
   
-  <link rel="alternate" hreflang="en-us" href="https://praeclarumjj3.github.io/project/vq_vae/">
+  <link rel="alternate" hreflang="en-us" href="https://praeclarumjj3.github.io/project/aot-gan-experiments/">
 
   
 
@@ -258,7 +258,7 @@
   <link rel="icon" type="image/png" href="/images/icon_hu4ad8c95e6c63df308e088b9efcfa89f3_55886_32x32_fill_lanczos_center_2.png">
   <link rel="apple-touch-icon" type="image/png" href="/images/icon_hu4ad8c95e6c63df308e088b9efcfa89f3_55886_192x192_fill_lanczos_center_2.png">
 
-  <link rel="canonical" href="https://praeclarumjj3.github.io/project/vq_vae/">
+  <link rel="canonical" href="https://praeclarumjj3.github.io/project/aot-gan-experiments/">
 
   
   
@@ -274,15 +274,15 @@
   <meta property="twitter:card" content="summary">
   
   <meta property="og:site_name" content="Jitesh Jain">
-  <meta property="og:url" content="https://praeclarumjj3.github.io/project/vq_vae/">
-  <meta property="og:title" content="VQ-VAE on MNIST | Jitesh Jain">
-  <meta property="og:description" content="Pytorch Implementation for VQ-VAE on MNIST dataset."><meta property="og:image" content="https://praeclarumjj3.github.io/images/icon_hu4ad8c95e6c63df308e088b9efcfa89f3_55886_512x512_fill_lanczos_center_2.png">
+  <meta property="og:url" content="https://praeclarumjj3.github.io/project/aot-gan-experiments/">
+  <meta property="og:title" content="AOT-GAN Experiments | Jitesh Jain">
+  <meta property="og:description" content="Experiments conducted with AOT-GAN"><meta property="og:image" content="https://praeclarumjj3.github.io/images/icon_hu4ad8c95e6c63df308e088b9efcfa89f3_55886_512x512_fill_lanczos_center_2.png">
   <meta property="twitter:image" content="https://praeclarumjj3.github.io/images/icon_hu4ad8c95e6c63df308e088b9efcfa89f3_55886_512x512_fill_lanczos_center_2.png"><meta property="og:locale" content="en-us">
   
     
-      <meta property="article:published_time" content="2020-05-20T00:00:00&#43;00:00">
+      <meta property="article:published_time" content="2021-05-19T00:00:00&#43;00:00">
     
-    <meta property="article:modified_time" content="2020-05-20T00:00:00&#43;00:00">
+    <meta property="article:modified_time" content="2021-05-19T00:00:00&#43;00:00">
   
 
   
@@ -304,12 +304,12 @@
   "@type": "Article",
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "https://praeclarumjj3.github.io/project/vq_vae/"
+    "@id": "https://praeclarumjj3.github.io/project/aot-gan-experiments/"
   },
-  "headline": "VQ-VAE on MNIST",
+  "headline": "AOT-GAN Experiments",
   
-  "datePublished": "2020-05-20T00:00:00Z",
-  "dateModified": "2020-05-20T00:00:00Z",
+  "datePublished": "2021-05-19T00:00:00Z",
+  "dateModified": "2021-05-19T00:00:00Z",
   
   "author": {
     "@type": "Person",
@@ -324,7 +324,7 @@
       "url": "https://praeclarumjj3.github.io/images/icon_hu4ad8c95e6c63df308e088b9efcfa89f3_55886_192x192_fill_lanczos_center_2.png"
     }
   },
-  "description": "Pytorch Implementation for VQ-VAE on MNIST dataset."
+  "description": "Experiments conducted with AOT-GAN"
 }
 </script>
 
@@ -342,7 +342,7 @@
 
 
 
-  <title>VQ-VAE on MNIST | Jitesh Jain</title>
+  <title>AOT-GAN Experiments | Jitesh Jain</title>
 
 </head>
 
@@ -703,7 +703,7 @@
   
   
 <div class="article-container pt-3">
-  <h1>VQ-VAE on MNIST</h1>
+  <h1>AOT-GAN Experiments</h1>
 
   
 
@@ -722,7 +722,7 @@
     
       
     
-    May 20, 2020
+    May 19, 2021
   </span>
   
 
@@ -775,7 +775,7 @@
   
     
   
-<a class="btn btn-outline-primary my-1 mr-1" href="https://github.com/praeclarumjj3/VQ-VAE-on-MNIST" target="_blank" rel="noopener">
+<a class="btn btn-outline-primary my-1 mr-1" href="https://github.com/praeclarumjj3/AOT-GAN-Experiments" target="_blank" rel="noopener">
   Code
 </a>
 
@@ -803,8 +803,26 @@
   <div class="article-container">
 
     <div class="article-style">
-      <p>I tried to implement 
-<a href="https://arxiv.org/abs/1711.00937" target="_blank" rel="noopener">VQ-VAE</a> in Pytorch on the MNIST dataset.</p>
+      <p>I conducted various experiments with <strong>AOT-GAN</strong> proposed in the paper: 
+<a href="https://arxiv.org/abs/2104.01431" target="_blank" rel="noopener">Aggregated Contextual Transformations for High-Resolution Image Inpainting</a>) on the 
+<a href="http://places2.csail.mit.edu/download.html" target="_blank" rel="noopener">Places2</a> dataset using the 
+<a href="https://nv-adlr.github.io/publication/partialconv-inpainting" target="_blank" rel="noopener">PConv Free Form Masks for Inpainting</a>.</p>
+<p>In particular, I focused on finding the effectivity of different losses while training the framework. I made several observations:</p>
+<ul>
+<li>
+<p>The <strong>adversarial loss</strong> doesn&rsquo;t seem to be contributing to the learning of the model as it stays almost the same throughout the training.</p>
+</li>
+<li>
+<p>Training for longer than <code>1e4</code> iterations doesn&rsquo;t add much improvement to the results.</p>
+</li>
+<li>
+<p>Training <strong>without style loss</strong> produces blurry results. Therefore, style loss is an important component for texture related synthesis of images.</p>
+</li>
+<li>
+<p>Training <strong>without adversarial loss</strong> also produces good quality results!</p>
+</li>
+</ul>
+<p>For more info, please see the Code on <code>GitHub</code>.</p>
 
     </div>
 
@@ -833,7 +851,7 @@
       
       
       <li>
-        <a href="https://twitter.com/intent/tweet?url=https://praeclarumjj3.github.io/project/vq_vae/&amp;text=VQ-VAE%20on%20MNIST" target="_blank" rel="noopener" class="share-btn-twitter">
+        <a href="https://twitter.com/intent/tweet?url=https://praeclarumjj3.github.io/project/aot-gan-experiments/&amp;text=AOT-GAN%20Experiments" target="_blank" rel="noopener" class="share-btn-twitter">
           <i class="fab fa-twitter"></i>
         </a>
       </li>
@@ -846,7 +864,7 @@
       
       
       <li>
-        <a href="https://www.facebook.com/sharer.php?u=https://praeclarumjj3.github.io/project/vq_vae/&amp;t=VQ-VAE%20on%20MNIST" target="_blank" rel="noopener" class="share-btn-facebook">
+        <a href="https://www.facebook.com/sharer.php?u=https://praeclarumjj3.github.io/project/aot-gan-experiments/&amp;t=AOT-GAN%20Experiments" target="_blank" rel="noopener" class="share-btn-facebook">
           <i class="fab fa-facebook"></i>
         </a>
       </li>
@@ -859,7 +877,7 @@
       
       
       <li>
-        <a href="mailto:?subject=VQ-VAE%20on%20MNIST&amp;body=https://praeclarumjj3.github.io/project/vq_vae/" target="_blank" rel="noopener" class="share-btn-email">
+        <a href="mailto:?subject=AOT-GAN%20Experiments&amp;body=https://praeclarumjj3.github.io/project/aot-gan-experiments/" target="_blank" rel="noopener" class="share-btn-email">
           <i class="fas fa-envelope"></i>
         </a>
       </li>
@@ -872,7 +890,7 @@
       
       
       <li>
-        <a href="https://www.linkedin.com/shareArticle?url=https://praeclarumjj3.github.io/project/vq_vae/&amp;title=VQ-VAE%20on%20MNIST" target="_blank" rel="noopener" class="share-btn-linkedin">
+        <a href="https://www.linkedin.com/shareArticle?url=https://praeclarumjj3.github.io/project/aot-gan-experiments/&amp;title=AOT-GAN%20Experiments" target="_blank" rel="noopener" class="share-btn-linkedin">
           <i class="fab fa-linkedin-in"></i>
         </a>
       </li>
@@ -885,7 +903,7 @@
       
       
       <li>
-        <a href="whatsapp://send?text=VQ-VAE%20on%20MNIST%20https://praeclarumjj3.github.io/project/vq_vae/" target="_blank" rel="noopener" class="share-btn-whatsapp">
+        <a href="whatsapp://send?text=AOT-GAN%20Experiments%20https://praeclarumjj3.github.io/project/aot-gan-experiments/" target="_blank" rel="noopener" class="share-btn-whatsapp">
           <i class="fab fa-whatsapp"></i>
         </a>
       </li>
@@ -898,7 +916,7 @@
       
       
       <li>
-        <a href="https://service.weibo.com/share/share.php?url=https://praeclarumjj3.github.io/project/vq_vae/&amp;title=VQ-VAE%20on%20MNIST" target="_blank" rel="noopener" class="share-btn-weibo">
+        <a href="https://service.weibo.com/share/share.php?url=https://praeclarumjj3.github.io/project/aot-gan-experiments/&amp;title=AOT-GAN%20Experiments" target="_blank" rel="noopener" class="share-btn-weibo">
           <i class="fab fa-weibo"></i>
         </a>
       </li>
@@ -1080,8 +1098,6 @@
     <h3>Related</h3>
     <ul>
       
-      <li><a href="/project/aot-gan-experiments/">AOT-GAN Experiments</a></li>
-      
       <li><a href="/project/olie/">OLIE</a></li>
       
       <li><a href="/project/backbone/">BackBone Profile</a></li>
@@ -1089,6 +1105,8 @@
       <li><a href="/development_projects/iitr_bot/">IITR ChatBot</a></li>
       
       <li><a href="/project/summary_of_papers/">Paper Summaries</a></li>
+      
+      <li><a href="/project/chatbot/">ChatBot with Pytorch</a></li>
       
     </ul>
   </div>
