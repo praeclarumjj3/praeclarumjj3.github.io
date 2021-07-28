@@ -5,12 +5,25 @@
     <link>https://praeclarumjj3.github.io/</link>
       <atom:link href="https://praeclarumjj3.github.io/index.xml" rel="self" type="application/rss+xml" />
     <description>Jitesh Jain</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Wed, 19 May 2021 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Wed, 28 Jul 2021 00:00:00 +0000</lastBuildDate>
     <image>
       <url>https://praeclarumjj3.github.io/images/icon_hu4ad8c95e6c63df308e088b9efcfa89f3_55886_512x512_fill_lanczos_center_2.png</url>
       <title>Jitesh Jain</title>
       <link>https://praeclarumjj3.github.io/</link>
     </image>
+    
+    <item>
+      <title>Riding the Noisy Research Track</title>
+      <link>https://praeclarumjj3.github.io/post/research_ride/</link>
+      <pubDate>Wed, 28 Jul 2021 00:00:00 +0000</pubDate>
+      <guid>https://praeclarumjj3.github.io/post/research_ride/</guid>
+      <description>&lt;p&gt;Alright, people! This article will share my experience and learnings during the last eight months as an undergrad researcher. For those reading one of my blogs for the first time, I am a CSE undergrad (about to enter 3rd year) and am working as a Research Intern at &lt;em&gt;
+&lt;a href=&#34;https://www.humphreyshi.com/people&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;SHI Lab @ UO&lt;/a&gt;&lt;/em&gt; and &lt;em&gt;
+&lt;a href=&#34;https://picsart.com/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Picsart&lt;/a&gt;&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;Now, before we dive in, let me clear it out that I have probably had a more intense research experience for better or worse than some of the other undergrad people at IITR. So, don’t make any judgments about research based on the content in this post 😛. So, we got that sorted out. Let’s begin!&lt;/p&gt;
+&lt;p&gt;Read more at: &lt;a href=&#34;https://jitesh-j.medium.com/riding-the-noisy-research-track-4035e64e7ea8&#34;&gt;https://jitesh-j.medium.com/riding-the-noisy-research-track-4035e64e7ea8&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>AOT-GAN Experiments</title>
