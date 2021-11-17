@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Dev | Jitesh Jain</title>
+    <link>https://praeclarumjj3.github.io/tag/dev/</link>
+      <atom:link href="https://praeclarumjj3.github.io/tag/dev/index.xml" rel="self" type="application/rss+xml" />
+    <description>Dev</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Thu, 26 Nov 2020 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://praeclarumjj3.github.io/media/icon_hud166e63c6d63b20b4040daaa47de5209_74785_512x512_fill_lanczos_center_3.png</url>
+      <title>Dev</title>
+      <link>https://praeclarumjj3.github.io/tag/dev/</link>
+    </image>
+    
+    <item>
+      <title>ArxivApp</title>
+      <link>https://praeclarumjj3.github.io/project/arxiv_app/</link>
+      <pubDate>Thu, 26 Nov 2020 00:00:00 +0000</pubDate>
+      <guid>https://praeclarumjj3.github.io/project/arxiv_app/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;ArxivApp&lt;/strong&gt; lets you read, bookmark and download papers from arXiv.org. It also has a forum screen that lets you read and create notes/blogs about the different research papers you read!&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>IITR Security App</title>
+      <link>https://praeclarumjj3.github.io/project/security_app/</link>
+      <pubDate>Sat, 05 Sep 2020 00:00:00 +0000</pubDate>
+      <guid>https://praeclarumjj3.github.io/project/security_app/</guid>
+      <description>&lt;ul&gt;
+&lt;li&gt;IITR Security App was developed to eliminate the use of paper by the guards to record the details of the visitors at IIT Roorkee.&lt;/li&gt;
+&lt;li&gt;I worked on developing Front-End part of the app using Flutter.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Playstore Link&lt;/strong&gt;: &lt;a href=&#34;https://play.google.com/store/apps/details?id=in.ac.iitr.mdg.securityapp&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://play.google.com/store/apps/details?id=in.ac.iitr.mdg.securityapp&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Time Tracer</title>
+      <link>https://praeclarumjj3.github.io/project/time_trace/</link>
+      <pubDate>Mon, 27 Apr 2020 00:00:00 +0000</pubDate>
+      <guid>https://praeclarumjj3.github.io/project/time_trace/</guid>
+      <description>&lt;p&gt;A Flutter application developed as a self-learning project to help people keep track of their time expenditure.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Societyfy</title>
+      <link>https://praeclarumjj3.github.io/project/societyfy/</link>
+      <pubDate>Wed, 08 Apr 2020 00:00:00 +0000</pubDate>
+      <guid>https://praeclarumjj3.github.io/project/societyfy/</guid>
+      <description>&lt;p&gt;SOCIETYFY is an app showcase app developed during MDG’s SoC event in December, 2019. Societyfy lets you discover new people based on your interest at any moment of time and make new bonds with people you share an interest with at any point in time through its specific chatrooms for each category.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;PlayStore Link&lt;/strong&gt;: &lt;a href=&#34;https://play.google.com/store/apps/details?id=in.ac.mdg.iitr.societyfy&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://play.google.com/store/apps/details?id=in.ac.mdg.iitr.societyfy&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Medium Blog&lt;/strong&gt;: &lt;a href=&#34;https://medium.com/mobile-development-group/societyfy-an-app-made-for-finding-company-at-anytime-for-anything-842e18151551&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt; Societyfy: An app made for finding company at any time for anything&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

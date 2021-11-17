@@ -5,23 +5,41 @@
     <link>https://praeclarumjj3.github.io/</link>
       <atom:link href="https://praeclarumjj3.github.io/index.xml" rel="self" type="application/rss+xml" />
     <description>Jitesh Jain</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Wed, 28 Jul 2021 00:00:00 +0000</lastBuildDate>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Sat, 01 Jun 2030 13:00:00 +0000</lastBuildDate>
     <image>
-      <url>https://praeclarumjj3.github.io/images/icon_hu4ad8c95e6c63df308e088b9efcfa89f3_55886_512x512_fill_lanczos_center_2.png</url>
+      <url>https://praeclarumjj3.github.io/media/icon_hud166e63c6d63b20b4040daaa47de5209_74785_512x512_fill_lanczos_center_3.png</url>
       <title>Jitesh Jain</title>
       <link>https://praeclarumjj3.github.io/</link>
     </image>
+    
+    <item>
+      <title>Example Talk</title>
+      <link>https://praeclarumjj3.github.io/talk/example-talk/</link>
+      <pubDate>Sat, 01 Jun 2030 13:00:00 +0000</pubDate>
+      <guid>https://praeclarumjj3.github.io/talk/example-talk/</guid>
+      <description>&lt;div class=&#34;alert alert-note&#34;&gt;
+  &lt;div&gt;
+    Click on the &lt;strong&gt;Slides&lt;/strong&gt; button above to view the built-in slides feature.
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;Slides can be added in a few ways:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Create&lt;/strong&gt; slides using Wowchemy&amp;rsquo;s &lt;a href=&#34;https://wowchemy.com/docs/managing-content/#create-slides&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;em&gt;Slides&lt;/em&gt;&lt;/a&gt; feature and link using &lt;code&gt;slides&lt;/code&gt; parameter in the front matter of the talk file&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Upload&lt;/strong&gt; an existing slide deck to &lt;code&gt;static/&lt;/code&gt; and link using &lt;code&gt;url_slides&lt;/code&gt; parameter in the front matter of the talk file&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Embed&lt;/strong&gt; your slides (e.g. Google Slides) or presentation video on this page using &lt;a href=&#34;https://wowchemy.com/docs/writing-markdown-latex/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;shortcodes&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Further event details, including &lt;a href=&#34;https://wowchemy.com/docs/writing-markdown-latex/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;page elements&lt;/a&gt; such as image galleries, can be added to the body of this page.&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Riding the Noisy Research Track</title>
       <link>https://praeclarumjj3.github.io/post/research_ride/</link>
       <pubDate>Wed, 28 Jul 2021 00:00:00 +0000</pubDate>
       <guid>https://praeclarumjj3.github.io/post/research_ride/</guid>
-      <description>&lt;p&gt;Alright, people! This article will share my experience and learnings during the last eight months as an undergrad researcher. For those reading one of my blogs for the first time, I am a CSE undergrad (about to enter 3rd year) and am working as a Research Intern at &lt;em&gt;
-&lt;a href=&#34;https://www.humphreyshi.com/people&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;SHI Lab @ UO&lt;/a&gt;&lt;/em&gt; and &lt;em&gt;
-&lt;a href=&#34;https://picsart.com/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Picsart&lt;/a&gt;&lt;/em&gt;.&lt;/p&gt;
+      <description>&lt;p&gt;Alright, people! This article will share my experience and learnings during the last eight months as an undergrad researcher. For those reading one of my blogs for the first time, I am a CSE undergrad (about to enter 3rd year) and am working as a Research Intern at &lt;em&gt;&lt;a href=&#34;https://www.humphreyshi.com/people&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;SHI Lab @ UO&lt;/a&gt;&lt;/em&gt; and &lt;em&gt;&lt;a href=&#34;https://picsart.com/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Picsart&lt;/a&gt;&lt;/em&gt;.&lt;/p&gt;
 &lt;p&gt;Now, before we dive in, let me clear it out that I have probably had a more intense research experience for better or worse than some of the other undergrad people at IITR. So, don’t make any judgments about research based on the content in this post 😛. So, we got that sorted out. Let’s begin!&lt;/p&gt;
-&lt;p&gt;Read more at: &lt;a href=&#34;https://jitesh-j.medium.com/riding-the-noisy-research-track-4035e64e7ea8&#34;&gt;https://jitesh-j.medium.com/riding-the-noisy-research-track-4035e64e7ea8&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Read more at: &lt;a href=&#34;https://jitesh-j.medium.com/riding-the-noisy-research-track-4035e64e7ea8&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://jitesh-j.medium.com/riding-the-noisy-research-track-4035e64e7ea8&lt;/a&gt;&lt;/p&gt;
 </description>
     </item>
     
@@ -30,10 +48,7 @@
       <link>https://praeclarumjj3.github.io/project/aot-gan-experiments/</link>
       <pubDate>Wed, 19 May 2021 00:00:00 +0000</pubDate>
       <guid>https://praeclarumjj3.github.io/project/aot-gan-experiments/</guid>
-      <description>&lt;p&gt;I conducted various experiments with &lt;strong&gt;AOT-GAN&lt;/strong&gt; proposed in the paper: 
-&lt;a href=&#34;https://arxiv.org/abs/2104.01431&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Aggregated Contextual Transformations for High-Resolution Image Inpainting&lt;/a&gt;) on the 
-&lt;a href=&#34;http://places2.csail.mit.edu/download.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Places2&lt;/a&gt; dataset using the 
-&lt;a href=&#34;https://nv-adlr.github.io/publication/partialconv-inpainting&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;PConv Free Form Masks for Inpainting&lt;/a&gt;.&lt;/p&gt;
+      <description>&lt;p&gt;I conducted various experiments with &lt;strong&gt;AOT-GAN&lt;/strong&gt; proposed in the paper: &lt;a href=&#34;https://arxiv.org/abs/2104.01431&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Aggregated Contextual Transformations for High-Resolution Image Inpainting&lt;/a&gt;) on the &lt;a href=&#34;http://places2.csail.mit.edu/download.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Places2&lt;/a&gt; dataset using the &lt;a href=&#34;https://nv-adlr.github.io/publication/partialconv-inpainting&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;PConv Free Form Masks for Inpainting&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;In particular, I focused on finding the effectivity of different losses while training the framework. I made several observations:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;
@@ -55,14 +70,14 @@
     
     <item>
       <title>Do self-help books really help?</title>
-      <link>https://praeclarumjj3.github.io/post/priority-copy/</link>
+      <link>https://praeclarumjj3.github.io/post/self_help_books/</link>
       <pubDate>Sun, 16 May 2021 00:00:00 +0000</pubDate>
-      <guid>https://praeclarumjj3.github.io/post/priority-copy/</guid>
+      <guid>https://praeclarumjj3.github.io/post/self_help_books/</guid>
       <description>&lt;p&gt;Alright, so this is going to be quite a short entry. A few days back, a friend of mine and I were talking about books. We were discussing the books that we have read. Well, she’s smart, so she was listing out great books like 1984, A Man Called Ove, etc. I told her how I had read quite a few of the “self-help” books during the last year or so (well, pandemic time, so needed some motivation, I guess :3). Then she asked me:&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Do self-help books really help?&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;Read more at: &lt;a href=&#34;https://jitesh-j.medium.com/do-self-help-books-really-help-8947e1393bd4&#34;&gt;https://jitesh-j.medium.com/do-self-help-books-really-help-8947e1393bd4&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Read more at: &lt;a href=&#34;https://jitesh-j.medium.com/do-self-help-books-really-help-8947e1393bd4&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://jitesh-j.medium.com/do-self-help-books-really-help-8947e1393bd4&lt;/a&gt;&lt;/p&gt;
 </description>
     </item>
     
@@ -75,12 +90,10 @@
 &lt;p&gt;After performing many experiments, we scrapped the idea. However, some of the experiments that I performed were:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;strong&gt;Using a Perturbator Model:&lt;/strong&gt; Taking inspiration from 
-&lt;a href=&#34;https://ganpaint.io/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;GanPaint&lt;/a&gt;, I tried editing images using perturbations in the reconstructor, however it didn&amp;rsquo;t work well.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Using a Perturbator Model:&lt;/strong&gt; Taking inspiration from &lt;a href=&#34;https://ganpaint.io/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;GanPaint&lt;/a&gt;, I tried editing images using perturbations in the reconstructor, however it didn&amp;rsquo;t work well.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;strong&gt;Using Gated Convolutions:&lt;/strong&gt; Taking inspiration from 
-&lt;a href=&#34;https://paperswithcode.com/paper/free-form-image-inpainting-with-gated&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Free-Form Image Inpainting with Gated Convolution&lt;/a&gt;, I used &lt;code&gt;Gated Modules&lt;/code&gt; instead of standard modules which gave even &lt;strong&gt;poorer results&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Using Gated Convolutions:&lt;/strong&gt; Taking inspiration from &lt;a href=&#34;https://paperswithcode.com/paper/free-form-image-inpainting-with-gated&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Free-Form Image Inpainting with Gated Convolution&lt;/a&gt;, I used &lt;code&gt;Gated Modules&lt;/code&gt; instead of standard modules which gave even &lt;strong&gt;poorer results&lt;/strong&gt;.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;&lt;strong&gt;Using Two Stage Model:&lt;/strong&gt; Getting hole images from the reconstructor and then passing that into an inpainting model gave somewhat good results as the generating the hole image could be learned accurately to an extent, however, the results were no better than the common inpainting ones.&lt;/p&gt;
@@ -93,9 +106,9 @@
     
     <item>
       <title>granim</title>
-      <link>https://praeclarumjj3.github.io/development_projects/granim/</link>
+      <link>https://praeclarumjj3.github.io/project/granim/</link>
       <pubDate>Sat, 03 Apr 2021 00:00:00 +0000</pubDate>
-      <guid>https://praeclarumjj3.github.io/development_projects/granim/</guid>
+      <guid>https://praeclarumjj3.github.io/project/granim/</guid>
       <description>&lt;p&gt;&lt;strong&gt;granim&lt;/strong&gt; makes it easier to plot animated graphs using the Manim-Engine. This project is still under development. Contributors are always welcome!&lt;/p&gt;
 </description>
     </item>
@@ -106,7 +119,7 @@
       <pubDate>Tue, 30 Mar 2021 00:00:00 +0000</pubDate>
       <guid>https://praeclarumjj3.github.io/post/priority/</guid>
       <description>&lt;p&gt;Right, so this isn&amp;rsquo;t a well-planned blog. I just wanted to write something up, and this idea popped into my head while guessing the mid-term&amp;rsquo;s syllabus with one of my friends. It got me wondering about the importance that I give to these college exams is even lesser than writing a random blog even when my exams are less than a week away xD.&lt;/p&gt;
-&lt;p&gt;Read more at: &lt;a href=&#34;https://jitesh-j.medium.com/the-priority-hierarchy-dilemma-91b39cb397f&#34;&gt;https://jitesh-j.medium.com/the-priority-hierarchy-dilemma-91b39cb397f&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Read more at: &lt;a href=&#34;https://jitesh-j.medium.com/the-priority-hierarchy-dilemma-91b39cb397f&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://jitesh-j.medium.com/the-priority-hierarchy-dilemma-91b39cb397f&lt;/a&gt;&lt;/p&gt;
 </description>
     </item>
     
@@ -116,7 +129,7 @@
       <pubDate>Tue, 02 Feb 2021 00:00:00 +0000</pubDate>
       <guid>https://praeclarumjj3.github.io/post/why_research/</guid>
       <description>&lt;p&gt;Hello there! Alright, so it has been more than 3 months since my last blog, where I described how a CSE student’s life at IITR is being turned into a living hell by the system and professors. Sadly, the going has only got more challenging, with profs imposing more of their ingenious will on students. I recently had my ETEs, so I am brimming with academic frustration and will probably end up writing another blog, but that’s a topic for another day :P&lt;/p&gt;
-&lt;p&gt;Read more at: &lt;a href=&#34;https://jitesh-j.medium.com/why-research-if-i-can-develop-c90bd3ce3540&#34;&gt;https://jitesh-j.medium.com/why-research-if-i-can-develop-c90bd3ce3540&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Read more at: &lt;a href=&#34;https://jitesh-j.medium.com/why-research-if-i-can-develop-c90bd3ce3540&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://jitesh-j.medium.com/why-research-if-i-can-develop-c90bd3ce3540&lt;/a&gt;&lt;/p&gt;
 </description>
     </item>
     
@@ -154,41 +167,39 @@
     
     <item>
       <title>ArxivApp</title>
-      <link>https://praeclarumjj3.github.io/development_projects/arxiv_app/</link>
+      <link>https://praeclarumjj3.github.io/project/arxiv_app/</link>
       <pubDate>Thu, 26 Nov 2020 00:00:00 +0000</pubDate>
-      <guid>https://praeclarumjj3.github.io/development_projects/arxiv_app/</guid>
+      <guid>https://praeclarumjj3.github.io/project/arxiv_app/</guid>
       <description>&lt;p&gt;&lt;strong&gt;ArxivApp&lt;/strong&gt; lets you read, bookmark and download papers from arXiv.org. It also has a forum screen that lets you read and create notes/blogs about the different research papers you read!&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>IITR ChatBot</title>
-      <link>https://praeclarumjj3.github.io/development_projects/iitr_bot/</link>
+      <link>https://praeclarumjj3.github.io/project/iitr_bot/</link>
       <pubDate>Mon, 28 Sep 2020 00:00:00 +0000</pubDate>
-      <guid>https://praeclarumjj3.github.io/development_projects/iitr_bot/</guid>
-      <description>&lt;p&gt;We developed an assistance bot for the 
-&lt;a href=&#34;https://www.iitr.ac.in/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;IITR website&lt;/a&gt; using the 
-&lt;a href=&#34;https://rasa.com/docs/rasa/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;RASA&lt;/a&gt; framework.&lt;/p&gt;
+      <guid>https://praeclarumjj3.github.io/project/iitr_bot/</guid>
+      <description>&lt;p&gt;We developed an assistance bot for the &lt;a href=&#34;https://www.iitr.ac.in/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;IITR website&lt;/a&gt; using the &lt;a href=&#34;https://rasa.com/docs/rasa/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;RASA&lt;/a&gt; framework.&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>DEAP Cache: Deep Eviction Admission and Prefetching for Cache</title>
       <link>https://praeclarumjj3.github.io/publication/deap/</link>
-      <pubDate>Sat, 19 Sep 2020 00:00:00 +0530</pubDate>
+      <pubDate>Sat, 19 Sep 2020 00:00:00 +0000</pubDate>
       <guid>https://praeclarumjj3.github.io/publication/deap/</guid>
       <description></description>
     </item>
     
     <item>
       <title>IITR Security App</title>
-      <link>https://praeclarumjj3.github.io/development_projects/security_app/</link>
+      <link>https://praeclarumjj3.github.io/project/security_app/</link>
       <pubDate>Sat, 05 Sep 2020 00:00:00 +0000</pubDate>
-      <guid>https://praeclarumjj3.github.io/development_projects/security_app/</guid>
+      <guid>https://praeclarumjj3.github.io/project/security_app/</guid>
       <description>&lt;ul&gt;
 &lt;li&gt;IITR Security App was developed to eliminate the use of paper by the guards to record the details of the visitors at IIT Roorkee.&lt;/li&gt;
 &lt;li&gt;I worked on developing Front-End part of the app using Flutter.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Playstore Link&lt;/strong&gt;: &lt;a href=&#34;https://play.google.com/store/apps/details?id=in.ac.iitr.mdg.securityapp&#34;&gt;https://play.google.com/store/apps/details?id=in.ac.iitr.mdg.securityapp&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Playstore Link&lt;/strong&gt;: &lt;a href=&#34;https://play.google.com/store/apps/details?id=in.ac.iitr.mdg.securityapp&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://play.google.com/store/apps/details?id=in.ac.iitr.mdg.securityapp&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 </description>
     </item>
@@ -199,7 +210,7 @@
       <pubDate>Sun, 02 Aug 2020 00:00:00 +0000</pubDate>
       <guid>https://praeclarumjj3.github.io/post/one_year_at_iitr/</guid>
       <description>&lt;p&gt;Hey! So you must be wondering, “What the hell is e ˣ doing in the title? It must be a scientific article!” Well, to put your mind at ease, this is not an article about the hidden beauty of e ˣ (although that would be an excellent one :P). Instead, it is about a now sophomore’s year of life at IITR. Please allow me to take you to a flashback journey through time!&lt;/p&gt;
-&lt;p&gt;Read more at: &lt;a href=&#34;https://medium.com/@jitesh_j/one-year-of-traversing-the-e-%CB%A3-graph-767973e9bf17?sk=8ea14ee7d09bebde5f02d73049b9ab96&#34;&gt;https://medium.com/@jitesh_j/one-year-of-traversing-the-e-%CB%A3-graph-767973e9bf17?sk=8ea14ee7d09bebde5f02d73049b9ab96&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Read more at: &lt;a href=&#34;https://medium.com/@jitesh_j/one-year-of-traversing-the-e-%CB%A3-graph-767973e9bf17?sk=8ea14ee7d09bebde5f02d73049b9ab96&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://medium.com/@jitesh_j/one-year-of-traversing-the-e-%CB%A3-graph-767973e9bf17?sk=8ea14ee7d09bebde5f02d73049b9ab96&lt;/a&gt;&lt;/p&gt;
 </description>
     </item>
     
@@ -211,32 +222,25 @@
       <description>&lt;p&gt;Summaries:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;
-&lt;p&gt;
-&lt;a href=&#34;https://github.com/vlgiitr/papers_we_read/blob/master/summaries/You_only_train_once.md&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;You Only Train Once : Loss-conditional training of deep networks, ICLR 2020&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/vlgiitr/papers_we_read/blob/master/summaries/You_only_train_once.md&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;You Only Train Once : Loss-conditional training of deep networks, ICLR 2020&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;
-&lt;a href=&#34;https://github.com/vlgiitr/papers_we_read/blob/master/summaries/GrokNet.md&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;GrokNet: Unified Computer Vision Model Trunk and Embeddings For Commerce, KDD 2020&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/vlgiitr/papers_we_read/blob/master/summaries/GrokNet.md&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;GrokNet: Unified Computer Vision Model Trunk and Embeddings For Commerce, KDD 2020&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;
-&lt;a href=&#34;https://github.com/vlgiitr/papers_we_read/blob/master/summaries/Semantically_multi-modal_image_synthesis.md&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Semantically multi-modal image synthesis, CVPR 2020&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/vlgiitr/papers_we_read/blob/master/summaries/Semantically_multi-modal_image_synthesis.md&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Semantically multi-modal image synthesis, CVPR 2020&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;
-&lt;a href=&#34;https://github.com/vlgiitr/papers_we_read/blob/master/summaries/GameGAN.md&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Learning to Simulate Dynamic Environments with GameGAN, CVPR 2020&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/vlgiitr/papers_we_read/blob/master/summaries/GameGAN.md&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Learning to Simulate Dynamic Environments with GameGAN, CVPR 2020&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;
-&lt;a href=&#34;https://github.com/vlgiitr/papers_we_read/blob/master/summaries/Adversarial_RL.md&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Adversarial Policies : Attacking deep reinforcement learning, ICLR 2020&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/vlgiitr/papers_we_read/blob/master/summaries/Adversarial_RL.md&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Adversarial Policies : Attacking deep reinforcement learning, ICLR 2020&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;
-&lt;a href=&#34;https://github.com/vlgiitr/papers_we_read/blob/master/summaries/Unsupervised_learning_for_3D_objects_from_images.md&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Unsupervised Learning of Probably Symmetric Deformable 3D Objects from Images in the Wild, CVPR 2020&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/vlgiitr/papers_we_read/blob/master/summaries/Unsupervised_learning_for_3D_objects_from_images.md&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Unsupervised Learning of Probably Symmetric Deformable 3D Objects from Images in the Wild, CVPR 2020&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;
-&lt;a href=&#34;https://github.com/vlgiitr/papers_we_read/blob/master/summaries/BYOL.md&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Bootstrap Your Own Latent: A New Approach to Self-Supervised Learning, CVPR 2020&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/vlgiitr/papers_we_read/blob/master/summaries/BYOL.md&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Bootstrap Your Own Latent: A New Approach to Self-Supervised Learning, CVPR 2020&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 </description>
@@ -253,11 +257,11 @@
     
     <item>
       <title>The Curse of Dimensionality</title>
-      <link>https://praeclarumjj3.github.io/post/the-curse-of-dimensionality/</link>
+      <link>https://praeclarumjj3.github.io/post/curse_dimension/</link>
       <pubDate>Thu, 11 Jun 2020 00:00:00 +0000</pubDate>
-      <guid>https://praeclarumjj3.github.io/post/the-curse-of-dimensionality/</guid>
+      <guid>https://praeclarumjj3.github.io/post/curse_dimension/</guid>
       <description>&lt;p&gt;Have you ever found yourself stuck in the middle of a problem having a large number of dimensions? You keep on trying harder and harder to come up with a solution that would satisfy all the dimensions of the problem. Still, every time one or another dimension makes ur efforts look futile! It turns out that you can solve a problem very efficiently when presented with not more than 2 or 3 dimensions. Nevertheless, this world is not kind to us every time! You might find yourself struggling amidst a problem, thinking&amp;hellip;&lt;/p&gt;
-&lt;p&gt;Read more at: &lt;a href=&#34;https://medium.com/vlgiitr/the-curse-of-dimensionality-15f950e519d2&#34;&gt;https://medium.com/vlgiitr/the-curse-of-dimensionality-15f950e519d2&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Read more at: &lt;a href=&#34;https://medium.com/vlgiitr/the-curse-of-dimensionality-15f950e519d2&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://medium.com/vlgiitr/the-curse-of-dimensionality-15f950e519d2&lt;/a&gt;&lt;/p&gt;
 </description>
     </item>
     
@@ -266,37 +270,35 @@
       <link>https://praeclarumjj3.github.io/project/vq_vae/</link>
       <pubDate>Wed, 20 May 2020 00:00:00 +0000</pubDate>
       <guid>https://praeclarumjj3.github.io/project/vq_vae/</guid>
-      <description>&lt;p&gt;I tried to implement 
-&lt;a href=&#34;https://arxiv.org/abs/1711.00937&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;VQ-VAE&lt;/a&gt; in Pytorch on the MNIST dataset.&lt;/p&gt;
+      <description>&lt;p&gt;I tried to implement &lt;a href=&#34;https://arxiv.org/abs/1711.00937&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;VQ-VAE&lt;/a&gt; in Pytorch on the MNIST dataset.&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>Time Tracer</title>
-      <link>https://praeclarumjj3.github.io/development_projects/time_trace/</link>
+      <link>https://praeclarumjj3.github.io/project/time_trace/</link>
       <pubDate>Mon, 27 Apr 2020 00:00:00 +0000</pubDate>
-      <guid>https://praeclarumjj3.github.io/development_projects/time_trace/</guid>
+      <guid>https://praeclarumjj3.github.io/project/time_trace/</guid>
       <description>&lt;p&gt;A Flutter application developed as a self-learning project to help people keep track of their time expenditure.&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>Societyfy</title>
-      <link>https://praeclarumjj3.github.io/development_projects/societyfy/</link>
+      <link>https://praeclarumjj3.github.io/project/societyfy/</link>
       <pubDate>Wed, 08 Apr 2020 00:00:00 +0000</pubDate>
-      <guid>https://praeclarumjj3.github.io/development_projects/societyfy/</guid>
+      <guid>https://praeclarumjj3.github.io/project/societyfy/</guid>
       <description>&lt;p&gt;SOCIETYFY is an app showcase app developed during MDG’s SoC event in December, 2019. Societyfy lets you discover new people based on your interest at any moment of time and make new bonds with people you share an interest with at any point in time through its specific chatrooms for each category.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;PlayStore Link&lt;/strong&gt;: &lt;a href=&#34;https://play.google.com/store/apps/details?id=in.ac.mdg.iitr.societyfy&#34;&gt;https://play.google.com/store/apps/details?id=in.ac.mdg.iitr.societyfy&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Medium Blog&lt;/strong&gt;: 
-&lt;a href=&#34;https://medium.com/mobile-development-group/societyfy-an-app-made-for-finding-company-at-anytime-for-anything-842e18151551&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt; Societyfy: An app made for finding company at any time for anything&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;PlayStore Link&lt;/strong&gt;: &lt;a href=&#34;https://play.google.com/store/apps/details?id=in.ac.mdg.iitr.societyfy&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://play.google.com/store/apps/details?id=in.ac.mdg.iitr.societyfy&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Medium Blog&lt;/strong&gt;: &lt;a href=&#34;https://medium.com/mobile-development-group/societyfy-an-app-made-for-finding-company-at-anytime-for-anything-842e18151551&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt; Societyfy: An app made for finding company at any time for anything&lt;/a&gt;&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>Geofile</title>
-      <link>https://praeclarumjj3.github.io/development_projects/geofile/</link>
+      <link>https://praeclarumjj3.github.io/project/geofile/</link>
       <pubDate>Sun, 05 Apr 2020 00:00:00 +0000</pubDate>
-      <guid>https://praeclarumjj3.github.io/development_projects/geofile/</guid>
+      <guid>https://praeclarumjj3.github.io/project/geofile/</guid>
       <description>&lt;ul&gt;
 &lt;li&gt;Geofile lets you couple files them with a specific location.&lt;/li&gt;
 &lt;li&gt;I worked on developing Front-End part of the app using Flutter.&lt;/li&gt;
@@ -306,13 +308,21 @@
     </item>
     
     <item>
-      <title>Societyfy: An app made for finding company at anytime for anything</title>
+      <title>Societyfy, An app made for finding company at anytime for anything</title>
       <link>https://praeclarumjj3.github.io/post/societyfy/</link>
       <pubDate>Wed, 19 Feb 2020 00:00:00 +0000</pubDate>
       <guid>https://praeclarumjj3.github.io/post/societyfy/</guid>
       <description>&lt;p&gt;Imagine a situation where you are at a place where you don’t know many people and feel a bit left out. You feel hesitant to go out for lunch or hangout or even go to a movie alone. This is where the concept of Societyfy comes in to rescue you.&lt;/p&gt;
-&lt;p&gt;Read more at: &lt;a href=&#34;https://medium.com/mobile-development-group/societyfy-an-app-made-for-finding-company-at-anytime-for-anything-842e18151551&#34;&gt;https://medium.com/mobile-development-group/societyfy-an-app-made-for-finding-company-at-anytime-for-anything-842e18151551&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Read more at: &lt;a href=&#34;https://medium.com/mobile-development-group/societyfy-an-app-made-for-finding-company-at-anytime-for-anything-842e18151551&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://medium.com/mobile-development-group/societyfy-an-app-made-for-finding-company-at-anytime-for-anything-842e18151551&lt;/a&gt;&lt;/p&gt;
 </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://praeclarumjj3.github.io/admin/config.yml</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://praeclarumjj3.github.io/admin/config.yml</guid>
+      <description></description>
     </item>
     
   </channel>

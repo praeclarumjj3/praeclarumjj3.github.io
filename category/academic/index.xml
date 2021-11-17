@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Academic | Jitesh Jain</title>
+    <link>https://praeclarumjj3.github.io/category/academic/</link>
+      <atom:link href="https://praeclarumjj3.github.io/category/academic/index.xml" rel="self" type="application/rss+xml" />
+    <description>Academic</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Thu, 11 Jun 2020 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://praeclarumjj3.github.io/media/icon_hud166e63c6d63b20b4040daaa47de5209_74785_512x512_fill_lanczos_center_3.png</url>
+      <title>Academic</title>
+      <link>https://praeclarumjj3.github.io/category/academic/</link>
+    </image>
+    
+    <item>
+      <title>The Curse of Dimensionality</title>
+      <link>https://praeclarumjj3.github.io/post/curse_dimension/</link>
+      <pubDate>Thu, 11 Jun 2020 00:00:00 +0000</pubDate>
+      <guid>https://praeclarumjj3.github.io/post/curse_dimension/</guid>
+      <description>&lt;p&gt;Have you ever found yourself stuck in the middle of a problem having a large number of dimensions? You keep on trying harder and harder to come up with a solution that would satisfy all the dimensions of the problem. Still, every time one or another dimension makes ur efforts look futile! It turns out that you can solve a problem very efficiently when presented with not more than 2 or 3 dimensions. Nevertheless, this world is not kind to us every time! You might find yourself struggling amidst a problem, thinking&amp;hellip;&lt;/p&gt;
+&lt;p&gt;Read more at: &lt;a href=&#34;https://medium.com/vlgiitr/the-curse-of-dimensionality-15f950e519d2&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://medium.com/vlgiitr/the-curse-of-dimensionality-15f950e519d2&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
