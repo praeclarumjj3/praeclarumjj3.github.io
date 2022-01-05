@@ -5,12 +5,22 @@
     <link>https://praeclarumjj3.github.io/post/</link>
       <atom:link href="https://praeclarumjj3.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     <description>Posts</description>
-    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Fri, 26 Nov 2021 00:00:00 +0000</lastBuildDate>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Tue, 04 Jan 2022 00:00:00 +0000</lastBuildDate>
     <image>
       <url>https://praeclarumjj3.github.io/media/icon_hud166e63c6d63b20b4040daaa47de5209_74785_512x512_fill_lanczos_center_3.png</url>
       <title>Posts</title>
       <link>https://praeclarumjj3.github.io/post/</link>
     </image>
+    
+    <item>
+      <title>Summer Diaries: Intern Diary of an Undergrad DL Researcher</title>
+      <link>https://praeclarumjj3.github.io/post/summer_diary_wo/</link>
+      <pubDate>Tue, 04 Jan 2022 00:00:00 +0000</pubDate>
+      <guid>https://praeclarumjj3.github.io/post/summer_diary_wo/</guid>
+      <description>&lt;p&gt;This summer, I worked as a remote research intern at SHI Lab @ University of Oregon (UO) and Picsart AI Research (PAIR). I joined the SHI Lab to work with Professor Humphrey Shi in November 2020 during my second year and continued my work there during the summers, and I joined PAIR during the summers (June 2021). My research focused on the field of Computer Vision during both my internships.&lt;/p&gt;
+&lt;p&gt;Read more about my intern experience at: &lt;a href=&#34;http://watchout.iitr.ac.in/2022/01/summer-diaries-jitesh-jain&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;http://watchout.iitr.ac.in/2022/01/summer-diaries-jitesh-jain&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>The Contemporary Overthinking Problem</title>
