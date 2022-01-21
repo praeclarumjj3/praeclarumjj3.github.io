@@ -30,10 +30,10 @@
   
     
   
-  <meta name="description" content="Deep Learning Undergrad Researcher at Picsart" />
+  <meta name="description" content="This paper argues that incorporating semantic information of the image into pretrained hierarchical transformer-based backbones while finetuning improves the performance considerably. To achieve this, we propose SeMask, a simple and effective framework that incorporates semantic information into the encoder with the help of a semantic attention operation." />
 
   
-  <link rel="alternate" hreflang="en-us" href="https://praeclarumjj3.github.io/tag/deep-learning/" />
+  <link rel="alternate" hreflang="en-us" href="https://praeclarumjj3.github.io/publication/semask/" />
 
   
 
@@ -268,8 +268,6 @@
   
 
   
-    <link rel="alternate" href="/tag/deep-learning/index.xml" type="application/rss+xml" title="Jitesh Jain" />
-  
 
   
     <link rel="manifest" href="/manifest.webmanifest" />
@@ -278,7 +276,7 @@
   <link rel="icon" type="image/png" href="/media/icon_hud166e63c6d63b20b4040daaa47de5209_74785_32x32_fill_lanczos_center_3.png" />
   <link rel="apple-touch-icon" type="image/png" href="/media/icon_hud166e63c6d63b20b4040daaa47de5209_74785_180x180_fill_lanczos_center_3.png" />
 
-  <link rel="canonical" href="https://praeclarumjj3.github.io/tag/deep-learning/" />
+  <link rel="canonical" href="https://praeclarumjj3.github.io/publication/semask/" />
 
   
   
@@ -289,42 +287,92 @@
   
   
     
-    
   
   
-  <meta property="twitter:card" content="summary" />
+  <meta property="twitter:card" content="summary_large_image" />
   
     <meta property="twitter:site" content="@praeclarumjj" />
     <meta property="twitter:creator" content="@praeclarumjj" />
   
   <meta property="og:site_name" content="Jitesh Jain" />
-  <meta property="og:url" content="https://praeclarumjj3.github.io/tag/deep-learning/" />
-  <meta property="og:title" content="Deep Learning | Jitesh Jain" />
-  <meta property="og:description" content="Deep Learning Undergrad Researcher at Picsart" /><meta property="og:image" content="https://praeclarumjj3.github.io/media/icon_hud166e63c6d63b20b4040daaa47de5209_74785_512x512_fill_lanczos_center_3.png" />
-    <meta property="twitter:image" content="https://praeclarumjj3.github.io/media/icon_hud166e63c6d63b20b4040daaa47de5209_74785_512x512_fill_lanczos_center_3.png" /><meta property="og:locale" content="en-us" />
+  <meta property="og:url" content="https://praeclarumjj3.github.io/publication/semask/" />
+  <meta property="og:title" content="SeMask: Semantically Masked Transformers for Semantic Segmentation | Jitesh Jain" />
+  <meta property="og:description" content="This paper argues that incorporating semantic information of the image into pretrained hierarchical transformer-based backbones while finetuning improves the performance considerably. To achieve this, we propose SeMask, a simple and effective framework that incorporates semantic information into the encoder with the help of a semantic attention operation." /><meta property="og:image" content="https://praeclarumjj3.github.io/publication/semask/featured.png" />
+    <meta property="twitter:image" content="https://praeclarumjj3.github.io/publication/semask/featured.png" /><meta property="og:locale" content="en-us" />
   
     
-      <meta property="og:updated_time" content="2021-05-19T00:00:00&#43;00:00" />
+      <meta
+        property="article:published_time"
+        content="2021-12-23T00:00:00&#43;00:00"
+      />
     
+    <meta property="article:modified_time" content="2021-12-23T00:00:00&#43;00:00">
+  
+
+  
+
+
+    
+
+
+
+
+
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://praeclarumjj3.github.io/publication/semask/"
+  },
+  "headline": "SeMask: Semantically Masked Transformers for Semantic Segmentation",
+  
+  "image": [
+    "https://praeclarumjj3.github.io/publication/semask/featured.png"
+  ],
+  
+  "datePublished": "2021-12-23T00:00:00Z",
+  "dateModified": "2021-12-23T00:00:00Z",
+  
+  "author": {
+    "@type": "Person",
+    "name": "Jitesh Jain"
+  },
+  
+  "publisher": {
+    "@type": "Organization",
+    "name": "Jitesh Jain",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://praeclarumjj3.github.io/media/icon_hud166e63c6d63b20b4040daaa47de5209_74785_192x192_fill_lanczos_center_3.png"
+    }
+  },
+  "description": "This paper argues that incorporating semantic information of the image into pretrained hierarchical transformer-based backbones while finetuning improves the performance considerably. To achieve this, we propose SeMask, a simple and effective framework that incorporates semantic information into the encoder with the help of a semantic attention operation."
+}
+</script>
+
+  
+
+  
+
   
 
   
 
 
 
-  
-
-  
 
 
-
-
-
-  <title>Deep Learning | Jitesh Jain</title>
+  <title>SeMask: Semantically Masked Transformers for Semantic Segmentation | Jitesh Jain</title>
 </head>
 
 
-<body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" class="page-wrapper   "  >
+<body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" class="page-wrapper   " data-wc-page-id="d0987b7d684803a0774645e197d86da9" >
 
   
   
@@ -780,87 +828,98 @@
 
 
 
-
-
-
+<div class="pub">
 
   
 
-  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   
   
     
   
-<div class="universal-wrapper pt-3">
-  <h1>Deep Learning</h1>
+
+
+<div class="article-container pt-3">
+  <h1>SeMask: Semantically Masked Transformers for Semantic Segmentation</h1>
 
   
 
   
+
+
+<div class="article-metadata">
+
+  
+  
+  
+  
+  <div>
+    
+
+  <span class="author-highlighted">
+      Jitesh Jain</span>, <span >
+      Anukriti Singh</span>, <span >
+      Nikita Orlov</span>, <span >
+      Zilong Huang</span>, <span >
+      Jiachen Li</span>, <span >
+      Steven Walton</span>, <span >
+      Humphrey Shi</span>
+  </div>
+  
+  
+
+  
+  <span class="article-date">
+    
+    
+      
+    
+    December 2021
+  </span>
+  
+
+  
+
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+  
+
 </div>
 
-
-
-<div class="universal-wrapper">
-  
-
-  
-  
-    
-      
-
-
-
-
-
-
-
   
 
 
 
 
-
-
-
+<div class="btn-links mb-3">
   
-
-
-<div class="media stream-item">
-  <div class="media-body">
-
-    <div class="section-subheading article-title mb-0 mt-0">
-      <a href="/project/aot-gan-experiments/" >AOT-GAN Experiments</a>
-    </div>
-
-    
-    <a href="/project/aot-gan-experiments/"  class="summary-link">
-      <div class="article-style">
-        Experiments conducted with AOT-GAN
-      </div>
-    </a>
-    
-
-    <div class="stream-meta article-metadata">
-
-      
-
-      
-    </div>
-
-    
-    <div class="btn-links">
-      
-
-
-
-
-
-
-
-
   
-
 
 
 
@@ -870,7 +929,36 @@
   
     
   
-<a class="btn btn-outline-primary btn-page-header btn-sm" href="https://github.com/praeclarumjj3/AOT-GAN-Experiments" target="_blank" rel="noopener">
+<a class="btn btn-outline-primary btn-page-header" href="https://arxiv.org/abs/2112.12782" target="_blank" rel="noopener">
+  Preprint
+</a>
+
+
+
+
+  
+    
+  
+
+
+
+<a class="btn btn-outline-primary btn-page-header" href="https://arxiv.org/pdf/2112.12782.pdf" target="_blank" rel="noopener">
+  PDF
+</a>
+
+
+
+<a href="#" class="btn btn-outline-primary btn-page-header js-cite-modal"
+        data-filename="/publication/semask/cite.bib">
+  Cite
+</a>
+
+
+  
+  
+    
+  
+<a class="btn btn-outline-primary btn-page-header" href="https://github.com/Picsart-AI-Research/SeMask-Segmentation" target="_blank" rel="noopener">
   Code
 </a>
 
@@ -887,300 +975,377 @@
 
 
 
-    </div>
-    
+</div>
 
-  </div>
-  <div class="ml-3">
-    
+
+</div>
+
+
+<div class="article-header article-container featured-image-wrapper mt-4 mb-4" style="max-width: 720px; max-height: 487px;">
+  <div style="position: relative">
+    <img src="/publication/semask/featured_hu0a326b72d19f1fdebdba480e4296c313_301071_720x0_resize_lanczos_3.png" alt="" class="featured-image">
     
   </div>
 </div>
 
-    
-  
-    
-      
 
 
-
-
-
-
-
-  
-
-
-
-
-
-
-
-  
-
-
-<div class="media stream-item">
-  <div class="media-body">
-
-    <div class="section-subheading article-title mb-0 mt-0">
-      <a href="/project/backbone/" >BackBone Profile</a>
-    </div>
+  <div class="article-container">
 
     
-    <a href="/project/backbone/"  class="summary-link">
-      <div class="article-style">
-        Inference stats for various backbone networks
+    <h3>Abstract</h3>
+    <p class="pub-abstract">Finetuning a pretrained backbone in the encoder part of an image transformer network has been the traditional approach for the semantic segmentation task. However, such an approach leaves out the semantic context that an image provides during the encoding stage. This paper argues that incorporating semantic information of the image into pretrained hierarchical transformer-based backbones while finetuning improves the performance considerably. To achieve this, we propose SeMask, a simple and effective framework that incorporates semantic information into the encoder with the help of a semantic attention operation. In addition, we use a lightweight semantic decoder during training to provide supervision to the intermediate semantic prior maps at every stage. Our experiments demonstrate that incorporating semantic priors enhances the performance of the established hierarchical encoders with a slight increase in the number of FLOPs. We provide empirical proof by integrating SeMask into each variant of the Swin-Transformer as our encoder paired with different decoders. Our framework achieves a new state-of-the-art of 58.22% mIoU on the ADE20K dataset and improvements of over 3% in the mIoU metric on the Cityscapes dataset. The code and checkpoints are publicly available at <a href="https://github.com/Picsart-AI-Research/SeMask-Segmentation">this https URL</a>.</p>
+    
+
+    
+    
+    <div class="row">
+      <div class="col-md-1"></div>
+      <div class="col-md-10">
+        <div class="row">
+          <div class="col-12 col-md-3 pub-row-heading">Type</div>
+          <div class="col-12 col-md-9">
+            <a href="/publication/#3">
+              Preprint
+            </a>
+          </div>
+        </div>
       </div>
-    </a>
-    
-
-    <div class="stream-meta article-metadata">
-
-      
-
-      
+      <div class="col-md-1"></div>
     </div>
-
-    
-    <div class="btn-links">
-      
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-
-  
-  
-    
-  
-<a class="btn btn-outline-primary btn-page-header btn-sm" href="https://github.com/praeclarumjj3/BackBone-Profile" target="_blank" rel="noopener">
-  Code
-</a>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    </div>
+    <div class="d-md-none space-below"></div>
     
 
-  </div>
-  <div class="ml-3">
     
-    
-  </div>
-</div>
-
-    
-  
-    
-      
-
-
-
-
-
-
-
-  
-
-
-
-
-
-
-
-  
-
-
-<div class="media stream-item">
-  <div class="media-body">
-
-    <div class="section-subheading article-title mb-0 mt-0">
-      <a href="/project/chatbot/" >ChatBot with Pytorch</a>
-    </div>
-
-    
-    <a href="/project/chatbot/"  class="summary-link">
-      <div class="article-style">
-        ChatBot made using Pytorch
+    <div class="row">
+      <div class="col-md-1"></div>
+      <div class="col-md-10">
+        <div class="row">
+          <div class="col-12 col-md-3 pub-row-heading">Publication</div>
+          <div class="col-12 col-md-9">Arxiv Preprint</div>
+        </div>
       </div>
-    </a>
-    
-
-    <div class="stream-meta article-metadata">
-
-      
-
-      
+      <div class="col-md-1"></div>
     </div>
+    <div class="d-md-none space-below"></div>
+    
+
+    <div class="space-below"></div>
+
+    <div class="article-style"></div>
 
     
-    <div class="btn-links">
-      
 
 
 
 
 
 
-
-
+<div class="article-tags">
   
-
-
-
-
-
-
+  <a class="badge badge-light" href="/tag/semantic-segmentation/">Semantic-Segmentation</a>
   
-  
-    
-  
-<a class="btn btn-outline-primary btn-page-header btn-sm" href="https://github.com/praeclarumjj3/Chatbot-with-Pytorch" target="_blank" rel="noopener">
-  Code
-</a>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    </div>
-    
-
-  </div>
-  <div class="ml-3">
-    
-    
-  </div>
 </div>
 
-    
-  
+
+
+<div class="share-box" aria-hidden="true">
+  <ul class="share">
     
       
-
-
-
-
-
-
-
-  
-
-
-
-
-
-
-
-  
-
-
-<div class="media stream-item">
-  <div class="media-body">
-
-    <div class="section-subheading article-title mb-0 mt-0">
-      <a href="/project/vq_vae/" >VQ-VAE on MNIST</a>
-    </div>
-
-    
-    <a href="/project/vq_vae/"  class="summary-link">
-      <div class="article-style">
-        Pytorch Implementation for VQ-VAE on MNIST dataset.
-      </div>
-    </a>
-    
-
-    <div class="stream-meta article-metadata">
-
       
-
       
-    </div>
-
-    
-    <div class="btn-links">
+        
       
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-
-  
-  
+      
+      
+      <li>
+        <a href="https://twitter.com/intent/tweet?url=https://praeclarumjj3.github.io/publication/semask/&amp;text=SeMask:%20Semantically%20Masked%20Transformers%20for%20Semantic%20Segmentation" target="_blank" rel="noopener" class="share-btn-twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+      </li>
     
-  
-<a class="btn btn-outline-primary btn-page-header btn-sm" href="https://github.com/praeclarumjj3/VQ-VAE-on-MNIST" target="_blank" rel="noopener">
-  Code
-</a>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    </div>
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.facebook.com/sharer.php?u=https://praeclarumjj3.github.io/publication/semask/&amp;t=SeMask:%20Semantically%20Masked%20Transformers%20for%20Semantic%20Segmentation" target="_blank" rel="noopener" class="share-btn-facebook">
+          <i class="fab fa-facebook"></i>
+        </a>
+      </li>
     
-
-  </div>
-  <div class="ml-3">
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="mailto:?subject=SeMask:%20Semantically%20Masked%20Transformers%20for%20Semantic%20Segmentation&amp;body=https://praeclarumjj3.github.io/publication/semask/" target="_blank" rel="noopener" class="share-btn-email">
+          <i class="fas fa-envelope"></i>
+        </a>
+      </li>
     
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.linkedin.com/shareArticle?url=https://praeclarumjj3.github.io/publication/semask/&amp;title=SeMask:%20Semantically%20Masked%20Transformers%20for%20Semantic%20Segmentation" target="_blank" rel="noopener" class="share-btn-linkedin">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+      </li>
     
-  </div>
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="whatsapp://send?text=SeMask:%20Semantically%20Masked%20Transformers%20for%20Semantic%20Segmentation%20https://praeclarumjj3.github.io/publication/semask/" target="_blank" rel="noopener" class="share-btn-whatsapp">
+          <i class="fab fa-whatsapp"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://service.weibo.com/share/share.php?url=https://praeclarumjj3.github.io/publication/semask/&amp;title=SeMask:%20Semantically%20Masked%20Transformers%20for%20Semantic%20Segmentation" target="_blank" rel="noopener" class="share-btn-weibo">
+          <i class="fab fa-weibo"></i>
+        </a>
+      </li>
+    
+  </ul>
 </div>
 
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+
+
+
+  
+  
+  
     
   
+  
+  
+  <div class="media author-card content-widget-hr">
+    
+      
+      <a href="https://praeclarumjj3.github.io"><img class="avatar mr-3 avatar-circle" src="/authors/admin/avatar_hub6775fe11667e12e17e1975fff9a9f34_113911_270x270_fill_q75_lanczos_center.jpg" alt="Jitesh Jain"></a>
+    
+
+    <div class="media-body">
+      <h5 class="card-title"><a href="https://praeclarumjj3.github.io">Jitesh Jain</a></h5>
+      <h6 class="card-subtitle">3rd Year CS Undergraduate</h6>
+      <p class="card-text">I am currently working on semantic segmentation and image inpanting. I am always eager to explore more AI research fields. Ping me if you want to collaborate!</p>
+      <ul class="network-icon" aria-hidden="true">
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+    <li>
+      <a href="mailto:jitesh_j@cs.iitr.ac.in" >
+        <i class="fas fa-envelope"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://twitter.com/praeclarumjj" target="_blank" rel="noopener">
+        <i class="fab fa-twitter"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://github.com/praeclarumjj3" target="_blank" rel="noopener">
+        <i class="fab fa-github"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://scholar.google.com/citations?view_op=list_works&amp;hl=en&amp;user=nygnfNwAAAAJ" target="_blank" rel="noopener">
+        <i class="ai ai-google-scholar"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://www.facebook.com/praeclarumjj" target="_blank" rel="noopener">
+        <i class="fab fa-facebook"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://jitesh-j.medium.com/" target="_blank" rel="noopener">
+        <i class="fab fa-medium"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="/files/cv.pdf" >
+        <i class="ai ai-cv"></i>
+      </a>
+    </li>
+  
+</ul>
+
+    </div>
+  </div>
+
+
+  
+    
+
+
+
+
+  
+    
+
+
+
+
+  
+    
+
+
+
+
+  
+    
+
+
+
+
+  
+    
+
+
+
+
+  
+    
+
+
+
 
   
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+  </div>
 </div>
   </div>
 
