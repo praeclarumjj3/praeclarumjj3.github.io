@@ -5,12 +5,23 @@
     <link>https://praeclarumjj3.github.io/project/</link>
       <atom:link href="https://praeclarumjj3.github.io/project/index.xml" rel="self" type="application/rss+xml" />
     <description>Projects</description>
-    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Wed, 19 May 2021 00:00:00 +0000</lastBuildDate>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Tue, 10 May 2022 00:00:00 +0000</lastBuildDate>
     <image>
       <url>https://praeclarumjj3.github.io/media/icon_hud166e63c6d63b20b4040daaa47de5209_74785_512x512_fill_lanczos_center_3.png</url>
       <title>Projects</title>
       <link>https://praeclarumjj3.github.io/project/</link>
     </image>
+    
+    <item>
+      <title>Neural Style Transfer: A Technical Report </title>
+      <link>https://praeclarumjj3.github.io/project/nst-tech/</link>
+      <pubDate>Tue, 10 May 2022 00:00:00 +0000</pubDate>
+      <guid>https://praeclarumjj3.github.io/project/nst-tech/</guid>
+      <description>&lt;p&gt;As a part of the &lt;code&gt;CSN-526: Machine Learning&lt;/code&gt; Course Project, we worked on studying the effects of various factors like feature extractors, optimizers, loss functions and initialization techniques on the neural style transfer task.&lt;/p&gt;
+&lt;p&gt;We also proposed the use of pseudo ground truths for evaluating the performance under different settings.&lt;/p&gt;
+&lt;p&gt;For more info, please see the Code on &lt;code&gt;GitHub&lt;/code&gt;.&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>AOT-GAN Experiments</title>

@@ -33,6 +33,17 @@
     </item>
     
     <item>
+      <title>Neural Style Transfer: A Technical Report </title>
+      <link>https://praeclarumjj3.github.io/project/nst-tech/</link>
+      <pubDate>Tue, 10 May 2022 00:00:00 +0000</pubDate>
+      <guid>https://praeclarumjj3.github.io/project/nst-tech/</guid>
+      <description>&lt;p&gt;As a part of the &lt;code&gt;CSN-526: Machine Learning&lt;/code&gt; Course Project, we worked on studying the effects of various factors like feature extractors, optimizers, loss functions and initialization techniques on the neural style transfer task.&lt;/p&gt;
+&lt;p&gt;We also proposed the use of pseudo ground truths for evaluating the performance under different settings.&lt;/p&gt;
+&lt;p&gt;For more info, please see the Code on &lt;code&gt;GitHub&lt;/code&gt;.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Summer Diaries: Intern Diary of an Undergrad DL Researcher</title>
       <link>https://praeclarumjj3.github.io/post/summer_diary_wo/</link>
       <pubDate>Tue, 04 Jan 2022 00:00:00 +0000</pubDate>
