@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Image-Inpainting | Jitesh Jain</title>
+    <link>https://praeclarumjj3.github.io/tag/image-inpainting/</link>
+      <atom:link href="https://praeclarumjj3.github.io/tag/image-inpainting/index.xml" rel="self" type="application/rss+xml" />
+    <description>Image-Inpainting</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Fri, 05 Aug 2022 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://praeclarumjj3.github.io/media/icon_hud166e63c6d63b20b4040daaa47de5209_74785_512x512_fill_lanczos_center_3.png</url>
+      <title>Image-Inpainting</title>
+      <link>https://praeclarumjj3.github.io/tag/image-inpainting/</link>
+    </image>
+    
+    <item>
+      <title>Keys to Better Image Inpainting: Structure and Texture Go Hand in Hand</title>
+      <link>https://praeclarumjj3.github.io/publication/fcf-inpainting/</link>
+      <pubDate>Fri, 05 Aug 2022 00:00:00 +0000</pubDate>
+      <guid>https://praeclarumjj3.github.io/publication/fcf-inpainting/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
