@@ -1,11 +1,13 @@
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
   <title>CQFormer</title>
   <link rel="stylesheet" href="./bootstrap.min.css">
   <link rel="stylesheet" href="./temp.css">
-  <link rel="stylesheet" href="./FcF_style.css">
-  <link href="icon.png" rel="icon">
+  <link rel="stylesheet" href="./CQFormer_style.css">
+  <link rel="icon" href="unique.png">
 </head>
 
 
@@ -29,7 +31,7 @@
     </tr>
     <tr>
         <td colspan="3" align="center"><h6> 
-          <sup>1</sup> SHI Lab @ University of Oregon &nbsp; &nbsp;   
+          <sup>1</sup> SHI Lab @ U of Oregon & UIUC &nbsp; &nbsp;   
           <sup>2</sup> Picsart AI Research &nbsp; &nbsp;
           <sup>3</sup> IIT Roorkee &nbsp; &nbsp; 
         </h6> </td>
@@ -42,7 +44,7 @@
       <td colspan="3" align="center"><h5><div class="row justify-content-center" align="center" >
         <a href="https://github.com/SHI-Labs/FcF-Inpainting" target="_blank"> 
           <div class="img-with-text">
-            <img src="./paper.png" height="90px" /><br><br>
+            <img src="./cq_paper.png" height="90px" /><br><br>
             <p>ArXiv <br> Paper</p>
           </div>
         </a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -54,7 +56,14 @@
           </div>
         </a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
-        <a href="#BibTeX" target="_blank"> 
+        <a href="https://github.com/SHI-Labs/FcF-Inpainting" target="_blank"> 
+          <div class="img-with-text">
+            <img src="./huggingface_logo.svg" height="90px" /><br><br>
+            <p>HuggingFace <br> Space</p>
+          </div>
+        </a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+        <a href="#BibTeX" target="_self"> 
           <div class="img-with-text">
             <img src="./bibtex.png" height="90px" /><br><br>
             <p>Citation <br> BibTeX</p>
@@ -69,9 +78,9 @@
 
   <br>
   <div class="text" style="text-align: left;">
-    <p><img src="./comparison.svg" style="display: block;margin-left: auto;margin-right: auto;max-width:60%" align="center"></p>
+    <p><img src="./comparison.svg" style="display: block;margin-left: auto;margin-right: auto;max-width:50%" align="center"></p>
       <h2>Abstract</h2>
-      <p>Deep image inpainting has made impressive progress with recent advances in image generation and processing algorithms. We claim that the performance of inpainting algorithms can be better judged by the generated structures and textures. Structures refer to the generated object boundary or novel geometric structures within the hole, while texture refers to high-frequency details, especially man-made repeating patterns filled inside the structural regions. We believe that better structures are usually obtained from a coarse-to-fine GAN-based generator network while repeating patterns nowadays can be better modeled using state-of-the-art high-frequency fast fourier convolutional layers. In this paper, we propose a novel inpainting network combining the advantages of the two designs. Therefore, our model achieves a remarkable visual quality to match state-of-the-art performance in both structure generation and repeating texture synthesis using a single network. Extensive experiments demonstrate the effectiveness of the method, and our conclusions further highlight the two critical factors of image inpainting quality, structures, and textures, as the future design directions of inpainting networks.</p>
+      <p>image segmentation include scene parsing, panoptic segmentation, and, more recently, universal architectures. However, existing approaches are not truly unified, as they need to train three models individually on the panoptic, instance, and semantic segmentation to achieve the best performance. Ideally, a truly universal framework must only be trained once and achieve SOTA performance on all three image segmentation tasks. To that end, we propose our CQFormer framework, which unifies image segmentation with a multi-task train-once policy, and outperforms existing specialized models on all three tasks. We first propose a task-conditioned joint training strategy that enables training on ground truths of each domain (panoptic, instance, and semantic segmentation) within a single training process. Secondly, we propose using a paired query-text contrastive loss during training to establish better inter-class boundaries and inter-task distinction. Thirdly, we introduce a task-token input to make our model conditioned on the task at hand. Our experiments demonstrate the superior performance of our CQFormer compared to existing individually trained models on three benchmark datasets. Most notably, we achieve significant improvements with Swin-L over Mask2Former on the ADE20K (+0.9% mIoU), Cityscapes (+1.9% AP), and COCO (+0.5% PQ) datasets.</p>
   </div>
 </div>
 
@@ -79,15 +88,18 @@
 
 <div class="container">
   <h2>Method</h2>
-  <p><img src="./fcf_gan.svg" style="display: block;margin-left: auto;margin-right: auto;max-width:80%" class="center"></p>
+  <p><img src="./cqformer.svg" style="display: block;margin-left: auto;margin-right: auto;max-width:80%" class="center"></p>
     <div class="overview">
     <p>
-      In this paper, we revisited the core design ideas of stateof-the-art deep inpainting networks. 
-      We propose an intuitive and effective inpainting architecture that augments the powerful comodulated StyleGAN2 generator with the high receptiveness ability of FFC to achieve equally good performance on both textures and structures.
-      Specifically, we generate image structures in a coarse-to-fine StyleGAN-based generation scheme. 
-      Meanwhile, we merge between the generated coarse features and the skip features from the encoder and pass them through a Fast Fourier Synthesis (FaF-Syn) module to better generate repeating textures. 
-      The convolutional layers inside FaF-Syn are co-modulated using the encoded features and style mapping of the latent noise vector.
-      Our idea is simple yet effective, making structures and textures well synthesized within a single network</strong>.
+      We propose a truly Universal Task-Conditioned Contrastive Query-based (CQFormer) framework, which when trained
+      only once, outperforms the existing state-of-the-art methods on all three image segmentation tasks. 
+      We introduce a task input to condition the model on the task in focus, making our architecture task-dynamic. 
+      Furthermore, we jointly train our framework by uniformly sampling ground truths from all three image segmentation domains during training.
+      Following the recent success of end-to-end query-based transformer frameworks in the computer vision domain, 
+      we also formulate our framework as query-based with an additional contrastive loss on the queries during training. 
+      Specifically, we initialize our queries as repetitions of the task token and consequently compute a query-text paired
+      contrastive loss with the text derived from the corresponding ground-truth label for the sampled task. 
+      We hypothesize that a contrastive loss on the queries helps in making the model more task-sensitive.</strong>
     </p>
     </div>
 </div>
@@ -95,41 +107,73 @@
 <!-- <br> -->
 
 <div class="container">
-  <h2>Qualitative Results</h2>
-  <p><img src="./places_qual_1.svg" style="display: block;margin-left: auto;margin-right: auto;max-width:100%" class="center"></p>
+  <h2>Task Conditioned Joint Training</h2>
+  <p><img src="./text_gen.svg" style="display: block;margin-left: auto;margin-right: auto;max-width:100%" class="center"></p>
     <div class="pipelines" style="text-align: left;">
       <p>
-        Our model preserves much better repeating textures compared with CoModGAN. CoModGAN does not have any attention-related modules, so
-        high-frequency features cannot be effectively reused given
-        the limited receptive field. Our model enlarged the receptive field using fast Fourier layers and effectively rendered source textures on newly generated random structures. Meanwhile, ours also outperforms LaMa in generating object boundaries and structures. It is evident that
-        LaMa generates fading-out artifacts when the hole reaches
-        the image or object boundary. LaMa cannot hallucinate
-        good structural information given large holes across longer
-        pixel ranges. Ours, however, leverages the advantages of the
-        coarse-to-fine generator to synthesize a clear shape boundary of objects in a better manner. In conclusion, our model
-        integrates the advantages of two state-of-the-arts and simultaneously generates remarkable structures and textures.
+        We tackle the multi-task train-once challenge for image segmentation using a task-conditioned joint training strategy. 
+        Particularly, we first uniformly sample the \(\texttt{task}\) domain \(\in\) {panoptic, semantic, instance} for the GT label. 
+        We realize the unification potential of panoptic annotations by deriving the task-specific labels from the panoptic annotations, 
+        thus, using only one set of annotations. For e.g., when \(\texttt{task}\) is semantic/instance segmentation, we derive
+        the corresponding label from the GT panoptic annotation for the sampled image.
+        Next, we extract a set of binary masks for each category present in the image from the task-specific GT label, i.e., 
+        semantic task guarantees only one amorphous binary mask for each class present in the image, whereas, instance task 
+        signifies non-overlapping binary masks for only thing classes, ignoring the stuff regions. Panoptic task denotes a 
+        single amorphous mask for stuff classes and non-overlapping masks for thing classes. Subsequently,
+        we iterate over the set of masks to create a list of text entries (\(\mathbf{T}_\text{list}\))
+        with a template “a photo with a {\(\texttt{CLS}\)}”, where \(\texttt{CLS}\) is the class name for the corresponding binary mask object. 
+        The number of binary masks per sample varies over the dataset. Therefore, we pad(\(\mathbf{T}_\text{list}\)) with “a/an {\(\texttt{task}\)} photo”
+        entries to obtain a padded list (\(\mathbf{T}_\text{pad}\)) with text queries of
+        constant length. We are motivated to represent the text
+        queries as a padded list keeping in mind the meaning of the object queries, which represent the number of objects
+        present in an image. We later use (\(\mathbf{T}_\text{pad}\)) to calculate a object text query contrastive loss 
+        over the object queries (\(\mathbf{Q}\)) make our model sensitive to the inter-task differences.
       </p>
-      <details>
-        <summary style="font-size:24px;">More Scene Completion Results</summary>
-        <p><img src="./places_qual_2.svg" style="display: block;margin-left: auto;margin-right: auto;max-width:100%" class="center"></p>
+      <p>
+        We condition our architecture on the task using a task input with the template “the task is {\(\texttt{task}\)}”, which
+        is tokenized and mapped to task-token (\(\mathbf{Q}_\text{task}\)). We use \(\mathbf{Q}_\text{task}\)
+        to initialize and condition the object queries (\(\mathbf{Q}\)) on the \(\texttt{task}\).
+      </p>
+    </div>
+</div>
+
+<div class="container">
+  <h2>Results</h2>
+  <p><img src="./plots.svg" style="display: block;margin-left: auto;margin-right: auto;max-width:80%" class="center"></p>
+    <div class="pipelines" style="text-align: left;">
+      <p>
+        We experiment on three widely used datasets: COCO, Cityscapes and ADE20K, that support all three: 
+        semantic, instance, and panoptic segmentation tasks.
+        Our CQFormer, trained only once, outperforms the individually trained Mask2Former (the current SOTA universal architecture).
+      </p>
+        <details>
+          <summary style="font-size:24px;">Task Token</summary>
+          <p><img src="./task.png" style="display: block;margin-left: auto;margin-right: auto;max-width:40%" class="center"></p>
+          <p>
+            We demonstrate that our framework is sensitive to the task token input by setting the value of {\(\texttt{task}\)}
+            during inference as panoptic, instance, or semantic. We report results with our Swin-L\(^{\dagger}\) CQFormer trained on ADE20K dataset.
+            We observe a significant drop in the PQ and mIoU metrics when \(\texttt{task}\) is instance compared to panoptic. 
+            Moreover, the PQ\(^\text{St}\) drops to 0.2%, and there is only a -0.1% drop on PQ\(^\text{Th}\) metric, 
+            proving that the network learns to focus majorly on the distinct “thing” instances when the \(\texttt{task}\) is instance. 
+            Similarly, there is a sizable drop in the PQ, PQ\(^\textbf{Th}\) and AP metrics for the semantic task with PQ\(^\textbf{St}\) only 
+            dropping by -0.2% showing that our framework can segment out amorphous masks for “stuff” regions but does not predict different masks 
+            for “thing” objects. Therefore, our model can dynamically learn the task-specific features during training which is critical for a train-once multi-task architecture.
+          </p>
         </details>
         <details>
-          <summary style="font-size:24px;">Texture Completion Results</summary>
-          <p><img src="./texture_qual.svg" style="display: block;margin-left: auto;margin-right: auto;max-width:100%" class="center"></p>
-          </details>
-        <details>
-          <summary style="font-size:24px;">Face Inpainting Results</summary>
-          <p>While testing on face images, especially
-            when we covered half of the faces, LaMa generates fadingout hairs on the forehead, and CoModGAN may use others' eyes to complete the images. Though they both obtain
-            good numbers in the quantitative results, some drawbacks
-            are reflected, making both models not robust enough. Ours
-            demonstrates a sound synthesis of hair and forehead shape
-            and consistent eye and eyebrow appearance like LaMa. We
-            can keep concluding that our proposed model works consistently well on both image structures and consistent textures.</p>
-          <p><img src="./face_qual.svg" style="display: block;margin-left: auto;margin-right: auto;max-width:100%" class="center"></p>
+          <summary style="font-size:24px;">Class Consistent Predictions</summary>
+          <p><img src="./class_fig.svg" style="display: block;margin-left: auto;margin-right: auto;max-width:100%" class="center"></p>
+          <p>Our query-text contrastive
+            loss helps us establish an implicit inter-task separation during training and reduces the category inconsistency in the
+            final predictions. Mask2Former incorrectly predicts “wall”
+            as “fence” in the first row, “vegetation” as “terrain”, and
+            “terrain” as “sidewalk”. At the same time, our CQFormer
+            produces more accurate predictions in regions (inside <span style='color:blue;'>blue</span>
+            boxes) with similar classes.</p>
           </details>
     </div>
 </div>
+
 <br>
 
 
@@ -138,13 +182,13 @@
 
 <div class="container" id="BibTeX">
   <h2>Citation</h2>
-  <p>If you found the demo useful in your research, please consider starring ⭐ us on GitHub and citing 📚 us in your research!</p>
+  <p>If you found CQFormer useful in your research, please consider starring ⭐ us on GitHub and citing 📚 us in your research!</p>
   <div style="font-weight:normal; background-color:  #F0F0F0;">
     <tt>
-    @article{jain2022keys, <br>
+    @article{jain2022unique, <br>
       <div style="margin-left: 5%; font-weight:normal; ">
-      title={Keys to Better Image Inpainting: Structure and Texture Go Hand in Hand}, <br>
-      author={Jitesh Jain and Yuqian Zhou and Ning Yu and Humphrey Shi}, <br>
+      title={UNIQUE: Universal Image Segmentation with Contrastive Query Transformer}, <br>
+      author={Jitesh Jain and Jiachen Li and MangTik Chiu and Ali Hassani and Nikita Orlov and Humphrey Shi}, <br>
       journal={arXiv}, <br>
       year={2022} <br>
     </div>
