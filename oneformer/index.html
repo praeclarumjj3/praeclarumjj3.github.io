@@ -1,0 +1,238 @@
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+  <title>OneFormer</title>
+  <link rel="stylesheet" href="./bootstrap.min.css">
+  <link rel="stylesheet" href="./temp.css">
+  <link rel="stylesheet" href="./OneFormer_style.css">
+  <link rel="icon" href="unique.png">
+</head>
+
+
+<body data-gr-c-s-loaded="true" data-new-gr-c-s-check-loaded="14.1043.0" data-gr-ext-installed="">
+
+  <!-- <span style='color:red;'>UNI</span><span style='color:blue;'>QUE</span>: Universal Image Segmentation with Contrastive Query Transformer -->
+
+<div class="container">
+  <table border="0" align="center">
+    <tbody><tr>
+      <td width="1500" height="80" align="center" valign="middle">
+      <span class="title"><h1 style="font-size:32px">OneFormer: One Transformer to Rule Universal Image Segmentation</h1></td>
+    </tr>
+    <tr>
+        <td colspan="3" align="center"><h4 style="font-size:20px">
+            <a href="https://praeclarumjj3.github.io/" target="_blank">Jitesh Jain<sup>1,3</sup></a>  &nbsp;  &nbsp;  &nbsp;  &nbsp;
+            <a href="https://chrisjuniorli.github.io/" target="_blank">Jiachen Li<sup>1*</sup></a>  &nbsp;  &nbsp;  &nbsp;  &nbsp;
+            <a href="https://www.linkedin.com/in/mtchiu/" target="_blank">MangTik Chiu<sup>1*</sup></a>  &nbsp;  &nbsp;  &nbsp;  &nbsp;
+            <a href="https://alihassanijr.com/" target="_blank">Ali Hassani<sup>1</sup></a>  &nbsp;  &nbsp;  &nbsp;  &nbsp;
+            <a href="https://www.linkedin.com/in/nukich74/" target="_blank">Nikita Orlov<sup>2</sup></a>  &nbsp;  &nbsp;  &nbsp;  &nbsp;
+            <a href="https://www.humphreyshi.com/home" target="_blank">Humphrey Shi<sup>1</sup></a> 
+        </h4></td>
+    </tr>
+    <tr>
+        <td colspan="3" height="30" align="center"><h6> 
+          <sup>1</sup> SHI Labs @ U of Oregon & UIUC &nbsp; &nbsp;   
+          <sup>2</sup> Picsart AI Research &nbsp; &nbsp;
+          <sup>3</sup> IIT Roorkee
+        </h6> </td>
+    </tr>
+    <br>
+    <tr>
+      <td colspan="3" height="40" align="center"><h7><sup>*</sup>Equal Contribution </h7> </td>
+  </tr>
+    <tr>
+      <td colspan="3" align="center"><h5><div class="row justify-content-center" align="center" >
+        <a href="https://github.com/SHI-Labs/OneFormer" target="_blank"> 
+          <div class="img-with-text">
+            <img src="./oneformer_paper.png" height="100px" /><br><br>
+            <p style="font-size: 16px">ArXiv <br> Paper</p>
+          </div>
+        </a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        
+        <a href="https://github.com/SHI-Labs/OneFormer" target="_blank"> 
+          <div class="img-with-text">
+            <img src="./github_icon.png" height="100px" /><br><br>
+            <p style="font-size: 16px">GitHub <br> Code</p>
+          </div>
+        </a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+        <!-- <a href="https://huggingface.co/spaces/shi-lab/OneFormer" target="_blank"> 
+          <div class="img-with-text">
+            <img src="./huggingface_logo.svg" height="100px" /><br><br>
+            <p style="font-size: 16px">HuggingFace <br> Space</p>
+          </div>
+        </a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -->
+
+        <a href="https://github.com/SHI-Labs/OneFormer/blob/main/colab/oneformer_colab.ipynb" target="_blank"> 
+          <div class="img-with-text">
+            <img src="./colab_icon.png" height="100px" /><br><br>
+            <p style="font-size: 16px">Colab <br> Demo</p>
+          </div>
+        </a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+        <a href="#BibTeX" target="_self"> 
+          <div class="img-with-text">
+            <img src="./bibtex.png" height="100px" /><br><br>
+            <p style="font-size: 16px">Citation <br> BibTeX</p>
+          </div>
+        </a>
+      
+      </div></h5></td>
+  </tr>
+  </tbody></table>
+
+  
+
+  <br>
+  <div class="text" style="text-align: left;">
+    <p><img src="./teaser.svg" style="display: block;margin-left: auto;margin-right: auto;max-width:100%" align="center"></p>
+      <h2 style="font-size: 26px; text-align: center">Abstract</h2>
+      <p>Universal Image Segmentation is not a new concept. Past attempts to unify image segmentation in 
+        the last decades include scene parsing, panoptic segmentation, and, more recently, new panoptic architectures. 
+        However, such panoptic architectures do not truly unify image segmentation because they need to be trained 
+        individually on the semantic, instance, or panoptic segmentation to achieve the best performance. 
+        Ideally, a truly universal framework should be trained only once and achieve SOTA performance across 
+        all three image segmentation tasks. To that end, we propose \modelname, a universal image segmentation 
+        framework that unifies segmentation with a multi-task train-once design. We first propose a task-conditioned 
+        joint training strategy that enables training on ground truths of each domain (semantic, instance, and 
+        panoptic segmentation) within a single multi-task training process. Secondly, we introduce a 
+        task token to condition our model on the task at hand, making our model task-dynamic to support multi-task 
+        training and inference. Thirdly, we propose using a query-text contrastive loss during training to 
+        establish better inter-task and inter-class distinctions. Notably, our single \modelname model outperforms 
+        specialized Mask2Former models across all three segmentation tasks on ADE20k, CityScapes, and COCO, 
+        despite the latter being trained on each of the three tasks individually with three times the resources. 
+        With new ConvNeXt and DiNAT backbones, we observe even more performance improvement. We believe \modelname is a 
+        significant step towards making image segmentation more universal and accessible.</p>
+  </div>
+</div>
+
+<br>
+
+<div class="container">
+  <h2 style="font-size: 26px">Method</h2>
+  <p><img src="./oneformer.svg" style="display: block;margin-left: auto;margin-right: auto;max-width:100%" class="center"></p>
+    <div class="overview">
+    <p>
+      We propose <b>OneFormer</b>, 
+      the first multi-task universal image segmentation framework based on transformers 
+      that need to be trained only once with a single universal architecture, a single model, 
+      and on a single dataset, to outperform existing frameworks across semantic, instance, and panoptic segmentation tasks, 
+      despite the latter need to be trained separately on each task using multiple times of the resources. 
+      We introduce a task input to condition the model on the task in focus, making our architecture task-guided for training, 
+      and task-dynamic for inference, all with a single model. 
+      Furthermore, we jointly train our framework by uniformly sampling ground truths from all three image segmentation domains during training.
+      Following the recent success of transformer-based frameworks in the computer vision domain, 
+      we also formulate our framework as query-based with an additional contrastive loss on the queries during training. 
+      Specifically, we initialize our queries as repetitions of the task token and consequently compute a query-text
+      contrastive loss with the text derived from the corresponding ground-truth label. 
+      We hypothesize that a contrastive loss on the queries helps in making the model more task-sensitive.</strong>
+    </p>
+    </div>
+</div>
+
+<!-- <br> -->
+
+<div class="container">
+  <h2 style="font-size: 26px">Task Conditioned Joint Training</h2>
+  <p><img src="./text_gen.svg" style="display: block;margin-left: auto;margin-right: auto;max-width:100%" class="center"></p>
+    <div class="pipelines" style="text-align: left;">
+      <p>
+        We tackle the multi-task train-once challenge for image segmentation using a task-conditioned joint training strategy. 
+        Particularly, we first uniformly sample the \(\texttt{task}\) domain \(\in\) {panoptic, semantic, instance} for the GT label. 
+        We realize the unification potential of panoptic annotations by deriving the task-specific labels from the panoptic annotations, 
+        thus, using only one set of annotations. For e.g., when \(\texttt{task}\) is semantic/instance segmentation, we derive
+        the corresponding label from the GT panoptic annotation for the sampled image.
+        Next, we extract a set of binary masks for each category present in the image from the task-specific GT label, i.e., 
+        semantic task guarantees only one amorphous binary mask for each class present in the image, whereas, instance task 
+        signifies non-overlapping binary masks for only thing classes, ignoring the stuff regions. Panoptic task denotes a 
+        single amorphous mask for stuff classes and non-overlapping masks for thing classes. Subsequently,
+        we iterate over the set of masks to create a list of text entries (\(\mathbf{T}_\text{list}\))
+        with a template “a photo with a {\(\texttt{CLS}\)}”, where \(\texttt{CLS}\) is the class name for the corresponding binary mask object. 
+        The number of binary masks per sample varies over the dataset. Therefore, we pad(\(\mathbf{T}_\text{list}\)) with “a/an {\(\texttt{task}\)} photo”
+        entries to obtain a padded list (\(\mathbf{T}_\text{pad}\)) with text queries of
+        constant length. We are motivated to represent the text
+        queries as a padded list keeping in mind the meaning of the object queries, which represent the number of objects
+        present in an image. We later use (\(\mathbf{T}_\text{pad}\)) to calculate a object text query contrastive loss 
+        over the object queries (\(\mathbf{Q}\)) make our model sensitive to the inter-task differences.
+      </p>
+      <p>
+        We condition our architecture on the task using a task input with the template “the task is {\(\texttt{task}\)}”, which
+        is tokenized and mapped to task-token (\(\mathbf{Q}_\text{task}\)). We use \(\mathbf{Q}_\text{task}\)
+        to initialize and condition the object queries (\(\mathbf{Q}\)) on the \(\texttt{task}\).
+      </p>
+    </div>
+</div>
+
+<div class="container">
+  <h2 style="font-size: 26px">Results</h2>
+  <!-- <p><img src="./plots.svg" style="display: block;margin-left: auto;margin-right: auto;max-width:100%" class="center"></p> -->
+    <div class="pipelines" style="text-align: left;">
+      <p>
+        We experiment on three widely used datasets: COCO, Cityscapes and ADE20K, that support all three: 
+        semantic, instance, and panoptic segmentation tasks.
+        Our OneFormer, trained only once, outperforms the individually trained Mask2Former (the current SOTA universal architecture).
+      </p>
+      <p> Please check our paper 📄 for extensive experiments and ablation studies.</p>
+        <details>
+          <summary style="font-size:22px;">Task Dynamic Nature of OneFormer</summary>
+          <p><img src="./task.png" style="display: block;margin-left: auto;margin-right: auto;max-width:40%" class="center"></p>
+          <p>
+            We demonstrate that our framework is sensitive to the task token input by setting the value of {\(\texttt{task}\)}
+            during inference as panoptic, instance, or semantic. We report results with our Swin-L\(^{\dagger}\) OneFormer trained on Cityscapes dataset.
+            We observe a significant drop in the PQ and mIoU metrics when \(\texttt{task}\) is instance compared to panoptic. 
+            Moreover, the PQ\(^\text{St}\) drops to 0%, and there is only a -0.2% drop on PQ\(^\text{Th}\) metric, 
+            proving that the network learns to focus majorly on the distinct “thing” instances when the \(\texttt{task}\) is instance. 
+            Similarly, there is a sizable drop in the PQ, PQ\(^\textbf{Th}\) and AP metrics for the semantic task with PQ\(^\textbf{St}\) 
+            improving by +0.2% showing that our framework can segment out amorphous masks for “stuff” regions but does not predict different masks 
+            for “thing” objects. Therefore, our model can dynamically learn the task-specific features during training which is critical for a train-once multi-task architecture.
+          </p>
+          <p><img src="./supp_task_city.svg" style="display: block;margin-left: auto;margin-right: auto;max-width:100%" class="center"></p>
+        </details>
+        <details>
+          <summary style="font-size:22px;">Reduced Category Misclassifcations</summary>
+          <p><img src="./class_fig.svg" style="display: block;margin-left: auto;margin-right: auto;max-width:100%" class="center"></p>
+          <p>Our query-text contrastive
+            loss helps us establish an implicit inter-task separation during training and reduces the category misclassifcations in the
+            final predictions. Mask2Former incorrectly predicts “wall”
+            as “fence” in the first row, “vegetation” as “terrain”, and
+            “terrain” as “sidewalk”. At the same time, our OneFormer
+            produces more accurate predictions in regions (inside <span style='color:blue;'>blue</span>
+            boxes) with similar classes.</p>
+          </details>
+          <details>
+            <summary style="font-size:22px;">Individual v/s Joint Training</summary>
+            <p><img src="./individual.png" style="display: block;margin-left: auto;margin-right: auto;max-width:70%" class="center"></p>
+            <p>We analyze our OneFormer's performance with individual training on the panoptic, instance, and semantic segmentation task. 
+              OneFormer outperforms Mask2Former (the previous SOTA universal image segmentation method) with every training strategy. 
+              Furthermore, with joint training, Mask2Former suffers a significant drop in performance, and OneFormer achieves the highest 
+              AP and mIoU scores with only a 0.4% drop in PQ score as compared to the panoptic training setting.</p>
+            </details>
+    </div>
+</div>
+
+<br>
+
+<!-- </p></div></div><br> -->
+
+<div class="container" id="BibTeX">
+  <h2 style="font-size: 26px">Citation</h2>
+  <p>If you found OneFormer useful in your research, please consider starring ⭐ us on GitHub and citing 📚 us in your research!</p>
+  <div style="font-weight:normal; background-color:  #F0F0F0;">
+    <tt>
+    @article{jain2022oneformer, <br>
+      <div style="margin-left: 5%; font-weight:normal; ">
+      title={OneFormer: One Transformer to Rule Universal Image Segmentation}, <br>
+      author={Jitesh Jain and Jiachen Li and MangTik Chiu and Ali Hassani and Nikita Orlov and Humphrey Shi}, <br>
+      journal={arXiv}, <br>
+      year={2022} <br>
+    </div>
+    &nbsp;&nbsp;&nbsp;}</tt>
+  </div>
+</div>
+
+</p></div></div><br>
+  
+
+</body><grammarly-desktop-integration data-grammarly-shadow-root="true"></grammarly-desktop-integration></html>
