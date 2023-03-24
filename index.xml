@@ -5,12 +5,29 @@
     <link>https://praeclarumjj3.github.io/</link>
       <atom:link href="https://praeclarumjj3.github.io/index.xml" rel="self" type="application/rss+xml" />
     <description>Jitesh Jain</description>
-    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><copyright>© {2022} Jitesh Jain</copyright><lastBuildDate>Mon, 27 Feb 2023 00:00:00 +0000</lastBuildDate>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><copyright>© {2022} Jitesh Jain</copyright><lastBuildDate>Wed, 08 Mar 2023 00:00:00 +0000</lastBuildDate>
     <image>
       <url>https://praeclarumjj3.github.io/media/icon_hud166e63c6d63b20b4040daaa47de5209_74785_512x512_fill_lanczos_center_3.png</url>
       <title>Jitesh Jain</title>
       <link>https://praeclarumjj3.github.io/</link>
     </image>
+    
+    <item>
+      <title>Ascending the Research Trail</title>
+      <link>https://praeclarumjj3.github.io/post/ascending_research_trail/</link>
+      <pubDate>Wed, 08 Mar 2023 00:00:00 +0000</pubDate>
+      <guid>https://praeclarumjj3.github.io/post/ascending_research_trail/</guid>
+      <description>&lt;p&gt;In case you missed it, I shared my experience as a rookie undergrad researcher in a previous blog: &lt;a href=&#34;https://medium.com/vlgiitr/riding-the-noisy-research-track-4035e64e7ea8&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Riding the Noisy Research Track&lt;/a&gt;. Since then, I have grown from a rookie researcher into a more mature beginner researcher with a better outlook on the bigger picture in research (thinking beyond publishing a paper) owing to my close collaboration with the &lt;a href=&#34;https://www.shi-labs.com/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;SHI Labs&lt;/a&gt; in the last couple of years. I have had several realizations that I will be sharing through this article. A few of those to get your interest piqued are:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;🤔 I went from &amp;ldquo;Ph.D., Me? Nooooooo&amp;rdquo; to &amp;ldquo;I primarily applied to Ph.D. programs for grad school.&amp;rdquo; What changed?&lt;/li&gt;
+&lt;li&gt;💭 Is publishing/releasing a paper a good &amp;ldquo;Why?&amp;rdquo; for research?&lt;/li&gt;
+&lt;li&gt;📖 Is open-source in A.I. a boon or a bane?&lt;/li&gt;
+&lt;li&gt;🎗 What is the importance of the advisor and collaborators?&lt;/li&gt;
+&lt;li&gt;⚓️ How vital is the authenticity of research?&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Read more at: &lt;a href=&#34;https://medium.com/vlgiitr/ascending-the-research-trail-89a8503749ce&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://medium.com/vlgiitr/ascending-the-research-trail-89a8503749ce&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>OneFormer: One Transformer to Rule Universal Image Segmentation</title>
