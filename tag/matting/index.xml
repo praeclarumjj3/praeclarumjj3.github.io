@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Matting | Jitesh Jain</title>
+    <link>https://praeclarumjj3.github.io/tag/matting/</link>
+      <atom:link href="https://praeclarumjj3.github.io/tag/matting/index.xml" rel="self" type="application/rss+xml" />
+    <description>Matting</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><copyright>© {2023} Jitesh Jain</copyright><lastBuildDate>Thu, 08 Jun 2023 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://praeclarumjj3.github.io/media/icon_hud166e63c6d63b20b4040daaa47de5209_74785_512x512_fill_lanczos_center_3.png</url>
+      <title>Matting</title>
+      <link>https://praeclarumjj3.github.io/tag/matting/</link>
+    </image>
+    
+    <item>
+      <title>Matting Anything</title>
+      <link>https://praeclarumjj3.github.io/publication/mam/</link>
+      <pubDate>Thu, 08 Jun 2023 00:00:00 +0000</pubDate>
+      <guid>https://praeclarumjj3.github.io/publication/mam/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

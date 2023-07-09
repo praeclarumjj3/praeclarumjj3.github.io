@@ -5,12 +5,28 @@
     <link>https://praeclarumjj3.github.io/</link>
       <atom:link href="https://praeclarumjj3.github.io/index.xml" rel="self" type="application/rss+xml" />
     <description>Jitesh Jain</description>
-    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><copyright>© {2023} Jitesh Jain</copyright><lastBuildDate>Wed, 08 Mar 2023 00:00:00 +0000</lastBuildDate>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><copyright>© {2023} Jitesh Jain</copyright><lastBuildDate>Sun, 18 Jun 2023 00:00:00 +0000</lastBuildDate>
     <image>
       <url>https://praeclarumjj3.github.io/media/icon_hud166e63c6d63b20b4040daaa47de5209_74785_512x512_fill_lanczos_center_3.png</url>
       <title>Jitesh Jain</title>
       <link>https://praeclarumjj3.github.io/</link>
     </image>
+    
+    <item>
+      <title>OneFormer: One Transformer to Rule Universal Image Segmentation</title>
+      <link>https://praeclarumjj3.github.io/publication/oneformer/</link>
+      <pubDate>Sun, 18 Jun 2023 00:00:00 +0000</pubDate>
+      <guid>https://praeclarumjj3.github.io/publication/oneformer/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Matting Anything</title>
+      <link>https://praeclarumjj3.github.io/publication/mam/</link>
+      <pubDate>Thu, 08 Jun 2023 00:00:00 +0000</pubDate>
+      <guid>https://praeclarumjj3.github.io/publication/mam/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Ascending the Research Trail</title>
@@ -27,14 +43,6 @@
 &lt;/ul&gt;
 &lt;p&gt;Read more at: &lt;a href=&#34;https://medium.com/vlgiitr/ascending-the-research-trail-89a8503749ce&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://medium.com/vlgiitr/ascending-the-research-trail-89a8503749ce&lt;/a&gt;&lt;/p&gt;
 </description>
-    </item>
-    
-    <item>
-      <title>OneFormer: One Transformer to Rule Universal Image Segmentation</title>
-      <link>https://praeclarumjj3.github.io/publication/oneformer/</link>
-      <pubDate>Mon, 27 Feb 2023 00:00:00 +0000</pubDate>
-      <guid>https://praeclarumjj3.github.io/publication/oneformer/</guid>
-      <description></description>
     </item>
     
     <item>
