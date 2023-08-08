@@ -5,7 +5,7 @@
     <link>https://praeclarumjj3.github.io/</link>
       <atom:link href="https://praeclarumjj3.github.io/index.xml" rel="self" type="application/rss+xml" />
     <description>Jitesh Jain</description>
-    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><copyright>© {2023} Jitesh Jain</copyright><lastBuildDate>Sun, 18 Jun 2023 00:00:00 +0000</lastBuildDate>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><copyright>© {2023} Jitesh Jain</copyright><lastBuildDate>Tue, 18 Jul 2023 00:00:00 +0000</lastBuildDate>
     <image>
       <url>https://praeclarumjj3.github.io/media/icon_hud166e63c6d63b20b4040daaa47de5209_74785_512x512_fill_lanczos_center_3.png</url>
       <title>Jitesh Jain</title>
@@ -15,7 +15,7 @@
     <item>
       <title>OneFormer: One Transformer to Rule Universal Image Segmentation</title>
       <link>https://praeclarumjj3.github.io/publication/oneformer/</link>
-      <pubDate>Sun, 18 Jun 2023 00:00:00 +0000</pubDate>
+      <pubDate>Tue, 18 Jul 2023 00:00:00 +0000</pubDate>
       <guid>https://praeclarumjj3.github.io/publication/oneformer/</guid>
       <description></description>
     </item>
@@ -48,8 +48,16 @@
     <item>
       <title>Keys to Better Image Inpainting: Structure and Texture Go Hand in Hand</title>
       <link>https://praeclarumjj3.github.io/publication/fcf-inpainting/</link>
-      <pubDate>Fri, 05 Aug 2022 00:00:00 +0000</pubDate>
+      <pubDate>Sun, 05 Feb 2023 00:00:00 +0000</pubDate>
       <guid>https://praeclarumjj3.github.io/publication/fcf-inpainting/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>SeMask: Semantically Masked Transformers for Semantic Segmentation</title>
+      <link>https://praeclarumjj3.github.io/publication/semask/</link>
+      <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
+      <guid>https://praeclarumjj3.github.io/publication/semask/</guid>
       <description></description>
     </item>
     
@@ -72,14 +80,6 @@
       <description>&lt;p&gt;This summer, I worked as a remote research intern at SHI Lab @ University of Oregon (UO) and Picsart AI Research (PAIR). I joined the SHI Lab to work with Professor Humphrey Shi in November 2020 during my second year and continued my work there during the summers, and I joined PAIR during the summers (June 2021). My research focused on the field of Computer Vision during both my internships.&lt;/p&gt;
 &lt;p&gt;Read more about my intern experience at: &lt;a href=&#34;http://watchout.iitr.ac.in/2022/01/summer-diaries-jitesh-jain&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;http://watchout.iitr.ac.in/2022/01/summer-diaries-jitesh-jain&lt;/a&gt;&lt;/p&gt;
 </description>
-    </item>
-    
-    <item>
-      <title>SeMask: Semantically Masked Transformers for Semantic Segmentation</title>
-      <link>https://praeclarumjj3.github.io/publication/semask/</link>
-      <pubDate>Thu, 23 Dec 2021 00:00:00 +0000</pubDate>
-      <guid>https://praeclarumjj3.github.io/publication/semask/</guid>
-      <description></description>
     </item>
     
     <item>
