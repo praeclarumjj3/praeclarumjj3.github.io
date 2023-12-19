@@ -1,0 +1,191 @@
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+  <title>VCoder</title>
+  <link rel="stylesheet" href="./bootstrap.min.css">
+  <link rel="stylesheet" href="./temp.css">
+  <link rel="stylesheet" href="./VCoder_style.css">
+  <link rel="icon" href="logo.png">
+</head>
+
+
+<body data-gr-c-s-loaded="true" data-new-gr-c-s-check-loaded="14.1043.0" data-gr-ext-installed="">
+
+  <!-- <span style='color:red;'>UNI</span><span style='color:blue;'>QUE</span>: Universal Image Segmentation with Contrastive Query Transformer -->
+
+<div class="container">
+  <table border="0" align="center">
+    <tbody><tr>
+      <td width="1500" height="80" align="center" valign="middle">
+      <span class="title"><h1 style="font-size:32px">VCoder: Versatile Visual Encoder for Accurate Object-Level Perception with Large Language Models</h1></td>
+    </tr>
+    <!-- <tr>
+      <td width="1500" align="center" valign="middle">
+      <span class="title"><h3>CVPR 2023</h3></td>
+    </tr> -->
+    <tr>
+        <td colspan="3" align="center"><h4 style="font-size:20px">
+            <a href="https://praeclarumjj3.github.io/" target="_blank">Jitesh Jain<sup>1</sup></a>  &nbsp;  &nbsp;  &nbsp;  &nbsp;
+            <a href="https://jwyang.github.io/" target="_blank">Jianwei Yang<sup>2</sup></a>  &nbsp;  &nbsp;  &nbsp;  &nbsp;
+            <a href="https://www.humphreyshi.com/home" target="_blank">Humphrey Shi<sup>1,3</sup></a> 
+        </h4></td>
+    </tr>
+    <tr>
+        <td colspan="3" height="30" align="center"><h6> 
+          <sup>1</sup> SHI Labs @ Georgia Tech &nbsp; &nbsp;   
+          <sup>2</sup> Microsoft Research, Redmond &nbsp; &nbsp;
+          <sup>3</sup> Picsart AI Research
+        </h6> </td>
+    </tr>
+    <br>
+    <tr>
+      <td colspan="3" align="center"><h5><div class="row justify-content-center" align="center" >
+        <a href="https://arxiv.org/abs/2211.06220" target="_blank"> 
+          <div class="img-with-text">
+            <img src="./arxiv.png" height="100px" /><br><br>
+            <p style="font-size: 16px">ArXiv <br> Paper</p>
+          </div>
+        </a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        
+        <a href="https://github.com/SHI-Labs/VCoder" target="_blank"> 
+          <div class="img-with-text">
+            <img src="./github_icon.png" height="100px" /><br><br>
+            <p style="font-size: 16px">GitHub <br> Code</p>
+          </div>
+        </a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+        <a href="https://huggingface.co/datasets/shi-labs/COST" target="_blank"> 
+          <div class="img-with-text">
+            <img src="./dataset_logo.png" height="100px" /><br><br>
+            <p style="font-size: 16px">COST <br> Dataset</p>
+          </div>
+        </a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+        <a href="https://huggingface.co/spaces/shi-labs/VCoder" target="_blank"> 
+          <div class="img-with-text">
+            <img src="./huggingface_logo.svg" height="100px" /><br><br>
+            <p style="font-size: 16px">HuggingFace <br> Space</p>
+          </div>
+        </a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+        <a href="#BibTeX" target="_self"> 
+          <div class="img-with-text">
+            <img src="./bibtex.png" height="100px" /><br><br>
+            <p style="font-size: 16px">Citation <br> BibTeX</p>
+          </div>
+        </a>
+      
+      </div></h5></td>
+  </tr>
+  </tbody></table>
+
+  
+
+  <br>
+  <div class="text" style="text-align: left;">
+    <p><img src="./teaser.svg" style="display: block;margin-left: auto;margin-right: auto;max-width:90%" align="center"></p>
+      <h2 style="font-size: 26px; text-align: center">Abstract</h2>
+      <p>Humans possess the remarkable skill of Visual Perception, the ability to see and understand the seen, helping them make sense of the visual world and, in turn, reason. Vision Large Language Models (VLLM) have recently achieved impressive performance on vision-language tasks ranging from visual question-answering and image captioning to visual reasoning and image generation. However, when prompted to identify or count (perceive) the entities in a given image, existing VLLM systems fail. Working towards developing an accurate VLLM system for perception and reasoning, we propose using a Versatile visual enCoder (VCoder) as a perception eye for Vision LLMs. We feed the VCoder with perception modalities such as segmentation or depth maps, improving the Vision LLM's perception abilities. Secondly, we leverage the images from COCO and outputs from off-the-shelf vision perception models to create our COCO Segmentation Text (COST) dataset for training and evaluating VLLMs on the object perception task. Thirdly, we introduce metrics to evaluate the object perception abilities in VLLMs on our COST dataset. Lastly, we provide extensive experimental evidence proving the VCoder's improved object-level perception skills over existing Vision LLMs, including GPT-4V.</p>
+</div>
+
+
+<div class="container">
+  <h2 style="font-size: 26px">Moravec’s Paradox in Perception</h2>
+  <p><img src="./diff.svg" style="display: block;margin-left: auto;margin-right: auto;max-width:30%" class="center"></p>
+    <div class="overview">
+    <p>
+    Suppose you are invited to a Halloween party and want to bring candies for every person at that party. 
+    You ask your friend to send you a picture of the party room so that you can estimate the number of people and the number of
+    candies you need to buy. In a hurry, you ask GPT-4V: <i>“Can you count the number of people in the image?”</i>, and it
+    responds: <i>“Yes, there are <span style="color: red;">ten</span> people visible in the image.”</i>.
+    Excited, you arrive at the party with ten candies but wait,
+    you see fourteen people! Confused, you look at the image
+    your friend sent you, and you can count <span style="color: blue;">fourteen</span> people in
+    that image, realizing that GPT-4V fails at the simple task
+    of counting the people in the picture. At the same time, it
+    can accurately describe the happening of a Halloween party
+    in the image. We refer to the phenomenon of Vision LLMs failing at simple visual perception tasks while
+    succeeding at complex visual reasoning tasks as Moravec’s
+    Paradox in perception.
+      </strong>
+    </p>
+    </div>
+</div>
+
+<div class="container">
+  <h2 style="font-size: 26px">VCoder</h2>
+  <p><img src="./vcoder.svg" style="display: block;margin-left: auto;margin-right: auto;max-width:100%" class="center"></p>
+    <div class="overview">
+    <p>
+      We propose feeding auxiliary perception modalities as control inputs through an additional vision encoder, which we term as our Versatile visual
+      enCoder (<b>VCoder</b>). In this work, we focus on the task of
+      object perception and leverage a segmentation map, depth
+      map, or both as the control inputs; however, the same design
+      can be extended to other modalities. Our VCoder projects
+      the control inputs’ information into the LLM’s space. This added control
+      helps the VLLM improve its object perception ability.
+      </strong>
+    </p>
+    </div>
+</div>
+
+<div class="container">
+  <h2 style="font-size: 26px">COST</h2>
+  <p><img src="./cost.svg" style="display: block;margin-left: auto;margin-right: auto;max-width:80%" class="center"></p>
+    <div class="overview">
+    <p>
+      To overcome the scarcity of fundamental perception-focused image-text data for training VLLMs, 
+      we leverage images from the COCO dataset and use predictions from off-the-shelf visual perception models to prepare a 
+      COCO Segmentation Text (<b>COST</b>) dataset comprising of question-answer pairs about the objects (background and foreground) present in each image. 
+      Our COST dataset is publicly available on <a href="https://huggingface.co/datasets/shi-labs/COST" target="_blank">HuggingFace Datasets</a>.
+      </strong>
+    </p>
+    </div>
+</div>
+
+<div class="container">
+  <h2 style="font-size: 26px">Results</h2>
+  <p><img src="./results.png" style="display: block;margin-left: auto;margin-right: auto;max-width:80%" class="center"></p>
+    <div class="overview">
+      <p>
+        We evaluate our VCoder on the COST validation set. We also compare our performamce to existing off-the-shelf baseline VLLMs: MiniGPT-4, InstructBLIP, LLaVA-1.5, and CogVLM. 
+        We also train three different variants of LLaVA-1.5 on the COST dataset: COST IT mixes the COST training data with the instruction tuning data; 
+        Soft-Prompted uses a set of learnable tokens, and ImCoder uses an RGB image as the control input. 
+        Our VCoder adapted LLaVA-1.5 performs the best on all three object perception tasks.
+        </strong>
+      </p>
+    <p>
+      Please check our paper 📄 for details on evaluation metrics.
+      </strong>
+    </p>
+    </div>
+</div>
+
+<!-- <br> -->
+
+<br>
+
+<!-- </p></div></div><br> -->
+
+<div class="container" id="BibTeX">
+  <h2 style="font-size: 26px">Citation</h2>
+  <p>If you found our work useful in your research, please consider starring ⭐ us on GitHub and citing 📚 us in your research!</p>
+  <div style="font-weight:normal; background-color:  #F0F0F0;">
+    <tt>
+    @article{jain2023vcoder, <br>
+      <div style="margin-left: 5%; font-weight:normal; ">
+      title={{VCoder: Versatile Visual Encoder for Accurate Object-Level Perception with Large Language Models}}, <br>
+      author={Jitesh Jain and Jianwei Yang and Humphrey Shi}, <br>
+      journal={arXiv}, <br>
+      year={2023} <br>
+    </div>
+    &nbsp;&nbsp;&nbsp;}</tt>
+  </div>
+</div>
+
+</p></div></div><br>
+  
+
+</body><grammarly-desktop-integration data-grammarly-shadow-root="true"></grammarly-desktop-integration></html>
