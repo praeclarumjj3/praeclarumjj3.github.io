@@ -19,7 +19,7 @@
   <table border="0" align="center">
     <tbody><tr>
       <td width="1500" height="80" align="center" valign="middle">
-      <span class="title"><h1 style="font-size:32px">VCoder: Versatile Visual Encoder for Accurate Object-Level Perception with Large Language Models</h1></td>
+      <span class="title"><h1 style="font-size:32px">VCoder: Versatile Vision Encoders for Multimodal Large Language Models</h1></td>
     </tr>
     <!-- <tr>
       <td width="1500" align="center" valign="middle">
@@ -87,7 +87,7 @@
   <div class="text" style="text-align: left;">
     <p><img src="./teaser.svg" style="display: block;margin-left: auto;margin-right: auto;max-width:90%" align="center"></p>
       <h2 style="font-size: 26px; text-align: center">Abstract</h2>
-      <p>Humans possess the remarkable skill of Visual Perception, the ability to see and understand the seen, helping them make sense of the visual world and, in turn, reason. Vision Large Language Models (VLLM) have recently achieved impressive performance on vision-language tasks ranging from visual question-answering and image captioning to visual reasoning and image generation. However, when prompted to identify or count (perceive) the entities in a given image, existing VLLM systems fail. Working towards developing an accurate VLLM system for perception and reasoning, we propose using a Versatile visual enCoder (VCoder) as a perception eye for Vision LLMs. We feed the VCoder with perception modalities such as segmentation or depth maps, improving the Vision LLM's perception abilities. Secondly, we leverage the images from COCO and outputs from off-the-shelf vision perception models to create our COCO Segmentation Text (COST) dataset for training and evaluating VLLMs on the object perception task. Thirdly, we introduce metrics to evaluate the object perception abilities in VLLMs on our COST dataset. Lastly, we provide extensive experimental evidence proving the VCoder's improved object-level perception skills over existing Vision LLMs, including GPT-4V.</p>
+      <p>Humans possess the remarkable skill of Visual Perception, the ability to see and understand the seen, helping them make sense of the visual world and, in turn, reason. Multimodal Large Language Models (MLLM) have recently achieved impressive performance on vision-language tasks ranging from visual question-answering and image captioning to visual reasoning and image generation. However, when prompted to identify or count (perceive) the entities in a given image, existing MLLM systems fail. Working towards developing an accurate MLLM system for perception and reasoning, we propose using a Versatile vision enCoder (VCoder) as a perception eye for Multimodal LLMs. We feed the VCoder with perception modalities such as segmentation or depth maps, improving the MLLM's perception abilities. Secondly, we leverage the images from COCO and outputs from off-the-shelf vision perception models to create our COCO Segmentation Text (COST) dataset for training and evaluating MLLMs on the object perception task. Thirdly, we introduce metrics to evaluate the object perception abilities in MLLMs on our COST dataset. Lastly, we provide extensive experimental evidence proving the VCoder's improved object-level perception skills over existing Multimodal LLMs, including GPT-4V.</p>
 </div>
 
 
@@ -106,7 +106,7 @@
     that image, realizing that GPT-4V fails at the simple task
     of counting the people in the picture. At the same time, it
     can accurately describe the happening of a Halloween party
-    in the image. We refer to the phenomenon of Vision LLMs failing at simple visual perception tasks while
+    in the image. We refer to the phenomenon of Multimodal LLMs failing at simple visual perception tasks while
     succeeding at complex visual reasoning tasks as Moravec’s
     Paradox in perception.
       </strong>
@@ -125,7 +125,7 @@
       map, or both as the control inputs; however, the same design
       can be extended to other modalities. Our VCoder projects
       the control inputs’ information into the LLM’s space. This added control
-      helps the VLLM improve its object perception ability.
+      helps the MLLM improve its object perception ability.
       </strong>
     </p>
     </div>
@@ -136,7 +136,7 @@
   <p><img src="./cost.svg" style="display: block;margin-left: auto;margin-right: auto;max-width:80%" class="center"></p>
     <div class="overview">
     <p>
-      To overcome the scarcity of fundamental perception-focused image-text data for training VLLMs, 
+      To overcome the scarcity of fundamental perception-focused image-text data for training MLLMs, 
       we leverage images from the COCO dataset and use predictions from off-the-shelf visual perception models to prepare a 
       COCO Segmentation Text (<b>COST</b>) dataset comprising of question-answer pairs about the objects (background and foreground) present in each image. 
       Our COST dataset is publicly available on <a href="https://huggingface.co/datasets/shi-labs/COST" target="_blank">HuggingFace Datasets</a>.
@@ -150,7 +150,7 @@
   <p><img src="./results.png" style="display: block;margin-left: auto;margin-right: auto;max-width:80%" class="center"></p>
     <div class="overview">
       <p>
-        We evaluate our VCoder on the COST validation set. We also compare our performamce to existing off-the-shelf baseline VLLMs: MiniGPT-4, InstructBLIP, LLaVA-1.5, and CogVLM. 
+        We evaluate our VCoder on the COST validation set. We also compare our performamce to existing off-the-shelf baseline MLLMs: MiniGPT-4, InstructBLIP, LLaVA-1.5, and CogVLM. 
         We also train three different variants of LLaVA-1.5 on the COST dataset: COST IT mixes the COST training data with the instruction tuning data; 
         Soft-Prompted uses a set of learnable tokens, and ImCoder uses an RGB image as the control input. 
         Our VCoder adapted LLaVA-1.5 performs the best on all three object perception tasks.
@@ -176,7 +176,7 @@
     <tt>
     @article{jain2023vcoder, <br>
       <div style="margin-left: 5%; font-weight:normal; ">
-      title={{VCoder: Versatile Visual Encoder for Accurate Object-Level Perception with Large Language Models}}, <br>
+      title={{VCoder: Versatile Vision Encoders for Multimodal Large Language Models}}, <br>
       author={Jitesh Jain and Jianwei Yang and Humphrey Shi}, <br>
       journal={arXiv}, <br>
       year={2023} <br>
