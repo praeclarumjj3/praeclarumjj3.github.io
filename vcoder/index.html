@@ -42,7 +42,7 @@
     <br>
     <tr>
       <td colspan="3" align="center"><h5><div class="row justify-content-center" align="center" >
-        <a href="https://arxiv.org/abs/2211.06220" target="_blank"> 
+        <a href="https://praeclarumjj3.github.io/vcoder" target="_blank"> 
           <div class="img-with-text">
             <img src="./arxiv.png" height="100px" /><br><br>
             <p style="font-size: 16px">ArXiv <br> Paper</p>
@@ -63,12 +63,12 @@
           </div>
         </a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
-        <a href="https://huggingface.co/spaces/shi-labs/VCoder" target="_blank"> 
+        <!-- <a href="https://huggingface.co/spaces/shi-labs/VCoder" target="_blank"> 
           <div class="img-with-text">
             <img src="./huggingface_logo.svg" height="100px" /><br><br>
             <p style="font-size: 16px">HuggingFace <br> Space</p>
           </div>
-        </a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        </a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -->
 
         <a href="#BibTeX" target="_self"> 
           <div class="img-with-text">
@@ -81,19 +81,28 @@
   </tr>
   </tbody></table>
 
-  
-
+<style>
+  .video-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+  }
+</style>
   <br>
   <div class="text" style="text-align: left;">
-    <p><img src="./teaser.svg" style="display: block;margin-left: auto;margin-right: auto;max-width:90%" align="center"></p>
+    <div class="video-container">
+      <iframe width="768" height="432" src="https://www.youtube.com/embed/go493IGgVWo?mute=1&vq=hd1080" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+  <br>
+    <!-- <p><img src="./teaser.svg" style="display: block;margin-left: auto;margin-right: auto;max-width:90%" align="center"></p> -->
       <h2 style="font-size: 26px; text-align: center">Abstract</h2>
-      <p>Humans possess the remarkable skill of Visual Perception, the ability to see and understand the seen, helping them make sense of the visual world and, in turn, reason. Multimodal Large Language Models (MLLM) have recently achieved impressive performance on vision-language tasks ranging from visual question-answering and image captioning to visual reasoning and image generation. However, when prompted to identify or count (perceive) the entities in a given image, existing MLLM systems fail. Working towards developing an accurate MLLM system for perception and reasoning, we propose using a Versatile vision enCoder (VCoder) as a perception eye for Multimodal LLMs. We feed the VCoder with perception modalities such as segmentation or depth maps, improving the MLLM's perception abilities. Secondly, we leverage the images from COCO and outputs from off-the-shelf vision perception models to create our COCO Segmentation Text (COST) dataset for training and evaluating MLLMs on the object perception task. Thirdly, we introduce metrics to evaluate the object perception abilities in MLLMs on our COST dataset. Lastly, we provide extensive experimental evidence proving the VCoder's improved object-level perception skills over existing Multimodal LLMs, including GPT-4V.</p>
+      <p>Humans possess the remarkable skill of Visual Perception, the ability to see and understand the seen, helping them make sense of the visual world and, in turn, reason. Multimodal Large Language Models (MLLM) have recently achieved impressive performance on vision-language tasks ranging from visual question-answering and image captioning to visual reasoning and image generation. However, when prompted to identify or count (perceive) the entities in a given image, existing MLLM systems fail. Working towards developing an accurate MLLM system for perception and reasoning, we propose using Versatile vision enCoders (VCoder) as perception eyes for Multimodal LLMs. We feed the VCoder with perception modalities such as segmentation or depth maps, improving the MLLM's perception abilities. Secondly, we leverage the images from COCO and outputs from off-the-shelf vision perception models to create our COCO Segmentation Text (COST) dataset for training and evaluating MLLMs on the object perception task. Thirdly, we introduce metrics to assess the object perception abilities in MLLMs on our COST dataset. Lastly, we provide extensive experimental evidence proving the VCoder's improved object-level perception skills over existing Multimodal LLMs, including GPT-4V.</p>
 </div>
 
 
 <div class="container">
   <h2 style="font-size: 26px">Moravec’s Paradox in Perception</h2>
-  <p><img src="./diff.svg" style="display: block;margin-left: auto;margin-right: auto;max-width:30%" class="center"></p>
+  <p><img src="./diff.svg" style="display: block;margin-left: auto;margin-right: auto;max-width:40%" class="center"></p>
     <div class="overview">
     <p>
     Suppose you are invited to a Halloween party and want to bring candies for every person at that party. 
@@ -120,7 +129,7 @@
     <div class="overview">
     <p>
       We propose feeding auxiliary perception modalities as control inputs through an additional vision encoder, which we term as our Versatile visual
-      enCoder (<b>VCoder</b>). In this work, we focus on the task of
+      enCoders (<b>VCoder</b>). In this work, we focus on the task of
       object perception and leverage a segmentation map, depth
       map, or both as the control inputs; however, the same design
       can be extended to other modalities. Our VCoder projects
@@ -171,7 +180,7 @@
 
 <div class="container" id="BibTeX">
   <h2 style="font-size: 26px">Citation</h2>
-  <p>If you found our work useful in your research, please consider starring ⭐ us on GitHub and citing 📚 us in your research!</p>
+  <p>If you found our work useful in your research, please consider starring ⭐ us on <a href="https://github.com/SHI-Labs/VCoder" target="_blank">GitHub</a> and citing 📚 us in your research!</p>
   <div style="font-weight:normal; background-color:  #F0F0F0;">
     <tt>
     @article{jain2023vcoder, <br>
