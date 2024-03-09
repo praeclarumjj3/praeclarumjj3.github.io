@@ -1,0 +1,226 @@
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+  <title>ESCS Demo</title>
+  <link rel="stylesheet" href="./bootstrap.min.css">
+  <link rel="stylesheet" href="./temp.css">
+  <link rel="stylesheet" href="./VCoder_style.css">
+  <link rel="icon" href="logo.png">
+</head>
+
+
+<body data-gr-c-s-loaded="true" data-new-gr-c-s-check-loaded="14.1043.0" data-gr-ext-installed="">
+
+  <!-- <span style='color:red;'>UNI</span><span style='color:blue;'>QUE</span>: Universal Image Segmentation with Contrastive Query Transformer -->
+
+<div class="container">
+  <table border="0" align="center">
+    <tbody><tr>
+      <td width="1500" height="80" align="center" valign="middle">
+      <span class="title"><h1 style="font-size:32px">Multimodal Video Understanding System for ESCS Assessment Context</h1></td>
+    </tr>
+    <!-- <tr>
+      <td width="1500" align="center" valign="middle">
+      <span class="title"><h3>CVPR 2024</h3></td>
+    </tr> -->
+    <tr>
+        <td colspan="3" align="center"><h4 style="font-size:20px; line-height: 2;">
+            <a href="https://praeclarumjj3.github.io/" target="_blank">Jitesh Jain<sup>1*</sup></a>  &nbsp;  &nbsp;  &nbsp;  &nbsp;
+            <a href="https://education.illinois.edu/people/christy-yoon" target="_blank">Christy Yoon<sup>2*</sup></a>  &nbsp;  &nbsp;  &nbsp;  &nbsp;
+            <a href="https://education.illinois.edu/people/kaori-terol-aveiro" target="_blank">Kaori Terol Aveiro<sup>2*</sup></a>  &nbsp;  &nbsp;  &nbsp;  &nbsp;
+            <a href="https://education.illinois.edu/faculty/hedda-meadankaplansky" target="_blank">Hedda Meadan<sup>2</sup></a>  &nbsp;  &nbsp;  &nbsp;  &nbsp;
+            <a href="https://engineering.buffalo.edu/computer-science-engineering/people/faculty-directory/full-time.host.html/content/shared/engineering/computer-science-engineering/profiles/faculty/ladder/xiong-jinjun.detail.html" target="_blank">Jinjun Xiong<sup>3</sup></a>  &nbsp;  &nbsp;  &nbsp;  &nbsp;
+            <a href="https://www.humphreyshi.com/home" target="_blank">Humphrey Shi<sup>1</sup></a> 
+        </h4></td>
+    </tr>
+    <tr>
+        <td colspan="3" height="30" align="center"><h6 style="line-height: 2;"> 
+          <sup>1</sup> Georgia Tech &nbsp; &nbsp;   
+          <sup>2</sup> UIUC &nbsp; &nbsp;
+          <sup>3</sup> U of Buffalo
+        </h6> </td>
+    </tr>
+    <br>
+    <!-- <tr>
+      <td colspan="3" align="center"><h7 style="line-height: 3;"> <sup>*</sup> Equal Contribution </h7> </td>
+   </tr> -->
+    <!-- <br><br> -->
+    <tr>
+      <td colspan="3" align="center"><h5 style="line-height: 2;"><div class="row justify-content-center" align="center" >
+        <a href="https://drive.google.com/file/d/1mk33J4SWlhmQvrcjPembl-vKSaX4hAYv/view?usp=sharing" target="_blank"> 
+          <div class="img-with-text">
+            <img src="./poster.png" height="100px" /><br>
+            <p style="font-size: 16px">Poster</p>
+          </div>
+        </a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+        <a href="https://ef030007a9c5a26e85.gradio.live/" target="_blank"> 
+          <div class="img-with-text">
+            <img src="./demo.png" height="100px" /><br>
+            <p style="font-size: 16px">Demo</p>
+          </div>
+        </a>
+
+      </div></h5></td>
+  </tr>
+  </tbody></table>
+
+<style>
+    .video-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap; /* Allows items to wrap to the next line */
+      gap: 20px; /* Adds space between the iframes */
+    }
+    .video-container .feature {
+      width: 768px; /* Specific width for featured iframe */
+      height: 380px; /* Specific height for featured iframe */
+    }
+</style>
+  <div class="text" style="text-align: left;">
+    <div class="video-container">
+      <iframe class="feature" src="https://drive.google.com/file/d/1H0MaN2SRz5wxxu-2V5uxF4hWzrI6we4K/preview" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+  <br>
+    <!-- <p><img src="./teaser.svg" style="display: block;margin-left: auto;margin-right: auto;max-width:90%" align="center"></p> -->
+      <h2 style="font-size: 26px; text-align: center">Abstract</h2>
+      <p>Developing AI systems to aid children with SLP (Speech-Language Pathology) issues is a promising area of research.
+        The Early Social Communication Scales (ESCS) assessment holds significant importance in the early detection of communication and social interaction issues in children.
+        In this demo, we design a multimodal video understanding system for the ESCS assessment context.
+        To that end, we recorded and annotated a total of 8 videos imitating the examiner-child interaction for 4 standard tasks under ESCS: hat, wind-up toy, picture-on-the-wall, and book.
+        Moreover, we carefully designed system instructions for an LLM-based model and equipped it with various tools to effectively understand the videos in the context of ESCS.
+        We believe our system is a promising step in developing an AI Screener.
+      </p>
+</div>
+
+<br>
+
+<style>
+  .video-gallery {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Creates two columns */
+    gap: 20px; /* Adds space between the videos */
+    padding: 20px; /* Adds some padding around the grid */
+  }
+  .video-item {
+    text-align: center;
+  }
+  iframe {
+    width: 100%; /* This will ensure the iframe is responsive */
+    max-width: 640px; /* This will limit the size of the video */
+    height: 290px; /* Height is fixed, you may want to make this responsive as well */
+  }
+  .caption {
+    margin-top: 5px;
+  }
+</style>
+
+<!-- .behavior-details {
+  /* margin: 10px; */
+  /* border: 2px solid #ccc; */
+  /* border-radius: 3px; */
+  /* padding: 10px; */
+} -->
+
+<style>
+  .behavior-content {
+    padding-left: 20px; /* Add padding to the left of the content */
+    padding-top: 10px; /* Add some padding to the bottom */
+  }
+</style>
+
+<div class="container">
+  <h2>ESCS Dataset</h2>
+  <p><img src="./escs.png" style="display: block;margin-left: auto;margin-right: auto;max-width:80%" class="center"></p>
+    <div class="overview">
+    <p>
+      The Early Social Communication Scales (ESCS) assessment is a standardized tool used to evaluate social-communication behaviors and developmental competencies.
+      For our analysis, we recorded 8<sup>*</sup> videos across 4 tasks following the Early Social Communication Scales (ESCS) assessment context.
+    </p>
+    
+    <details>
+      <summary style="font-size:18px; font-weight: 600; margin-bottom: 5px;">Tasks</summary>
+      <p style="padding: 10px;margin-bottom: -10px;">Our recorded videos span across four tasks with each task having a different entity as the object in focus.</p>
+    
+      <div class="video-gallery">
+      <div class="video-item">
+        <iframe src="https://drive.google.com/file/d/1e53wNVGnnoFepEG4cebOIHseDqqM8p55/preview" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <div class="caption">Wind-Up Toy</div>
+      </div>
+      <!-- Repeat this div block for each video, replacing the src attribute with your video URLs -->
+      <div class="video-item">
+        <iframe src="https://drive.google.com/file/d/1BWGUtUZSOjaX2hrdCK8fEnrzfIFmwIha/preview" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <div class="caption">Hat</div>
+      </div>
+      <div class="video-item">
+        <iframe src="https://drive.google.com/file/d/1cTLVl29MYRKx0wEPBi7J56f1qIiO0Q01/preview" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <div class="caption">Book</div>
+      </div>
+      <div class="video-item">
+        <iframe src="https://drive.google.com/file/d/1-DSDikwVGYai-Pcx8Bmy7ENIeJ88n1Ij/preview" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <div class="caption">Picture on the Wall</div>
+      </div>
+    </div>
+
+  </details>
+
+    
+    <details>
+      <summary style="font-size:18px; font-weight: 600;">ESCS Behaviors</summary>
+      <p style="padding: 10px;margin-bottom: -10px;">We provide the definitions for the behaviors that we aim to detect in the recorded videos.</p>
+      <div class="behavior-content">
+        <p><strong>Initiating Behavioral Request (IBR):</strong> the child's skill in using behavior(s) to elicit aid in obtaining an object.</p>
+        <ul>
+          <li>behaviors coded: eye-contact; point; language; reach; give</li>
+        </ul>
+    
+        <p><strong>Initiating Joint Attention (IJA):</strong> the child's skill in using behavior(s) to initiate shared attention to objects or events.</p>
+        <ul>
+          <li>behaviors coded: alternating gaze; coordinated joint look; language; point; show; give</li>
+        </ul>
+    
+        <p><strong>Responding to Joint Attention (RJA):</strong> the child's skill in following the examiner's line of regard and pointing gestures.</p>
+        <ul>
+          <li>behaviors coded: alternating gaze; language</li>
+        </ul>
+    
+        <p><strong>Initiating Social Interaction (ISI):</strong> the child's skill at initiating turn-taking sequences and the tendency to tease the tester.</p>
+        <ul>
+          <li>behaviors coded: turn-taking</li>
+        </ul>
+    
+        <p><strong>Responding to Social Interaction (RSI):</strong> the child's skill in responding to turn-taking interactions initiated by the examiner.</p>
+        <ul>
+          <li>behaviors coded: responds to invitation</li>
+        </ul>
+      </div>
+    </details>
+    
+    </div>
+</div>
+
+<br>
+
+<div class="container">
+  <h2>System Diagram</h2>
+  <p><img src="./system.png" style="display: block;margin-left: auto;margin-right: auto;max-width:80%" class="center"></p>
+    <div class="overview">
+    <p>
+      We equip our system with various tools for understanding and detecting children behaviours in the ESCS assessment context.
+      Specifically, we use <a href="https://github.com/m-bain/whisperX" target="_blank">WhisperX</a> for Automated Speech Recognition (ASR) to obtain video tramnscripts to pass as extra context to the LLM-based <a href="https://github.com/PKU-YuanGroup/Video-LLaVA" target="_blank">Video-LLaVA</a> model for improved performance.
+      We also include ESCS behavior definitions along with the objects used in the video in our system prompt.
+    </p>    
+    </div>
+</div>
+
+<!-- <br> -->
+
+<!-- </p></div></div><br> -->
+
+</p></div></div><br>
+  
+
+</body><grammarly-desktop-integration data-grammarly-shadow-root="true"></grammarly-desktop-integration></html>
