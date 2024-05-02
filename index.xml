@@ -5,7 +5,7 @@
     <link>https://praeclarumjj3.github.io/</link>
       <atom:link href="https://praeclarumjj3.github.io/index.xml" rel="self" type="application/rss+xml" />
     <description>Jitesh Jain</description>
-    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><copyright>© {2023} Jitesh Jain</copyright><lastBuildDate>Tue, 12 Dec 2023 00:00:00 +0000</lastBuildDate>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><copyright>© {2024} Jitesh Jain</copyright><lastBuildDate>Tue, 12 Dec 2023 00:00:00 +0000</lastBuildDate>
     <image>
       <url>https://praeclarumjj3.github.io/media/icon_hud166e63c6d63b20b4040daaa47de5209_74785_512x512_fill_lanczos_center_3.png</url>
       <title>Jitesh Jain</title>
@@ -25,14 +25,6 @@
       <link>https://praeclarumjj3.github.io/publication/oneformer/</link>
       <pubDate>Tue, 18 Jul 2023 00:00:00 +0000</pubDate>
       <guid>https://praeclarumjj3.github.io/publication/oneformer/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Matting Anything</title>
-      <link>https://praeclarumjj3.github.io/publication/mam/</link>
-      <pubDate>Thu, 08 Jun 2023 00:00:00 +0000</pubDate>
-      <guid>https://praeclarumjj3.github.io/publication/mam/</guid>
       <description></description>
     </item>
     
@@ -250,14 +242,6 @@
       <guid>https://praeclarumjj3.github.io/project/iitr_bot/</guid>
       <description>&lt;p&gt;We developed an assistance bot for the &lt;a href=&#34;https://www.iitr.ac.in/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;IITR website&lt;/a&gt; using the &lt;a href=&#34;https://rasa.com/docs/rasa/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;RASA&lt;/a&gt; framework.&lt;/p&gt;
 </description>
-    </item>
-    
-    <item>
-      <title>DEAP Cache: Deep Eviction Admission and Prefetching for Cache</title>
-      <link>https://praeclarumjj3.github.io/publication/deap/</link>
-      <pubDate>Sat, 19 Sep 2020 00:00:00 +0000</pubDate>
-      <guid>https://praeclarumjj3.github.io/publication/deap/</guid>
-      <description></description>
     </item>
     
     <item>

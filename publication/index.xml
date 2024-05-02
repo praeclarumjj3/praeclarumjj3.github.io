@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Publications | Jitesh Jain</title>
+    <title>Featured Publications | Jitesh Jain</title>
     <link>https://praeclarumjj3.github.io/publication/</link>
       <atom:link href="https://praeclarumjj3.github.io/publication/index.xml" rel="self" type="application/rss+xml" />
-    <description>Publications</description>
-    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><copyright>© {2023} Jitesh Jain</copyright><lastBuildDate>Tue, 12 Dec 2023 00:00:00 +0000</lastBuildDate>
+    <description>Featured Publications</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><copyright>© {2024} Jitesh Jain</copyright><lastBuildDate>Tue, 12 Dec 2023 00:00:00 +0000</lastBuildDate>
     <image>
       <url>https://praeclarumjj3.github.io/media/icon_hud166e63c6d63b20b4040daaa47de5209_74785_512x512_fill_lanczos_center_3.png</url>
-      <title>Publications</title>
+      <title>Featured Publications</title>
       <link>https://praeclarumjj3.github.io/publication/</link>
     </image>
     
@@ -29,14 +29,6 @@
     </item>
     
     <item>
-      <title>Matting Anything</title>
-      <link>https://praeclarumjj3.github.io/publication/mam/</link>
-      <pubDate>Thu, 08 Jun 2023 00:00:00 +0000</pubDate>
-      <guid>https://praeclarumjj3.github.io/publication/mam/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Keys to Better Image Inpainting: Structure and Texture Go Hand in Hand</title>
       <link>https://praeclarumjj3.github.io/publication/fcf-inpainting/</link>
       <pubDate>Sun, 05 Feb 2023 00:00:00 +0000</pubDate>
@@ -49,14 +41,6 @@
       <link>https://praeclarumjj3.github.io/publication/semask/</link>
       <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
       <guid>https://praeclarumjj3.github.io/publication/semask/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>DEAP Cache: Deep Eviction Admission and Prefetching for Cache</title>
-      <link>https://praeclarumjj3.github.io/publication/deap/</link>
-      <pubDate>Sat, 19 Sep 2020 00:00:00 +0000</pubDate>
-      <guid>https://praeclarumjj3.github.io/publication/deap/</guid>
       <description></description>
     </item>
     
