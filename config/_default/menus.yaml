@@ -4,24 +4,16 @@
   #   The weight parameter defines the order that the links will appear in.
 
 main:
-  - name: Bio
+  - name: Home
     url: /
     weight: 10
-  - name: Papers
-    url: /#papers
+  - name: Publications
+    url: "#publications"
     weight: 11
-  - name: Talks
-    url: /#talks
+  - name: Blogs
+    url: "#blogs"
     weight: 12
-  - name: News
-    url: /#news
     weight: 13
-  - name: Experience
-    url: experience/
-    weight: 20
-  - name: Projects
-    url: projects/
-    weight: 30
-  - name: Teaching
-    url: teaching/
-    weight: 40
+  - name: Books
+    url: 'https://praeclarumjj3.notion.site/db6442860924487585bb1dffeefa5d21?v=4f8eb73a6d8f4407aa2a5ecc842c3828'
+    weight: 15

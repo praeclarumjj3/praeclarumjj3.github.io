@@ -6,7 +6,7 @@
 # Appearance
 appearance:
   mode: system
-  color: emerald
+  color: teal
 
 # SEO
 marketing:
@@ -14,8 +14,8 @@ marketing:
     site_type: Person
     local_business_type: ''
     org_name: ''
-    description: 'The highly-customizable Hugo Academic theme powered by Hugo Blox Builder. Easily create your personal academic website.'
-    twitter: 'GetResearchDev'
+    description: 'PhD Student at Georgia Tech, with research interests in developing multimodal systems.'
+    twitter: 'praeclarumjj'
   analytics:
     google_analytics: ''
     baidu_tongji: ''
@@ -31,30 +31,32 @@ header:
   navbar:
     enable: true
     blox: "navbar"
+    align: "right"
     fixed_to_top: true
-    show_search: true
+    show_search: false
+    highlight_active_link: true
     show_theme_chooser: true
     logo:
-      text: "Your Name"
+      text: "Jitesh Jain"
 
 # Site footer
 footer:
   copyright:
-    notice: '© {year} Me. This work is licensed under {license}'
+    notice: '© {2024} Jitesh Jain'
     license:
-      enable: true
+      enable: false
       allow_derivatives: false
-      share_alike: true
+      share_alike: false
       allow_commercial: false
 
 # Localization
 locale:
-  date_format: 'Jan 2, 2006'
-  time_format: '3:04 PM'
+  date_format: 'Jan 2006'
+  time_format: '17:04'
 
 # Site features
 features:
   math:
-    enable: false
+    enable: true
   privacy_pack:
-    enable: false
+    enable: true
