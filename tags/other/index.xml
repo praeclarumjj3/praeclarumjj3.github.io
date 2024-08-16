@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Other | Jitesh Jain</title><link>https://praeclarumjj3.github.io/tags/other/</link><atom:link href="https://praeclarumjj3.github.io/tags/other/index.xml" rel="self" type="application/rss+xml"/><description>Other</description><generator>Hugo Blox Builder (https://hugoblox.com)</generator><language>en-us</language><lastBuildDate>Sat, 10 Apr 2021 00:00:00 +0000</lastBuildDate><image><url>https://praeclarumjj3.github.io/media/icon_hu18230691612322137769.png</url><title>Other</title><link>https://praeclarumjj3.github.io/tags/other/</link></image><item><title>OLIE</title><link>https://praeclarumjj3.github.io/project/olie/</link><pubDate>Sat, 10 Apr 2021 00:00:00 +0000</pubDate><guid>https://praeclarumjj3.github.io/project/olie/</guid><description>&lt;p>OLIE was aimed to reconstruct the original image with the objects removed (editing) by incorporating the mask features as input to the reconstructor.&lt;/p>
+&lt;p>After performing many experiments, we scrapped the idea. However, some of the experiments that I performed were:&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>&lt;strong>Using a Perturbator Model:&lt;/strong> Taking inspiration from &lt;a href="https://ganpaint.io/">GanPaint&lt;/a>, I tried editing images using perturbations in the reconstructor, however it didn&amp;rsquo;t work well.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>Using Gated Convolutions:&lt;/strong> Taking inspiration from &lt;a href="https://paperswithcode.com/paper/free-form-image-inpainting-with-gated">Free-Form Image Inpainting with Gated Convolution&lt;/a>, I used &lt;code>Gated Modules&lt;/code> instead of standard modules which gave even &lt;strong>poorer results&lt;/strong>.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>Using Two Stage Model:&lt;/strong> Getting hole images from the reconstructor and then passing that into an inpainting model gave somewhat good results as the generating the hole image could be learned accurately to an extent, however, the results were no better than the common inpainting ones.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;p>Our aim was to come up with a &lt;strong>Single Stage Model&lt;/strong> for image editing using instance maps.&lt;/p>
+&lt;p>For more info, please see the Code on &lt;code>GitHub&lt;/code>.&lt;/p></description></item><item><title>granim</title><link>https://praeclarumjj3.github.io/project/granim/</link><pubDate>Sat, 03 Apr 2021 00:00:00 +0000</pubDate><guid>https://praeclarumjj3.github.io/project/granim/</guid><description>&lt;p>&lt;strong>granim&lt;/strong> makes it easier to plot animated graphs using the Manim-Engine. This project is still under development. Contributors are always welcome!&lt;/p></description></item><item><title>IITR ChatBot</title><link>https://praeclarumjj3.github.io/project/iitr_bot/</link><pubDate>Mon, 28 Sep 2020 00:00:00 +0000</pubDate><guid>https://praeclarumjj3.github.io/project/iitr_bot/</guid><description>&lt;p>We developed an assistance bot for the &lt;a href="https://www.iitr.ac.in/">IITR website&lt;/a> using the &lt;a href="https://rasa.com/docs/rasa/">RASA&lt;/a> framework.&lt;/p></description></item><item><title>Paper Summaries</title><link>https://praeclarumjj3.github.io/project/summary_of_papers/</link><pubDate>Tue, 07 Jul 2020 00:00:00 +0000</pubDate><guid>https://praeclarumjj3.github.io/project/summary_of_papers/</guid><description>&lt;p>Summaries:&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>&lt;a href="https://github.com/vlgiitr/papers_we_read/blob/master/summaries/You_only_train_once.md">You Only Train Once : Loss-conditional training of deep networks, ICLR 2020&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;a href="https://github.com/vlgiitr/papers_we_read/blob/master/summaries/GrokNet.md">GrokNet: Unified Computer Vision Model Trunk and Embeddings For Commerce, KDD 2020&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;a href="https://github.com/vlgiitr/papers_we_read/blob/master/summaries/Semantically_multi-modal_image_synthesis.md">Semantically multi-modal image synthesis, CVPR 2020&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;a href="https://github.com/vlgiitr/papers_we_read/blob/master/summaries/GameGAN.md">Learning to Simulate Dynamic Environments with GameGAN, CVPR 2020&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;a href="https://github.com/vlgiitr/papers_we_read/blob/master/summaries/Adversarial_RL.md">Adversarial Policies : Attacking deep reinforcement learning, ICLR 2020&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;a href="https://github.com/vlgiitr/papers_we_read/blob/master/summaries/Unsupervised_learning_for_3D_objects_from_images.md">Unsupervised Learning of Probably Symmetric Deformable 3D Objects from Images in the Wild, CVPR 2020&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;a href="https://github.com/vlgiitr/papers_we_read/blob/master/summaries/BYOL.md">Bootstrap Your Own Latent: A New Approach to Self-Supervised Learning, CVPR 2020&lt;/a>&lt;/p>
+&lt;/li>
+&lt;/ul></description></item><item><title>Geofile</title><link>https://praeclarumjj3.github.io/project/geofile/</link><pubDate>Sun, 05 Apr 2020 00:00:00 +0000</pubDate><guid>https://praeclarumjj3.github.io/project/geofile/</guid><description>&lt;ul>
+&lt;li>Geofile lets you couple files them with a specific location.&lt;/li>
+&lt;li>I worked on developing Front-End part of the app using Flutter.&lt;/li>
+&lt;li>&lt;strong>Playstore Early Access&lt;/strong>: You can test the beta version on the Playstore by searching for &lt;strong>geofile&lt;/strong>.&lt;/li>
+&lt;/ul></description></item></channel></rss>
