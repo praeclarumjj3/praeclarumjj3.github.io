@@ -34,18 +34,6 @@
     <lastmod>2023-12-12T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://praeclarumjj3.github.io/tags/markdown/</loc>
-    <lastmod>2023-10-26T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-  </url><url>
-    <loc>https://praeclarumjj3.github.io/tags/second-brain/</loc>
-    <lastmod>2023-10-26T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-  </url><url>
-    <loc>https://praeclarumjj3.github.io/my-research/</loc>
-    <lastmod>2023-10-26T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-  </url><url>
     <loc>https://praeclarumjj3.github.io/experience/</loc>
     <lastmod>2023-10-24T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -231,6 +219,9 @@
     <changefreq>weekly</changefreq>
   </url><url>
     <loc>https://praeclarumjj3.github.io/blogs/memory_wall_iitr/</loc>
+    <changefreq>weekly</changefreq>
+  </url><url>
+    <loc>https://praeclarumjj3.github.io/my-research/</loc>
     <changefreq>weekly</changefreq>
   </url>
 </urlset>

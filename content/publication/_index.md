@@ -11,6 +11,6 @@ banner:
   caption: ''
   image: ''
 ---
-### Publications
+### Selected Publications
 
 For a complete list of my research works, please lookup my [google-scholar](https://scholar.google.com/citations?view_op=list_works&hl=en&user=nygnfNwAAAAJ).

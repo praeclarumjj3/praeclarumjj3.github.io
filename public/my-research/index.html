@@ -1,6 +1,6 @@
 <!doctype html>
 <!-- This site was created with Hugo Blox. https://hugoblox.com -->
-<!-- Last Published: August 17, 2024 --><html lang="en-us" dir="ltr"
+<!-- Last Published: October 23, 2024 --><html lang="en-us" dir="ltr"
       data-wc-theme-default="system">
   
 <head>
@@ -41,7 +41,7 @@
   
     
   
-  <meta name="description" content="Create a personal knowledge base and share your knowledge with your peers." />
+  <meta name="description" content="PhD Student at Georgia Tech, with research interests in developing multimodal systems." />
 
   
   <link rel="alternate" hreflang="en-us" href="https://praeclarumjj3.github.io/my-research/" />
@@ -190,13 +190,11 @@
   
   <meta property="og:site_name" content="Jitesh Jain" />
   <meta property="og:url" content="https://praeclarumjj3.github.io/my-research/" />
-  <meta property="og:title" content="🧠 Sharpen your thinking with a second brain | Jitesh Jain" />
-  <meta property="og:description" content="Create a personal knowledge base and share your knowledge with your peers." /><meta property="og:image" content="https://praeclarumjj3.github.io/media/icon_hu18230691612322137769.png" />
+  <meta property="og:title" content="Jitesh Jain" />
+  <meta property="og:description" content="PhD Student at Georgia Tech, with research interests in developing multimodal systems." /><meta property="og:image" content="https://praeclarumjj3.github.io/media/icon_hu18230691612322137769.png" />
     <meta property="twitter:image" content="https://praeclarumjj3.github.io/media/icon_hu18230691612322137769.png" /><meta property="og:locale" content="en-us" />
   
     
-      <meta property="og:updated_time" content="2023-10-26T00:00:00&#43;00:00" />
-    
   
 
   
@@ -204,7 +202,7 @@
 
 
 
-  <title>🧠 Sharpen your thinking with a second brain | Jitesh Jain</title>
+  <title>Jitesh Jain</title>
 
   
   
@@ -262,9 +260,6 @@
   
   
   
-  
-  
-  
     
       
       
@@ -468,6 +463,7 @@
   
   
   
+  
 
 
 
@@ -478,28 +474,6 @@
 
 
 
-
-<style>
-  .markmap > svg {
-    width: 100%;
-    height: 100%;
-  }
-</style>
-<script>
-  window.markmap = {
-    autoLoader: {
-      manual: false,
-      onReady() {
-        const { autoLoader, builtInPlugins } = window.markmap;
-        
-        autoLoader.transformPlugins = builtInPlugins.filter(plugin => plugin.name !== 'prism');
-      },
-    },
-  };
-</script>
-
-
-<script defer src="/dist/lib/markmap/index.min.c9d7aae44c6040009be2304689eae39673e6614f1a92d8f4a69f581bed004b9b.js" integrity="sha256-ydeq5ExgQACb4jBGierjlnPmYU8aktj0pp9YG&#43;0AS5s="></script>
 
 
 
@@ -836,111 +810,10 @@
 
 <div class="max-w-prose mx-auto flex justify-center">
   <article class="prose prose-slate lg:prose-xl dark:prose-invert">
-    <h1 class="lg:text-6xl">🧠 Sharpen your thinking with a second brain</h1>
-    <p>Create a personal knowledge base and share your knowledge with your peers.</p>
-<p>Hugo Blox web framework empowers you with one of the most flexible note-taking capabilities out there.</p>
-<p>Create a powerful knowledge base that works on top of a local folder of plain text Markdown files.</p>
-<p>Use it as your second brain, either publicly sharing your knowledge with your peers via your website, or via a private GitHub repository and password-protected site just for yourself.</p>
-<h2 id="mindmaps">Mindmaps</h2>
-<p>Hugo Blox supports a Markdown extension for mindmaps.</p>
-<p>With this open format, can even edit your mindmaps in other popular tools such as Obsidian.</p>
-<p>Simply insert a Markdown code block labelled as <code>markmap</code> and optionally set the height of the mindmap as shown in the example below.</p>
-<p>Mindmaps can be created by simply writing the items as a Markdown list within the <code>markmap</code> code block, indenting each item to create as many sub-levels as you need:</p>
-<div class="highlight">
-<pre class="chroma">
-<code>
-```markmap {height="200px"}
-- Hugo Modules
-  - Hugo Blox
-  - blox-plugins-netlify
-  - blox-plugins-netlify-cms
-  - blox-plugins-reveal
-```
-</code>
-</pre>
-</div>
-<p>renders as</p>
-<div class="markmap" style="height: 200px;">
-
-<pre>- Hugo Modules
-  - Hugo Blox
-  - blox-plugins-netlify
-  - blox-plugins-netlify-cms
-  - blox-plugins-reveal</pre>
-</div>
-
-<p>Anh here&rsquo;s a more advanced mindmap with formatting, code blocks, and math:</p>
-<div class="highlight">
-<pre class="chroma">
-<code>
-```markmap
-- Mindmaps
-  - Links
-    - [Hugo Blox Docs](https://docs.hugoblox.com/)
-    - [Discord Community](https://discord.gg/z8wNYzb)
-    - [GitHub](https://github.com/HugoBlox/hugo-blox-builder)
-  - Features
-    - Markdown formatting
-    - **inline** ~~text~~ *styles*
-    - multiline
-      text
-    - `inline code`
-    -
-      ```js
-      console.log('hello');
-      console.log('code block');
-      ```
-    - Math: $x = {-b \pm \sqrt{b^2-4ac} \over 2a}$
-```
-</code>
-</pre>
-</div>
-<p>renders as</p>
-<div class="markmap" style="height: 500px;">
-
-<pre>- Mindmaps
-  - Links
-    - [Hugo Blox Docs](https://docs.hugoblox.com/)
-    - [Discord Community](https://discord.gg/z8wNYzb)
-    - [GitHub](https://github.com/HugoBlox/hugo-blox-builder)
-  - Features
-    - Markdown formatting
-    - **inline** ~~text~~ *styles*
-    - multiline
-      text
-    - `inline code`
-    -
-      ```js
-      console.log('hello');
-      console.log('code block');
-      ```
-    - Math: $x = {-b \pm \sqrt{b^2-4ac} \over 2a}$</pre>
-</div>
-
-<h2 id="highlighting">Highlighting</h2>
-<p><mark>Highlight</mark> important text with <code>mark</code>:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">mark</span><span class="p">&gt;</span>Highlighted text<span class="p">&lt;/</span><span class="nt">mark</span><span class="p">&gt;</span>
-</span></span></code></pre></div><h2 id="callouts">Callouts</h2>
-<p>Use <a href="https://docs.hugoblox.com/reference/markdown/#callouts" target="_blank" rel="noopener">callouts</a> (aka <em>asides</em>, <em>hints</em>, or <em>alerts</em>) to draw attention to notes, tips, and warnings.</p>
-<p>By wrapping a paragraph in <code>{{% callout note %}} ... {{% /callout %}}</code>, it will render as an aside.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-markdown" data-lang="markdown"><span class="line"><span class="cl">{{% callout note %}}
-</span></span><span class="line"><span class="cl">A Markdown aside is useful for displaying notices, hints, or definitions to your readers.
-</span></span><span class="line"><span class="cl">{{% /callout %}}
-</span></span></code></pre></div><p>renders as</p>
-<div class="flex px-4 py-3 mb-6 rounded-md bg-primary-100 dark:bg-primary-900">
-<span class="pr-3 pt-1 text-primary-600 dark:text-primary-300">
-  <svg height="24" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="m11.25 11.25l.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0a9 9 0 0 1 18 0m-9-3.75h.008v.008H12z"/></svg>
-</span>
-  <span class="dark:text-neutral-300">A Markdown aside is useful for displaying notices, hints, or definitions to your readers.</span>
-</div>
-<p>Or use the <code>warning</code> callout type so your readers don&rsquo;t miss critical details:</p>
-<div class="flex px-4 py-3 mb-6 rounded-md bg-yellow-100 dark:bg-yellow-900">
-<span class="pr-3 pt-1 text-red-400">
-  <svg height="24" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0zM12 15.75h.007v.008H12z"/></svg>
-</span>
-  <span class="dark:text-neutral-300">A Markdown aside is useful for displaying notices, hints, or definitions to your readers.</span>
-</div>
-<h2 id="did-you-find-this-page-helpful-consider-sharing-it-">Did you find this page helpful? Consider sharing it 🙌</h2>
+    <h1 class="lg:text-6xl"></h1>
+    <!-- --- -->
+<!-- --- -->
+<h4 id="create-a-personal-knowledge-base-and-share-your-knowledge-with-your-peers">Create a personal knowledge base and share your knowledge with your peers.</h4>
 
   </article>
 </div>
