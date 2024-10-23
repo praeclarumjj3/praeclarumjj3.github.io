@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Projects | Jitesh Jain</title><link>https://praeclarumjj3.github.io/project/</link><atom:link href="https://praeclarumjj3.github.io/project/index.xml" rel="self" type="application/rss+xml"/><description>Projects</description><generator>Hugo Blox Builder (https://hugoblox.com)</generator><language>en-us</language><lastBuildDate>Tue, 10 May 2022 00:00:00 +0000</lastBuildDate><image><url>https://praeclarumjj3.github.io/media/icon_hu18230691612322137769.png</url><title>Projects</title><link>https://praeclarumjj3.github.io/project/</link></image><item><title>Neural Style Transfer: A Technical Report</title><link>https://praeclarumjj3.github.io/project/nst-tech/</link><pubDate>Tue, 10 May 2022 00:00:00 +0000</pubDate><guid>https://praeclarumjj3.github.io/project/nst-tech/</guid><description>&lt;p>As a part of the &lt;code>CSN-526: Machine Learning&lt;/code> Course Project, we worked on studying the effects of various factors like feature extractors, optimizers, loss functions and initialization techniques on the neural style transfer task.&lt;/p>
 &lt;p>We also proposed the use of pseudo ground truths for evaluating the performance under different settings.&lt;/p>
-&lt;p>For more info, please see the Code on &lt;code>GitHub&lt;/code>.&lt;/p></description></item><item><title>AOT-GAN Experiments</title><link>https://praeclarumjj3.github.io/project/aot-gan-experiments/</link><pubDate>Wed, 19 May 2021 00:00:00 +0000</pubDate><guid>https://praeclarumjj3.github.io/project/aot-gan-experiments/</guid><description>&lt;p>I conducted various experiments with &lt;strong>AOT-GAN&lt;/strong> proposed in the paper: &lt;a href="https://arxiv.org/abs/2104.01431">Aggregated Contextual Transformations for High-Resolution Image Inpainting&lt;/a>) on the &lt;a href="http://places2.csail.mit.edu/download.html">Places2&lt;/a> dataset using the &lt;a href="https://nv-adlr.github.io/publication/partialconv-inpainting">PConv Free Form Masks for Inpainting&lt;/a>.&lt;/p>
+&lt;p>For more info, please see the Code on &lt;code>GitHub&lt;/code>.&lt;/p></description></item><item><title>AOT-GAN Experiments</title><link>https://praeclarumjj3.github.io/project/aot-gan-experiments/</link><pubDate>Wed, 19 May 2021 00:00:00 +0000</pubDate><guid>https://praeclarumjj3.github.io/project/aot-gan-experiments/</guid><description>&lt;p>I conducted various experiments with &lt;strong>AOT-GAN&lt;/strong> proposed in the paper:
+) on the
+dataset using the
+.&lt;/p>
 &lt;p>In particular, I focused on finding the effectivity of different losses while training the framework. I made several observations:&lt;/p>
 &lt;ul>
 &lt;li>
@@ -20,10 +23,12 @@
 &lt;p>After performing many experiments, we scrapped the idea. However, some of the experiments that I performed were:&lt;/p>
 &lt;ul>
 &lt;li>
-&lt;p>&lt;strong>Using a Perturbator Model:&lt;/strong> Taking inspiration from &lt;a href="https://ganpaint.io/">GanPaint&lt;/a>, I tried editing images using perturbations in the reconstructor, however it didn&amp;rsquo;t work well.&lt;/p>
+&lt;p>&lt;strong>Using a Perturbator Model:&lt;/strong> Taking inspiration from
+, I tried editing images using perturbations in the reconstructor, however it didn&amp;rsquo;t work well.&lt;/p>
 &lt;/li>
 &lt;li>
-&lt;p>&lt;strong>Using Gated Convolutions:&lt;/strong> Taking inspiration from &lt;a href="https://paperswithcode.com/paper/free-form-image-inpainting-with-gated">Free-Form Image Inpainting with Gated Convolution&lt;/a>, I used &lt;code>Gated Modules&lt;/code> instead of standard modules which gave even &lt;strong>poorer results&lt;/strong>.&lt;/p>
+&lt;p>&lt;strong>Using Gated Convolutions:&lt;/strong> Taking inspiration from
+, I used &lt;code>Gated Modules&lt;/code> instead of standard modules which gave even &lt;strong>poorer results&lt;/strong>.&lt;/p>
 &lt;/li>
 &lt;li>
 &lt;p>&lt;strong>Using Two Stage Model:&lt;/strong> Getting hole images from the reconstructor and then passing that into an inpainting model gave somewhat good results as the generating the hole image could be learned accurately to an extent, however, the results were no better than the common inpainting ones.&lt;/p>
@@ -53,36 +58,49 @@
 &lt;li>
 &lt;p>Number of Parameters&lt;/p>
 &lt;/li>
-&lt;/ul></description></item><item><title>ArxivApp</title><link>https://praeclarumjj3.github.io/project/arxiv_app/</link><pubDate>Thu, 26 Nov 2020 00:00:00 +0000</pubDate><guid>https://praeclarumjj3.github.io/project/arxiv_app/</guid><description>&lt;p>&lt;strong>ArxivApp&lt;/strong> lets you read, bookmark and download papers from arXiv.org. It also has a forum screen that lets you read and create notes/blogs about the different research papers you read!&lt;/p></description></item><item><title>IITR ChatBot</title><link>https://praeclarumjj3.github.io/project/iitr_bot/</link><pubDate>Mon, 28 Sep 2020 00:00:00 +0000</pubDate><guid>https://praeclarumjj3.github.io/project/iitr_bot/</guid><description>&lt;p>We developed an assistance bot for the &lt;a href="https://www.iitr.ac.in/">IITR website&lt;/a> using the &lt;a href="https://rasa.com/docs/rasa/">RASA&lt;/a> framework.&lt;/p></description></item><item><title>IITR Security App</title><link>https://praeclarumjj3.github.io/project/security_app/</link><pubDate>Sat, 05 Sep 2020 00:00:00 +0000</pubDate><guid>https://praeclarumjj3.github.io/project/security_app/</guid><description>&lt;ul>
+&lt;/ul></description></item><item><title>ArxivApp</title><link>https://praeclarumjj3.github.io/project/arxiv_app/</link><pubDate>Thu, 26 Nov 2020 00:00:00 +0000</pubDate><guid>https://praeclarumjj3.github.io/project/arxiv_app/</guid><description>&lt;p>&lt;strong>ArxivApp&lt;/strong> lets you read, bookmark and download papers from arXiv.org. It also has a forum screen that lets you read and create notes/blogs about the different research papers you read!&lt;/p></description></item><item><title>IITR ChatBot</title><link>https://praeclarumjj3.github.io/project/iitr_bot/</link><pubDate>Mon, 28 Sep 2020 00:00:00 +0000</pubDate><guid>https://praeclarumjj3.github.io/project/iitr_bot/</guid><description>&lt;p>We developed an assistance bot for the
+using the
+framework.&lt;/p></description></item><item><title>IITR Security App</title><link>https://praeclarumjj3.github.io/project/security_app/</link><pubDate>Sat, 05 Sep 2020 00:00:00 +0000</pubDate><guid>https://praeclarumjj3.github.io/project/security_app/</guid><description>&lt;ul>
 &lt;li>IITR Security App was developed to eliminate the use of paper by the guards to record the details of the visitors at IIT Roorkee.&lt;/li>
 &lt;li>I worked on developing Front-End part of the app using Flutter.&lt;/li>
-&lt;li>&lt;strong>Playstore Link&lt;/strong>: &lt;a href="https://play.google.com/store/apps/details?id=in.ac.iitr.mdg.securityapp">https://play.google.com/store/apps/details?id=in.ac.iitr.mdg.securityapp&lt;/a>&lt;/li>
+&lt;li>&lt;strong>Playstore Link&lt;/strong>:
+&lt;/li>
 &lt;/ul></description></item><item><title>Paper Summaries</title><link>https://praeclarumjj3.github.io/project/summary_of_papers/</link><pubDate>Tue, 07 Jul 2020 00:00:00 +0000</pubDate><guid>https://praeclarumjj3.github.io/project/summary_of_papers/</guid><description>&lt;p>Summaries:&lt;/p>
 &lt;ul>
 &lt;li>
-&lt;p>&lt;a href="https://github.com/vlgiitr/papers_we_read/blob/master/summaries/You_only_train_once.md">You Only Train Once : Loss-conditional training of deep networks, ICLR 2020&lt;/a>&lt;/p>
+&lt;p>
+&lt;/p>
 &lt;/li>
 &lt;li>
-&lt;p>&lt;a href="https://github.com/vlgiitr/papers_we_read/blob/master/summaries/GrokNet.md">GrokNet: Unified Computer Vision Model Trunk and Embeddings For Commerce, KDD 2020&lt;/a>&lt;/p>
+&lt;p>
+&lt;/p>
 &lt;/li>
 &lt;li>
-&lt;p>&lt;a href="https://github.com/vlgiitr/papers_we_read/blob/master/summaries/Semantically_multi-modal_image_synthesis.md">Semantically multi-modal image synthesis, CVPR 2020&lt;/a>&lt;/p>
+&lt;p>
+&lt;/p>
 &lt;/li>
 &lt;li>
-&lt;p>&lt;a href="https://github.com/vlgiitr/papers_we_read/blob/master/summaries/GameGAN.md">Learning to Simulate Dynamic Environments with GameGAN, CVPR 2020&lt;/a>&lt;/p>
+&lt;p>
+&lt;/p>
 &lt;/li>
 &lt;li>
-&lt;p>&lt;a href="https://github.com/vlgiitr/papers_we_read/blob/master/summaries/Adversarial_RL.md">Adversarial Policies : Attacking deep reinforcement learning, ICLR 2020&lt;/a>&lt;/p>
+&lt;p>
+&lt;/p>
 &lt;/li>
 &lt;li>
-&lt;p>&lt;a href="https://github.com/vlgiitr/papers_we_read/blob/master/summaries/Unsupervised_learning_for_3D_objects_from_images.md">Unsupervised Learning of Probably Symmetric Deformable 3D Objects from Images in the Wild, CVPR 2020&lt;/a>&lt;/p>
+&lt;p>
+&lt;/p>
 &lt;/li>
 &lt;li>
-&lt;p>&lt;a href="https://github.com/vlgiitr/papers_we_read/blob/master/summaries/BYOL.md">Bootstrap Your Own Latent: A New Approach to Self-Supervised Learning, CVPR 2020&lt;/a>&lt;/p>
+&lt;p>
+&lt;/p>
 &lt;/li>
-&lt;/ul></description></item><item><title>ChatBot with Pytorch</title><link>https://praeclarumjj3.github.io/project/chatbot/</link><pubDate>Fri, 19 Jun 2020 00:00:00 +0000</pubDate><guid>https://praeclarumjj3.github.io/project/chatbot/</guid><description>&lt;p>I implemented a chatbot in Pytorch on the Cornell Movie Dialog Corpus dataset using GRUs and Attention mechanism.&lt;/p></description></item><item><title>VQ-VAE on MNIST</title><link>https://praeclarumjj3.github.io/project/vq_vae/</link><pubDate>Wed, 20 May 2020 00:00:00 +0000</pubDate><guid>https://praeclarumjj3.github.io/project/vq_vae/</guid><description>&lt;p>I tried to implement &lt;a href="https://arxiv.org/abs/1711.00937">VQ-VAE&lt;/a> in Pytorch on the MNIST dataset.&lt;/p></description></item><item><title>Time Tracer</title><link>https://praeclarumjj3.github.io/project/time_trace/</link><pubDate>Mon, 27 Apr 2020 00:00:00 +0000</pubDate><guid>https://praeclarumjj3.github.io/project/time_trace/</guid><description>&lt;p>A Flutter application developed as a self-learning project to help people keep track of their time expenditure.&lt;/p></description></item><item><title>Societyfy</title><link>https://praeclarumjj3.github.io/project/societyfy/</link><pubDate>Wed, 08 Apr 2020 00:00:00 +0000</pubDate><guid>https://praeclarumjj3.github.io/project/societyfy/</guid><description>&lt;p>SOCIETYFY is an app showcase app developed during MDG’s SoC event in December, 2019. Societyfy lets you discover new people based on your interest at any moment of time and make new bonds with people you share an interest with at any point in time through its specific chatrooms for each category.&lt;/p>
-&lt;p>&lt;strong>PlayStore Link&lt;/strong>: &lt;a href="https://play.google.com/store/apps/details?id=in.ac.mdg.iitr.societyfy">https://play.google.com/store/apps/details?id=in.ac.mdg.iitr.societyfy&lt;/a>&lt;/p>
-&lt;p>&lt;strong>Medium Blog&lt;/strong>: &lt;a href="https://medium.com/mobile-development-group/societyfy-an-app-made-for-finding-company-at-anytime-for-anything-842e18151551"> Societyfy: An app made for finding company at any time for anything&lt;/a>&lt;/p></description></item><item><title>Geofile</title><link>https://praeclarumjj3.github.io/project/geofile/</link><pubDate>Sun, 05 Apr 2020 00:00:00 +0000</pubDate><guid>https://praeclarumjj3.github.io/project/geofile/</guid><description>&lt;ul>
+&lt;/ul></description></item><item><title>ChatBot with Pytorch</title><link>https://praeclarumjj3.github.io/project/chatbot/</link><pubDate>Fri, 19 Jun 2020 00:00:00 +0000</pubDate><guid>https://praeclarumjj3.github.io/project/chatbot/</guid><description>&lt;p>I implemented a chatbot in Pytorch on the Cornell Movie Dialog Corpus dataset using GRUs and Attention mechanism.&lt;/p></description></item><item><title>VQ-VAE on MNIST</title><link>https://praeclarumjj3.github.io/project/vq_vae/</link><pubDate>Wed, 20 May 2020 00:00:00 +0000</pubDate><guid>https://praeclarumjj3.github.io/project/vq_vae/</guid><description>&lt;p>I tried to implement
+in Pytorch on the MNIST dataset.&lt;/p></description></item><item><title>Time Tracer</title><link>https://praeclarumjj3.github.io/project/time_trace/</link><pubDate>Mon, 27 Apr 2020 00:00:00 +0000</pubDate><guid>https://praeclarumjj3.github.io/project/time_trace/</guid><description>&lt;p>A Flutter application developed as a self-learning project to help people keep track of their time expenditure.&lt;/p></description></item><item><title>Societyfy</title><link>https://praeclarumjj3.github.io/project/societyfy/</link><pubDate>Wed, 08 Apr 2020 00:00:00 +0000</pubDate><guid>https://praeclarumjj3.github.io/project/societyfy/</guid><description>&lt;p>SOCIETYFY is an app showcase app developed during MDG’s SoC event in December, 2019. Societyfy lets you discover new people based on your interest at any moment of time and make new bonds with people you share an interest with at any point in time through its specific chatrooms for each category.&lt;/p>
+&lt;p>&lt;strong>PlayStore Link&lt;/strong>:
+&lt;/p>
+&lt;p>&lt;strong>Medium Blog&lt;/strong>:
+&lt;/p></description></item><item><title>Geofile</title><link>https://praeclarumjj3.github.io/project/geofile/</link><pubDate>Sun, 05 Apr 2020 00:00:00 +0000</pubDate><guid>https://praeclarumjj3.github.io/project/geofile/</guid><description>&lt;ul>
 &lt;li>Geofile lets you couple files them with a specific location.&lt;/li>
 &lt;li>I worked on developing Front-End part of the app using Flutter.&lt;/li>
 &lt;li>&lt;strong>Playstore Early Access&lt;/strong>: You can test the beta version on the Playstore by searching for &lt;strong>geofile&lt;/strong>.&lt;/li>
