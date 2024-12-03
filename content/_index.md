@@ -23,16 +23,28 @@ sections:
       font_size: 10 rem
       background:
         color: dark
-        image:
-          # Add your image background to `assets/media/`.
-          filename: bg.jpg
-          filters:
-            brightness: 0.25
-          size: cover
-          position: center
-          parallax: false
+        # image:
+        #   # Add your image background to `assets/media/`.
+        #   filename: bg.jpg
+        #   filters:
+        #     brightness: 0.25
+        #   size: cover
+        #   position: center
+        #   parallax: false
       # spacing:
       #   padding: [-20px, -20px, -20px, -20px]
+  # - block: markdown
+  #   content:
+  #     title: ' News'
+  #     subtitle: ''
+  #     text: |-
+  #       Use this area to speak to your mission. I'm a research scientist in the Moonshot team at DeepMind. I blog about machine learning, deep learning, and moonshots.
+
+  #       I apply a range of qualitative and quantitative methods to comprehensively investigate the role of science and technology in the economy.
+        
+  #       Please reach out to collaborate 😃
+    # design:
+    #   columns: '1'
   - block: collection
     id: publications
     content:
