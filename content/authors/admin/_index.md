@@ -67,11 +67,13 @@ Presently, I am a part-time Research Intern at Microsoft Research where I am men
 My current research interests revolve around developing multimodal systems. During my undergraduate years, I mainly worked on image segmentation and inpainting. Reach out if you are interested in my research or would like to discuss any ideas. 
 <!-- Please checkout the [research secton](my-research) for my outlook on research. -->
 
-<span style="color:#00b4b4">I am seeking internship opportunities starting in Spring 2025. If you have any openings, please reach out to me!</span>
+<span style="color:#00b4b4">I am seeking internship opportunities starting in Spring/Summer 2025. If you have any openings, please reach out to me!</span>
 
 
 <details>
   <summary>News</summary>
+
+- **[December 2024]**: Checkout out [OLA-VLM](https://praeclarumjj3.github.io/ola_vlm/), result of my internship at Microsoft Research, Redmond! 🚀
 
 - **[May 2024]**: Excited to start Summer Internship at Microsoft Research, Redmond! 🧑‍💻
 

@@ -2,16 +2,36 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://praeclarumjj3.github.io/authors/</loc>
+    <lastmod>2024-12-12T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url><url>
     <loc>https://praeclarumjj3.github.io/publication/</loc>
-    <lastmod>2025-02-01T00:00:00+00:00</lastmod>
+    <lastmod>2024-12-12T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url><url>
+    <loc>https://praeclarumjj3.github.io/publication/ola-vlm/</loc>
+    <lastmod>2024-12-12T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url><url>
+    <loc>https://praeclarumjj3.github.io/publication_types/preprint/</loc>
+    <lastmod>2024-12-12T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url><url>
+    <loc>https://praeclarumjj3.github.io/publication_types/</loc>
+    <lastmod>2024-12-12T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url><url>
+    <loc>https://praeclarumjj3.github.io/tags/</loc>
+    <lastmod>2024-12-12T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url><url>
+    <loc>https://praeclarumjj3.github.io/tags/under-review/</loc>
+    <lastmod>2024-12-12T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
     <loc>https://praeclarumjj3.github.io/projects/</loc>
     <lastmod>2024-05-19T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-  </url><url>
-    <loc>https://praeclarumjj3.github.io/authors/</loc>
-    <lastmod>2023-12-12T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
     <loc>https://praeclarumjj3.github.io/publication_types/conference-paper/</loc>
@@ -19,14 +39,6 @@
     <changefreq>weekly</changefreq>
   </url><url>
     <loc>https://praeclarumjj3.github.io/tags/cvpr-2024/</loc>
-    <lastmod>2023-12-12T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-  </url><url>
-    <loc>https://praeclarumjj3.github.io/publication_types/</loc>
-    <lastmod>2023-12-12T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-  </url><url>
-    <loc>https://praeclarumjj3.github.io/tags/</loc>
     <lastmod>2023-12-12T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>

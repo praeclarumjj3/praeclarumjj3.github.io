@@ -16,7 +16,7 @@
   <table border="0" align="center">
     <tbody><tr>
       <td width="1500" height="80" align="center" valign="middle">
-      <span class="title"><h1 style="font-size:32px; margin: 2%;">OLA-VLM: Optimizing Language Model Representations for Enhanced Visual Quality and Alignment</h1></td>
+      <span class="title"><h1 style="font-size:32px; margin: 2%;">OLA-VLM: Elevating Visual Perception in Multimodal LLMs with Auxiliary Embedding Distillation</h1></td>
     </tr>
     <!-- <tr> -->
       <!-- <td width="1500" align="center" valign="middle"> -->
@@ -26,9 +26,9 @@
         <td colspan="3" align="center"><h4 style="font-size:20px">
             <a href="https://praeclarumjj3.github.io/" target="_blank">Jitesh Jain<sup>1,2*</sup></a>  &nbsp;  &nbsp;  &nbsp;  &nbsp;
             <a href="https://zyang-ur.github.io/" target="_blank">Zhengyuan Yang<sup>2</sup></a>  &nbsp;  &nbsp;  &nbsp;  &nbsp;
-            <a href="https://www.humphreyshi.com/home" target="_blank">Humphrey Shi<sup>1</sup></a>  &nbsp;  &nbsp;  &nbsp;  &nbsp;
-            <a href="https://scholar.google.com/citations?user=CQ1cqKkAAAAJ" target="_blank">Jianfeng Gao<sup>2</sup></a>  &nbsp;  &nbsp;  &nbsp;  &nbsp;
-            <a href="https://jwyang.github.io/" target="_blank">Jianwei Yang<sup>2</sup></a>
+            <a href="https://www.humphreyshi.com/home" target="_blank">Humphrey Shi<sup>1&dagger;</sup></a>  &nbsp;  &nbsp;  &nbsp;  &nbsp;
+            <a href="https://scholar.google.com/citations?user=CQ1cqKkAAAAJ" target="_blank">Jianfeng Gao<sup>2&dagger;</sup></a>  &nbsp;  &nbsp;  &nbsp;  &nbsp;
+            <a href="https://jwyang.github.io/" target="_blank">Jianwei Yang<sup>2&dagger;</sup></a>
         </h4></td>
     </tr>
     <tr>
@@ -39,13 +39,13 @@
     </tr>
     <tr>
       <td colspan="3" height="30" align="center"><h6 style="margin-top: 1%; margin-bottom: 3%;"> 
-        <sup>*</sup>Work done during an internship at Microsoft Research, Redmond.
+        <sup>*</sup>Work done during JJ's internship at Microsoft Research, Redmond. &nbsp; &nbsp; <sup>&dagger;</sup>Equal Advising
       </h6> </td>
   </tr>
     <br>
     <tr>
       <td colspan="3" align="center"><h5><div class="row justify-content-center" align="center" >
-        <a href="https://arxiv.org/abs/" target="_blank"> 
+        <a href="https://arxiv.org/abs/2412.09585" target="_blank"> 
           <div class="img-with-text">
             <img src="./arxiv.png" height="100px" />
             <p style="font-size: large; margin: 10%;">Paper</p>
@@ -59,12 +59,12 @@
           </div>
         </a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
-        <a href="https://huggingface.co/models?search=OLA-VLM" target="_blank"> 
+        <!-- <a href="https://huggingface.co/models?search=OLA-VLM" target="_blank"> 
           <div class="img-with-text">
             <img src="./huggingface_logo.svg" height="100px" />
             <p style="font-size: large; margin: 10%;">Demo</p>
           </div>
-        </a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        </a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -->
 
         <a href="#BibTeX" target="_self"> 
           <div class="img-with-text">
@@ -85,18 +85,22 @@
   }
 </style>
   <br>
-  <!-- <div class="text" style="text-align: left;">
+  <div class="text" style="text-align: left;">
     <div class="video-container">
-      <iframe width="768" height="432" src="https://www.youtube.com/embed/go493IGgVWo?mute=1&vq=hd1080" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-  </div> -->
-  <!-- <br> -->
-    <figure style="display: block; text-align: center;">
-      <img src="./teaser.png" style="display: block; margin-left: auto; margin-right: auto; max-width:90%;" alt="Descriptive text about the image">
-      <figcaption style="margin-top: 0.5%; font-size: small; font-style: italic; text-align: left;">We propose distilling target visual information into
-        the intermediate representations of the LLM from a set of target encoders. We adopt a predictive embedding optimization approach
+      <iframe width="768" height="432" src="https://www.youtube.com/embed/bY6BN9cNCHg?mute=1&vq=hd1080" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+  <hr style="border-top: 2px solid #ccc; width: 100%; margin-top: 2%; margin-bottom: 1%">
+  <h2 style="font-size: x-large; text-align: center; font-weight: bold; color: red;">TLDR</h2>
+  <div style="display: flex; align-items: center; justify-content: center; margin: 2%; gap: 2%;">
+    <figcaption style="max-width: 50%; font-size: small; font-style: italic; text-align: left;">
+        We propose <b>distilling target visual information into
+        the intermediate representations of the LLM</b> from a set of target encoders. We adopt a predictive embedding optimization approach
         at selected LLM layers during training to minimize the embedding losses along with the next token prediction (NTP) objective, resulting
-        in a vision-centric approach to training the Multimodal Large Language Model. We only use a single base vision encoder during inference.</figcaption>
-    </figure>
+        in a vision-centric approach to training the Multimodal Large Language Model. We only use a single base vision encoder during inference, resulting in compute efficient visual encoding along with better visual perception.
+    </figcaption>
+    <img src="./teaser.png" style="max-width: 70%; height: auto; display: block;" alt="Descriptive text about the image">
+</div>
+
     <hr style="border-top: 2px solid #ccc; width: 100%; margin-top: 2%; margin-bottom: 2%">
     <div style="background-color: #f0f0f0; padding-left: 2%; padding-right: 2%; padding-bottom: 0.2%; padding-top: 1.3%; border-radius: 20px; margin-left: 7%; margin-right: 7%; margin-bottom: 1%;">
       <h2 style="font-size: larger; text-align: center; font-weight: bold;">Abstract</h2>
@@ -192,7 +196,7 @@
     <div class="overview">
       <p>
         We present results across different base encoders and decoder LLMs. Our OLA-VLM outperforms the single encoder and multi encoder LLaVA-1.5 by up to <b>2.5%</b> and <b>0.9%</b> 
-        on average across various benchmarks, respectively. The best numbers are set in <b>bold</b> for every base-encoder and decoder LLM combination. Please check our paper 📄 for extensive experiments and ablation studies.
+        on average across various benchmarks, respectively. The best numbers are set in <b>bold</b> for every base-encoder and decoder LLM combination. Please check our <a href="https://arxiv.org/abs/2412.09585" target="_blank" style="color: #007BFF; text-decoration: none;">paper</a>  📄 for extensive experiments and ablation studies.
     </div>
     <hr style="border-top: 2px solid #ccc; width: 100%; margin-top: 2%">
 </div>
@@ -209,7 +213,7 @@
   </p>
   <div style="background-color: #f8f9fa; border: 1px solid #e3e3e3; padding: 15px; border-radius: 8px; margin-top: 15px; font-size: 1em; font-family: 'Courier New', Courier, monospace; color: #2c3e50;">
     <pre style="margin: 0; white-space: pre-wrap;">@article{jain2024ola_vlm,
-      title={{OLA-VLM: Optimizing Language Model Representations for Enhanced Visual Quality and Alignment}},
+      title={{OLA-VLM: Elevating Visual Perception in Multimodal LLMs with Auxiliary Embedding Distillation}},
       author={Jitesh Jain and Zhengyuan Yang and Humphrey Shi and Jianfeng Gao and Jianwei Yang},
       journal={arXiv},
       year={2024}
