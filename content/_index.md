@@ -52,7 +52,7 @@ sections:
       filters:
         folders:
           - publication
-      count: 2
+      count: 4
     design:
       # Choose a layout view
       view: article-grid
