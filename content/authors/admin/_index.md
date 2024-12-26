@@ -103,6 +103,7 @@ Reach out if you are interested in my research or would like to discuss any idea
     <div class="professional-life">
         <h4 class="highlight">Professional Life Happenings</h4>
         <ul>
+            <li><strong>[December 2024]</strong>: Checkout my new blog <a href="https://praeclarumjj3.substack.com/p/whats-a-good-metric-for-phd-students" target="_blank">what's a good metric for PhD Students?</a>! 📜
             <li><strong>[December 2024]</strong>: Checkout out <a href="https://praeclarumjj3.github.io/ola_vlm/" target="_blank">OLA-VLM</a>, result of my internship at Microsoft Research, Redmond! 🚀</li>
             <li><strong>[May 2024]</strong>: Excited to start Summer Internship at Microsoft Research, Redmond! 🧑‍💻</li>
             <li><strong>[February 2024]</strong>: <a href="https://praeclarumjj3.github.io/vcoder/" target="_blank">VCoder</a> is accepted to <span class="highlight">CVPR 2024!</span> See you in Seattle! 🥂</li>

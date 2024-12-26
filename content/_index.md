@@ -52,10 +52,21 @@ sections:
       filters:
         folders:
           - publication
+        # featured_only: true
       count: 4
     design:
       # Choose a layout view
       view: article-grid
+  # - block: collection
+  #   content:
+  #     title: Recent Publications 
+  #     text: "*Equal Contribution"
+  #     filters:
+  #       folders:
+  #         - publication
+  #       exclude_featured: false
+    # design:
+      # view: citation
   - block: collection
     id: blogs
     content:
