@@ -86,10 +86,10 @@ Reach out if you are interested in my research or would like to discuss any idea
     </p>
     <p>
         My recent works are based on analyzing and improving the visual perception ability in Multimodal Large Language Models 
-        [<a href="https://praeclarumjj3.github.io/ola_vlm/" class="hover-link">OLA-VLM</a>, 
-        <a href="https://praeclarumjj3.github.io/vcoder/" class="hover-link">VCoder</a>], 
+        [<a href="https://github.com/SHI-Labs/OLA-VLM" class="hover-link">OLA-VLM</a>, 
+        <a href="https://github.com/SHI-Labs/VCoder" class="hover-link">VCoder</a>], 
         building upon my experience from working on developing models for dense prediction tasks 
-        [<a href="https://praeclarumjj3.github.io/oneformer" class="hover-link">OneFormer</a>, 
+        [<a href="https://github.com/SHI-Labs/OneFormer" class="hover-link">OneFormer</a>, 
         <a href="https://github.com/Picsart-AI-Research/SeMask-Segmentation" class="hover-link">SeMask</a>].
     </p>
     <p>
