@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>ICCV Workshops 2023 | Jitesh Jain</title>
-    <link>https://praeclarumjj3.github.io/tags/iccv-workshops-2023/</link>
-      <atom:link href="https://praeclarumjj3.github.io/tags/iccv-workshops-2023/index.xml" rel="self" type="application/rss+xml" />
+    <link>http://localhost:1313/tags/iccv-workshops-2023/</link>
+      <atom:link href="http://localhost:1313/tags/iccv-workshops-2023/index.xml" rel="self" type="application/rss+xml" />
     <description>ICCV Workshops 2023</description>
     <generator>Hugo Blox Builder (https://hugoblox.com)</generator><language>en-us</language><lastBuildDate>Sun, 12 Dec 2021 00:00:00 +0000</lastBuildDate>
     <image>
-      <url>https://praeclarumjj3.github.io/media/icon_hu18230691612322137769.png</url>
+      <url>http://localhost:1313/media/icon_hu18230691612322137769.png</url>
       <title>ICCV Workshops 2023</title>
-      <link>https://praeclarumjj3.github.io/tags/iccv-workshops-2023/</link>
+      <link>http://localhost:1313/tags/iccv-workshops-2023/</link>
     </image>
     
     <item>
       <title>SeMask: Semantically Masked Transformers for Semantic Segmentation</title>
-      <link>https://praeclarumjj3.github.io/publication/semask/</link>
+      <link>http://localhost:1313/publication/semask/</link>
       <pubDate>Sun, 12 Dec 2021 00:00:00 +0000</pubDate>
-      <guid>https://praeclarumjj3.github.io/publication/semask/</guid>
+      <guid>http://localhost:1313/publication/semask/</guid>
       <description></description>
     </item>
     

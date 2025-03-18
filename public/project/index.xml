@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Projects | Jitesh Jain</title>
-    <link>https://praeclarumjj3.github.io/project/</link>
-      <atom:link href="https://praeclarumjj3.github.io/project/index.xml" rel="self" type="application/rss+xml" />
+    <link>http://localhost:1313/project/</link>
+      <atom:link href="http://localhost:1313/project/index.xml" rel="self" type="application/rss+xml" />
     <description>Projects</description>
     <generator>Hugo Blox Builder (https://hugoblox.com)</generator><language>en-us</language><lastBuildDate>Tue, 10 May 2022 00:00:00 +0000</lastBuildDate>
     <image>
-      <url>https://praeclarumjj3.github.io/media/icon_hu18230691612322137769.png</url>
+      <url>http://localhost:1313/media/icon_hu18230691612322137769.png</url>
       <title>Projects</title>
-      <link>https://praeclarumjj3.github.io/project/</link>
+      <link>http://localhost:1313/project/</link>
     </image>
     
     <item>
       <title>Neural Style Transfer: A Technical Report </title>
-      <link>https://praeclarumjj3.github.io/project/nst-tech/</link>
+      <link>http://localhost:1313/project/nst-tech/</link>
       <pubDate>Tue, 10 May 2022 00:00:00 +0000</pubDate>
-      <guid>https://praeclarumjj3.github.io/project/nst-tech/</guid>
+      <guid>http://localhost:1313/project/nst-tech/</guid>
       <description>&lt;p&gt;As a part of the &lt;code&gt;CSN-526: Machine Learning&lt;/code&gt; Course Project, we worked on studying the effects of various factors like feature extractors, optimizers, loss functions and initialization techniques on the neural style transfer task.&lt;/p&gt;
 &lt;p&gt;We also proposed the use of pseudo ground truths for evaluating the performance under different settings.&lt;/p&gt;
 &lt;p&gt;For more info, please see the Code on &lt;code&gt;GitHub&lt;/code&gt;.&lt;/p&gt;
@@ -25,9 +25,9 @@
     
     <item>
       <title>AOT-GAN Experiments</title>
-      <link>https://praeclarumjj3.github.io/project/aot-gan-experiments/</link>
+      <link>http://localhost:1313/project/aot-gan-experiments/</link>
       <pubDate>Wed, 19 May 2021 00:00:00 +0000</pubDate>
-      <guid>https://praeclarumjj3.github.io/project/aot-gan-experiments/</guid>
+      <guid>http://localhost:1313/project/aot-gan-experiments/</guid>
       <description>&lt;p&gt;I conducted various experiments with &lt;strong&gt;AOT-GAN&lt;/strong&gt; proposed in the paper: &lt;a href=&#34;https://arxiv.org/abs/2104.01431&#34;&gt;Aggregated Contextual Transformations for High-Resolution Image Inpainting&lt;/a&gt;) on the &lt;a href=&#34;http://places2.csail.mit.edu/download.html&#34;&gt;Places2&lt;/a&gt; dataset using the &lt;a href=&#34;https://nv-adlr.github.io/publication/partialconv-inpainting&#34;&gt;PConv Free Form Masks for Inpainting&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;In particular, I focused on finding the effectivity of different losses while training the framework. I made several observations:&lt;/p&gt;
 &lt;ul&gt;
@@ -50,9 +50,9 @@
     
     <item>
       <title>OLIE</title>
-      <link>https://praeclarumjj3.github.io/project/olie/</link>
+      <link>http://localhost:1313/project/olie/</link>
       <pubDate>Sat, 10 Apr 2021 00:00:00 +0000</pubDate>
-      <guid>https://praeclarumjj3.github.io/project/olie/</guid>
+      <guid>http://localhost:1313/project/olie/</guid>
       <description>&lt;p&gt;OLIE was aimed to reconstruct the original image with the objects removed (editing) by incorporating the mask features as input to the reconstructor.&lt;/p&gt;
 &lt;p&gt;After performing many experiments, we scrapped the idea. However, some of the experiments that I performed were:&lt;/p&gt;
 &lt;ul&gt;
@@ -73,18 +73,18 @@
     
     <item>
       <title>granim</title>
-      <link>https://praeclarumjj3.github.io/project/granim/</link>
+      <link>http://localhost:1313/project/granim/</link>
       <pubDate>Sat, 03 Apr 2021 00:00:00 +0000</pubDate>
-      <guid>https://praeclarumjj3.github.io/project/granim/</guid>
+      <guid>http://localhost:1313/project/granim/</guid>
       <description>&lt;p&gt;&lt;strong&gt;granim&lt;/strong&gt; makes it easier to plot animated graphs using the Manim-Engine. This project is still under development. Contributors are always welcome!&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>BackBone Profile</title>
-      <link>https://praeclarumjj3.github.io/project/backbone/</link>
+      <link>http://localhost:1313/project/backbone/</link>
       <pubDate>Mon, 28 Dec 2020 00:00:00 +0000</pubDate>
-      <guid>https://praeclarumjj3.github.io/project/backbone/</guid>
+      <guid>http://localhost:1313/project/backbone/</guid>
       <description>&lt;p&gt;I performed experiments on various backbone networks:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;
@@ -114,27 +114,27 @@
     
     <item>
       <title>ArxivApp</title>
-      <link>https://praeclarumjj3.github.io/project/arxiv_app/</link>
+      <link>http://localhost:1313/project/arxiv_app/</link>
       <pubDate>Thu, 26 Nov 2020 00:00:00 +0000</pubDate>
-      <guid>https://praeclarumjj3.github.io/project/arxiv_app/</guid>
+      <guid>http://localhost:1313/project/arxiv_app/</guid>
       <description>&lt;p&gt;&lt;strong&gt;ArxivApp&lt;/strong&gt; lets you read, bookmark and download papers from arXiv.org. It also has a forum screen that lets you read and create notes/blogs about the different research papers you read!&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>IITR ChatBot</title>
-      <link>https://praeclarumjj3.github.io/project/iitr_bot/</link>
+      <link>http://localhost:1313/project/iitr_bot/</link>
       <pubDate>Mon, 28 Sep 2020 00:00:00 +0000</pubDate>
-      <guid>https://praeclarumjj3.github.io/project/iitr_bot/</guid>
+      <guid>http://localhost:1313/project/iitr_bot/</guid>
       <description>&lt;p&gt;We developed an assistance bot for the &lt;a href=&#34;https://www.iitr.ac.in/&#34;&gt;IITR website&lt;/a&gt; using the &lt;a href=&#34;https://rasa.com/docs/rasa/&#34;&gt;RASA&lt;/a&gt; framework.&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>IITR Security App</title>
-      <link>https://praeclarumjj3.github.io/project/security_app/</link>
+      <link>http://localhost:1313/project/security_app/</link>
       <pubDate>Sat, 05 Sep 2020 00:00:00 +0000</pubDate>
-      <guid>https://praeclarumjj3.github.io/project/security_app/</guid>
+      <guid>http://localhost:1313/project/security_app/</guid>
       <description>&lt;ul&gt;
 &lt;li&gt;IITR Security App was developed to eliminate the use of paper by the guards to record the details of the visitors at IIT Roorkee.&lt;/li&gt;
 &lt;li&gt;I worked on developing Front-End part of the app using Flutter.&lt;/li&gt;
@@ -145,9 +145,9 @@
     
     <item>
       <title>Paper Summaries</title>
-      <link>https://praeclarumjj3.github.io/project/summary_of_papers/</link>
+      <link>http://localhost:1313/project/summary_of_papers/</link>
       <pubDate>Tue, 07 Jul 2020 00:00:00 +0000</pubDate>
-      <guid>https://praeclarumjj3.github.io/project/summary_of_papers/</guid>
+      <guid>http://localhost:1313/project/summary_of_papers/</guid>
       <description>&lt;p&gt;Summaries:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;
@@ -177,36 +177,36 @@
     
     <item>
       <title>ChatBot with Pytorch</title>
-      <link>https://praeclarumjj3.github.io/project/chatbot/</link>
+      <link>http://localhost:1313/project/chatbot/</link>
       <pubDate>Fri, 19 Jun 2020 00:00:00 +0000</pubDate>
-      <guid>https://praeclarumjj3.github.io/project/chatbot/</guid>
+      <guid>http://localhost:1313/project/chatbot/</guid>
       <description>&lt;p&gt;I implemented a chatbot in Pytorch on the Cornell Movie Dialog Corpus dataset using GRUs and Attention mechanism.&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>VQ-VAE on MNIST</title>
-      <link>https://praeclarumjj3.github.io/project/vq_vae/</link>
+      <link>http://localhost:1313/project/vq_vae/</link>
       <pubDate>Wed, 20 May 2020 00:00:00 +0000</pubDate>
-      <guid>https://praeclarumjj3.github.io/project/vq_vae/</guid>
+      <guid>http://localhost:1313/project/vq_vae/</guid>
       <description>&lt;p&gt;I tried to implement &lt;a href=&#34;https://arxiv.org/abs/1711.00937&#34;&gt;VQ-VAE&lt;/a&gt; in Pytorch on the MNIST dataset.&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>Time Tracer</title>
-      <link>https://praeclarumjj3.github.io/project/time_trace/</link>
+      <link>http://localhost:1313/project/time_trace/</link>
       <pubDate>Mon, 27 Apr 2020 00:00:00 +0000</pubDate>
-      <guid>https://praeclarumjj3.github.io/project/time_trace/</guid>
+      <guid>http://localhost:1313/project/time_trace/</guid>
       <description>&lt;p&gt;A Flutter application developed as a self-learning project to help people keep track of their time expenditure.&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>Societyfy</title>
-      <link>https://praeclarumjj3.github.io/project/societyfy/</link>
+      <link>http://localhost:1313/project/societyfy/</link>
       <pubDate>Wed, 08 Apr 2020 00:00:00 +0000</pubDate>
-      <guid>https://praeclarumjj3.github.io/project/societyfy/</guid>
+      <guid>http://localhost:1313/project/societyfy/</guid>
       <description>&lt;p&gt;SOCIETYFY is an app showcase app developed during MDG’s SoC event in December, 2019. Societyfy lets you discover new people based on your interest at any moment of time and make new bonds with people you share an interest with at any point in time through its specific chatrooms for each category.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;PlayStore Link&lt;/strong&gt;: &lt;a href=&#34;https://play.google.com/store/apps/details?id=in.ac.mdg.iitr.societyfy&#34;&gt;https://play.google.com/store/apps/details?id=in.ac.mdg.iitr.societyfy&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Medium Blog&lt;/strong&gt;: &lt;a href=&#34;https://medium.com/mobile-development-group/societyfy-an-app-made-for-finding-company-at-anytime-for-anything-842e18151551&#34;&gt; Societyfy: An app made for finding company at any time for anything&lt;/a&gt;&lt;/p&gt;
@@ -215,9 +215,9 @@
     
     <item>
       <title>Geofile</title>
-      <link>https://praeclarumjj3.github.io/project/geofile/</link>
+      <link>http://localhost:1313/project/geofile/</link>
       <pubDate>Sun, 05 Apr 2020 00:00:00 +0000</pubDate>
-      <guid>https://praeclarumjj3.github.io/project/geofile/</guid>
+      <guid>http://localhost:1313/project/geofile/</guid>
       <description>&lt;ul&gt;
 &lt;li&gt;Geofile lets you couple files them with a specific location.&lt;/li&gt;
 &lt;li&gt;I worked on developing Front-End part of the app using Flutter.&lt;/li&gt;

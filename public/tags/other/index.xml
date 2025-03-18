@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Other | Jitesh Jain</title>
-    <link>https://praeclarumjj3.github.io/tags/other/</link>
-      <atom:link href="https://praeclarumjj3.github.io/tags/other/index.xml" rel="self" type="application/rss+xml" />
+    <link>http://localhost:1313/tags/other/</link>
+      <atom:link href="http://localhost:1313/tags/other/index.xml" rel="self" type="application/rss+xml" />
     <description>Other</description>
     <generator>Hugo Blox Builder (https://hugoblox.com)</generator><language>en-us</language><lastBuildDate>Sat, 10 Apr 2021 00:00:00 +0000</lastBuildDate>
     <image>
-      <url>https://praeclarumjj3.github.io/media/icon_hu18230691612322137769.png</url>
+      <url>http://localhost:1313/media/icon_hu18230691612322137769.png</url>
       <title>Other</title>
-      <link>https://praeclarumjj3.github.io/tags/other/</link>
+      <link>http://localhost:1313/tags/other/</link>
     </image>
     
     <item>
       <title>OLIE</title>
-      <link>https://praeclarumjj3.github.io/project/olie/</link>
+      <link>http://localhost:1313/project/olie/</link>
       <pubDate>Sat, 10 Apr 2021 00:00:00 +0000</pubDate>
-      <guid>https://praeclarumjj3.github.io/project/olie/</guid>
+      <guid>http://localhost:1313/project/olie/</guid>
       <description>&lt;p&gt;OLIE was aimed to reconstruct the original image with the objects removed (editing) by incorporating the mask features as input to the reconstructor.&lt;/p&gt;
 &lt;p&gt;After performing many experiments, we scrapped the idea. However, some of the experiments that I performed were:&lt;/p&gt;
 &lt;ul&gt;
@@ -37,27 +37,27 @@
     
     <item>
       <title>granim</title>
-      <link>https://praeclarumjj3.github.io/project/granim/</link>
+      <link>http://localhost:1313/project/granim/</link>
       <pubDate>Sat, 03 Apr 2021 00:00:00 +0000</pubDate>
-      <guid>https://praeclarumjj3.github.io/project/granim/</guid>
+      <guid>http://localhost:1313/project/granim/</guid>
       <description>&lt;p&gt;&lt;strong&gt;granim&lt;/strong&gt; makes it easier to plot animated graphs using the Manim-Engine. This project is still under development. Contributors are always welcome!&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>IITR ChatBot</title>
-      <link>https://praeclarumjj3.github.io/project/iitr_bot/</link>
+      <link>http://localhost:1313/project/iitr_bot/</link>
       <pubDate>Mon, 28 Sep 2020 00:00:00 +0000</pubDate>
-      <guid>https://praeclarumjj3.github.io/project/iitr_bot/</guid>
+      <guid>http://localhost:1313/project/iitr_bot/</guid>
       <description>&lt;p&gt;We developed an assistance bot for the &lt;a href=&#34;https://www.iitr.ac.in/&#34;&gt;IITR website&lt;/a&gt; using the &lt;a href=&#34;https://rasa.com/docs/rasa/&#34;&gt;RASA&lt;/a&gt; framework.&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>Paper Summaries</title>
-      <link>https://praeclarumjj3.github.io/project/summary_of_papers/</link>
+      <link>http://localhost:1313/project/summary_of_papers/</link>
       <pubDate>Tue, 07 Jul 2020 00:00:00 +0000</pubDate>
-      <guid>https://praeclarumjj3.github.io/project/summary_of_papers/</guid>
+      <guid>http://localhost:1313/project/summary_of_papers/</guid>
       <description>&lt;p&gt;Summaries:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;
@@ -87,9 +87,9 @@
     
     <item>
       <title>Geofile</title>
-      <link>https://praeclarumjj3.github.io/project/geofile/</link>
+      <link>http://localhost:1313/project/geofile/</link>
       <pubDate>Sun, 05 Apr 2020 00:00:00 +0000</pubDate>
-      <guid>https://praeclarumjj3.github.io/project/geofile/</guid>
+      <guid>http://localhost:1313/project/geofile/</guid>
       <description>&lt;ul&gt;
 &lt;li&gt;Geofile lets you couple files them with a specific location.&lt;/li&gt;
 &lt;li&gt;I worked on developing Front-End part of the app using Flutter.&lt;/li&gt;
