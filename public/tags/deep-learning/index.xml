@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Deep Learning | Jitesh Jain</title>
-    <link>http://localhost:1313/tags/deep-learning/</link>
-      <atom:link href="http://localhost:1313/tags/deep-learning/index.xml" rel="self" type="application/rss+xml" />
+    <link>https://praeclarumjj3.github.io/tags/deep-learning/</link>
+      <atom:link href="https://praeclarumjj3.github.io/tags/deep-learning/index.xml" rel="self" type="application/rss+xml" />
     <description>Deep Learning</description>
     <generator>Hugo Blox Builder (https://hugoblox.com)</generator><language>en-us</language><lastBuildDate>Tue, 10 May 2022 00:00:00 +0000</lastBuildDate>
     <image>
-      <url>http://localhost:1313/media/icon_hu18230691612322137769.png</url>
+      <url>https://praeclarumjj3.github.io/media/icon_hu18230691612322137769.png</url>
       <title>Deep Learning</title>
-      <link>http://localhost:1313/tags/deep-learning/</link>
+      <link>https://praeclarumjj3.github.io/tags/deep-learning/</link>
     </image>
     
     <item>
       <title>Neural Style Transfer: A Technical Report </title>
-      <link>http://localhost:1313/project/nst-tech/</link>
+      <link>https://praeclarumjj3.github.io/project/nst-tech/</link>
       <pubDate>Tue, 10 May 2022 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/project/nst-tech/</guid>
+      <guid>https://praeclarumjj3.github.io/project/nst-tech/</guid>
       <description>&lt;p&gt;As a part of the &lt;code&gt;CSN-526: Machine Learning&lt;/code&gt; Course Project, we worked on studying the effects of various factors like feature extractors, optimizers, loss functions and initialization techniques on the neural style transfer task.&lt;/p&gt;
 &lt;p&gt;We also proposed the use of pseudo ground truths for evaluating the performance under different settings.&lt;/p&gt;
 &lt;p&gt;For more info, please see the Code on &lt;code&gt;GitHub&lt;/code&gt;.&lt;/p&gt;
@@ -25,9 +25,9 @@
     
     <item>
       <title>AOT-GAN Experiments</title>
-      <link>http://localhost:1313/project/aot-gan-experiments/</link>
+      <link>https://praeclarumjj3.github.io/project/aot-gan-experiments/</link>
       <pubDate>Wed, 19 May 2021 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/project/aot-gan-experiments/</guid>
+      <guid>https://praeclarumjj3.github.io/project/aot-gan-experiments/</guid>
       <description>&lt;p&gt;I conducted various experiments with &lt;strong&gt;AOT-GAN&lt;/strong&gt; proposed in the paper: &lt;a href=&#34;https://arxiv.org/abs/2104.01431&#34;&gt;Aggregated Contextual Transformations for High-Resolution Image Inpainting&lt;/a&gt;) on the &lt;a href=&#34;http://places2.csail.mit.edu/download.html&#34;&gt;Places2&lt;/a&gt; dataset using the &lt;a href=&#34;https://nv-adlr.github.io/publication/partialconv-inpainting&#34;&gt;PConv Free Form Masks for Inpainting&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;In particular, I focused on finding the effectivity of different losses while training the framework. I made several observations:&lt;/p&gt;
 &lt;ul&gt;
@@ -50,9 +50,9 @@
     
     <item>
       <title>BackBone Profile</title>
-      <link>http://localhost:1313/project/backbone/</link>
+      <link>https://praeclarumjj3.github.io/project/backbone/</link>
       <pubDate>Mon, 28 Dec 2020 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/project/backbone/</guid>
+      <guid>https://praeclarumjj3.github.io/project/backbone/</guid>
       <description>&lt;p&gt;I performed experiments on various backbone networks:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;
@@ -82,18 +82,18 @@
     
     <item>
       <title>ChatBot with Pytorch</title>
-      <link>http://localhost:1313/project/chatbot/</link>
+      <link>https://praeclarumjj3.github.io/project/chatbot/</link>
       <pubDate>Fri, 19 Jun 2020 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/project/chatbot/</guid>
+      <guid>https://praeclarumjj3.github.io/project/chatbot/</guid>
       <description>&lt;p&gt;I implemented a chatbot in Pytorch on the Cornell Movie Dialog Corpus dataset using GRUs and Attention mechanism.&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>VQ-VAE on MNIST</title>
-      <link>http://localhost:1313/project/vq_vae/</link>
+      <link>https://praeclarumjj3.github.io/project/vq_vae/</link>
       <pubDate>Wed, 20 May 2020 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/project/vq_vae/</guid>
+      <guid>https://praeclarumjj3.github.io/project/vq_vae/</guid>
       <description>&lt;p&gt;I tried to implement &lt;a href=&#34;https://arxiv.org/abs/1711.00937&#34;&gt;VQ-VAE&lt;/a&gt; in Pytorch on the MNIST dataset.&lt;/p&gt;
 </description>
     </item>

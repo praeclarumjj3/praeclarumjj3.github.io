@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Jitesh Jain</title>
-    <link>http://localhost:1313/blogs/</link>
-      <atom:link href="http://localhost:1313/blogs/index.xml" rel="self" type="application/rss+xml" />
+    <link>https://praeclarumjj3.github.io/blogs/</link>
+      <atom:link href="https://praeclarumjj3.github.io/blogs/index.xml" rel="self" type="application/rss+xml" />
     <description>Jitesh Jain</description>
     <generator>Hugo Blox Builder (https://hugoblox.com)</generator><language>en-us</language><lastBuildDate>Thu, 26 Dec 2024 00:00:00 +0000</lastBuildDate>
     <image>
-      <url>http://localhost:1313/media/icon_hu18230691612322137769.png</url>
+      <url>https://praeclarumjj3.github.io/media/icon_hu18230691612322137769.png</url>
       <title>Jitesh Jain</title>
-      <link>http://localhost:1313/blogs/</link>
+      <link>https://praeclarumjj3.github.io/blogs/</link>
     </image>
     
     <item>
       <title>what&#39;s a good metric for PhD Students?</title>
-      <link>http://localhost:1313/blogs/phd_metric/</link>
+      <link>https://praeclarumjj3.github.io/blogs/phd_metric/</link>
       <pubDate>Thu, 26 Dec 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/blogs/phd_metric/</guid>
+      <guid>https://praeclarumjj3.github.io/blogs/phd_metric/</guid>
       <description>&lt;p&gt;So, I started my PhD in CS at Georgia Tech in Fall 2023. It’s only been around 16 months, but it feels more like several years in deep learning research trends. During this time, SAM toppled the classical segmentation task research, and the GPT-4 series of models appeared; model alignment (to human expectations) research has taken off, and the Qwen series has (sort of?) taken over the Llama series as the best performing and fast-growing open-source LLMs, LLM based agent frameworks are growing and growing, and numerous (maybe too many) fancy AI startups have popped up.&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;That’s about research in major (industry) leagues. What about academia?&lt;/em&gt;&lt;/p&gt;
 &lt;blockquote&gt;
@@ -37,9 +37,9 @@
     
     <item>
       <title>Ascending the Research Trail</title>
-      <link>http://localhost:1313/blogs/ascending_research_trail/</link>
+      <link>https://praeclarumjj3.github.io/blogs/ascending_research_trail/</link>
       <pubDate>Wed, 08 Mar 2023 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/blogs/ascending_research_trail/</guid>
+      <guid>https://praeclarumjj3.github.io/blogs/ascending_research_trail/</guid>
       <description>&lt;p&gt;In case you missed it, I shared my experience as a rookie undergrad researcher in a previous blog: &lt;a href=&#34;https://medium.com/vlgiitr/riding-the-noisy-research-track-4035e64e7ea8&#34;&gt;Riding the Noisy Research Track&lt;/a&gt;. Since then, I have grown from a rookie researcher into a more mature beginner researcher with a better outlook on the bigger picture in research (thinking beyond publishing a paper) owing to my close collaboration with the &lt;a href=&#34;https://www.shi-labs.com/&#34;&gt;SHI Labs&lt;/a&gt; in the last couple of years. I have had several realizations that I will be sharing through this article. A few of those to get your interest piqued are:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;🤔 I went from &amp;ldquo;Ph.D., Me? Nooooooo&amp;rdquo; to &amp;ldquo;I primarily applied to Ph.D. programs for grad school.&amp;rdquo; What changed?&lt;/li&gt;
@@ -54,9 +54,9 @@
     
     <item>
       <title>Summer Diaries: Intern Diary of an Undergrad DL Researcher</title>
-      <link>http://localhost:1313/blogs/summer_diary_wo/</link>
+      <link>https://praeclarumjj3.github.io/blogs/summer_diary_wo/</link>
       <pubDate>Tue, 04 Jan 2022 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/blogs/summer_diary_wo/</guid>
+      <guid>https://praeclarumjj3.github.io/blogs/summer_diary_wo/</guid>
       <description>&lt;p&gt;This summer, I worked as a remote research intern at SHI Lab @ University of Oregon (UO) and Picsart AI Research (PAIR). I joined the SHI Lab to work with Professor Humphrey Shi in November 2020 during my second year and continued my work there during the summers, and I joined PAIR during the summers (June 2021). My research focused on the field of Computer Vision during both my internships.&lt;/p&gt;
 &lt;p&gt;Read more about my intern experience at: &lt;a href=&#34;http://watchout.iitr.ac.in/2022/01/summer-diaries-jitesh-jain&#34;&gt;http://watchout.iitr.ac.in/2022/01/summer-diaries-jitesh-jain&lt;/a&gt;&lt;/p&gt;
 </description>
@@ -64,9 +64,9 @@
     
     <item>
       <title>The Contemporary Overthinking Problem</title>
-      <link>http://localhost:1313/blogs/overthinking/</link>
+      <link>https://praeclarumjj3.github.io/blogs/overthinking/</link>
       <pubDate>Fri, 26 Nov 2021 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/blogs/overthinking/</guid>
+      <guid>https://praeclarumjj3.github.io/blogs/overthinking/</guid>
       <description>&lt;p&gt;Since the onset of the COVID-19 pandemic, the following lockdowns and stay &amp;amp; work from home situations, the concept of Overthinking has gained popularity. Moreover, now and then, I find the gen-z people (and even me sometimes) replying to “What you doing?” texts with “Overthinking.” Surprisingly, I have seen people setting their social profiles’ status as Overthinking. It made me wonder if we have started treating overthinking as a clichéd concept that might overshadow the problems that the actual overthinking state brings.&lt;/p&gt;
 &lt;p&gt;This article will explain my opinion about overthinking and why it is becoming more cliché than a serious problem.&lt;/p&gt;
 &lt;p&gt;Read more at: &lt;a href=&#34;https://jitesh-j.medium.com/the-contemporary-overthinking-problem-fce4c385dfb&#34;&gt;https://jitesh-j.medium.com/the-contemporary-overthinking-problem-fce4c385dfb&lt;/a&gt;&lt;/p&gt;
@@ -75,9 +75,9 @@
     
     <item>
       <title>Riding the Noisy Research Track</title>
-      <link>http://localhost:1313/blogs/research_ride/</link>
+      <link>https://praeclarumjj3.github.io/blogs/research_ride/</link>
       <pubDate>Wed, 28 Jul 2021 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/blogs/research_ride/</guid>
+      <guid>https://praeclarumjj3.github.io/blogs/research_ride/</guid>
       <description>&lt;p&gt;Alright, people! This article will share my experience and learnings during the last eight months as an undergrad researcher. For those reading one of my blogs for the first time, I am a CSE undergrad (about to enter 3rd year) and am working as a Research Intern at &lt;em&gt;&lt;a href=&#34;https://www.humphreyshi.com/people&#34;&gt;SHI Lab @ UO&lt;/a&gt;&lt;/em&gt; and &lt;em&gt;&lt;a href=&#34;https://picsart.com/&#34;&gt;Picsart&lt;/a&gt;&lt;/em&gt;.&lt;/p&gt;
 &lt;p&gt;Now, before we dive in, let me clear it out that I have probably had a more intense research experience for better or worse than some of the other undergrad people at IITR. So, don’t make any judgments about research based on the content in this post 😛. So, we got that sorted out. Let’s begin!&lt;/p&gt;
 &lt;p&gt;Read more at: &lt;a href=&#34;https://jitesh-j.medium.com/riding-the-noisy-research-track-4035e64e7ea8&#34;&gt;https://jitesh-j.medium.com/riding-the-noisy-research-track-4035e64e7ea8&lt;/a&gt;&lt;/p&gt;
@@ -86,9 +86,9 @@
     
     <item>
       <title>Do self-help books really help?</title>
-      <link>http://localhost:1313/blogs/self_help_books/</link>
+      <link>https://praeclarumjj3.github.io/blogs/self_help_books/</link>
       <pubDate>Sun, 16 May 2021 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/blogs/self_help_books/</guid>
+      <guid>https://praeclarumjj3.github.io/blogs/self_help_books/</guid>
       <description>&lt;p&gt;Alright, so this is going to be quite a short entry. A few days back, a friend of mine and I were talking about books. We were discussing the books that we have read. Well, she’s smart, so she was listing out great books like 1984, A Man Called Ove, etc. I told her how I had read quite a few of the “self-help” books during the last year or so (well, pandemic time, so needed some motivation, I guess :3). Then she asked me:&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Do self-help books really help?&lt;/p&gt;
@@ -99,9 +99,9 @@
     
     <item>
       <title>The Priority Hierarchy Dilemma</title>
-      <link>http://localhost:1313/blogs/priority/</link>
+      <link>https://praeclarumjj3.github.io/blogs/priority/</link>
       <pubDate>Tue, 30 Mar 2021 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/blogs/priority/</guid>
+      <guid>https://praeclarumjj3.github.io/blogs/priority/</guid>
       <description>&lt;p&gt;Right, so this isn&amp;rsquo;t a well-planned blog. I just wanted to write something up, and this idea popped into my head while guessing the mid-term&amp;rsquo;s syllabus with one of my friends. It got me wondering about the importance that I give to these college exams is even lesser than writing a random blog even when my exams are less than a week away xD.&lt;/p&gt;
 &lt;p&gt;Read more at: &lt;a href=&#34;https://jitesh-j.medium.com/the-priority-hierarchy-dilemma-91b39cb397f&#34;&gt;https://jitesh-j.medium.com/the-priority-hierarchy-dilemma-91b39cb397f&lt;/a&gt;&lt;/p&gt;
 </description>
@@ -109,9 +109,9 @@
     
     <item>
       <title>Why Research if I can Develop?!</title>
-      <link>http://localhost:1313/blogs/why_research/</link>
+      <link>https://praeclarumjj3.github.io/blogs/why_research/</link>
       <pubDate>Tue, 02 Feb 2021 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/blogs/why_research/</guid>
+      <guid>https://praeclarumjj3.github.io/blogs/why_research/</guid>
       <description>&lt;p&gt;Hello there! Alright, so it has been more than 3 months since my last blog, where I described how a CSE student’s life at IITR is being turned into a living hell by the system and professors. Sadly, the going has only got more challenging, with profs imposing more of their ingenious will on students. I recently had my ETEs, so I am brimming with academic frustration and will probably end up writing another blog, but that’s a topic for another day :P&lt;/p&gt;
 &lt;p&gt;Read more at: &lt;a href=&#34;https://jitesh-j.medium.com/why-research-if-i-can-develop-c90bd3ce3540&#34;&gt;https://jitesh-j.medium.com/why-research-if-i-can-develop-c90bd3ce3540&lt;/a&gt;&lt;/p&gt;
 </description>
@@ -119,9 +119,9 @@
     
     <item>
       <title>One Year of Traversing the “eˣ” Graph</title>
-      <link>http://localhost:1313/blogs/one_year_at_iitr/</link>
+      <link>https://praeclarumjj3.github.io/blogs/one_year_at_iitr/</link>
       <pubDate>Sun, 02 Aug 2020 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/blogs/one_year_at_iitr/</guid>
+      <guid>https://praeclarumjj3.github.io/blogs/one_year_at_iitr/</guid>
       <description>&lt;p&gt;Hey! So you must be wondering, “What the hell is e ˣ doing in the title? It must be a scientific article!” Well, to put your mind at ease, this is not an article about the hidden beauty of e ˣ (although that would be an excellent one :P). Instead, it is about a now sophomore’s year of life at IITR. Please allow me to take you to a flashback journey through time!&lt;/p&gt;
 &lt;p&gt;Read more at: &lt;a href=&#34;https://medium.com/@jitesh_j/one-year-of-traversing-the-e-%CB%A3-graph-767973e9bf17?sk=8ea14ee7d09bebde5f02d73049b9ab96&#34;&gt;https://medium.com/@jitesh_j/one-year-of-traversing-the-e-%CB%A3-graph-767973e9bf17?sk=8ea14ee7d09bebde5f02d73049b9ab96&lt;/a&gt;&lt;/p&gt;
 </description>
@@ -129,9 +129,9 @@
     
     <item>
       <title>The Curse of Dimensionality</title>
-      <link>http://localhost:1313/blogs/curse_dimension/</link>
+      <link>https://praeclarumjj3.github.io/blogs/curse_dimension/</link>
       <pubDate>Thu, 11 Jun 2020 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/blogs/curse_dimension/</guid>
+      <guid>https://praeclarumjj3.github.io/blogs/curse_dimension/</guid>
       <description>&lt;p&gt;Have you ever found yourself stuck in the middle of a problem having a large number of dimensions? You keep on trying harder and harder to come up with a solution that would satisfy all the dimensions of the problem. Still, every time one or another dimension makes ur efforts look futile! It turns out that you can solve a problem very efficiently when presented with not more than 2 or 3 dimensions. Nevertheless, this world is not kind to us every time! You might find yourself struggling amidst a problem, thinking&amp;hellip;&lt;/p&gt;
 &lt;p&gt;Read more at: &lt;a href=&#34;https://medium.com/vlgiitr/the-curse-of-dimensionality-15f950e519d2&#34;&gt;https://medium.com/vlgiitr/the-curse-of-dimensionality-15f950e519d2&lt;/a&gt;&lt;/p&gt;
 </description>
@@ -139,9 +139,9 @@
     
     <item>
       <title>Societyfy, An app made for finding company at anytime for anything</title>
-      <link>http://localhost:1313/blogs/societyfy/</link>
+      <link>https://praeclarumjj3.github.io/blogs/societyfy/</link>
       <pubDate>Wed, 19 Feb 2020 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/blogs/societyfy/</guid>
+      <guid>https://praeclarumjj3.github.io/blogs/societyfy/</guid>
       <description>&lt;p&gt;Imagine a situation where you are at a place where you don’t know many people and feel a bit left out. You feel hesitant to go out for lunch or hangout or even go to a movie alone. This is where the concept of Societyfy comes in to rescue you.&lt;/p&gt;
 &lt;p&gt;Read more at: &lt;a href=&#34;https://medium.com/mobile-development-group/societyfy-an-app-made-for-finding-company-at-anytime-for-anything-842e18151551&#34;&gt;https://medium.com/mobile-development-group/societyfy-an-app-made-for-finding-company-at-anytime-for-anything-842e18151551&lt;/a&gt;&lt;/p&gt;
 </description>
@@ -149,9 +149,9 @@
     
     <item>
       <title></title>
-      <link>http://localhost:1313/blogs/memory_wall_iitr/</link>
+      <link>https://praeclarumjj3.github.io/blogs/memory_wall_iitr/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/blogs/memory_wall_iitr/</guid>
+      <guid>https://praeclarumjj3.github.io/blogs/memory_wall_iitr/</guid>
       <description></description>
     </item>
     

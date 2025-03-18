@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Under Review | Jitesh Jain</title>
-    <link>http://localhost:1313/tags/under-review/</link>
-      <atom:link href="http://localhost:1313/tags/under-review/index.xml" rel="self" type="application/rss+xml" />
+    <link>https://praeclarumjj3.github.io/tags/under-review/</link>
+      <atom:link href="https://praeclarumjj3.github.io/tags/under-review/index.xml" rel="self" type="application/rss+xml" />
     <description>Under Review</description>
     <generator>Hugo Blox Builder (https://hugoblox.com)</generator><language>en-us</language><lastBuildDate>Thu, 12 Dec 2024 00:00:00 +0000</lastBuildDate>
     <image>
-      <url>http://localhost:1313/media/icon_hu18230691612322137769.png</url>
+      <url>https://praeclarumjj3.github.io/media/icon_hu18230691612322137769.png</url>
       <title>Under Review</title>
-      <link>http://localhost:1313/tags/under-review/</link>
+      <link>https://praeclarumjj3.github.io/tags/under-review/</link>
     </image>
     
     <item>
       <title>OLA-VLM: Elevating Perception in Multimodal LLMs with Auxiliary Embedding Distillation</title>
-      <link>http://localhost:1313/publication/ola-vlm/</link>
+      <link>https://praeclarumjj3.github.io/publication/ola-vlm/</link>
       <pubDate>Thu, 12 Dec 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/publication/ola-vlm/</guid>
+      <guid>https://praeclarumjj3.github.io/publication/ola-vlm/</guid>
       <description></description>
     </item>
     

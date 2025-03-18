@@ -2,14 +2,14 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Jitesh Jain</title>
-    <link>http://localhost:1313/my-research/</link>
-      <atom:link href="http://localhost:1313/my-research/index.xml" rel="self" type="application/rss+xml" />
+    <link>https://praeclarumjj3.github.io/my-research/</link>
+      <atom:link href="https://praeclarumjj3.github.io/my-research/index.xml" rel="self" type="application/rss+xml" />
     <description>Jitesh Jain</description>
     <generator>Hugo Blox Builder (https://hugoblox.com)</generator><language>en-us</language>
     <image>
-      <url>http://localhost:1313/media/icon_hu18230691612322137769.png</url>
+      <url>https://praeclarumjj3.github.io/media/icon_hu18230691612322137769.png</url>
       <title>Jitesh Jain</title>
-      <link>http://localhost:1313/my-research/</link>
+      <link>https://praeclarumjj3.github.io/my-research/</link>
     </image>
     
   </channel>
