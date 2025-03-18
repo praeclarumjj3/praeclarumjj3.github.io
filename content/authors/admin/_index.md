@@ -98,7 +98,7 @@ Reach out if you are interested in my research or would like to discuss any idea
         (manifested) research project</span>.
     </p>
     <p style="color: yellow;">
-        I am seeking internship opportunities starting in Summer 2025. If you have any openings, please reach out to me!
+        I am seeking internship opportunities starting in Fall 2025/Spring 2026. If you have any openings, please reach out to me!
     </p>
     <div class="professional-life">
         <h4 class="highlight">Professional Life Happenings</h4>
