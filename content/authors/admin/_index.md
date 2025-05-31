@@ -72,19 +72,15 @@ Reach out if you are interested in my research or would like to discuss any idea
 <div class="bio-container">
     <p>
         I am a second-year Ph.D. student in the School of Interactive Computing at Georgia Tech, advised by 
-        <a href="https://www.humphreyshi.com/home" class="hover-link">Professor Humphrey Shi</a>. 
-        I completed my Bachelor's in Computer Science and Engineering in 2023 at IIT Roorkee.
+        <a href="https://www.humphreyshi.com/home" class="hover-link">Humphrey Shi</a>. 
+        I completed my Bachelor's in Computer Science and Engineering in 2023 at IIT Roorkee. I am currently working as a Research Intern in the <span style="color: #58a6ff;">PRIOR team at AI2</span> with <a href="https://chrisc36.github.io/" class="hover-link">Christopher Clark</a>.
     </p>
     <p>
         In the past, I have interned at <span style="color: #58a6ff;">Microsoft Research, Redmond</span> (Summer 2024, with 
-        <a href="https://jwyang.github.io/" class="hover-link">Dr. Jianwei Yang</a>) and <span style="color: #58a6ff;">Picsart AI Research</span> (Summer 2021-22, with <a href="https://www.humphreyshi.com/home" class="hover-link">Dr. Humphrey Shi</a>).
+        <a href="https://jwyang.github.io/" class="hover-link">Jianwei Yang</a>) and <span style="color: #58a6ff;">Picsart AI Research</span> (Summer 2021-22, with <a href="https://www.humphreyshi.com/home" class="hover-link">Humphrey Shi</a>).
     </p>
     <p>
-        My current research interests revolve around <b>multimodal systems</b>. 
-        Presently, I am looking at developing Agent Models leveraging LLMs and principles from cognitive neuroscience. 
-        I am also interested in representation learning, efficiency, and various real-world applications of multimodal systems. 
-    </p>
-    <p>
+        My current research interests revolve around developing <b>multimodal systems</b>. I am also interested in representation learning, efficiency, and various real-world applications of multimodal systems. 
         My recent works are based on analyzing and improving the visual perception ability in Multimodal Large Language Models 
         [<a href="https://github.com/SHI-Labs/OLA-VLM" class="hover-link">OLA-VLM</a>, 
         <a href="https://github.com/SHI-Labs/VCoder" class="hover-link">VCoder</a>], 
@@ -98,19 +94,18 @@ Reach out if you are interested in my research or would like to discuss any idea
         (manifested) research project</span>.
     </p>
     <p style="color: yellow;">
-        I am seeking internship opportunities starting in Fall 2025/Spring 2026. If you have any openings, please reach out to me!
+        I am seeking internship/collaboration opportunities starting in Fall 2025/Spring 2026. If you are working on multimodal reasoning, unified multimodal models or agent system, please reach out!
     </p>
     <div class="professional-life">
         <h4 class="highlight">Professional Life Happenings</h4>
         <ul>
+            <li><strong>[May 2025]</strong>: Started my Research Internship in the PRIOR team at Allen AI. HMU if you are in Seattle</a>! 🥂
+            <li><strong>[April 2025]</strong>: Passed my Ph.D. Qualifying Exam</a>! 🥂
             <li><strong>[December 2024]</strong>: Checkout my new blog <a href="https://praeclarumjj3.substack.com/p/whats-a-good-metric-for-phd-students" target="_blank">what's a good metric for PhD Students?</a>! 📜
             <li><strong>[December 2024]</strong>: Checkout out <a href="https://praeclarumjj3.github.io/ola_vlm/" target="_blank">OLA-VLM</a>, result of my internship at Microsoft Research, Redmond! 🚀</li>
             <li><strong>[May 2024]</strong>: Excited to start Summer Internship at Microsoft Research, Redmond! 🧑‍💻</li>
             <li><strong>[February 2024]</strong>: <a href="https://praeclarumjj3.github.io/vcoder/" target="_blank">VCoder</a> is accepted to <span class="highlight">CVPR 2024!</span> See you in Seattle! 🥂</li>
-            <li><strong>[August 2023]</strong>: <a href="https://github.com/Picsart-AI-Research/SeMask-Segmentation" target="_blank">SeMask</a> is accepted to <span class="highlight">NIVT Workshop at ICCV 2023!</span> 🥂</li>
-            <li><strong>[July 2023]</strong>: Graduated from IIT Roorkee with a Bachelor's in Computer Science and Engineering! 🎓</li>
             <li><strong>[June 2023]</strong>: I will be joining <a href="https://ic.gatech.edu/" target="_blank">Georgia Tech</a> as a Ph.D. student in Computer Science in Fall 2023! 🥂</li>
-            <li><strong>[February 2023]</strong>: <a href="https://praeclarumjj3.github.io/oneformer/" target="_blank">OneFormer</a> is accepted to <span class="highlight">CVPR 2023!</span> 🥂</li>
         </ul>
     </div>
 </div>
