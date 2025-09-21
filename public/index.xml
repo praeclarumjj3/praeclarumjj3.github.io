@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Jitesh Jain</title>
-    <link>http://localhost:1313/</link>
-      <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <link>https://praeclarumjj3.github.io/</link>
+      <atom:link href="https://praeclarumjj3.github.io/index.xml" rel="self" type="application/rss+xml" />
     <description>Jitesh Jain</description>
-    <generator>Hugo Blox Builder (https://hugoblox.com)</generator><language>en-us</language><lastBuildDate>Mon, 24 Oct 2022 00:00:00 +0000</lastBuildDate>
+    <generator>Hugo Blox Builder (https://hugoblox.com)</generator><language>en-us</language><lastBuildDate>Sat, 20 Sep 2025 00:00:00 +0000</lastBuildDate>
     <image>
-      <url>http://localhost:1313/media/icon_hu18230691612322137769.png</url>
+      <url>https://praeclarumjj3.github.io/media/icon_hu18230691612322137769.png</url>
       <title>Jitesh Jain</title>
-      <link>http://localhost:1313/</link>
+      <link>https://praeclarumjj3.github.io/</link>
     </image>
     
     <item>
       <title>what&#39;s a good metric for PhD Students?</title>
-      <link>http://localhost:1313/blogs/phd_metric/</link>
+      <link>https://praeclarumjj3.github.io/blogs/phd_metric/</link>
       <pubDate>Thu, 26 Dec 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/blogs/phd_metric/</guid>
+      <guid>https://praeclarumjj3.github.io/blogs/phd_metric/</guid>
       <description>&lt;p&gt;So, I started my PhD in CS at Georgia Tech in Fall 2023. It’s only been around 16 months, but it feels more like several years in deep learning research trends. During this time, SAM toppled the classical segmentation task research, and the GPT-4 series of models appeared; model alignment (to human expectations) research has taken off, and the Qwen series has (sort of?) taken over the Llama series as the best performing and fast-growing open-source LLMs, LLM based agent frameworks are growing and growing, and numerous (maybe too many) fancy AI startups have popped up.&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;That’s about research in major (industry) leagues. What about academia?&lt;/em&gt;&lt;/p&gt;
 &lt;blockquote&gt;
@@ -37,42 +37,42 @@
     </item>
     
     <item>
-      <title>OLA-VLM: Elevating Perception in Multimodal LLMs with Auxiliary Embedding Distillation</title>
-      <link>http://localhost:1313/publication/ola-vlm/</link>
+      <title>Elevating Perception in Multimodal LLMs with Auxiliary Embedding Distillation</title>
+      <link>https://praeclarumjj3.github.io/publication/visper-lm/</link>
       <pubDate>Thu, 12 Dec 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/publication/ola-vlm/</guid>
+      <guid>https://praeclarumjj3.github.io/publication/visper-lm/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Projects</title>
-      <link>http://localhost:1313/projects/</link>
+      <link>https://praeclarumjj3.github.io/projects/</link>
       <pubDate>Sun, 19 May 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/projects/</guid>
+      <guid>https://praeclarumjj3.github.io/projects/</guid>
       <description></description>
     </item>
     
     <item>
       <title>VCoder: Versatile Vision Encoders for Multimodal Large Language Models</title>
-      <link>http://localhost:1313/publication/vcoder/</link>
+      <link>https://praeclarumjj3.github.io/publication/vcoder/</link>
       <pubDate>Tue, 12 Dec 2023 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/publication/vcoder/</guid>
+      <guid>https://praeclarumjj3.github.io/publication/vcoder/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Experience</title>
-      <link>http://localhost:1313/experience/</link>
+      <link>https://praeclarumjj3.github.io/experience/</link>
       <pubDate>Tue, 24 Oct 2023 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/experience/</guid>
+      <guid>https://praeclarumjj3.github.io/experience/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Learn JavaScript</title>
-      <link>http://localhost:1313/teaching/js/</link>
+      <link>https://praeclarumjj3.github.io/teaching/js/</link>
       <pubDate>Tue, 24 Oct 2023 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/teaching/js/</guid>
+      <guid>https://praeclarumjj3.github.io/teaching/js/</guid>
       <description>&lt;p&gt;
  is designed to give technical content creators a seamless experience. You can focus on the content and the Hugo Blox Builder which this template is built upon handles the rest.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Embed videos, podcasts, code, LaTeX math, and even test students!&lt;/strong&gt;&lt;/p&gt;
@@ -121,7 +121,7 @@
 
 
 &lt;audio controls &gt;
-  &lt;source src=&#34;http://localhost:1313/teaching/js/ambient-piano.mp3&#34; type=&#34;audio/mpeg&#34;&gt;
+  &lt;source src=&#34;https://praeclarumjj3.github.io/teaching/js/ambient-piano.mp3&#34; type=&#34;audio/mpeg&#34;&gt;
 &lt;/audio&gt;
 
 &lt;h2 id=&#34;test-students&#34;&gt;Test students&lt;/h2&gt;
@@ -198,9 +198,9 @@ data.head()
     
     <item>
       <title>Learn Python</title>
-      <link>http://localhost:1313/teaching/python/</link>
+      <link>https://praeclarumjj3.github.io/teaching/python/</link>
       <pubDate>Tue, 24 Oct 2023 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/teaching/python/</guid>
+      <guid>https://praeclarumjj3.github.io/teaching/python/</guid>
       <description>&lt;p&gt;
  is designed to give technical content creators a seamless experience. You can focus on the content and the Hugo Blox Builder which this template is built upon handles the rest.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Embed videos, podcasts, code, LaTeX math, and even test students!&lt;/strong&gt;&lt;/p&gt;
@@ -249,7 +249,7 @@ data.head()
 
 
 &lt;audio controls &gt;
-  &lt;source src=&#34;http://localhost:1313/teaching/python/ambient-piano.mp3&#34; type=&#34;audio/mpeg&#34;&gt;
+  &lt;source src=&#34;https://praeclarumjj3.github.io/teaching/python/ambient-piano.mp3&#34; type=&#34;audio/mpeg&#34;&gt;
 &lt;/audio&gt;
 
 &lt;h2 id=&#34;test-students&#34;&gt;Test students&lt;/h2&gt;
@@ -326,9 +326,9 @@ data.head()
     
     <item>
       <title>Ascending the Research Trail</title>
-      <link>http://localhost:1313/blogs/ascending_research_trail/</link>
+      <link>https://praeclarumjj3.github.io/blogs/ascending_research_trail/</link>
       <pubDate>Wed, 08 Mar 2023 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/blogs/ascending_research_trail/</guid>
+      <guid>https://praeclarumjj3.github.io/blogs/ascending_research_trail/</guid>
       <description>&lt;p&gt;In case you missed it, I shared my experience as a rookie undergrad researcher in a previous blog: 
 . Since then, I have grown from a rookie researcher into a more mature beginner researcher with a better outlook on the bigger picture in research (thinking beyond publishing a paper) owing to my close collaboration with the 
  in the last couple of years. I have had several realizations that I will be sharing through this article. A few of those to get your interest piqued are:&lt;/p&gt;
@@ -346,25 +346,25 @@ data.head()
     
     <item>
       <title>OneFormer: One Transformer to Rule Universal Image Segmentation</title>
-      <link>http://localhost:1313/publication/oneformer/</link>
+      <link>https://praeclarumjj3.github.io/publication/oneformer/</link>
       <pubDate>Fri, 11 Nov 2022 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/publication/oneformer/</guid>
+      <guid>https://praeclarumjj3.github.io/publication/oneformer/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Keys to Better Image Inpainting: Structure and Texture Go Hand in Hand</title>
-      <link>http://localhost:1313/publication/fcf-inpainting/</link>
+      <link>https://praeclarumjj3.github.io/publication/fcf-inpainting/</link>
       <pubDate>Thu, 11 Aug 2022 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/publication/fcf-inpainting/</guid>
+      <guid>https://praeclarumjj3.github.io/publication/fcf-inpainting/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Neural Style Transfer: A Technical Report </title>
-      <link>http://localhost:1313/project/nst-tech/</link>
+      <link>https://praeclarumjj3.github.io/project/nst-tech/</link>
       <pubDate>Tue, 10 May 2022 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/project/nst-tech/</guid>
+      <guid>https://praeclarumjj3.github.io/project/nst-tech/</guid>
       <description>&lt;p&gt;As a part of the &lt;code&gt;CSN-526: Machine Learning&lt;/code&gt; Course Project, we worked on studying the effects of various factors like feature extractors, optimizers, loss functions and initialization techniques on the neural style transfer task.&lt;/p&gt;
 &lt;p&gt;We also proposed the use of pseudo ground truths for evaluating the performance under different settings.&lt;/p&gt;
 &lt;p&gt;For more info, please see the Code on &lt;code&gt;GitHub&lt;/code&gt;.&lt;/p&gt;
@@ -373,9 +373,9 @@ data.head()
     
     <item>
       <title>Summer Diaries: Intern Diary of an Undergrad DL Researcher</title>
-      <link>http://localhost:1313/blogs/summer_diary_wo/</link>
+      <link>https://praeclarumjj3.github.io/blogs/summer_diary_wo/</link>
       <pubDate>Tue, 04 Jan 2022 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/blogs/summer_diary_wo/</guid>
+      <guid>https://praeclarumjj3.github.io/blogs/summer_diary_wo/</guid>
       <description>&lt;p&gt;This summer, I worked as a remote research intern at SHI Lab @ University of Oregon (UO) and Picsart AI Research (PAIR). I joined the SHI Lab to work with Professor Humphrey Shi in November 2020 during my second year and continued my work there during the summers, and I joined PAIR during the summers (June 2021). My research focused on the field of Computer Vision during both my internships.&lt;/p&gt;
 &lt;p&gt;Read more about my intern experience at: 
 &lt;/p&gt;
@@ -384,17 +384,17 @@ data.head()
     
     <item>
       <title>SeMask: Semantically Masked Transformers for Semantic Segmentation</title>
-      <link>http://localhost:1313/publication/semask/</link>
+      <link>https://praeclarumjj3.github.io/publication/semask/</link>
       <pubDate>Sun, 12 Dec 2021 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/publication/semask/</guid>
+      <guid>https://praeclarumjj3.github.io/publication/semask/</guid>
       <description></description>
     </item>
     
     <item>
       <title>The Contemporary Overthinking Problem</title>
-      <link>http://localhost:1313/blogs/overthinking/</link>
+      <link>https://praeclarumjj3.github.io/blogs/overthinking/</link>
       <pubDate>Fri, 26 Nov 2021 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/blogs/overthinking/</guid>
+      <guid>https://praeclarumjj3.github.io/blogs/overthinking/</guid>
       <description>&lt;p&gt;Since the onset of the COVID-19 pandemic, the following lockdowns and stay &amp;amp; work from home situations, the concept of Overthinking has gained popularity. Moreover, now and then, I find the gen-z people (and even me sometimes) replying to “What you doing?” texts with “Overthinking.” Surprisingly, I have seen people setting their social profiles’ status as Overthinking. It made me wonder if we have started treating overthinking as a clichéd concept that might overshadow the problems that the actual overthinking state brings.&lt;/p&gt;
 &lt;p&gt;This article will explain my opinion about overthinking and why it is becoming more cliché than a serious problem.&lt;/p&gt;
 &lt;p&gt;Read more at: 
@@ -404,9 +404,9 @@ data.head()
     
     <item>
       <title>Riding the Noisy Research Track</title>
-      <link>http://localhost:1313/blogs/research_ride/</link>
+      <link>https://praeclarumjj3.github.io/blogs/research_ride/</link>
       <pubDate>Wed, 28 Jul 2021 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/blogs/research_ride/</guid>
+      <guid>https://praeclarumjj3.github.io/blogs/research_ride/</guid>
       <description>&lt;p&gt;Alright, people! This article will share my experience and learnings during the last eight months as an undergrad researcher. For those reading one of my blogs for the first time, I am a CSE undergrad (about to enter 3rd year) and am working as a Research Intern at &lt;em&gt;
 &lt;/em&gt; and &lt;em&gt;
 &lt;/em&gt;.&lt;/p&gt;
@@ -418,9 +418,9 @@ data.head()
     
     <item>
       <title>AOT-GAN Experiments</title>
-      <link>http://localhost:1313/project/aot-gan-experiments/</link>
+      <link>https://praeclarumjj3.github.io/project/aot-gan-experiments/</link>
       <pubDate>Wed, 19 May 2021 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/project/aot-gan-experiments/</guid>
+      <guid>https://praeclarumjj3.github.io/project/aot-gan-experiments/</guid>
       <description>&lt;p&gt;I conducted various experiments with &lt;strong&gt;AOT-GAN&lt;/strong&gt; proposed in the paper: 
 ) on the 
  dataset using the 
@@ -446,9 +446,9 @@ data.head()
     
     <item>
       <title>Do self-help books really help?</title>
-      <link>http://localhost:1313/blogs/self_help_books/</link>
+      <link>https://praeclarumjj3.github.io/blogs/self_help_books/</link>
       <pubDate>Sun, 16 May 2021 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/blogs/self_help_books/</guid>
+      <guid>https://praeclarumjj3.github.io/blogs/self_help_books/</guid>
       <description>&lt;p&gt;Alright, so this is going to be quite a short entry. A few days back, a friend of mine and I were talking about books. We were discussing the books that we have read. Well, she’s smart, so she was listing out great books like 1984, A Man Called Ove, etc. I told her how I had read quite a few of the “self-help” books during the last year or so (well, pandemic time, so needed some motivation, I guess :3). Then she asked me:&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Do self-help books really help?&lt;/p&gt;
@@ -460,9 +460,9 @@ data.head()
     
     <item>
       <title>OLIE</title>
-      <link>http://localhost:1313/project/olie/</link>
+      <link>https://praeclarumjj3.github.io/project/olie/</link>
       <pubDate>Sat, 10 Apr 2021 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/project/olie/</guid>
+      <guid>https://praeclarumjj3.github.io/project/olie/</guid>
       <description>&lt;p&gt;OLIE was aimed to reconstruct the original image with the objects removed (editing) by incorporating the mask features as input to the reconstructor.&lt;/p&gt;
 &lt;p&gt;After performing many experiments, we scrapped the idea. However, some of the experiments that I performed were:&lt;/p&gt;
 &lt;ul&gt;
@@ -485,18 +485,18 @@ data.head()
     
     <item>
       <title>granim</title>
-      <link>http://localhost:1313/project/granim/</link>
+      <link>https://praeclarumjj3.github.io/project/granim/</link>
       <pubDate>Sat, 03 Apr 2021 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/project/granim/</guid>
+      <guid>https://praeclarumjj3.github.io/project/granim/</guid>
       <description>&lt;p&gt;&lt;strong&gt;granim&lt;/strong&gt; makes it easier to plot animated graphs using the Manim-Engine. This project is still under development. Contributors are always welcome!&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>The Priority Hierarchy Dilemma</title>
-      <link>http://localhost:1313/blogs/priority/</link>
+      <link>https://praeclarumjj3.github.io/blogs/priority/</link>
       <pubDate>Tue, 30 Mar 2021 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/blogs/priority/</guid>
+      <guid>https://praeclarumjj3.github.io/blogs/priority/</guid>
       <description>&lt;p&gt;Right, so this isn&amp;rsquo;t a well-planned blog. I just wanted to write something up, and this idea popped into my head while guessing the mid-term&amp;rsquo;s syllabus with one of my friends. It got me wondering about the importance that I give to these college exams is even lesser than writing a random blog even when my exams are less than a week away xD.&lt;/p&gt;
 &lt;p&gt;Read more at: 
 &lt;/p&gt;
@@ -505,9 +505,9 @@ data.head()
     
     <item>
       <title>Why Research if I can Develop?!</title>
-      <link>http://localhost:1313/blogs/why_research/</link>
+      <link>https://praeclarumjj3.github.io/blogs/why_research/</link>
       <pubDate>Tue, 02 Feb 2021 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/blogs/why_research/</guid>
+      <guid>https://praeclarumjj3.github.io/blogs/why_research/</guid>
       <description>&lt;p&gt;Hello there! Alright, so it has been more than 3 months since my last blog, where I described how a CSE student’s life at IITR is being turned into a living hell by the system and professors. Sadly, the going has only got more challenging, with profs imposing more of their ingenious will on students. I recently had my ETEs, so I am brimming with academic frustration and will probably end up writing another blog, but that’s a topic for another day :P&lt;/p&gt;
 &lt;p&gt;Read more at: 
 &lt;/p&gt;
@@ -516,9 +516,9 @@ data.head()
     
     <item>
       <title>BackBone Profile</title>
-      <link>http://localhost:1313/project/backbone/</link>
+      <link>https://praeclarumjj3.github.io/project/backbone/</link>
       <pubDate>Mon, 28 Dec 2020 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/project/backbone/</guid>
+      <guid>https://praeclarumjj3.github.io/project/backbone/</guid>
       <description>&lt;p&gt;I performed experiments on various backbone networks:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;
@@ -548,18 +548,18 @@ data.head()
     
     <item>
       <title>ArxivApp</title>
-      <link>http://localhost:1313/project/arxiv_app/</link>
+      <link>https://praeclarumjj3.github.io/project/arxiv_app/</link>
       <pubDate>Thu, 26 Nov 2020 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/project/arxiv_app/</guid>
+      <guid>https://praeclarumjj3.github.io/project/arxiv_app/</guid>
       <description>&lt;p&gt;&lt;strong&gt;ArxivApp&lt;/strong&gt; lets you read, bookmark and download papers from arXiv.org. It also has a forum screen that lets you read and create notes/blogs about the different research papers you read!&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>IITR ChatBot</title>
-      <link>http://localhost:1313/project/iitr_bot/</link>
+      <link>https://praeclarumjj3.github.io/project/iitr_bot/</link>
       <pubDate>Mon, 28 Sep 2020 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/project/iitr_bot/</guid>
+      <guid>https://praeclarumjj3.github.io/project/iitr_bot/</guid>
       <description>&lt;p&gt;We developed an assistance bot for the 
  using the 
  framework.&lt;/p&gt;
@@ -568,9 +568,9 @@ data.head()
     
     <item>
       <title>IITR Security App</title>
-      <link>http://localhost:1313/project/security_app/</link>
+      <link>https://praeclarumjj3.github.io/project/security_app/</link>
       <pubDate>Sat, 05 Sep 2020 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/project/security_app/</guid>
+      <guid>https://praeclarumjj3.github.io/project/security_app/</guid>
       <description>&lt;ul&gt;
 &lt;li&gt;IITR Security App was developed to eliminate the use of paper by the guards to record the details of the visitors at IIT Roorkee.&lt;/li&gt;
 &lt;li&gt;I worked on developing Front-End part of the app using Flutter.&lt;/li&gt;
@@ -582,9 +582,9 @@ data.head()
     
     <item>
       <title>One Year of Traversing the “eˣ” Graph</title>
-      <link>http://localhost:1313/blogs/one_year_at_iitr/</link>
+      <link>https://praeclarumjj3.github.io/blogs/one_year_at_iitr/</link>
       <pubDate>Sun, 02 Aug 2020 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/blogs/one_year_at_iitr/</guid>
+      <guid>https://praeclarumjj3.github.io/blogs/one_year_at_iitr/</guid>
       <description>&lt;p&gt;Hey! So you must be wondering, “What the hell is e ˣ doing in the title? It must be a scientific article!” Well, to put your mind at ease, this is not an article about the hidden beauty of e ˣ (although that would be an excellent one :P). Instead, it is about a now sophomore’s year of life at IITR. Please allow me to take you to a flashback journey through time!&lt;/p&gt;
 &lt;p&gt;Read more at: 
 &lt;/p&gt;
@@ -593,9 +593,9 @@ data.head()
     
     <item>
       <title>Paper Summaries</title>
-      <link>http://localhost:1313/project/summary_of_papers/</link>
+      <link>https://praeclarumjj3.github.io/project/summary_of_papers/</link>
       <pubDate>Tue, 07 Jul 2020 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/project/summary_of_papers/</guid>
+      <guid>https://praeclarumjj3.github.io/project/summary_of_papers/</guid>
       <description>&lt;p&gt;Summaries:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;
@@ -632,18 +632,18 @@ data.head()
     
     <item>
       <title>ChatBot with Pytorch</title>
-      <link>http://localhost:1313/project/chatbot/</link>
+      <link>https://praeclarumjj3.github.io/project/chatbot/</link>
       <pubDate>Fri, 19 Jun 2020 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/project/chatbot/</guid>
+      <guid>https://praeclarumjj3.github.io/project/chatbot/</guid>
       <description>&lt;p&gt;I implemented a chatbot in Pytorch on the Cornell Movie Dialog Corpus dataset using GRUs and Attention mechanism.&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>The Curse of Dimensionality</title>
-      <link>http://localhost:1313/blogs/curse_dimension/</link>
+      <link>https://praeclarumjj3.github.io/blogs/curse_dimension/</link>
       <pubDate>Thu, 11 Jun 2020 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/blogs/curse_dimension/</guid>
+      <guid>https://praeclarumjj3.github.io/blogs/curse_dimension/</guid>
       <description>&lt;p&gt;Have you ever found yourself stuck in the middle of a problem having a large number of dimensions? You keep on trying harder and harder to come up with a solution that would satisfy all the dimensions of the problem. Still, every time one or another dimension makes ur efforts look futile! It turns out that you can solve a problem very efficiently when presented with not more than 2 or 3 dimensions. Nevertheless, this world is not kind to us every time! You might find yourself struggling amidst a problem, thinking&amp;hellip;&lt;/p&gt;
 &lt;p&gt;Read more at: 
 &lt;/p&gt;
@@ -652,9 +652,9 @@ data.head()
     
     <item>
       <title>VQ-VAE on MNIST</title>
-      <link>http://localhost:1313/project/vq_vae/</link>
+      <link>https://praeclarumjj3.github.io/project/vq_vae/</link>
       <pubDate>Wed, 20 May 2020 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/project/vq_vae/</guid>
+      <guid>https://praeclarumjj3.github.io/project/vq_vae/</guid>
       <description>&lt;p&gt;I tried to implement 
  in Pytorch on the MNIST dataset.&lt;/p&gt;
 </description>
@@ -662,18 +662,18 @@ data.head()
     
     <item>
       <title>Time Tracer</title>
-      <link>http://localhost:1313/project/time_trace/</link>
+      <link>https://praeclarumjj3.github.io/project/time_trace/</link>
       <pubDate>Mon, 27 Apr 2020 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/project/time_trace/</guid>
+      <guid>https://praeclarumjj3.github.io/project/time_trace/</guid>
       <description>&lt;p&gt;A Flutter application developed as a self-learning project to help people keep track of their time expenditure.&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>Societyfy</title>
-      <link>http://localhost:1313/project/societyfy/</link>
+      <link>https://praeclarumjj3.github.io/project/societyfy/</link>
       <pubDate>Wed, 08 Apr 2020 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/project/societyfy/</guid>
+      <guid>https://praeclarumjj3.github.io/project/societyfy/</guid>
       <description>&lt;p&gt;SOCIETYFY is an app showcase app developed during MDG’s SoC event in December, 2019. Societyfy lets you discover new people based on your interest at any moment of time and make new bonds with people you share an interest with at any point in time through its specific chatrooms for each category.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;PlayStore Link&lt;/strong&gt;: 
 &lt;/p&gt;
@@ -684,9 +684,9 @@ data.head()
     
     <item>
       <title>Geofile</title>
-      <link>http://localhost:1313/project/geofile/</link>
+      <link>https://praeclarumjj3.github.io/project/geofile/</link>
       <pubDate>Sun, 05 Apr 2020 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/project/geofile/</guid>
+      <guid>https://praeclarumjj3.github.io/project/geofile/</guid>
       <description>&lt;ul&gt;
 &lt;li&gt;Geofile lets you couple files them with a specific location.&lt;/li&gt;
 &lt;li&gt;I worked on developing Front-End part of the app using Flutter.&lt;/li&gt;
@@ -697,9 +697,9 @@ data.head()
     
     <item>
       <title>Societyfy, An app made for finding company at anytime for anything</title>
-      <link>http://localhost:1313/blogs/societyfy/</link>
+      <link>https://praeclarumjj3.github.io/blogs/societyfy/</link>
       <pubDate>Wed, 19 Feb 2020 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/blogs/societyfy/</guid>
+      <guid>https://praeclarumjj3.github.io/blogs/societyfy/</guid>
       <description>&lt;p&gt;Imagine a situation where you are at a place where you don’t know many people and feel a bit left out. You feel hesitant to go out for lunch or hangout or even go to a movie alone. This is where the concept of Societyfy comes in to rescue you.&lt;/p&gt;
 &lt;p&gt;Read more at: 
 &lt;/p&gt;
@@ -708,9 +708,9 @@ data.head()
     
     <item>
       <title></title>
-      <link>http://localhost:1313/blogs/memory_wall_iitr/</link>
+      <link>https://praeclarumjj3.github.io/blogs/memory_wall_iitr/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/blogs/memory_wall_iitr/</guid>
+      <guid>https://praeclarumjj3.github.io/blogs/memory_wall_iitr/</guid>
       <description></description>
     </item>
     

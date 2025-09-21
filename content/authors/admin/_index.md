@@ -88,7 +88,7 @@ profiles:
     <div class="professional-life">
         <h4 class="highlight">Professional Life Happenings</h4>
         <ul>
-            <!-- <li><strong>[September 2025]</strong>: <a href="https://praeclarumjj3.github.io/visper_lm/" target="_blank">VisPer-LM</a> (f.k.a. OLA-VLM) is accepted to <span class="highlight">NeurIPS 2025!</span> See you in San Diengo! 🥂</li> -->
+            <li><strong>[September 2025]</strong>: <a href="https://praeclarumjj3.github.io/visper_lm/" target="_blank">VisPer-LM</a> (f.k.a. OLA-VLM) is accepted to <span class="highlight">NeurIPS 2025!</span> See you in San Diego! 🥂</li>
             <li><strong>[May 2025]</strong>: Started my Research Internship in the PRIOR team at Allen AI. HMU if you are in Seattle</a>! 🥂
             <li><strong>[April 2025]</strong>: Passed my Ph.D. Qualifying Exam</a>! 🥂
             <li><strong>[December 2024]</strong>: Checkout my new blog <a href="https://praeclarumjj3.substack.com/p/whats-a-good-metric-for-phd-students" target="_blank">what's a good metric for PhD Students?</a>! 📜
