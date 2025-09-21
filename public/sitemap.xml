@@ -26,11 +26,15 @@
     <lastmod>2024-12-12T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://praeclarumjj3.github.io/publication/ola-vlm/</loc>
+    <loc>https://praeclarumjj3.github.io/publication_types/conference-paper/</loc>
     <lastmod>2024-12-12T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://praeclarumjj3.github.io/publication_types/preprint/</loc>
+    <loc>https://praeclarumjj3.github.io/publication/visper-lm/</loc>
+    <lastmod>2024-12-12T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url><url>
+    <loc>https://praeclarumjj3.github.io/tags/neurips-2025/</loc>
     <lastmod>2024-12-12T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
@@ -38,16 +42,8 @@
     <lastmod>2024-12-12T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://praeclarumjj3.github.io/tags/under-review/</loc>
-    <lastmod>2024-12-12T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-  </url><url>
     <loc>https://praeclarumjj3.github.io/projects/</loc>
     <lastmod>2024-05-19T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-  </url><url>
-    <loc>https://praeclarumjj3.github.io/publication_types/conference-paper/</loc>
-    <lastmod>2023-12-12T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
     <loc>https://praeclarumjj3.github.io/tags/cvpr-2024/</loc>
@@ -92,10 +88,6 @@
   </url><url>
     <loc>https://praeclarumjj3.github.io/publication/oneformer/</loc>
     <lastmod>2022-11-11T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-  </url><url>
-    <loc>https://praeclarumjj3.github.io/</loc>
-    <lastmod>2022-10-24T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
     <loc>https://praeclarumjj3.github.io/publication/fcf-inpainting/</loc>

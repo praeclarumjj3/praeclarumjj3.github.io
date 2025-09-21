@@ -28,7 +28,10 @@
       <link>https://praeclarumjj3.github.io/project/aot-gan-experiments/</link>
       <pubDate>Wed, 19 May 2021 00:00:00 +0000</pubDate>
       <guid>https://praeclarumjj3.github.io/project/aot-gan-experiments/</guid>
-      <description>&lt;p&gt;I conducted various experiments with &lt;strong&gt;AOT-GAN&lt;/strong&gt; proposed in the paper: &lt;a href=&#34;https://arxiv.org/abs/2104.01431&#34;&gt;Aggregated Contextual Transformations for High-Resolution Image Inpainting&lt;/a&gt;) on the &lt;a href=&#34;http://places2.csail.mit.edu/download.html&#34;&gt;Places2&lt;/a&gt; dataset using the &lt;a href=&#34;https://nv-adlr.github.io/publication/partialconv-inpainting&#34;&gt;PConv Free Form Masks for Inpainting&lt;/a&gt;.&lt;/p&gt;
+      <description>&lt;p&gt;I conducted various experiments with &lt;strong&gt;AOT-GAN&lt;/strong&gt; proposed in the paper: 
+) on the 
+ dataset using the 
+.&lt;/p&gt;
 &lt;p&gt;In particular, I focused on finding the effectivity of different losses while training the framework. I made several observations:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;
@@ -57,10 +60,12 @@
 &lt;p&gt;After performing many experiments, we scrapped the idea. However, some of the experiments that I performed were:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;strong&gt;Using a Perturbator Model:&lt;/strong&gt; Taking inspiration from &lt;a href=&#34;https://ganpaint.io/&#34;&gt;GanPaint&lt;/a&gt;, I tried editing images using perturbations in the reconstructor, however it didn&amp;rsquo;t work well.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Using a Perturbator Model:&lt;/strong&gt; Taking inspiration from 
+, I tried editing images using perturbations in the reconstructor, however it didn&amp;rsquo;t work well.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;strong&gt;Using Gated Convolutions:&lt;/strong&gt; Taking inspiration from &lt;a href=&#34;https://paperswithcode.com/paper/free-form-image-inpainting-with-gated&#34;&gt;Free-Form Image Inpainting with Gated Convolution&lt;/a&gt;, I used &lt;code&gt;Gated Modules&lt;/code&gt; instead of standard modules which gave even &lt;strong&gt;poorer results&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Using Gated Convolutions:&lt;/strong&gt; Taking inspiration from 
+, I used &lt;code&gt;Gated Modules&lt;/code&gt; instead of standard modules which gave even &lt;strong&gt;poorer results&lt;/strong&gt;.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;&lt;strong&gt;Using Two Stage Model:&lt;/strong&gt; Getting hole images from the reconstructor and then passing that into an inpainting model gave somewhat good results as the generating the hole image could be learned accurately to an extent, however, the results were no better than the common inpainting ones.&lt;/p&gt;
@@ -126,7 +131,9 @@
       <link>https://praeclarumjj3.github.io/project/iitr_bot/</link>
       <pubDate>Mon, 28 Sep 2020 00:00:00 +0000</pubDate>
       <guid>https://praeclarumjj3.github.io/project/iitr_bot/</guid>
-      <description>&lt;p&gt;We developed an assistance bot for the &lt;a href=&#34;https://www.iitr.ac.in/&#34;&gt;IITR website&lt;/a&gt; using the &lt;a href=&#34;https://rasa.com/docs/rasa/&#34;&gt;RASA&lt;/a&gt; framework.&lt;/p&gt;
+      <description>&lt;p&gt;We developed an assistance bot for the 
+ using the 
+ framework.&lt;/p&gt;
 </description>
     </item>
     
@@ -138,7 +145,8 @@
       <description>&lt;ul&gt;
 &lt;li&gt;IITR Security App was developed to eliminate the use of paper by the guards to record the details of the visitors at IIT Roorkee.&lt;/li&gt;
 &lt;li&gt;I worked on developing Front-End part of the app using Flutter.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Playstore Link&lt;/strong&gt;: &lt;a href=&#34;https://play.google.com/store/apps/details?id=in.ac.iitr.mdg.securityapp&#34;&gt;https://play.google.com/store/apps/details?id=in.ac.iitr.mdg.securityapp&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Playstore Link&lt;/strong&gt;: 
+&lt;/li&gt;
 &lt;/ul&gt;
 </description>
     </item>
@@ -151,25 +159,32 @@
       <description>&lt;p&gt;Summaries:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;a href=&#34;https://github.com/vlgiitr/papers_we_read/blob/master/summaries/You_only_train_once.md&#34;&gt;You Only Train Once : Loss-conditional training of deep networks, ICLR 2020&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;
+&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;a href=&#34;https://github.com/vlgiitr/papers_we_read/blob/master/summaries/GrokNet.md&#34;&gt;GrokNet: Unified Computer Vision Model Trunk and Embeddings For Commerce, KDD 2020&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;
+&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;a href=&#34;https://github.com/vlgiitr/papers_we_read/blob/master/summaries/Semantically_multi-modal_image_synthesis.md&#34;&gt;Semantically multi-modal image synthesis, CVPR 2020&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;
+&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;a href=&#34;https://github.com/vlgiitr/papers_we_read/blob/master/summaries/GameGAN.md&#34;&gt;Learning to Simulate Dynamic Environments with GameGAN, CVPR 2020&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;
+&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;a href=&#34;https://github.com/vlgiitr/papers_we_read/blob/master/summaries/Adversarial_RL.md&#34;&gt;Adversarial Policies : Attacking deep reinforcement learning, ICLR 2020&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;
+&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;a href=&#34;https://github.com/vlgiitr/papers_we_read/blob/master/summaries/Unsupervised_learning_for_3D_objects_from_images.md&#34;&gt;Unsupervised Learning of Probably Symmetric Deformable 3D Objects from Images in the Wild, CVPR 2020&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;
+&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;a href=&#34;https://github.com/vlgiitr/papers_we_read/blob/master/summaries/BYOL.md&#34;&gt;Bootstrap Your Own Latent: A New Approach to Self-Supervised Learning, CVPR 2020&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;
+&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 </description>
@@ -189,7 +204,8 @@
       <link>https://praeclarumjj3.github.io/project/vq_vae/</link>
       <pubDate>Wed, 20 May 2020 00:00:00 +0000</pubDate>
       <guid>https://praeclarumjj3.github.io/project/vq_vae/</guid>
-      <description>&lt;p&gt;I tried to implement &lt;a href=&#34;https://arxiv.org/abs/1711.00937&#34;&gt;VQ-VAE&lt;/a&gt; in Pytorch on the MNIST dataset.&lt;/p&gt;
+      <description>&lt;p&gt;I tried to implement 
+ in Pytorch on the MNIST dataset.&lt;/p&gt;
 </description>
     </item>
     
@@ -208,8 +224,10 @@
       <pubDate>Wed, 08 Apr 2020 00:00:00 +0000</pubDate>
       <guid>https://praeclarumjj3.github.io/project/societyfy/</guid>
       <description>&lt;p&gt;SOCIETYFY is an app showcase app developed during MDG’s SoC event in December, 2019. Societyfy lets you discover new people based on your interest at any moment of time and make new bonds with people you share an interest with at any point in time through its specific chatrooms for each category.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;PlayStore Link&lt;/strong&gt;: &lt;a href=&#34;https://play.google.com/store/apps/details?id=in.ac.mdg.iitr.societyfy&#34;&gt;https://play.google.com/store/apps/details?id=in.ac.mdg.iitr.societyfy&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Medium Blog&lt;/strong&gt;: &lt;a href=&#34;https://medium.com/mobile-development-group/societyfy-an-app-made-for-finding-company-at-anytime-for-anything-842e18151551&#34;&gt; Societyfy: An app made for finding company at any time for anything&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;PlayStore Link&lt;/strong&gt;: 
+&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Medium Blog&lt;/strong&gt;: 
+&lt;/p&gt;
 </description>
     </item>
     

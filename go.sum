@@ -6,3 +6,5 @@ github.com/HugoBlox/hugo-blox-builder/modules/blox-plugin-netlify v1.1.2-0.20231
 github.com/HugoBlox/hugo-blox-builder/modules/blox-seo v0.2.2/go.mod h1:NsESu6cEms1DgH84icCyylElg2Zu8A0f7Fma5JR0LZE=
 github.com/HugoBlox/hugo-blox-builder/modules/blox-tailwind v0.2.1-0.20240602133901-492e343c2a33 h1:x348mgyKtNQKGROIZ/A0WYbKitzD5ySaWWny0C8wF9U=
 github.com/HugoBlox/hugo-blox-builder/modules/blox-tailwind v0.2.1-0.20240602133901-492e343c2a33/go.mod h1:+qBbqXbKT7M2nOeHQa5OrRXwQKpEx1RXpMGirHbT7HU=
+github.com/HugoBlox/hugo-blox-builder/modules/blox-tailwind v0.3.0 h1:W6YgfER+csbFcRC3o3dvCXLhs2aYoMncpsL8CEkHpY8=
+github.com/HugoBlox/hugo-blox-builder/modules/blox-tailwind v0.3.0/go.mod h1:bUQKSt1XQhk60nSpI6D+MibQi6v8s7HghF5qoAtlhws=
