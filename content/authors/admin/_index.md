@@ -58,17 +58,6 @@ profiles:
 #       I 
 ---
 
-<!-- ## About Me -->
-<!-- 
-I am a second-year Ph.D. student in the School of Interactive Computing at Georgia Tech, advised by [Professor Humphrey Shi](https://www.humphreyshi.com/home). I completed my Bachelor's in Computer Science and Engineering in 2023 at IIT Roorkee.
-
-In the past, I have interned at Microsoft Research, Redmond (Summer 2024, mentored by [Dr. Jianwei Yang](https://jwyang.github.io/)) and Picsart AI Research (Summer 2021,2023, mentored by [Dr. Humphrey Shi](https://www.humphreyshi.com/home)).
-
-My current research interests revolve around developing multimodal systems. A few of my recent works are based on analyzing and improving the visual perception ability in Multimodal Large Language Models [[OLA-VLM](https://praeclarumjj3.github.io/ola_vlm/), [VCoder](https://praeclarumjj3.github.io/vcoder/)]</span>, building upon my experience from working on develping models for dense prediction tasks [[OneFormer](https://praeclarumjj3.github.io/oneformer), [SeMask](https://github.com/Picsart-AI-Research/SeMask-Segmentation)].
-
-
-Reach out if you are interested in my research or would like to discuss any ideas. If you are a self-motivated researcher who's looking for guidance on one of your projects, feel free to drop me an email with a brief description about your research project (manifested). -->
-
 <div class="bio-container">
     <p>
         I am a third-year Ph.D. student in the School of Interactive Computing at Georgia Tech, advised by 
@@ -82,7 +71,7 @@ Reach out if you are interested in my research or would like to discuss any idea
     <p>
         My current research interests revolve around developing <b>multimodal systems</b>. Recently, I have been working on scaling RL for long video understanding. I am also interested in representation learning, efficiency, and various real-world applications of multimodal systems. 
         My past works are based on analyzing and improving the visual perception ability in Multimodal Large Language Models 
-        [<a href="https://github.com/SHI-Labs/OLA-VLM" class="hover-link">OLA-VLM</a>, 
+        [<a href="https://github.com/SHI-Labs/VisPer-LM" class="hover-link">VisPer-LM</a>, 
         <a href="https://github.com/SHI-Labs/VCoder" class="hover-link">VCoder</a>], 
         building upon my experience from working on developing models for dense prediction tasks 
         [<a href="https://github.com/SHI-Labs/OneFormer" class="hover-link">OneFormer</a>, 
@@ -99,7 +88,7 @@ Reach out if you are interested in my research or would like to discuss any idea
     <div class="professional-life">
         <h4 class="highlight">Professional Life Happenings</h4>
         <ul>
-            <li><strong>[September 2025]</strong>: <a href="https://praeclarumjj3.github.io/visper_lm/" target="_blank">VisPer-LM</a> (f.k.a. OLA-VLM) is accepted to <span class="highlight">NeurIPS 2025!</span> See you in San Diengo! 🥂</li>
+            <!-- <li><strong>[September 2025]</strong>: <a href="https://praeclarumjj3.github.io/visper_lm/" target="_blank">VisPer-LM</a> (f.k.a. OLA-VLM) is accepted to <span class="highlight">NeurIPS 2025!</span> See you in San Diengo! 🥂</li> -->
             <li><strong>[May 2025]</strong>: Started my Research Internship in the PRIOR team at Allen AI. HMU if you are in Seattle</a>! 🥂
             <li><strong>[April 2025]</strong>: Passed my Ph.D. Qualifying Exam</a>! 🥂
             <li><strong>[December 2024]</strong>: Checkout my new blog <a href="https://praeclarumjj3.substack.com/p/whats-a-good-metric-for-phd-students" target="_blank">what's a good metric for PhD Students?</a>! 📜
