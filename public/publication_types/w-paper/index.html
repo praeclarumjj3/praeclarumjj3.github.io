@@ -1,7 +1,7 @@
 <!doctype html>
 <!-- This site was created with Hugo Blox. https://hugoblox.com -->
-<!-- Last Published: August 17, 2024 --><html lang="en-us" dir="ltr"
-      data-wc-theme-default="system">
+<!-- Last Published: October 21, 2025 --><html lang="en-us" dir="ltr"
+      data-wc-theme-default="dark">
   
 <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
   <meta charset="utf-8" />
@@ -195,6 +195,8 @@
     <meta property="twitter:image" content="http://localhost:1313/media/icon_hu18230691612322137769.png" /><meta property="og:locale" content="en-us" />
   
     
+      <meta property="og:updated_time" content="2024-03-12T00:00:00&#43;00:00" />
+    
   
 
   
@@ -249,6 +251,80 @@
         
       
     
+      
+      
+        
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+        
+        
+      
+    
+      
+      
+        
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+        
+        
+      
+    
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+    
+      
+      
+        
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+        
+        
+      
+    
+  
+  
+  
   
   
   
@@ -357,61 +433,7 @@
   
   
   
-    
-      
-      
-        
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-        
-        
-      
-    
-      
-      
-        
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-        
-        
-      
-    
-      
-      
-        
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-        
-        
-      
-    
+  
   
   
   
@@ -460,62 +482,6 @@
 
 
 
-
-
-
-<link type="text/css" rel="stylesheet" href="/dist/pagefind/pagefind-ui.be766eb419317a14ec769d216e9779bfe8f3737c80e780f4ba0dafb57a41a482.css" integrity="sha256-vnZutBkxehTsdp0hbpd5v&#43;jzc3yA54D0ug2vtXpBpII=" />
-
-
-<script src="/dist/pagefind/pagefind-ui.87693d7c6f2b3b347ce359d0ede762c033419f0a32b22ce508c335a81d841f1b.js" integrity="sha256-h2k9fG8rOzR841nQ7ediwDNBnwoysizlCMM1qB2EHxs="></script>
-
-
-<script>window.hbb.pagefind = {"baseUrl":"/"};</script>
-
-<style>
-  html.dark {
-    --pagefind-ui-primary: #eeeeee;
-    --pagefind-ui-text: #eeeeee;
-    --pagefind-ui-background: #152028;
-    --pagefind-ui-border: #152028;
-    --pagefind-ui-tag: #152028;
-  }
-</style>
-
-<script>
-  window.addEventListener('DOMContentLoaded', (event) => {
-    new PagefindUI({
-      element: "#search",
-      showSubResults: true,
-      baseUrl: window.hbb.pagefind.baseUrl,
-      bundlePath: window.hbb.pagefind.baseUrl + "pagefind/",
-    });
-  });
-  document.addEventListener('DOMContentLoaded', () => {
-    let element = document.getElementById('search');
-    let trigger = document.getElementById('search_toggle');
-
-    if (trigger) {
-      trigger.addEventListener('click', () => {
-        element.classList.toggle('hidden');
-        element.querySelector("input").value = ""
-        element.querySelector("input").focus()
-
-        if (!element.classList.contains('hidden')) {
-          let clear_trigger = document.querySelector('.pagefind-ui__search-clear');
-
-          if (clear_trigger && !clear_trigger.hasAttribute('listenerOnClick')) {
-            clear_trigger.setAttribute('listenerOnClick', 'true');
-
-            clear_trigger.addEventListener('click', () => {
-              element.classList.toggle('hidden');
-            });
-          }
-        }
-
-      });
-    }
-  });
-</script>
 
 
 
@@ -742,7 +708,7 @@
     <ul
       id="nav-menu"
       class="navbar-nav order-3 hidden lg:flex w-full pb-6 lg:order-1 lg:w-auto lg:space-x-2 lg:pb-0 xl:space-x-8 justify-left
-      ">
+      ml-auto mr-6">
       
       
       
@@ -767,7 +733,7 @@
         <a
           class="nav-link "
           
-          href="/publication"
+          href="#publications"
         >Publications</a
         >
       </li>
@@ -781,7 +747,7 @@
         <a
           class="nav-link "
           
-          href="/blogs"
+          href="#blogs"
         >Blogs</a
         >
       </li>
@@ -810,13 +776,6 @@
 
       
       
-      
-      <button
-        aria-label="search"
-        class="text-black hover:text-primary  inline-block px-3 text-xl dark:text-white"
-        id="search_toggle">
-        <svg xmlns="http://www.w3.org/2000/svg" height="16" width="16" viewBox="0 0 512 512" fill="currentColor"><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z"/></svg>
-      </button>
       
 
       
@@ -856,8 +815,6 @@
 </header>
 
 
-<div id="search" class="hidden p-3"></div>
-
 
         
       
@@ -894,20 +851,20 @@
 
 
 
-<a href="https://github.com/Picsart-AI-Research/SeMask-Segmentation" target="_blank" rel="noopener" class="mb-5">
+<a href="https://arxiv.org/abs/2510.15261" target="_blank" rel="noopener" class="mb-5">
   <div class="md:flex">
     <div class="md:flex-shrink-0 overflow-hidden">
       
         
         
-      <img class="h-48 w-full object-cover md:w-48 hover:scale-125 transition duration-500 cursor-pointer object-cover" loading="lazy" src="/publication/semask/featured_hu11449661510132048490.webp" height="655" width="655" alt="SeMask: Semantically Masked Transformers for Semantic Segmentation">
+      <img class="h-48 w-full object-cover md:w-48 hover:scale-125 transition duration-500 cursor-pointer object-cover" loading="lazy" src="/publication/augustus/featured_hu15310110630167162898.webp" height="655" width="655" alt="AUGUSTUS: An LLM-Driven Multimodal Agent System with Contextualized User Memory">
       
     </div>
     <div class="p-8">
-      <div class="uppercase tracking-wide text-md text-primary-700 dark:text-primary-200 font-semibold">SeMask: Semantically Masked Transformers for Semantic Segmentation</div>
+      <div class="uppercase tracking-wide text-md text-primary-700 dark:text-primary-200 font-semibold">AUGUSTUS: An LLM-Driven Multimodal Agent System with Contextualized User Memory</div>
       <p class="block mt-1 text-sm leading-tight font-medium text-black dark:text-white">
         </p>
-      <p class="mt-2 text-gray-500 dark:text-gray-400 text-sm">Jan 1, 0001</p>
+      <p class="mt-2 text-gray-500 dark:text-gray-400 text-sm">Mar 2024</p>
     </div>
   </div>
 </a>

@@ -1,5 +1,5 @@
 ---
-title: "Elevating Perception in Multimodal LLMs with Auxiliary Embedding Distillation"
+title: "Elevating Perception in Multimodal LLMs with Visual Embedding Distillation"
 subtitle: ""
 # Authors
 # If you created a profile for a user (e.g. the default `admin` user), write the username (folder name) here 

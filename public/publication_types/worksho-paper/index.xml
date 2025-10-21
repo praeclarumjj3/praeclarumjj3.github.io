@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Worksho Paper | Jitesh Jain</title>
+    <link>http://localhost:1313/publication_types/worksho-paper/</link>
+      <atom:link href="http://localhost:1313/publication_types/worksho-paper/index.xml" rel="self" type="application/rss+xml" />
+    <description>Worksho Paper</description>
+    <generator>Hugo Blox Builder (https://hugoblox.com)</generator><language>en-us</language><lastBuildDate>Tue, 12 Mar 2024 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>http://localhost:1313/media/icon_hu18230691612322137769.png</url>
+      <title>Worksho Paper</title>
+      <link>http://localhost:1313/publication_types/worksho-paper/</link>
+    </image>
+    
+    <item>
+      <title>AUGUSTUS: An LLM-Driven Multimodal Agent System with Contextualized User Memory</title>
+      <link>http://localhost:1313/publication/augustus/</link>
+      <pubDate>Tue, 12 Mar 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/publication/augustus/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

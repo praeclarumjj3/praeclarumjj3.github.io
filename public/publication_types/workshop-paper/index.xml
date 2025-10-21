@@ -5,12 +5,20 @@
     <link>https://praeclarumjj3.github.io/publication_types/workshop-paper/</link>
       <atom:link href="https://praeclarumjj3.github.io/publication_types/workshop-paper/index.xml" rel="self" type="application/rss+xml" />
     <description>Workshop Paper</description>
-    <generator>Hugo Blox Builder (https://hugoblox.com)</generator><language>en-us</language><lastBuildDate>Sun, 12 Dec 2021 00:00:00 +0000</lastBuildDate>
+    <generator>Hugo Blox Builder (https://hugoblox.com)</generator><language>en-us</language><lastBuildDate>Tue, 12 Mar 2024 00:00:00 +0000</lastBuildDate>
     <image>
       <url>https://praeclarumjj3.github.io/media/icon_hu18230691612322137769.png</url>
       <title>Workshop Paper</title>
       <link>https://praeclarumjj3.github.io/publication_types/workshop-paper/</link>
     </image>
+    
+    <item>
+      <title>AUGUSTUS: An LLM-Driven Multimodal Agent System with Contextualized User Memory</title>
+      <link>https://praeclarumjj3.github.io/publication/augustus/</link>
+      <pubDate>Tue, 12 Mar 2024 00:00:00 +0000</pubDate>
+      <guid>https://praeclarumjj3.github.io/publication/augustus/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>SeMask: Semantically Masked Transformers for Semantic Segmentation</title>

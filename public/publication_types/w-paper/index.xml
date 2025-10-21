@@ -5,7 +5,7 @@
     <link>http://localhost:1313/publication_types/w-paper/</link>
       <atom:link href="http://localhost:1313/publication_types/w-paper/index.xml" rel="self" type="application/rss+xml" />
     <description>W Paper</description>
-    <generator>Hugo Blox Builder (https://hugoblox.com)</generator><language>en-us</language>
+    <generator>Hugo Blox Builder (https://hugoblox.com)</generator><language>en-us</language><lastBuildDate>Tue, 12 Mar 2024 00:00:00 +0000</lastBuildDate>
     <image>
       <url>http://localhost:1313/media/icon_hu18230691612322137769.png</url>
       <title>W Paper</title>
@@ -13,10 +13,10 @@
     </image>
     
     <item>
-      <title>SeMask: Semantically Masked Transformers for Semantic Segmentation</title>
-      <link>http://localhost:1313/publication/semask/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/publication/semask/</guid>
+      <title>AUGUSTUS: An LLM-Driven Multimodal Agent System with Contextualized User Memory</title>
+      <link>http://localhost:1313/publication/augustus/</link>
+      <pubDate>Tue, 12 Mar 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/publication/augustus/</guid>
       <description></description>
     </item>
     
