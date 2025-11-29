@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>ArXiv 2025 | Jitesh Jain</title>
+    <link>https://praeclarumjj3.github.io/tags/arxiv-2025/</link>
+      <atom:link href="https://praeclarumjj3.github.io/tags/arxiv-2025/index.xml" rel="self" type="application/rss+xml" />
+    <description>ArXiv 2025</description>
+    <generator>Hugo Blox Builder (https://hugoblox.com)</generator><language>en-us</language><lastBuildDate>Wed, 12 Nov 2025 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://praeclarumjj3.github.io/media/icon_hu18230691612322137769.png</url>
+      <title>ArXiv 2025</title>
+      <link>https://praeclarumjj3.github.io/tags/arxiv-2025/</link>
+    </image>
+    
+    <item>
+      <title>SAGE: Training Smart Any-Horizon Agents for Long Video Reasoning with Reinforcement Learning</title>
+      <link>https://praeclarumjj3.github.io/publication/sage/</link>
+      <pubDate>Wed, 12 Nov 2025 00:00:00 +0000</pubDate>
+      <guid>https://praeclarumjj3.github.io/publication/sage/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
