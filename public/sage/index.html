@@ -149,6 +149,28 @@
       font-weight: 700;
       text-align: center;
       margin-bottom: 10px;
+      position: relative;
+    }
+    .section-title a {
+      color: inherit;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .section-title a:hover {
+      text-decoration: none;
+      color: #4285F4;
+    }
+    .section-title::after {
+      content: ' #';
+      opacity: 0;
+      color: #4285F4;
+      font-weight: 400;
+      font-size: 0.8em;
+      transition: opacity 0.2s;
+      margin-left: 0.3em;
+    }
+    .section-title:hover::after {
+      opacity: 1;
     }
     
     /* Image Styling */
@@ -428,7 +450,7 @@
 
   <!-- Problem Statement Section -->
   <div class="content-section">
-      <h2 class="section-title">Problem Statement</h2>
+      <h2 class="section-title" id="problem-statement"><a href="#problem-statement">Problem Statement</a></h2>
       <div class="text-content">
         <p>
           Humans are natural any-horizon reasoners—we can iteratively skim long videos or watch short ones in full when necessary. Yet, most SOTA models follow the <span class="paradigm-tag direct-tag">DIRECT</span> paradigm, processing entire long videos in a single turn, which is resource-heavy and inefficient.
@@ -465,7 +487,7 @@
 
   <!-- System Design Section -->
   <div class="content-section">
-      <h2 class="section-title">System Design</h2>
+      <h2 class="section-title" id="system-design"><a href="#system-design">System Design</a></h2>
       
       <!-- Figure -->
       <img src="./sage.png" class="figure-img" alt="SAGE Workflow">
@@ -547,7 +569,7 @@
 
   <!-- Synthetic Data Section -->
   <div class="content-section">
-      <h2 class="section-title">Synthetic Data Generation</h2>
+      <h2 class="section-title" id="synthetic-data-generation"><a href="#synthetic-data-generation">Synthetic Data Generation</a></h2>
       
       <!-- Figure -->
       <img src="./data.png" class="figure-img" alt="Synthetic Data Pipeline">
@@ -633,7 +655,7 @@
 
   <!-- RL Post-Training Recipe Section -->
   <div class="content-section">
-      <h2 class="section-title">RL Post-Training Recipe</h2>
+      <h2 class="section-title" id="rl-post-training-recipe"><a href="#rl-post-training-recipe">RL Post-Training Recipe</a></h2>
       <div class="text-content">
           <p>
             To instill any-horizon reasoning, we employ <b>Group Relative Policy Optimization (GRPO)</b> for trajectory-level optimization. We utilize a multi-reward recipe that combines step-level rewards with a final accuracy reward.
@@ -665,12 +687,12 @@
 
   <!-- SAGE-Bench Section -->
   <div class="content-section">
-      <h2 class="section-title">SAGE-Bench</h2>
+      <h2 class="section-title" id="sage-bench"><a href="#sage-bench">SAGE-Bench</a></h2>
       
       <!-- Figure -->
       <img src="./sage-bench_comp.png" class="figure-img" alt="SAGE-Bench Comparison">
       <div class="figure-caption">
-         <b>Figure 5: Comparing SAGE-Bench to existing benchmarks.</b> SAGE-Bench focuses on open-ended, real-world entertainment scenarios unlike previous benchmarks that rely heavily on multiple-choice questions.
+        <p> SAGE-Bench focuses on open-ended, real-world entertainment scenarios unlike previous benchmarks that rely heavily on multiple-choice questions.</p>
       </div>
 
       <!-- Text -->
@@ -765,7 +787,7 @@
 
   <!-- Results Section -->
   <div class="content-section">
-      <h2 class="section-title">Experimental Results</h2>
+      <h2 class="section-title" id="experimental-results"><a href="#experimental-results">Experimental Results</a></h2>
       
       <!-- Figure -->
       <img src="./table_results.png" class="figure-img" alt="Results Table" style="max-width: 90%;">
@@ -789,7 +811,7 @@
               <summary>Duration-wise Turns</summary>
               <img src="./duration_turns.png" class="figure-img" alt="Duration-wise Turns" style="max-width: 90%; margin-bottom: -10px; margin-top: 10px;">
               <div class="toggle-content">
-                <p>The system demonstrates true "any-horizon" behavior by adapting the length of its reasoning trajectory to the video duration. The average number of reasoning turns gradually increases from <b>~1.7</b> for short videos (<60s) to <b>~2.9</b> for long videos (>2400s), indicating that the model learns to deliberate more when faced with longer, more complex content.</p>
+                <p>SAGE demonstrates "any-horizon" behavior by adapting the number of reasoning turns to the video duration. The average number of reasoning turns gradually increases from <b>~1.7</b> for short videos (<60s) to <b>~2.9</b> for long videos (>1200s), indicating that the model learns to call more tools when faced with longer, more complex content.</p>
               </div>
           </details>
 
@@ -797,7 +819,7 @@
               <summary>Comparison to DIRECT Baseline</summary>
               <div class="toggle-content">
                 <img src="./direct_comp.png" class="figure-img" alt="Comparison to DIRECT Baseline" style="max-width: 70%; margin-bottom: 10px; margin-top: 10px;">
-                  <p>Our <span class="paradigm-tag agent-tag">AGENT</span> training recipe consistently outperforms the <span class="paradigm-tag direct-tag">DIRECT</span> baseline. For instance, the SFT model trained in agent mode achieves <b>64.6%</b> accuracy versus 62.7% for the direct answering mode. RL post-training further widens this gap, specifically improving open-ended reasoning capabilities where direct models often struggle.</p>
+                  <p>Our <span class="paradigm-tag agent-tag">AGENT</span> training recipe consistently outperforms the <span class="paradigm-tag direct-tag">DIRECT</span> baseline. The RL post-training specifically improves the open-ended reasoning capabilities.</p>
               </div>
           </details>
 
@@ -805,7 +827,7 @@
               <summary>Runtime Efficiency</summary>
               <div class="toggle-content">
                 <img src="./runtime_efficiency.png" class="figure-img" alt="Runtime Efficiency" style="max-width: 60%; margin-bottom: 10px; margin-top: 10px;">
-                  <p>Despite being an agentic system, SAGE is highly efficient compared to existing agent systems, processing samples at approximately <b>8.6 seconds/sample</b>.</p>
+                  <p>SAGE is highly efficient compared to existing agent systems, processing samples at approximately <b>8.6 seconds/sample</b>.</p>
               </div>
           </details>
 
@@ -823,7 +845,7 @@
 
   <!-- BibTeX -->
   <div class="content-section" id="BibTeX">
-    <h2 class="section-title">Citation</h2>
+    <h2 class="section-title" id="citation"><a href="#citation">Citation</a></h2>
     <div class="bibtex-box">@article{jain2025sage,
   title={SAGE: Training Smart Any-Horizon Agents for Long Video Reasoning with Reinforcement Learning},
   author={Jain, Jitesh and Li, Jialuo and Ma, Zixian and Zhang, Jieyu and Kim, Chris Dongjoo and Lee, Sangho and Tripathi, Rohun and Gupta, Tanmay and Clark, Christopher and Shi, Humphrey},
