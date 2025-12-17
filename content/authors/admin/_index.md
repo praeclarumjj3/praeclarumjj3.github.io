@@ -69,18 +69,29 @@ profiles:
         <a href="https://jwyang.github.io/" class="hover-link">Jianwei Yang</a>) and <span style="color: #58a6ff;">Picsart AI Research</span> (Summer 2021-22, with <a href="https://www.humphreyshi.com/home" class="hover-link">Humphrey Shi</a>).
     </p>
     <p>
-        My current research interests revolve around developing <b>multimodal systems</b>. Recently, I have been working on scaling RL for long video understanding. I am also interested in representation learning, efficiency, and various real-world applications of multimodal systems. 
-        My past works are based on analyzing and improving the visual perception ability in Multimodal Large Language Models 
-        [<a href="https://github.com/SHI-Labs/VisPer-LM" class="hover-link">VisPer-LM</a>, 
-        <a href="https://github.com/SHI-Labs/VCoder" class="hover-link">VCoder</a>], 
-        building upon my experience from working on developing models for dense prediction tasks 
-        [<a href="https://github.com/SHI-Labs/OneFormer" class="hover-link">OneFormer</a>, 
-        <a href="https://github.com/Picsart-AI-Research/SeMask-Segmentation" class="hover-link">SeMask</a>].
+      My research trajectory so far can be broadly classified into three areas:
     </p>
+      <ul>
+          <li>
+              I began my research career by developing models for dense pixel-level prediction tasks
+              [<a href="https://github.com/SHI-Labs/OneFormer" class="hover-link">OneFormer</a>,
+              <a href="https://github.com/Picsart-AI-Research/SeMask-Segmentation" class="hover-link">SeMask</a>].
+          </li>
+          <li>
+              Building on this foundation, I worked on analyzing and improving the visual perception
+              capabilities of Multimodal Large Language Models
+              [<a href="https://github.com/SHI-Labs/VisPer-LM" class="hover-link">VisPer-LM</a>,
+              <a href="https://github.com/SHI-Labs/VCoder" class="hover-link">VCoder</a>].
+          </li>
+          <li>
+              Presently, my work focuses on developing agent systems for long-horizon tasks in real-world settings, leveraging reinforcement learning to have models learn effective multi-turn reasoning
+              [<a href="https://github.com/allenai/SAGE" class="hover-link">SAGE</a>,
+              <a href="https://arxiv.org/abs/2510.15261" class="hover-link">AUGUSTUS</a>]. 
+          </li>
+      </ul>
     <p>
         Reach out if you are interested in my research or would like to discuss any ideas. If you are a self-motivated researcher who's 
-        looking for guidance on one of your projects, feel free to drop me an email with a brief description about your 
-        (manifested) research project</span>.
+        looking for guidance on one of your projects or just want to chat about my experience, will you drop me an email?
     </p>
     <!-- <p style="color: yellow;">
         I am seeking opportunities starting in Spring/Summer 2026. If you are working on multimodal reasoning, unified multimodal models or agent systems, please reach out!
@@ -88,13 +99,11 @@ profiles:
     <div class="professional-life">
         <h4 class="highlight">Professional Life Happenings</h4>
         <ul>
+            <li><strong>[December 2025]</strong>: Checkout out <a href="https://praeclarumjj3.github.io/sage/" target="_blank">SAGE</a>, result of my internship at Allen AI! 🚀</li>
             <li><strong>[September 2025]</strong>: <a href="https://praeclarumjj3.github.io/visper_lm/" target="_blank">VisPer-LM</a> (f.k.a. OLA-VLM) is accepted to <span class="highlight">NeurIPS 2025!</span> See you in San Diego! 🥂</li>
             <li><strong>[May 2025]</strong>: Started my Research Internship in the PRIOR team at Allen AI. HMU if you are in Seattle</a>! 🥂
             <li><strong>[April 2025]</strong>: Passed my Ph.D. Qualifying Exam</a>! 🥂
             <li><strong>[December 2024]</strong>: Checkout my new blog <a href="https://praeclarumjj3.substack.com/p/whats-a-good-metric-for-phd-students" target="_blank">what's a good metric for PhD Students?</a>! 📜
-            <li><strong>[December 2024]</strong>: Checkout out <a href="https://praeclarumjj3.github.io/ola_vlm/" target="_blank">OLA-VLM</a>, result of my internship at Microsoft Research, Redmond! 🚀</li>
-            <li><strong>[May 2024]</strong>: Excited to start Summer Internship at Microsoft Research, Redmond! 🧑‍💻</li>
-            <li><strong>[February 2024]</strong>: <a href="https://praeclarumjj3.github.io/vcoder/" target="_blank">VCoder</a> is accepted to <span class="highlight">CVPR 2024!</span> See you in Seattle! 🥂</li>
         </ul>
     </div>
 </div>

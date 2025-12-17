@@ -5,12 +5,20 @@
     <link>https://praeclarumjj3.github.io/publication_types/conference-paper/</link>
       <atom:link href="https://praeclarumjj3.github.io/publication_types/conference-paper/index.xml" rel="self" type="application/rss+xml" />
     <description>Conference Paper</description>
-    <generator>Hugo Blox Builder (https://hugoblox.com)</generator><language>en-us</language><lastBuildDate>Thu, 12 Dec 2024 00:00:00 +0000</lastBuildDate>
+    <generator>Hugo Blox Builder (https://hugoblox.com)</generator><language>en-us</language><lastBuildDate>Tue, 16 Dec 2025 00:00:00 +0000</lastBuildDate>
     <image>
       <url>https://praeclarumjj3.github.io/media/icon_hu18230691612322137769.png</url>
       <title>Conference Paper</title>
       <link>https://praeclarumjj3.github.io/publication_types/conference-paper/</link>
     </image>
+    
+    <item>
+      <title>SAGE: Training Smart Any-Horizon Agents for Long Video Reasoning with Reinforcement Learning</title>
+      <link>https://praeclarumjj3.github.io/publication/sage/</link>
+      <pubDate>Tue, 16 Dec 2025 00:00:00 +0000</pubDate>
+      <guid>https://praeclarumjj3.github.io/publication/sage/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Elevating Perception in Multimodal LLMs with Visual Embedding Distillation</title>
