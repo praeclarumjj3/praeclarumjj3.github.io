@@ -55,8 +55,8 @@ links:
   # url: https://huggingface.co/spaces/shi-labs/VCoder
 
 url_project: 'https://praeclarumjj3.github.io/sage/'
-url_pdf: ''
-url_preprint: ''
+url_pdf: 'https://arxiv.org/pdf/2512.13874.pdf'
+url_preprint: 'https://arxiv.org/abs/2512.13874'
 url_code: 'https://github.com/allenai/SAGE'
 url_dataset: ''
 # url_poster: 'https://drive.google.com/file/d/1-U3hCYVNVht26NM-zbE87p1V4idc5bCt/view?usp=sharing'
