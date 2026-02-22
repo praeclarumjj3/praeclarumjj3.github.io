@@ -65,7 +65,8 @@ profiles:
         I completed my Bachelor's in Computer Science and Engineering in 2023 at IIT Roorkee.
     </p>
     <p>
-        I have interned at <span style="color: #58a6ff;">Allen AI</span> (Summer 2025, with <a href="https://chrisc36.github.io/" class="hover-link">Christopher Clark</a>), <span style="color: #58a6ff;">Microsoft Research, Redmond</span> (Summer 2024, with 
+        I am currently a High Performance AI Intern at NVIDIA (with <a href="https://www.humphreyshi.com/home" class="hover-link">Humphrey Shi</a>), working on training agents for CUDA Kernel Optimization. 
+        I have also interned at <span style="color: #58a6ff;">Allen AI</span> (Summer 2025, with <a href="https://chrisc36.github.io/" class="hover-link">Christopher Clark</a>), <span style="color: #58a6ff;">Microsoft Research, Redmond</span> (Summer 2024, with 
         <a href="https://jwyang.github.io/" class="hover-link">Jianwei Yang</a>) and <span style="color: #58a6ff;">Picsart AI Research</span> (Summer 2021-22, with <a href="https://www.humphreyshi.com/home" class="hover-link">Humphrey Shi</a>).
     </p>
     <p>
@@ -99,6 +100,7 @@ profiles:
     <div class="professional-life">
         <h4 class="highlight">Professional Life Happenings</h4>
         <ul>
+            <li><strong>[February 2026]</strong>: <a href="https://praeclarumjj3.github.io/sage/" target="_blank">SAGE</a> is accepted to <span class="highlight">CVPR 2026!</span> See you in Denver! 🥂</li>
             <li><strong>[December 2025]</strong>: Checkout out <a href="https://praeclarumjj3.github.io/sage/" target="_blank">SAGE</a>, result of my internship at Allen AI! 🚀</li>
             <li><strong>[September 2025]</strong>: <a href="https://praeclarumjj3.github.io/visper_lm/" target="_blank">VisPer-LM</a> (f.k.a. OLA-VLM) is accepted to <span class="highlight">NeurIPS 2025!</span> See you in San Diego! 🥂</li>
             <li><strong>[May 2025]</strong>: Started my Research Internship in the PRIOR team at Allen AI. HMU if you are in Seattle</a>! 🥂

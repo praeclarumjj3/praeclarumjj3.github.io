@@ -34,15 +34,15 @@ publication_types: ["Conference paper"]
 external_link: "https://praeclarumjj3.github.io/sage/"
 
 # Publication name and optional abbreviated publication name.
-publication: arXiv
-publication_short: arXiv 2025
+publication: CVPR
+publication_short: CVPR 2026
 
 abstract: TBD
 
 # Summary. An optional shortened abstract.
 summary: 
 
-tags: ["arXiv 2025"]
+tags: ["CVPR 2026"]
 
 # Display this page in the Featured widget?
 featured: true
