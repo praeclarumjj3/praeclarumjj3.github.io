@@ -262,6 +262,7 @@
       "ltr:text-right",
       "m-1",
       "m-w-[130px]",
+      "market-note",
       "max-h-[calc(100vh-var(--navbar-height)-env(safe-area-inset-bottom))]",
       "max-lg:[transform:translate3d(0,-100%,0)]",
       "max-lg:hidden",

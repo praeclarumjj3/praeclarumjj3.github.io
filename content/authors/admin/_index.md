@@ -66,8 +66,9 @@ profiles:
     </p>
     <p>
         I am currently a High Performance AI Intern at <span style="color: #58a6ff;">NVIDIA</span> (with <a href="https://www.humphreyshi.com/home" class="hover-link">Humphrey Shi</a>), working on training agents for CUDA Kernel Optimization. 
-        I have also interned at <span style="color: #58a6ff;">Allen AI</span> (Summer 2025, with <a href="https://chrisc36.github.io/" class="hover-link">Christopher Clark</a>), <span style="color: #58a6ff;">Microsoft Research, Redmond</span> (Summer 2024, with 
-        <a href="https://jwyang.github.io/" class="hover-link">Jianwei Yang</a>) and <span style="color: #58a6ff;">Picsart AI Research</span> (Summer 2021-22, with <a href="https://www.humphreyshi.com/home" class="hover-link">Humphrey Shi</a>).
+        I have also interned at <span style="color: #58a6ff;">Allen AI</span> (Summer 2025, with <a href="https://chrisc36.github.io/" class="hover-link">Christopher Clark</a>), and <span style="color: #58a6ff;">Microsoft Research, Redmond</span> (Summer 2024, with 
+        <a href="https://jwyang.github.io/" class="hover-link">Jianwei Yang</a>).
+        <!-- and <span style="color: #58a6ff;">Picsart AI Research</span> (Summer 2021-22, with <a href="https://www.humphreyshi.com/home" class="hover-link">Humphrey Shi</a>). -->
     </p>
     <p>
       My research trajectory so far can be broadly classified into three areas:
@@ -90,6 +91,11 @@ profiles:
               <a href="https://arxiv.org/abs/2510.15261" class="hover-link">AUGUSTUS</a>]. 
           </li>
       </ul>
+    <div class="market-note" aria-label="Industry research roles">
+        <p>
+            I'm seeking industry research roles starting in February 2027. My work focuses on agentic AI, multimodal reasoning, and RL infrastructure. If your team is hiring, I'd love to connect!
+        </p>
+    </div>
     <p>
         Reach out if you are interested in my research or would like to discuss any ideas. If you are a self-motivated researcher who's 
         looking for guidance on one of your projects or just want to chat about my experience, will you drop me an email?
@@ -100,12 +106,14 @@ profiles:
     <div class="professional-life">
         <h4 class="highlight">Professional Life Happenings</h4>
         <ul>
+            <li><strong>[July 2026]</strong>: Accepted to the <span class="highlight">ACM AI Leadership Summit Doctoral Consortium</span>.</li>
             <li><strong>[May 2026]</strong>: Passed my Ph.D. thesis proposal!</li>
             <li><strong>[May 2026]</strong>: Invited Talk at <a href="https://web.mit.edu/phillipi/#ResearchGroup" target="_blank">Isola Lab@MIT</a>! <a href="https://drive.google.com/file/d/10w9QTo4mTY0_phQxWBR7q9b1vw9BSF3z/view?usp=sharing" target="_blank" class="hover-link">[Slides]</a></li>
             <li><strong>[May 2026]</strong>: Accepted to the <span class="highlight">CVPR 2026 Doctoral Consortium</span>.</li>
             <li><strong>[February 2026]</strong>: <a href="https://praeclarumjj3.github.io/sage/" target="_blank">SAGE</a> is accepted to <span class="highlight">CVPR 2026!</span> See you in Denver!</li>
             <li><strong>[September 2025]</strong>: <a href="https://praeclarumjj3.github.io/visper_lm/" target="_blank">VisPer-LM</a> (f.k.a. OLA-VLM) is accepted to <span class="highlight">NeurIPS 2025!</span> See you in San Diego!</li>
-            <li><strong>[April 2025]</strong>: Passed my Ph.D. Qualifying Exam!</li>    </ul>
+            <li><strong>[April 2025]</strong>: Passed my Ph.D. Qualifying Exam!</li>
+        </ul>
     </div>
 </div>
 
@@ -129,12 +137,45 @@ profiles:
         font-weight: bold;
     }
 
+    .market-note {
+        background: linear-gradient(135deg, rgba(46, 198, 183, 0.16), rgba(18, 31, 34, 0.92));
+        border: 1px solid rgba(46, 198, 183, 0.55);
+        border-radius: 8px;
+        box-shadow: 0 14px 36px rgba(0, 0, 0, 0.24);
+        margin: 1.2rem 0;
+        overflow: hidden;
+        padding: 1.05rem 1.15rem;
+        position: relative;
+    }
+
+    .market-note::before {
+        background: #2ec6b7;
+        content: "";
+        inset: 0 auto 0 0;
+        position: absolute;
+        width: 5px;
+    }
+
+    .market-note p {
+        color: #d9e4e6;
+        font-size: 0.98rem;
+        line-height: 1.65;
+        margin: 0;
+    }
+
+    .market-note strong {
+        color: #7ff3e7;
+        font-weight: 700;
+    }
+
     /* Media Query for Larger Screens */
     @media screen and (min-width: 1024px) {
         .bio-container {
             margin-right: -15%;
             margin-top: -5%;
         }
+    }
+
     @media screen and (min-width: 1024px) {
         .professional-life {
             margin-left: -30%;
