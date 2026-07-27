@@ -1,27 +1,3 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Development | Jitesh Jain</title>
-    <link>https://praeclarumjj3.github.io/tags/development/</link>
-      <atom:link href="https://praeclarumjj3.github.io/tags/development/index.xml" rel="self" type="application/rss+xml" />
-    <description>Development</description>
-    <generator>Hugo Blox Builder (https://hugoblox.com)</generator><language>en-us</language><lastBuildDate>Wed, 19 Feb 2020 00:00:00 +0000</lastBuildDate>
-    <image>
-      <url>https://praeclarumjj3.github.io/media/icon_hu18230691612322137769.png</url>
-      <title>Development</title>
-      <link>https://praeclarumjj3.github.io/tags/development/</link>
-    </image>
-    
-    <item>
-      <title>Societyfy, An app made for finding company at anytime for anything</title>
-      <link>https://praeclarumjj3.github.io/blogs/societyfy/</link>
-      <pubDate>Wed, 19 Feb 2020 00:00:00 +0000</pubDate>
-      <guid>https://praeclarumjj3.github.io/blogs/societyfy/</guid>
-      <description>&lt;p&gt;Imagine a situation where you are at a place where you don’t know many people and feel a bit left out. You feel hesitant to go out for lunch or hangout or even go to a movie alone. This is where the concept of Societyfy comes in to rescue you.&lt;/p&gt;
-&lt;p&gt;Read more at: 
-&lt;/p&gt;
-</description>
-    </item>
-    
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Development | Jitesh Jain</title><link>https://praeclarumjj3.github.io/tags/development/</link><atom:link href="https://praeclarumjj3.github.io/tags/development/index.xml" rel="self" type="application/rss+xml"/><description>Development</description><generator>Hugo Blox Builder (https://hugoblox.com)</generator><language>en-us</language><lastBuildDate>Wed, 19 Feb 2020 00:00:00 +0000</lastBuildDate><image><url>https://praeclarumjj3.github.io/media/icon_hu18230691612322137769.png</url><title>Development</title><link>https://praeclarumjj3.github.io/tags/development/</link></image><item><title>Societyfy, An app made for finding company at anytime for anything</title><link>https://praeclarumjj3.github.io/blogs/societyfy/</link><pubDate>Wed, 19 Feb 2020 00:00:00 +0000</pubDate><guid>https://praeclarumjj3.github.io/blogs/societyfy/</guid><description>&lt;p>Imagine a situation where you are at a place where you don’t know many people and feel a bit left out. You feel hesitant to go out for lunch or hangout or even go to a movie alone. This is where the concept of Societyfy comes in to rescue you.&lt;/p>
+&lt;p>Read more at:
+&lt;/p></description></item></channel></rss>

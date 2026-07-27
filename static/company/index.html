@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Adaptly — Coming Soon</title>
+  <meta name="description" content="Adaptly is coming soon. We help you bring anything online — seamless online adaptation for your content, products, and services." />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>&#127760;</text></svg>" />
+  <style>
+    :root {
+      --bg: #0b1020;
+      --bg-accent: #131a33;
+      --fg: #f4f6fb;
+      --muted: #9aa4c0;
+      --brand: #6d7cff;
+      --brand-2: #22d3ee;
+      --card: rgba(255, 255, 255, 0.04);
+      --border: rgba(255, 255, 255, 0.10);
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; }
+    body {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background:
+        radial-gradient(900px 600px at 15% -10%, rgba(109,124,255,0.28), transparent 60%),
+        radial-gradient(900px 600px at 100% 110%, rgba(34,211,238,0.22), transparent 55%),
+        var(--bg);
+      color: var(--fg);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      -webkit-font-smoothing: antialiased;
+      padding: 2rem 1.25rem;
+    }
+    .wrap {
+      width: 100%;
+      max-width: 640px;
+      text-align: center;
+    }
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.4rem 0.9rem;
+      border: 1px solid var(--border);
+      background: var(--card);
+      border-radius: 999px;
+      font-size: 0.8rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--muted);
+      backdrop-filter: blur(6px);
+    }
+    .dot {
+      width: 8px; height: 8px; border-radius: 999px;
+      background: var(--brand-2);
+      box-shadow: 0 0 0 0 rgba(34,211,238,0.7);
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+      0% { box-shadow: 0 0 0 0 rgba(34,211,238,0.6); }
+      70% { box-shadow: 0 0 0 10px rgba(34,211,238,0); }
+      100% { box-shadow: 0 0 0 0 rgba(34,211,238,0); }
+    }
+    .logo {
+      margin: 1.75rem 0 0.5rem;
+      font-size: clamp(2.6rem, 8vw, 4rem);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      background: linear-gradient(90deg, var(--brand), var(--brand-2));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+    h1 {
+      margin: 0.25rem 0 0.75rem;
+      font-size: clamp(1.4rem, 4.5vw, 2rem);
+      font-weight: 700;
+      letter-spacing: -0.01em;
+    }
+    p.lead {
+      margin: 0 auto 2rem;
+      max-width: 30rem;
+      color: var(--muted);
+      font-size: 1.05rem;
+      line-height: 1.6;
+    }
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      justify-content: center;
+    }
+    a.btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.85rem 1.4rem;
+      border-radius: 12px;
+      font-weight: 600;
+      font-size: 1rem;
+      text-decoration: none;
+      transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+    }
+    a.btn.primary {
+      color: #0b1020;
+      background: linear-gradient(90deg, var(--brand), var(--brand-2));
+      box-shadow: 0 10px 30px -10px rgba(109,124,255,0.7);
+    }
+    a.btn.primary:hover { transform: translateY(-2px); box-shadow: 0 16px 36px -12px rgba(34,211,238,0.7); }
+    a.btn.ghost {
+      color: var(--fg);
+      background: var(--card);
+      border: 1px solid var(--border);
+    }
+    a.btn.ghost:hover { background: rgba(255,255,255,0.08); transform: translateY(-2px); }
+    footer {
+      margin-top: 2.5rem;
+      color: var(--muted);
+      font-size: 0.85rem;
+    }
+    @media (prefers-color-scheme: light) {
+      :root {
+        --bg: #f5f7ff;
+        --fg: #0b1020;
+        --muted: #55607d;
+        --card: rgba(11,16,32,0.03);
+        --border: rgba(11,16,32,0.10);
+      }
+      a.btn.primary { color: #fff; }
+    }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <span class="badge"><span class="dot"></span> Coming Soon</span>
+    <div class="logo">Adaptly</div>
+    <h1>Adaptly is coming soon</h1>
+    <p class="lead">
+      We help you bring anything online. Adaptly makes online adaptation effortless —
+      turning your content, products, and services into seamless digital experiences.
+      We're putting the finishing touches on something we can't wait to share.
+    </p>
+    <div class="actions">
+      <a class="btn primary" href="https://praeclarumjj3.github.io" target="_blank" rel="noopener">Get in touch &rarr;</a>
+    </div>
+  </main>
+</body>
+</html>

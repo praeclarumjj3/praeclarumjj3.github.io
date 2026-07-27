@@ -1,106 +1,46 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Deep Learning | Jitesh Jain</title>
-    <link>https://praeclarumjj3.github.io/tags/deep-learning/</link>
-      <atom:link href="https://praeclarumjj3.github.io/tags/deep-learning/index.xml" rel="self" type="application/rss+xml" />
-    <description>Deep Learning</description>
-    <generator>Hugo Blox Builder (https://hugoblox.com)</generator><language>en-us</language><lastBuildDate>Tue, 10 May 2022 00:00:00 +0000</lastBuildDate>
-    <image>
-      <url>https://praeclarumjj3.github.io/media/icon_hu18230691612322137769.png</url>
-      <title>Deep Learning</title>
-      <link>https://praeclarumjj3.github.io/tags/deep-learning/</link>
-    </image>
-    
-    <item>
-      <title>Neural Style Transfer: A Technical Report </title>
-      <link>https://praeclarumjj3.github.io/project/nst-tech/</link>
-      <pubDate>Tue, 10 May 2022 00:00:00 +0000</pubDate>
-      <guid>https://praeclarumjj3.github.io/project/nst-tech/</guid>
-      <description>&lt;p&gt;As a part of the &lt;code&gt;CSN-526: Machine Learning&lt;/code&gt; Course Project, we worked on studying the effects of various factors like feature extractors, optimizers, loss functions and initialization techniques on the neural style transfer task.&lt;/p&gt;
-&lt;p&gt;We also proposed the use of pseudo ground truths for evaluating the performance under different settings.&lt;/p&gt;
-&lt;p&gt;For more info, please see the Code on &lt;code&gt;GitHub&lt;/code&gt;.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>AOT-GAN Experiments</title>
-      <link>https://praeclarumjj3.github.io/project/aot-gan-experiments/</link>
-      <pubDate>Wed, 19 May 2021 00:00:00 +0000</pubDate>
-      <guid>https://praeclarumjj3.github.io/project/aot-gan-experiments/</guid>
-      <description>&lt;p&gt;I conducted various experiments with &lt;strong&gt;AOT-GAN&lt;/strong&gt; proposed in the paper: 
-) on the 
- dataset using the 
-.&lt;/p&gt;
-&lt;p&gt;In particular, I focused on finding the effectivity of different losses while training the framework. I made several observations:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;The &lt;strong&gt;adversarial loss&lt;/strong&gt; doesn&amp;rsquo;t seem to be contributing to the learning of the model as it stays almost the same throughout the training.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Training for longer than &lt;code&gt;1e4&lt;/code&gt; iterations doesn&amp;rsquo;t add much improvement to the results.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Training &lt;strong&gt;without style loss&lt;/strong&gt; produces blurry results. Therefore, style loss is an important component for texture related synthesis of images.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Training &lt;strong&gt;without adversarial loss&lt;/strong&gt; also produces good quality results!&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;For more info, please see the Code on &lt;code&gt;GitHub&lt;/code&gt;.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>BackBone Profile</title>
-      <link>https://praeclarumjj3.github.io/project/backbone/</link>
-      <pubDate>Mon, 28 Dec 2020 00:00:00 +0000</pubDate>
-      <guid>https://praeclarumjj3.github.io/project/backbone/</guid>
-      <description>&lt;p&gt;I performed experiments on various backbone networks:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;ResNet-18/34/50/101&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;MobileNetv2&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Xception Net&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;All the experiments were performed on a single &lt;strong&gt;RTX 2080Ti GPU&lt;/strong&gt;, a single &lt;strong&gt;TitanXP GPU&lt;/strong&gt; and a single &lt;strong&gt;CPU&lt;/strong&gt; &lt;em&gt;indivdually&lt;/em&gt;. For each model architecture, I collected the stats including:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;Execution Time&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Memory Used&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Number of Parameters&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>ChatBot with Pytorch</title>
-      <link>https://praeclarumjj3.github.io/project/chatbot/</link>
-      <pubDate>Fri, 19 Jun 2020 00:00:00 +0000</pubDate>
-      <guid>https://praeclarumjj3.github.io/project/chatbot/</guid>
-      <description>&lt;p&gt;I implemented a chatbot in Pytorch on the Cornell Movie Dialog Corpus dataset using GRUs and Attention mechanism.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>VQ-VAE on MNIST</title>
-      <link>https://praeclarumjj3.github.io/project/vq_vae/</link>
-      <pubDate>Wed, 20 May 2020 00:00:00 +0000</pubDate>
-      <guid>https://praeclarumjj3.github.io/project/vq_vae/</guid>
-      <description>&lt;p&gt;I tried to implement 
- in Pytorch on the MNIST dataset.&lt;/p&gt;
-</description>
-    </item>
-    
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Deep Learning | Jitesh Jain</title><link>https://praeclarumjj3.github.io/tags/deep-learning/</link><atom:link href="https://praeclarumjj3.github.io/tags/deep-learning/index.xml" rel="self" type="application/rss+xml"/><description>Deep Learning</description><generator>Hugo Blox Builder (https://hugoblox.com)</generator><language>en-us</language><lastBuildDate>Tue, 10 May 2022 00:00:00 +0000</lastBuildDate><image><url>https://praeclarumjj3.github.io/media/icon_hu18230691612322137769.png</url><title>Deep Learning</title><link>https://praeclarumjj3.github.io/tags/deep-learning/</link></image><item><title>Neural Style Transfer: A Technical Report</title><link>https://praeclarumjj3.github.io/project/nst-tech/</link><pubDate>Tue, 10 May 2022 00:00:00 +0000</pubDate><guid>https://praeclarumjj3.github.io/project/nst-tech/</guid><description>&lt;p>As a part of the &lt;code>CSN-526: Machine Learning&lt;/code> Course Project, we worked on studying the effects of various factors like feature extractors, optimizers, loss functions and initialization techniques on the neural style transfer task.&lt;/p>
+&lt;p>We also proposed the use of pseudo ground truths for evaluating the performance under different settings.&lt;/p>
+&lt;p>For more info, please see the Code on &lt;code>GitHub&lt;/code>.&lt;/p></description></item><item><title>AOT-GAN Experiments</title><link>https://praeclarumjj3.github.io/project/aot-gan-experiments/</link><pubDate>Wed, 19 May 2021 00:00:00 +0000</pubDate><guid>https://praeclarumjj3.github.io/project/aot-gan-experiments/</guid><description>&lt;p>I conducted various experiments with &lt;strong>AOT-GAN&lt;/strong> proposed in the paper:
+) on the
+dataset using the
+.&lt;/p>
+&lt;p>In particular, I focused on finding the effectivity of different losses while training the framework. I made several observations:&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>The &lt;strong>adversarial loss&lt;/strong> doesn&amp;rsquo;t seem to be contributing to the learning of the model as it stays almost the same throughout the training.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Training for longer than &lt;code>1e4&lt;/code> iterations doesn&amp;rsquo;t add much improvement to the results.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Training &lt;strong>without style loss&lt;/strong> produces blurry results. Therefore, style loss is an important component for texture related synthesis of images.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Training &lt;strong>without adversarial loss&lt;/strong> also produces good quality results!&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;p>For more info, please see the Code on &lt;code>GitHub&lt;/code>.&lt;/p></description></item><item><title>BackBone Profile</title><link>https://praeclarumjj3.github.io/project/backbone/</link><pubDate>Mon, 28 Dec 2020 00:00:00 +0000</pubDate><guid>https://praeclarumjj3.github.io/project/backbone/</guid><description>&lt;p>I performed experiments on various backbone networks:&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>ResNet-18/34/50/101&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>MobileNetv2&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Xception Net&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;p>All the experiments were performed on a single &lt;strong>RTX 2080Ti GPU&lt;/strong>, a single &lt;strong>TitanXP GPU&lt;/strong> and a single &lt;strong>CPU&lt;/strong> &lt;em>indivdually&lt;/em>. For each model architecture, I collected the stats including:&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>Execution Time&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Memory Used&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Number of Parameters&lt;/p>
+&lt;/li>
+&lt;/ul></description></item><item><title>ChatBot with Pytorch</title><link>https://praeclarumjj3.github.io/project/chatbot/</link><pubDate>Fri, 19 Jun 2020 00:00:00 +0000</pubDate><guid>https://praeclarumjj3.github.io/project/chatbot/</guid><description>&lt;p>I implemented a chatbot in Pytorch on the Cornell Movie Dialog Corpus dataset using GRUs and Attention mechanism.&lt;/p></description></item><item><title>VQ-VAE on MNIST</title><link>https://praeclarumjj3.github.io/project/vq_vae/</link><pubDate>Wed, 20 May 2020 00:00:00 +0000</pubDate><guid>https://praeclarumjj3.github.io/project/vq_vae/</guid><description>&lt;p>I tried to implement
+in Pytorch on the MNIST dataset.&lt;/p></description></item></channel></rss>
