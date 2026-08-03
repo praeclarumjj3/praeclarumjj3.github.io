@@ -1,4 +1,1422 @@
-<!doctype html><html lang=en-us dir=ltr data-wc-theme-default=dark><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta http-equiv=X-UA-Compatible content="IE=edge"><meta name=generator content="Hugo Blox Builder 0.2.0"><meta name=author content="Jitesh Jain"><meta name=description content="PhD Student at Georgia Tech, with research interests in developing multimodal systems."><link rel=alternate hreflang=en-us href=https://praeclarumjj3.github.io/publication/><link rel=stylesheet href=/css/themes/teal.min.css><link href=/dist/wc.min.css rel=stylesheet><script>window.hbb={defaultTheme:document.documentElement.dataset.wcThemeDefault,setDarkTheme:()=>{document.documentElement.classList.add("dark"),document.documentElement.style.colorScheme="dark"},setLightTheme:()=>{document.documentElement.classList.remove("dark"),document.documentElement.style.colorScheme="light"}},console.debug(`Default Hugo Blox Builder theme is ${window.hbb.defaultTheme}`),"wc-color-theme"in localStorage?localStorage.getItem("wc-color-theme")==="dark"?window.hbb.setDarkTheme():window.hbb.setLightTheme():(window.hbb.defaultTheme==="dark"?window.hbb.setDarkTheme():window.hbb.setLightTheme(),window.hbb.defaultTheme==="system"&&(window.matchMedia("(prefers-color-scheme: dark)").matches?window.hbb.setDarkTheme():window.hbb.setLightTheme()))</script><script>document.addEventListener("DOMContentLoaded",function(){let e=document.querySelectorAll("li input[type='checkbox'][disabled]");e.forEach(e=>{e.parentElement.parentElement.classList.add("task-list")});const t=document.querySelectorAll(".task-list li");t.forEach(e=>{let t=Array.from(e.childNodes).filter(e=>e.nodeType===3&&e.textContent.trim().length>1);if(t.length>0){const n=document.createElement("label");t[0].after(n),n.appendChild(e.querySelector("input[type='checkbox']")),n.appendChild(t[0])}})})</script><link rel=alternate href=/publication/index.xml type=application/rss+xml title="Jitesh Jain"><link rel=icon type=image/png href=/media/icon_hu860195526919577643.png><link rel=apple-touch-icon type=image/png href=/media/icon_hu709519090961613099.png><link rel=canonical href=https://praeclarumjj3.github.io/publication/><meta property="twitter:card" content="summary"><meta property="twitter:site" content="@praeclarumjj"><meta property="twitter:creator" content="@praeclarumjj"><meta property="og:site_name" content="Jitesh Jain"><meta property="og:url" content="https://praeclarumjj3.github.io/publication/"><meta property="og:title" content="Jitesh Jain"><meta property="og:description" content="PhD Student at Georgia Tech, with research interests in developing multimodal systems."><meta property="og:image" content="https://praeclarumjj3.github.io/media/icon_hu18230691612322137769.png"><meta property="twitter:image" content="https://praeclarumjj3.github.io/media/icon_hu18230691612322137769.png"><meta property="og:locale" content="en-us"><meta property="og:updated_time" content="2025-12-16T00:00:00+00:00"><title>Jitesh Jain</title><style>@font-face{font-family:inter var;font-style:normal;font-weight:100 900;font-display:swap;src:url(/dist/font/Inter.var.woff2)format(woff2)}</style><link type=text/css rel=stylesheet href=/dist/lib/katex/katex.min.505d5f829022bb7b4f24dfee0aa1141cd7bba67afe411d1240335f820960b5c3.css integrity="sha256-UF1fgpAiu3tPJN/uCqEUHNe7pnr+QR0SQDNfgglgtcM="><script defer src=/dist/lib/katex/katex.min.dc84b296ec3e884de093158f760fd9d45b6c7abe58b5381557f4e138f46a58ae.js integrity="sha256-3ISyluw+iE3gkxWPdg/Z1Ftser5YtTgVV/ThOPRqWK4="></script><script defer src=/js/katex-renderer.6579ec9683211cfb952064aedf3a3baea5eeb17a061775b32b70917474637c80.js integrity="sha256-ZXnsloMhHPuVIGSu3zo7rqXusXoGF3WzK3CRdHRjfIA="></script><script defer src=/js/hugo-blox-en.min.e5fa931947cac2d947732ea37a770aae2b5bd4a50b6048060cd129b46159a06d.js integrity="sha256-5fqTGUfKwtlHcy6jencKritb1KULYEgGDNEptGFZoG0="></script><script async defer src=https://buttons.github.io/buttons.js></script></head><body class="dark:bg-hb-dark dark:text-white page-wrapper" id=top><div id=page-bg></div><div class="page-header sticky top-0 z-30"><header id=site-header class=header><nav class="navbar px-3 flex justify-left"><div class="order-0 h-100"><a class=navbar-brand href=/ title="Jitesh Jain">Jitesh Jain</a></div><input id=nav-toggle type=checkbox class=hidden>
-<label for=nav-toggle class="order-3 cursor-pointer flex items-center lg:hidden text-dark dark:text-white lg:order-1"><svg id="show-button" class="h-6 fill-current block" viewBox="0 0 20 20"><title>Open Menu</title><path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0V0z"/></svg><svg id="hide-button" class="h-6 fill-current hidden" viewBox="0 0 20 20"><title>Close Menu</title><polygon points="11 9 22 9 22 11 11 11 11 22 9 22 9 11 -2 11 -2 9 9 9 9 -2 11 -2" transform="rotate(45 10 10)"/></svg></label><ul id=nav-menu class="navbar-nav order-3 hidden lg:flex w-full pb-6 lg:order-1 lg:w-auto lg:space-x-2 lg:pb-0 xl:space-x-8 justify-left
-ml-auto mr-6"><li class=nav-item><a class=nav-link href=/>Home</a></li><li class=nav-item><a class=nav-link href=#publications>Publications</a></li><li class=nav-item><a class=nav-link href=#blogs>Blogs</a></li><li class=nav-item><a class=nav-link target=_blank rel=noopener href="https://praeclarumjj3.notion.site/db6442860924487585bb1dffeefa5d21?v=4f8eb73a6d8f4407aa2a5ecc842c3828">Books</a></li></ul><div class="order-1 ml-auto flex items-center md:order-2 lg:ml-0"><div class="px-3 text-black hover:text-primary-700 dark:text-white dark:hover:text-primary-300
-[&.active]:font-bold [&.active]:text-black/90 dark:[&.active]:text-white"><button class="theme-toggle mt-1" accesskey=t title=appearance><svg id="moon" width="24" height="18" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="dark:hidden"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg><svg id="sun" width="24" height="18" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="dark:block [&:not(dark)]:hidden"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg></button></div></div></nav></header></div><div class="page-body my-10"><div class="max-w-prose mx-auto flex justify-center"><article class="prose prose-slate lg:prose-xl dark:prose-invert"><h1 class=lg:text-6xl></h1><h3 id=selected-publications>Selected Publications</h3><p style=font-size:smaller>For a complete list of my research works, please lookup my <a href="https://scholar.google.com/citations?view_op=list_works&hl=en&user=nygnfNwAAAAJ">Google Scholar</a>.</p></article></div><div class="flex flex-col items-center"><div class="container px-8 mx-auto xl:px-5 py-5 lg:py-8 max-w-screen-lg"><div class="grid gap-10 md:grid-cols-2 lg:gap-10"><div class="group cursor-pointer"><div class="overflow-hidden rounded-md bg-gray-100 transition-all hover:scale-105 dark:bg-gray-800"><a class="relative block aspect-video" href=https://praeclarumjj3.github.io/sage/ target=_blank rel=noopener><img alt="SAGE: Training Smart Any-Horizon Agents for Long Video Reasoning with Reinforcement Learning" class="object-fill transition-all" data-nimg=fill decoding=async fetchpriority=high height=540 loading=lazy src=/publication/sage/featured_hu8083170337763650511.webp style=position:absolute;height:100%;width:100%;inset:0;color:transparent width=960></a></div><div><div><div class="flex gap-3"><a href=/tags/cvpr-2026/><span class="inline-block text-xs font-medium tracking-wider uppercase mt-5 text-primary-700 dark:text-primary-300">CVPR 2026</span></a></div><h2 class="text-lg font-semibold leading-snug tracking-tight mt-2 dark:text-white"><a href=https://praeclarumjj3.github.io/sage/ target=_blank rel=noopener><span class="bg-gradient-to-r from-primary-200 to-primary-100 bg-[length:0px_10px] bg-left-bottom bg-no-repeat transition-[background-size] duration-500 hover:bg-[length:100%_3px] group-hover:bg-[length:100%_10px] dark:from-primary-800 dark:to-primary-900">SAGE: Training Smart Any-Horizon Agents for Long Video Reasoning with Reinforcement Learning<svg style="height:1em" class="inline-flex h-6 w-6 pl-2" viewBox="0 0 24 24"><path fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13.5 6H5.25A2.25 2.25.0 003 8.25v10.5A2.25 2.25.0 005.25 21h10.5A2.25 2.25.0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"/></svg></span></a></h2><div class=grow><p class="mt-2 line-clamp-3 text-sm text-gray-500 dark:text-gray-400"><a href=https://praeclarumjj3.github.io/sage/ target=_blank rel=noopener></a></p></div><div class=flex-none><div class="mt-3 flex items-center space-x-3 text-gray-500 dark:text-gray-400 cursor-default"><time class="truncate text-sm" datetime=2025-12-16>Dec 2025</time></div></div></div></div></div><div class="group cursor-pointer"><div class="overflow-hidden rounded-md bg-gray-100 transition-all hover:scale-105 dark:bg-gray-800"><a class="relative block aspect-video" href=https://praeclarumjj3.github.io/visper_lm/ target=_blank rel=noopener><img alt="Elevating Perception in Multimodal LLMs with Visual Embedding Distillation" class="object-fill transition-all" data-nimg=fill decoding=async fetchpriority=high height=540 loading=lazy src=/publication/visper-lm/featured_hu14002852288620777696.webp style=position:absolute;height:100%;width:100%;inset:0;color:transparent width=960></a></div><div><div><div class="flex gap-3"><a href=/tags/neurips-2025/><span class="inline-block text-xs font-medium tracking-wider uppercase mt-5 text-primary-700 dark:text-primary-300">NeurIPS 2025</span></a></div><h2 class="text-lg font-semibold leading-snug tracking-tight mt-2 dark:text-white"><a href=https://praeclarumjj3.github.io/visper_lm/ target=_blank rel=noopener><span class="bg-gradient-to-r from-primary-200 to-primary-100 bg-[length:0px_10px] bg-left-bottom bg-no-repeat transition-[background-size] duration-500 hover:bg-[length:100%_3px] group-hover:bg-[length:100%_10px] dark:from-primary-800 dark:to-primary-900">Elevating Perception in Multimodal LLMs with Visual Embedding Distillation<svg style="height:1em" class="inline-flex h-6 w-6 pl-2" viewBox="0 0 24 24"><path fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13.5 6H5.25A2.25 2.25.0 003 8.25v10.5A2.25 2.25.0 005.25 21h10.5A2.25 2.25.0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"/></svg></span></a></h2><div class=grow><p class="mt-2 line-clamp-3 text-sm text-gray-500 dark:text-gray-400"><a href=https://praeclarumjj3.github.io/visper_lm/ target=_blank rel=noopener></a></p></div><div class=flex-none><div class="mt-3 flex items-center space-x-3 text-gray-500 dark:text-gray-400 cursor-default"><time class="truncate text-sm" datetime=2024-12-12>Dec 2024</time></div></div></div></div></div><div class="group cursor-pointer"><div class="overflow-hidden rounded-md bg-gray-100 transition-all hover:scale-105 dark:bg-gray-800"><a class="relative block aspect-video" href=https://arxiv.org/abs/2510.15261 target=_blank rel=noopener><img alt="AUGUSTUS: An LLM-Driven Multimodal Agent System with Contextualized User Memory" class="object-fill transition-all" data-nimg=fill decoding=async fetchpriority=high height=540 loading=lazy src=/publication/augustus/featured_hu16117431211237547259.webp style=position:absolute;height:100%;width:100%;inset:0;color:transparent width=960></a></div><div><div><div class="flex gap-3"><a href=/tags/law-workshop-@neurips-2025/><span class="inline-block text-xs font-medium tracking-wider uppercase mt-5 text-primary-700 dark:text-primary-300">LAW Workshop @NeurIPS 2025</span></a></div><h2 class="text-lg font-semibold leading-snug tracking-tight mt-2 dark:text-white"><a href=https://arxiv.org/abs/2510.15261 target=_blank rel=noopener><span class="bg-gradient-to-r from-primary-200 to-primary-100 bg-[length:0px_10px] bg-left-bottom bg-no-repeat transition-[background-size] duration-500 hover:bg-[length:100%_3px] group-hover:bg-[length:100%_10px] dark:from-primary-800 dark:to-primary-900">AUGUSTUS: An LLM-Driven Multimodal Agent System with Contextualized User Memory<svg style="height:1em" class="inline-flex h-6 w-6 pl-2" viewBox="0 0 24 24"><path fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13.5 6H5.25A2.25 2.25.0 003 8.25v10.5A2.25 2.25.0 005.25 21h10.5A2.25 2.25.0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"/></svg></span></a></h2><div class=grow><p class="mt-2 line-clamp-3 text-sm text-gray-500 dark:text-gray-400"><a href=https://arxiv.org/abs/2510.15261 target=_blank rel=noopener></a></p></div><div class=flex-none><div class="mt-3 flex items-center space-x-3 text-gray-500 dark:text-gray-400 cursor-default"><time class="truncate text-sm" datetime=2024-03-12>Mar 2024</time></div></div></div></div></div><div class="group cursor-pointer"><div class="overflow-hidden rounded-md bg-gray-100 transition-all hover:scale-105 dark:bg-gray-800"><a class="relative block aspect-video" href=https://praeclarumjj3.github.io/vcoder/ target=_blank rel=noopener><img alt="VCoder: Versatile Vision Encoders for Multimodal Large Language Models" class="object-fill transition-all" data-nimg=fill decoding=async fetchpriority=high height=540 loading=lazy src=/publication/vcoder/featured_hu10476806432393604248.webp style=position:absolute;height:100%;width:100%;inset:0;color:transparent width=960></a></div><div><div><div class="flex gap-3"><a href=/tags/cvpr-2024/><span class="inline-block text-xs font-medium tracking-wider uppercase mt-5 text-primary-700 dark:text-primary-300">CVPR 2024</span></a></div><h2 class="text-lg font-semibold leading-snug tracking-tight mt-2 dark:text-white"><a href=https://praeclarumjj3.github.io/vcoder/ target=_blank rel=noopener><span class="bg-gradient-to-r from-primary-200 to-primary-100 bg-[length:0px_10px] bg-left-bottom bg-no-repeat transition-[background-size] duration-500 hover:bg-[length:100%_3px] group-hover:bg-[length:100%_10px] dark:from-primary-800 dark:to-primary-900">VCoder: Versatile Vision Encoders for Multimodal Large Language Models<svg style="height:1em" class="inline-flex h-6 w-6 pl-2" viewBox="0 0 24 24"><path fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13.5 6H5.25A2.25 2.25.0 003 8.25v10.5A2.25 2.25.0 005.25 21h10.5A2.25 2.25.0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"/></svg></span></a></h2><div class=grow><p class="mt-2 line-clamp-3 text-sm text-gray-500 dark:text-gray-400"><a href=https://praeclarumjj3.github.io/vcoder/ target=_blank rel=noopener></a></p></div><div class=flex-none><div class="mt-3 flex items-center space-x-3 text-gray-500 dark:text-gray-400 cursor-default"><time class="truncate text-sm" datetime=2023-12-12>Dec 2023</time></div></div></div></div></div><div class="group cursor-pointer"><div class="overflow-hidden rounded-md bg-gray-100 transition-all hover:scale-105 dark:bg-gray-800"><a class="relative block aspect-video" href=https://praeclarumjj3.github.io/oneformer/ target=_blank rel=noopener><img alt="OneFormer: One Transformer to Rule Universal Image Segmentation" class="object-fill transition-all" data-nimg=fill decoding=async fetchpriority=high height=540 loading=lazy src=/publication/oneformer/featured_hu5818141099834612362.webp style=position:absolute;height:100%;width:100%;inset:0;color:transparent width=960></a></div><div><div><div class="flex gap-3"><a href=/tags/cvpr-2023/><span class="inline-block text-xs font-medium tracking-wider uppercase mt-5 text-primary-700 dark:text-primary-300">CVPR 2023</span></a></div><h2 class="text-lg font-semibold leading-snug tracking-tight mt-2 dark:text-white"><a href=https://praeclarumjj3.github.io/oneformer/ target=_blank rel=noopener><span class="bg-gradient-to-r from-primary-200 to-primary-100 bg-[length:0px_10px] bg-left-bottom bg-no-repeat transition-[background-size] duration-500 hover:bg-[length:100%_3px] group-hover:bg-[length:100%_10px] dark:from-primary-800 dark:to-primary-900">OneFormer: One Transformer to Rule Universal Image Segmentation<svg style="height:1em" class="inline-flex h-6 w-6 pl-2" viewBox="0 0 24 24"><path fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13.5 6H5.25A2.25 2.25.0 003 8.25v10.5A2.25 2.25.0 005.25 21h10.5A2.25 2.25.0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"/></svg></span></a></h2><div class=grow><p class="mt-2 line-clamp-3 text-sm text-gray-500 dark:text-gray-400"><a href=https://praeclarumjj3.github.io/oneformer/ target=_blank rel=noopener></a></p></div><div class=flex-none><div class="mt-3 flex items-center space-x-3 text-gray-500 dark:text-gray-400 cursor-default"><time class="truncate text-sm" datetime=2022-11-11>Nov 2022</time></div></div></div></div></div><div class="group cursor-pointer"><div class="overflow-hidden rounded-md bg-gray-100 transition-all hover:scale-105 dark:bg-gray-800"><a class="relative block aspect-video" href=https://praeclarumjj3.github.io/fcf-inpainting/ target=_blank rel=noopener><img alt="Keys to Better Image Inpainting: Structure and Texture Go Hand in Hand" class="object-fill transition-all" data-nimg=fill decoding=async fetchpriority=high height=540 loading=lazy src=/publication/fcf-inpainting/featured_hu12093197633179016970.webp style=position:absolute;height:100%;width:100%;inset:0;color:transparent width=960></a></div><div><div><div class="flex gap-3"><a href=/tags/wacv-2023/><span class="inline-block text-xs font-medium tracking-wider uppercase mt-5 text-primary-700 dark:text-primary-300">WACV 2023</span></a></div><h2 class="text-lg font-semibold leading-snug tracking-tight mt-2 dark:text-white"><a href=https://praeclarumjj3.github.io/fcf-inpainting/ target=_blank rel=noopener><span class="bg-gradient-to-r from-primary-200 to-primary-100 bg-[length:0px_10px] bg-left-bottom bg-no-repeat transition-[background-size] duration-500 hover:bg-[length:100%_3px] group-hover:bg-[length:100%_10px] dark:from-primary-800 dark:to-primary-900">Keys to Better Image Inpainting: Structure and Texture Go Hand in Hand<svg style="height:1em" class="inline-flex h-6 w-6 pl-2" viewBox="0 0 24 24"><path fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13.5 6H5.25A2.25 2.25.0 003 8.25v10.5A2.25 2.25.0 005.25 21h10.5A2.25 2.25.0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"/></svg></span></a></h2><div class=grow><p class="mt-2 line-clamp-3 text-sm text-gray-500 dark:text-gray-400"><a href=https://praeclarumjj3.github.io/fcf-inpainting/ target=_blank rel=noopener></a></p></div><div class=flex-none><div class="mt-3 flex items-center space-x-3 text-gray-500 dark:text-gray-400 cursor-default"><time class="truncate text-sm" datetime=2022-08-11>Aug 2022</time></div></div></div></div></div><div class="group cursor-pointer"><div class="overflow-hidden rounded-md bg-gray-100 transition-all hover:scale-105 dark:bg-gray-800"><a class="relative block aspect-video" href=https://github.com/Picsart-AI-Research/SeMask-Segmentation target=_blank rel=noopener><img alt="SeMask: Semantically Masked Transformers for Semantic Segmentation" class="object-fill transition-all" data-nimg=fill decoding=async fetchpriority=high height=540 loading=lazy src=/publication/semask/featured_hu4361012076132636387.webp style=position:absolute;height:100%;width:100%;inset:0;color:transparent width=960></a></div><div><div><div class="flex gap-3"><a href=/tags/nivt-workshop-@iccv-2023/><span class="inline-block text-xs font-medium tracking-wider uppercase mt-5 text-primary-700 dark:text-primary-300">NIVT Workshop @ICCV 2023</span></a></div><h2 class="text-lg font-semibold leading-snug tracking-tight mt-2 dark:text-white"><a href=https://github.com/Picsart-AI-Research/SeMask-Segmentation target=_blank rel=noopener><span class="bg-gradient-to-r from-primary-200 to-primary-100 bg-[length:0px_10px] bg-left-bottom bg-no-repeat transition-[background-size] duration-500 hover:bg-[length:100%_3px] group-hover:bg-[length:100%_10px] dark:from-primary-800 dark:to-primary-900">SeMask: Semantically Masked Transformers for Semantic Segmentation<svg style="height:1em" class="inline-flex h-6 w-6 pl-2" viewBox="0 0 24 24"><path fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13.5 6H5.25A2.25 2.25.0 003 8.25v10.5A2.25 2.25.0 005.25 21h10.5A2.25 2.25.0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"/></svg></span></a></h2><div class=grow><p class="mt-2 line-clamp-3 text-sm text-gray-500 dark:text-gray-400"><a href=https://github.com/Picsart-AI-Research/SeMask-Segmentation target=_blank rel=noopener></a></p></div><div class=flex-none><div class="mt-3 flex items-center space-x-3 text-gray-500 dark:text-gray-400 cursor-default"><time class="truncate text-sm" datetime=2021-12-12>Dec 2021</time></div></div></div></div></div></div></div></div></div><div class=page-footer><footer class="container mx-auto flex flex-col justify-items-center text-sm leading-6 mt-24 mb-4 text-slate-700 dark:text-slate-200"><p class="powered-by text-center">© {2024} Jitesh Jain</p><p class="powered-by text-center">Published with <a href="https://hugoblox.com/?utm_campaign=poweredby" target=_blank rel=noopener>Hugo Blox Builder</a> — the free, <a href=https://github.com/HugoBlox/hugo-blox-builder target=_blank rel=noopener>open source</a> website builder that empowers creators.</p></footer></div></body></html>
+<!doctype html>
+<!-- This site was created with Hugo Blox. https://hugoblox.com -->
+<!-- Last Published: August 2, 2026 --><html lang="en-us" dir="ltr"
+      data-wc-theme-default="dark">
+  
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="generator" content="Hugo Blox Builder 0.2.0" />
+
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+    
+    
+    
+  
+  
+
+  <meta name="author" content="Jitesh Jain" />
+
+  
+  
+  
+    
+  
+  <meta name="description" content="PhD Student at Georgia Tech, with research interests in developing multimodal systems." />
+
+  
+  <link rel="alternate" hreflang="en-us" href="https://praeclarumjj3.github.io/publication/" />
+
+  
+  
+  
+  
+    
+    <link rel="stylesheet" href="/css/themes/teal.min.css" />
+  
+
+  
+  
+    
+    <link href="/dist/wc.min.css" rel="stylesheet" />
+  
+
+  
+  
+  
+
+  
+
+  <script>
+     
+    window.hbb = {
+       defaultTheme: document.documentElement.dataset.wcThemeDefault,
+       setDarkTheme: () => {
+        document.documentElement.classList.add("dark");
+        document.documentElement.style.colorScheme = "dark";
+      },
+       setLightTheme: () => {
+        document.documentElement.classList.remove("dark");
+        document.documentElement.style.colorScheme = "light";
+      }
+    }
+
+    console.debug(`Default Hugo Blox Builder theme is ${window.hbb.defaultTheme}`);
+
+    if ("wc-color-theme" in localStorage) {
+      localStorage.getItem("wc-color-theme") === "dark" ? window.hbb.setDarkTheme() : window.hbb.setLightTheme();
+    } else {
+      window.hbb.defaultTheme === "dark" ? window.hbb.setDarkTheme() : window.hbb.setLightTheme();
+      if (window.hbb.defaultTheme === "system") {
+        window.matchMedia("(prefers-color-scheme: dark)").matches ? window.hbb.setDarkTheme() : window.hbb.setLightTheme();
+      }
+    }
+  </script>
+
+  <script>
+    
+    document.addEventListener('DOMContentLoaded', function () {
+      
+      let checkboxes = document.querySelectorAll('li input[type=\'checkbox\'][disabled]');
+      checkboxes.forEach(e => {
+        e.parentElement.parentElement.classList.add('task-list');
+      });
+
+      
+      const liNodes = document.querySelectorAll('.task-list li');
+      liNodes.forEach(nodes => {
+        let textNodes = Array.from(nodes.childNodes).filter(node => node.nodeType === 3 && node.textContent.trim().length > 1);
+        if (textNodes.length > 0) {
+          const span = document.createElement('label');
+          textNodes[0].after(span);  
+          span.appendChild(nodes.querySelector('input[type=\'checkbox\']'));
+          span.appendChild(textNodes[0]);
+        }
+      });
+    });
+  </script>
+
+  
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <link rel="alternate" href="/publication/index.xml" type="application/rss+xml" title="Jitesh Jain" />
+  
+
+  
+  <link rel="icon" type="image/png" href="/media/icon_hu860195526919577643.png" />
+  <link rel="apple-touch-icon" type="image/png" href="/media/icon_hu709519090961613099.png" />
+
+  <link rel="canonical" href="https://praeclarumjj3.github.io/publication/" />
+
+  
+  
+  
+  
+  
+  
+  
+  
+    
+    
+  
+  
+
+  
+  
+    
+    
+  
+  <meta property="twitter:card" content="summary" />
+  
+    <meta property="twitter:site" content="@praeclarumjj" />
+    <meta property="twitter:creator" content="@praeclarumjj" />
+  
+  <meta property="og:site_name" content="Jitesh Jain" />
+  <meta property="og:url" content="https://praeclarumjj3.github.io/publication/" />
+  <meta property="og:title" content="Jitesh Jain" />
+  <meta property="og:description" content="PhD Student at Georgia Tech, with research interests in developing multimodal systems." /><meta property="og:image" content="https://praeclarumjj3.github.io/media/icon_hu18230691612322137769.png" />
+    <meta property="twitter:image" content="https://praeclarumjj3.github.io/media/icon_hu18230691612322137769.png" /><meta property="og:locale" content="en-us" />
+  
+    
+      <meta property="og:updated_time" content="2025-12-16T00:00:00&#43;00:00" />
+    
+  
+
+  
+
+
+
+
+  <title>Jitesh Jain</title>
+
+  
+  
+  
+  
+  
+    
+    
+  
+  
+  <style>
+    @font-face {
+      font-family: 'Inter var';
+      font-style: normal;
+      font-weight: 100 900;
+      font-display: swap;
+      src: url(/dist/font/Inter.var.woff2) format(woff2);
+    }
+  </style>
+
+  
+
+  
+  
+
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+    
+      
+      
+        
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+        
+        
+      
+    
+      
+      
+        
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+        
+        
+      
+    
+      
+      
+        
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+        
+        
+      
+    
+  
+  
+  
+  
+  
+  
+  
+    
+      
+      
+        
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+        
+        
+      
+    
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+    
+      
+      
+        
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+        
+        
+      
+    
+      
+      
+        
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+        
+        
+      
+    
+      
+      
+        
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+        
+        
+      
+    
+      
+      
+        
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+        
+        
+      
+    
+  
+  
+  
+  
+  
+    
+      
+      
+        
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+        
+        
+      
+    
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link type="text/css" rel="stylesheet" href="/dist/lib/katex/katex.min.505d5f829022bb7b4f24dfee0aa1141cd7bba67afe411d1240335f820960b5c3.css" integrity="sha256-UF1fgpAiu3tPJN/uCqEUHNe7pnr&#43;QR0SQDNfgglgtcM=" />
+  
+  
+  <script defer src="/dist/lib/katex/katex.min.dc84b296ec3e884de093158f760fd9d45b6c7abe58b5381557f4e138f46a58ae.js" integrity="sha256-3ISyluw&#43;iE3gkxWPdg/Z1Ftser5YtTgVV/ThOPRqWK4="></script>
+  
+  
+  
+  
+  <script defer src="/js/katex-renderer.6579ec9683211cfb952064aedf3a3baea5eeb17a061775b32b70917474637c80.js" integrity="sha256-ZXnsloMhHPuVIGSu3zo7rqXusXoGF3WzK3CRdHRjfIA="></script>
+  
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+  <script
+    defer
+    src="/js/hugo-blox-en.min.e5fa931947cac2d947732ea37a770aae2b5bd4a50b6048060cd129b46159a06d.js"
+    integrity="sha256-5fqTGUfKwtlHcy6jencKritb1KULYEgGDNEptGFZoG0="
+  ></script>
+
+  
+  
+
+
+
+
+
+
+
+
+  
+    
+      
+      <script async defer src="https://buttons.github.io/buttons.js"></script>
+
+      
+    
+  
+
+
+
+
+</head>
+
+  <body class="dark:bg-hb-dark dark:text-white page-wrapper" id="top">
+    <div id="page-bg"></div>
+    <div class="page-header sticky top-0 z-30">
+      
+      
+      
+        
+        
+        
+          <header id="site-header" class="header">
+  <nav class="navbar px-3 flex justify-left">
+    <div class="order-0 h-100">
+      
+      <a class="navbar-brand" href="/" title="Jitesh Jain">
+        Jitesh Jain
+      </a>
+    </div>
+    
+    <input id="nav-toggle" type="checkbox" class="hidden" />
+    <label
+      for="nav-toggle"
+      class="order-3 cursor-pointer flex items-center lg:hidden text-dark dark:text-white lg:order-1">
+      <svg id="show-button" class="h-6 fill-current block" viewBox="0 0 20 20">
+        <title>Open Menu</title>
+        <path d="M0 3h20v2H0V3z m0 6h20v2H0V9z m0 6h20v2H0V0z"></path>
+      </svg>
+      <svg id="hide-button" class="h-6 fill-current hidden" viewBox="0 0 20 20">
+        <title>Close Menu</title>
+        <polygon
+          points="11 9 22 9 22 11 11 11 11 22 9 22 9 11 -2 11 -2 9 9 9 9 -2 11 -2"
+          transform="rotate(45 10 10)"></polygon>
+      </svg>
+    </label>
+    
+
+    
+    
+    <ul
+      id="nav-menu"
+      class="navbar-nav order-3 hidden lg:flex w-full pb-6 lg:order-1 lg:w-auto lg:space-x-2 lg:pb-0 xl:space-x-8 justify-left
+      ml-auto mr-6">
+      
+      
+      
+      
+      
+      
+      <li class="nav-item">
+        <a
+          class="nav-link "
+          
+          href="/"
+        >Home</a
+        >
+      </li>
+      
+      
+      
+      
+      
+      
+      <li class="nav-item">
+        <a
+          class="nav-link "
+          
+          href="#publications"
+        >Publications</a
+        >
+      </li>
+      
+      
+      
+      
+      
+      
+      <li class="nav-item">
+        <a
+          class="nav-link "
+          
+          href="#blogs"
+        >Blogs</a
+        >
+      </li>
+      
+      
+      
+      
+      
+      
+      <li class="nav-item">
+        <a
+          class="nav-link "
+          
+          target="_blank" rel="noopener"
+          
+          href="https://praeclarumjj3.notion.site/db6442860924487585bb1dffeefa5d21?v=4f8eb73a6d8f4407aa2a5ecc842c3828"
+        >Books</a
+        >
+      </li>
+      
+      
+      
+    </ul>
+
+    <div class="order-1 ml-auto flex items-center md:order-2 lg:ml-0">
+
+      
+      
+      
+
+      
+      
+      <div class="px-3 text-black hover:text-primary-700 dark:text-white dark:hover:text-primary-300
+            [&.active]:font-bold [&.active]:text-black/90 dark:[&.active]:text-white">
+        <button class="theme-toggle mt-1" accesskey="t" title="appearance">
+          <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+               fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+               stroke-linejoin="round" class="dark:hidden">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+          <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+               fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+               stroke-linejoin="round" class=" dark:block [&:not(dark)]:hidden">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+        </button>
+      </div>
+      
+
+      
+      
+
+      
+      
+    </div>
+  </nav>
+</header>
+
+
+
+        
+      
+    </div>
+    <div class="page-body  my-10">
+      
+
+<div class="max-w-prose mx-auto flex justify-center">
+  <article class="prose prose-slate lg:prose-xl dark:prose-invert">
+    <h1 class="lg:text-6xl"></h1>
+    <h3 id="selected-publications">Selected Publications</h3>
+<p style="font-size: smaller;">For a complete list of my research works, please lookup my <a href="https://scholar.google.com/citations?view_op=list_works&hl=en&user=nygnfNwAAAAJ">Google Scholar</a>.</p>
+
+  </article>
+</div>
+
+
+
+
+<div class="flex flex-col items-center">
+
+  
+
+
+<div class="container px-8 mx-auto xl:px-5 py-5 lg:py-8 max-w-screen-lg ">
+  <div class="grid gap-10 md:grid-cols-2 lg:gap-10">
+
+
+  
+  
+  
+
+
+
+
+
+
+
+
+  
+  
+
+
+<div class="group cursor-pointer">
+
+  
+  
+  
+    
+  
+  
+  <div class="overflow-hidden rounded-md bg-gray-100 transition-all hover:scale-105 dark:bg-gray-800">
+
+    <a
+      class="relative block aspect-video"
+      href="https://praeclarumjj3.github.io/sage/" target="_blank" rel="noopener">
+
+      <img alt="SAGE: Training Smart Any-Horizon Agents for Long Video Reasoning with Reinforcement Learning"
+           class="object-fill transition-all"
+           data-nimg="fill"
+           decoding="async"
+           fetchpriority="high" height="540" loading="lazy" src="/publication/sage/featured_hu8083170337763650511.webp"
+           style="position: absolute; height: 100%; width: 100%; inset: 0px; color: transparent;"
+           width="960"></a>
+  </div>
+  
+  <div class="">
+    <div class="">
+      <div class="flex gap-3">
+        
+        <a href="/tags/cvpr-2026/"><span
+          class="inline-block text-xs font-medium tracking-wider uppercase mt-5 text-primary-700 dark:text-primary-300">CVPR 2026</span></a>
+        
+      </div>
+      
+      <h2 class="text-lg font-semibold leading-snug tracking-tight mt-2 dark:text-white"><a
+        href="https://praeclarumjj3.github.io/sage/" target="_blank" rel="noopener"><span
+        class="bg-gradient-to-r from-primary-200 to-primary-100 bg-[length:0px_10px] bg-left-bottom bg-no-repeat transition-[background-size] duration-500 hover:bg-[length:100%_3px] group-hover:bg-[length:100%_10px] dark:from-primary-800 dark:to-primary-900">SAGE: Training Smart Any-Horizon Agents for Long Video Reasoning with Reinforcement Learning<svg style="height: 1em;" class="inline-flex h-6 w-6 pl-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"/></svg>
+          </span></a>
+      </h2>
+      
+      <div class="grow"><p class="mt-2 line-clamp-3 text-sm text-gray-500 dark:text-gray-400"><a
+        href="https://praeclarumjj3.github.io/sage/" target="_blank" rel="noopener">
+        </a></p>
+      </div>
+      <div class="flex-none">
+        <div class="mt-3 flex items-center space-x-3 text-gray-500 dark:text-gray-400 cursor-default">
+          
+          
+          <time class="truncate text-sm" datetime="2025-12-16">Dec 2025</time>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+  
+  
+
+
+
+
+
+
+
+
+  
+  
+
+
+<div class="group cursor-pointer">
+
+  
+  
+  
+    
+  
+  
+  <div class="overflow-hidden rounded-md bg-gray-100 transition-all hover:scale-105 dark:bg-gray-800">
+
+    <a
+      class="relative block aspect-video"
+      href="https://praeclarumjj3.github.io/visper_lm/" target="_blank" rel="noopener">
+
+      <img alt="Elevating Perception in Multimodal LLMs with Visual Embedding Distillation"
+           class="object-fill transition-all"
+           data-nimg="fill"
+           decoding="async"
+           fetchpriority="high" height="540" loading="lazy" src="/publication/visper-lm/featured_hu14002852288620777696.webp"
+           style="position: absolute; height: 100%; width: 100%; inset: 0px; color: transparent;"
+           width="960"></a>
+  </div>
+  
+  <div class="">
+    <div class="">
+      <div class="flex gap-3">
+        
+        <a href="/tags/neurips-2025/"><span
+          class="inline-block text-xs font-medium tracking-wider uppercase mt-5 text-primary-700 dark:text-primary-300">NeurIPS 2025</span></a>
+        
+      </div>
+      
+      <h2 class="text-lg font-semibold leading-snug tracking-tight mt-2 dark:text-white"><a
+        href="https://praeclarumjj3.github.io/visper_lm/" target="_blank" rel="noopener"><span
+        class="bg-gradient-to-r from-primary-200 to-primary-100 bg-[length:0px_10px] bg-left-bottom bg-no-repeat transition-[background-size] duration-500 hover:bg-[length:100%_3px] group-hover:bg-[length:100%_10px] dark:from-primary-800 dark:to-primary-900">Elevating Perception in Multimodal LLMs with Visual Embedding Distillation<svg style="height: 1em;" class="inline-flex h-6 w-6 pl-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"/></svg>
+          </span></a>
+      </h2>
+      
+      <div class="grow"><p class="mt-2 line-clamp-3 text-sm text-gray-500 dark:text-gray-400"><a
+        href="https://praeclarumjj3.github.io/visper_lm/" target="_blank" rel="noopener">
+        </a></p>
+      </div>
+      <div class="flex-none">
+        <div class="mt-3 flex items-center space-x-3 text-gray-500 dark:text-gray-400 cursor-default">
+          
+          
+          <time class="truncate text-sm" datetime="2024-12-12">Dec 2024</time>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+  
+  
+
+
+
+
+
+
+
+
+  
+  
+
+
+<div class="group cursor-pointer">
+
+  
+  
+  
+    
+  
+  
+  <div class="overflow-hidden rounded-md bg-gray-100 transition-all hover:scale-105 dark:bg-gray-800">
+
+    <a
+      class="relative block aspect-video"
+      href="https://arxiv.org/abs/2510.15261" target="_blank" rel="noopener">
+
+      <img alt="AUGUSTUS: An LLM-Driven Multimodal Agent System with Contextualized User Memory"
+           class="object-fill transition-all"
+           data-nimg="fill"
+           decoding="async"
+           fetchpriority="high" height="540" loading="lazy" src="/publication/augustus/featured_hu16117431211237547259.webp"
+           style="position: absolute; height: 100%; width: 100%; inset: 0px; color: transparent;"
+           width="960"></a>
+  </div>
+  
+  <div class="">
+    <div class="">
+      <div class="flex gap-3">
+        
+        <a href="/tags/law-workshop-@neurips-2025/"><span
+          class="inline-block text-xs font-medium tracking-wider uppercase mt-5 text-primary-700 dark:text-primary-300">LAW Workshop @NeurIPS 2025</span></a>
+        
+      </div>
+      
+      <h2 class="text-lg font-semibold leading-snug tracking-tight mt-2 dark:text-white"><a
+        href="https://arxiv.org/abs/2510.15261" target="_blank" rel="noopener"><span
+        class="bg-gradient-to-r from-primary-200 to-primary-100 bg-[length:0px_10px] bg-left-bottom bg-no-repeat transition-[background-size] duration-500 hover:bg-[length:100%_3px] group-hover:bg-[length:100%_10px] dark:from-primary-800 dark:to-primary-900">AUGUSTUS: An LLM-Driven Multimodal Agent System with Contextualized User Memory<svg style="height: 1em;" class="inline-flex h-6 w-6 pl-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"/></svg>
+          </span></a>
+      </h2>
+      
+      <div class="grow"><p class="mt-2 line-clamp-3 text-sm text-gray-500 dark:text-gray-400"><a
+        href="https://arxiv.org/abs/2510.15261" target="_blank" rel="noopener">
+        </a></p>
+      </div>
+      <div class="flex-none">
+        <div class="mt-3 flex items-center space-x-3 text-gray-500 dark:text-gray-400 cursor-default">
+          
+          
+          <time class="truncate text-sm" datetime="2024-03-12">Mar 2024</time>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+  
+  
+
+
+
+
+
+
+
+
+  
+  
+
+
+<div class="group cursor-pointer">
+
+  
+  
+  
+    
+  
+  
+  <div class="overflow-hidden rounded-md bg-gray-100 transition-all hover:scale-105 dark:bg-gray-800">
+
+    <a
+      class="relative block aspect-video"
+      href="https://praeclarumjj3.github.io/vcoder/" target="_blank" rel="noopener">
+
+      <img alt="VCoder: Versatile Vision Encoders for Multimodal Large Language Models"
+           class="object-fill transition-all"
+           data-nimg="fill"
+           decoding="async"
+           fetchpriority="high" height="540" loading="lazy" src="/publication/vcoder/featured_hu10476806432393604248.webp"
+           style="position: absolute; height: 100%; width: 100%; inset: 0px; color: transparent;"
+           width="960"></a>
+  </div>
+  
+  <div class="">
+    <div class="">
+      <div class="flex gap-3">
+        
+        <a href="/tags/cvpr-2024/"><span
+          class="inline-block text-xs font-medium tracking-wider uppercase mt-5 text-primary-700 dark:text-primary-300">CVPR 2024</span></a>
+        
+      </div>
+      
+      <h2 class="text-lg font-semibold leading-snug tracking-tight mt-2 dark:text-white"><a
+        href="https://praeclarumjj3.github.io/vcoder/" target="_blank" rel="noopener"><span
+        class="bg-gradient-to-r from-primary-200 to-primary-100 bg-[length:0px_10px] bg-left-bottom bg-no-repeat transition-[background-size] duration-500 hover:bg-[length:100%_3px] group-hover:bg-[length:100%_10px] dark:from-primary-800 dark:to-primary-900">VCoder: Versatile Vision Encoders for Multimodal Large Language Models<svg style="height: 1em;" class="inline-flex h-6 w-6 pl-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"/></svg>
+          </span></a>
+      </h2>
+      
+      <div class="grow"><p class="mt-2 line-clamp-3 text-sm text-gray-500 dark:text-gray-400"><a
+        href="https://praeclarumjj3.github.io/vcoder/" target="_blank" rel="noopener">
+        </a></p>
+      </div>
+      <div class="flex-none">
+        <div class="mt-3 flex items-center space-x-3 text-gray-500 dark:text-gray-400 cursor-default">
+          
+          
+          <time class="truncate text-sm" datetime="2023-12-12">Dec 2023</time>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+  
+  
+
+
+
+
+
+
+
+
+  
+  
+
+
+<div class="group cursor-pointer">
+
+  
+  
+  
+    
+  
+  
+  <div class="overflow-hidden rounded-md bg-gray-100 transition-all hover:scale-105 dark:bg-gray-800">
+
+    <a
+      class="relative block aspect-video"
+      href="https://praeclarumjj3.github.io/oneformer/" target="_blank" rel="noopener">
+
+      <img alt="OneFormer: One Transformer to Rule Universal Image Segmentation"
+           class="object-fill transition-all"
+           data-nimg="fill"
+           decoding="async"
+           fetchpriority="high" height="540" loading="lazy" src="/publication/oneformer/featured_hu5818141099834612362.webp"
+           style="position: absolute; height: 100%; width: 100%; inset: 0px; color: transparent;"
+           width="960"></a>
+  </div>
+  
+  <div class="">
+    <div class="">
+      <div class="flex gap-3">
+        
+        <a href="/tags/cvpr-2023/"><span
+          class="inline-block text-xs font-medium tracking-wider uppercase mt-5 text-primary-700 dark:text-primary-300">CVPR 2023</span></a>
+        
+      </div>
+      
+      <h2 class="text-lg font-semibold leading-snug tracking-tight mt-2 dark:text-white"><a
+        href="https://praeclarumjj3.github.io/oneformer/" target="_blank" rel="noopener"><span
+        class="bg-gradient-to-r from-primary-200 to-primary-100 bg-[length:0px_10px] bg-left-bottom bg-no-repeat transition-[background-size] duration-500 hover:bg-[length:100%_3px] group-hover:bg-[length:100%_10px] dark:from-primary-800 dark:to-primary-900">OneFormer: One Transformer to Rule Universal Image Segmentation<svg style="height: 1em;" class="inline-flex h-6 w-6 pl-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"/></svg>
+          </span></a>
+      </h2>
+      
+      <div class="grow"><p class="mt-2 line-clamp-3 text-sm text-gray-500 dark:text-gray-400"><a
+        href="https://praeclarumjj3.github.io/oneformer/" target="_blank" rel="noopener">
+        </a></p>
+      </div>
+      <div class="flex-none">
+        <div class="mt-3 flex items-center space-x-3 text-gray-500 dark:text-gray-400 cursor-default">
+          
+          
+          <time class="truncate text-sm" datetime="2022-11-11">Nov 2022</time>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+  
+  
+
+
+
+
+
+
+
+
+  
+  
+
+
+<div class="group cursor-pointer">
+
+  
+  
+  
+    
+  
+  
+  <div class="overflow-hidden rounded-md bg-gray-100 transition-all hover:scale-105 dark:bg-gray-800">
+
+    <a
+      class="relative block aspect-video"
+      href="https://praeclarumjj3.github.io/fcf-inpainting/" target="_blank" rel="noopener">
+
+      <img alt="Keys to Better Image Inpainting: Structure and Texture Go Hand in Hand"
+           class="object-fill transition-all"
+           data-nimg="fill"
+           decoding="async"
+           fetchpriority="high" height="540" loading="lazy" src="/publication/fcf-inpainting/featured_hu12093197633179016970.webp"
+           style="position: absolute; height: 100%; width: 100%; inset: 0px; color: transparent;"
+           width="960"></a>
+  </div>
+  
+  <div class="">
+    <div class="">
+      <div class="flex gap-3">
+        
+        <a href="/tags/wacv-2023/"><span
+          class="inline-block text-xs font-medium tracking-wider uppercase mt-5 text-primary-700 dark:text-primary-300">WACV 2023</span></a>
+        
+      </div>
+      
+      <h2 class="text-lg font-semibold leading-snug tracking-tight mt-2 dark:text-white"><a
+        href="https://praeclarumjj3.github.io/fcf-inpainting/" target="_blank" rel="noopener"><span
+        class="bg-gradient-to-r from-primary-200 to-primary-100 bg-[length:0px_10px] bg-left-bottom bg-no-repeat transition-[background-size] duration-500 hover:bg-[length:100%_3px] group-hover:bg-[length:100%_10px] dark:from-primary-800 dark:to-primary-900">Keys to Better Image Inpainting: Structure and Texture Go Hand in Hand<svg style="height: 1em;" class="inline-flex h-6 w-6 pl-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"/></svg>
+          </span></a>
+      </h2>
+      
+      <div class="grow"><p class="mt-2 line-clamp-3 text-sm text-gray-500 dark:text-gray-400"><a
+        href="https://praeclarumjj3.github.io/fcf-inpainting/" target="_blank" rel="noopener">
+        </a></p>
+      </div>
+      <div class="flex-none">
+        <div class="mt-3 flex items-center space-x-3 text-gray-500 dark:text-gray-400 cursor-default">
+          
+          
+          <time class="truncate text-sm" datetime="2022-08-11">Aug 2022</time>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+  
+  
+
+
+
+
+
+
+
+
+  
+  
+
+
+<div class="group cursor-pointer">
+
+  
+  
+  
+    
+  
+  
+  <div class="overflow-hidden rounded-md bg-gray-100 transition-all hover:scale-105 dark:bg-gray-800">
+
+    <a
+      class="relative block aspect-video"
+      href="https://github.com/Picsart-AI-Research/SeMask-Segmentation" target="_blank" rel="noopener">
+
+      <img alt="SeMask: Semantically Masked Transformers for Semantic Segmentation"
+           class="object-fill transition-all"
+           data-nimg="fill"
+           decoding="async"
+           fetchpriority="high" height="540" loading="lazy" src="/publication/semask/featured_hu4361012076132636387.webp"
+           style="position: absolute; height: 100%; width: 100%; inset: 0px; color: transparent;"
+           width="960"></a>
+  </div>
+  
+  <div class="">
+    <div class="">
+      <div class="flex gap-3">
+        
+        <a href="/tags/nivt-workshop-@iccv-2023/"><span
+          class="inline-block text-xs font-medium tracking-wider uppercase mt-5 text-primary-700 dark:text-primary-300">NIVT Workshop @ICCV 2023</span></a>
+        
+      </div>
+      
+      <h2 class="text-lg font-semibold leading-snug tracking-tight mt-2 dark:text-white"><a
+        href="https://github.com/Picsart-AI-Research/SeMask-Segmentation" target="_blank" rel="noopener"><span
+        class="bg-gradient-to-r from-primary-200 to-primary-100 bg-[length:0px_10px] bg-left-bottom bg-no-repeat transition-[background-size] duration-500 hover:bg-[length:100%_3px] group-hover:bg-[length:100%_10px] dark:from-primary-800 dark:to-primary-900">SeMask: Semantically Masked Transformers for Semantic Segmentation<svg style="height: 1em;" class="inline-flex h-6 w-6 pl-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"/></svg>
+          </span></a>
+      </h2>
+      
+      <div class="grow"><p class="mt-2 line-clamp-3 text-sm text-gray-500 dark:text-gray-400"><a
+        href="https://github.com/Picsart-AI-Research/SeMask-Segmentation" target="_blank" rel="noopener">
+        </a></p>
+      </div>
+      <div class="flex-none">
+        <div class="mt-3 flex items-center space-x-3 text-gray-500 dark:text-gray-400 cursor-default">
+          
+          
+          <time class="truncate text-sm" datetime="2021-12-12">Dec 2021</time>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+  
+
+    </div>
+</div>
+
+
+  
+
+
+</div>
+
+
+    </div>
+    <div class="page-footer">
+      <footer class="container mx-auto flex flex-col justify-items-center text-sm leading-6 mt-24 mb-4 text-slate-700 dark:text-slate-200">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <p class="powered-by text-center">
+    © {2024} Jitesh Jain
+  </p>
+  
+
+
+
+
+
+  <p class="powered-by text-center">
+    
+    
+    
+      
+      
+      
+      
+      
+      
+      Published with <a href="https://hugoblox.com/?utm_campaign=poweredby" target="_blank" rel="noopener">Hugo Blox Builder</a> — the free, <a href="https://github.com/HugoBlox/hugo-blox-builder" target="_blank" rel="noopener">open source</a> website builder that empowers creators.
+    
+  </p>
+
+</footer>
+
+    </div>
+
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+  </body>
+</html>

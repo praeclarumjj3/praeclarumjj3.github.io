@@ -1,336 +1,751 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Jitesh Jain</title><link>https://praeclarumjj3.github.io/</link><atom:link href="https://praeclarumjj3.github.io/index.xml" rel="self" type="application/rss+xml"/><description>Jitesh Jain</description><generator>Hugo Blox Builder (https://hugoblox.com)</generator><language>en-us</language><lastBuildDate>Sat, 20 Sep 2025 00:00:00 +0000</lastBuildDate><image><url>https://praeclarumjj3.github.io/media/icon_hu18230691612322137769.png</url><title>Jitesh Jain</title><link>https://praeclarumjj3.github.io/</link></image><item><title>SAGE: Training Smart Any-Horizon Agents for Long Video Reasoning with Reinforcement Learning</title><link>https://praeclarumjj3.github.io/publication/sage/</link><pubDate>Tue, 16 Dec 2025 00:00:00 +0000</pubDate><guid>https://praeclarumjj3.github.io/publication/sage/</guid><description/></item><item><title>what's a good metric for PhD Students?</title><link>https://praeclarumjj3.github.io/blogs/phd_metric/</link><pubDate>Thu, 26 Dec 2024 00:00:00 +0000</pubDate><guid>https://praeclarumjj3.github.io/blogs/phd_metric/</guid><description>&lt;p>So, I started my PhD in CS at Georgia Tech in Fall 2023. It’s only been around 16 months, but it feels more like several years in deep learning research trends. During this time, SAM toppled the classical segmentation task research, and the GPT-4 series of models appeared; model alignment (to human expectations) research has taken off, and the Qwen series has (sort of?) taken over the Llama series as the best performing and fast-growing open-source LLMs, LLM based agent frameworks are growing and growing, and numerous (maybe too many) fancy AI startups have popped up.&lt;/p>
-&lt;p>&lt;em>That’s about research in major (industry) leagues. What about academia?&lt;/em>&lt;/p>
-&lt;blockquote>
-&lt;p>My observations are based on research in the multimodal learning domain; these might not hold for fields like theoretical ML.&lt;/p>
-&lt;/blockquote>
-&lt;p>From what I’ve seen, the number of papers from solely academic labs has dropped significantly (based on the 900-odd papers I’ve looked at since June 2023, so please take this statement with a grain of salt). Many papers come from PhD students interning at the industry research labs, so a collaboration b/w industry and academia. An interesting observation here, though, is the disparity between pure industry papers and academic papers. It seems as if academia depends on these industry labs for publishing now, and for a fair reason, because the industry usually has more GPUs.&lt;/p>
-&lt;p>All this is to say that the industry is dramatically affecting the PhD (research in deep learning) experience nowadays. So, as an international PhD student who spends most of his time at a US academic lab with no long-term collaboration with any industry lab in sight, what should I do to make the most out of a PhD? There are various aspects to this question, to list a few:&lt;/p>
-&lt;ul>
-&lt;li>How can I focus on producing work I am satisfied with rather than succumbing to the modern publishing frenzy?&lt;/li>
-&lt;li>Is publishing papers good enough?&lt;/li>
-&lt;li>How do I not feel too anxious about being unlucky regarding the time of my PhD?&lt;/li>
-&lt;li>How do I optimize my social network?&lt;/li>
-&lt;/ul>
-&lt;p>In this piece, I’ll try to share my opinions and perspective as a 2nd year PhD student about enduring overthinking and anxiety on an almost daily basis.&lt;/p>
-&lt;p>Read more at:
-&lt;/p></description></item><item><title>Elevating Perception in Multimodal LLMs with Visual Embedding Distillation</title><link>https://praeclarumjj3.github.io/publication/visper-lm/</link><pubDate>Thu, 12 Dec 2024 00:00:00 +0000</pubDate><guid>https://praeclarumjj3.github.io/publication/visper-lm/</guid><description/></item><item><title>Projects</title><link>https://praeclarumjj3.github.io/projects/</link><pubDate>Sun, 19 May 2024 00:00:00 +0000</pubDate><guid>https://praeclarumjj3.github.io/projects/</guid><description/></item><item><title>AUGUSTUS: An LLM-Driven Multimodal Agent System with Contextualized User Memory</title><link>https://praeclarumjj3.github.io/publication/augustus/</link><pubDate>Tue, 12 Mar 2024 00:00:00 +0000</pubDate><guid>https://praeclarumjj3.github.io/publication/augustus/</guid><description/></item><item><title>VCoder: Versatile Vision Encoders for Multimodal Large Language Models</title><link>https://praeclarumjj3.github.io/publication/vcoder/</link><pubDate>Tue, 12 Dec 2023 00:00:00 +0000</pubDate><guid>https://praeclarumjj3.github.io/publication/vcoder/</guid><description/></item><item><title>Experience</title><link>https://praeclarumjj3.github.io/experience/</link><pubDate>Tue, 24 Oct 2023 00:00:00 +0000</pubDate><guid>https://praeclarumjj3.github.io/experience/</guid><description/></item><item><title>Learn JavaScript</title><link>https://praeclarumjj3.github.io/teaching/js/</link><pubDate>Tue, 24 Oct 2023 00:00:00 +0000</pubDate><guid>https://praeclarumjj3.github.io/teaching/js/</guid><description>&lt;p>
-is designed to give technical content creators a seamless experience. You can focus on the content and the Hugo Blox Builder which this template is built upon handles the rest.&lt;/p>
-&lt;p>&lt;strong>Embed videos, podcasts, code, LaTeX math, and even test students!&lt;/strong>&lt;/p>
-&lt;p>On this page, you&amp;rsquo;ll find some examples of the types of technical content that can be rendered with Hugo Blox.&lt;/p>
-&lt;h2 id="video">Video&lt;/h2>
-&lt;p>Teach your course by sharing videos with your students. Choose from one of the following approaches:&lt;/p>
-&lt;div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
-&lt;iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="allowfullscreen" loading="eager" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/D2vj0WcvH5c?autoplay=0&amp;controls=1&amp;end=0&amp;loop=0&amp;mute=0&amp;start=0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" title="YouTube video"
->&lt;/iframe>
-&lt;/div>
-&lt;p>&lt;strong>Youtube&lt;/strong>:&lt;/p>
-&lt;pre>&lt;code>{{&amp;lt; youtube w7Ft2ymGmfc &amp;gt;}}
-&lt;/code>&lt;/pre>
-&lt;p>&lt;strong>Bilibili&lt;/strong>:&lt;/p>
-&lt;pre>&lt;code>{{&amp;lt; bilibili id=&amp;quot;BV1WV4y1r7DF&amp;quot; &amp;gt;}}
-&lt;/code>&lt;/pre>
-&lt;p>&lt;strong>Video file&lt;/strong>&lt;/p>
-&lt;p>Videos may be added to a page by either placing them in your &lt;code>assets/media/&lt;/code> media library or in your
-, and then embedding them with the &lt;em>video&lt;/em> shortcode:&lt;/p>
-&lt;pre>&lt;code>{{&amp;lt; video src=&amp;quot;my_video.mp4&amp;quot; controls=&amp;quot;yes&amp;quot; &amp;gt;}}
-&lt;/code>&lt;/pre>
-&lt;h2 id="podcast">Podcast&lt;/h2>
-&lt;p>You can add a podcast or music to a page by placing the MP3 file in the page&amp;rsquo;s folder or the media library folder and then embedding the audio on your page with the &lt;em>audio&lt;/em> shortcode:&lt;/p>
-&lt;pre>&lt;code>{{&amp;lt; audio src=&amp;quot;ambient-piano.mp3&amp;quot; &amp;gt;}}
-&lt;/code>&lt;/pre>
-&lt;p>Try it out:&lt;/p>
-&lt;audio controls >
-&lt;source src="https://praeclarumjj3.github.io/teaching/js/ambient-piano.mp3" type="audio/mpeg">
-&lt;/audio>
-&lt;h2 id="test-students">Test students&lt;/h2>
-&lt;p>Provide a simple yet fun self-assessment by revealing the solutions to challenges with the &lt;code>spoiler&lt;/code> shortcode:&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-markdown" data-lang="markdown">&lt;span class="line">&lt;span class="cl">{{&lt;span class="p">&amp;lt;&lt;/span> &lt;span class="nt">spoiler&lt;/span> &lt;span class="na">text&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s">&amp;#34;👉 Click to view the solution&amp;#34;&lt;/span> &lt;span class="p">&amp;gt;&lt;/span>}}
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">You found me!
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">{{&lt;span class="p">&amp;lt;&lt;/span> &lt;span class="p">/&lt;/span>&lt;span class="nt">spoiler&lt;/span> &lt;span class="p">&amp;gt;&lt;/span>}}
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>renders as&lt;/p>
-&lt;details class="spoiler " id="spoiler-2">
-&lt;summary class="cursor-pointer">👉 Click to view the solution&lt;/summary>
-&lt;div class="rounded-lg bg-neutral-50 dark:bg-neutral-800 p-2">
-You found me 🎉
-&lt;/div>
-&lt;/details>
-&lt;h2 id="math">Math&lt;/h2>
-&lt;p>Hugo Blox Builder supports a Markdown extension for $\LaTeX$ math. You can enable this feature by toggling the &lt;code>math&lt;/code> option in your &lt;code>config/_default/params.yaml&lt;/code> file.&lt;/p>
-&lt;p>To render &lt;em>inline&lt;/em> or &lt;em>block&lt;/em> math, wrap your LaTeX math with &lt;code>{{&amp;lt; math &amp;gt;}}$...${{&amp;lt; /math &amp;gt;}}&lt;/code> or &lt;code>{{&amp;lt; math &amp;gt;}}$$...$${{&amp;lt; /math &amp;gt;}}&lt;/code>, respectively.&lt;/p>
-&lt;div class="flex px-4 py-3 mb-6 rounded-md bg-primary-100 dark:bg-primary-900">
-&lt;span class="pr-3 pt-1 text-primary-600 dark:text-primary-300">
-&lt;svg height="24" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">&lt;path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="m11.25 11.25l.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0a9 9 0 0 1 18 0m-9-3.75h.008v.008H12z"/>&lt;/svg>
-&lt;/span>
-&lt;span class="dark:text-neutral-300">We wrap the LaTeX math in the Hugo Blox &lt;em>math&lt;/em> shortcode to prevent Hugo rendering our math as Markdown.&lt;/span>
-&lt;/div>
-&lt;p>Example &lt;strong>math block&lt;/strong>:&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-latex" data-lang="latex">&lt;span class="line">&lt;span class="cl">&lt;span class="nb">{{&lt;/span>&amp;lt; math &amp;gt;&lt;span class="nb">}}&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="sb">$$&lt;/span>&lt;span class="nb">
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nb">&lt;/span>&lt;span class="nv">\gamma&lt;/span>&lt;span class="nb">_{n} &lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="nb"> &lt;/span>&lt;span class="nv">\frac&lt;/span>&lt;span class="nb">{ &lt;/span>&lt;span class="nv">\left&lt;/span>&lt;span class="nb"> | &lt;/span>&lt;span class="nv">\left&lt;/span>&lt;span class="nb"> &lt;/span>&lt;span class="o">(&lt;/span>&lt;span class="nv">\mathbf&lt;/span>&lt;span class="nb"> x_{n} &lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="nb"> &lt;/span>&lt;span class="nv">\mathbf&lt;/span>&lt;span class="nb"> x_{n&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="m">1&lt;/span>&lt;span class="nb">} &lt;/span>&lt;span class="nv">\right&lt;/span>&lt;span class="nb"> &lt;/span>&lt;span class="o">)&lt;/span>&lt;span class="nb">^T &lt;/span>&lt;span class="nv">\left&lt;/span>&lt;span class="nb"> &lt;/span>&lt;span class="o">[&lt;/span>&lt;span class="nv">\nabla&lt;/span>&lt;span class="nb"> F &lt;/span>&lt;span class="o">(&lt;/span>&lt;span class="nv">\mathbf&lt;/span>&lt;span class="nb"> x_{n}&lt;/span>&lt;span class="o">)&lt;/span>&lt;span class="nb"> &lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="nb"> &lt;/span>&lt;span class="nv">\nabla&lt;/span>&lt;span class="nb"> F &lt;/span>&lt;span class="o">(&lt;/span>&lt;span class="nv">\mathbf&lt;/span>&lt;span class="nb"> x_{n&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="m">1&lt;/span>&lt;span class="nb">}&lt;/span>&lt;span class="o">)&lt;/span>&lt;span class="nb"> &lt;/span>&lt;span class="nv">\right&lt;/span>&lt;span class="nb"> &lt;/span>&lt;span class="o">]&lt;/span>&lt;span class="nb"> &lt;/span>&lt;span class="nv">\right&lt;/span>&lt;span class="nb"> |}{&lt;/span>&lt;span class="nv">\left&lt;/span>&lt;span class="nb"> &lt;/span>&lt;span class="nv">\|\nabla&lt;/span>&lt;span class="nb"> F&lt;/span>&lt;span class="o">(&lt;/span>&lt;span class="nv">\mathbf&lt;/span>&lt;span class="nb">{x}_{n}&lt;/span>&lt;span class="o">)&lt;/span>&lt;span class="nb"> &lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="nb"> &lt;/span>&lt;span class="nv">\nabla&lt;/span>&lt;span class="nb"> F&lt;/span>&lt;span class="o">(&lt;/span>&lt;span class="nv">\mathbf&lt;/span>&lt;span class="nb">{x}_{n&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="m">1&lt;/span>&lt;span class="nb">}&lt;/span>&lt;span class="o">)&lt;/span>&lt;span class="nb"> &lt;/span>&lt;span class="nv">\right&lt;/span>&lt;span class="nb"> &lt;/span>&lt;span class="nv">\|&lt;/span>&lt;span class="nb">^&lt;/span>&lt;span class="m">2&lt;/span>&lt;span class="nb">}
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nb">&lt;/span>&lt;span class="s">$$&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nb">{{&lt;/span>&amp;lt; /math &amp;gt;&lt;span class="nb">}}&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>renders as&lt;/p>
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Jitesh Jain</title>
+    <link>https://praeclarumjj3.github.io/</link>
+      <atom:link href="https://praeclarumjj3.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <description>Jitesh Jain</description>
+    <generator>Hugo Blox Builder (https://hugoblox.com)</generator><language>en-us</language><lastBuildDate>Sat, 20 Sep 2025 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://praeclarumjj3.github.io/media/icon_hu18230691612322137769.png</url>
+      <title>Jitesh Jain</title>
+      <link>https://praeclarumjj3.github.io/</link>
+    </image>
+    
+    <item>
+      <title>Why do we still have reasoning modes?</title>
+      <link>https://praeclarumjj3.github.io/blogs/reasoning_mode/</link>
+      <pubDate>Sun, 02 Aug 2026 00:00:00 +0000</pubDate>
+      <guid>https://praeclarumjj3.github.io/blogs/reasoning_mode/</guid>
+      <description>&lt;p&gt;We find ourselves living in an age where we get a new frontier model almost every few months, if not weeks. Whenever a new generation of model comes out from the closed-source or open-source giants, we instinctively switch to the most “advanced” model whenever possible so we can make sure we have access to the best worker (or so claimed) available for our goal. After choosing a model, we as users are faced with another choice which I feel is not studied as much: what reasoning effort to choose?&lt;/p&gt;
+&lt;p&gt;Now, if this were a paper, I would go on to motivate why we need to scientifically study the effect of reasoning mode on a per-sample basis across about 30 benchmarks and how there would have been some interesting observations. However, I am going to question the whole reasoning mode choice premise here. Why?&lt;/p&gt;
+&lt;p&gt;Because I believe this whole setting where we expect the user to select reasoning mode/effort is very much anti-user-friendly. Moreover, the reasoning effort selection seemed a good way to train models for test-time scaling for varying task difficulties back in 2025, something that the frontier labs have done tremendously well at scale, leading to impressive performance on long-horizon tasks and the rise of the RSI (recursive self-improvement) field.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Note that the current models already have some form of adaptive reasoning ability under the hood for each reasoning mode where they do not spend a lot of tokens on easier tasks with a focus on controlling the cost for executing a task. I am all for giving the user more control over how much work the model should do (or money should it spend) but this control may be bad when the user has no clue how the model was trained.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Therefore, I believe it’s time we move away from configuring the effort in reasoning modes and let the model handle it online adaptively at every turn. What would that look like? I feel there are numerous ways for us to get there.&lt;/p&gt;
+&lt;p&gt;Read more at: 
+&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>SAGE: Training Smart Any-Horizon Agents for Long Video Reasoning with Reinforcement Learning</title>
+      <link>https://praeclarumjj3.github.io/publication/sage/</link>
+      <pubDate>Tue, 16 Dec 2025 00:00:00 +0000</pubDate>
+      <guid>https://praeclarumjj3.github.io/publication/sage/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>what&#39;s a good metric for PhD Students?</title>
+      <link>https://praeclarumjj3.github.io/blogs/phd_metric/</link>
+      <pubDate>Thu, 26 Dec 2024 00:00:00 +0000</pubDate>
+      <guid>https://praeclarumjj3.github.io/blogs/phd_metric/</guid>
+      <description>&lt;p&gt;So, I started my PhD in CS at Georgia Tech in Fall 2023. It’s only been around 16 months, but it feels more like several years in deep learning research trends. During this time, SAM toppled the classical segmentation task research, and the GPT-4 series of models appeared; model alignment (to human expectations) research has taken off, and the Qwen series has (sort of?) taken over the Llama series as the best performing and fast-growing open-source LLMs, LLM based agent frameworks are growing and growing, and numerous (maybe too many) fancy AI startups have popped up.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;That’s about research in major (industry) leagues. What about academia?&lt;/em&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;My observations are based on research in the multimodal learning domain; these might not hold for fields like theoretical ML.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;From what I’ve seen, the number of papers from solely academic labs has dropped significantly (based on the 900-odd papers I’ve looked at since June 2023, so please take this statement with a grain of salt). Many papers come from PhD students interning at the industry research labs, so a collaboration b/w industry and academia. An interesting observation here, though, is the disparity between pure industry papers and academic papers. It seems as if academia depends on these industry labs for publishing now, and for a fair reason, because the industry usually has more GPUs.&lt;/p&gt;
+&lt;p&gt;All this is to say that the industry is dramatically affecting the PhD (research in deep learning) experience nowadays. So, as an international PhD student who spends most of his time at a US academic lab with no long-term collaboration with any industry lab in sight, what should I do to make the most out of a PhD? There are various aspects to this question, to list a few:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;How can I focus on producing work I am satisfied with rather than succumbing to the modern publishing frenzy?&lt;/li&gt;
+&lt;li&gt;Is publishing papers good enough?&lt;/li&gt;
+&lt;li&gt;How do I not feel too anxious about being unlucky regarding the time of my PhD?&lt;/li&gt;
+&lt;li&gt;How do I optimize my social network?&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;In this piece, I’ll try to share my opinions and perspective as a 2nd year PhD student about enduring overthinking and anxiety on an almost daily basis.&lt;/p&gt;
+&lt;p&gt;Read more at: 
+&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Elevating Perception in Multimodal LLMs with Visual Embedding Distillation</title>
+      <link>https://praeclarumjj3.github.io/publication/visper-lm/</link>
+      <pubDate>Thu, 12 Dec 2024 00:00:00 +0000</pubDate>
+      <guid>https://praeclarumjj3.github.io/publication/visper-lm/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Projects</title>
+      <link>https://praeclarumjj3.github.io/projects/</link>
+      <pubDate>Sun, 19 May 2024 00:00:00 +0000</pubDate>
+      <guid>https://praeclarumjj3.github.io/projects/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>AUGUSTUS: An LLM-Driven Multimodal Agent System with Contextualized User Memory</title>
+      <link>https://praeclarumjj3.github.io/publication/augustus/</link>
+      <pubDate>Tue, 12 Mar 2024 00:00:00 +0000</pubDate>
+      <guid>https://praeclarumjj3.github.io/publication/augustus/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>VCoder: Versatile Vision Encoders for Multimodal Large Language Models</title>
+      <link>https://praeclarumjj3.github.io/publication/vcoder/</link>
+      <pubDate>Tue, 12 Dec 2023 00:00:00 +0000</pubDate>
+      <guid>https://praeclarumjj3.github.io/publication/vcoder/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Experience</title>
+      <link>https://praeclarumjj3.github.io/experience/</link>
+      <pubDate>Tue, 24 Oct 2023 00:00:00 +0000</pubDate>
+      <guid>https://praeclarumjj3.github.io/experience/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Learn JavaScript</title>
+      <link>https://praeclarumjj3.github.io/teaching/js/</link>
+      <pubDate>Tue, 24 Oct 2023 00:00:00 +0000</pubDate>
+      <guid>https://praeclarumjj3.github.io/teaching/js/</guid>
+      <description>&lt;p&gt;
+ is designed to give technical content creators a seamless experience. You can focus on the content and the Hugo Blox Builder which this template is built upon handles the rest.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Embed videos, podcasts, code, LaTeX math, and even test students!&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;On this page, you&amp;rsquo;ll find some examples of the types of technical content that can be rendered with Hugo Blox.&lt;/p&gt;
+&lt;h2 id=&#34;video&#34;&gt;Video&lt;/h2&gt;
+&lt;p&gt;Teach your course by sharing videos with your students. Choose from one of the following approaches:&lt;/p&gt;
+
+
+    
+    &lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+      &lt;iframe allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share&#34; allowfullscreen=&#34;allowfullscreen&#34; loading=&#34;eager&#34; referrerpolicy=&#34;strict-origin-when-cross-origin&#34; src=&#34;https://www.youtube.com/embed/D2vj0WcvH5c?autoplay=0&amp;controls=1&amp;end=0&amp;loop=0&amp;mute=0&amp;start=0&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; title=&#34;YouTube video&#34;
+      &gt;&lt;/iframe&gt;
+    &lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;Youtube&lt;/strong&gt;:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;{{&amp;lt; youtube w7Ft2ymGmfc &amp;gt;}}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;Bilibili&lt;/strong&gt;:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;{{&amp;lt; bilibili id=&amp;quot;BV1WV4y1r7DF&amp;quot; &amp;gt;}}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;Video file&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Videos may be added to a page by either placing them in your &lt;code&gt;assets/media/&lt;/code&gt; media library or in your 
+, and then embedding them with the &lt;em&gt;video&lt;/em&gt; shortcode:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;{{&amp;lt; video src=&amp;quot;my_video.mp4&amp;quot; controls=&amp;quot;yes&amp;quot; &amp;gt;}}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;podcast&#34;&gt;Podcast&lt;/h2&gt;
+&lt;p&gt;You can add a podcast or music to a page by placing the MP3 file in the page&amp;rsquo;s folder or the media library folder and then embedding the audio on your page with the &lt;em&gt;audio&lt;/em&gt; shortcode:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;{{&amp;lt; audio src=&amp;quot;ambient-piano.mp3&amp;quot; &amp;gt;}}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Try it out:&lt;/p&gt;
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+&lt;audio controls &gt;
+  &lt;source src=&#34;https://praeclarumjj3.github.io/teaching/js/ambient-piano.mp3&#34; type=&#34;audio/mpeg&#34;&gt;
+&lt;/audio&gt;
+
+&lt;h2 id=&#34;test-students&#34;&gt;Test students&lt;/h2&gt;
+&lt;p&gt;Provide a simple yet fun self-assessment by revealing the solutions to challenges with the &lt;code&gt;spoiler&lt;/code&gt; shortcode:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-markdown&#34; data-lang=&#34;markdown&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;{{&lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&#34;nt&#34;&gt;spoiler&lt;/span&gt; &lt;span class=&#34;na&#34;&gt;text&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;👉 Click to view the solution&amp;#34;&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;}}
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;You found me!
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;{{&lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;spoiler&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;}}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;renders as&lt;/p&gt;
+&lt;details class=&#34;spoiler &#34;  id=&#34;spoiler-2&#34;&gt;
+  &lt;summary class=&#34;cursor-pointer&#34;&gt;👉 Click to view the solution&lt;/summary&gt;
+  &lt;div class=&#34;rounded-lg bg-neutral-50 dark:bg-neutral-800 p-2&#34;&gt;
+    You found me 🎉
+  &lt;/div&gt;
+&lt;/details&gt;
+&lt;h2 id=&#34;math&#34;&gt;Math&lt;/h2&gt;
+&lt;p&gt;Hugo Blox Builder supports a Markdown extension for $\LaTeX$ math. You can enable this feature by toggling the &lt;code&gt;math&lt;/code&gt; option in your &lt;code&gt;config/_default/params.yaml&lt;/code&gt; file.&lt;/p&gt;
+&lt;p&gt;To render &lt;em&gt;inline&lt;/em&gt; or &lt;em&gt;block&lt;/em&gt; math, wrap your LaTeX math with &lt;code&gt;{{&amp;lt; math &amp;gt;}}$...${{&amp;lt; /math &amp;gt;}}&lt;/code&gt; or &lt;code&gt;{{&amp;lt; math &amp;gt;}}$$...$${{&amp;lt; /math &amp;gt;}}&lt;/code&gt;, respectively.&lt;/p&gt;
+&lt;div class=&#34;flex px-4 py-3 mb-6 rounded-md bg-primary-100 dark:bg-primary-900&#34;&gt;
+&lt;span class=&#34;pr-3 pt-1 text-primary-600 dark:text-primary-300&#34;&gt;
+  &lt;svg height=&#34;24&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 24 24&#34;&gt;&lt;path fill=&#34;none&#34; stroke=&#34;currentColor&#34; stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34; stroke-width=&#34;1.5&#34; d=&#34;m11.25 11.25l.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0a9 9 0 0 1 18 0m-9-3.75h.008v.008H12z&#34;/&gt;&lt;/svg&gt;
+&lt;/span&gt;
+  &lt;span class=&#34;dark:text-neutral-300&#34;&gt;We wrap the LaTeX math in the Hugo Blox &lt;em&gt;math&lt;/em&gt; shortcode to prevent Hugo rendering our math as Markdown.&lt;/span&gt;
+&lt;/div&gt;
+&lt;p&gt;Example &lt;strong&gt;math block&lt;/strong&gt;:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-latex&#34; data-lang=&#34;latex&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;{{&lt;/span&gt;&amp;lt; math &amp;gt;&lt;span class=&#34;nb&#34;&gt;}}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;sb&#34;&gt;$$&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;\gamma&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;_{n} &lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt; &lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;\frac&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;{ &lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;\left&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt; | &lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;\left&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt; &lt;/span&gt;&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;\mathbf&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt; x_{n} &lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt; &lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;\mathbf&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt; x_{n&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;m&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;} &lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;\right&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt; &lt;/span&gt;&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;^T &lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;\left&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt; &lt;/span&gt;&lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;\nabla&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt; F &lt;/span&gt;&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;\mathbf&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt; x_{n}&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt; &lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt; &lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;\nabla&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt; F &lt;/span&gt;&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;\mathbf&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt; x_{n&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;m&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;}&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt; &lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;\right&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt; &lt;/span&gt;&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt; &lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;\right&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt; |}{&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;\left&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt; &lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;\|\nabla&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt; F&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;\mathbf&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;{x}_{n}&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt; &lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt; &lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;\nabla&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt; F&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;\mathbf&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;{x}_{n&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;m&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;}&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt; &lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;\right&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt; &lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;\|&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;^&lt;/span&gt;&lt;span class=&#34;m&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;$$&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;{{&lt;/span&gt;&amp;lt; /math &amp;gt;&lt;span class=&#34;nb&#34;&gt;}}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;renders as&lt;/p&gt;
+
 $$\gamma_{n} = \frac{ \left | \left (\mathbf x_{n} - \mathbf x_{n-1} \right )^T \left [\nabla F (\mathbf x_{n}) - \nabla F (\mathbf x_{n-1}) \right ] \right |}{\left \|\nabla F(\mathbf{x}_{n}) - \nabla F(\mathbf{x}_{n-1}) \right \|^2}$$
-&lt;p>Example &lt;strong>inline math&lt;/strong> &lt;code>{{&amp;lt; math &amp;gt;}}$\nabla F(\mathbf{x}_{n})${{&amp;lt; /math &amp;gt;}}&lt;/code> renders as $\nabla F(\mathbf{x}_{n})$
-.&lt;/p>
-&lt;p>Example &lt;strong>multi-line math&lt;/strong> using the math linebreak (&lt;code>\\&lt;/code>):&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-latex" data-lang="latex">&lt;span class="line">&lt;span class="cl">&lt;span class="nb">{{&lt;/span>&amp;lt; math &amp;gt;&lt;span class="nb">}}&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="sb">$$&lt;/span>&lt;span class="nb">f&lt;/span>&lt;span class="o">(&lt;/span>&lt;span class="nb">k;p_{&lt;/span>&lt;span class="m">0&lt;/span>&lt;span class="nb">}^{&lt;/span>&lt;span class="o">*&lt;/span>&lt;span class="nb">}&lt;/span>&lt;span class="o">)&lt;/span>&lt;span class="nb"> &lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="nb"> &lt;/span>&lt;span class="nv">\begin&lt;/span>&lt;span class="nb">{cases}p_{&lt;/span>&lt;span class="m">0&lt;/span>&lt;span class="nb">}^{&lt;/span>&lt;span class="o">*&lt;/span>&lt;span class="nb">} &amp;amp; &lt;/span>&lt;span class="nv">\text&lt;/span>&lt;span class="nb">{if }k&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="m">1&lt;/span>&lt;span class="nb">, &lt;/span>&lt;span class="nv">\\&lt;/span>&lt;span class="nb">
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nb">&lt;/span>&lt;span class="m">1&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="nb">p_{&lt;/span>&lt;span class="m">0&lt;/span>&lt;span class="nb">}^{&lt;/span>&lt;span class="o">*&lt;/span>&lt;span class="nb">} &amp;amp; &lt;/span>&lt;span class="nv">\text&lt;/span>&lt;span class="nb">{if }k&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="m">0&lt;/span>&lt;span class="nb">.&lt;/span>&lt;span class="nv">\end&lt;/span>&lt;span class="nb">{cases}&lt;/span>&lt;span class="s">$$&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nb">{{&lt;/span>&amp;lt; /math &amp;gt;&lt;span class="nb">}}&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>renders as&lt;/p>
+
+
+&lt;p&gt;Example &lt;strong&gt;inline math&lt;/strong&gt; &lt;code&gt;{{&amp;lt; math &amp;gt;}}$\nabla F(\mathbf{x}_{n})${{&amp;lt; /math &amp;gt;}}&lt;/code&gt; renders as $\nabla F(\mathbf{x}_{n})$
+.&lt;/p&gt;
+&lt;p&gt;Example &lt;strong&gt;multi-line math&lt;/strong&gt; using the math linebreak (&lt;code&gt;\\&lt;/code&gt;):&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-latex&#34; data-lang=&#34;latex&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;{{&lt;/span&gt;&amp;lt; math &amp;gt;&lt;span class=&#34;nb&#34;&gt;}}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;sb&#34;&gt;$$&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;f&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;k;p_{&lt;/span&gt;&lt;span class=&#34;m&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;}^{&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;*&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;}&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt; &lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt; &lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;\begin&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;{cases}p_{&lt;/span&gt;&lt;span class=&#34;m&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;}^{&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;*&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;} &amp;amp; &lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;\text&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;{if }k&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;m&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;, &lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;\\&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;&lt;/span&gt;&lt;span class=&#34;m&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;p_{&lt;/span&gt;&lt;span class=&#34;m&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;}^{&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;*&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;} &amp;amp; &lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;\text&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;{if }k&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;m&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;\end&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;{cases}&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;$$&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;{{&lt;/span&gt;&amp;lt; /math &amp;gt;&lt;span class=&#34;nb&#34;&gt;}}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;renders as&lt;/p&gt;
+
+
 $$
 f(k;p_{0}^{*}) = \begin{cases}p_{0}^{*} &amp; \text{if }k=1, \\
 1-p_{0}^{*} &amp; \text{if }k=0.\end{cases}
 $$
-&lt;h2 id="code">Code&lt;/h2>
-&lt;p>Hugo Blox Builder utilises Hugo&amp;rsquo;s Markdown extension for highlighting code syntax. The code theme can be selected in the &lt;code>config/_default/params.yaml&lt;/code> file.&lt;/p>
-&lt;pre>&lt;code>```python
+
+
+
+&lt;h2 id=&#34;code&#34;&gt;Code&lt;/h2&gt;
+&lt;p&gt;Hugo Blox Builder utilises Hugo&amp;rsquo;s Markdown extension for highlighting code syntax. The code theme can be selected in the &lt;code&gt;config/_default/params.yaml&lt;/code&gt; file.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;```python
 import pandas as pd
 data = pd.read_csv(&amp;quot;data.csv&amp;quot;)
 data.head()
 ```
-&lt;/code>&lt;/pre>
-&lt;p>renders as&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="kn">import&lt;/span> &lt;span class="nn">pandas&lt;/span> &lt;span class="k">as&lt;/span> &lt;span class="nn">pd&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">data&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">pd&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">read_csv&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s2">&amp;#34;data.csv&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">data&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">head&lt;/span>&lt;span class="p">()&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="inline-images">Inline Images&lt;/h2>
-&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-go" data-lang="go">&lt;span class="line">&lt;span class="cl">&lt;span class="p">{{&amp;lt;&lt;/span> &lt;span class="nx">icon&lt;/span> &lt;span class="nx">name&lt;/span>&lt;span class="p">=&lt;/span>&lt;span class="s">&amp;#34;python&amp;#34;&lt;/span> &lt;span class="p">&amp;gt;}}&lt;/span> &lt;span class="nx">Python&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>renders as&lt;/p>
-&lt;p>
-&lt;span class="inline-block pr-1">
-&lt;svg style="height: 1em; transform: translateY(0.1em);" xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 448 512" fill="currentColor">&lt;path d="M439.8 200.5c-7.7-30.9-22.3-54.2-53.4-54.2h-40.1v47.4c0 36.8-31.2 67.8-66.8 67.8H172.7c-29.2 0-53.4 25-53.4 54.3v101.8c0 29 25.2 46 53.4 54.3 33.8 9.9 66.3 11.7 106.8 0 26.9-7.8 53.4-23.5 53.4-54.3v-40.7H226.2v-13.6h160.2c31.1 0 42.6-21.7 53.4-54.2 11.2-33.5 10.7-65.7 0-108.6zM286.2 404c11.1 0 20.1 9.1 20.1 20.3 0 11.3-9 20.4-20.1 20.4-11 0-20.1-9.2-20.1-20.4.1-11.3 9.1-20.3 20.1-20.3zM167.8 248.1h106.8c29.7 0 53.4-24.5 53.4-54.3V91.9c0-29-24.4-50.7-53.4-55.6-35.8-5.9-74.7-5.6-106.8.1-45.2 8-53.4 24.7-53.4 55.6v40.7h106.9v13.6h-147c-31.1 0-58.3 18.7-66.8 54.2-9.8 40.7-10.2 66.1 0 108.6 7.6 31.6 25.7 54.2 56.8 54.2H101v-48.8c0-35.3 30.5-66.4 66.8-66.4zm-6.7-142.6c-11.1 0-20.1-9.1-20.1-20.3.1-11.3 9-20.4 20.1-20.4 11 0 20.1 9.2 20.1 20.4s-9 20.3-20.1 20.3z"/>&lt;/svg>
-&lt;/span> Python&lt;/p>
-&lt;h2 id="did-you-find-this-page-helpful-consider-sharing-it-">Did you find this page helpful? Consider sharing it 🙌&lt;/h2></description></item><item><title>Learn Python</title><link>https://praeclarumjj3.github.io/teaching/python/</link><pubDate>Tue, 24 Oct 2023 00:00:00 +0000</pubDate><guid>https://praeclarumjj3.github.io/teaching/python/</guid><description>&lt;p>
-is designed to give technical content creators a seamless experience. You can focus on the content and the Hugo Blox Builder which this template is built upon handles the rest.&lt;/p>
-&lt;p>&lt;strong>Embed videos, podcasts, code, LaTeX math, and even test students!&lt;/strong>&lt;/p>
-&lt;p>On this page, you&amp;rsquo;ll find some examples of the types of technical content that can be rendered with Hugo Blox.&lt;/p>
-&lt;h2 id="video">Video&lt;/h2>
-&lt;p>Teach your course by sharing videos with your students. Choose from one of the following approaches:&lt;/p>
-&lt;div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
-&lt;iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="allowfullscreen" loading="eager" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/D2vj0WcvH5c?autoplay=0&amp;controls=1&amp;end=0&amp;loop=0&amp;mute=0&amp;start=0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" title="YouTube video"
->&lt;/iframe>
-&lt;/div>
-&lt;p>&lt;strong>Youtube&lt;/strong>:&lt;/p>
-&lt;pre>&lt;code>{{&amp;lt; youtube w7Ft2ymGmfc &amp;gt;}}
-&lt;/code>&lt;/pre>
-&lt;p>&lt;strong>Bilibili&lt;/strong>:&lt;/p>
-&lt;pre>&lt;code>{{&amp;lt; bilibili id=&amp;quot;BV1WV4y1r7DF&amp;quot; &amp;gt;}}
-&lt;/code>&lt;/pre>
-&lt;p>&lt;strong>Video file&lt;/strong>&lt;/p>
-&lt;p>Videos may be added to a page by either placing them in your &lt;code>assets/media/&lt;/code> media library or in your
-, and then embedding them with the &lt;em>video&lt;/em> shortcode:&lt;/p>
-&lt;pre>&lt;code>{{&amp;lt; video src=&amp;quot;my_video.mp4&amp;quot; controls=&amp;quot;yes&amp;quot; &amp;gt;}}
-&lt;/code>&lt;/pre>
-&lt;h2 id="podcast">Podcast&lt;/h2>
-&lt;p>You can add a podcast or music to a page by placing the MP3 file in the page&amp;rsquo;s folder or the media library folder and then embedding the audio on your page with the &lt;em>audio&lt;/em> shortcode:&lt;/p>
-&lt;pre>&lt;code>{{&amp;lt; audio src=&amp;quot;ambient-piano.mp3&amp;quot; &amp;gt;}}
-&lt;/code>&lt;/pre>
-&lt;p>Try it out:&lt;/p>
-&lt;audio controls >
-&lt;source src="https://praeclarumjj3.github.io/teaching/python/ambient-piano.mp3" type="audio/mpeg">
-&lt;/audio>
-&lt;h2 id="test-students">Test students&lt;/h2>
-&lt;p>Provide a simple yet fun self-assessment by revealing the solutions to challenges with the &lt;code>spoiler&lt;/code> shortcode:&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-markdown" data-lang="markdown">&lt;span class="line">&lt;span class="cl">{{&lt;span class="p">&amp;lt;&lt;/span> &lt;span class="nt">spoiler&lt;/span> &lt;span class="na">text&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s">&amp;#34;👉 Click to view the solution&amp;#34;&lt;/span> &lt;span class="p">&amp;gt;&lt;/span>}}
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">You found me!
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">{{&lt;span class="p">&amp;lt;&lt;/span> &lt;span class="p">/&lt;/span>&lt;span class="nt">spoiler&lt;/span> &lt;span class="p">&amp;gt;&lt;/span>}}
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>renders as&lt;/p>
-&lt;details class="spoiler " id="spoiler-2">
-&lt;summary class="cursor-pointer">👉 Click to view the solution&lt;/summary>
-&lt;div class="rounded-lg bg-neutral-50 dark:bg-neutral-800 p-2">
-You found me 🎉
-&lt;/div>
-&lt;/details>
-&lt;h2 id="math">Math&lt;/h2>
-&lt;p>Hugo Blox Builder supports a Markdown extension for $\LaTeX$ math. You can enable this feature by toggling the &lt;code>math&lt;/code> option in your &lt;code>config/_default/params.yaml&lt;/code> file.&lt;/p>
-&lt;p>To render &lt;em>inline&lt;/em> or &lt;em>block&lt;/em> math, wrap your LaTeX math with &lt;code>{{&amp;lt; math &amp;gt;}}$...${{&amp;lt; /math &amp;gt;}}&lt;/code> or &lt;code>{{&amp;lt; math &amp;gt;}}$$...$${{&amp;lt; /math &amp;gt;}}&lt;/code>, respectively.&lt;/p>
-&lt;div class="flex px-4 py-3 mb-6 rounded-md bg-primary-100 dark:bg-primary-900">
-&lt;span class="pr-3 pt-1 text-primary-600 dark:text-primary-300">
-&lt;svg height="24" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">&lt;path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="m11.25 11.25l.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0a9 9 0 0 1 18 0m-9-3.75h.008v.008H12z"/>&lt;/svg>
-&lt;/span>
-&lt;span class="dark:text-neutral-300">We wrap the LaTeX math in the Hugo Blox &lt;em>math&lt;/em> shortcode to prevent Hugo rendering our math as Markdown.&lt;/span>
-&lt;/div>
-&lt;p>Example &lt;strong>math block&lt;/strong>:&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-latex" data-lang="latex">&lt;span class="line">&lt;span class="cl">&lt;span class="nb">{{&lt;/span>&amp;lt; math &amp;gt;&lt;span class="nb">}}&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="sb">$$&lt;/span>&lt;span class="nb">
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nb">&lt;/span>&lt;span class="nv">\gamma&lt;/span>&lt;span class="nb">_{n} &lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="nb"> &lt;/span>&lt;span class="nv">\frac&lt;/span>&lt;span class="nb">{ &lt;/span>&lt;span class="nv">\left&lt;/span>&lt;span class="nb"> | &lt;/span>&lt;span class="nv">\left&lt;/span>&lt;span class="nb"> &lt;/span>&lt;span class="o">(&lt;/span>&lt;span class="nv">\mathbf&lt;/span>&lt;span class="nb"> x_{n} &lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="nb"> &lt;/span>&lt;span class="nv">\mathbf&lt;/span>&lt;span class="nb"> x_{n&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="m">1&lt;/span>&lt;span class="nb">} &lt;/span>&lt;span class="nv">\right&lt;/span>&lt;span class="nb"> &lt;/span>&lt;span class="o">)&lt;/span>&lt;span class="nb">^T &lt;/span>&lt;span class="nv">\left&lt;/span>&lt;span class="nb"> &lt;/span>&lt;span class="o">[&lt;/span>&lt;span class="nv">\nabla&lt;/span>&lt;span class="nb"> F &lt;/span>&lt;span class="o">(&lt;/span>&lt;span class="nv">\mathbf&lt;/span>&lt;span class="nb"> x_{n}&lt;/span>&lt;span class="o">)&lt;/span>&lt;span class="nb"> &lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="nb"> &lt;/span>&lt;span class="nv">\nabla&lt;/span>&lt;span class="nb"> F &lt;/span>&lt;span class="o">(&lt;/span>&lt;span class="nv">\mathbf&lt;/span>&lt;span class="nb"> x_{n&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="m">1&lt;/span>&lt;span class="nb">}&lt;/span>&lt;span class="o">)&lt;/span>&lt;span class="nb"> &lt;/span>&lt;span class="nv">\right&lt;/span>&lt;span class="nb"> &lt;/span>&lt;span class="o">]&lt;/span>&lt;span class="nb"> &lt;/span>&lt;span class="nv">\right&lt;/span>&lt;span class="nb"> |}{&lt;/span>&lt;span class="nv">\left&lt;/span>&lt;span class="nb"> &lt;/span>&lt;span class="nv">\|\nabla&lt;/span>&lt;span class="nb"> F&lt;/span>&lt;span class="o">(&lt;/span>&lt;span class="nv">\mathbf&lt;/span>&lt;span class="nb">{x}_{n}&lt;/span>&lt;span class="o">)&lt;/span>&lt;span class="nb"> &lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="nb"> &lt;/span>&lt;span class="nv">\nabla&lt;/span>&lt;span class="nb"> F&lt;/span>&lt;span class="o">(&lt;/span>&lt;span class="nv">\mathbf&lt;/span>&lt;span class="nb">{x}_{n&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="m">1&lt;/span>&lt;span class="nb">}&lt;/span>&lt;span class="o">)&lt;/span>&lt;span class="nb"> &lt;/span>&lt;span class="nv">\right&lt;/span>&lt;span class="nb"> &lt;/span>&lt;span class="nv">\|&lt;/span>&lt;span class="nb">^&lt;/span>&lt;span class="m">2&lt;/span>&lt;span class="nb">}
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nb">&lt;/span>&lt;span class="s">$$&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nb">{{&lt;/span>&amp;lt; /math &amp;gt;&lt;span class="nb">}}&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>renders as&lt;/p>
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;renders as&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;kn&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;nn&#34;&gt;pandas&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;as&lt;/span&gt; &lt;span class=&#34;nn&#34;&gt;pd&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;data&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;pd&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;read_csv&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;data.csv&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;data&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;head&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;inline-images&#34;&gt;Inline Images&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-go&#34; data-lang=&#34;go&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;{{&amp;lt;&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;icon&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;name&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;python&amp;#34;&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;&amp;gt;}}&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;Python&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;renders as&lt;/p&gt;
+&lt;p&gt;
+  &lt;span class=&#34;inline-block  pr-1&#34;&gt;
+    &lt;svg style=&#34;height: 1em; transform: translateY(0.1em);&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; height=&#34;1em&#34; viewBox=&#34;0 0 448 512&#34; fill=&#34;currentColor&#34;&gt;&lt;path d=&#34;M439.8 200.5c-7.7-30.9-22.3-54.2-53.4-54.2h-40.1v47.4c0 36.8-31.2 67.8-66.8 67.8H172.7c-29.2 0-53.4 25-53.4 54.3v101.8c0 29 25.2 46 53.4 54.3 33.8 9.9 66.3 11.7 106.8 0 26.9-7.8 53.4-23.5 53.4-54.3v-40.7H226.2v-13.6h160.2c31.1 0 42.6-21.7 53.4-54.2 11.2-33.5 10.7-65.7 0-108.6zM286.2 404c11.1 0 20.1 9.1 20.1 20.3 0 11.3-9 20.4-20.1 20.4-11 0-20.1-9.2-20.1-20.4.1-11.3 9.1-20.3 20.1-20.3zM167.8 248.1h106.8c29.7 0 53.4-24.5 53.4-54.3V91.9c0-29-24.4-50.7-53.4-55.6-35.8-5.9-74.7-5.6-106.8.1-45.2 8-53.4 24.7-53.4 55.6v40.7h106.9v13.6h-147c-31.1 0-58.3 18.7-66.8 54.2-9.8 40.7-10.2 66.1 0 108.6 7.6 31.6 25.7 54.2 56.8 54.2H101v-48.8c0-35.3 30.5-66.4 66.8-66.4zm-6.7-142.6c-11.1 0-20.1-9.1-20.1-20.3.1-11.3 9-20.4 20.1-20.4 11 0 20.1 9.2 20.1 20.4s-9 20.3-20.1 20.3z&#34;/&gt;&lt;/svg&gt;
+  &lt;/span&gt; Python&lt;/p&gt;
+&lt;h2 id=&#34;did-you-find-this-page-helpful-consider-sharing-it-&#34;&gt;Did you find this page helpful? Consider sharing it 🙌&lt;/h2&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Learn Python</title>
+      <link>https://praeclarumjj3.github.io/teaching/python/</link>
+      <pubDate>Tue, 24 Oct 2023 00:00:00 +0000</pubDate>
+      <guid>https://praeclarumjj3.github.io/teaching/python/</guid>
+      <description>&lt;p&gt;
+ is designed to give technical content creators a seamless experience. You can focus on the content and the Hugo Blox Builder which this template is built upon handles the rest.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Embed videos, podcasts, code, LaTeX math, and even test students!&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;On this page, you&amp;rsquo;ll find some examples of the types of technical content that can be rendered with Hugo Blox.&lt;/p&gt;
+&lt;h2 id=&#34;video&#34;&gt;Video&lt;/h2&gt;
+&lt;p&gt;Teach your course by sharing videos with your students. Choose from one of the following approaches:&lt;/p&gt;
+
+
+    
+    &lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+      &lt;iframe allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share&#34; allowfullscreen=&#34;allowfullscreen&#34; loading=&#34;eager&#34; referrerpolicy=&#34;strict-origin-when-cross-origin&#34; src=&#34;https://www.youtube.com/embed/D2vj0WcvH5c?autoplay=0&amp;controls=1&amp;end=0&amp;loop=0&amp;mute=0&amp;start=0&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; title=&#34;YouTube video&#34;
+      &gt;&lt;/iframe&gt;
+    &lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;Youtube&lt;/strong&gt;:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;{{&amp;lt; youtube w7Ft2ymGmfc &amp;gt;}}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;Bilibili&lt;/strong&gt;:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;{{&amp;lt; bilibili id=&amp;quot;BV1WV4y1r7DF&amp;quot; &amp;gt;}}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;Video file&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Videos may be added to a page by either placing them in your &lt;code&gt;assets/media/&lt;/code&gt; media library or in your 
+, and then embedding them with the &lt;em&gt;video&lt;/em&gt; shortcode:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;{{&amp;lt; video src=&amp;quot;my_video.mp4&amp;quot; controls=&amp;quot;yes&amp;quot; &amp;gt;}}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;podcast&#34;&gt;Podcast&lt;/h2&gt;
+&lt;p&gt;You can add a podcast or music to a page by placing the MP3 file in the page&amp;rsquo;s folder or the media library folder and then embedding the audio on your page with the &lt;em&gt;audio&lt;/em&gt; shortcode:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;{{&amp;lt; audio src=&amp;quot;ambient-piano.mp3&amp;quot; &amp;gt;}}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Try it out:&lt;/p&gt;
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+&lt;audio controls &gt;
+  &lt;source src=&#34;https://praeclarumjj3.github.io/teaching/python/ambient-piano.mp3&#34; type=&#34;audio/mpeg&#34;&gt;
+&lt;/audio&gt;
+
+&lt;h2 id=&#34;test-students&#34;&gt;Test students&lt;/h2&gt;
+&lt;p&gt;Provide a simple yet fun self-assessment by revealing the solutions to challenges with the &lt;code&gt;spoiler&lt;/code&gt; shortcode:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-markdown&#34; data-lang=&#34;markdown&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;{{&lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&#34;nt&#34;&gt;spoiler&lt;/span&gt; &lt;span class=&#34;na&#34;&gt;text&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;👉 Click to view the solution&amp;#34;&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;}}
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;You found me!
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;{{&lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;spoiler&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;}}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;renders as&lt;/p&gt;
+&lt;details class=&#34;spoiler &#34;  id=&#34;spoiler-2&#34;&gt;
+  &lt;summary class=&#34;cursor-pointer&#34;&gt;👉 Click to view the solution&lt;/summary&gt;
+  &lt;div class=&#34;rounded-lg bg-neutral-50 dark:bg-neutral-800 p-2&#34;&gt;
+    You found me 🎉
+  &lt;/div&gt;
+&lt;/details&gt;
+&lt;h2 id=&#34;math&#34;&gt;Math&lt;/h2&gt;
+&lt;p&gt;Hugo Blox Builder supports a Markdown extension for $\LaTeX$ math. You can enable this feature by toggling the &lt;code&gt;math&lt;/code&gt; option in your &lt;code&gt;config/_default/params.yaml&lt;/code&gt; file.&lt;/p&gt;
+&lt;p&gt;To render &lt;em&gt;inline&lt;/em&gt; or &lt;em&gt;block&lt;/em&gt; math, wrap your LaTeX math with &lt;code&gt;{{&amp;lt; math &amp;gt;}}$...${{&amp;lt; /math &amp;gt;}}&lt;/code&gt; or &lt;code&gt;{{&amp;lt; math &amp;gt;}}$$...$${{&amp;lt; /math &amp;gt;}}&lt;/code&gt;, respectively.&lt;/p&gt;
+&lt;div class=&#34;flex px-4 py-3 mb-6 rounded-md bg-primary-100 dark:bg-primary-900&#34;&gt;
+&lt;span class=&#34;pr-3 pt-1 text-primary-600 dark:text-primary-300&#34;&gt;
+  &lt;svg height=&#34;24&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 24 24&#34;&gt;&lt;path fill=&#34;none&#34; stroke=&#34;currentColor&#34; stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34; stroke-width=&#34;1.5&#34; d=&#34;m11.25 11.25l.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0a9 9 0 0 1 18 0m-9-3.75h.008v.008H12z&#34;/&gt;&lt;/svg&gt;
+&lt;/span&gt;
+  &lt;span class=&#34;dark:text-neutral-300&#34;&gt;We wrap the LaTeX math in the Hugo Blox &lt;em&gt;math&lt;/em&gt; shortcode to prevent Hugo rendering our math as Markdown.&lt;/span&gt;
+&lt;/div&gt;
+&lt;p&gt;Example &lt;strong&gt;math block&lt;/strong&gt;:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-latex&#34; data-lang=&#34;latex&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;{{&lt;/span&gt;&amp;lt; math &amp;gt;&lt;span class=&#34;nb&#34;&gt;}}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;sb&#34;&gt;$$&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;\gamma&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;_{n} &lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt; &lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;\frac&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;{ &lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;\left&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt; | &lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;\left&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt; &lt;/span&gt;&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;\mathbf&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt; x_{n} &lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt; &lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;\mathbf&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt; x_{n&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;m&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;} &lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;\right&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt; &lt;/span&gt;&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;^T &lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;\left&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt; &lt;/span&gt;&lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;\nabla&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt; F &lt;/span&gt;&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;\mathbf&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt; x_{n}&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt; &lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt; &lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;\nabla&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt; F &lt;/span&gt;&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;\mathbf&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt; x_{n&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;m&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;}&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt; &lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;\right&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt; &lt;/span&gt;&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt; &lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;\right&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt; |}{&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;\left&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt; &lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;\|\nabla&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt; F&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;\mathbf&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;{x}_{n}&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt; &lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt; &lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;\nabla&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt; F&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;\mathbf&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;{x}_{n&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;m&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;}&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt; &lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;\right&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt; &lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;\|&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;^&lt;/span&gt;&lt;span class=&#34;m&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;$$&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;{{&lt;/span&gt;&amp;lt; /math &amp;gt;&lt;span class=&#34;nb&#34;&gt;}}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;renders as&lt;/p&gt;
+
 $$\gamma_{n} = \frac{ \left | \left (\mathbf x_{n} - \mathbf x_{n-1} \right )^T \left [\nabla F (\mathbf x_{n}) - \nabla F (\mathbf x_{n-1}) \right ] \right |}{\left \|\nabla F(\mathbf{x}_{n}) - \nabla F(\mathbf{x}_{n-1}) \right \|^2}$$
-&lt;p>Example &lt;strong>inline math&lt;/strong> &lt;code>{{&amp;lt; math &amp;gt;}}$\nabla F(\mathbf{x}_{n})${{&amp;lt; /math &amp;gt;}}&lt;/code> renders as $\nabla F(\mathbf{x}_{n})$
-.&lt;/p>
-&lt;p>Example &lt;strong>multi-line math&lt;/strong> using the math linebreak (&lt;code>\\&lt;/code>):&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-latex" data-lang="latex">&lt;span class="line">&lt;span class="cl">&lt;span class="nb">{{&lt;/span>&amp;lt; math &amp;gt;&lt;span class="nb">}}&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="sb">$$&lt;/span>&lt;span class="nb">f&lt;/span>&lt;span class="o">(&lt;/span>&lt;span class="nb">k;p_{&lt;/span>&lt;span class="m">0&lt;/span>&lt;span class="nb">}^{&lt;/span>&lt;span class="o">*&lt;/span>&lt;span class="nb">}&lt;/span>&lt;span class="o">)&lt;/span>&lt;span class="nb"> &lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="nb"> &lt;/span>&lt;span class="nv">\begin&lt;/span>&lt;span class="nb">{cases}p_{&lt;/span>&lt;span class="m">0&lt;/span>&lt;span class="nb">}^{&lt;/span>&lt;span class="o">*&lt;/span>&lt;span class="nb">} &amp;amp; &lt;/span>&lt;span class="nv">\text&lt;/span>&lt;span class="nb">{if }k&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="m">1&lt;/span>&lt;span class="nb">, &lt;/span>&lt;span class="nv">\\&lt;/span>&lt;span class="nb">
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nb">&lt;/span>&lt;span class="m">1&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="nb">p_{&lt;/span>&lt;span class="m">0&lt;/span>&lt;span class="nb">}^{&lt;/span>&lt;span class="o">*&lt;/span>&lt;span class="nb">} &amp;amp; &lt;/span>&lt;span class="nv">\text&lt;/span>&lt;span class="nb">{if }k&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="m">0&lt;/span>&lt;span class="nb">.&lt;/span>&lt;span class="nv">\end&lt;/span>&lt;span class="nb">{cases}&lt;/span>&lt;span class="s">$$&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nb">{{&lt;/span>&amp;lt; /math &amp;gt;&lt;span class="nb">}}&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>renders as&lt;/p>
+
+
+&lt;p&gt;Example &lt;strong&gt;inline math&lt;/strong&gt; &lt;code&gt;{{&amp;lt; math &amp;gt;}}$\nabla F(\mathbf{x}_{n})${{&amp;lt; /math &amp;gt;}}&lt;/code&gt; renders as $\nabla F(\mathbf{x}_{n})$
+.&lt;/p&gt;
+&lt;p&gt;Example &lt;strong&gt;multi-line math&lt;/strong&gt; using the math linebreak (&lt;code&gt;\\&lt;/code&gt;):&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-latex&#34; data-lang=&#34;latex&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;{{&lt;/span&gt;&amp;lt; math &amp;gt;&lt;span class=&#34;nb&#34;&gt;}}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;sb&#34;&gt;$$&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;f&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;k;p_{&lt;/span&gt;&lt;span class=&#34;m&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;}^{&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;*&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;}&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt; &lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt; &lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;\begin&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;{cases}p_{&lt;/span&gt;&lt;span class=&#34;m&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;}^{&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;*&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;} &amp;amp; &lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;\text&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;{if }k&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;m&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;, &lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;\\&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;&lt;/span&gt;&lt;span class=&#34;m&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;p_{&lt;/span&gt;&lt;span class=&#34;m&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;}^{&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;*&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;} &amp;amp; &lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;\text&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;{if }k&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;m&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;\end&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;{cases}&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;$$&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;{{&lt;/span&gt;&amp;lt; /math &amp;gt;&lt;span class=&#34;nb&#34;&gt;}}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;renders as&lt;/p&gt;
+
+
 $$
 f(k;p_{0}^{*}) = \begin{cases}p_{0}^{*} &amp; \text{if }k=1, \\
 1-p_{0}^{*} &amp; \text{if }k=0.\end{cases}
 $$
-&lt;h2 id="code">Code&lt;/h2>
-&lt;p>Hugo Blox Builder utilises Hugo&amp;rsquo;s Markdown extension for highlighting code syntax. The code theme can be selected in the &lt;code>config/_default/params.yaml&lt;/code> file.&lt;/p>
-&lt;pre>&lt;code>```python
+
+
+
+&lt;h2 id=&#34;code&#34;&gt;Code&lt;/h2&gt;
+&lt;p&gt;Hugo Blox Builder utilises Hugo&amp;rsquo;s Markdown extension for highlighting code syntax. The code theme can be selected in the &lt;code&gt;config/_default/params.yaml&lt;/code&gt; file.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;```python
 import pandas as pd
 data = pd.read_csv(&amp;quot;data.csv&amp;quot;)
 data.head()
 ```
-&lt;/code>&lt;/pre>
-&lt;p>renders as&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="kn">import&lt;/span> &lt;span class="nn">pandas&lt;/span> &lt;span class="k">as&lt;/span> &lt;span class="nn">pd&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">data&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">pd&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">read_csv&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s2">&amp;#34;data.csv&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">data&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">head&lt;/span>&lt;span class="p">()&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="inline-images">Inline Images&lt;/h2>
-&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-go" data-lang="go">&lt;span class="line">&lt;span class="cl">&lt;span class="p">{{&amp;lt;&lt;/span> &lt;span class="nx">icon&lt;/span> &lt;span class="nx">name&lt;/span>&lt;span class="p">=&lt;/span>&lt;span class="s">&amp;#34;python&amp;#34;&lt;/span> &lt;span class="p">&amp;gt;}}&lt;/span> &lt;span class="nx">Python&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>renders as&lt;/p>
-&lt;p>
-&lt;span class="inline-block pr-1">
-&lt;svg style="height: 1em; transform: translateY(0.1em);" xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 448 512" fill="currentColor">&lt;path d="M439.8 200.5c-7.7-30.9-22.3-54.2-53.4-54.2h-40.1v47.4c0 36.8-31.2 67.8-66.8 67.8H172.7c-29.2 0-53.4 25-53.4 54.3v101.8c0 29 25.2 46 53.4 54.3 33.8 9.9 66.3 11.7 106.8 0 26.9-7.8 53.4-23.5 53.4-54.3v-40.7H226.2v-13.6h160.2c31.1 0 42.6-21.7 53.4-54.2 11.2-33.5 10.7-65.7 0-108.6zM286.2 404c11.1 0 20.1 9.1 20.1 20.3 0 11.3-9 20.4-20.1 20.4-11 0-20.1-9.2-20.1-20.4.1-11.3 9.1-20.3 20.1-20.3zM167.8 248.1h106.8c29.7 0 53.4-24.5 53.4-54.3V91.9c0-29-24.4-50.7-53.4-55.6-35.8-5.9-74.7-5.6-106.8.1-45.2 8-53.4 24.7-53.4 55.6v40.7h106.9v13.6h-147c-31.1 0-58.3 18.7-66.8 54.2-9.8 40.7-10.2 66.1 0 108.6 7.6 31.6 25.7 54.2 56.8 54.2H101v-48.8c0-35.3 30.5-66.4 66.8-66.4zm-6.7-142.6c-11.1 0-20.1-9.1-20.1-20.3.1-11.3 9-20.4 20.1-20.4 11 0 20.1 9.2 20.1 20.4s-9 20.3-20.1 20.3z"/>&lt;/svg>
-&lt;/span> Python&lt;/p>
-&lt;h2 id="did-you-find-this-page-helpful-consider-sharing-it-">Did you find this page helpful? Consider sharing it 🙌&lt;/h2></description></item><item><title>Ascending the Research Trail</title><link>https://praeclarumjj3.github.io/blogs/ascending_research_trail/</link><pubDate>Wed, 08 Mar 2023 00:00:00 +0000</pubDate><guid>https://praeclarumjj3.github.io/blogs/ascending_research_trail/</guid><description>&lt;p>In case you missed it, I shared my experience as a rookie undergrad researcher in a previous blog:
-. Since then, I have grown from a rookie researcher into a more mature beginner researcher with a better outlook on the bigger picture in research (thinking beyond publishing a paper) owing to my close collaboration with the
-in the last couple of years. I have had several realizations that I will be sharing through this article. A few of those to get your interest piqued are:&lt;/p>
-&lt;ul>
-&lt;li>🤔 I went from &amp;ldquo;Ph.D., Me? Nooooooo&amp;rdquo; to &amp;ldquo;I primarily applied to Ph.D. programs for grad school.&amp;rdquo; What changed?&lt;/li>
-&lt;li>💭 Is publishing/releasing a paper a good &amp;ldquo;Why?&amp;rdquo; for research?&lt;/li>
-&lt;li>📖 Is open-source in A.I. a boon or a bane?&lt;/li>
-&lt;li>🎗 What is the importance of the advisor and collaborators?&lt;/li>
-&lt;li>⚓️ How vital is the authenticity of research?&lt;/li>
-&lt;/ul>
-&lt;p>Read more at:
-&lt;/p></description></item><item><title>OneFormer: One Transformer to Rule Universal Image Segmentation</title><link>https://praeclarumjj3.github.io/publication/oneformer/</link><pubDate>Fri, 11 Nov 2022 00:00:00 +0000</pubDate><guid>https://praeclarumjj3.github.io/publication/oneformer/</guid><description/></item><item><title>Keys to Better Image Inpainting: Structure and Texture Go Hand in Hand</title><link>https://praeclarumjj3.github.io/publication/fcf-inpainting/</link><pubDate>Thu, 11 Aug 2022 00:00:00 +0000</pubDate><guid>https://praeclarumjj3.github.io/publication/fcf-inpainting/</guid><description/></item><item><title>Neural Style Transfer: A Technical Report</title><link>https://praeclarumjj3.github.io/project/nst-tech/</link><pubDate>Tue, 10 May 2022 00:00:00 +0000</pubDate><guid>https://praeclarumjj3.github.io/project/nst-tech/</guid><description>&lt;p>As a part of the &lt;code>CSN-526: Machine Learning&lt;/code> Course Project, we worked on studying the effects of various factors like feature extractors, optimizers, loss functions and initialization techniques on the neural style transfer task.&lt;/p>
-&lt;p>We also proposed the use of pseudo ground truths for evaluating the performance under different settings.&lt;/p>
-&lt;p>For more info, please see the Code on &lt;code>GitHub&lt;/code>.&lt;/p></description></item><item><title>Summer Diaries: Intern Diary of an Undergrad DL Researcher</title><link>https://praeclarumjj3.github.io/blogs/summer_diary_wo/</link><pubDate>Tue, 04 Jan 2022 00:00:00 +0000</pubDate><guid>https://praeclarumjj3.github.io/blogs/summer_diary_wo/</guid><description>&lt;p>This summer, I worked as a remote research intern at SHI Lab @ University of Oregon (UO) and Picsart AI Research (PAIR). I joined the SHI Lab to work with Professor Humphrey Shi in November 2020 during my second year and continued my work there during the summers, and I joined PAIR during the summers (June 2021). My research focused on the field of Computer Vision during both my internships.&lt;/p>
-&lt;p>Read more about my intern experience at:
-&lt;/p></description></item><item><title>SeMask: Semantically Masked Transformers for Semantic Segmentation</title><link>https://praeclarumjj3.github.io/publication/semask/</link><pubDate>Sun, 12 Dec 2021 00:00:00 +0000</pubDate><guid>https://praeclarumjj3.github.io/publication/semask/</guid><description/></item><item><title>The Contemporary Overthinking Problem</title><link>https://praeclarumjj3.github.io/blogs/overthinking/</link><pubDate>Fri, 26 Nov 2021 00:00:00 +0000</pubDate><guid>https://praeclarumjj3.github.io/blogs/overthinking/</guid><description>&lt;p>Since the onset of the COVID-19 pandemic, the following lockdowns and stay &amp;amp; work from home situations, the concept of Overthinking has gained popularity. Moreover, now and then, I find the gen-z people (and even me sometimes) replying to “What you doing?” texts with “Overthinking.” Surprisingly, I have seen people setting their social profiles’ status as Overthinking. It made me wonder if we have started treating overthinking as a clichéd concept that might overshadow the problems that the actual overthinking state brings.&lt;/p>
-&lt;p>This article will explain my opinion about overthinking and why it is becoming more cliché than a serious problem.&lt;/p>
-&lt;p>Read more at:
-&lt;/p></description></item><item><title>Riding the Noisy Research Track</title><link>https://praeclarumjj3.github.io/blogs/research_ride/</link><pubDate>Wed, 28 Jul 2021 00:00:00 +0000</pubDate><guid>https://praeclarumjj3.github.io/blogs/research_ride/</guid><description>&lt;p>Alright, people! This article will share my experience and learnings during the last eight months as an undergrad researcher. For those reading one of my blogs for the first time, I am a CSE undergrad (about to enter 3rd year) and am working as a Research Intern at &lt;em>
-&lt;/em> and &lt;em>
-&lt;/em>.&lt;/p>
-&lt;p>Now, before we dive in, let me clear it out that I have probably had a more intense research experience for better or worse than some of the other undergrad people at IITR. So, don’t make any judgments about research based on the content in this post 😛. So, we got that sorted out. Let’s begin!&lt;/p>
-&lt;p>Read more at:
-&lt;/p></description></item><item><title>AOT-GAN Experiments</title><link>https://praeclarumjj3.github.io/project/aot-gan-experiments/</link><pubDate>Wed, 19 May 2021 00:00:00 +0000</pubDate><guid>https://praeclarumjj3.github.io/project/aot-gan-experiments/</guid><description>&lt;p>I conducted various experiments with &lt;strong>AOT-GAN&lt;/strong> proposed in the paper:
-) on the
-dataset using the
-.&lt;/p>
-&lt;p>In particular, I focused on finding the effectivity of different losses while training the framework. I made several observations:&lt;/p>
-&lt;ul>
-&lt;li>
-&lt;p>The &lt;strong>adversarial loss&lt;/strong> doesn&amp;rsquo;t seem to be contributing to the learning of the model as it stays almost the same throughout the training.&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>Training for longer than &lt;code>1e4&lt;/code> iterations doesn&amp;rsquo;t add much improvement to the results.&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>Training &lt;strong>without style loss&lt;/strong> produces blurry results. Therefore, style loss is an important component for texture related synthesis of images.&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>Training &lt;strong>without adversarial loss&lt;/strong> also produces good quality results!&lt;/p>
-&lt;/li>
-&lt;/ul>
-&lt;p>For more info, please see the Code on &lt;code>GitHub&lt;/code>.&lt;/p></description></item><item><title>Do self-help books really help?</title><link>https://praeclarumjj3.github.io/blogs/self_help_books/</link><pubDate>Sun, 16 May 2021 00:00:00 +0000</pubDate><guid>https://praeclarumjj3.github.io/blogs/self_help_books/</guid><description>&lt;p>Alright, so this is going to be quite a short entry. A few days back, a friend of mine and I were talking about books. We were discussing the books that we have read. Well, she’s smart, so she was listing out great books like 1984, A Man Called Ove, etc. I told her how I had read quite a few of the “self-help” books during the last year or so (well, pandemic time, so needed some motivation, I guess :3). Then she asked me:&lt;/p>
-&lt;blockquote>
-&lt;p>Do self-help books really help?&lt;/p>
-&lt;/blockquote>
-&lt;p>Read more at:
-&lt;/p></description></item><item><title>OLIE</title><link>https://praeclarumjj3.github.io/project/olie/</link><pubDate>Sat, 10 Apr 2021 00:00:00 +0000</pubDate><guid>https://praeclarumjj3.github.io/project/olie/</guid><description>&lt;p>OLIE was aimed to reconstruct the original image with the objects removed (editing) by incorporating the mask features as input to the reconstructor.&lt;/p>
-&lt;p>After performing many experiments, we scrapped the idea. However, some of the experiments that I performed were:&lt;/p>
-&lt;ul>
-&lt;li>
-&lt;p>&lt;strong>Using a Perturbator Model:&lt;/strong> Taking inspiration from
-, I tried editing images using perturbations in the reconstructor, however it didn&amp;rsquo;t work well.&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>&lt;strong>Using Gated Convolutions:&lt;/strong> Taking inspiration from
-, I used &lt;code>Gated Modules&lt;/code> instead of standard modules which gave even &lt;strong>poorer results&lt;/strong>.&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>&lt;strong>Using Two Stage Model:&lt;/strong> Getting hole images from the reconstructor and then passing that into an inpainting model gave somewhat good results as the generating the hole image could be learned accurately to an extent, however, the results were no better than the common inpainting ones.&lt;/p>
-&lt;/li>
-&lt;/ul>
-&lt;p>Our aim was to come up with a &lt;strong>Single Stage Model&lt;/strong> for image editing using instance maps.&lt;/p>
-&lt;p>For more info, please see the Code on &lt;code>GitHub&lt;/code>.&lt;/p></description></item><item><title>granim</title><link>https://praeclarumjj3.github.io/project/granim/</link><pubDate>Sat, 03 Apr 2021 00:00:00 +0000</pubDate><guid>https://praeclarumjj3.github.io/project/granim/</guid><description>&lt;p>&lt;strong>granim&lt;/strong> makes it easier to plot animated graphs using the Manim-Engine. This project is still under development. Contributors are always welcome!&lt;/p></description></item><item><title>The Priority Hierarchy Dilemma</title><link>https://praeclarumjj3.github.io/blogs/priority/</link><pubDate>Tue, 30 Mar 2021 00:00:00 +0000</pubDate><guid>https://praeclarumjj3.github.io/blogs/priority/</guid><description>&lt;p>Right, so this isn&amp;rsquo;t a well-planned blog. I just wanted to write something up, and this idea popped into my head while guessing the mid-term&amp;rsquo;s syllabus with one of my friends. It got me wondering about the importance that I give to these college exams is even lesser than writing a random blog even when my exams are less than a week away xD.&lt;/p>
-&lt;p>Read more at:
-&lt;/p></description></item><item><title>Why Research if I can Develop?!</title><link>https://praeclarumjj3.github.io/blogs/why_research/</link><pubDate>Tue, 02 Feb 2021 00:00:00 +0000</pubDate><guid>https://praeclarumjj3.github.io/blogs/why_research/</guid><description>&lt;p>Hello there! Alright, so it has been more than 3 months since my last blog, where I described how a CSE student’s life at IITR is being turned into a living hell by the system and professors. Sadly, the going has only got more challenging, with profs imposing more of their ingenious will on students. I recently had my ETEs, so I am brimming with academic frustration and will probably end up writing another blog, but that’s a topic for another day :P&lt;/p>
-&lt;p>Read more at:
-&lt;/p></description></item><item><title>BackBone Profile</title><link>https://praeclarumjj3.github.io/project/backbone/</link><pubDate>Mon, 28 Dec 2020 00:00:00 +0000</pubDate><guid>https://praeclarumjj3.github.io/project/backbone/</guid><description>&lt;p>I performed experiments on various backbone networks:&lt;/p>
-&lt;ul>
-&lt;li>
-&lt;p>ResNet-18/34/50/101&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>MobileNetv2&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>Xception Net&lt;/p>
-&lt;/li>
-&lt;/ul>
-&lt;p>All the experiments were performed on a single &lt;strong>RTX 2080Ti GPU&lt;/strong>, a single &lt;strong>TitanXP GPU&lt;/strong> and a single &lt;strong>CPU&lt;/strong> &lt;em>indivdually&lt;/em>. For each model architecture, I collected the stats including:&lt;/p>
-&lt;ul>
-&lt;li>
-&lt;p>Execution Time&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>Memory Used&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>Number of Parameters&lt;/p>
-&lt;/li>
-&lt;/ul></description></item><item><title>ArxivApp</title><link>https://praeclarumjj3.github.io/project/arxiv_app/</link><pubDate>Thu, 26 Nov 2020 00:00:00 +0000</pubDate><guid>https://praeclarumjj3.github.io/project/arxiv_app/</guid><description>&lt;p>&lt;strong>ArxivApp&lt;/strong> lets you read, bookmark and download papers from arXiv.org. It also has a forum screen that lets you read and create notes/blogs about the different research papers you read!&lt;/p></description></item><item><title>IITR ChatBot</title><link>https://praeclarumjj3.github.io/project/iitr_bot/</link><pubDate>Mon, 28 Sep 2020 00:00:00 +0000</pubDate><guid>https://praeclarumjj3.github.io/project/iitr_bot/</guid><description>&lt;p>We developed an assistance bot for the
-using the
-framework.&lt;/p></description></item><item><title>IITR Security App</title><link>https://praeclarumjj3.github.io/project/security_app/</link><pubDate>Sat, 05 Sep 2020 00:00:00 +0000</pubDate><guid>https://praeclarumjj3.github.io/project/security_app/</guid><description>&lt;ul>
-&lt;li>IITR Security App was developed to eliminate the use of paper by the guards to record the details of the visitors at IIT Roorkee.&lt;/li>
-&lt;li>I worked on developing Front-End part of the app using Flutter.&lt;/li>
-&lt;li>&lt;strong>Playstore Link&lt;/strong>:
-&lt;/li>
-&lt;/ul></description></item><item><title>One Year of Traversing the “eˣ” Graph</title><link>https://praeclarumjj3.github.io/blogs/one_year_at_iitr/</link><pubDate>Sun, 02 Aug 2020 00:00:00 +0000</pubDate><guid>https://praeclarumjj3.github.io/blogs/one_year_at_iitr/</guid><description>&lt;p>Hey! So you must be wondering, “What the hell is e ˣ doing in the title? It must be a scientific article!” Well, to put your mind at ease, this is not an article about the hidden beauty of e ˣ (although that would be an excellent one :P). Instead, it is about a now sophomore’s year of life at IITR. Please allow me to take you to a flashback journey through time!&lt;/p>
-&lt;p>Read more at:
-&lt;/p></description></item><item><title>Paper Summaries</title><link>https://praeclarumjj3.github.io/project/summary_of_papers/</link><pubDate>Tue, 07 Jul 2020 00:00:00 +0000</pubDate><guid>https://praeclarumjj3.github.io/project/summary_of_papers/</guid><description>&lt;p>Summaries:&lt;/p>
-&lt;ul>
-&lt;li>
-&lt;p>
-&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>
-&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>
-&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>
-&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>
-&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>
-&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>
-&lt;/p>
-&lt;/li>
-&lt;/ul></description></item><item><title>ChatBot with Pytorch</title><link>https://praeclarumjj3.github.io/project/chatbot/</link><pubDate>Fri, 19 Jun 2020 00:00:00 +0000</pubDate><guid>https://praeclarumjj3.github.io/project/chatbot/</guid><description>&lt;p>I implemented a chatbot in Pytorch on the Cornell Movie Dialog Corpus dataset using GRUs and Attention mechanism.&lt;/p></description></item><item><title>The Curse of Dimensionality</title><link>https://praeclarumjj3.github.io/blogs/curse_dimension/</link><pubDate>Thu, 11 Jun 2020 00:00:00 +0000</pubDate><guid>https://praeclarumjj3.github.io/blogs/curse_dimension/</guid><description>&lt;p>Have you ever found yourself stuck in the middle of a problem having a large number of dimensions? You keep on trying harder and harder to come up with a solution that would satisfy all the dimensions of the problem. Still, every time one or another dimension makes ur efforts look futile! It turns out that you can solve a problem very efficiently when presented with not more than 2 or 3 dimensions. Nevertheless, this world is not kind to us every time! You might find yourself struggling amidst a problem, thinking&amp;hellip;&lt;/p>
-&lt;p>Read more at:
-&lt;/p></description></item><item><title>VQ-VAE on MNIST</title><link>https://praeclarumjj3.github.io/project/vq_vae/</link><pubDate>Wed, 20 May 2020 00:00:00 +0000</pubDate><guid>https://praeclarumjj3.github.io/project/vq_vae/</guid><description>&lt;p>I tried to implement
-in Pytorch on the MNIST dataset.&lt;/p></description></item><item><title>Time Tracer</title><link>https://praeclarumjj3.github.io/project/time_trace/</link><pubDate>Mon, 27 Apr 2020 00:00:00 +0000</pubDate><guid>https://praeclarumjj3.github.io/project/time_trace/</guid><description>&lt;p>A Flutter application developed as a self-learning project to help people keep track of their time expenditure.&lt;/p></description></item><item><title>Societyfy</title><link>https://praeclarumjj3.github.io/project/societyfy/</link><pubDate>Wed, 08 Apr 2020 00:00:00 +0000</pubDate><guid>https://praeclarumjj3.github.io/project/societyfy/</guid><description>&lt;p>SOCIETYFY is an app showcase app developed during MDG’s SoC event in December, 2019. Societyfy lets you discover new people based on your interest at any moment of time and make new bonds with people you share an interest with at any point in time through its specific chatrooms for each category.&lt;/p>
-&lt;p>&lt;strong>PlayStore Link&lt;/strong>:
-&lt;/p>
-&lt;p>&lt;strong>Medium Blog&lt;/strong>:
-&lt;/p></description></item><item><title>Geofile</title><link>https://praeclarumjj3.github.io/project/geofile/</link><pubDate>Sun, 05 Apr 2020 00:00:00 +0000</pubDate><guid>https://praeclarumjj3.github.io/project/geofile/</guid><description>&lt;ul>
-&lt;li>Geofile lets you couple files them with a specific location.&lt;/li>
-&lt;li>I worked on developing Front-End part of the app using Flutter.&lt;/li>
-&lt;li>&lt;strong>Playstore Early Access&lt;/strong>: You can test the beta version on the Playstore by searching for &lt;strong>geofile&lt;/strong>.&lt;/li>
-&lt;/ul></description></item><item><title>Societyfy, An app made for finding company at anytime for anything</title><link>https://praeclarumjj3.github.io/blogs/societyfy/</link><pubDate>Wed, 19 Feb 2020 00:00:00 +0000</pubDate><guid>https://praeclarumjj3.github.io/blogs/societyfy/</guid><description>&lt;p>Imagine a situation where you are at a place where you don’t know many people and feel a bit left out. You feel hesitant to go out for lunch or hangout or even go to a movie alone. This is where the concept of Societyfy comes in to rescue you.&lt;/p>
-&lt;p>Read more at:
-&lt;/p></description></item><item><title/><link>https://praeclarumjj3.github.io/blogs/memory_wall_iitr/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://praeclarumjj3.github.io/blogs/memory_wall_iitr/</guid><description/></item></channel></rss>
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;renders as&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;kn&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;nn&#34;&gt;pandas&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;as&lt;/span&gt; &lt;span class=&#34;nn&#34;&gt;pd&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;data&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;pd&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;read_csv&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;data.csv&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;data&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;head&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;inline-images&#34;&gt;Inline Images&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-go&#34; data-lang=&#34;go&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;{{&amp;lt;&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;icon&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;name&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;python&amp;#34;&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;&amp;gt;}}&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;Python&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;renders as&lt;/p&gt;
+&lt;p&gt;
+  &lt;span class=&#34;inline-block  pr-1&#34;&gt;
+    &lt;svg style=&#34;height: 1em; transform: translateY(0.1em);&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; height=&#34;1em&#34; viewBox=&#34;0 0 448 512&#34; fill=&#34;currentColor&#34;&gt;&lt;path d=&#34;M439.8 200.5c-7.7-30.9-22.3-54.2-53.4-54.2h-40.1v47.4c0 36.8-31.2 67.8-66.8 67.8H172.7c-29.2 0-53.4 25-53.4 54.3v101.8c0 29 25.2 46 53.4 54.3 33.8 9.9 66.3 11.7 106.8 0 26.9-7.8 53.4-23.5 53.4-54.3v-40.7H226.2v-13.6h160.2c31.1 0 42.6-21.7 53.4-54.2 11.2-33.5 10.7-65.7 0-108.6zM286.2 404c11.1 0 20.1 9.1 20.1 20.3 0 11.3-9 20.4-20.1 20.4-11 0-20.1-9.2-20.1-20.4.1-11.3 9.1-20.3 20.1-20.3zM167.8 248.1h106.8c29.7 0 53.4-24.5 53.4-54.3V91.9c0-29-24.4-50.7-53.4-55.6-35.8-5.9-74.7-5.6-106.8.1-45.2 8-53.4 24.7-53.4 55.6v40.7h106.9v13.6h-147c-31.1 0-58.3 18.7-66.8 54.2-9.8 40.7-10.2 66.1 0 108.6 7.6 31.6 25.7 54.2 56.8 54.2H101v-48.8c0-35.3 30.5-66.4 66.8-66.4zm-6.7-142.6c-11.1 0-20.1-9.1-20.1-20.3.1-11.3 9-20.4 20.1-20.4 11 0 20.1 9.2 20.1 20.4s-9 20.3-20.1 20.3z&#34;/&gt;&lt;/svg&gt;
+  &lt;/span&gt; Python&lt;/p&gt;
+&lt;h2 id=&#34;did-you-find-this-page-helpful-consider-sharing-it-&#34;&gt;Did you find this page helpful? Consider sharing it 🙌&lt;/h2&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Ascending the Research Trail</title>
+      <link>https://praeclarumjj3.github.io/blogs/ascending_research_trail/</link>
+      <pubDate>Wed, 08 Mar 2023 00:00:00 +0000</pubDate>
+      <guid>https://praeclarumjj3.github.io/blogs/ascending_research_trail/</guid>
+      <description>&lt;p&gt;In case you missed it, I shared my experience as a rookie undergrad researcher in a previous blog: 
+. Since then, I have grown from a rookie researcher into a more mature beginner researcher with a better outlook on the bigger picture in research (thinking beyond publishing a paper) owing to my close collaboration with the 
+ in the last couple of years. I have had several realizations that I will be sharing through this article. A few of those to get your interest piqued are:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;🤔 I went from &amp;ldquo;Ph.D., Me? Nooooooo&amp;rdquo; to &amp;ldquo;I primarily applied to Ph.D. programs for grad school.&amp;rdquo; What changed?&lt;/li&gt;
+&lt;li&gt;💭 Is publishing/releasing a paper a good &amp;ldquo;Why?&amp;rdquo; for research?&lt;/li&gt;
+&lt;li&gt;📖 Is open-source in A.I. a boon or a bane?&lt;/li&gt;
+&lt;li&gt;🎗 What is the importance of the advisor and collaborators?&lt;/li&gt;
+&lt;li&gt;⚓️ How vital is the authenticity of research?&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Read more at: 
+&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>OneFormer: One Transformer to Rule Universal Image Segmentation</title>
+      <link>https://praeclarumjj3.github.io/publication/oneformer/</link>
+      <pubDate>Fri, 11 Nov 2022 00:00:00 +0000</pubDate>
+      <guid>https://praeclarumjj3.github.io/publication/oneformer/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Keys to Better Image Inpainting: Structure and Texture Go Hand in Hand</title>
+      <link>https://praeclarumjj3.github.io/publication/fcf-inpainting/</link>
+      <pubDate>Thu, 11 Aug 2022 00:00:00 +0000</pubDate>
+      <guid>https://praeclarumjj3.github.io/publication/fcf-inpainting/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Neural Style Transfer: A Technical Report </title>
+      <link>https://praeclarumjj3.github.io/project/nst-tech/</link>
+      <pubDate>Tue, 10 May 2022 00:00:00 +0000</pubDate>
+      <guid>https://praeclarumjj3.github.io/project/nst-tech/</guid>
+      <description>&lt;p&gt;As a part of the &lt;code&gt;CSN-526: Machine Learning&lt;/code&gt; Course Project, we worked on studying the effects of various factors like feature extractors, optimizers, loss functions and initialization techniques on the neural style transfer task.&lt;/p&gt;
+&lt;p&gt;We also proposed the use of pseudo ground truths for evaluating the performance under different settings.&lt;/p&gt;
+&lt;p&gt;For more info, please see the Code on &lt;code&gt;GitHub&lt;/code&gt;.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Summer Diaries: Intern Diary of an Undergrad DL Researcher</title>
+      <link>https://praeclarumjj3.github.io/blogs/summer_diary_wo/</link>
+      <pubDate>Tue, 04 Jan 2022 00:00:00 +0000</pubDate>
+      <guid>https://praeclarumjj3.github.io/blogs/summer_diary_wo/</guid>
+      <description>&lt;p&gt;This summer, I worked as a remote research intern at SHI Lab @ University of Oregon (UO) and Picsart AI Research (PAIR). I joined the SHI Lab to work with Professor Humphrey Shi in November 2020 during my second year and continued my work there during the summers, and I joined PAIR during the summers (June 2021). My research focused on the field of Computer Vision during both my internships.&lt;/p&gt;
+&lt;p&gt;Read more about my intern experience at: 
+&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>SeMask: Semantically Masked Transformers for Semantic Segmentation</title>
+      <link>https://praeclarumjj3.github.io/publication/semask/</link>
+      <pubDate>Sun, 12 Dec 2021 00:00:00 +0000</pubDate>
+      <guid>https://praeclarumjj3.github.io/publication/semask/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>The Contemporary Overthinking Problem</title>
+      <link>https://praeclarumjj3.github.io/blogs/overthinking/</link>
+      <pubDate>Fri, 26 Nov 2021 00:00:00 +0000</pubDate>
+      <guid>https://praeclarumjj3.github.io/blogs/overthinking/</guid>
+      <description>&lt;p&gt;Since the onset of the COVID-19 pandemic, the following lockdowns and stay &amp;amp; work from home situations, the concept of Overthinking has gained popularity. Moreover, now and then, I find the gen-z people (and even me sometimes) replying to “What you doing?” texts with “Overthinking.” Surprisingly, I have seen people setting their social profiles’ status as Overthinking. It made me wonder if we have started treating overthinking as a clichéd concept that might overshadow the problems that the actual overthinking state brings.&lt;/p&gt;
+&lt;p&gt;This article will explain my opinion about overthinking and why it is becoming more cliché than a serious problem.&lt;/p&gt;
+&lt;p&gt;Read more at: 
+&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Riding the Noisy Research Track</title>
+      <link>https://praeclarumjj3.github.io/blogs/research_ride/</link>
+      <pubDate>Wed, 28 Jul 2021 00:00:00 +0000</pubDate>
+      <guid>https://praeclarumjj3.github.io/blogs/research_ride/</guid>
+      <description>&lt;p&gt;Alright, people! This article will share my experience and learnings during the last eight months as an undergrad researcher. For those reading one of my blogs for the first time, I am a CSE undergrad (about to enter 3rd year) and am working as a Research Intern at &lt;em&gt;
+&lt;/em&gt; and &lt;em&gt;
+&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;Now, before we dive in, let me clear it out that I have probably had a more intense research experience for better or worse than some of the other undergrad people at IITR. So, don’t make any judgments about research based on the content in this post 😛. So, we got that sorted out. Let’s begin!&lt;/p&gt;
+&lt;p&gt;Read more at: 
+&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>AOT-GAN Experiments</title>
+      <link>https://praeclarumjj3.github.io/project/aot-gan-experiments/</link>
+      <pubDate>Wed, 19 May 2021 00:00:00 +0000</pubDate>
+      <guid>https://praeclarumjj3.github.io/project/aot-gan-experiments/</guid>
+      <description>&lt;p&gt;I conducted various experiments with &lt;strong&gt;AOT-GAN&lt;/strong&gt; proposed in the paper: 
+) on the 
+ dataset using the 
+.&lt;/p&gt;
+&lt;p&gt;In particular, I focused on finding the effectivity of different losses while training the framework. I made several observations:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;The &lt;strong&gt;adversarial loss&lt;/strong&gt; doesn&amp;rsquo;t seem to be contributing to the learning of the model as it stays almost the same throughout the training.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Training for longer than &lt;code&gt;1e4&lt;/code&gt; iterations doesn&amp;rsquo;t add much improvement to the results.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Training &lt;strong&gt;without style loss&lt;/strong&gt; produces blurry results. Therefore, style loss is an important component for texture related synthesis of images.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Training &lt;strong&gt;without adversarial loss&lt;/strong&gt; also produces good quality results!&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;For more info, please see the Code on &lt;code&gt;GitHub&lt;/code&gt;.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Do self-help books really help?</title>
+      <link>https://praeclarumjj3.github.io/blogs/self_help_books/</link>
+      <pubDate>Sun, 16 May 2021 00:00:00 +0000</pubDate>
+      <guid>https://praeclarumjj3.github.io/blogs/self_help_books/</guid>
+      <description>&lt;p&gt;Alright, so this is going to be quite a short entry. A few days back, a friend of mine and I were talking about books. We were discussing the books that we have read. Well, she’s smart, so she was listing out great books like 1984, A Man Called Ove, etc. I told her how I had read quite a few of the “self-help” books during the last year or so (well, pandemic time, so needed some motivation, I guess :3). Then she asked me:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Do self-help books really help?&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Read more at: 
+&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>OLIE</title>
+      <link>https://praeclarumjj3.github.io/project/olie/</link>
+      <pubDate>Sat, 10 Apr 2021 00:00:00 +0000</pubDate>
+      <guid>https://praeclarumjj3.github.io/project/olie/</guid>
+      <description>&lt;p&gt;OLIE was aimed to reconstruct the original image with the objects removed (editing) by incorporating the mask features as input to the reconstructor.&lt;/p&gt;
+&lt;p&gt;After performing many experiments, we scrapped the idea. However, some of the experiments that I performed were:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Using a Perturbator Model:&lt;/strong&gt; Taking inspiration from 
+, I tried editing images using perturbations in the reconstructor, however it didn&amp;rsquo;t work well.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Using Gated Convolutions:&lt;/strong&gt; Taking inspiration from 
+, I used &lt;code&gt;Gated Modules&lt;/code&gt; instead of standard modules which gave even &lt;strong&gt;poorer results&lt;/strong&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Using Two Stage Model:&lt;/strong&gt; Getting hole images from the reconstructor and then passing that into an inpainting model gave somewhat good results as the generating the hole image could be learned accurately to an extent, however, the results were no better than the common inpainting ones.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Our aim was to come up with a &lt;strong&gt;Single Stage Model&lt;/strong&gt; for image editing using instance maps.&lt;/p&gt;
+&lt;p&gt;For more info, please see the Code on &lt;code&gt;GitHub&lt;/code&gt;.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>granim</title>
+      <link>https://praeclarumjj3.github.io/project/granim/</link>
+      <pubDate>Sat, 03 Apr 2021 00:00:00 +0000</pubDate>
+      <guid>https://praeclarumjj3.github.io/project/granim/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;granim&lt;/strong&gt; makes it easier to plot animated graphs using the Manim-Engine. This project is still under development. Contributors are always welcome!&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>The Priority Hierarchy Dilemma</title>
+      <link>https://praeclarumjj3.github.io/blogs/priority/</link>
+      <pubDate>Tue, 30 Mar 2021 00:00:00 +0000</pubDate>
+      <guid>https://praeclarumjj3.github.io/blogs/priority/</guid>
+      <description>&lt;p&gt;Right, so this isn&amp;rsquo;t a well-planned blog. I just wanted to write something up, and this idea popped into my head while guessing the mid-term&amp;rsquo;s syllabus with one of my friends. It got me wondering about the importance that I give to these college exams is even lesser than writing a random blog even when my exams are less than a week away xD.&lt;/p&gt;
+&lt;p&gt;Read more at: 
+&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Why Research if I can Develop?!</title>
+      <link>https://praeclarumjj3.github.io/blogs/why_research/</link>
+      <pubDate>Tue, 02 Feb 2021 00:00:00 +0000</pubDate>
+      <guid>https://praeclarumjj3.github.io/blogs/why_research/</guid>
+      <description>&lt;p&gt;Hello there! Alright, so it has been more than 3 months since my last blog, where I described how a CSE student’s life at IITR is being turned into a living hell by the system and professors. Sadly, the going has only got more challenging, with profs imposing more of their ingenious will on students. I recently had my ETEs, so I am brimming with academic frustration and will probably end up writing another blog, but that’s a topic for another day :P&lt;/p&gt;
+&lt;p&gt;Read more at: 
+&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>BackBone Profile</title>
+      <link>https://praeclarumjj3.github.io/project/backbone/</link>
+      <pubDate>Mon, 28 Dec 2020 00:00:00 +0000</pubDate>
+      <guid>https://praeclarumjj3.github.io/project/backbone/</guid>
+      <description>&lt;p&gt;I performed experiments on various backbone networks:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;ResNet-18/34/50/101&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;MobileNetv2&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Xception Net&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;All the experiments were performed on a single &lt;strong&gt;RTX 2080Ti GPU&lt;/strong&gt;, a single &lt;strong&gt;TitanXP GPU&lt;/strong&gt; and a single &lt;strong&gt;CPU&lt;/strong&gt; &lt;em&gt;indivdually&lt;/em&gt;. For each model architecture, I collected the stats including:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Execution Time&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Memory Used&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Number of Parameters&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>ArxivApp</title>
+      <link>https://praeclarumjj3.github.io/project/arxiv_app/</link>
+      <pubDate>Thu, 26 Nov 2020 00:00:00 +0000</pubDate>
+      <guid>https://praeclarumjj3.github.io/project/arxiv_app/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;ArxivApp&lt;/strong&gt; lets you read, bookmark and download papers from arXiv.org. It also has a forum screen that lets you read and create notes/blogs about the different research papers you read!&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>IITR ChatBot</title>
+      <link>https://praeclarumjj3.github.io/project/iitr_bot/</link>
+      <pubDate>Mon, 28 Sep 2020 00:00:00 +0000</pubDate>
+      <guid>https://praeclarumjj3.github.io/project/iitr_bot/</guid>
+      <description>&lt;p&gt;We developed an assistance bot for the 
+ using the 
+ framework.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>IITR Security App</title>
+      <link>https://praeclarumjj3.github.io/project/security_app/</link>
+      <pubDate>Sat, 05 Sep 2020 00:00:00 +0000</pubDate>
+      <guid>https://praeclarumjj3.github.io/project/security_app/</guid>
+      <description>&lt;ul&gt;
+&lt;li&gt;IITR Security App was developed to eliminate the use of paper by the guards to record the details of the visitors at IIT Roorkee.&lt;/li&gt;
+&lt;li&gt;I worked on developing Front-End part of the app using Flutter.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Playstore Link&lt;/strong&gt;: 
+&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>One Year of Traversing the “eˣ” Graph</title>
+      <link>https://praeclarumjj3.github.io/blogs/one_year_at_iitr/</link>
+      <pubDate>Sun, 02 Aug 2020 00:00:00 +0000</pubDate>
+      <guid>https://praeclarumjj3.github.io/blogs/one_year_at_iitr/</guid>
+      <description>&lt;p&gt;Hey! So you must be wondering, “What the hell is e ˣ doing in the title? It must be a scientific article!” Well, to put your mind at ease, this is not an article about the hidden beauty of e ˣ (although that would be an excellent one :P). Instead, it is about a now sophomore’s year of life at IITR. Please allow me to take you to a flashback journey through time!&lt;/p&gt;
+&lt;p&gt;Read more at: 
+&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Paper Summaries</title>
+      <link>https://praeclarumjj3.github.io/project/summary_of_papers/</link>
+      <pubDate>Tue, 07 Jul 2020 00:00:00 +0000</pubDate>
+      <guid>https://praeclarumjj3.github.io/project/summary_of_papers/</guid>
+      <description>&lt;p&gt;Summaries:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;
+&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;
+&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;
+&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;
+&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;
+&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;
+&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;
+&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>ChatBot with Pytorch</title>
+      <link>https://praeclarumjj3.github.io/project/chatbot/</link>
+      <pubDate>Fri, 19 Jun 2020 00:00:00 +0000</pubDate>
+      <guid>https://praeclarumjj3.github.io/project/chatbot/</guid>
+      <description>&lt;p&gt;I implemented a chatbot in Pytorch on the Cornell Movie Dialog Corpus dataset using GRUs and Attention mechanism.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>The Curse of Dimensionality</title>
+      <link>https://praeclarumjj3.github.io/blogs/curse_dimension/</link>
+      <pubDate>Thu, 11 Jun 2020 00:00:00 +0000</pubDate>
+      <guid>https://praeclarumjj3.github.io/blogs/curse_dimension/</guid>
+      <description>&lt;p&gt;Have you ever found yourself stuck in the middle of a problem having a large number of dimensions? You keep on trying harder and harder to come up with a solution that would satisfy all the dimensions of the problem. Still, every time one or another dimension makes ur efforts look futile! It turns out that you can solve a problem very efficiently when presented with not more than 2 or 3 dimensions. Nevertheless, this world is not kind to us every time! You might find yourself struggling amidst a problem, thinking&amp;hellip;&lt;/p&gt;
+&lt;p&gt;Read more at: 
+&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>VQ-VAE on MNIST</title>
+      <link>https://praeclarumjj3.github.io/project/vq_vae/</link>
+      <pubDate>Wed, 20 May 2020 00:00:00 +0000</pubDate>
+      <guid>https://praeclarumjj3.github.io/project/vq_vae/</guid>
+      <description>&lt;p&gt;I tried to implement 
+ in Pytorch on the MNIST dataset.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Time Tracer</title>
+      <link>https://praeclarumjj3.github.io/project/time_trace/</link>
+      <pubDate>Mon, 27 Apr 2020 00:00:00 +0000</pubDate>
+      <guid>https://praeclarumjj3.github.io/project/time_trace/</guid>
+      <description>&lt;p&gt;A Flutter application developed as a self-learning project to help people keep track of their time expenditure.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Societyfy</title>
+      <link>https://praeclarumjj3.github.io/project/societyfy/</link>
+      <pubDate>Wed, 08 Apr 2020 00:00:00 +0000</pubDate>
+      <guid>https://praeclarumjj3.github.io/project/societyfy/</guid>
+      <description>&lt;p&gt;SOCIETYFY is an app showcase app developed during MDG’s SoC event in December, 2019. Societyfy lets you discover new people based on your interest at any moment of time and make new bonds with people you share an interest with at any point in time through its specific chatrooms for each category.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;PlayStore Link&lt;/strong&gt;: 
+&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Medium Blog&lt;/strong&gt;: 
+&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Geofile</title>
+      <link>https://praeclarumjj3.github.io/project/geofile/</link>
+      <pubDate>Sun, 05 Apr 2020 00:00:00 +0000</pubDate>
+      <guid>https://praeclarumjj3.github.io/project/geofile/</guid>
+      <description>&lt;ul&gt;
+&lt;li&gt;Geofile lets you couple files them with a specific location.&lt;/li&gt;
+&lt;li&gt;I worked on developing Front-End part of the app using Flutter.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Playstore Early Access&lt;/strong&gt;: You can test the beta version on the Playstore by searching for &lt;strong&gt;geofile&lt;/strong&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Societyfy, An app made for finding company at anytime for anything</title>
+      <link>https://praeclarumjj3.github.io/blogs/societyfy/</link>
+      <pubDate>Wed, 19 Feb 2020 00:00:00 +0000</pubDate>
+      <guid>https://praeclarumjj3.github.io/blogs/societyfy/</guid>
+      <description>&lt;p&gt;Imagine a situation where you are at a place where you don’t know many people and feel a bit left out. You feel hesitant to go out for lunch or hangout or even go to a movie alone. This is where the concept of Societyfy comes in to rescue you.&lt;/p&gt;
+&lt;p&gt;Read more at: 
+&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://praeclarumjj3.github.io/blogs/memory_wall_iitr/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://praeclarumjj3.github.io/blogs/memory_wall_iitr/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

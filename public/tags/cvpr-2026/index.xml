@@ -1,1 +1,24 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>CVPR 2026 | Jitesh Jain</title><link>https://praeclarumjj3.github.io/tags/cvpr-2026/</link><atom:link href="https://praeclarumjj3.github.io/tags/cvpr-2026/index.xml" rel="self" type="application/rss+xml"/><description>CVPR 2026</description><generator>Hugo Blox Builder (https://hugoblox.com)</generator><language>en-us</language><lastBuildDate>Tue, 16 Dec 2025 00:00:00 +0000</lastBuildDate><image><url>https://praeclarumjj3.github.io/media/icon_hu18230691612322137769.png</url><title>CVPR 2026</title><link>https://praeclarumjj3.github.io/tags/cvpr-2026/</link></image><item><title>SAGE: Training Smart Any-Horizon Agents for Long Video Reasoning with Reinforcement Learning</title><link>https://praeclarumjj3.github.io/publication/sage/</link><pubDate>Tue, 16 Dec 2025 00:00:00 +0000</pubDate><guid>https://praeclarumjj3.github.io/publication/sage/</guid><description/></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>CVPR 2026 | Jitesh Jain</title>
+    <link>https://praeclarumjj3.github.io/tags/cvpr-2026/</link>
+      <atom:link href="https://praeclarumjj3.github.io/tags/cvpr-2026/index.xml" rel="self" type="application/rss+xml" />
+    <description>CVPR 2026</description>
+    <generator>Hugo Blox Builder (https://hugoblox.com)</generator><language>en-us</language><lastBuildDate>Tue, 16 Dec 2025 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://praeclarumjj3.github.io/media/icon_hu18230691612322137769.png</url>
+      <title>CVPR 2026</title>
+      <link>https://praeclarumjj3.github.io/tags/cvpr-2026/</link>
+    </image>
+    
+    <item>
+      <title>SAGE: Training Smart Any-Horizon Agents for Long Video Reasoning with Reinforcement Learning</title>
+      <link>https://praeclarumjj3.github.io/publication/sage/</link>
+      <pubDate>Tue, 16 Dec 2025 00:00:00 +0000</pubDate>
+      <guid>https://praeclarumjj3.github.io/publication/sage/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
