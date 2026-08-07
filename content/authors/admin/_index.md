@@ -40,8 +40,8 @@ profiles:
     link: https://scholar.google.com/citations?view_op=list_works&hl=en&user=nygnfNwAAAAJ
   - icon: brands/linkedin
     link: https://www.linkedin.com/in/jitesh-jain-1451b9192/
-  - icon: brands/instagram
-    link: https://www.instagram.com/praeclarumjj/
+#   - icon: brands/instagram
+#     link: https://www.instagram.com/praeclarumjj/
   - icon: academicons/cv
     link: uploads/cv.pdf
 # Awards.
