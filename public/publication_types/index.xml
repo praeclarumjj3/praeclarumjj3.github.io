@@ -1,16 +1,1 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Publication_types | Jitesh Jain</title>
-    <link>https://praeclarumjj3.github.io/publication_types/</link>
-      <atom:link href="https://praeclarumjj3.github.io/publication_types/index.xml" rel="self" type="application/rss+xml" />
-    <description>Publication_types</description>
-    <generator>Hugo Blox Builder (https://hugoblox.com)</generator><language>en-us</language><lastBuildDate>Tue, 16 Dec 2025 00:00:00 +0000</lastBuildDate>
-    <image>
-      <url>https://praeclarumjj3.github.io/media/icon_hu18230691612322137769.png</url>
-      <title>Publication_types</title>
-      <link>https://praeclarumjj3.github.io/publication_types/</link>
-    </image>
-    
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Publication_types | Jitesh Jain</title><link>https://praeclarumjj3.github.io/publication_types/</link><atom:link href="https://praeclarumjj3.github.io/publication_types/index.xml" rel="self" type="application/rss+xml"/><description>Publication_types</description><generator>Hugo Blox Builder (https://hugoblox.com)</generator><language>en-us</language><lastBuildDate>Tue, 16 Dec 2025 00:00:00 +0000</lastBuildDate><image><url>https://praeclarumjj3.github.io/media/icon_hu18230691612322137769.png</url><title>Publication_types</title><link>https://praeclarumjj3.github.io/publication_types/</link></image></channel></rss>

@@ -91,9 +91,9 @@ profiles:
               <a href="https://arxiv.org/abs/2510.15261" class="hover-link">AUGUSTUS</a>]. 
           </li>
       </ul>
-    <div class="market-note" aria-label="Industry research roles">
+    <div class="market-note" aria-label="Industry roles">
         <p>
-            I'm seeking industry research roles starting in February 2027. My work focuses on agentic AI, multimodal reasoning, and RL infrastructure. If your team is hiring, I'd love to connect!
+            I'm seeking industry roles starting in March 2027. My work focuses on multimodal agentic AI and post-training. If your team is hiring, I'd love to connect! <a href="uploads/research_statement.pdf" target="_blank" class="hover-link">[Research Statement]</a>
         </p>
     </div>
     <p>
@@ -166,6 +166,11 @@ profiles:
     .market-note strong {
         color: #7ff3e7;
         font-weight: 700;
+    }
+
+    /* Keep "[Research Statement]" from splitting across lines */
+    .market-note a {
+        white-space: nowrap;
     }
 
     /* Media Query for Larger Screens */

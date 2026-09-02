@@ -35,7 +35,7 @@ header:
     fixed_to_top: true
     show_search: false
     highlight_active_link: true
-    show_theme_chooser: true
+    show_theme_chooser: false
     logo:
       text: "Jitesh Jain"
 

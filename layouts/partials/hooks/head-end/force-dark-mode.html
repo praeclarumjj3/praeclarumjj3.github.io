@@ -1,0 +1,22 @@
+{{/*
+  The site is dark-only: the navbar theme chooser is disabled via
+  `header.navbar.show_theme_chooser: false` in config/_default/params.yaml.
+
+  Hiding the toggle is not sufficient on its own. The theme persists the visitor's
+  last choice in the `wc-color-theme` localStorage key, and that stored value wins
+  over `appearance.mode`. Anyone who switched to light before the toggle was removed
+  would otherwise be stuck in light mode with no control left to switch back.
+
+  This overwrites the stored preference and pins the `dark` class. It runs
+  synchronously in <head> so the class is set before first paint (no light flash).
+*/}}
+<script>
+  (function () {
+    try {
+      localStorage.setItem('wc-color-theme', 'dark');
+    } catch (e) {
+      /* private mode / storage disabled — the class below still applies */
+    }
+    document.documentElement.classList.add('dark');
+  })();
+</script>
