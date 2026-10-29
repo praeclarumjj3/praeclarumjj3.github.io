@@ -42,7 +42,7 @@ header:
 # Site footer
 footer:
   copyright:
-    notice: '© {2024} Jitesh Jain'
+    notice: '© {year} Jitesh Jain'
     license:
       enable: false
       allow_derivatives: false
