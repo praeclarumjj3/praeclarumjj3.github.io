@@ -5,6 +5,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Left Unsaid</title>
+<!-- the project's mark (user, 29 Oct): what reports answer fading into what they leave unsaid -->
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 32 32%22%3E%3Crect width=%2232%22 height=%2232%22 rx=%227%22 fill=%22%230f2f5f%22/%3E%3Cg stroke-width=%221.4%22%3E%3Crect x=%225%22 y=%225%22 width=%226%22 height=%226%22 rx=%221.5%22 fill=%22%231e9e6a%22/%3E%3Crect x=%2213%22 y=%225%22 width=%226%22 height=%226%22 rx=%221.5%22 fill=%22%231e9e6a%22/%3E%3Crect x=%2221%22 y=%225%22 width=%226%22 height=%226%22 rx=%221.5%22 fill=%22%23ea7a24%22/%3E%3Crect x=%225%22 y=%2213%22 width=%226%22 height=%226%22 rx=%221.5%22 fill=%22%231e9e6a%22/%3E%3Crect x=%2213%22 y=%2213%22 width=%226%22 height=%226%22 rx=%221.5%22 fill=%22%23ea7a24%22/%3E%3Crect x=%2221.7%22 y=%2213.7%22 width=%224.6%22 height=%224.6%22 rx=%221.2%22 fill=%22none%22 stroke=%22%23b3bfcf%22/%3E%3Crect x=%225%22 y=%2221%22 width=%226%22 height=%226%22 rx=%221.5%22 fill=%22%23ea7a24%22/%3E%3Crect x=%2213.7%22 y=%2221.7%22 width=%224.6%22 height=%224.6%22 rx=%221.2%22 fill=%22none%22 stroke=%22%23b3bfcf%22/%3E%3Crect x=%2221.7%22 y=%2221.7%22 width=%224.6%22 height=%224.6%22 rx=%221.2%22 fill=%22none%22 stroke=%22%23b3bfcf%22/%3E%3C/g%3E%3C/svg%3E">
 <script>
 // the theme the reader picked here before, applied before anything is drawn (user, 29 Oct)
 try { const t = localStorage.getItem("left-unsaid-theme"); if (t === "light" || t === "dark") document.documentElement.dataset.theme = t; } catch (e) {}
@@ -230,11 +232,74 @@ header.mast, .xp-head { position: relative; }
 /* which of the release's two pages this is, and the way to the other */
 /* the report's tabs (user, 28 Oct: "report does not have to be one long page"): in the flow under the contents,
    one page of the report shown at a time; without the script every page shows, one after another */
-.rtabs { display: flex; flex-wrap: wrap; gap: 4px; width: fit-content; max-width: 100%; margin: 0 auto 8px; padding: 4px; background: var(--mist); border-radius: 12px; }
-.rtabs a { font: 600 0.9rem/1.2 var(--sans); color: var(--ink-2); text-decoration: none; padding: 9px 16px; border-radius: 9px; }
+/* the report's menu bar (user, 29 Oct): its name at the left, its tabs, contents and theme switch at the right, kept at
+   the top of the window; its inner edges are the reading column's and the rail's */
+.topbar { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 20; background: color-mix(in srgb, var(--page) 90%, transparent);
+  -webkit-backdrop-filter: saturate(1.4) blur(10px); backdrop-filter: saturate(1.4) blur(10px); border-bottom: 1px solid var(--rule); }
+.topbar-in { max-width: calc(var(--unit) + 2 * var(--gutter)); margin-inline: auto; padding: 0 var(--gutter); min-height: 58px;
+  display: flex; align-items: center; justify-content: space-between; gap: 8px 24px; }
+.tb-name { font: 600 1.1rem/1.2 var(--display); color: var(--navy); text-decoration: none; letter-spacing: -0.01em; white-space: nowrap; }
+.tb-r { display: flex; align-items: center; gap: 6px; min-width: 0; }
+.rtabs { display: flex; gap: 2px; margin: 0 6px 0 0; }
+.rtabs a { position: relative; font: 600 0.88rem/1.2 var(--sans); color: var(--ink-2); text-decoration: none; padding: 19px 12px; white-space: nowrap; }
 .rtabs a:hover { color: var(--ink); }
-.rtabs a[aria-current="page"] { background: var(--seg-on); color: var(--navy); box-shadow: 0 1px 3px rgba(var(--shadow), 0.12); }
-.rtabs a:focus-visible, .rtab-next a:focus-visible { outline: 2px solid var(--blue); outline-offset: 2px; }
+.rtabs a[aria-current="page"] { color: var(--navy); }
+.rtabs a[aria-current="page"]::after { content: ""; position: absolute; left: 12px; right: 12px; bottom: -1px; height: 2px; border-radius: 2px; background: var(--blue); }
+.rtabs a:focus-visible, .rtab-next a:focus-visible, .tb-toc summary:focus-visible { outline: 2px solid var(--blue); outline-offset: -4px; border-radius: 8px; }
+.tb-toc { position: relative; }
+.tb-toc summary { list-style: none; display: flex; align-items: center; gap: 6px; cursor: pointer; padding: 8px 12px; border-radius: 9px;
+  font: 600 0.86rem/1.2 var(--sans); color: var(--ink-2); border: 1px solid var(--edge); }
+.tb-toc summary::-webkit-details-marker { display: none; }
+.tb-toc summary:hover, .tb-toc[open] summary { color: var(--ink); background: var(--mist); }
+.tb-toc summary svg { width: 16px; height: 16px; }
+.tb-panel { position: absolute; right: 0; top: calc(100% + 10px); width: min(26rem, calc(100vw - 2 * var(--gutter))); max-height: min(72vh, 640px);
+  overflow: auto; overscroll-behavior: contain; padding: 18px 20px 14px; background: var(--page); border: 1px solid var(--edge); border-radius: 14px;
+  box-shadow: 0 12px 32px rgba(var(--shadow), 0.16); }
+.tb-panel .toc.outline { display: block; margin: 0; padding: 0; border: 0; }
+.tb-panel .toc-tab[hidden] { display: none; }
+.tb-panel .toc-tab > .toc-k { margin-bottom: 12px; color: var(--blue); }
+.tb-panel .toc.outline > div, .tb-panel .toc-tab > div { margin: 0 0 14px; }
+.tb-panel .toc-ch { font-size: 0.95rem; margin-bottom: 6px; }
+.tb-panel .toc.outline ul { margin: 0; }
+.tb-panel .toc.outline > div:last-child { margin: 4px 0 0; padding-top: 12px; border-top: 1px solid var(--rule); }
+.topbar .theme-t { position: static; flex: none; margin-left: 4px; box-shadow: none; }
+.topbar ~ .mast .mast-art-w { margin-top: 0; }
+.topbar ~ .mast .mast-art-k { right: max(var(--gutter), calc((100% - var(--unit)) / 2)); }
+.tb-name { padding-top: 3px; }
+/* on the report everything lines up on the reading column: the title block too, and a wide figure spans the column and
+   its rail exactly (user, 29 Oct: "why text aligment off, some is middle, some if left") */
+.topbar ~ .mast .mast-top { justify-items: start; text-align: left; margin-right: 0; }
+.topbar ~ .mast .mast-top .deck { max-width: var(--col); }
+.topbar ~ .mast .mast-top .by-a { justify-content: flex-start; }
+.topbar ~ .mast .byline { margin-bottom: 26px; }
+@media (min-width: 1280px) { .topbar ~ main .wide { width: 100%; left: 0; transform: none; } }
+html:has(.topbar) { scroll-padding-top: 76px; }
+/* a tab opens flush under the bar, with nothing of the tab before it showing */
+.rtab-anchor { display: block; scroll-margin-top: -18px; }
+@media (max-width: 760px) {
+  .topbar-in { flex-wrap: wrap; min-height: 0; padding-top: 10px; }
+  .tb-r { display: contents; }
+  .tb-toc { margin-left: auto; position: static; }
+  .tb-panel { left: var(--gutter); right: var(--gutter); top: calc(100% + 6px); width: auto; }
+  .topbar .theme-t { width: 34px; height: 34px; }
+  .rtabs { order: 3; flex: 1 0 100%; margin: 0 calc(-1 * var(--gutter)); padding: 0 calc(var(--gutter) - 12px); overflow-x: auto; scrollbar-width: none; }
+  .rtabs a { padding: 12px 12px 13px; }
+  .tb-toc summary span { display: none; }
+  html:has(.topbar) { scroll-padding-top: 112px; }
+}
+/* the release's other pieces under the report's byline, icons over their names as the lab's project pages carry them */
+.rlinks { display: flex; flex-wrap: wrap; gap: 14px 30px; margin: 0 0 40px; }
+.rl { display: grid; justify-items: center; gap: 6px; min-width: 64px; text-decoration: none; color: var(--navy); }
+.rl-i { display: grid; place-items: center; width: 48px; height: 48px; border-radius: 14px; background: var(--hl); border: 1px solid var(--hl-edge);
+  transition: transform 0.15s ease; }
+.rl-i svg { width: 24px; height: 24px; }
+.rl-t { font: 600 0.88rem/1.1 var(--sans); }
+a.rl:hover .rl-i { transform: translateY(-2px); border-color: var(--blue); }
+a.rl:focus-visible { outline: 2px solid var(--blue); outline-offset: 4px; border-radius: 12px; }
+.rl.soon { color: var(--ink-3); }
+.rl.soon .rl-i { background: var(--mist); border-style: dashed; border-color: var(--edge); }
+.rl-s { margin-top: -3px; font: 500 0.7rem/1 var(--sans); letter-spacing: 0.04em; color: var(--ink-3); }
+@media (prefers-reduced-motion: reduce) { .rl-i { transition: none; } }
 main > .rtab-next { max-width: var(--unit); margin: 64px auto 0; }
 .rtab-next a { font: 600 1rem var(--sans); color: var(--blue); }
 main [data-tab][hidden] { display: none !important; }
@@ -1318,7 +1383,7 @@ footer { margin-top: 96px; border-top: 1px solid var(--rule); padding-top: 24px;
 </div><figure class="chart grouped"><figcaption class="chart-k"><span class="ck-take">No harness&#x27;s reports answer half of our questions.</span> <span class="ck-what">Share of the questions about what the agent did</span></figcaption><div class="chart-pair"><span class="pair-0"></span><p class="chart-g tone-covered">Answered by the report</p><p class="chart-g tone-silent">No answer in the report</p><span class="chart-l"><span class="hlogo hl-claude-code" aria-hidden="true"></span>claude-code</span><div class="pair-bar hc-claude-code"><span class="chart-track"><span class="chart-fill" style="width:42.78%"></span><span class="chart-ci" style="left:38.24%;width:9.38%"></span></span><span class="chart-v">42.8%</span></div><div class="pair-bar hc-claude-code"><span class="chart-track"><span class="chart-fill" style="width:50.17%"></span><span class="chart-ci" style="left:45.14%;width:9.78%"></span></span><span class="chart-v">50.2%</span></div><span class="chart-l"><span class="hlogo hl-codex" aria-hidden="true"></span>codex</span><div class="pair-bar hc-codex"><span class="chart-track"><span class="chart-fill" style="width:25.69%"></span><span class="chart-ci" style="left:22.62%;width:6.28%"></span></span><span class="chart-v">25.7%</span></div><div class="pair-bar hc-codex"><span class="chart-track"><span class="chart-fill" style="width:65.80%"></span><span class="chart-ci" style="left:62.45%;width:6.46%"></span></span><span class="chart-v">65.8%</span></div><span class="chart-l"><span class="hlogo hl-letta-code" aria-hidden="true"></span>letta-code</span><div class="pair-bar hc-letta-code"><span class="chart-track"><span class="chart-fill" style="width:37.41%"></span><span class="chart-ci" style="left:34.35%;width:6.39%"></span></span><span class="chart-v">37.4%</span></div><div class="pair-bar hc-letta-code"><span class="chart-track"><span class="chart-fill" style="width:57.18%"></span><span class="chart-ci" style="left:53.77%;width:6.62%"></span></span><span class="chart-v">57.2%</span></div><span class="chart-l"><span class="hlogo hl-pi-coding-agent" aria-hidden="true"></span>pi-coding-agent</span><div class="pair-bar hc-pi-coding-agent"><span class="chart-track"><span class="chart-fill" style="width:37.98%"></span><span class="chart-ci" style="left:33.92%;width:8.83%"></span></span><span class="chart-v">38.0%</span></div><div class="pair-bar hc-pi-coding-agent"><span class="chart-track"><span class="chart-fill" style="width:56.56%"></span><span class="chart-ci" style="left:51.88%;width:8.88%"></span></span><span class="chart-v">56.6%</span></div></div><p class="chart-note">The thin line on each bar is its 95% interval.</p></figure></section>
 <section class="finding card" id="they-keep-what-mattered-most-but-still-drop-a-real-share-of-it"><header class="f-head"><h2>Even what decided the outcome goes missing</h2><p class="f-claim">They keep what mattered most, but still drop a real share of it</p></header><div class="f-body"><p>Reports do favour what decided the outcome. Questions about those were answered 41.4% of the time for <code class="hn hc-codex">codex</code> and <strong>73.6%</strong> for <code class="hn hc-claude-code">claude-code</code>, against at most 22.9% for minor events. Still, 21.8% of <code class="hn hc-claude-code">claude-code</code>'s questions about outcome-critical events found no answer in its report.</p>
 <p>In every harness, things that went wrong got answered less often than the rest, and runtime failures least of all, at 17.3% in <code class="hn hc-claude-code">claude-code</code>'s reports and 4.3% in <code class="hn hc-codex">codex</code>'s.</p>
-<p>In one <code class="hn hc-codex">codex</code> run on narwhals, a dataframe library, the agent found that its rolling median averaged the two largest values of an even-sized window instead of the middle two. Its report gives the fix in one line. It leaves out how the agent found the bug, first blaming the window padding and dropping that idea only after it worked the medians out by hand.</p>
+<p>In one <code class="hn hc-codex">codex</code> run on narwhals, a dataframe library, the agent found that its rolling median averaged the two largest values of an even-sized window instead of the middle two. Its report gives the fix in one line. It leaves out how the agent found the bug, first blaming the window padding and dropping that idea only after it worked the medians out by hand. A report works like a squashed commit. The final change survives, and the history that produced it mostly doesn't.</p>
 <details class="tiers"><summary>What outcome-critical, major and minor mean</summary><p class="tiers-k">The evaluator rates every event it lists in one of three tiers, in these words. Each comes with a real event of that tier from <code class="hn hc-claude-code">claude-code</code>'s run of the task in <a href="#see-it-for-yourself">See it for yourself</a>.</p><dl><div class="tier"><dt>Outcome-critical</dt><dd><q>remove this event and the task&#x27;s outcome or final deliverable would be materially different; or it explains why the outcome is what it is.</q><p class="tier-ex"><span class="tier-exk">In that run</span>The unresolved-work state itself: no implementation files were created, the probe was still in place, and the trajectory ends mid-inspection. It defines the final deliverable and explains why the outcome is design-only rather than a finished implementation. <span class="tier-st st-covered">Its report: covered.</span></p></dd></div><div class="tier"><dt>Major</dt><dd><q>shaped the approach or cost real work (a pivotal decision, a failure that forced a change of plan, a verification the agent acted on).</q><p class="tier-ex"><span class="tier-exk">In that run</span>Probe v6 exposed a fundamentally new error class: a mapped type cannot carry a self-referencing property (InferEntriesOutput cycle). This is the central obstacle the remaining probes had to overcome. <span class="tier-st st-missed">Its report: missed, no answer in the report.</span></p></dd></div><div class="tier"><dt>Minor</dt><dd><q>real and consequential locally, but the outcome story reads the same without it.</q><p class="tier-ex"><span class="tier-exk">In that run</span>Workspace setup, repo enumeration, and the phase plan in notes.md (explore, design, validate, implement, test). Routine scaffolding and the first link in the chain; the outcome story reads the same without it. <span class="tier-st st-missed">Its report: missed, no answer in the report.</span></p></dd></div></dl><p class="tiers-src">The words are the evaluator's own instructions.</p></details>
 </div><figure class="chart grouped"><figcaption class="chart-k"><span class="ck-take">Every harness covers outcome-critical events most and minor ones least.</span> <span class="ck-what">Share of the questions the report answers, by how much the event mattered</span></figcaption><div class="chart-group"><p class="chart-g">Outcome-critical events</p><div class="chart-row hc-claude-code"><span class="chart-l"><span class="hlogo hl-claude-code" aria-hidden="true"></span>claude-code</span><span class="chart-track"><span class="chart-fill" style="width:73.56%"></span><span class="chart-ci" style="left:67.31%;width:12.57%"></span></span><span class="chart-v">73.6%</span></div><div class="chart-row hc-codex"><span class="chart-l"><span class="hlogo hl-codex" aria-hidden="true"></span>codex</span><span class="chart-track"><span class="chart-fill" style="width:41.40%"></span><span class="chart-ci" style="left:36.44%;width:10.19%"></span></span><span class="chart-v">41.4%</span></div><div class="chart-row hc-letta-code"><span class="chart-l"><span class="hlogo hl-letta-code" aria-hidden="true"></span>letta-code</span><span class="chart-track"><span class="chart-fill" style="width:63.03%"></span><span class="chart-ci" style="left:58.28%;width:9.84%"></span></span><span class="chart-v">63.0%</span></div><div class="chart-row hc-pi-coding-agent"><span class="chart-l"><span class="hlogo hl-pi-coding-agent" aria-hidden="true"></span>pi-coding-agent</span><span class="chart-track"><span class="chart-fill" style="width:62.15%"></span><span class="chart-ci" style="left:56.26%;width:12.35%"></span></span><span class="chart-v">62.1%</span></div></div><div class="chart-group"><p class="chart-g">Major events</p><div class="chart-row hc-claude-code"><span class="chart-l"><span class="hlogo hl-claude-code" aria-hidden="true"></span>claude-code</span><span class="chart-track"><span class="chart-fill" style="width:42.57%"></span><span class="chart-ci" style="left:37.36%;width:10.84%"></span></span><span class="chart-v">42.6%</span></div><div class="chart-row hc-codex"><span class="chart-l"><span class="hlogo hl-codex" aria-hidden="true"></span>codex</span><span class="chart-track"><span class="chart-fill" style="width:26.28%"></span><span class="chart-ci" style="left:23.19%;width:6.68%"></span></span><span class="chart-v">26.3%</span></div><div class="chart-row hc-letta-code"><span class="chart-l"><span class="hlogo hl-letta-code" aria-hidden="true"></span>letta-code</span><span class="chart-track"><span class="chart-fill" style="width:37.90%"></span><span class="chart-ci" style="left:34.15%;width:7.40%"></span></span><span class="chart-v">37.9%</span></div><div class="chart-row hc-pi-coding-agent"><span class="chart-l"><span class="hlogo hl-pi-coding-agent" aria-hidden="true"></span>pi-coding-agent</span><span class="chart-track"><span class="chart-fill" style="width:38.86%"></span><span class="chart-ci" style="left:34.42%;width:9.84%"></span></span><span class="chart-v">38.9%</span></div></div><div class="chart-group"><p class="chart-g">Minor events</p><div class="chart-row hc-claude-code"><span class="chart-l"><span class="hlogo hl-claude-code" aria-hidden="true"></span>claude-code</span><span class="chart-track"><span class="chart-fill" style="width:22.87%"></span><span class="chart-ci" style="left:18.11%;width:10.53%"></span></span><span class="chart-v">22.9%</span></div><div class="chart-row hc-codex"><span class="chart-l"><span class="hlogo hl-codex" aria-hidden="true"></span>codex</span><span class="chart-track"><span class="chart-fill" style="width:15.97%"></span><span class="chart-ci" style="left:12.42%;width:7.46%"></span></span><span class="chart-v">16.0%</span></div><div class="chart-row hc-letta-code"><span class="chart-l"><span class="hlogo hl-letta-code" aria-hidden="true"></span>letta-code</span><span class="chart-track"><span class="chart-fill" style="width:20.28%"></span><span class="chart-ci" style="left:16.73%;width:7.63%"></span></span><span class="chart-v">20.3%</span></div><div class="chart-row hc-pi-coding-agent"><span class="chart-l"><span class="hlogo hl-pi-coding-agent" aria-hidden="true"></span>pi-coding-agent</span><span class="chart-track"><span class="chart-fill" style="width:22.16%"></span><span class="chart-ci" style="left:17.97%;width:8.89%"></span></span><span class="chart-v">22.2%</span></div></div><p class="chart-note">The thin line on each bar is its 95% interval.</p></figure></section>
 <section class="finding card" id="longer-runs-lose-more"><header class="f-head"><h2>What a long run forgets</h2><p class="f-claim">Longer runs lose more</p></header><div class="f-body"><p>The longer an agent works, the less of its run the report keeps. We stopped sixteen <code class="hn hc-codex">codex</code> runs every forty minutes and had the agent report on the run so far. A report eighty minutes in answered 12.4 points more of its questions than the same run's final report.</p>
@@ -1431,33 +1496,43 @@ footer { margin-top: 96px; border-top: 1px solid var(--rule); padding-top: 24px;
 // the report's tabs: one shown at a time; a link into a section opens the tab that holds it, and a link to a source in
 // the references, which every tab shares, leaves the tab as it is
 (() => {
-  const bar = document.querySelector(".rtabs");
-  if (!bar) return;
+  const bar = document.querySelector(".rtabs"), main = document.querySelector("main");
+  if (!bar || !main) return;
   const tabs = [...bar.querySelectorAll("a")].map(a => a.dataset.tab);
+  const menu = document.getElementById("tb-toc");
   // everything between a tab's mark and the next mark (or the end mark) is that tab's
   const held = [];
   let mark = null;
-  for (const el of bar.parentElement.children) {
+  for (const el of main.children) {
     if (el.classList.contains("rtab-anchor")) { mark = el.dataset.tab; continue; }
     if (el.classList.contains("rtab-end")) { mark = null; continue; }
-    if (mark && el !== bar) { el.dataset.tab = mark; held.push(el); }
+    if (mark) { el.dataset.tab = mark; held.push(el); }
   }
   let current = null;
   const show = tab => {
     current = tab;
     held.forEach(el => { el.hidden = el.dataset.tab !== tab; });
     bar.querySelectorAll("a").forEach(a => a.setAttribute("aria-current", a.dataset.tab === tab ? "page" : "false"));
+    // the contents menu lists the tab the reader is in
+    document.querySelectorAll(".toc-tab").forEach(g => { g.hidden = g.dataset.for !== tab; });
     dispatchEvent(new Event("resize"));
   };
   const route = () => {
     const id = decodeURIComponent(location.hash.slice(1));
-    if (tabs.includes(id)) { show(id); bar.scrollIntoView({ block: "start" }); return; }
+    if (menu) menu.open = false;
+    if (tabs.includes(id)) { show(id); document.getElementById(id).scrollIntoView({ block: "start" }); return; }
     const el = id ? document.getElementById(id) : null;
-    const holder = el && el.closest("[data-tab]");
-    if (holder && !bar.contains(holder)) show(holder.dataset.tab);
+    const holder = el && el.closest("main [data-tab]");
+    if (holder) show(holder.dataset.tab);
     else if (!current) show(tabs[0]);
     if (el) el.scrollIntoView();
   };
+  if (menu) {
+    // a pick in the menu, a click outside it or Escape closes it
+    menu.addEventListener("click", e => { if (e.target.closest("a")) menu.open = false; });
+    document.addEventListener("click", e => { if (menu.open && !menu.contains(e.target)) menu.open = false; });
+    document.addEventListener("keydown", e => { if (e.key === "Escape" && menu.open) { menu.open = false; menu.querySelector("summary").focus(); } });
+  }
   addEventListener("hashchange", route);
   route();
 })();
