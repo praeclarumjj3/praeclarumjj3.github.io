@@ -204,6 +204,8 @@ main > section, main > footer, main > .later-rule { max-width: var(--unit); marg
 }
 /* the one measure the hero, the run cards and the flow diagram break out to */
 .wide { width: max(100%, min(var(--wide), calc(100vw - 2 * var(--gutter) - 16px))); position: relative; left: 50%; transform: translateX(-50%); }
+/* once the rail shows, a wide figure spans the column and its rail exactly, so the page keeps one left edge */
+@media (min-width: 1280px) { main .wide { width: var(--unit); left: 0; transform: none; } }
 .btn { display: inline-flex; align-items: center; gap: 8px; font: 600 0.9rem/1 var(--sans); color: var(--on-solid); background: var(--btn); padding: 11px 16px; border-radius: 10px; text-decoration: none; }
 .btn:hover { background: var(--solid); }
 .link-btn { font: 500 0.9rem var(--sans); color: var(--blue); background: none; border: 0; padding: 0; cursor: pointer; text-decoration: underline; text-decoration-color: color-mix(in srgb, var(--blue) 35%, transparent); text-underline-offset: 3px; }
@@ -224,11 +226,11 @@ header.mast, .xp-head { position: relative; }
 .mast-intro { margin: 0 0 40px; }
 .mast-intro > p { max-width: var(--col); margin: 0 0 1.1em; }
 .mast .eyebrow { margin-bottom: 24px; }
-/* the title block is centred on the page, the rail included, as a paper's title page is */
-.mast-top { display: grid; justify-items: center; text-align: center; }
-@media (min-width: 1280px) { .mast-top { margin-right: calc(-1 * (var(--rail-gap) + var(--rail))); } }
-.mast-top .deck { max-width: 44rem; }
-.mast-top .by-a { justify-content: center; }
+/* everything lines up on the reading column's left edge, the title block included, on the post as on the report
+   (user, 29 Oct: "why text aligment off, some is middle, some if left"; "match the post too") */
+.mast-top { display: grid; justify-items: start; text-align: left; }
+.mast-top .deck { max-width: var(--col); }
+.mast-top .by-a { justify-content: flex-start; }
 /* which of the release's two pages this is, and the way to the other */
 /* the report's tabs (user, 28 Oct: "report does not have to be one long page"): in the flow under the contents,
    one page of the report shown at a time; without the script every page shows, one after another */
@@ -264,15 +266,8 @@ header.mast, .xp-head { position: relative; }
 .tb-panel .toc.outline > div:last-child { margin: 4px 0 0; padding-top: 12px; border-top: 1px solid var(--rule); }
 .topbar .theme-t { position: static; flex: none; margin-left: 4px; box-shadow: none; }
 .topbar ~ .mast .mast-art-w { margin-top: 0; }
-.topbar ~ .mast .mast-art-k { right: max(var(--gutter), calc((100% - var(--unit)) / 2)); }
 .tb-name { padding-top: 3px; }
-/* on the report everything lines up on the reading column: the title block too, and a wide figure spans the column and
-   its rail exactly (user, 29 Oct: "why text aligment off, some is middle, some if left") */
-.topbar ~ .mast .mast-top { justify-items: start; text-align: left; margin-right: 0; }
-.topbar ~ .mast .mast-top .deck { max-width: var(--col); }
-.topbar ~ .mast .mast-top .by-a { justify-content: flex-start; }
 .topbar ~ .mast .byline { margin-bottom: 26px; }
-@media (min-width: 1280px) { .topbar ~ main .wide { width: 100%; left: 0; transform: none; } }
 html:has(.topbar) { scroll-padding-top: 76px; }
 /* a tab opens flush under the bar, with nothing of the tab before it showing */
 .rtab-anchor { display: block; scroll-margin-top: -18px; }
@@ -312,7 +307,7 @@ main [data-tab][hidden] { display: none !important; }
 header.mast:has(.mast-art-w) { padding-top: 0; }
 .mast-art-w { position: relative; margin: 0 calc(-1 * var(--gutter)) 56px; }
 .mast-art { display: block; width: 100%; height: clamp(120px, 15vw, 210px); -webkit-mask-image: linear-gradient(to bottom, #000 45%, transparent); mask-image: linear-gradient(to bottom, #000 45%, transparent); opacity: var(--art-opacity); }
-.mast-art-k { position: absolute; right: var(--gutter); bottom: -6px; margin: 0; max-width: calc(100% - 2 * var(--gutter)); font-size: 0.72rem; line-height: 1.4; color: var(--ink-3); text-align: right; }
+.mast-art-k { position: absolute; right: max(var(--gutter), calc((100% - var(--unit)) / 2)); bottom: -6px; margin: 0; max-width: calc(100% - 2 * var(--gutter)); font-size: 0.72rem; line-height: 1.4; color: var(--ink-3); text-align: right; }
 .mast-art-k span { white-space: nowrap; }
 .mast-art-k .u { display: inline-block; width: 8px; height: 8px; border-radius: 2px; margin: 0 4px 0 6px; vertical-align: 0; }
 /* the key under the picture shows the picture's own colours, each edged so a muted one still reads */
@@ -1300,8 +1295,6 @@ section.part.sub { padding-top: 72px; }
 .f-body > :last-child { margin-bottom: 0; }
 /* a chart set inside a finding's words keeps its distance from the words after it */
 .f-body > .chart { margin-block: 18px 26px; }
-/* a wide figure in a finding's text centres on the page's measure (column and margin), as it does in a plain section */
-@media (min-width: 1280px) { .f-body > .wide { left: calc(var(--unit) / 2); } }
 .pending-box { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 14px; background: var(--mist); border-radius: 12px; padding: 14px 18px; margin: 0; font-size: 0.92rem; line-height: 1.6; color: var(--ink-2); }
 .wait-k { display: inline-flex; align-items: center; gap: 8px; font: 600 0.7rem var(--sans); letter-spacing: 0.12em; text-transform: uppercase; color: var(--navy); white-space: nowrap; }
 .recs { font: 0.82rem var(--mono); color: var(--navy); }
