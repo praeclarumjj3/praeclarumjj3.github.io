@@ -641,6 +641,11 @@ details.setup p:last-child { margin-bottom: 0; }
 .r-note i { color: var(--ink-3); margin-right: 6px; }
 .r-kind { font-size: 0.8rem; color: var(--ink-3); margin: 0; }
 .r-sum { overflow: hidden; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; }
+.r-txt { display: grid; gap: 4px; min-width: 0; }
+.r-why { font-size: 0.86rem; color: var(--ink-2); overflow: hidden; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; }
+.r-why b { font-weight: 600; color: var(--ink); margin-right: 4px; }
+.row[open] .r-why { -webkit-line-clamp: unset; display: block; }
+.cen-f { display: grid; gap: 8px; }
 .row[open] .r-sum { -webkit-line-clamp: unset; display: block; }
 .k { margin: 10px 0 0; font: 600 0.68rem var(--sans); letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-3); }
 .prose { margin: 0; font-size: 0.95rem; line-height: 1.7; color: var(--ink); white-space: pre-wrap; overflow-wrap: anywhere; }
@@ -1205,6 +1210,29 @@ main .scale-band { margin: 40px 0 8px; }
 .ev-tier.ev-outcome-critical { background: color-mix(in srgb, var(--blue) 16%, var(--white)); color: var(--navy); }
 .tier-st.st-missed { color: var(--silent-ink); }
 .tier-st.st-covered { color: var(--covered-ink); }
+.ev-tier.ev-major { background: color-mix(in srgb, var(--blue) 7%, var(--white)); color: var(--ink); }
+
+/* every event in one run, each with its tier and the evaluator's reason (user, 30 Oct: "for an example session we
+   list all events and their tiers with reason from evaluator like why those, so everything is transparent") */
+.re { display: grid; gap: 10px; margin: 6px 0 18px; }
+.re-h { margin: 0; font-size: 0.92rem; line-height: 1.6; color: var(--ink-2); }
+.re-h b { color: var(--ink); font-weight: 600; }
+.re-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
+.re-ev { display: grid; grid-template-columns: 4.6em minmax(0, 1fr); gap: 12px; padding: 12px 14px; background: var(--white);
+  border: 1px solid var(--rule); border-left: 4px solid var(--edge); border-radius: 10px; }
+.re-ev.re-outcome-critical { border-left-color: var(--navy); }
+.re-ev.re-major { border-left-color: var(--blue); }
+.re-when { font: 0.78rem/1.9 var(--mono); color: var(--ink-3); font-variant-numeric: tabular-nums; white-space: nowrap; }
+.re-b { display: grid; gap: 6px; min-width: 0; }
+.re-top { margin: 0; display: flex; flex-wrap: wrap; align-items: center; gap: 4px 10px; font-size: 0.82rem; color: var(--ink-3); }
+.re-top .ev-tier { margin-left: 0; }
+.re-kind { font-weight: 600; color: var(--ink-2); }
+.re-path { font-style: italic; }
+.re-sum { margin: 0; font-size: 0.95rem; line-height: 1.6; color: var(--ink); overflow-wrap: anywhere; }
+.re-why { margin: 0; font-size: 0.9rem; line-height: 1.6; color: var(--ink-2); overflow-wrap: anywhere; }
+.re-whyk { font-weight: 600; color: var(--ink); margin-right: 6px; }
+.re-x { margin: 0; font-size: 0.9rem; color: var(--ink-2); }
+@media (max-width: 560px) { .re-ev { grid-template-columns: minmax(0, 1fr); gap: 4px; } }
 /* the report's bundle figures at the size they were drawn for: out of the column on a wide screen,
    scrolled sideways on a narrow one rather than shrunk until the labels cannot be read */
 .figs.wide { max-width: 1000px; }
@@ -2170,19 +2198,22 @@ footer { margin-top: 96px; border-top: 1px solid var(--rule); padding-top: 24px;
 
   function censusPanel() {
     const st = D.stages || {}, cen = st.census || {}, rec = Object.fromEntries((st.recoveries || []).map(r => [r.event, r]));
-    const f = filt.census || "all", m = D.meta, byQ = Object.fromEntries(D.questions.map(q => [q.id, q]));
+    const f = filt.census || "all", ft = filt.tier || "all", fw = filt.why || "show", m = D.meta, byQ = Object.fromEntries(D.questions.map(q => [q.id, q]));
     const steps = new Set((D.steps || []).map(s => s.id));
-    const n = s => D.events.filter(e => e.status === s).length;
-    const pick = D.events.filter(e => f === "all" || e.status === f);
+    const n = s => D.events.filter(e => e.status === s).length, nt = t => D.events.filter(e => e.salience === t).length;
+    const pick = D.events.filter(e => (f === "all" || e.status === f) && (ft === "all" || e.salience === ft));
     return head("Step 1 · Census", plural(D.events.length, "consequential event"),
-      `The evaluator read the run in ${plural(cen.chunks || 1, "chunk")} and listed every step that changed what happened next, then rated how much each mattered to the outcome. It reads the run alone, never the report. An event is covered when a question about it is answered by the report, and missed when the report has no answer.`, spend("census")) +
+      `The evaluator read the run in ${plural(cen.chunks || 1, "chunk")} and listed every step that changed what happened next, then rated how much each mattered to the outcome, giving a reason for each rating, shown under the event. It reads the run alone, never the report. An event is covered when a question about it is answered by the report, and missed when the report has no answer.`, spend("census")) +
       `<div class="timeline-box"><div class="timeline-wrap"><svg id="timeline" role="img" aria-label="The run's consequential events over time, by kind, marked covered, missed or not asked"></svg></div>` +
       `<p class="sizes">${Object.keys(STATUS).map(s => `<span>${mark(s, 5)}${STATUS[s]}</span>`).join("")}<span class="sep">·</span>larger marks mattered more: ${["outcome_critical", "major", "minor"].map(s => `<span>${mark("size", R[s] * 0.75)}${SAL[s]}</span>`).join("")}</p></div>` +
-      filters("census", [["all", `All ${D.events.length}`], ...Object.keys(STATUS).filter(n).map(s => [s, `${STATUS[s]} ${n(s)}`])], f) +
+      `<div class="cen-f">` + filters("census", [["all", `All ${D.events.length}`], ...Object.keys(STATUS).filter(n).map(s => [s, `${STATUS[s]} ${n(s)}`])], f) +
+      filters("tier", [["all", "Every tier"], ...["outcome_critical", "major", "minor"].filter(nt).map(t => [t, `${SAL[t]} ${nt(t)}`])], ft) +
+      filters("why", [["show", "With the evaluator's reasons"], ["hide", "Without"]], fw) + `</div>` +
       `<div class="rows">${pick.map(e => row(`ev-${e.id}`, "auto 6.5em 10.5em minmax(0, 1fr) auto",
-        `${mark(e.status, 5)}<span class="r-when">${esc(at(m.axis, e.at))}</span><span class="r-kind">${esc(LANE[e.type] || e.type)} · ${esc(SAL[e.salience] || "unrated")}</span><span class="r-sum">${esc(e.summary)}</span>${pill(`s-${e.status}`, STATUS[e.status])}`,
+        `${mark(e.status, 5)}<span class="r-when">${esc(at(m.axis, e.at))}</span><span class="r-kind">${esc(LANE[e.type] || e.type)} · ${esc(SAL[e.salience] || "unrated")}</span>` +
+        `<span class="r-txt"><span class="r-sum">${esc(e.summary)}</span>${fw === "show" && e.why ? `<span class="r-why"><b>Why ${esc((SAL[e.salience] || "this tier").toLowerCase())}</b> ${esc(e.why)}</span>` : ""}</span>${pill(`s-${e.status}`, STATUS[e.status])}`,
         `<p class="prose">${esc(e.summary)}</p>` +
-        (e.why ? `<p class="k">Why it mattered</p><p class="prose">${esc(e.why)}</p>` : "") +
+        (e.why && fw !== "show" ? `<p class="k">Why it mattered</p><p class="prose">${esc(e.why)}</p>` : "") +
         (rec[e.id] ? `<p class="k">How the agent handled this failure</p><p class="prose"><b>${esc(rec[e.id].verdict)}</b>: ${esc(rec[e.id].why)}</p>` : "") +
         `<p class="links">${(e.questions || []).filter(q => byQ[q]).map(q => go("judge", `data-q="${esc(q)}"`, `Question ${esc(q.replace("question_", ""))}: ${VERDICT[byQ[q].verdict] || byQ[q].verdict}`)).join("")}` +
         `${(e.cards || []).filter(c => steps.has(c)).map(c => go("task", `data-s="${esc(c)}"`, `Step ${esc(c.replace("card_", ""))}`)).join("")}</p>`)).join("")}</div>`;
