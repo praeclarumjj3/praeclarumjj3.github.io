@@ -1205,7 +1205,7 @@ main .scale-band { margin: 40px 0 8px; }
 .tier-ex { margin: 0; color: var(--ink-2); background: var(--white); border-radius: 10px; padding: 10px 14px; overflow-wrap: anywhere; }
 .tier-exk { display: block; font: 600 0.7rem var(--sans); letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-3); margin-bottom: 4px; }
 .tier-st { display: inline-block; font-weight: 600; }
-/* an example event's importance tier, beside where it comes from: a quiet pill, outcome-critical in the accent */
+/* an example event's importance tier, beside where it comes from: a quiet pill, decisive in the accent */
 .ev-tier { display: inline-block; margin-left: 8px; padding: 1px 8px; border-radius: 999px; font: 600 0.68rem var(--sans); letter-spacing: 0.04em; text-transform: none; vertical-align: 1px; background: var(--mist-2); color: var(--ink-2); box-shadow: inset 0 0 0 1px var(--edge); }
 .ev-tier.ev-outcome-critical { background: color-mix(in srgb, var(--blue) 16%, var(--white)); color: var(--navy); }
 .tier-st.st-missed { color: var(--silent-ink); }
@@ -1587,7 +1587,7 @@ footer { margin-top: 96px; border-top: 1px solid var(--rule); padding-top: 24px;
 
   // one run as squares, one per consequential event, sorted by what its report did with it (the hero and the run cards)
   const ST_SAID = { covered: "answered by its report", missed: "asked about, its report did not answer", unasked: "not asked about" };
-  const TIER_NAMES = { outcome_critical: "Outcome-critical", major: "Major", minor: "Minor" };
+  const TIER_NAMES = { outcome_critical: "Decisive", major: "Major", minor: "Minor" };
   const squares = (events, axis) => events.slice().sort((a, b) => ST_KEYS.indexOf(a.status) - ST_KEYS.indexOf(b.status) || a.at - b.at)
     .map(e => `<i class="u st-${e.status}" title="${tickLabel(axis, Math.round(e.at))}: ${ST_SAID[e.status]}"></i>`).join("");
   // `timed` false leaves out how long the run took, where the panel beside it already says so on the wall clock
@@ -1920,7 +1920,7 @@ footer { margin-top: 96px; border-top: 1px solid var(--rule); padding-top: 24px;
                  ["recovery", "Recoveries"], ["verification_outcome", "Checks"], ["unresolved_work", "Left unresolved"]];
   const LANE = Object.fromEntries(LANES);
   const R = { outcome_critical: 8, major: 5.8, minor: 4 };
-  const SAL = { outcome_critical: "outcome-critical", major: "major", minor: "minor" };
+  const SAL = { outcome_critical: "decisive", major: "major", minor: "minor" };
   const STATUS = { covered: "covered", missed: "missed", unasked: "not asked" };
   const VERDICT = { answerable: "covered", missing_from_report: "missed", unsupported_or_contradicted: "unsupported", not_scored: "not scored" };
   const CLAIM = { unsupported_or_contradicted: ["unsupported", "v-unsupported_or_contradicted"], unverified: ["unverified", "v-not_scored"], supported: ["supported", "v-answerable"] };
