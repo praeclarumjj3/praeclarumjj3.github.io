@@ -49,10 +49,11 @@ try { const t = localStorage.getItem("left-unsaid-theme"); if (t === "light" || 
   /* an agent's own document (its report, its images) keeps the white paper it was written on */
   --paper: #ffffff;
   --shadow: 15, 47, 95;
-  --art-opacity: 0.8;
-  --art-covered: #1e9e6a;
-  --art-silent: #ea7a24;
-  --art-unasked: #b3bfcf;
+  --art-opacity: 1;
+  /* the masthead's squares, softened: each status at its own strength over the page */
+  --art-covered: #1e9e6a73;
+  --art-silent: #ea7a244d;
+  --art-unasked: #b3bfcf59;
   --fv-edge: 0%;
   --seg-on: #ffffff;
   --mark: #0f1d33;
@@ -113,10 +114,10 @@ try { const t = localStorage.getItem("left-unsaid-theme"); if (t === "light" || 
     --solid: #36609f;
     --btn: #3a6cc8;
     --shadow: 0, 0, 0;
-    --art-opacity: 0.9;
-  --art-covered: #5abf94;
-  --art-silent: #4a3426;
-  --art-unasked: #161c27;
+    --art-opacity: 1;
+  --art-covered: #5abf9480;
+  --art-silent: #e8995e52;
+  --art-unasked: #39435480;
   --fv-edge: 38%;
     --seg-on: #333e51;
     --mark: #c9d2de;
@@ -160,10 +161,10 @@ try { const t = localStorage.getItem("left-unsaid-theme"); if (t === "light" || 
   --solid: #36609f;
   --btn: #3a6cc8;
   --shadow: 0, 0, 0;
-  --art-opacity: 0.9;
-  --art-covered: #5abf94;
-  --art-silent: #4a3426;
-  --art-unasked: #161c27;
+  --art-opacity: 1;
+  --art-covered: #5abf9480;
+  --art-silent: #e8995e52;
+  --art-unasked: #39435480;
   --fv-edge: 38%;
   --seg-on: #333e51;
   --mark: #c9d2de;
@@ -303,17 +304,10 @@ main [data-tab][hidden] { display: none !important; }
 .page-switch a[aria-current="page"] { background: var(--solid); color: var(--on-solid); }
 .page-switch a:not([aria-current]):hover, .page-switch a:not([aria-current]):focus-visible { background: var(--white); color: var(--navy); }
 .page-switch a:focus-visible { outline: 2px solid var(--blue); outline-offset: 2px; }
-/* the masthead's picture: the release's events, one square each, fading into the page */
+/* the masthead's picture: the release's events, one square each, softened and fading into the page, with no key */
 header.mast:has(.mast-art-w) { padding-top: 0; }
-.mast-art-w { position: relative; margin: 0 calc(-1 * var(--gutter)) 56px; }
-.mast-art { display: block; width: 100%; height: clamp(120px, 15vw, 210px); -webkit-mask-image: linear-gradient(to bottom, #000 45%, transparent); mask-image: linear-gradient(to bottom, #000 45%, transparent); opacity: var(--art-opacity); }
-.mast-art-k { position: absolute; right: max(var(--gutter), calc((100% - var(--unit)) / 2)); bottom: -6px; margin: 0; max-width: calc(100% - 2 * var(--gutter)); font-size: 0.72rem; line-height: 1.4; color: var(--ink-3); text-align: right; }
-.mast-art-k span { white-space: nowrap; }
-.mast-art-k .u { display: inline-block; width: 8px; height: 8px; border-radius: 2px; margin: 0 4px 0 6px; vertical-align: 0; }
-/* the key under the picture shows the picture's own colours, each edged so a muted one still reads */
-.mast-art-k .u.st-covered { background: var(--art-covered); border: 0; }
-.mast-art-k .u.st-missed { background: var(--art-silent); border: 0; box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--silent) var(--fv-edge), transparent); }
-.mast-art-k .u.st-unasked { background: var(--art-unasked); border: 0; box-shadow: inset 0 0 0 1px var(--edge); }
+.mast-art-w { position: relative; margin: 0 calc(-1 * var(--gutter)) 44px; }
+.mast-art { display: block; width: 100%; height: clamp(96px, 11vw, 150px); -webkit-mask-image: linear-gradient(to bottom, #000 30%, transparent); mask-image: linear-gradient(to bottom, #000 30%, transparent); opacity: var(--art-opacity); }
 .byline { margin: -16px 0 36px; font-size: 0.95rem; line-height: 1.6; color: var(--ink-2); }
 .byline p { margin: 0; }
 .by-names { color: var(--ink); font-weight: 500; }
