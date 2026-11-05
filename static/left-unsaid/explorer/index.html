@@ -1250,6 +1250,13 @@ main .scale-band { margin: 40px 0 8px; }
 .ck-clear .ck-ci { background: color-mix(in srgb, var(--silent) 45%, transparent); }
 .ck-bar { width: 2px; height: 16px; margin-left: -1px; background: var(--ink); border-radius: 1px; }
 .ck-zero { width: 1px; height: 12px; background: var(--ink-3); }
+.ck-gain .ck-dot { background: var(--covered); }
+.ck-gain .ck-ci { background: color-mix(in srgb, var(--covered) 45%, transparent); }
+.ck-none .ck-dot { display: none; }
+/* codex's report in three other forms: the checks' rows, one panel above the other in the post's column */
+.vs .vs-grid { grid-template-columns: 1fr; gap: 12px; margin-top: 14px; }
+.vs .ck-r { grid-template-columns: minmax(0, 12rem) minmax(0, 1fr) 4.4rem; }
+.vs .ck-m { display: none; }
 .ck-v { font: 600 0.78rem var(--sans); color: var(--ink); text-align: right; font-variant-numeric: tabular-nums; }
 .ck-m { justify-self: start; font: 600 0.66rem/1.6 var(--sans); padding: 0 7px; border-radius: 999px; }
 .ck-m.met { color: var(--covered-ink); background: var(--covered-tint); }
@@ -1258,7 +1265,8 @@ main .scale-band { margin: 40px 0 8px; }
 .ck-axis { margin: 4px 0 0; font-size: 0.7rem; color: var(--ink-3); }
 .checks > figcaption { max-width: var(--col); font-size: 0.88rem; line-height: 1.65; color: var(--ink-2); }
 @media (max-width: 900px) { .ck-grid { grid-template-columns: 1fr; } }
-@media (max-width: 520px) { .ck-r { grid-template-columns: minmax(0, 1fr) 3.2rem 4rem; } .ck-r .ck-l { grid-column: 1 / -1; } }
+@media (max-width: 520px) { .ck-r { grid-template-columns: minmax(0, 1fr) 3.2rem 4rem; } .ck-r .ck-l { grid-column: 1 / -1; }
+  .vs .ck-r { grid-template-columns: minmax(0, 1fr) 4.4rem; } }
 /* a case study's question, as the evaluator scored it */
 .case { margin: 12px 0 26px; padding: 14px 18px; border-radius: 14px; background: var(--mist); display: grid; gap: 8px; }
 .cs-f { display: grid; grid-template-columns: 9.5rem minmax(0, 1fr); gap: 2px 14px; align-items: baseline; }

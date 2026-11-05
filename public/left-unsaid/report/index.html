@@ -1250,6 +1250,13 @@ main .scale-band { margin: 40px 0 8px; }
 .ck-clear .ck-ci { background: color-mix(in srgb, var(--silent) 45%, transparent); }
 .ck-bar { width: 2px; height: 16px; margin-left: -1px; background: var(--ink); border-radius: 1px; }
 .ck-zero { width: 1px; height: 12px; background: var(--ink-3); }
+.ck-gain .ck-dot { background: var(--covered); }
+.ck-gain .ck-ci { background: color-mix(in srgb, var(--covered) 45%, transparent); }
+.ck-none .ck-dot { display: none; }
+/* codex's report in three other forms: the checks' rows, one panel above the other in the post's column */
+.vs .vs-grid { grid-template-columns: 1fr; gap: 12px; margin-top: 14px; }
+.vs .ck-r { grid-template-columns: minmax(0, 12rem) minmax(0, 1fr) 4.4rem; }
+.vs .ck-m { display: none; }
 .ck-v { font: 600 0.78rem var(--sans); color: var(--ink); text-align: right; font-variant-numeric: tabular-nums; }
 .ck-m { justify-self: start; font: 600 0.66rem/1.6 var(--sans); padding: 0 7px; border-radius: 999px; }
 .ck-m.met { color: var(--covered-ink); background: var(--covered-tint); }
@@ -1258,7 +1265,8 @@ main .scale-band { margin: 40px 0 8px; }
 .ck-axis { margin: 4px 0 0; font-size: 0.7rem; color: var(--ink-3); }
 .checks > figcaption { max-width: var(--col); font-size: 0.88rem; line-height: 1.65; color: var(--ink-2); }
 @media (max-width: 900px) { .ck-grid { grid-template-columns: 1fr; } }
-@media (max-width: 520px) { .ck-r { grid-template-columns: minmax(0, 1fr) 3.2rem 4rem; } .ck-r .ck-l { grid-column: 1 / -1; } }
+@media (max-width: 520px) { .ck-r { grid-template-columns: minmax(0, 1fr) 3.2rem 4rem; } .ck-r .ck-l { grid-column: 1 / -1; }
+  .vs .ck-r { grid-template-columns: minmax(0, 1fr) 4.4rem; } }
 /* a case study's question, as the evaluator scored it */
 .case { margin: 12px 0 26px; padding: 14px 18px; border-radius: 14px; background: var(--mist); display: grid; gap: 8px; }
 .cs-f { display: grid; grid-template-columns: 9.5rem minmax(0, 1fr); gap: 2px 14px; align-items: baseline; }
@@ -1550,6 +1558,8 @@ questions judged covered.</figcaption>
 
 <p>The Markdown tree is the longest in every harness, at 1.9 to 2.2 times the HTML page's words. STE is the shortest, at 0.8 to 0.9, and breaks STE's rules less than half as often as the HTML page. The slideshow is a little longer than the page, at 1.0 to 1.2, under more than twice as many headings.</p>
 <p>On <code class="hn hc-codex">codex</code>'s runs the form changes what the report carries. Against the same run's HTML page, on the questions scored for both, the Markdown tree answered <strong>8.2</strong> points more of the run's questions (5.7 to 11.1, over 56 runs) and the slideshow <strong>5.1</strong> more (2.4 to 7.8, over 57). The STE version answered <strong>7.6</strong> fewer (5.5 to 9.9, over 57). Each interval is a bootstrap over tasks of the paired differences, so it already holds the evaluator's own wobble.</p>
+<figure class="chart vs" id="report-forms"><figcaption class="chart-k"><span class="ck-take">The tree and the slideshow answer more than the page, and STE answers less.</span> <span class="ck-what">codex's report in three other forms, against the same run's HTML page on the same questions</span></figcaption><div class="ck-grid vs-grid"><section class="ck-p"><h4>Questions answered, against the page</h4><div class="ck-r ck-gain"><span class="ck-l">Markdown tree</span><span class="ck-t"><i class="ck-zero" style="left:50.00%"></i><i class="ck-ci" style="left:68.86%;width:18.19%"></i><i class="ck-dot" style="left:77.45%"></i></span><span class="ck-v">+8.2 pts</span><span class="ck-m"></span></div><div class="ck-r ck-gain"><span class="ck-l">Slideshow</span><span class="ck-t"><i class="ck-zero" style="left:50.00%"></i><i class="ck-ci" style="left:57.96%;width:17.93%"></i><i class="ck-dot" style="left:67.04%"></i></span><span class="ck-v">+5.1 pts</span><span class="ck-m"></span></div><div class="ck-r ck-clear"><span class="ck-l">Simplified Technical English</span><span class="ck-t"><i class="ck-zero" style="left:50.00%"></i><i class="ck-ci" style="left:17.13%;width:14.63%"></i><i class="ck-dot" style="left:24.68%"></i></span><span class="ck-v">−7.6 pts</span><span class="ck-m"></span></div><p class="ck-axis">points, from −15 to +15; the line marks no change</p></section><section class="ck-p"><h4>Words per consequential event, against the page</h4><div class="ck-r"><span class="ck-l">Markdown tree</span><span class="ck-t"><i class="ck-bar" style="left:40.00%"></i><i class="ck-dot" style="left:86.29%"></i></span><span class="ck-v">2.2×</span><span class="ck-m"></span></div><div class="ck-r"><span class="ck-l">Slideshow</span><span class="ck-t"><i class="ck-bar" style="left:40.00%"></i><i class="ck-dot" style="left:45.29%"></i></span><span class="ck-v">1.1×</span><span class="ck-m"></span></div><div class="ck-r"><span class="ck-l">Simplified Technical English</span><span class="ck-t"><i class="ck-bar" style="left:40.00%"></i><i class="ck-dot" style="left:31.05%"></i></span><span class="ck-v">0.8×</span><span class="ck-m"></span></div><p class="ck-axis">times the page&#x27;s, from 0 to 2.5; the tick marks the page</p></section></div><p class="chart-note">Each dot is the mean over codex's runs, each version paired with its own run's HTML page; the thin line is its 95% interval over tasks. Green answers more than the page with an interval clear of zero, and orange answers less.</p></figure>
+
 <p>Part of the tree's gain is length. It spends 2.2 times the page's words per event, and the share of questions it answers with something the run doesn't back or contradicts rises from 8.2% to 11.3%. The slideshow gains at close to the page's length, 1.1 times its words per event. STE is the shortest, at 0.8 times, and it loses more on decisive and major events (8.2 and 9.1 points) than on minor ones (4.8). Across harnesses a shorter report already went with a less complete one, since <code class="hn hc-codex">codex</code> writes the fewest words per event and answers the fewest questions, and STE shows the same within <code class="hn hc-codex">codex</code>'s own runs.</p>
 <p>By benchmark, both formats gain most on Harvey LAB, where both intervals clear zero, and on terminal-bench neither does. STE answers fewer on all three.</p>
 <p>Only <code class="hn hc-codex">codex</code>'s versions are scored, so whether the form matters as much in the other three harnesses isn't measured yet. The few <code class="hn hc-codex">codex</code> runs without a scored version are left out of its pairs: 3 for the tree, 2 for the slideshow and 2 for STE.</p>
