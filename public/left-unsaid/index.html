@@ -2,6 +2,20 @@
 <html lang="en">
 <head>
 <meta name="robots" content="noindex, nofollow">
+<meta name="description" content="We checked agents&#x27; reports against what they actually did. Even the steps that decided the outcome are often missing.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Left Unsaid">
+<meta property="og:description" content="We checked agents&#x27; reports against what they actually did. Even the steps that decided the outcome are often missing.">
+<meta property="og:url" content="https://praeclarumjj3.github.io/left-unsaid/">
+<meta property="og:image" content="https://praeclarumjj3.github.io/left-unsaid/card.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Left Unsaid. We checked agents&#x27; reports against what they actually did. Even the steps that decided the outcome are often missing.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Left Unsaid">
+<meta name="twitter:description" content="We checked agents&#x27; reports against what they actually did. Even the steps that decided the outcome are often missing.">
+<meta name="twitter:image" content="https://praeclarumjj3.github.io/left-unsaid/card.png">
+<meta name="twitter:image:alt" content="Left Unsaid. We checked agents&#x27; reports against what they actually did. Even the steps that decided the outcome are often missing.">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Left Unsaid</title>
@@ -2041,7 +2055,7 @@ footer { margin-top: 96px; border-top: 1px solid var(--rule); padding-top: 24px;
       node("task", "The agent works", plural((D.steps || []).length, "step"), [length(m), o.total ? `${o.satisfied}/${o.total} ${unit(m)}` : ""].filter(Boolean).join(" · "), "src") +
       `<div class="mn-reports" data-n="reports"><span class="mn-k">Then, from the run's end, its reports</span>${branches().map(b =>
         `<button type="button" class="bchip${b.scored ? " scored" : ""}" data-n="b-${b.key}" data-view="report" data-b="${b.key}"><span>${esc(b.label)}</span><span class="bchip-t">${b.scored ? "scored" : "kept"}</span></button>`).join("")}</div>` +
-      node("census", "Step 1 · Census", plural(D.events.length, "event"), `${tiers.outcome_critical || 0} critical · ${tiers.major || 0} major · ${tiers.minor || 0} minor`) +
+      node("census", "Step 1 · Census", plural(D.events.length, "event"), `${tiers.outcome_critical || 0} decisive · ${tiers.major || 0} major · ${tiers.minor || 0} minor`) +
       node("questions", "Step 2 · Questions", `${qs.selected ?? D.questions.length} kept`, authored ? `of ${authored} written` : "") +
       node("answer", "Step 3 · Blind reader", `${D.questions.length} read`, `${D.questions.filter(q => q.read === "missing_from_report").length} with no answer in the report`) +
       node("judge", "Step 4 · Judge", plural(D.questions.filter(q => q.verdict !== "not_scored").length, "verdict"), "each against the run") +

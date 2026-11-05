@@ -10211,7 +10211,7 @@ updating examples/nosec.py, test_nosec&#x27;s expected …</p></div><div class="
       node("task", "The agent works", plural((D.steps || []).length, "step"), [length(m), o.total ? `${o.satisfied}/${o.total} ${unit(m)}` : ""].filter(Boolean).join(" · "), "src") +
       `<div class="mn-reports" data-n="reports"><span class="mn-k">Then, from the run's end, its reports</span>${branches().map(b =>
         `<button type="button" class="bchip${b.scored ? " scored" : ""}" data-n="b-${b.key}" data-view="report" data-b="${b.key}"><span>${esc(b.label)}</span><span class="bchip-t">${b.scored ? "scored" : "kept"}</span></button>`).join("")}</div>` +
-      node("census", "Step 1 · Census", plural(D.events.length, "event"), `${tiers.outcome_critical || 0} critical · ${tiers.major || 0} major · ${tiers.minor || 0} minor`) +
+      node("census", "Step 1 · Census", plural(D.events.length, "event"), `${tiers.outcome_critical || 0} decisive · ${tiers.major || 0} major · ${tiers.minor || 0} minor`) +
       node("questions", "Step 2 · Questions", `${qs.selected ?? D.questions.length} kept`, authored ? `of ${authored} written` : "") +
       node("answer", "Step 3 · Blind reader", `${D.questions.length} read`, `${D.questions.filter(q => q.read === "missing_from_report").length} with no answer in the report`) +
       node("judge", "Step 4 · Judge", plural(D.questions.filter(q => q.verdict !== "not_scored").length, "verdict"), "each against the run") +
