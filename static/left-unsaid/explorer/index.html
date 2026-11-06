@@ -355,15 +355,14 @@ header.mast:has(.mast-art-w) { padding-top: 0; }
 .mast-meta p { margin: 0; }
 .mast-meta .k { font-weight: 600; color: var(--ink); margin-right: 8px; }
 /* the post's masthead leads with its results: a lead number in the display face over one line, each a link */
-/* the hook: four questions about steps that decided a run, one per harness, that the run's own report left unanswered
-   (user, 6 Nov: "we need a better teaser smthing that hooks the audience"); still, with nothing that pops up */
+/* the hook: a question about a step that decided one run, that the run's own report left unanswered (user, 6 Nov:
+   "we need a better teaser smthing that hooks the audience", then "maybe we shud just display one run") */
 .hook { margin: 18px 0 8px; padding: 30px 32px 28px; background: var(--mist); border-radius: 20px; display: grid; gap: 12px; }
 .hk-h { margin: 0; font: 500 clamp(1.7rem, 3.2vw, 2.4rem)/1.12 var(--display); letter-spacing: -0.012em; text-wrap: balance; }
 .hk-h a { color: var(--ink); text-decoration: none; }
 .hk-h a:hover, .hk-h a:focus-visible { text-decoration: underline; text-decoration-color: var(--edge); text-underline-offset: 6px; }
 .hk-s { margin: 0; max-width: 64ch; font-size: 0.95rem; line-height: 1.55; color: var(--ink-2); }
-.hk-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; margin-top: 10px; }
-.hk-q { display: grid; grid-template-rows: auto 1fr auto; gap: 12px; padding: 18px 20px 16px; background: var(--white); border-radius: 14px; }
+.hk-q { display: grid; gap: 12px; padding: 18px 20px 16px; background: var(--white); border-radius: 14px; }
 .hk-m { margin: 0; display: flex; flex-wrap: wrap; align-items: center; gap: 6px 10px; font: 500 0.86rem/1.2 var(--sans); color: var(--ink-2); }
 .hk-hn { font-family: var(--mono); font-size: 0.84rem; color: var(--ink); }
 .hk-b::before { content: "·"; margin-right: 10px; color: var(--ink-3); }
@@ -373,7 +372,36 @@ header.mast:has(.mast-art-w) { padding-top: 0; }
 .hk-no { font-weight: 600; color: var(--silent-ink); }
 .hk-no::before { content: ""; display: inline-block; width: 9px; height: 9px; margin-right: 8px; border-radius: 2px; background: var(--silent); }
 .hk-f a { color: var(--blue); }
-@media (max-width: 760px) { .hook { padding: 20px 16px 18px; border-radius: 14px; } .hk-grid { grid-template-columns: minmax(0, 1fr); gap: 12px; }
+/* the opener's one run (user, 6 Nov: "maybe we shud just display one run"): its question large, what the run shows
+   behind a hover, then the run's own totals as tiles and what its report answers at each tier */
+.hk-one { gap: 16px; padding: 24px 26px 20px; margin-top: 6px; }
+.hk-task { font-family: var(--mono); font-size: 0.8rem; color: var(--ink-2); overflow-wrap: anywhere; }
+.hk-task::before { content: "·"; margin-right: 10px; color: var(--ink-3); font-family: var(--sans); }
+.hk-one .hk-t { font-size: clamp(1.3rem, 2.3vw, 1.7rem); line-height: 1.32; max-width: 44ch; }
+.hk-one .hk-f { justify-content: flex-start; align-items: center; gap: 10px 18px; }
+.hk-stats { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 14px 22px; margin-top: 6px; }
+.hk-stats p { margin: 0; display: grid; align-content: start; gap: 3px; padding-top: 10px; border-top: 1px solid var(--rule); }
+.hk-stats b { font: 500 1.65rem/1.1 var(--display); font-variant-numeric: tabular-nums; color: var(--ink); white-space: nowrap; }
+.hk-stats span { font-size: 0.82rem; line-height: 1.35; color: var(--ink-2); }
+.hk-tiers { display: grid; gap: 10px; max-width: 720px; }
+.hk-tk { margin: 0 0 2px; font: 600 0.86rem/1.3 var(--sans); color: var(--ink); }
+.hk-tr { display: grid; grid-template-columns: 5.2rem minmax(0, 1fr) 8.6rem; align-items: center; gap: 14px; font-size: 0.86rem; color: var(--ink-2); }
+.hk-tr .chart-track { background: var(--mist); }
+.hk-tr .chart-fill { background: var(--hc); }
+.hk-tn { font-weight: 600; color: var(--ink); }
+.hk-tv { font-variant-numeric: tabular-nums; }
+.hk-tv b { font-weight: 600; color: var(--ink); }
+.hk-go { margin: 0; font-size: 0.88rem; }
+.hk-go a { color: var(--blue); }
+@media (max-width: 1000px) { .hk-stats { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+@media (max-width: 760px) {
+  .hk-one { padding: 18px 16px 16px; }
+  .hk-task { flex-basis: 100%; order: 1; }
+  .hk-task::before { content: none; }
+  .hk-stats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .hk-tr { grid-template-columns: 4.4rem minmax(0, 1fr) 6.8rem; gap: 10px; font-size: 0.82rem; }
+}
+@media (max-width: 760px) { .hook { padding: 20px 16px 18px; border-radius: 14px; }
   .hk-q { padding: 16px; } .hk-t { font-size: 1.1rem; } }
 /* the post's key findings: one line each, the finding in bold and its headline number bold inside the words */
 .keyfind { margin: 8px 0 30px; }
@@ -824,14 +852,21 @@ a.rb-cell:hover { background: var(--mist-2); color: var(--ink); }
 .rows-more:hover { border-color: var(--blue); }
 .chart-row { display: grid; grid-template-columns: minmax(0, 15rem) minmax(0, 1fr) 4.2rem; align-items: center; gap: 14px; }
 .chart-l { font: 500 1rem/1.35 var(--sans); color: var(--ink); }
-.chart-track { position: relative; height: 30px; background: var(--white); border-radius: 7px; }
-.chart-fill { position: absolute; inset: 0 auto 0 0; background: var(--blue); border-radius: 7px; }
+.chart-track { position: relative; height: 14px; background: var(--white); border-radius: 4px; }
+.chart-fill { position: absolute; inset: 0 auto 0 0; background: var(--blue); border-radius: 4px; }
 .tone-covered .chart-fill { background: var(--covered); }
 .tone-silent .chart-fill { background: var(--silent); }
 .tone-wrong .chart-fill { background: var(--wrong); }
-/* a bar's 95% interval is a soft band over its end; the bar prints its number, and the report its interval under it,
-   with no pop-up (user, 6 Nov: "why do we need hovers for every bar just displaying the acc number") */
-.chart-ci { position: absolute; top: 0; bottom: 0; background: var(--ci); border-radius: 3px; }
+/* a bar's 95% interval is a thin line across its end, capped a little taller than the bar and haloed in the page's
+   ground so it reads over any harness's colour (user, 6 Nov: "we dont need to dispa variace as shadow"); the bar prints
+   its number, and the report its interval under it, with no pop-up (user, 6 Nov: "why do we need hovers for every bar
+   just displaying the acc number") */
+.chart-ci, .em-ci { position: absolute; top: 50%; height: 2px; margin-top: -1px; background: var(--ink); opacity: 1;
+  filter: drop-shadow(0 0 0.6px var(--white)) drop-shadow(0 0 0.6px var(--white)); }
+.chart-ci::before, .chart-ci::after, .em-ci::before, .em-ci::after { content: ""; position: absolute; top: -9px;
+  width: 2px; height: 20px; background: var(--ink); }
+.chart-ci::before, .em-ci::before { left: -1px; }
+.chart-ci::after, .em-ci::after { right: -1px; }
 .chart-v { font: 600 1.05rem var(--sans); font-variant-numeric: tabular-nums; color: var(--ink); text-align: right; }
 .chart-v small { display: block; font: 400 0.74rem/1.3 var(--sans); color: var(--ink-3); white-space: nowrap; }
 /* the report's value column holds the interval under the number */
@@ -840,14 +875,14 @@ a.rb-cell:hover { background: var(--mist-2); color: var(--ink); }
 .chart.full .pair-bar { grid-template-columns: minmax(0, 1fr) 6.2rem; }
 .chart-note { margin: 2px 0 0; font-size: 0.84rem; color: var(--ink-3); }
 /* a chart drawn per harness: a group of bars for each row, each harness in its own colour */
-.chart-group { display: grid; gap: 8px; }
-.chart-group + .chart-group { margin-top: 10px; }
+.chart-group { display: grid; gap: 14px; }
+.chart-group + .chart-group { margin-top: 18px; }
 /* on the post's wide page a chart's groups stand side by side on one set of rows, the harnesses named once at the left */
 @media (min-width: 1100px) {
-  .pg-post .chart-groups.g2, .pg-post .chart-groups.g3 { display: grid; column-gap: 40px; row-gap: 8px; }
+  .pg-post .chart-groups.g2, .pg-post .chart-groups.g3 { display: grid; column-gap: 40px; row-gap: 14px; }
   .pg-post .chart-groups.g2 { grid-template-columns: minmax(0, 1.45fr) minmax(0, 1fr); }
   .pg-post .chart-groups.g3 { grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr) minmax(0, 1fr); }
-  .pg-post .chart-groups > .chart-group { grid-row: span var(--rows); grid-template-rows: subgrid; gap: 0; }
+  .pg-post .chart-groups > .chart-group { grid-row: span var(--rows); grid-template-rows: subgrid; gap: 14px 0; }
   .pg-post .chart-groups > .chart-group + .chart-group { margin-top: 0; }
   .pg-post .chart-groups > .chart-group .chart-g { align-self: end; }
   .pg-post .chart-groups > .chart-group + .chart-group .chart-l { display: none; }
@@ -872,7 +907,7 @@ a.rb-cell:hover { background: var(--mist-2); color: var(--ink); }
 .hc-pi-coding-agent { --hc: var(--h-pi-coding-agent); }
 .chart-row.thin .chart-fill { opacity: 0.4; }
 /* two groups side by side: each harness named once, then its bar in each group */
-.chart-pair { display: grid; grid-template-columns: max-content minmax(0, 1fr) minmax(0, 1fr); align-items: center; gap: 8px 24px; }
+.chart-pair { display: grid; grid-template-columns: max-content minmax(0, 1fr) minmax(0, 1fr); align-items: center; gap: 14px 24px; }
 .chart-pair .chart-g { align-self: end; padding-bottom: 2px; }
 .pair-bar { display: grid; grid-template-columns: minmax(0, 1fr) 3.8rem; align-items: center; gap: 10px; }
 .pair-bar.thin .chart-fill { opacity: 0.4; }
@@ -972,7 +1007,6 @@ a.rb-cell:hover { background: var(--mist-2); color: var(--ink); }
 .em-recovery { background: color-mix(in srgb, var(--ink-3) 52%, var(--mist)); }
 .em-task-transition { background: color-mix(in srgb, var(--ink-3) 36%, var(--mist)); }
 .em-unresolved-work { background: color-mix(in srgb, var(--ink-3) 22%, var(--mist)); }
-.em-ci { position: absolute; top: 50%; height: 2px; margin-top: -1px; background: var(--ink); opacity: 0.7; }
 .em-v { font-size: 0.82rem; color: var(--ink-2); font-variant-numeric: tabular-nums; white-space: nowrap; }
 .em-v b { font-weight: 600; color: var(--ink); }
 .em-axis .du-ticks { height: 20px; }
@@ -1518,6 +1552,8 @@ footer { margin-top: 96px; border-top: 1px solid var(--rule); padding-top: 24px;
   box-shadow: 0 14px 32px -14px rgba(var(--shadow), 0.6); pointer-events: none; opacity: 0; transform: translateY(3px);
   transition: opacity 0.12s, transform 0.12s; }
 .pop.on { opacity: 1; transform: none; }
+/* the run's own answer to the opener's question is longer than a figure's note, so its card is wider */
+.pop:has(.tip-wide) { max-width: min(560px, calc(100vw - 24px)); }
 .pop b { font-weight: 600; }
 .pop .tip-k { display: block; margin-bottom: 3px; font: 600 0.68rem/1.3 var(--sans); letter-spacing: 0.06em; text-transform: uppercase; opacity: 0.8; }
 .pop .tip-k .hlogo { display: none; }
