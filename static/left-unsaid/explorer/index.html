@@ -223,21 +223,24 @@ main > section, main > footer, main > .later-rule { max-width: var(--unit); marg
 /* once the rail shows, a wide figure spans the column and its rail exactly, so the page keeps one left edge */
 @media (min-width: 1280px) { main .wide { width: var(--unit); left: 0; transform: none; } }
 /* the post keeps no margin rail: its words hold one centred reading column and its figures take the page's width
-   around it (user, 6 Nov: "use more width", "we can remove the citations from right side") */
-.pg-post { --col: 760px; --wide: 1160px; }
+   around it (user, 6 Nov: "use more width", "we can remove the citations from right side"); the report is laid out
+   the same way (user, 6 Nov: "Match the post"), its few margin notes set as boxes in the column */
+:is(.pg-post, .pg-report) { --col: 760px; --wide: 1160px; }
+.topbar { --wide: 1160px; }
 @media (min-width: 1280px) {
-  .pg-post { --unit: var(--col); }
-  main.pg-post > footer, main.pg-post > .later-rule, .pg-post .mast-in { padding-right: 0; }
-  main.pg-post .wide { width: min(var(--wide), calc(100vw - 2 * var(--gutter) - 16px)); left: 50%; transform: translateX(-50%); }
+  :is(.pg-post, .pg-report) { --unit: var(--col); }
+  main:is(.pg-post, .pg-report) > footer, main:is(.pg-post, .pg-report) > .later-rule, :is(.pg-post, .pg-report) .mast-in { padding-right: 0; }
+  main:is(.pg-post, .pg-report) .wide { width: min(var(--wide), calc(100vw - 2 * var(--gutter) - 16px)); left: 50%; transform: translateX(-50%); }
+  .pg-report .note { position: static; width: auto; margin: 0 0 22px; padding: 14px 18px; background: var(--mist); border-left: 0; border-radius: 10px; }
 }
-/* what we ran opens the post under the hook, and it and what comes next spread across the same width, every tile or
+/* what we ran opens the page under the hook, and it and what comes next spread across the same width, every tile or
    card in one row */
-.pg-post .scale-band.wide { margin: 18px 0 8px; }
+:is(.pg-post, .pg-report) .scale-band.wide { margin: 18px 0 8px; }
 @media (min-width: 1100px) {
-  main.pg-post > section.kind-later > ul.soon-list { position: relative; max-width: none;
+  main:is(.pg-post, .pg-report) > section.kind-later > ul.soon-list { position: relative; max-width: none;
     width: min(var(--wide), calc(100vw - 2 * var(--gutter) - 16px)); left: 50%; transform: translateX(-50%); }
-  .pg-post .scale-row { grid-template-columns: repeat(8, minmax(0, 1fr)); }
-  main.pg-post > section.kind-later > ul.soon-list { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  :is(.pg-post, .pg-report) .scale-row { grid-template-columns: repeat(8, minmax(0, 1fr)); }
+  main:is(.pg-post, .pg-report) > section.kind-later > ul.soon-list { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 }
 .btn { display: inline-flex; align-items: center; gap: 8px; font: 600 0.9rem/1 var(--sans); color: var(--on-solid); background: var(--btn); padding: 11px 16px; border-radius: 10px; text-decoration: none; }
 .btn:hover { background: var(--solid); }
@@ -268,10 +271,10 @@ header.mast, .xp-head { position: relative; }
 /* the report's tabs (user, 28 Oct: "report does not have to be one long page"): in the flow under the contents,
    one page of the report shown at a time; without the script every page shows, one after another */
 /* the report's menu bar (user, 29 Oct): its name at the left, its tabs, contents and theme switch at the right, kept at
-   the top of the window; its inner edges are the reading column's and the rail's */
+   the top of the window; its edges are the wide panels' below it */
 .topbar { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 20; background: color-mix(in srgb, var(--page) 90%, transparent);
   -webkit-backdrop-filter: saturate(1.4) blur(10px); backdrop-filter: saturate(1.4) blur(10px); border-bottom: 1px solid var(--rule); }
-.topbar-in { max-width: calc(var(--unit) + 2 * var(--gutter)); margin-inline: auto; padding: 0 var(--gutter); min-height: 58px;
+.topbar-in { max-width: calc(var(--wide) + 2 * var(--gutter)); margin-inline: auto; padding: 0 var(--gutter); min-height: 58px;
   display: flex; align-items: center; justify-content: space-between; gap: 8px 24px; }
 .tb-name { font: 600 1.1rem/1.2 var(--display); color: var(--navy); text-decoration: none; letter-spacing: -0.01em; white-space: nowrap; }
 .tb-r { display: flex; align-items: center; gap: 6px; min-width: 0; }
@@ -403,6 +406,121 @@ header.mast:has(.mast-art-w) { padding-top: 0; }
 }
 @media (max-width: 760px) { .hook { padding: 20px 16px 18px; border-radius: 14px; }
   .hk-q { padding: 16px; } .hk-t { font-size: 1.1rem; } }
+/* the hook's runs, played (user, 6 Nov): one tab per harness, and in each its agent's run in the harness's own
+   terminal, the questions asked about it one at a time, and the report it wrote, where each answer lights where the
+   report gives it. At rest, and under reduced motion, a run shows its unanswered question; playing, what has not been
+   reached yet waits faint in its place, and every run sits in the same cell, so nothing on the page moves */
+.hkp { display: grid; gap: 12px; }
+.hkp-bar { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 10px 16px; }
+.hkp-tabs { background: var(--mist-2); }
+.hkp-tabs button { display: inline-flex; align-items: center; gap: 8px; font-family: var(--mono); font-size: 0.82rem; }
+.hkp-tabs .hlogo { width: 16px; height: 16px; }
+.hkp-exs { display: grid; }
+.hkp-ex { grid-area: 1 / 1; display: grid; gap: 14px; padding: 20px 22px 18px; background: var(--white); border-radius: 14px; visibility: hidden; }
+.hkp-ex.on { visibility: visible; }
+.hkp-ex .hk-b::before { content: none; }
+.hkp-ex .hk-task::before { content: "·"; }
+.hkp-ex > .demo-say { min-height: 26px; }
+.hkp-stage { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.95fr) minmax(0, 1.05fr); grid-template-areas: "run qa rep"; gap: 14px; }
+/* the agent's terminal, drawn as its harness draws it; a terminal is dark in either theme */
+.hkp-run { grid-area: run; display: grid; grid-template-rows: auto minmax(0, 1fr) auto; height: 400px; border-radius: 14px; overflow: hidden;
+  background: var(--t-bg); color: var(--t-ink); font: 0.74rem/1.55 var(--mono); }
+.hkp-run > .pane-h { display: flex; align-items: baseline; justify-content: space-between; gap: 10px; padding: 9px 14px; background: var(--t-bar);
+  color: var(--t-dim); font: 600 0.72rem/1.3 var(--sans); letter-spacing: 0.06em; text-transform: uppercase; }
+.hkp-run > .pane-h b { color: var(--t-ink); font-weight: 600; }
+.hkp-run > .pane-h span { font: 500 0.74rem var(--mono); letter-spacing: 0; text-transform: none; font-variant-numeric: tabular-nums; }
+.t-steps { margin: 0; padding: 8px 0 10px; list-style: none; overflow-y: auto; scrollbar-width: thin; }
+.t-steps li { display: grid; grid-template-columns: 3.3rem minmax(0, 1fr); gap: 8px; margin: 0; padding: 3px 12px 3px 6px; transition: background 0.4s, box-shadow 0.4s; }
+.t-steps time { color: var(--t-dim); opacity: 0.6; text-align: right; white-space: nowrap; font-size: 0.66rem; line-height: 1.85; font-variant-numeric: tabular-nums; }
+.t-steps li > div { min-width: 0; }
+.t-steps p { margin: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.t-steps li.lit { background: var(--t-lit); box-shadow: inset 3px 0 var(--t-edge); }
+.t-steps li.lit p { white-space: normal; }
+.t-steps b { font-weight: 700; color: var(--t-strong); }
+.t-steps em { font-style: italic; }
+.t-steps code { font: inherit; padding: 0; border: 0; border-radius: 0; background: none; color: var(--t-ink); }
+.t-mk { font-style: normal; display: inline-block; width: 1.5em; }
+.t-ok { color: var(--t-ok); } .t-bad { color: var(--t-bad); } .t-say { color: var(--t-ink); } .t-th-mk { color: var(--t-dim); }
+.t-dim, .t-o, .t-st { color: var(--t-dim); }
+.t-o { padding-left: 1.5em; }
+.t-tree { font-style: normal; margin-right: 0.7em; }
+.t-elbow { display: inline-block; width: 0.6em; height: 0.75em; margin: 0 1.1em 0.15em 0.2em; border-left: 1px solid var(--t-dim); border-bottom: 1px solid var(--t-dim); vertical-align: middle; }
+.t-more { opacity: 0.75; }
+.t-th { padding-left: 1.2em; color: var(--t-dim); }
+.sh-cmd { color: #89b4fa; } .sh-str { color: #a6e3a1; } .sh-op { color: #94e2d5; } .sh-flag { color: #eba0ac; } .sh-num { color: #fab387; } .sh-word { color: #cdd6f4; }
+.t-foot { display: grid; gap: 2px; padding: 6px 12px 9px 14px; border-top: 1px solid var(--t-rule); }
+.t-foot p { margin: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.t-rule { height: 0; border-top: 1px solid var(--t-rule); margin-block: 4px !important; }
+.t-right { text-align: right; }
+.t-box { border: 1px solid var(--t-rule); border-radius: 4px; padding: 1px 8px; }
+/* each harness's own marks and colours: codex 0.159.0 and claude-code 2.1.284 as their transcripts draw a replayed
+   session, letta-code 0.33.7's palette from its source, and pi 0.87.1's tinted tool blocks */
+.term-codex { --t-bg: #1b1c20; --t-bar: #26282d; --t-ink: #cdd6f4; --t-dim: #8f94a8; --t-strong: #eef1fa; --t-ok: #3fb67b; --t-bad: #f14c4c;
+  --t-rule: #383a41; --t-lit: rgba(137, 180, 250, 0.13); --t-edge: #89b4fa; }
+.term-claude-code { --t-bg: #1c1c1c; --t-bar: #282828; --t-ink: #e6e6e6; --t-dim: #999999; --t-strong: #ffffff; --t-ok: #4eba65; --t-bad: #e5484d;
+  --t-rule: #4b4b4b; --t-lit: rgba(215, 119, 87, 0.16); --t-edge: #d77757; }
+.term-letta-code { --t-bg: #1b1c1e; --t-bar: #26272b; --t-ink: #dee1e4; --t-dim: #a5a8ab; --t-strong: #ffffff; --t-ok: #64cf64; --t-bad: #f1689f;
+  --t-rule: #46484a; --t-lit: rgba(140, 140, 249, 0.16); --t-edge: #8c8cf9; }
+.term-letta-code .t-box { color: #8c8cf9; border-color: #46484a; }
+.term-pi-coding-agent { --t-bg: #1e1e1e; --t-bar: #292929; --t-ink: #d4d4d4; --t-dim: #8a8a8a; --t-strong: #e8e8e8; --t-ok: #8abeb7; --t-bad: #cc6666;
+  --t-rule: #505050; --t-lit: rgba(217, 164, 58, 0.16); --t-edge: #d9a43a; }
+.term-pi-coding-agent .t-blk { background: rgb(40, 50, 40); padding-inline: 6px; }
+.term-pi-coding-agent .t-o.t-blk { padding-left: 6px; color: #9a9a9a; }
+.term-pi-coding-agent .t-path { color: #8abeb7; }
+/* the questions, one at a time, and every question asked here as a chip that shows it */
+.hkp-qa { grid-area: qa; display: grid; grid-template-rows: minmax(0, 1fr) auto; gap: 12px; height: 400px; padding: 16px 16px 14px;
+  border-radius: 14px; background: var(--mist); transition: opacity 0.35s; }
+.hkp-qs { display: grid; min-height: 0; }
+.hkp-q { grid-area: 1 / 1; display: grid; align-content: start; gap: 10px; min-height: 0; overflow-y: auto; visibility: hidden; }
+/* inherit, not visible: a shown part of a run in another tab stays hidden with it */
+.hkp-q.on { visibility: inherit; }
+.hkp-k { margin: 0; display: flex; align-items: center; justify-content: space-between; gap: 8px; font: 600 0.72rem/1.3 var(--sans);
+  letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink-3); }
+.hkp-k .hk-tier { margin: 0; letter-spacing: 0; text-transform: none; background: var(--white); }
+.hkp .hkp-q .hk-t { margin: 0; font-size: 1.02rem; line-height: 1.42; max-width: none; }
+.hkp-v { margin: 0; display: flex; flex-direction: column; align-items: flex-start; gap: 10px; padding-top: 4px; font-size: 0.86rem; transition: opacity 0.35s; }
+.hkp-vw { display: inline-flex; align-items: center; gap: 8px; font-weight: 600; }
+.hkp-vw::before { content: ""; width: 9px; height: 9px; border-radius: 2px; background: currentColor; }
+.v-covered { color: var(--covered-ink); } .v-missed { color: var(--silent-ink); } .v-unsupported { color: var(--wrong-ink); }
+.hkp-chips { display: flex; flex-wrap: wrap; gap: 5px; margin: 0; padding: 0; list-style: none; }
+.hkp-chips li { margin: 0; }
+.hkp-chip { display: inline-flex; align-items: center; gap: 5px; padding: 2px 9px 2px 2px; border: 1px solid var(--edge); border-radius: 999px;
+  background: var(--white); font: 600 0.72rem/1.2 var(--sans); cursor: pointer; }
+.hkp-chip b { display: inline-grid; place-items: center; width: 20px; height: 20px; border-radius: 50%; color: var(--on-solid); font-size: 0.7rem; }
+.hkp-chip.v-covered b { background: var(--covered); } .hkp-chip.v-missed b { background: var(--silent); } .hkp-chip.v-unsupported b { background: var(--wrong); }
+.hkp-chip[aria-pressed="true"] { border-color: var(--blue); box-shadow: 0 0 0 1px var(--blue); }
+.hkp-chip:focus-visible { outline: 2px solid var(--blue); outline-offset: 2px; }
+/* the report, where an answer lights where it is given, and a missing one is said to be nowhere */
+.hkp-rep { grid-area: rep; position: relative; height: 400px; }
+.hkp .demo-doc p[data-mark]::before { content: attr(data-mark); display: block; margin-bottom: 2px; font: 700 0.62rem/1.3 var(--sans);
+  letter-spacing: 0.05em; text-transform: uppercase; }
+.hkp .demo-doc p.hit-covered::before { color: #1d7a4c; }
+.hkp .demo-doc p.hit-unsupported::before { color: #b3263a; }
+.hkp-none { position: absolute; left: 50%; bottom: 14px; transform: translateX(-50%); margin: 0; padding: 7px 14px; border-radius: 999px;
+  background: #fdebdc; color: #9a420d; font: 600 0.8rem/1.2 var(--sans); white-space: nowrap; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.14);
+  visibility: hidden; opacity: 0; transition: opacity 0.35s; }
+.hkp-ex.none .hkp-none { visibility: inherit; opacity: 1; }
+.hkp-ex.scan .demo-scan { opacity: 1; animation: demo-scan 1.2s ease-in-out infinite alternate; }
+.hkp-ex.play .t-steps li:not(.in) { display: none; }
+.hkp-ex.play .t-steps li.in { animation: demo-in 0.25s ease-out; }
+.hkp-ex.play:not(.rep) .hkp-rep { opacity: 0.3; }
+.hkp-ex.play:not(.asked) .hkp-qa { opacity: 0.3; }
+.hkp-ex.play .hkp-q:not(.done) .hkp-v { opacity: 0; }
+.hkp-ex.play .hkp-chip:not(.done) b { background: var(--mist-2); color: var(--ink-3); }
+.hkp-ex.play .hkp-chip:not(.done) span { visibility: hidden; }
+@media (max-width: 1000px) {
+  .hkp-stage { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); grid-template-areas: "run rep" "qa qa"; }
+  .hkp-qa { height: auto; }
+}
+@media (max-width: 760px) {
+  .hkp-ex { padding: 16px 14px 14px; }
+  .hkp-ex > .demo-say { min-height: 3.4em; }
+  .hkp-ex .hk-task::before { content: none; }
+  .hkp-stage { grid-template-columns: minmax(0, 1fr); grid-template-areas: "run" "qa" "rep"; }
+  .hkp-run, .hkp-rep { height: 320px; }
+  .hkp-tabs button span { font-size: 0.76rem; }
+}
+@media (prefers-reduced-motion: reduce) { .hkp-qa, .hkp-v, .hkp-none, .t-steps li { transition: none; } }
 /* the post's key findings: one line each, the finding in bold and its headline number bold inside the words */
 .keyfind { margin: 8px 0 30px; }
 .kf { list-style: none; margin: 0; padding: 0; display: grid; gap: 2px; }
@@ -1625,15 +1743,10 @@ footer { margin-top: 96px; border-top: 1px solid var(--rule); padding-top: 24px;
 /* a small dot is easier to point at through a ring larger than it */
 .wr-dot[data-tip]::after { content: ""; position: absolute; inset: -9px; border-radius: 50%; }
 
-/* the run replayed (user, 5 Nov): the agent's steps on a dark terminal beside the report it wrote on white paper,
-   then three of its questions checked against that report, then every verdict it got. At rest, and for a reader
-   who asks for less motion, every part shows at once; while it plays, the same layout fills in, so nothing moves the
-   page around it */
-.demo { display: grid; gap: 14px; margin-block: 22px 26px; }
-.demo-head { display: flex; align-items: center; justify-content: space-between; gap: 8px 16px; min-height: 34px; }
+/* the panes the hook's runs are drawn in: the narration and its button, the report on white paper, and the scan
+   that reads down it */
 .demo-say { flex: 1; min-width: 0; }
 .demo-ctl { flex: none; }
-@media (max-width: 760px) { .demo-head { min-height: 3.4em; } }
 .demo-say { margin: 0; display: flex; align-items: center; gap: 10px; font: 600 0.95rem/1.35 var(--sans); color: var(--ink); }
 .demo-say .demo-n { flex: none; display: inline-grid; place-items: center; width: 26px; height: 26px; border-radius: 50%;
   background: var(--navy); color: var(--page); font: 600 0.78rem var(--sans); font-variant-numeric: tabular-nums; }
@@ -1641,31 +1754,13 @@ footer { margin-top: 96px; border-top: 1px solid var(--rule); padding-top: 24px;
   background: var(--white); color: var(--ink-2); font: 600 0.8rem var(--sans); cursor: pointer; }
 .demo-ctl:hover { border-color: var(--blue); color: var(--ink); }
 .demo-ctl:focus-visible { outline: 2px solid var(--blue); outline-offset: 2px; }
-.demo-stage { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 14px; }
 .demo-pane { display: grid; grid-template-rows: auto minmax(0, 1fr); height: 380px; border-radius: 14px; overflow: hidden; }
-.demo-pane > header { display: flex; align-items: baseline; justify-content: space-between; gap: 10px; padding: 10px 14px;
+.demo-pane > :is(header, .pane-h) { display: flex; align-items: baseline; justify-content: space-between; gap: 10px; padding: 10px 14px;
   font: 600 0.72rem/1.3 var(--sans); letter-spacing: 0.06em; text-transform: uppercase; }
-.demo-pane > header span { font: 500 0.74rem var(--mono); letter-spacing: 0; text-transform: none; font-variant-numeric: tabular-nums; }
-.demo-run { grid-template-rows: auto minmax(0, 1fr) auto auto; background: var(--term); color: var(--term-ink); }
-.demo-run > header { background: var(--term-2); color: var(--term-dim); }
-.demo-run > header b { color: var(--term-ink); font-weight: 600; }
-.demo-steps { margin: 0; padding: 10px 0 14px; list-style: none; overflow-y: auto; scrollbar-width: thin; }
-.demo-steps li { display: grid; grid-template-columns: 3.6rem minmax(0, 1fr); gap: 12px; padding: 1px 14px;
-  font: 0.74rem/1.6 var(--mono); transition: opacity 0.25s, background 0.4s; }
-.demo-steps time { color: var(--term-dim); text-align: right; font-variant-numeric: tabular-nums; }
-.demo-steps code { font: inherit; padding: 0; border: 0; border-radius: 0; background: none; color: var(--term-ink);
-  white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-.demo-steps .rs code { color: var(--term-dim); font-style: italic; }
-.demo-steps li.ev { background: rgba(234, 122, 36, 0.2); box-shadow: inset 3px 0 var(--silent); }
-.demo-census { margin: 0; padding: 8px 14px; font: 500 0.74rem/1.5 var(--mono); color: var(--term-dim); background: var(--term-2); transition: opacity 0.3s; }
-.demo-census b { color: var(--term-ink); font-weight: 600; }
-.demo-evs { margin: 0; padding: 8px 14px 11px; list-style: none; display: grid; gap: 5px; background: var(--term-2); }
-.demo-evs li { display: flex; flex-wrap: wrap; align-items: baseline; gap: 2px 8px; font: 0.76rem/1.45 var(--sans); color: var(--term-ink); transition: opacity 0.3s, transform 0.3s; }
-.demo-evs li small { color: var(--term-dim); font-size: 0.72rem; }
-.demo-evs .ev-tier { margin: 0; }
+.demo-pane > :is(header, .pane-h) span { font: 500 0.74rem var(--mono); letter-spacing: 0; text-transform: none; font-variant-numeric: tabular-nums; }
 .demo-rep { background: var(--paper); color: var(--paper-ink); box-shadow: inset 0 0 0 1px var(--edge); transition: opacity 0.5s; }
-.demo-rep > header { background: #f6f8fa; color: var(--paper-dim); border-bottom: 1px solid #e1e6ec; }
-.demo-rep > header b { color: var(--paper-ink); font-weight: 600; }
+.demo-rep > :is(header, .pane-h) { background: #f6f8fa; color: var(--paper-dim); border-bottom: 1px solid #e1e6ec; }
+.demo-rep > :is(header, .pane-h) b { color: var(--paper-ink); font-weight: 600; }
 .demo-doc { position: relative; overflow-y: auto; padding: 14px 18px 22px; scrollbar-width: thin; }
 .demo-doc p { margin: 0 0 8px; font: 0.8rem/1.55 var(--sans); color: var(--paper-ink); border-radius: 4px; transition: background 0.4s, box-shadow 0.4s; }
 .demo-doc .dd-h { margin-top: 14px; font: 600 0.92rem/1.35 var(--sans); }
@@ -1678,48 +1773,10 @@ footer { margin-top: 96px; border-top: 1px solid var(--rule); padding-top: 24px;
 .demo-doc p.hit-unsupported { background: #fbdfe2; box-shadow: 0 0 0 4px #fbdfe2; }
 .demo-scan { position: absolute; left: 0; right: 0; top: 0; height: 70px; pointer-events: none; opacity: 0;
   background: linear-gradient(180deg, transparent, rgba(29, 91, 191, 0.13), transparent); }
-.demo.scan .demo-scan { opacity: 1; animation: demo-scan 1.2s ease-in-out infinite alternate; }
 @keyframes demo-scan { from { transform: translateY(var(--scan-from, 0px)); } to { transform: translateY(var(--scan-to, 300px)); } }
-.demo-cards { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
-.demo-card { display: grid; gap: 8px; align-content: start; padding: 13px 15px; border-radius: 12px; background: var(--white);
-  box-shadow: inset 0 0 0 1px var(--edge); transition: opacity 0.35s, box-shadow 0.35s, transform 0.35s; }
-.demo-qk { margin: 0; display: flex; flex-wrap: wrap; align-items: center; gap: 6px 8px; font: 600 0.7rem var(--sans); letter-spacing: 0.05em; text-transform: uppercase; color: var(--ink-3); }
-.demo-qk .ev-tier { margin: 0; letter-spacing: 0; text-transform: none; }
-.demo-qt { margin: 0; font: 0.84rem/1.5 var(--sans); color: var(--ink); display: -webkit-box; -webkit-line-clamp: 4; -webkit-box-orient: vertical; overflow: hidden; }
-.demo-v { margin: 0; display: grid; gap: 4px; font-size: 0.8rem; line-height: 1.45; color: var(--ink-2); transition: opacity 0.35s; }
-.demo-v .pill { justify-self: start; }
-.demo-v i { font-style: normal; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
-.demo-tally { display: grid; gap: 9px; padding: 14px 16px; border-radius: 12px; background: var(--mist); }
-.demo-tally p { margin: 0; font-size: 0.92rem; line-height: 1.5; color: var(--ink); transition: opacity 0.4s; }
-.dt-bar { display: flex; height: 14px; border-radius: 7px; overflow: hidden; background: var(--white); }
-.dt-seg { height: 100%; transition: width 1.1s cubic-bezier(0.2, 0.7, 0.2, 1); }
-.dt-seg.covered { background: var(--covered); } .dt-seg.missed { background: var(--silent); } .dt-seg.unsupported { background: var(--wrong); }
-.dt-key { display: flex; flex-wrap: wrap; gap: 4px 18px; font-size: 0.8rem; color: var(--ink-2); font-variant-numeric: tabular-nums; transition: opacity 0.4s; }
-.dt-key span { display: inline-flex; align-items: center; gap: 6px; }
-.dt-key i { width: 10px; height: 10px; border-radius: 3px; }
-.dt-key .covered { background: var(--covered); } .dt-key .missed { background: var(--silent); } .dt-key .unsupported { background: var(--wrong); }
-.dt-key b { color: var(--ink); }
-.demo-foot { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 14px; }
-.demo-foot .howto-p { margin: 0; }
-/* playing: the parts not reached yet wait faint in their places */
-.demo.play .demo-steps li:not(.in) { display: none; }
-.demo.play .demo-steps li.in { animation: demo-in 0.25s ease-out; }
 @keyframes demo-in { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
-.demo.play .demo-evs li:not(.in), .demo.play .demo-census:not(.in) { display: none; }
-.demo.play .demo-evs li.in, .demo.play .demo-census.in { animation: demo-in 0.3s ease-out; }
-.demo.play .demo-census:not(.in) + .demo-evs { display: none; }
-.demo.play:not(.rep) .demo-rep { opacity: 0.3; }
-.demo.play .demo-card:not(.in) { opacity: 0.4; }
-.demo.play .demo-card:not(.done) .demo-v { opacity: 0; }
-.demo.play .demo-card.in:not(.done) { box-shadow: inset 0 0 0 2px var(--blue); transform: translateY(-2px); }
-.demo.play .demo-tally:not(.in) .dt-seg { width: 0 !important; }
-.demo.play .demo-tally:not(.in) p, .demo.play .demo-tally:not(.in) .dt-key { opacity: 0.3; }
-@media (max-width: 760px) {
-  .demo-stage, .demo-cards { grid-template-columns: minmax(0, 1fr); }
-  .demo-pane { height: 320px; }
-}
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .apx summary::before, .run-card { transition: none; } .run-card:hover { transform: none; }
-  .show-view img, .dt-seg, .demo-card, .demo-steps li { transition: none; } }
+  .show-view img { transition: none; } }
 /* the harnesses' logos, one data URI each */
 .hl-claude-code{background-image:url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQ4IiBoZWlnaHQ9IjI0OCIgdmlld0JveD0iMCAwIDI0OCAyNDgiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxwYXRoIGQ9Ik01Mi40Mjg1IDE2Mi44NzNMOTguNzg0NCAxMzYuODc5TDk5LjU0ODUgMTM0LjYwMkw5OC43ODQ0IDEzMy4zMzRIOTYuNDkyMUw4OC43MjM3IDEzMi44NjJMNjIuMjM0NiAxMzIuMTUzTDM5LjMxMTMgMTMxLjIwN0wxNy4wMjQ5IDEzMC4wMjZMMTEuNDIxNCAxMjguODQ0TDYuMiAxMjEuODczTDYuNzA5NCAxMTguNDQ3TDExLjQyMTQgMTE1LjI1N0wxOC4xNzEgMTE1Ljg0N0wzMy4wNzExIDExNi45MTFMNTUuNDg1IDExOC40NDdMNzEuNjU4NiAxMTkuMzkyTDk1LjcyOCAxMjEuODczSDk5LjU0ODVMMTAwLjA1OCAxMjAuMzM3TDk4Ljc4NDQgMTE5LjM5Mkw5Ny43NjU2IDExOC40NDdMNzQuNTg3NyAxMDIuNzMyTDQ5LjQ5OTUgODYuMTkwNUwzNi4zODIzIDc2LjYyTDI5LjM3NzkgNzEuNzc1N0wyNS44MTIxIDY3LjI4NThMMjQuMjgzOSA1Ny4zNjA4TDMwLjY1MTUgNTAuMjcxNkwzOS4zMTEzIDUwLjg2MjNMNDEuNDc2MyA1MS40NTMxTDUwLjI2MzYgNTguMTg3OUw2OC45ODQyIDcyLjcyMDlMOTMuNDM1NyA5MC42ODA0TDk3LjAwMTUgOTMuNjM0M0w5OC40Mzc0IDkyLjY2NTJMOTguNjU3MSA5MS45ODAxTDk3LjAwMTUgODkuMjYyNUw4My43NTcgNjUuMjc3Mkw2OS42MjEgNDAuODE5Mkw2My4yNTM0IDMwLjY1NzlMNjEuNTk3OCAyNC42MzJDNjAuOTU2NSAyMi4xMDMyIDYwLjU3OSAyMC4wMTExIDYwLjU3OSAxNy40MjQ2TDY3LjgzODEgNy40OTk2NUw3MS45MTMzIDYuMTk5OTVMODEuNzE5MyA3LjQ5OTY1TDg1Ljc5NDYgMTEuMDQ0M0w5MS45MDc0IDI0Ljk4NjVMMTAxLjcxNCA0Ni44NDUxTDExNi45OTYgNzYuNjJMMTIxLjQ1MyA4NS40ODE2TDEyMy44NzMgOTMuNjM0M0wxMjQuNzY0IDk2LjExNTVIMTI2LjI5MlY5NC42OTc2TDEyNy41NjYgNzcuOTE5N0wxMjkuODU4IDU3LjM2MDhMMTMyLjE1IDMwLjg5NDJMMTMyLjkxNSAyMy40NTA1TDEzNi42MDggMTQuNDcwOEwxNDMuOTk0IDkuNjI2NDNMMTQ5LjcyNSAxMi4zNDRMMTU0LjQzNyAxOS4wNzg4TDE1My44IDIzLjQ1MDVMMTUwLjk5OCA0MS42NDYzTDE0NS41MjIgNzAuMTIxNUwxNDEuOTU3IDg5LjI2MjVIMTQzLjk5NEwxNDYuNDE0IDg2Ljc4MTNMMTU2LjA5MyA3NC4wMjA2TDE3Mi4yNjYgNTMuNjk4TDE3OS4zOTggNDUuNjYzNUwxODcuODAzIDM2LjgwMkwxOTMuMTUyIDMyLjU0ODRIMjAzLjM0TDIxMC43MjYgNDMuNjU0OUwyMDcuNDE1IDU1LjExNTlMMTk2Ljk3MiA2OC4zNDkyTDE4OC4zMTIgNzkuNTczOUwxNzUuODk2IDk2LjIwOTVMMTY4LjE5MSAxMDkuNTg1TDE2OC44ODIgMTEwLjY4OUwxNzAuNzM4IDExMC41M0wxOTguNzU1IDEwNC41MDRMMjEzLjkxIDEwMS43ODdMMjMxLjk5NCA5OC43MTQ5TDI0MC4xNDQgMTAyLjQ5NkwyNDEuMDM2IDEwNi4zOTVMMjM3Ljg1MiAxMTQuMzExTDIxOC40OTUgMTE5LjAzN0wxOTUuODI2IDEyMy42NDVMMTYyLjA3IDEzMS41OTJMMTYxLjY5NiAxMzEuODkzTDE2Mi4xMzcgMTMyLjU0N0wxNzcuMzYgMTMzLjkyNUwxODMuODU1IDEzNC4yNzlIMTk5Ljc3NEwyMjkuNDQ3IDEzNi41MjRMMjM3LjIxNSAxNDEuNjA1TDI0MS44IDE0Ny44NjdMMjQxLjAzNiAxNTIuNzExTDIyOS4wNjUgMTU4LjczN0wyMTMuMDE5IDE1NC45NTZMMTc1LjQ1IDE0NS45NzdMMTYyLjU4NyAxNDIuNzg3SDE2MC44MDVWMTQzLjg1TDE3MS41MDIgMTU0LjM2NkwxOTEuMjQyIDE3Mi4wODlMMjE1LjgyIDE5NS4wMTFMMjE3LjA5NCAyMDAuNjgyTDIxMy45MSAyMDUuMTcyTDIxMC41OTkgMjA0LjY5OUwxODguOTQ5IDE4OC4zOTRMMTgwLjU0NCAxODEuMDY5TDE2MS42OTYgMTY1LjExOEgxNjAuNDIyVjE2Ni43NzJMMTY0Ljc1MiAxNzMuMTUyTDE4Ny44MDMgMjA3Ljc3MUwxODguOTQ5IDIxOC40MDVMMTg3LjI5NCAyMjEuODMyTDE4MS4zMDggMjIzLjk1OUwxNzQuODEzIDIyMi43NzdMMTYxLjE4NyAyMDMuNzU0TDE0Ny4zMDUgMTgyLjQ4NkwxMzYuMDk4IDE2My4zNDVMMTM0Ljc0NSAxNjQuMkwxMjguMDc1IDIzNS40MkwxMjUuMDE5IDIzOS4wODJMMTE3Ljg4NyAyNDEuOEwxMTEuOTAyIDIzNy4zMUwxMDguNzE4IDIyOS45ODRMMTExLjkwMiAyMTUuNDUyTDExNS43MjIgMTk2LjU0N0wxMTguNzc5IDE4MS41NDFMMTIxLjU4IDE2Mi44NzNMMTIzLjI5MSAxNTYuNjM2TDEyMy4xNCAxNTYuMjE5TDEyMS43NzMgMTU2LjQ0OUwxMDcuNjk5IDE3NS43NTJMODYuMzA0IDIwNC42OTlMNjkuMzY2MyAyMjIuNzc3TDY1LjI5MSAyMjQuNDMxTDU4LjI4NjcgMjIwLjc2OEw1OC45MjM1IDIxNC4yN0w2Mi44NzEzIDIwOC40OEw4Ni4zMDQgMTc4LjcwNUwxMDAuNDQgMTYwLjE1NUwxMDkuNTUxIDE0OS41MDdMMTA5LjQ2MiAxNDcuOTY3TDEwOC45NTkgMTQ3LjkyNEw0Ni42OTc3IDE4OC41MTJMMzUuNjE4MiAxODkuOTNMMzAuNzc4OCAxODUuNDRMMzEuNDE1NiAxNzguMTE1TDMzLjcwNzkgMTc1Ljc1Mkw1Mi40Mjg1IDE2Mi44NzNaIiBmaWxsPSIjRDk3NzU3Ii8+Cjwvc3ZnPgo=")}
 .hl-codex{-webkit-mask:url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMWVtIiBoZWlnaHQ9IjFlbSIgdmlld0JveD0iMTAwIDEwMCA0MTEgNDExIiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGNsYXNzPSJoLTYgdy02IiBhcmlhLWhpZGRlbj0idHJ1ZSI+PHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik0yNTIuNzk0IDEwOC44MDJDMjg5LjE5MSA5OS4wNDg0IDMyNi4yNjUgMTEwLjMwNSAzNTEuMTQ4IDEzNS4xMzVDMzg1LjExMyAxMjYuMDcyIDQyMi44NSAxMzQuODYyIDQ0OS40OTIgMTYxLjUwNUM0NzYuMTM2IDE4OC4xNDkgNDg0LjkyNSAyMjUuODg4IDQ3NS44NjIgMjU5Ljg1VjI1OS44NTRDNTAwLjY5NiAyODQuNzM1IDUxMS45NSAzMjEuODEgNTAyLjE5OCAzNTguMjA3QzQ5Mi40NDcgMzk0LjYwMiA0NjQuMTYxIDQyMS4wODQgNDMwLjIxNSA0MzAuMjE3QzQyMS4wODMgNDY0LjE2MiAzOTQuNjAzIDQ5Mi40NDggMzU4LjIwNiA1MDIuMTk5QzMyMS44MTIgNTExLjk1MSAyODQuNzM0IDUwMC42OTMgMjU5Ljg1MiA0NzUuODY0QzIyNS44ODcgNDg0LjkyNyAxODguMTUgNDc2LjEzNyAxNjEuNTA3IDQ0OS40OTVDMTM0Ljg2NCA0MjIuODUxIDEyNi4wNzMgMzg1LjExMSAxMzUuMTM2IDM1MS4xNDlDMTEwLjMwNCAzMjYuMjY2IDk5LjA0OTYgMjg5LjE5MiAxMDguODAxIDI1Mi43OTVDMTE4LjU1MiAyMTYuNCAxNDYuODQgMTg5LjkxOCAxODAuNzg0IDE4MC43ODVDMTg5LjkxNyAxNDYuODQxIDIxNi4zOTYgMTE4LjU1MyAyNTIuNzk0IDEwOC44MDJaTTM3NC4yOTIgNDA3LjE0NUMzNzQuMjkyIDQxMS4yNzEgMzcyLjA5MiA0MTUuMDg2IDM2OC41MTcgNDE3LjE0OEwyODMuNzIzIDQ2Ni4xMDJDMzAyLjQ4NyA0ODAuNTg1IDMyNy41NTUgNDg2LjQ1OSAzNTIuMjE3IDQ3OS44NTJDMzg2Ljk5NyA0NzAuNTMyIDQxMC4wNjggNDM5LjMxMiA0MTAuNTU1IDQwNS4wMDZWMzE3LjcxN0M0MTAuNTU1IDMxNS4wOCA0MDkuMTI1IDMxMi42MjEgNDA2Ljg0MyAzMTEuMzAzTDM3NC4yOTIgMjkyLjUwOVY0MDcuMTQ1Wk0yNTEuODY4IDQxNS44OTdDMjQ4LjI5NiA0MTcuOTU5IDI0My44OTMgNDE3Ljk1OSAyNDAuMzE3IDQxNS44OTdMMTU1LjUyNiAzNjYuOTQyQzE1Mi4zNjYgMzkwLjQzNiAxNTkuODExIDQxNS4wOCAxNzcuODY2IDQzMy4xMzZIMTc3Ljg2M0MyMDMuMzI1IDQ1OC41OTQgMjQxLjg5NiA0NjIuOTYyIDI3MS44NSA0NDYuMjMyTDM0Ny40NDkgNDAyLjU4NkMzNDkuNzM1IDQwMS4yNjggMzUxLjE0OCAzOTguOCAzNTEuMTQ4IDM5Ni4xNjNWMzU4LjU3OUwyNTEuODY4IDQxNS44OTdaTTM2OC42MDIgMjIwLjYyOEMzNjYuMzE5IDIxOS4zMDkgMzYzLjQ3NCAyMTkuMzE4IDM2MS4xOTEgMjIwLjYzN0wzMjguNjQxIDIzOS40MzFMNDI3LjkyMSAyOTYuNzQ5QzQzMS40OTYgMjk4LjgxMSA0MzMuNjk3IDMwMi42MjcgNDMzLjY5NyAzMDYuNzUyVjQwNC42NjFDNDU1LjYyMiAzOTUuNjU0IDQ3My4yNDQgMzc2Ljg4MSA0NzkuODUxIDM1Mi4yMThDNDg5LjE2OSAzMTcuNDQyIDQ3My42NjggMjgxLjg1IDQ0NC4yMDEgMjY0LjI3NEwzNjguNjAyIDIyMC42MjhaTTE3Ny4zMDMgMjA2LjM0QzE1NS4zNzcgMjE1LjM0OCAxMzcuNzU2IDIzNC4xMjIgMTMxLjE0OCAyNTguNzgzQzEyMS44MzIgMjkzLjU2MSAxMzcuMzMxIDMyOS4xNTMgMTY2Ljc5OSAzNDYuNzI3TDI0Mi4zOTggMzkwLjM3M0MyNDQuNjggMzkxLjY5MiAyNDcuNTI1IDM5MS42ODQgMjQ5LjgwNyAzOTAuMzY2TDI4Mi4zNTcgMzcxLjU3MkwxODMuMDc4IDMxNC4yNTNDMTc5LjUwNCAzMTIuMTg5IDE3Ny4zMDMgMzA4LjM3NSAxNzcuMzAzIDMwNC4yNTFWMjA2LjM0Wk0yNTkuODQ5IDI3OS4xNDVWMzMxLjg1OEwzMDUuNSAzNTguMjEzTDM1MS4xNSAzMzEuODU4VjI3OS4xNDVMMzA1LjUgMjUyLjc4OUwyNTkuODQ5IDI3OS4xNDVaTTMyNy4yNzYgMTQ0LjlDMzA4LjUxMiAxMzAuNDE4IDI4My40NDUgMTI0LjU0MyAyNTguNzgyIDEzMS4xNUMyMjQuMDAyIDE0MC40NzEgMjAwLjkzMSAxNzEuNjkxIDIwMC40NDUgMjA1Ljk5NVYyOTMuMjg2QzIwMC40NDUgMjk1LjkyMyAyMDEuODc1IDI5OC4zODEgMjA0LjE1OCAyOTkuN0wyMzYuNzA3IDMxOC40OTNWMjAzLjg1NkMyMzYuNzA3IDE5OS43MzEgMjM4LjkwOSAxOTUuOTE2IDI0Mi40ODMgMTkzLjg1M0wzMjcuMjc2IDE0NC45Wk00MzMuMTM3IDE3Ny44NjdDNDA3LjY3NSAxNTIuNDA3IDM2OS4xMDMgMTQ4LjAzOCAzMzkuMTQ5IDE2NC43NjlMMjYzLjU1IDIwOC40MTVDMjYxLjI2NSAyMDkuNzM0IDI1OS44NTIgMjEyLjIwMiAyNTkuODUyIDIxNC44MzhWMjUyLjQyM0wzNTkuMTMyIDE5NS4xMDVDMzYyLjcwMyAxOTMuMDQxIDM2Ny4xMDggMTkzLjA0MSAzNzAuNjgyIDE5NS4xMDVMNDU1LjQ3MyAyNDQuMDZDNDU4LjYzNSAyMjAuNTY3IDQ1MS4xODkgMTk1LjkyMiA0MzMuMTM1IDE3Ny44NjdINDMzLjEzN1oiIGZpbGw9ImN1cnJlbnRDb2xvciI+PC9wYXRoPjwvc3ZnPg==") center/contain no-repeat;mask:url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMWVtIiBoZWlnaHQ9IjFlbSIgdmlld0JveD0iMTAwIDEwMCA0MTEgNDExIiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGNsYXNzPSJoLTYgdy02IiBhcmlhLWhpZGRlbj0idHJ1ZSI+PHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik0yNTIuNzk0IDEwOC44MDJDMjg5LjE5MSA5OS4wNDg0IDMyNi4yNjUgMTEwLjMwNSAzNTEuMTQ4IDEzNS4xMzVDMzg1LjExMyAxMjYuMDcyIDQyMi44NSAxMzQuODYyIDQ0OS40OTIgMTYxLjUwNUM0NzYuMTM2IDE4OC4xNDkgNDg0LjkyNSAyMjUuODg4IDQ3NS44NjIgMjU5Ljg1VjI1OS44NTRDNTAwLjY5NiAyODQuNzM1IDUxMS45NSAzMjEuODEgNTAyLjE5OCAzNTguMjA3QzQ5Mi40NDcgMzk0LjYwMiA0NjQuMTYxIDQyMS4wODQgNDMwLjIxNSA0MzAuMjE3QzQyMS4wODMgNDY0LjE2MiAzOTQuNjAzIDQ5Mi40NDggMzU4LjIwNiA1MDIuMTk5QzMyMS44MTIgNTExLjk1MSAyODQuNzM0IDUwMC42OTMgMjU5Ljg1MiA0NzUuODY0QzIyNS44ODcgNDg0LjkyNyAxODguMTUgNDc2LjEzNyAxNjEuNTA3IDQ0OS40OTVDMTM0Ljg2NCA0MjIuODUxIDEyNi4wNzMgMzg1LjExMSAxMzUuMTM2IDM1MS4xNDlDMTEwLjMwNCAzMjYuMjY2IDk5LjA0OTYgMjg5LjE5MiAxMDguODAxIDI1Mi43OTVDMTE4LjU1MiAyMTYuNCAxNDYuODQgMTg5LjkxOCAxODAuNzg0IDE4MC43ODVDMTg5LjkxNyAxNDYuODQxIDIxNi4zOTYgMTE4LjU1MyAyNTIuNzk0IDEwOC44MDJaTTM3NC4yOTIgNDA3LjE0NUMzNzQuMjkyIDQxMS4yNzEgMzcyLjA5MiA0MTUuMDg2IDM2OC41MTcgNDE3LjE0OEwyODMuNzIzIDQ2Ni4xMDJDMzAyLjQ4NyA0ODAuNTg1IDMyNy41NTUgNDg2LjQ1OSAzNTIuMjE3IDQ3OS44NTJDMzg2Ljk5NyA0NzAuNTMyIDQxMC4wNjggNDM5LjMxMiA0MTAuNTU1IDQwNS4wMDZWMzE3LjcxN0M0MTAuNTU1IDMxNS4wOCA0MDkuMTI1IDMxMi42MjEgNDA2Ljg0MyAzMTEuMzAzTDM3NC4yOTIgMjkyLjUwOVY0MDcuMTQ1Wk0yNTEuODY4IDQxNS44OTdDMjQ4LjI5NiA0MTcuOTU5IDI0My44OTMgNDE3Ljk1OSAyNDAuMzE3IDQxNS44OTdMMTU1LjUyNiAzNjYuOTQyQzE1Mi4zNjYgMzkwLjQzNiAxNTkuODExIDQxNS4wOCAxNzcuODY2IDQzMy4xMzZIMTc3Ljg2M0MyMDMuMzI1IDQ1OC41OTQgMjQxLjg5NiA0NjIuOTYyIDI3MS44NSA0NDYuMjMyTDM0Ny40NDkgNDAyLjU4NkMzNDkuNzM1IDQwMS4yNjggMzUxLjE0OCAzOTguOCAzNTEuMTQ4IDM5Ni4xNjNWMzU4LjU3OUwyNTEuODY4IDQxNS44OTdaTTM2OC42MDIgMjIwLjYyOEMzNjYuMzE5IDIxOS4zMDkgMzYzLjQ3NCAyMTkuMzE4IDM2MS4xOTEgMjIwLjYzN0wzMjguNjQxIDIzOS40MzFMNDI3LjkyMSAyOTYuNzQ5QzQzMS40OTYgMjk4LjgxMSA0MzMuNjk3IDMwMi42MjcgNDMzLjY5NyAzMDYuNzUyVjQwNC42NjFDNDU1LjYyMiAzOTUuNjU0IDQ3My4yNDQgMzc2Ljg4MSA0NzkuODUxIDM1Mi4yMThDNDg5LjE2OSAzMTcuNDQyIDQ3My42NjggMjgxLjg1IDQ0NC4yMDEgMjY0LjI3NEwzNjguNjAyIDIyMC42MjhaTTE3Ny4zMDMgMjA2LjM0QzE1NS4zNzcgMjE1LjM0OCAxMzcuNzU2IDIzNC4xMjIgMTMxLjE0OCAyNTguNzgzQzEyMS44MzIgMjkzLjU2MSAxMzcuMzMxIDMyOS4xNTMgMTY2Ljc5OSAzNDYuNzI3TDI0Mi4zOTggMzkwLjM3M0MyNDQuNjggMzkxLjY5MiAyNDcuNTI1IDM5MS42ODQgMjQ5LjgwNyAzOTAuMzY2TDI4Mi4zNTcgMzcxLjU3MkwxODMuMDc4IDMxNC4yNTNDMTc5LjUwNCAzMTIuMTg5IDE3Ny4zMDMgMzA4LjM3NSAxNzcuMzAzIDMwNC4yNTFWMjA2LjM0Wk0yNTkuODQ5IDI3OS4xNDVWMzMxLjg1OEwzMDUuNSAzNTguMjEzTDM1MS4xNSAzMzEuODU4VjI3OS4xNDVMMzA1LjUgMjUyLjc4OUwyNTkuODQ5IDI3OS4xNDVaTTMyNy4yNzYgMTQ0LjlDMzA4LjUxMiAxMzAuNDE4IDI4My40NDUgMTI0LjU0MyAyNTguNzgyIDEzMS4xNUMyMjQuMDAyIDE0MC40NzEgMjAwLjkzMSAxNzEuNjkxIDIwMC40NDUgMjA1Ljk5NVYyOTMuMjg2QzIwMC40NDUgMjk1LjkyMyAyMDEuODc1IDI5OC4zODEgMjA0LjE1OCAyOTkuN0wyMzYuNzA3IDMxOC40OTNWMjAzLjg1NkMyMzYuNzA3IDE5OS43MzEgMjM4LjkwOSAxOTUuOTE2IDI0Mi40ODMgMTkzLjg1M0wzMjcuMjc2IDE0NC45Wk00MzMuMTM3IDE3Ny44NjdDNDA3LjY3NSAxNTIuNDA3IDM2OS4xMDMgMTQ4LjAzOCAzMzkuMTQ5IDE2NC43NjlMMjYzLjU1IDIwOC40MTVDMjYxLjI2NSAyMDkuNzM0IDI1OS44NTIgMjEyLjIwMiAyNTkuODUyIDIxNC44MzhWMjUyLjQyM0wzNTkuMTMyIDE5NS4xMDVDMzYyLjcwMyAxOTMuMDQxIDM2Ny4xMDggMTkzLjA0MSAzNzAuNjgyIDE5NS4xMDVMNDU1LjQ3MyAyNDQuMDZDNDU4LjYzNSAyMjAuNTY3IDQ1MS4xODkgMTk1LjkyMiA0MzMuMTM1IDE3Ny44NjdINDMzLjEzN1oiIGZpbGw9ImN1cnJlbnRDb2xvciI+PC9wYXRoPjwvc3ZnPg==") center/contain no-repeat;background-color:var(--ink)}
@@ -2158,66 +2215,133 @@ footer { margin-top: 96px; border-top: 1px solid var(--rule); padding-top: 24px;
     whileSeen(fig, () => { seen = true; cells.forEach(play); }, () => { seen = false; cells.forEach(pause); });
   });
 
-  // the run replayed in a loop: its steps stream in, the report appears, the evaluator flags what mattered, three of
-  // its questions are checked against the report, and every verdict it got is tallied. It plays only while in
-  // view, its button pauses it, and a reader who asks for less motion sees every part at once, still
-  document.querySelectorAll("figure.demo").forEach(fig => {
-    if (still.matches) return;
-    const q = s => fig.querySelector(s), qa = s => [...fig.querySelectorAll(s)];
-    const run = q(".demo-steps"), steps = qa(".demo-steps li"), doc = q(".demo-doc"), blocks = qa(".demo-doc p");
-    const census = q(".demo-census"), flags = qa(".demo-evs li"), cards = qa(".demo-card"), tally = q(".demo-tally");
-    const say = q(".demo-say span:last-child"), num = q(".demo-n"), clock = q(".demo-clock"), ctl = q(".demo-ctl");
-    const words = JSON.parse(fig.dataset.say), end = clock.textContent;
-    let playing = false, paused = false, started = false;
-    const sleep = ms => new Promise(done => {
+  // the hook's runs, played one after another, each in its harness's own terminal: the steps stream in, the report
+  // appears, and each question in turn lights the steps it asks about and is looked for in the report, where its answer
+  // lights, or is found nowhere. A tab shows that run and a question's chip shows that question, still; the button
+  // pauses and plays. It plays only while in view; under reduced motion each run rests on its unanswered question, and
+  // its tab and chips still show the rest
+  document.querySelectorAll(".hkp").forEach(box => {
+    const exs = [...box.querySelectorAll(".hkp-ex")], tabs = [...box.querySelectorAll(".hkp-tabs [role=tab]")];
+    const ctl = box.querySelector(".demo-ctl"), STOP = {};
+    let cur = 0, playing = false, paused = false, running = false, token = 0;
+    const P = exs.map(ex => {
+      const q = s => ex.querySelector(s), qa = s => [...ex.querySelectorAll(s)];
+      const p = { run: q(".t-steps"), steps: qa(".t-steps li"), doc: q(".demo-doc"), blocks: qa(".demo-doc p"), cards: qa(".hkp-q"),
+                  chips: qa(".hkp-chip"), say: q(".demo-say span:last-child"), num: q(".demo-n"), clock: q(".demo-clock"),
+                  words: JSON.parse(ex.dataset.say) };
+      p.rest = Math.max(0, p.cards.findIndex(c => c.classList.contains("on")));
+      p.end = p.clock.textContent;
+      return p;
+    });
+    const sleep = (ms, mine) => new Promise((done, fail) => {
       let left = ms, last = performance.now();
-      const tick = now => { if (playing) left -= now - last; last = now; left <= 0 ? done() : requestAnimationFrame(tick); };
+      const tick = now => {
+        if (mine !== token) return fail(STOP);
+        if (playing) left -= now - last;
+        last = now; left <= 0 ? done() : requestAnimationFrame(tick);
+      };
       requestAnimationFrame(tick);
     });
-    const phase = n => { num.textContent = n; say.textContent = words[n - 1]; };
-    const into = (box, el, where) => box.scrollTo({ top: Math.max(0, el.offsetTop - box.clientHeight * where), behavior: "smooth" });
-    const scan = (from, to) => { doc.style.setProperty("--scan-from", `${from}px`); doc.style.setProperty("--scan-to", `${to}px`); };
-    async function loop() {
-      for (;;) {
-        fig.classList.add("play"); fig.classList.remove("rep", "scan");
-        steps.forEach(s => s.classList.remove("in", "ev")); flags.forEach(f => f.classList.remove("in")); census.classList.remove("in");
-        cards.forEach(c => c.classList.remove("in", "done")); blocks.forEach(b => b.classList.remove("hit-covered", "hit-unsupported"));
-        tally.classList.remove("in"); run.scrollTop = 0; doc.scrollTop = 0;
-        phase(1);
-        for (const s of steps) { s.classList.add("in"); clock.textContent = s.dataset.clock; run.scrollTop = run.scrollHeight; await sleep(115); }
-        clock.textContent = end; await sleep(500);
-        phase(2); fig.classList.add("rep"); await sleep(700);
-        doc.scrollTo({ top: doc.scrollHeight / 3, behavior: "smooth" }); await sleep(1600); doc.scrollTo({ top: 0, behavior: "smooth" }); await sleep(700);
-        phase(3); census.classList.add("in"); await sleep(900);
-        for (const f of flags) { const s = steps[+f.dataset.step]; s.classList.add("ev"); into(run, s, 0.45); f.classList.add("in"); await sleep(1300); }
-        await sleep(400);
-        for (const c of cards) {
-          phase(4); c.classList.add("in"); await sleep(1100);
-          const hit = c.dataset.hit ? blocks[+c.dataset.hit] : null;
-          fig.classList.add("scan");
-          if (hit) { into(doc, hit, 0.3); scan(0, doc.clientHeight - 70); await sleep(1500); hit.classList.add(`hit-${c.dataset.v}`); }
-          else { scan(0, doc.clientHeight - 70); doc.scrollTo({ top: doc.scrollHeight, behavior: "smooth" }); await sleep(1900); }
-          fig.classList.remove("scan"); c.classList.add("done"); await sleep(2800);
-          if (hit) hit.classList.remove(`hit-${c.dataset.v}`);
-          doc.scrollTo({ top: 0, behavior: "smooth" });
-        }
-        phase(5); tally.classList.add("in"); await sleep(5200);
+    // scroll a pane so a line sits a share of the way down it, measured on screen
+    const into = (pane, el, where, smooth) => pane.scrollTo({ top: Math.max(0, pane.scrollTop + el.getBoundingClientRect().top
+      - pane.getBoundingClientRect().top - pane.clientHeight * where), behavior: smooth ? "smooth" : "auto" });
+    const say = (p, n, words) => { p.num.textContent = n; p.say.textContent = words; };
+    const unlight = (ex, p) => {
+      ex.classList.remove("none");
+      p.steps.forEach(s => s.classList.remove("lit"));
+      p.blocks.forEach(b => { b.classList.remove("hit-covered", "hit-unsupported"); delete b.dataset.mark; });
+    };
+    // one question on: its card and chip, and the steps it asks about lit
+    const ask = (ex, p, k, smooth) => {
+      unlight(ex, p);
+      p.cards.forEach((c, j) => c.classList.toggle("on", j === k));
+      p.chips.forEach((c, j) => c.setAttribute("aria-pressed", String(j === k)));
+      const lit = p.steps.filter(s => (s.dataset.q || "").split(" ").includes(String(k)));
+      lit.forEach(s => s.classList.add("lit"));
+      if (lit[0]) into(p.run, lit[0], 0.2, smooth);
+    };
+    // its answer: lit where the report gives it, or the report said to give none
+    const answer = (ex, p, k, smooth) => {
+      const card = p.cards[k], hit = card.dataset.hit;
+      if (hit !== undefined) {
+        const b = p.blocks[+hit];
+        b.classList.add(`hit-${card.dataset.v}`); b.dataset.mark = card.dataset.mark; into(p.doc, b, 0.2, smooth);
+      } else ex.classList.add("none");
+      card.classList.add("done"); p.chips[k].classList.add("done");
+      say(p, 3 + k, card.querySelector(".hkp-vw").textContent);
+    };
+    // a run at rest on one question: every part shown, that question answered
+    const rest = (i, k) => {
+      const ex = exs[i], p = P[i];
+      ex.classList.remove("play", "scan"); ex.classList.add("rep", "asked");
+      p.steps.forEach(s => s.classList.add("in")); p.cards.forEach(c => c.classList.add("done")); p.chips.forEach(c => c.classList.add("done"));
+      p.clock.textContent = p.end;
+      ask(ex, p, k, false); answer(ex, p, k, false);
+    };
+    const show = i => {
+      cur = i;
+      exs.forEach((e, j) => { e.classList.toggle("on", j === i); e.setAttribute("aria-hidden", String(j !== i)); });
+      tabs.forEach((t, j) => t.setAttribute("aria-selected", String(j === i)));
+    };
+    async function play(i, mine) {
+      const ex = exs[i], p = P[i];
+      ex.classList.add("play"); ex.classList.remove("rep", "asked", "scan");
+      unlight(ex, p);
+      p.steps.forEach(s => s.classList.remove("in"));
+      p.cards.forEach(c => c.classList.remove("done")); p.chips.forEach(c => { c.classList.remove("done"); c.setAttribute("aria-pressed", "false"); });
+      p.run.scrollTop = 0; p.doc.scrollTop = 0;
+      say(p, 1, p.words[0]);
+      for (const s of p.steps) {
+        s.classList.add("in"); p.clock.textContent = s.dataset.clock; p.run.scrollTop = p.run.scrollHeight;
+        await sleep(110, mine);
       }
+      p.clock.textContent = p.end; await sleep(400, mine);
+      say(p, 2, p.words[1]); ex.classList.add("rep"); await sleep(500, mine);
+      p.doc.scrollTo({ top: p.doc.scrollHeight / 3, behavior: "smooth" }); await sleep(1300, mine);
+      p.doc.scrollTo({ top: 0, behavior: "smooth" }); await sleep(500, mine);
+      ex.classList.add("asked");
+      for (let k = 0; k < p.cards.length; k++) {
+        ask(ex, p, k, true);
+        say(p, 3 + k, `Question ${k + 1} asks about what it did ${p.cards[k].dataset.at} minutes in`);
+        await sleep(2400, mine);
+        say(p, 3 + k, p.words[2]);
+        ex.classList.add("scan");
+        p.doc.style.setProperty("--scan-from", "0px"); p.doc.style.setProperty("--scan-to", `${p.doc.clientHeight - 70}px`);
+        const hit = p.cards[k].dataset.hit;
+        if (hit !== undefined) { into(p.doc, p.blocks[+hit], 0.2, true); await sleep(1500, mine); }
+        else { p.doc.scrollTo({ top: p.doc.scrollHeight, behavior: "smooth" }); await sleep(1900, mine); }
+        ex.classList.remove("scan");
+        answer(ex, p, k, true); await sleep(3200, mine);
+      }
+      unlight(ex, p);
+      say(p, 3 + p.cards.length, p.words[3]); await sleep(3600, mine);
+      rest(i, p.rest);
     }
-    const go = () => { if (paused) return; playing = true; if (!started) { started = true; ctl.hidden = false; loop(); } };
-    const stop = () => { playing = false; };
+    async function loop(from) {
+      const mine = ++token; running = true;
+      try {
+        for (let i = from; ; i = (i + 1) % exs.length) { show(i); await play(i, mine); await sleep(1200, mine); }
+      } catch (e) { if (e !== STOP) throw e; }
+      if (mine === token) running = false;
+    }
+    const halt = () => { token++; running = false; };
+    exs.forEach((_, i) => rest(i, P[i].rest));
+    tabs.forEach((t, i) => t.addEventListener("click", () => {
+      halt(); show(i); rest(i, P[i].rest);
+      if (!still.matches && !paused && playing) loop(i);
+    }));
+    exs.forEach((ex, i) => P[i].chips.forEach((c, k) => c.addEventListener("click", () => {
+      halt(); rest(i, k);
+      if (!still.matches) { paused = true; playing = false; ctl.textContent = "Play"; ctl.setAttribute("aria-pressed", "true"); }
+    })));
+    if (still.matches) return;
+    const go = () => { if (paused) return; playing = true; ctl.hidden = false; if (!running) loop(cur); };
     ctl.addEventListener("click", () => {
       paused = !paused; ctl.textContent = paused ? "Play" : "Pause"; ctl.setAttribute("aria-pressed", String(paused));
-      paused ? stop() : go();
+      paused ? (playing = false) : go();
     });
-    whileSeen(fig, go, stop);
+    whileSeen(box, go, () => { playing = false; });
   });
-  // the replay's button opens the explorer's full view of the same run beneath it
-  document.querySelectorAll("[data-opens]").forEach(b => b.addEventListener("click", () => {
-    const shown = $(b.dataset.opens); if (!shown) return;
-    shown.hidden = !shown.hidden; b.setAttribute("aria-expanded", String(!shown.hidden));
-    b.textContent = shown.hidden ? b.dataset.open : b.dataset.close;
-  }));
   const flow = $("flow");
   if (flow) edges(flow.querySelector(".flow-grid"), JSON.parse(flow.dataset.edges));
 
