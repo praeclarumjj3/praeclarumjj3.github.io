@@ -222,6 +222,23 @@ main > section, main > footer, main > .later-rule { max-width: var(--unit); marg
 .wide { width: max(100%, min(var(--wide), calc(100vw - 2 * var(--gutter) - 16px))); position: relative; left: 50%; transform: translateX(-50%); }
 /* once the rail shows, a wide figure spans the column and its rail exactly, so the page keeps one left edge */
 @media (min-width: 1280px) { main .wide { width: var(--unit); left: 0; transform: none; } }
+/* the post keeps no margin rail: its words hold one centred reading column and its figures take the page's width
+   around it (user, 6 Nov: "use more width", "we can remove the citations from right side") */
+.pg-post { --col: 760px; --wide: 1160px; }
+@media (min-width: 1280px) {
+  .pg-post { --unit: var(--col); }
+  main.pg-post > footer, main.pg-post > .later-rule, .pg-post .mast-in { padding-right: 0; }
+  main.pg-post .wide { width: min(var(--wide), calc(100vw - 2 * var(--gutter) - 16px)); left: 50%; transform: translateX(-50%); }
+}
+/* what we ran opens the post under the hook, and it and what comes next spread across the same width, every tile or
+   card in one row */
+.pg-post .scale-band.wide { margin: 18px 0 8px; }
+@media (min-width: 1100px) {
+  main.pg-post > section.kind-later > ul.soon-list { position: relative; max-width: none;
+    width: min(var(--wide), calc(100vw - 2 * var(--gutter) - 16px)); left: 50%; transform: translateX(-50%); }
+  .pg-post .scale-row { grid-template-columns: repeat(8, minmax(0, 1fr)); }
+  main.pg-post > section.kind-later > ul.soon-list { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
 .btn { display: inline-flex; align-items: center; gap: 8px; font: 600 0.9rem/1 var(--sans); color: var(--on-solid); background: var(--btn); padding: 11px 16px; border-radius: 10px; text-decoration: none; }
 .btn:hover { background: var(--solid); }
 .link-btn { font: 500 0.9rem var(--sans); color: var(--blue); background: none; border: 0; padding: 0; cursor: pointer; text-decoration: underline; text-decoration-color: color-mix(in srgb, var(--blue) 35%, transparent); text-underline-offset: 3px; }
@@ -338,7 +355,26 @@ header.mast:has(.mast-art-w) { padding-top: 0; }
 .mast-meta p { margin: 0; }
 .mast-meta .k { font-weight: 600; color: var(--ink); margin-right: 8px; }
 /* the post's masthead leads with its results: a lead number in the display face over one line, each a link */
-.mast-tz { margin: 0 0 4px; }
+/* the hook: four questions about steps that decided a run, one per harness, that the run's own report left unanswered
+   (user, 6 Nov: "we need a better teaser smthing that hooks the audience"); still, with nothing that pops up */
+.hook { margin: 18px 0 8px; padding: 30px 32px 28px; background: var(--mist); border-radius: 20px; display: grid; gap: 12px; }
+.hk-h { margin: 0; font: 500 clamp(1.7rem, 3.2vw, 2.4rem)/1.12 var(--display); letter-spacing: -0.012em; text-wrap: balance; }
+.hk-h a { color: var(--ink); text-decoration: none; }
+.hk-h a:hover, .hk-h a:focus-visible { text-decoration: underline; text-decoration-color: var(--edge); text-underline-offset: 6px; }
+.hk-s { margin: 0; max-width: 64ch; font-size: 0.95rem; line-height: 1.55; color: var(--ink-2); }
+.hk-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; margin-top: 10px; }
+.hk-q { display: grid; grid-template-rows: auto 1fr auto; gap: 12px; padding: 18px 20px 16px; background: var(--white); border-radius: 14px; }
+.hk-m { margin: 0; display: flex; flex-wrap: wrap; align-items: center; gap: 6px 10px; font: 500 0.86rem/1.2 var(--sans); color: var(--ink-2); }
+.hk-hn { font-family: var(--mono); font-size: 0.84rem; color: var(--ink); }
+.hk-b::before { content: "·"; margin-right: 10px; color: var(--ink-3); }
+.hk-tier { margin-left: auto; padding: 3px 9px; border-radius: 999px; font: 600 0.72rem/1.2 var(--sans); color: var(--navy); background: var(--mist-2); }
+.hk-t { margin: 0; font: 400 1.22rem/1.42 var(--display); color: var(--ink); text-wrap: pretty; }
+.hk-f { margin: 0; display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 6px 16px; font-size: 0.86rem; }
+.hk-no { font-weight: 600; color: var(--silent-ink); }
+.hk-no::before { content: ""; display: inline-block; width: 9px; height: 9px; margin-right: 8px; border-radius: 2px; background: var(--silent); }
+.hk-f a { color: var(--blue); }
+@media (max-width: 760px) { .hook { padding: 20px 16px 18px; border-radius: 14px; } .hk-grid { grid-template-columns: minmax(0, 1fr); gap: 12px; }
+  .hk-q { padding: 16px; } .hk-t { font-size: 1.1rem; } }
 /* the post's key findings: one line each, the finding in bold and its headline number bold inside the words */
 .keyfind { margin: 8px 0 30px; }
 .kf { list-style: none; margin: 0; padding: 0; display: grid; gap: 2px; }
@@ -351,21 +387,6 @@ header.mast:has(.mast-art-w) { padding-top: 0; }
 .kf-t b, .kf-t strong { color: var(--ink); font-weight: 700; font-variant-numeric: tabular-nums; }
 .kf a:hover .kf-t, .kf a:focus-visible .kf-t { color: var(--ink); }
 .kf a:focus-visible { outline: 2px solid var(--blue); outline-offset: 4px; border-radius: 2px; }
-.tz-k { font: 600 0.72rem/1 var(--sans); letter-spacing: 0.14em; text-transform: uppercase; color: var(--blue); margin: 0 0 14px; }
-.tz { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 32px; }
-.tz li { border-top: 1px solid var(--rule); }
-.tz a { display: grid; gap: 6px; padding: 16px 0 18px; color: inherit; text-decoration: none; }
-.tz-n { font: 500 clamp(2.1rem, 4.6vw, 3rem)/1 var(--display); color: var(--tz-c, var(--navy)); font-variant-numeric: tabular-nums; letter-spacing: -0.01em; }
-.tz-t { font-size: 0.95rem; line-height: 1.5; color: var(--ink-2); }
-.tz a:hover .tz-t, .tz a:focus-visible .tz-t { color: var(--ink); text-decoration: underline; text-decoration-color: var(--edge); text-underline-offset: 3px; }
-.tz a:focus-visible { outline: 2px solid var(--blue); outline-offset: 4px; border-radius: 2px; }
-@media (max-width: 560px) { .tz { grid-template-columns: minmax(0, 1fr); } }
-/* a teaser's numbers as bars, nought to all on one scale */
-.tz-bars { display: grid; gap: 5px; margin-top: 6px; }
-.tzb { display: grid; grid-template-columns: 7.2rem minmax(0, 1fr) 3.2rem; align-items: center; gap: 10px; font-size: 0.78rem; line-height: 1.2; color: var(--ink-3); }
-.tzb-t { height: 9px; background: var(--mist-2); border-radius: 5px; overflow: hidden; }
-.tzb-f { display: block; height: 100%; border-radius: 5px; }
-.tzb-v { text-align: right; font-variant-numeric: tabular-nums; color: var(--ink-2); font-weight: 600; }
 .hero { max-width: var(--wide); margin: 32px 0 36px; background: var(--mist); border-radius: 20px; padding: 28px 36px 24px; }
 @media (max-width: 700px) { .hero { padding: 18px 16px; border-radius: 14px; } }
 /* one run as squares: a square per consequential event, sorted by what its report did with it, a row per tier */
@@ -446,16 +467,11 @@ i.u.st-unasked { background: var(--unasked); }
 .note { font: 0.86rem/1.6 var(--sans); color: var(--ink-2); margin: 0 0 22px; padding: 14px 18px; background: var(--mist); border-radius: 10px; }
 .note strong { color: var(--navy); }
 @media (min-width: 1280px) { .note { position: absolute; right: 0; width: var(--rail); margin-top: 4px; padding: 0 0 0 16px; background: none; border-left: 2px solid var(--mist-2); border-radius: 0; } }
-/* citations: a superscript number in the text, the source beside its first paragraph on a wide screen, and
-   every source in the list at the page's end, which the number opens on a narrow one */
+/* citations: a superscript number in the text that opens the source, and every source in the list at the page's
+   end; none sits in the margin (user, 6 Nov: "we can remove the citations from right side") */
 sup.cite { font: 600 0.68em/0 var(--sans); margin-left: 1px; }
 sup.cite a { color: var(--blue); text-decoration: none; padding: 0 1px; }
 sup.cite a:hover, sup.cite a:focus-visible { text-decoration: underline; }
-.note.refs { display: none; }
-.note.refs p { margin: 0 0 10px; font-size: 0.78rem; line-height: 1.5; }
-.note.refs a { color: var(--ink); text-decoration: underline; text-decoration-color: var(--edge); text-underline-offset: 2px; }
-.ref-n { font: 600 0.72rem/1 var(--sans); color: var(--blue); margin-right: 6px; }
-@media (min-width: 1280px) { .note.refs { display: block; border-left-color: var(--mist-2); } }
 .references ol { margin: 0; padding-left: 1.6em; display: grid; gap: 10px; font-size: 0.9rem; line-height: 1.55; color: var(--ink-2); }
 .references li::marker { color: var(--ink-3); font-variant-numeric: tabular-nums; }
 .references li:target { background: var(--mist); border-radius: 6px; }
@@ -813,15 +829,31 @@ a.rb-cell:hover { background: var(--mist-2); color: var(--ink); }
 .tone-covered .chart-fill { background: var(--covered); }
 .tone-silent .chart-fill { background: var(--silent); }
 .tone-wrong .chart-fill { background: var(--wrong); }
-/* a bar's 95% interval is a soft band over its end, its numbers in the bar's pop-up (user, 5 Nov: "a bit too dense") */
+/* a bar's 95% interval is a soft band over its end; the bar prints its number, and the report its interval under it,
+   with no pop-up (user, 6 Nov: "why do we need hovers for every bar just displaying the acc number") */
 .chart-ci { position: absolute; top: 0; bottom: 0; background: var(--ci); border-radius: 3px; }
-.chart-row[data-tip]:hover .chart-fill, .chart-row[data-tip]:focus-visible .chart-fill,
-.pair-bar[data-tip]:hover .chart-fill, .pair-bar[data-tip]:focus-visible .chart-fill { filter: saturate(1.15) brightness(1.05); }
 .chart-v { font: 600 1.05rem var(--sans); font-variant-numeric: tabular-nums; color: var(--ink); text-align: right; }
+.chart-v small { display: block; font: 400 0.74rem/1.3 var(--sans); color: var(--ink-3); white-space: nowrap; }
+/* the report's value column holds the interval under the number */
+.chart.full .chart-row { grid-template-columns: minmax(0, 15rem) minmax(0, 1fr) 6.6rem; }
+.chart.full.grouped .chart-row { grid-template-columns: minmax(0, 11rem) minmax(0, 1fr) 6.6rem; }
+.chart.full .pair-bar { grid-template-columns: minmax(0, 1fr) 6.2rem; }
 .chart-note { margin: 2px 0 0; font-size: 0.84rem; color: var(--ink-3); }
 /* a chart drawn per harness: a group of bars for each row, each harness in its own colour */
 .chart-group { display: grid; gap: 8px; }
 .chart-group + .chart-group { margin-top: 10px; }
+/* on the post's wide page a chart's groups stand side by side on one set of rows, the harnesses named once at the left */
+@media (min-width: 1100px) {
+  .pg-post .chart-groups.g2, .pg-post .chart-groups.g3 { display: grid; column-gap: 40px; row-gap: 8px; }
+  .pg-post .chart-groups.g2 { grid-template-columns: minmax(0, 1.45fr) minmax(0, 1fr); }
+  .pg-post .chart-groups.g3 { grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr) minmax(0, 1fr); }
+  .pg-post .chart-groups > .chart-group { grid-row: span var(--rows); grid-template-rows: subgrid; gap: 0; }
+  .pg-post .chart-groups > .chart-group + .chart-group { margin-top: 0; }
+  .pg-post .chart-groups > .chart-group .chart-g { align-self: end; }
+  .pg-post .chart-groups > .chart-group + .chart-group .chart-l { display: none; }
+  .pg-post .chart-groups > .chart-group + .chart-group .chart-row { grid-template-columns: minmax(0, 1fr) 4.2rem; }
+  .pg-post .chart-groups > .chart-group + .chart-group .chart-why { grid-column: 1 / -1; }
+}
 .chart-g { margin: 0; font: 600 1rem/1.35 var(--sans); color: var(--ink); }
 .chart-g.tone-covered { color: var(--covered-ink); }
 .chart-g.tone-silent { color: var(--silent-ink); }
@@ -1199,6 +1231,9 @@ main .scale-band { margin: 40px 0 8px; }
   .chart-pair .chart-g { font-size: 0.92rem; }
   .pair-bar { grid-template-columns: minmax(0, 1fr) 3.3rem; gap: 6px; }
   .pair-bar .chart-v { font-size: 0.9rem; }
+  .chart.full .chart-row { grid-template-columns: minmax(0, 1fr) 5.6rem; }
+  .chart.full.grouped .chart-row { grid-template-columns: 8rem minmax(0, 1fr) 5.4rem; }
+  .chart.full .pair-bar { grid-template-columns: minmax(0, 1fr) 5.2rem; }
 }
 /* the importance tiers, in the evaluator's words, each with a real event */
 .tiers { background: var(--mist); border-radius: 12px; padding: 4px 20px; margin: 0 0 22px; }
@@ -1493,18 +1528,6 @@ footer { margin-top: 96px; border-top: 1px solid var(--rule); padding-top: 24px;
 .howto::before { content: "i"; display: inline-grid; place-items: center; width: 18px; height: 18px; border-radius: 50%;
   background: var(--mist-2); color: var(--navy); font: italic 600 0.8rem/1 var(--display); }
 .howto:hover, .howto[aria-describedby] { border-color: var(--blue); color: var(--ink); }
-/* a result chart plays like a demo while it is on screen (user, 5 Nov: "add the looping highlight on the result
-   charts"): one mark at a time lights, the rest step back, and its pop-up opens beside it inside the figure, so the
-   page around it never moves; pointing into the chart hands it to the reader */
-figure[data-cycle] { position: relative; }
-figure[data-cycle] [data-tip]:not(.howto) { transition: opacity 0.35s; }
-figure.cycling [data-tip]:not(.howto):not(.lit) { opacity: 0.42; }
-.pop.auto { position: absolute; z-index: 5; max-width: min(320px, calc(100% - 16px));
-  transition: opacity 0.25s, transform 0.25s, left 0.35s, top 0.35s; }
-.cyc-ctl { margin-left: 8px; padding: 4px 12px; border: 1px solid var(--edge); border-radius: 999px; background: var(--white);
-  color: var(--ink-2); font: 500 0.78rem/1.3 var(--sans); cursor: pointer; }
-.cyc-ctl:hover { border-color: var(--blue); color: var(--ink); }
-.cyc-ctl:focus-visible { outline: 2px solid var(--blue); outline-offset: 2px; }
 
 /* a looping showcase of report pictures (user, 5 Nov: "like a gif looping, like a good demo page with results"):
    one window shows each version in turn, scrolling slowly down it, under tabs that carry what each answered; a tab
@@ -2097,44 +2120,6 @@ figure.cycling [data-tip]:not(.howto):not(.lit) { opacity: 0.42; }
     });
     fig.classList.add("live");
     whileSeen(fig, () => { seen = true; cells.forEach(play); }, () => { seen = false; cells.forEach(pause); });
-  });
-
-  // a result chart's marks light one at a time while it is on screen, each with its pop-up open beside it, like a
-  // demo; pointing into the chart or focusing a mark hands it to the reader, a tap or the button pauses it
-  document.querySelectorAll("figure[data-cycle]").forEach(fig => {
-    if (still.matches) return;
-    const STEP = 2300, tip = document.createElement("div"), ctl = document.createElement("button");
-    tip.className = "pop auto"; tip.setAttribute("aria-hidden", "true"); fig.append(tip);
-    ctl.type = "button"; ctl.className = "cyc-ctl"; ctl.textContent = "Pause"; ctl.setAttribute("aria-pressed", "false"); ctl.hidden = true;
-    (fig.querySelector(":scope > .howto-p") || fig).append(ctl);
-    let at = -1, timer = 0, playing = false, paused = false, inside = false, seen = false;
-    const marks = () => [...fig.querySelectorAll("[data-tip]")].filter(m => !m.classList.contains("howto")
-      && m.offsetParent !== null && m.querySelector(":scope > .tip-c"));
-    const clear = () => { fig.classList.remove("cycling"); fig.querySelectorAll(".lit").forEach(m => m.classList.remove("lit")); tip.classList.remove("on"); };
-    const light = m => {
-      fig.querySelectorAll(".lit").forEach(x => x.classList.remove("lit"));
-      m.classList.add("lit"); fig.classList.add("cycling");
-      tip.innerHTML = m.querySelector(":scope > .tip-c").innerHTML; tip.classList.add("on");
-      // over the bar's end, or the version's dot, and above its row, or below it where above would cover the
-      // chart's title
-      const f = fig.getBoundingClientRect(), row = m.getBoundingClientRect(), cap = fig.querySelector(":scope > figcaption");
-      const end = (m.querySelector(".chart-fill, .rf-dot") || m).getBoundingClientRect();
-      const w = tip.offsetWidth, h = tip.offsetHeight, top = cap ? cap.getBoundingClientRect().bottom - f.top + 4 : 0;
-      const x = Math.max(8, Math.min(end.right - f.left - w / 2, f.width - w - 8));
-      const above = row.top - f.top - h - 8;
-      tip.style.left = `${x}px`; tip.style.top = `${above >= top ? above : row.bottom - f.top + 8}px`;
-    };
-    const step = () => { const list = marks(); if (list.length) { at = (at + 1) % list.length; light(list[at]); } timer = setTimeout(step, STEP); };
-    const go = () => { if (paused || playing || inside || !seen) return; playing = true; ctl.hidden = false; step(); };
-    const stop = () => { playing = false; clearTimeout(timer); clear(); };
-    const hold = on => { paused = on; ctl.textContent = on ? "Play" : "Pause"; ctl.setAttribute("aria-pressed", String(on)); on ? stop() : go(); };
-    ctl.addEventListener("click", e => { e.stopPropagation(); hold(!paused); });
-    fig.addEventListener("pointerenter", e => { if (e.pointerType !== "touch") { inside = true; stop(); } });
-    fig.addEventListener("pointerleave", e => { if (e.pointerType !== "touch") { inside = false; go(); } });
-    fig.addEventListener("focusin", e => { if (e.target !== ctl) { inside = true; stop(); } });
-    fig.addEventListener("focusout", e => { if (!fig.contains(e.relatedTarget)) { inside = false; go(); } });
-    fig.addEventListener("click", e => { if (!paused && e.target !== ctl) hold(true); });
-    whileSeen(fig, () => { seen = true; go(); }, () => { seen = false; stop(); });
   });
 
   // the run replayed in a loop: its steps stream in, the report appears, the evaluator flags what mattered, three of
