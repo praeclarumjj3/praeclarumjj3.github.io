@@ -58,6 +58,15 @@ try { const t = localStorage.getItem("left-unsaid-theme"); if (t === "light" || 
   --seg-on: #ffffff;
   --mark: #0f1d33;
   --dot-opacity: 0.55;
+  /* a bar's interval band, laid over the bar and the track alike */
+  --ci: rgba(15, 29, 51, 0.17);
+  /* the replay's terminal keeps a dark ground in both themes, and the report it shows keeps its white paper */
+  --term: #0f1d33;
+  --term-2: #172a47;
+  --term-ink: #d9e5f6;
+  --term-dim: #8193ad;
+  --paper-ink: #1f2328;
+  --paper-dim: #59636e;
   /* the release bundle's figure colours that have no page role of their own */
   --fx-faint: #7f8fa5;
   --fx-violet: #6a52c9;
@@ -122,6 +131,9 @@ try { const t = localStorage.getItem("left-unsaid-theme"); if (t === "light" || 
     --seg-on: #333e51;
     --mark: #c9d2de;
     --dot-opacity: 0.8;
+    --ci: rgba(255, 255, 255, 0.2);
+    --term: #0a0f18;
+    --term-2: #131c2b;
     --fx-faint: #74839b;
     --fx-violet: #a593f2;
     --fx-cyan: #4cc3d6;
@@ -169,6 +181,9 @@ try { const t = localStorage.getItem("left-unsaid-theme"); if (t === "light" || 
   --seg-on: #333e51;
   --mark: #c9d2de;
   --dot-opacity: 0.8;
+  --ci: rgba(255, 255, 255, 0.2);
+  --term: #0a0f18;
+  --term-2: #131c2b;
   --fx-faint: #74839b;
   --fx-violet: #a593f2;
   --fx-cyan: #4cc3d6;
@@ -798,11 +813,10 @@ a.rb-cell:hover { background: var(--mist-2); color: var(--ink); }
 .tone-covered .chart-fill { background: var(--covered); }
 .tone-silent .chart-fill { background: var(--silent); }
 .tone-wrong .chart-fill { background: var(--wrong); }
-.chart-ci { position: absolute; top: 50%; height: 2px; background: var(--ink); transform: translateY(-50%); }
-.chart-ci::before, .chart-ci::after { content: ""; position: absolute; top: -6px; width: 2px; height: 14px; background: var(--ink); }
-.chart-ci { filter: drop-shadow(0 0 1px var(--white)) drop-shadow(0 0 0.6px var(--white)); }
-.chart-ci::before { left: 0; }
-.chart-ci::after { right: 0; }
+/* a bar's 95% interval is a soft band over its end, its numbers in the bar's pop-up (user, 5 Nov: "a bit too dense") */
+.chart-ci { position: absolute; top: 0; bottom: 0; background: var(--ci); border-radius: 3px; }
+.chart-row[data-tip]:hover .chart-fill, .chart-row[data-tip]:focus-visible .chart-fill,
+.pair-bar[data-tip]:hover .chart-fill, .pair-bar[data-tip]:focus-visible .chart-fill { filter: saturate(1.15) brightness(1.05); }
 .chart-v { font: 600 1.05rem var(--sans); font-variant-numeric: tabular-nums; color: var(--ink); text-align: right; }
 .chart-note { margin: 2px 0 0; font-size: 0.84rem; color: var(--ink-3); }
 /* a chart drawn per harness: a group of bars for each row, each harness in its own colour */
@@ -1458,7 +1472,195 @@ ul.bar-t li { margin: 0; }
 .apx-b { padding: 0 0 12px 28px; font-size: 1rem; }
 .apx-b ul { padding-left: 20px; }
 footer { margin-top: 96px; border-top: 1px solid var(--rule); padding-top: 24px; font-size: 0.84rem; line-height: 1.6; color: var(--ink-3); }
-@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .apx summary::before, .run-card { transition: none; } .run-card:hover { transform: none; } }
+/* pop-ups (user, 5 Nov: "use hover pop ups to display extra info instead of displaying everything at once"): a
+   figure keeps its result in view and puts how to read it, and each mark's exact numbers, in one floating card the
+   script fills on hover, keyboard focus or a tap */
+.tip-c { display: none; }
+[data-tip] { cursor: help; }
+[data-tip]:focus-visible { outline: 2px solid var(--blue); outline-offset: 2px; border-radius: 6px; }
+.pop { position: fixed; left: 0; top: 0; z-index: 30; max-width: min(360px, calc(100vw - 24px)); padding: 11px 13px;
+  border-radius: 10px; background: var(--solid); color: var(--on-solid); font: 0.82rem/1.55 var(--sans);
+  box-shadow: 0 14px 32px -14px rgba(var(--shadow), 0.6); pointer-events: none; opacity: 0; transform: translateY(3px);
+  transition: opacity 0.12s, transform 0.12s; }
+.pop.on { opacity: 1; transform: none; }
+.pop b { font-weight: 600; }
+.pop .tip-k { display: block; margin-bottom: 3px; font: 600 0.68rem/1.3 var(--sans); letter-spacing: 0.06em; text-transform: uppercase; opacity: 0.8; }
+.pop .tip-k .hlogo { display: none; }
+.pop .tip-q { display: block; margin-top: 6px; font-style: italic; opacity: 0.9; }
+.howto-p { margin: 12px 0 0; }
+.howto { display: inline-flex; align-items: center; gap: 7px; padding: 4px 12px 4px 5px; border: 1px solid var(--edge);
+  border-radius: 999px; background: var(--white); color: var(--ink-2); font: 500 0.78rem/1.3 var(--sans); }
+.howto::before { content: "i"; display: inline-grid; place-items: center; width: 18px; height: 18px; border-radius: 50%;
+  background: var(--mist-2); color: var(--navy); font: italic 600 0.8rem/1 var(--display); }
+.howto:hover, .howto[aria-describedby] { border-color: var(--blue); color: var(--ink); }
+/* a result chart plays like a demo while it is on screen (user, 5 Nov: "add the looping highlight on the result
+   charts"): one mark at a time lights, the rest step back, and its pop-up opens beside it inside the figure, so the
+   page around it never moves; pointing into the chart hands it to the reader */
+figure[data-cycle] { position: relative; }
+figure[data-cycle] [data-tip]:not(.howto) { transition: opacity 0.35s; }
+figure.cycling [data-tip]:not(.howto):not(.lit) { opacity: 0.42; }
+.pop.auto { position: absolute; z-index: 5; max-width: min(320px, calc(100% - 16px));
+  transition: opacity 0.25s, transform 0.25s, left 0.35s, top 0.35s; }
+.cyc-ctl { margin-left: 8px; padding: 4px 12px; border: 1px solid var(--edge); border-radius: 999px; background: var(--white);
+  color: var(--ink-2); font: 500 0.78rem/1.3 var(--sans); cursor: pointer; }
+.cyc-ctl:hover { border-color: var(--blue); color: var(--ink); }
+.cyc-ctl:focus-visible { outline: 2px solid var(--blue); outline-offset: 2px; }
+
+/* a looping showcase of report pictures (user, 5 Nov: "like a gif looping, like a good demo page with results"):
+   one window shows each version in turn, scrolling slowly down it, under tabs that carry what each answered; a tab
+   or the window picks one and stops the loop, and a reader who asks for less motion gets the tabs alone */
+.show { display: grid; gap: 14px; margin-block: 26px 30px; }
+.show-tabs { display: grid; grid-template-columns: repeat(var(--n, 4), minmax(0, 1fr)); gap: 10px; }
+.show-tab { position: relative; display: grid; gap: 3px; align-content: start; text-align: left; padding: 11px 13px 13px;
+  border: 1px solid var(--edge); border-radius: 12px; background: var(--white); color: var(--ink-3);
+  font: 0.78rem/1.4 var(--sans); cursor: pointer; overflow: hidden; }
+.show-tab b { font: 600 0.9rem/1.3 var(--sans); color: var(--ink); }
+.show-tab .show-res { margin-top: 4px; color: var(--ink-2); font-variant-numeric: tabular-nums; }
+.show-tab .show-res strong { font: 600 1.05rem var(--sans); color: var(--ink); margin-right: 2px; }
+.show-tab:hover { border-color: var(--hl-edge); }
+.show-tab[aria-selected="true"] { border-color: var(--blue); box-shadow: inset 0 0 0 1px var(--blue); background: var(--hl); }
+.show-tab:focus-visible { outline: 2px solid var(--blue); outline-offset: 2px; }
+.show-prog { position: absolute; left: 0; bottom: 0; height: 3px; width: 0; background: var(--blue); }
+.show-win { border-radius: 14px; overflow: hidden; background: var(--paper);
+  box-shadow: 0 0 0 1px var(--edge), 0 26px 50px -32px rgba(var(--shadow), 0.55); }
+.show-bar { display: flex; align-items: center; gap: 6px; padding: 9px 14px; background: var(--mist); border-bottom: 1px solid var(--edge);
+  font: 500 0.76rem var(--sans); color: var(--ink-3); }
+.show-bar i { width: 10px; height: 10px; border-radius: 50%; background: var(--edge); }
+.show-bar span { margin-left: 8px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.show-view { position: relative; display: block; width: 100%; aspect-ratio: 16 / 9; padding: 0; border: 0; overflow: hidden;
+  background: var(--paper); cursor: zoom-in; }
+.show-view:focus-visible { outline: 2px solid var(--blue); outline-offset: -2px; }
+.show-view img { position: absolute; left: 0; top: 0; width: 100%; height: auto; opacity: 0; transition: opacity 0.6s; }
+.show-view img.on { opacity: 1; }
+.show-foot { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 18px; }
+.show-foot .howto-p { margin: 0; }
+.show-link { font: 500 0.84rem var(--sans); }
+@media (max-width: 760px) { .show-tabs { grid-template-columns: repeat(2, minmax(0, 1fr)); } .show-view { aspect-ratio: 4 / 3; } }
+/* every version in a window of its own, all playing at once (user, 5 Nov: "shud we display them side by side all
+   displayed at the same time?"): two by two, each window's bar naming the picture it shows; a phone swipes between them */
+.show-side .sg { display: grid; grid-template-columns: repeat(var(--cols, 2), minmax(0, 1fr)); gap: 18px 16px; }
+.show-side .show-bar span { flex: 1; min-width: 0; }
+/* a window's own pause button, kept in place but unseen until the windows play, so the bar never changes */
+.sg-ctl { flex: none; display: inline-grid; place-items: center; width: 24px; height: 24px; margin: -4px -6px -4px 0; padding: 0;
+  border: 1px solid var(--edge); border-radius: 50%; background: var(--white); color: var(--ink-2); cursor: pointer; }
+.sg-ctl:hover { border-color: var(--blue); color: var(--ink); }
+.sg-ctl:focus-visible { outline: 2px solid var(--blue); outline-offset: 2px; }
+.sg-ctl svg { width: 10px; height: 10px; fill: currentColor; }
+.sg-ctl .ic-play, .sg-ctl[aria-pressed="true"] .ic-pause { display: none; }
+.sg-ctl[aria-pressed="true"] .ic-play { display: block; }
+.show-side:not(.live) .sg-ctl { visibility: hidden; }
+.sg-cell { display: grid; gap: 8px; align-content: start; min-width: 0; }
+.sg-head { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 1px 12px; align-items: baseline;
+  font: 0.78rem/1.4 var(--sans); color: var(--ink-3); }
+.sg-head > b { font: 600 0.92rem/1.3 var(--sans); color: var(--ink); }
+.sg-head > span:not(.show-res) { grid-row: 2; }
+.sg-head > .show-res { grid-column: 2; grid-row: 1 / span 2; align-self: center; text-align: right; color: var(--ink-2);
+  font-variant-numeric: tabular-nums; }
+.sg-head > .show-res strong { font: 600 1.05rem var(--sans); color: var(--ink); margin-right: 2px; }
+.show-side .show-view { aspect-ratio: 4 / 3; }
+@media (max-width: 760px) {
+  .show-side .sg { grid-template-columns: none; grid-auto-flow: column; grid-auto-columns: 86%; overflow-x: auto;
+    scroll-snap-type: x mandatory; padding-bottom: 8px; scrollbar-width: thin; }
+  .sg-cell { scroll-snap-align: start; }
+}
+/* a small dot is easier to point at through a ring larger than it */
+.wr-dot[data-tip]::after { content: ""; position: absolute; inset: -9px; border-radius: 50%; }
+
+/* the run replayed (user, 5 Nov): the agent's steps on a dark terminal beside the report it wrote on white paper,
+   then three of its questions checked against that report, then every verdict it got. At rest, and for a reader
+   who asks for less motion, every part shows at once; while it plays, the same layout fills in, so nothing moves the
+   page around it */
+.demo { display: grid; gap: 14px; margin-block: 22px 26px; }
+.demo-head { display: flex; align-items: center; justify-content: space-between; gap: 8px 16px; min-height: 34px; }
+.demo-say { flex: 1; min-width: 0; }
+.demo-ctl { flex: none; }
+@media (max-width: 760px) { .demo-head { min-height: 3.4em; } }
+.demo-say { margin: 0; display: flex; align-items: center; gap: 10px; font: 600 0.95rem/1.35 var(--sans); color: var(--ink); }
+.demo-say .demo-n { flex: none; display: inline-grid; place-items: center; width: 26px; height: 26px; border-radius: 50%;
+  background: var(--navy); color: var(--page); font: 600 0.78rem var(--sans); font-variant-numeric: tabular-nums; }
+.demo-ctl { display: inline-flex; align-items: center; gap: 7px; padding: 6px 14px; border: 1px solid var(--edge); border-radius: 999px;
+  background: var(--white); color: var(--ink-2); font: 600 0.8rem var(--sans); cursor: pointer; }
+.demo-ctl:hover { border-color: var(--blue); color: var(--ink); }
+.demo-ctl:focus-visible { outline: 2px solid var(--blue); outline-offset: 2px; }
+.demo-stage { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 14px; }
+.demo-pane { display: grid; grid-template-rows: auto minmax(0, 1fr); height: 380px; border-radius: 14px; overflow: hidden; }
+.demo-pane > header { display: flex; align-items: baseline; justify-content: space-between; gap: 10px; padding: 10px 14px;
+  font: 600 0.72rem/1.3 var(--sans); letter-spacing: 0.06em; text-transform: uppercase; }
+.demo-pane > header span { font: 500 0.74rem var(--mono); letter-spacing: 0; text-transform: none; font-variant-numeric: tabular-nums; }
+.demo-run { grid-template-rows: auto minmax(0, 1fr) auto auto; background: var(--term); color: var(--term-ink); }
+.demo-run > header { background: var(--term-2); color: var(--term-dim); }
+.demo-run > header b { color: var(--term-ink); font-weight: 600; }
+.demo-steps { margin: 0; padding: 10px 0 14px; list-style: none; overflow-y: auto; scrollbar-width: thin; }
+.demo-steps li { display: grid; grid-template-columns: 3.6rem minmax(0, 1fr); gap: 12px; padding: 1px 14px;
+  font: 0.74rem/1.6 var(--mono); transition: opacity 0.25s, background 0.4s; }
+.demo-steps time { color: var(--term-dim); text-align: right; font-variant-numeric: tabular-nums; }
+.demo-steps code { font: inherit; padding: 0; border: 0; border-radius: 0; background: none; color: var(--term-ink);
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.demo-steps .rs code { color: var(--term-dim); font-style: italic; }
+.demo-steps li.ev { background: rgba(234, 122, 36, 0.2); box-shadow: inset 3px 0 var(--silent); }
+.demo-census { margin: 0; padding: 8px 14px; font: 500 0.74rem/1.5 var(--mono); color: var(--term-dim); background: var(--term-2); transition: opacity 0.3s; }
+.demo-census b { color: var(--term-ink); font-weight: 600; }
+.demo-evs { margin: 0; padding: 8px 14px 11px; list-style: none; display: grid; gap: 5px; background: var(--term-2); }
+.demo-evs li { display: flex; flex-wrap: wrap; align-items: baseline; gap: 2px 8px; font: 0.76rem/1.45 var(--sans); color: var(--term-ink); transition: opacity 0.3s, transform 0.3s; }
+.demo-evs li small { color: var(--term-dim); font-size: 0.72rem; }
+.demo-evs .ev-tier { margin: 0; }
+.demo-rep { background: var(--paper); color: var(--paper-ink); box-shadow: inset 0 0 0 1px var(--edge); transition: opacity 0.5s; }
+.demo-rep > header { background: #f6f8fa; color: var(--paper-dim); border-bottom: 1px solid #e1e6ec; }
+.demo-rep > header b { color: var(--paper-ink); font-weight: 600; }
+.demo-doc { position: relative; overflow-y: auto; padding: 14px 18px 22px; scrollbar-width: thin; }
+.demo-doc p { margin: 0 0 8px; font: 0.8rem/1.55 var(--sans); color: var(--paper-ink); border-radius: 4px; transition: background 0.4s, box-shadow 0.4s; }
+.demo-doc .dd-h { margin-top: 14px; font: 600 0.92rem/1.35 var(--sans); }
+.demo-doc .dd-h1 { margin-top: 0; font: 600 1.08rem/1.3 var(--sans); }
+.demo-doc .dd-li { padding-left: 14px; position: relative; }
+.demo-doc .dd-li::before { content: ""; position: absolute; left: 3px; top: 0.62em; width: 4px; height: 4px; border-radius: 50%; background: var(--paper-dim); }
+.demo-doc .dd-tr { font-size: 0.76rem; color: #3d4752; }
+.demo-doc .dd-pre { font: 0.72rem/1.5 var(--mono); white-space: pre-wrap; background: #f6f8fa; padding: 4px 8px; }
+.demo-doc p.hit-covered { background: #d8f1e4; box-shadow: 0 0 0 4px #d8f1e4; }
+.demo-doc p.hit-unsupported { background: #fbdfe2; box-shadow: 0 0 0 4px #fbdfe2; }
+.demo-scan { position: absolute; left: 0; right: 0; top: 0; height: 70px; pointer-events: none; opacity: 0;
+  background: linear-gradient(180deg, transparent, rgba(29, 91, 191, 0.13), transparent); }
+.demo.scan .demo-scan { opacity: 1; animation: demo-scan 1.2s ease-in-out infinite alternate; }
+@keyframes demo-scan { from { transform: translateY(var(--scan-from, 0px)); } to { transform: translateY(var(--scan-to, 300px)); } }
+.demo-cards { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
+.demo-card { display: grid; gap: 8px; align-content: start; padding: 13px 15px; border-radius: 12px; background: var(--white);
+  box-shadow: inset 0 0 0 1px var(--edge); transition: opacity 0.35s, box-shadow 0.35s, transform 0.35s; }
+.demo-qk { margin: 0; display: flex; flex-wrap: wrap; align-items: center; gap: 6px 8px; font: 600 0.7rem var(--sans); letter-spacing: 0.05em; text-transform: uppercase; color: var(--ink-3); }
+.demo-qk .ev-tier { margin: 0; letter-spacing: 0; text-transform: none; }
+.demo-qt { margin: 0; font: 0.84rem/1.5 var(--sans); color: var(--ink); display: -webkit-box; -webkit-line-clamp: 4; -webkit-box-orient: vertical; overflow: hidden; }
+.demo-v { margin: 0; display: grid; gap: 4px; font-size: 0.8rem; line-height: 1.45; color: var(--ink-2); transition: opacity 0.35s; }
+.demo-v .pill { justify-self: start; }
+.demo-v i { font-style: normal; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+.demo-tally { display: grid; gap: 9px; padding: 14px 16px; border-radius: 12px; background: var(--mist); }
+.demo-tally p { margin: 0; font-size: 0.92rem; line-height: 1.5; color: var(--ink); transition: opacity 0.4s; }
+.dt-bar { display: flex; height: 14px; border-radius: 7px; overflow: hidden; background: var(--white); }
+.dt-seg { height: 100%; transition: width 1.1s cubic-bezier(0.2, 0.7, 0.2, 1); }
+.dt-seg.covered { background: var(--covered); } .dt-seg.missed { background: var(--silent); } .dt-seg.unsupported { background: var(--wrong); }
+.dt-key { display: flex; flex-wrap: wrap; gap: 4px 18px; font-size: 0.8rem; color: var(--ink-2); font-variant-numeric: tabular-nums; transition: opacity 0.4s; }
+.dt-key span { display: inline-flex; align-items: center; gap: 6px; }
+.dt-key i { width: 10px; height: 10px; border-radius: 3px; }
+.dt-key .covered { background: var(--covered); } .dt-key .missed { background: var(--silent); } .dt-key .unsupported { background: var(--wrong); }
+.dt-key b { color: var(--ink); }
+.demo-foot { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 14px; }
+.demo-foot .howto-p { margin: 0; }
+/* playing: the parts not reached yet wait faint in their places */
+.demo.play .demo-steps li:not(.in) { display: none; }
+.demo.play .demo-steps li.in { animation: demo-in 0.25s ease-out; }
+@keyframes demo-in { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+.demo.play .demo-evs li:not(.in), .demo.play .demo-census:not(.in) { display: none; }
+.demo.play .demo-evs li.in, .demo.play .demo-census.in { animation: demo-in 0.3s ease-out; }
+.demo.play .demo-census:not(.in) + .demo-evs { display: none; }
+.demo.play:not(.rep) .demo-rep { opacity: 0.3; }
+.demo.play .demo-card:not(.in) { opacity: 0.4; }
+.demo.play .demo-card:not(.done) .demo-v { opacity: 0; }
+.demo.play .demo-card.in:not(.done) { box-shadow: inset 0 0 0 2px var(--blue); transform: translateY(-2px); }
+.demo.play .demo-tally:not(.in) .dt-seg { width: 0 !important; }
+.demo.play .demo-tally:not(.in) p, .demo.play .demo-tally:not(.in) .dt-key { opacity: 0.3; }
+@media (max-width: 760px) {
+  .demo-stage, .demo-cards { grid-template-columns: minmax(0, 1fr); }
+  .demo-pane { height: 320px; }
+}
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .apx summary::before, .run-card { transition: none; } .run-card:hover { transform: none; }
+  .show-view img, .dt-seg, .demo-card, .demo-steps li { transition: none; } }
 /* the harnesses' logos, one data URI each */
 .hl-claude-code{background-image:url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQ4IiBoZWlnaHQ9IjI0OCIgdmlld0JveD0iMCAwIDI0OCAyNDgiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxwYXRoIGQ9Ik01Mi40Mjg1IDE2Mi44NzNMOTguNzg0NCAxMzYuODc5TDk5LjU0ODUgMTM0LjYwMkw5OC43ODQ0IDEzMy4zMzRIOTYuNDkyMUw4OC43MjM3IDEzMi44NjJMNjIuMjM0NiAxMzIuMTUzTDM5LjMxMTMgMTMxLjIwN0wxNy4wMjQ5IDEzMC4wMjZMMTEuNDIxNCAxMjguODQ0TDYuMiAxMjEuODczTDYuNzA5NCAxMTguNDQ3TDExLjQyMTQgMTE1LjI1N0wxOC4xNzEgMTE1Ljg0N0wzMy4wNzExIDExNi45MTFMNTUuNDg1IDExOC40NDdMNzEuNjU4NiAxMTkuMzkyTDk1LjcyOCAxMjEuODczSDk5LjU0ODVMMTAwLjA1OCAxMjAuMzM3TDk4Ljc4NDQgMTE5LjM5Mkw5Ny43NjU2IDExOC40NDdMNzQuNTg3NyAxMDIuNzMyTDQ5LjQ5OTUgODYuMTkwNUwzNi4zODIzIDc2LjYyTDI5LjM3NzkgNzEuNzc1N0wyNS44MTIxIDY3LjI4NThMMjQuMjgzOSA1Ny4zNjA4TDMwLjY1MTUgNTAuMjcxNkwzOS4zMTEzIDUwLjg2MjNMNDEuNDc2MyA1MS40NTMxTDUwLjI2MzYgNTguMTg3OUw2OC45ODQyIDcyLjcyMDlMOTMuNDM1NyA5MC42ODA0TDk3LjAwMTUgOTMuNjM0M0w5OC40Mzc0IDkyLjY2NTJMOTguNjU3MSA5MS45ODAxTDk3LjAwMTUgODkuMjYyNUw4My43NTcgNjUuMjc3Mkw2OS42MjEgNDAuODE5Mkw2My4yNTM0IDMwLjY1NzlMNjEuNTk3OCAyNC42MzJDNjAuOTU2NSAyMi4xMDMyIDYwLjU3OSAyMC4wMTExIDYwLjU3OSAxNy40MjQ2TDY3LjgzODEgNy40OTk2NUw3MS45MTMzIDYuMTk5OTVMODEuNzE5MyA3LjQ5OTY1TDg1Ljc5NDYgMTEuMDQ0M0w5MS45MDc0IDI0Ljk4NjVMMTAxLjcxNCA0Ni44NDUxTDExNi45OTYgNzYuNjJMMTIxLjQ1MyA4NS40ODE2TDEyMy44NzMgOTMuNjM0M0wxMjQuNzY0IDk2LjExNTVIMTI2LjI5MlY5NC42OTc2TDEyNy41NjYgNzcuOTE5N0wxMjkuODU4IDU3LjM2MDhMMTMyLjE1IDMwLjg5NDJMMTMyLjkxNSAyMy40NTA1TDEzNi42MDggMTQuNDcwOEwxNDMuOTk0IDkuNjI2NDNMMTQ5LjcyNSAxMi4zNDRMMTU0LjQzNyAxOS4wNzg4TDE1My44IDIzLjQ1MDVMMTUwLjk5OCA0MS42NDYzTDE0NS41MjIgNzAuMTIxNUwxNDEuOTU3IDg5LjI2MjVIMTQzLjk5NEwxNDYuNDE0IDg2Ljc4MTNMMTU2LjA5MyA3NC4wMjA2TDE3Mi4yNjYgNTMuNjk4TDE3OS4zOTggNDUuNjYzNUwxODcuODAzIDM2LjgwMkwxOTMuMTUyIDMyLjU0ODRIMjAzLjM0TDIxMC43MjYgNDMuNjU0OUwyMDcuNDE1IDU1LjExNTlMMTk2Ljk3MiA2OC4zNDkyTDE4OC4zMTIgNzkuNTczOUwxNzUuODk2IDk2LjIwOTVMMTY4LjE5MSAxMDkuNTg1TDE2OC44ODIgMTEwLjY4OUwxNzAuNzM4IDExMC41M0wxOTguNzU1IDEwNC41MDRMMjEzLjkxIDEwMS43ODdMMjMxLjk5NCA5OC43MTQ5TDI0MC4xNDQgMTAyLjQ5NkwyNDEuMDM2IDEwNi4zOTVMMjM3Ljg1MiAxMTQuMzExTDIxOC40OTUgMTE5LjAzN0wxOTUuODI2IDEyMy42NDVMMTYyLjA3IDEzMS41OTJMMTYxLjY5NiAxMzEuODkzTDE2Mi4xMzcgMTMyLjU0N0wxNzcuMzYgMTMzLjkyNUwxODMuODU1IDEzNC4yNzlIMTk5Ljc3NEwyMjkuNDQ3IDEzNi41MjRMMjM3LjIxNSAxNDEuNjA1TDI0MS44IDE0Ny44NjdMMjQxLjAzNiAxNTIuNzExTDIyOS4wNjUgMTU4LjczN0wyMTMuMDE5IDE1NC45NTZMMTc1LjQ1IDE0NS45NzdMMTYyLjU4NyAxNDIuNzg3SDE2MC44MDVWMTQzLjg1TDE3MS41MDIgMTU0LjM2NkwxOTEuMjQyIDE3Mi4wODlMMjE1LjgyIDE5NS4wMTFMMjE3LjA5NCAyMDAuNjgyTDIxMy45MSAyMDUuMTcyTDIxMC41OTkgMjA0LjY5OUwxODguOTQ5IDE4OC4zOTRMMTgwLjU0NCAxODEuMDY5TDE2MS42OTYgMTY1LjExOEgxNjAuNDIyVjE2Ni43NzJMMTY0Ljc1MiAxNzMuMTUyTDE4Ny44MDMgMjA3Ljc3MUwxODguOTQ5IDIxOC40MDVMMTg3LjI5NCAyMjEuODMyTDE4MS4zMDggMjIzLjk1OUwxNzQuODEzIDIyMi43NzdMMTYxLjE4NyAyMDMuNzU0TDE0Ny4zMDUgMTgyLjQ4NkwxMzYuMDk4IDE2My4zNDVMMTM0Ljc0NSAxNjQuMkwxMjguMDc1IDIzNS40MkwxMjUuMDE5IDIzOS4wODJMMTE3Ljg4NyAyNDEuOEwxMTEuOTAyIDIzNy4zMUwxMDguNzE4IDIyOS45ODRMMTExLjkwMiAyMTUuNDUyTDExNS43MjIgMTk2LjU0N0wxMTguNzc5IDE4MS41NDFMMTIxLjU4IDE2Mi44NzNMMTIzLjI5MSAxNTYuNjM2TDEyMy4xNCAxNTYuMjE5TDEyMS43NzMgMTU2LjQ0OUwxMDcuNjk5IDE3NS43NTJMODYuMzA0IDIwNC42OTlMNjkuMzY2MyAyMjIuNzc3TDY1LjI5MSAyMjQuNDMxTDU4LjI4NjcgMjIwLjc2OEw1OC45MjM1IDIxNC4yN0w2Mi44NzEzIDIwOC40OEw4Ni4zMDQgMTc4LjcwNUwxMDAuNDQgMTYwLjE1NUwxMDkuNTUxIDE0OS41MDdMMTA5LjQ2MiAxNDcuOTY3TDEwOC45NTkgMTQ3LjkyNEw0Ni42OTc3IDE4OC41MTJMMzUuNjE4MiAxODkuOTNMMzAuNzc4OCAxODUuNDRMMzEuNDE1NiAxNzguMTE1TDMzLjcwNzkgMTc1Ljc1Mkw1Mi40Mjg1IDE2Mi44NzNaIiBmaWxsPSIjRDk3NzU3Ii8+Cjwvc3ZnPgo=")}
 .hl-codex{-webkit-mask:url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMWVtIiBoZWlnaHQ9IjFlbSIgdmlld0JveD0iMTAwIDEwMCA0MTEgNDExIiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGNsYXNzPSJoLTYgdy02IiBhcmlhLWhpZGRlbj0idHJ1ZSI+PHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik0yNTIuNzk0IDEwOC44MDJDMjg5LjE5MSA5OS4wNDg0IDMyNi4yNjUgMTEwLjMwNSAzNTEuMTQ4IDEzNS4xMzVDMzg1LjExMyAxMjYuMDcyIDQyMi44NSAxMzQuODYyIDQ0OS40OTIgMTYxLjUwNUM0NzYuMTM2IDE4OC4xNDkgNDg0LjkyNSAyMjUuODg4IDQ3NS44NjIgMjU5Ljg1VjI1OS44NTRDNTAwLjY5NiAyODQuNzM1IDUxMS45NSAzMjEuODEgNTAyLjE5OCAzNTguMjA3QzQ5Mi40NDcgMzk0LjYwMiA0NjQuMTYxIDQyMS4wODQgNDMwLjIxNSA0MzAuMjE3QzQyMS4wODMgNDY0LjE2MiAzOTQuNjAzIDQ5Mi40NDggMzU4LjIwNiA1MDIuMTk5QzMyMS44MTIgNTExLjk1MSAyODQuNzM0IDUwMC42OTMgMjU5Ljg1MiA0NzUuODY0QzIyNS44ODcgNDg0LjkyNyAxODguMTUgNDc2LjEzNyAxNjEuNTA3IDQ0OS40OTVDMTM0Ljg2NCA0MjIuODUxIDEyNi4wNzMgMzg1LjExMSAxMzUuMTM2IDM1MS4xNDlDMTEwLjMwNCAzMjYuMjY2IDk5LjA0OTYgMjg5LjE5MiAxMDguODAxIDI1Mi43OTVDMTE4LjU1MiAyMTYuNCAxNDYuODQgMTg5LjkxOCAxODAuNzg0IDE4MC43ODVDMTg5LjkxNyAxNDYuODQxIDIxNi4zOTYgMTE4LjU1MyAyNTIuNzk0IDEwOC44MDJaTTM3NC4yOTIgNDA3LjE0NUMzNzQuMjkyIDQxMS4yNzEgMzcyLjA5MiA0MTUuMDg2IDM2OC41MTcgNDE3LjE0OEwyODMuNzIzIDQ2Ni4xMDJDMzAyLjQ4NyA0ODAuNTg1IDMyNy41NTUgNDg2LjQ1OSAzNTIuMjE3IDQ3OS44NTJDMzg2Ljk5NyA0NzAuNTMyIDQxMC4wNjggNDM5LjMxMiA0MTAuNTU1IDQwNS4wMDZWMzE3LjcxN0M0MTAuNTU1IDMxNS4wOCA0MDkuMTI1IDMxMi42MjEgNDA2Ljg0MyAzMTEuMzAzTDM3NC4yOTIgMjkyLjUwOVY0MDcuMTQ1Wk0yNTEuODY4IDQxNS44OTdDMjQ4LjI5NiA0MTcuOTU5IDI0My44OTMgNDE3Ljk1OSAyNDAuMzE3IDQxNS44OTdMMTU1LjUyNiAzNjYuOTQyQzE1Mi4zNjYgMzkwLjQzNiAxNTkuODExIDQxNS4wOCAxNzcuODY2IDQzMy4xMzZIMTc3Ljg2M0MyMDMuMzI1IDQ1OC41OTQgMjQxLjg5NiA0NjIuOTYyIDI3MS44NSA0NDYuMjMyTDM0Ny40NDkgNDAyLjU4NkMzNDkuNzM1IDQwMS4yNjggMzUxLjE0OCAzOTguOCAzNTEuMTQ4IDM5Ni4xNjNWMzU4LjU3OUwyNTEuODY4IDQxNS44OTdaTTM2OC42MDIgMjIwLjYyOEMzNjYuMzE5IDIxOS4zMDkgMzYzLjQ3NCAyMTkuMzE4IDM2MS4xOTEgMjIwLjYzN0wzMjguNjQxIDIzOS40MzFMNDI3LjkyMSAyOTYuNzQ5QzQzMS40OTYgMjk4LjgxMSA0MzMuNjk3IDMwMi42MjcgNDMzLjY5NyAzMDYuNzUyVjQwNC42NjFDNDU1LjYyMiAzOTUuNjU0IDQ3My4yNDQgMzc2Ljg4MSA0NzkuODUxIDM1Mi4yMThDNDg5LjE2OSAzMTcuNDQyIDQ3My42NjggMjgxLjg1IDQ0NC4yMDEgMjY0LjI3NEwzNjguNjAyIDIyMC42MjhaTTE3Ny4zMDMgMjA2LjM0QzE1NS4zNzcgMjE1LjM0OCAxMzcuNzU2IDIzNC4xMjIgMTMxLjE0OCAyNTguNzgzQzEyMS44MzIgMjkzLjU2MSAxMzcuMzMxIDMyOS4xNTMgMTY2Ljc5OSAzNDYuNzI3TDI0Mi4zOTggMzkwLjM3M0MyNDQuNjggMzkxLjY5MiAyNDcuNTI1IDM5MS42ODQgMjQ5LjgwNyAzOTAuMzY2TDI4Mi4zNTcgMzcxLjU3MkwxODMuMDc4IDMxNC4yNTNDMTc5LjUwNCAzMTIuMTg5IDE3Ny4zMDMgMzA4LjM3NSAxNzcuMzAzIDMwNC4yNTFWMjA2LjM0Wk0yNTkuODQ5IDI3OS4xNDVWMzMxLjg1OEwzMDUuNSAzNTguMjEzTDM1MS4xNSAzMzEuODU4VjI3OS4xNDVMMzA1LjUgMjUyLjc4OUwyNTkuODQ5IDI3OS4xNDVaTTMyNy4yNzYgMTQ0LjlDMzA4LjUxMiAxMzAuNDE4IDI4My40NDUgMTI0LjU0MyAyNTguNzgyIDEzMS4xNUMyMjQuMDAyIDE0MC40NzEgMjAwLjkzMSAxNzEuNjkxIDIwMC40NDUgMjA1Ljk5NVYyOTMuMjg2QzIwMC40NDUgMjk1LjkyMyAyMDEuODc1IDI5OC4zODEgMjA0LjE1OCAyOTkuN0wyMzYuNzA3IDMxOC40OTNWMjAzLjg1NkMyMzYuNzA3IDE5OS43MzEgMjM4LjkwOSAxOTUuOTE2IDI0Mi40ODMgMTkzLjg1M0wzMjcuMjc2IDE0NC45Wk00MzMuMTM3IDE3Ny44NjdDNDA3LjY3NSAxNTIuNDA3IDM2OS4xMDMgMTQ4LjAzOCAzMzkuMTQ5IDE2NC43NjlMMjYzLjU1IDIwOC40MTVDMjYxLjI2NSAyMDkuNzM0IDI1OS44NTIgMjEyLjIwMiAyNTkuODUyIDIxNC44MzhWMjUyLjQyM0wzNTkuMTMyIDE5NS4xMDVDMzYyLjcwMyAxOTMuMDQxIDM2Ny4xMDggMTkzLjA0MSAzNzAuNjgyIDE5NS4xMDVMNDU1LjQ3MyAyNDQuMDZDNDU4LjYzNSAyMjAuNTY3IDQ1MS4xODkgMTk1LjkyMiA0MzMuMTM1IDE3Ny44NjdINDMzLjEzN1oiIGZpbGw9ImN1cnJlbnRDb2xvciI+PC9wYXRoPjwvc3ZnPg==") center/contain no-repeat;mask:url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMWVtIiBoZWlnaHQ9IjFlbSIgdmlld0JveD0iMTAwIDEwMCA0MTEgNDExIiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGNsYXNzPSJoLTYgdy02IiBhcmlhLWhpZGRlbj0idHJ1ZSI+PHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik0yNTIuNzk0IDEwOC44MDJDMjg5LjE5MSA5OS4wNDg0IDMyNi4yNjUgMTEwLjMwNSAzNTEuMTQ4IDEzNS4xMzVDMzg1LjExMyAxMjYuMDcyIDQyMi44NSAxMzQuODYyIDQ0OS40OTIgMTYxLjUwNUM0NzYuMTM2IDE4OC4xNDkgNDg0LjkyNSAyMjUuODg4IDQ3NS44NjIgMjU5Ljg1VjI1OS44NTRDNTAwLjY5NiAyODQuNzM1IDUxMS45NSAzMjEuODEgNTAyLjE5OCAzNTguMjA3QzQ5Mi40NDcgMzk0LjYwMiA0NjQuMTYxIDQyMS4wODQgNDMwLjIxNSA0MzAuMjE3QzQyMS4wODMgNDY0LjE2MiAzOTQuNjAzIDQ5Mi40NDggMzU4LjIwNiA1MDIuMTk5QzMyMS44MTIgNTExLjk1MSAyODQuNzM0IDUwMC42OTMgMjU5Ljg1MiA0NzUuODY0QzIyNS44ODcgNDg0LjkyNyAxODguMTUgNDc2LjEzNyAxNjEuNTA3IDQ0OS40OTVDMTM0Ljg2NCA0MjIuODUxIDEyNi4wNzMgMzg1LjExMSAxMzUuMTM2IDM1MS4xNDlDMTEwLjMwNCAzMjYuMjY2IDk5LjA0OTYgMjg5LjE5MiAxMDguODAxIDI1Mi43OTVDMTE4LjU1MiAyMTYuNCAxNDYuODQgMTg5LjkxOCAxODAuNzg0IDE4MC43ODVDMTg5LjkxNyAxNDYuODQxIDIxNi4zOTYgMTE4LjU1MyAyNTIuNzk0IDEwOC44MDJaTTM3NC4yOTIgNDA3LjE0NUMzNzQuMjkyIDQxMS4yNzEgMzcyLjA5MiA0MTUuMDg2IDM2OC41MTcgNDE3LjE0OEwyODMuNzIzIDQ2Ni4xMDJDMzAyLjQ4NyA0ODAuNTg1IDMyNy41NTUgNDg2LjQ1OSAzNTIuMjE3IDQ3OS44NTJDMzg2Ljk5NyA0NzAuNTMyIDQxMC4wNjggNDM5LjMxMiA0MTAuNTU1IDQwNS4wMDZWMzE3LjcxN0M0MTAuNTU1IDMxNS4wOCA0MDkuMTI1IDMxMi42MjEgNDA2Ljg0MyAzMTEuMzAzTDM3NC4yOTIgMjkyLjUwOVY0MDcuMTQ1Wk0yNTEuODY4IDQxNS44OTdDMjQ4LjI5NiA0MTcuOTU5IDI0My44OTMgNDE3Ljk1OSAyNDAuMzE3IDQxNS44OTdMMTU1LjUyNiAzNjYuOTQyQzE1Mi4zNjYgMzkwLjQzNiAxNTkuODExIDQxNS4wOCAxNzcuODY2IDQzMy4xMzZIMTc3Ljg2M0MyMDMuMzI1IDQ1OC41OTQgMjQxLjg5NiA0NjIuOTYyIDI3MS44NSA0NDYuMjMyTDM0Ny40NDkgNDAyLjU4NkMzNDkuNzM1IDQwMS4yNjggMzUxLjE0OCAzOTguOCAzNTEuMTQ4IDM5Ni4xNjNWMzU4LjU3OUwyNTEuODY4IDQxNS44OTdaTTM2OC42MDIgMjIwLjYyOEMzNjYuMzE5IDIxOS4zMDkgMzYzLjQ3NCAyMTkuMzE4IDM2MS4xOTEgMjIwLjYzN0wzMjguNjQxIDIzOS40MzFMNDI3LjkyMSAyOTYuNzQ5QzQzMS40OTYgMjk4LjgxMSA0MzMuNjk3IDMwMi42MjcgNDMzLjY5NyAzMDYuNzUyVjQwNC42NjFDNDU1LjYyMiAzOTUuNjU0IDQ3My4yNDQgMzc2Ljg4MSA0NzkuODUxIDM1Mi4yMThDNDg5LjE2OSAzMTcuNDQyIDQ3My42NjggMjgxLjg1IDQ0NC4yMDEgMjY0LjI3NEwzNjguNjAyIDIyMC42MjhaTTE3Ny4zMDMgMjA2LjM0QzE1NS4zNzcgMjE1LjM0OCAxMzcuNzU2IDIzNC4xMjIgMTMxLjE0OCAyNTguNzgzQzEyMS44MzIgMjkzLjU2MSAxMzcuMzMxIDMyOS4xNTMgMTY2Ljc5OSAzNDYuNzI3TDI0Mi4zOTggMzkwLjM3M0MyNDQuNjggMzkxLjY5MiAyNDcuNTI1IDM5MS42ODQgMjQ5LjgwNyAzOTAuMzY2TDI4Mi4zNTcgMzcxLjU3MkwxODMuMDc4IDMxNC4yNTNDMTc5LjUwNCAzMTIuMTg5IDE3Ny4zMDMgMzA4LjM3NSAxNzcuMzAzIDMwNC4yNTFWMjA2LjM0Wk0yNTkuODQ5IDI3OS4xNDVWMzMxLjg1OEwzMDUuNSAzNTguMjEzTDM1MS4xNSAzMzEuODU4VjI3OS4xNDVMMzA1LjUgMjUyLjc4OUwyNTkuODQ5IDI3OS4xNDVaTTMyNy4yNzYgMTQ0LjlDMzA4LjUxMiAxMzAuNDE4IDI4My40NDUgMTI0LjU0MyAyNTguNzgyIDEzMS4xNUMyMjQuMDAyIDE0MC40NzEgMjAwLjkzMSAxNzEuNjkxIDIwMC40NDUgMjA1Ljk5NVYyOTMuMjg2QzIwMC40NDUgMjk1LjkyMyAyMDEuODc1IDI5OC4zODEgMjA0LjE1OCAyOTkuN0wyMzYuNzA3IDMxOC40OTNWMjAzLjg1NkMyMzYuNzA3IDE5OS43MzEgMjM4LjkwOSAxOTUuOTE2IDI0Mi40ODMgMTkzLjg1M0wzMjcuMjc2IDE0NC45Wk00MzMuMTM3IDE3Ny44NjdDNDA3LjY3NSAxNTIuNDA3IDM2OS4xMDMgMTQ4LjAzOCAzMzkuMTQ5IDE2NC43NjlMMjYzLjU1IDIwOC40MTVDMjYxLjI2NSAyMDkuNzM0IDI1OS44NTIgMjEyLjIwMiAyNTkuODUyIDIxNC44MzhWMjUyLjQyM0wzNTkuMTMyIDE5NS4xMDVDMzYyLjcwMyAxOTMuMDQxIDM2Ny4xMDggMTkzLjA0MSAzNzAuNjgyIDE5NS4xMDVMNDU1LjQ3MyAyNDQuMDZDNDU4LjYzNSAyMjAuNTY3IDQ1MS4xODkgMTk1LjkyMiA0MzMuMTM1IDE3Ny44NjdINDMzLjEzN1oiIGZpbGw9ImN1cnJlbnRDb2xvciI+PC9wYXRoPjwvc3ZnPg==") center/contain no-repeat;background-color:var(--ink)}
@@ -1497,6 +1699,7 @@ footer { margin-top: 96px; border-top: 1px solid var(--rule); padding-top: 24px;
 <footer>Every run here is one we release, each mark read from that run's own scoring. <a href="../">Back to the post</a>. Product names and logos are trademarks of their owners, shown only to identify the tools compared; no endorsement is implied.</footer>
 </main>
 <div class="tip" id="tip" hidden></div>
+<div class="pop" id="pop" role="tooltip"></div>
 <script>
 (() => {
   // margin notes sit beside the paragraph they belong to; where two would overlap, the later one moves down
@@ -1766,7 +1969,7 @@ footer { margin-top: 96px; border-top: 1px solid var(--rule); padding-top: 24px;
     WIDE.addEventListener?.("change", draw);
     if (document.fonts) document.fonts.ready.then(draw);
   }
-  // the writers figure: a picture opens at full size in a dialog, closed by its button, Escape or a click outside
+  // a window's picture opens at full size in the page's dialog, closed by its button, Escape or a click outside
   const big = $("wr-big");
   if (big && big.showModal) {
     const shown = big.querySelector("img");
@@ -1776,6 +1979,224 @@ footer { margin-top: 96px; border-top: 1px solid var(--rule); padding-top: 24px;
     big.querySelector(".wr-close").addEventListener("click", () => big.close());
     big.addEventListener("click", e => { if (e.target === big) big.close(); });
   }
+
+  // pop-ups: an element with `data-tip` shows one floating card while pointed at or focused, and on a tap where
+  // there is no pointer to hover with; the card holds the element's own hidden `.tip-c`, else the attribute's words
+  const pop = $("pop");
+  if (pop) {
+    let on = null;
+    const place = el => {
+      const r = el.getBoundingClientRect(), w = pop.offsetWidth, h = pop.offsetHeight;
+      const x = Math.min(Math.max(10, r.left + r.width / 2 - w / 2), innerWidth - w - 10);
+      const y = r.top - h - 10 >= 10 ? r.top - h - 10 : Math.min(r.bottom + 10, innerHeight - h - 10);
+      pop.style.left = `${x}px`; pop.style.top = `${y}px`;
+    };
+    const show = el => {
+      if (on === el) return;
+      if (on) on.removeAttribute("aria-describedby");
+      const c = el.querySelector(":scope > .tip-c");
+      if (c) pop.innerHTML = c.innerHTML; else pop.textContent = el.dataset.tip;
+      on = el; el.setAttribute("aria-describedby", "pop"); pop.classList.add("on"); place(el);
+    };
+    const hide = () => { if (on) on.removeAttribute("aria-describedby"); on = null; pop.classList.remove("on"); };
+    const tipped = t => t instanceof Element ? t.closest("[data-tip]") : null;
+    document.addEventListener("pointerover", e => { if (e.pointerType === "touch") return; const el = tipped(e.target); el ? show(el) : hide(); });
+    document.addEventListener("focusin", e => { const el = tipped(e.target); el ? show(el) : hide(); });
+    document.addEventListener("click", e => { const el = tipped(e.target); el ? show(el) : hide(); });
+    document.addEventListener("keydown", e => { if (e.key === "Escape") hide(); });
+    addEventListener("scroll", hide, { passive: true }); addEventListener("resize", hide);
+  }
+
+  const still = matchMedia("(prefers-reduced-motion: reduce)");
+  // play a looping figure only while enough of it is on screen
+  const whileSeen = (el, go, stop) => {
+    if (!("IntersectionObserver" in window)) { go(); return; }
+    new IntersectionObserver(([e]) => (e.isIntersecting ? go() : stop()), { threshold: 0.35 }).observe(el);
+  };
+
+  // a showcase: each tab's pictures in turn, the window scrolling slowly down each, a bar on the tab filling as it
+  // plays; a tab picks its version and stops the loop, the window opens the picture at full size
+  document.querySelectorAll("figure.show:not(.show-side)").forEach(fig => {
+    const tabs = [...fig.querySelectorAll(".show-tab")], view = fig.querySelector(".show-view"), label = fig.querySelector(".show-bar span");
+    const imgs = [...view.querySelectorAll("img")], STAY = 6200;
+    let at = 0, frame = 0, held = false, playing = false, timer = 0, pan = null, bar = null;
+    const framesOf = i => imgs.filter(m => +m.dataset.tab === i);
+    const shown = () => framesOf(at)[frame];
+    const paint = moving => {
+      imgs.forEach(m => m.classList.toggle("on", m === shown()));
+      tabs.forEach((t, i) => t.setAttribute("aria-selected", String(i === at)));
+      label.textContent = tabs[at].dataset.name;
+      pan?.cancel(); bar?.cancel();
+      const img = shown(), list = framesOf(at), travel = Math.max(0, img.getBoundingClientRect().height - view.clientHeight);
+      img.style.transform = "";
+      if (!moving) return;
+      const stay = STAY / list.length;
+      // a tall picture scrolls down while it shows; a deck's slides each show in turn instead
+      if (travel > 4 && list.length === 1) pan = img.animate([{ transform: "translateY(0)" }, { transform: `translateY(${-travel}px)` }],
+        { duration: stay, delay: 500, easing: "ease-in-out", fill: "forwards" });
+      if (frame === 0) bar = tabs[at].querySelector(".show-prog").animate([{ width: "0%" }, { width: "100%" }], { duration: STAY, easing: "linear", fill: "forwards" });
+    };
+    const next = () => {
+      const list = framesOf(at);
+      if (frame + 1 < list.length) frame += 1; else { frame = 0; at = (at + 1) % tabs.length; }
+      paint(true); timer = setTimeout(next, STAY / framesOf(at).length);
+    };
+    const go = () => { if (held || playing || still.matches) return; playing = true; paint(true); timer = setTimeout(next, STAY / framesOf(at).length); };
+    const stop = () => { playing = false; clearTimeout(timer); pan?.pause(); bar?.pause(); };
+    tabs.forEach((t, i) => t.addEventListener("click", () => {
+      held = true; stop(); at = i; frame = 0; paint(false);
+      tabs.forEach(x => x.querySelector(".show-prog").getAnimations().forEach(a => a.cancel()));
+    }));
+    // the window opens the picture it shows at full size, and stops the loop there
+    view.addEventListener("click", () => {
+      if (big && big.showModal) { const img = shown(); big.querySelector("img").src = img.src; big.querySelector("img").alt = img.alt; held = true; stop(); big.showModal(); }
+    });
+    paint(false);
+    whileSeen(fig, go, stop);
+  });
+
+  // the versions side by side: every window plays at once, a long page scrolling down over the whole turn, a deck
+  // or a folder showing its pictures one after another (a folder's each scrolled too). Each window's own button
+  // pauses it where it is and plays it on from there; selecting a window opens its picture at full size and pauses it
+  document.querySelectorAll("figure.show-side").forEach(fig => {
+    if (still.matches) return;
+    const TURN = 12000;
+    const cells = [...fig.querySelectorAll(".sg-cell")].map(c => ({ view: c.querySelector(".show-view"),
+      label: c.querySelector(".show-bar span"), btn: c.querySelector(".sg-ctl"), name: c.querySelector(".sg-head b").textContent,
+      imgs: [...c.querySelectorAll(".show-view img")], k: 0, pan: null, timer: 0, left: 0, since: 0, on: false, held: false, begun: false }));
+    const each = c => TURN / c.imgs.length;
+    const show = (c, k) => {
+      const img = c.imgs[k], old = c.pan;
+      c.k = k; c.imgs.forEach(m => m.classList.toggle("on", m === img));
+      if (img.dataset.label) c.label.textContent = img.dataset.label;
+      // the picture going out keeps its place while it fades, so nothing jumps
+      if (old) setTimeout(() => old.cancel(), c.imgs.length > 1 ? 650 : 0);
+      c.pan = null; c.left = each(c);
+      const travel = Math.max(0, img.getBoundingClientRect().height - c.view.clientHeight);
+      if (travel > 4 && (c.imgs.length === 1 || "pan" in img.dataset))
+        c.pan = img.animate([{ transform: "translateY(0)" }, { transform: `translateY(${-travel}px)` }],
+          { duration: Math.max(1200, each(c) - 1600), delay: 800, easing: "ease-in-out", fill: "forwards" });
+    };
+    const tick = c => { clearTimeout(c.timer); c.since = performance.now();
+      c.timer = setTimeout(() => { show(c, (c.k + 1) % c.imgs.length); tick(c); }, c.left); };
+    const play = c => { if (c.on || c.held) return; c.on = true;
+      if (!c.begun) { c.begun = true; show(c, 0); } else c.pan?.play();
+      tick(c); };
+    const pause = c => { if (!c.on) return; c.on = false; clearTimeout(c.timer);
+      c.left = Math.max(0, c.left - (performance.now() - c.since)); c.pan?.pause(); };
+    const hold = (c, on) => { c.held = on; c.btn.setAttribute("aria-pressed", String(on));
+      c.btn.setAttribute("aria-label", `${on ? "Play" : "Pause"} ${c.name}`); on ? pause(c) : seen && play(c); };
+    let seen = false;
+    cells.forEach(c => {
+      c.btn.addEventListener("click", e => { e.stopPropagation(); hold(c, !c.held); });
+      c.view.addEventListener("click", () => {
+        if (!(big && big.showModal)) return;
+        const img = c.imgs[c.k]; big.querySelector("img").src = img.src; big.querySelector("img").alt = img.alt;
+        hold(c, true); big.showModal();
+      });
+    });
+    fig.classList.add("live");
+    whileSeen(fig, () => { seen = true; cells.forEach(play); }, () => { seen = false; cells.forEach(pause); });
+  });
+
+  // a result chart's marks light one at a time while it is on screen, each with its pop-up open beside it, like a
+  // demo; pointing into the chart or focusing a mark hands it to the reader, a tap or the button pauses it
+  document.querySelectorAll("figure[data-cycle]").forEach(fig => {
+    if (still.matches) return;
+    const STEP = 2300, tip = document.createElement("div"), ctl = document.createElement("button");
+    tip.className = "pop auto"; tip.setAttribute("aria-hidden", "true"); fig.append(tip);
+    ctl.type = "button"; ctl.className = "cyc-ctl"; ctl.textContent = "Pause"; ctl.setAttribute("aria-pressed", "false"); ctl.hidden = true;
+    (fig.querySelector(":scope > .howto-p") || fig).append(ctl);
+    let at = -1, timer = 0, playing = false, paused = false, inside = false, seen = false;
+    const marks = () => [...fig.querySelectorAll("[data-tip]")].filter(m => !m.classList.contains("howto")
+      && m.offsetParent !== null && m.querySelector(":scope > .tip-c"));
+    const clear = () => { fig.classList.remove("cycling"); fig.querySelectorAll(".lit").forEach(m => m.classList.remove("lit")); tip.classList.remove("on"); };
+    const light = m => {
+      fig.querySelectorAll(".lit").forEach(x => x.classList.remove("lit"));
+      m.classList.add("lit"); fig.classList.add("cycling");
+      tip.innerHTML = m.querySelector(":scope > .tip-c").innerHTML; tip.classList.add("on");
+      // over the bar's end, or the version's dot, and above its row, or below it where above would cover the
+      // chart's title
+      const f = fig.getBoundingClientRect(), row = m.getBoundingClientRect(), cap = fig.querySelector(":scope > figcaption");
+      const end = (m.querySelector(".chart-fill, .rf-dot") || m).getBoundingClientRect();
+      const w = tip.offsetWidth, h = tip.offsetHeight, top = cap ? cap.getBoundingClientRect().bottom - f.top + 4 : 0;
+      const x = Math.max(8, Math.min(end.right - f.left - w / 2, f.width - w - 8));
+      const above = row.top - f.top - h - 8;
+      tip.style.left = `${x}px`; tip.style.top = `${above >= top ? above : row.bottom - f.top + 8}px`;
+    };
+    const step = () => { const list = marks(); if (list.length) { at = (at + 1) % list.length; light(list[at]); } timer = setTimeout(step, STEP); };
+    const go = () => { if (paused || playing || inside || !seen) return; playing = true; ctl.hidden = false; step(); };
+    const stop = () => { playing = false; clearTimeout(timer); clear(); };
+    const hold = on => { paused = on; ctl.textContent = on ? "Play" : "Pause"; ctl.setAttribute("aria-pressed", String(on)); on ? stop() : go(); };
+    ctl.addEventListener("click", e => { e.stopPropagation(); hold(!paused); });
+    fig.addEventListener("pointerenter", e => { if (e.pointerType !== "touch") { inside = true; stop(); } });
+    fig.addEventListener("pointerleave", e => { if (e.pointerType !== "touch") { inside = false; go(); } });
+    fig.addEventListener("focusin", e => { if (e.target !== ctl) { inside = true; stop(); } });
+    fig.addEventListener("focusout", e => { if (!fig.contains(e.relatedTarget)) { inside = false; go(); } });
+    fig.addEventListener("click", e => { if (!paused && e.target !== ctl) hold(true); });
+    whileSeen(fig, () => { seen = true; go(); }, () => { seen = false; stop(); });
+  });
+
+  // the run replayed in a loop: its steps stream in, the report appears, the evaluator flags what mattered, three of
+  // its questions are checked against the report, and every verdict it got is tallied. It plays only while in
+  // view, its button pauses it, and a reader who asks for less motion sees every part at once, still
+  document.querySelectorAll("figure.demo").forEach(fig => {
+    if (still.matches) return;
+    const q = s => fig.querySelector(s), qa = s => [...fig.querySelectorAll(s)];
+    const run = q(".demo-steps"), steps = qa(".demo-steps li"), doc = q(".demo-doc"), blocks = qa(".demo-doc p");
+    const census = q(".demo-census"), flags = qa(".demo-evs li"), cards = qa(".demo-card"), tally = q(".demo-tally");
+    const say = q(".demo-say span:last-child"), num = q(".demo-n"), clock = q(".demo-clock"), ctl = q(".demo-ctl");
+    const words = JSON.parse(fig.dataset.say), end = clock.textContent;
+    let playing = false, paused = false, started = false;
+    const sleep = ms => new Promise(done => {
+      let left = ms, last = performance.now();
+      const tick = now => { if (playing) left -= now - last; last = now; left <= 0 ? done() : requestAnimationFrame(tick); };
+      requestAnimationFrame(tick);
+    });
+    const phase = n => { num.textContent = n; say.textContent = words[n - 1]; };
+    const into = (box, el, where) => box.scrollTo({ top: Math.max(0, el.offsetTop - box.clientHeight * where), behavior: "smooth" });
+    const scan = (from, to) => { doc.style.setProperty("--scan-from", `${from}px`); doc.style.setProperty("--scan-to", `${to}px`); };
+    async function loop() {
+      for (;;) {
+        fig.classList.add("play"); fig.classList.remove("rep", "scan");
+        steps.forEach(s => s.classList.remove("in", "ev")); flags.forEach(f => f.classList.remove("in")); census.classList.remove("in");
+        cards.forEach(c => c.classList.remove("in", "done")); blocks.forEach(b => b.classList.remove("hit-covered", "hit-unsupported"));
+        tally.classList.remove("in"); run.scrollTop = 0; doc.scrollTop = 0;
+        phase(1);
+        for (const s of steps) { s.classList.add("in"); clock.textContent = s.dataset.clock; run.scrollTop = run.scrollHeight; await sleep(115); }
+        clock.textContent = end; await sleep(500);
+        phase(2); fig.classList.add("rep"); await sleep(700);
+        doc.scrollTo({ top: doc.scrollHeight / 3, behavior: "smooth" }); await sleep(1600); doc.scrollTo({ top: 0, behavior: "smooth" }); await sleep(700);
+        phase(3); census.classList.add("in"); await sleep(900);
+        for (const f of flags) { const s = steps[+f.dataset.step]; s.classList.add("ev"); into(run, s, 0.45); f.classList.add("in"); await sleep(1300); }
+        await sleep(400);
+        for (const c of cards) {
+          phase(4); c.classList.add("in"); await sleep(1100);
+          const hit = c.dataset.hit ? blocks[+c.dataset.hit] : null;
+          fig.classList.add("scan");
+          if (hit) { into(doc, hit, 0.3); scan(0, doc.clientHeight - 70); await sleep(1500); hit.classList.add(`hit-${c.dataset.v}`); }
+          else { scan(0, doc.clientHeight - 70); doc.scrollTo({ top: doc.scrollHeight, behavior: "smooth" }); await sleep(1900); }
+          fig.classList.remove("scan"); c.classList.add("done"); await sleep(2800);
+          if (hit) hit.classList.remove(`hit-${c.dataset.v}`);
+          doc.scrollTo({ top: 0, behavior: "smooth" });
+        }
+        phase(5); tally.classList.add("in"); await sleep(5200);
+      }
+    }
+    const go = () => { if (paused) return; playing = true; if (!started) { started = true; ctl.hidden = false; loop(); } };
+    const stop = () => { playing = false; };
+    ctl.addEventListener("click", () => {
+      paused = !paused; ctl.textContent = paused ? "Play" : "Pause"; ctl.setAttribute("aria-pressed", String(paused));
+      paused ? stop() : go();
+    });
+    whileSeen(fig, go, stop);
+  });
+  // the replay's button opens the explorer's full view of the same run beneath it
+  document.querySelectorAll("[data-opens]").forEach(b => b.addEventListener("click", () => {
+    const shown = $(b.dataset.opens); if (!shown) return;
+    shown.hidden = !shown.hidden; b.setAttribute("aria-expanded", String(!shown.hidden));
+    b.textContent = shown.hidden ? b.dataset.open : b.dataset.close;
+  }));
   const flow = $("flow");
   if (flow) edges(flow.querySelector(".flow-grid"), JSON.parse(flow.dataset.edges));
 
