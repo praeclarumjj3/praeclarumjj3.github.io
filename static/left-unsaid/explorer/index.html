@@ -48,6 +48,8 @@ try { const t = localStorage.getItem("left-unsaid-theme"); if (t === "light" || 
   --btn: #1d5bbf;
   /* an agent's own document (its report, its images) keeps the white paper it was written on */
   --paper: #ffffff;
+  /* how faint the white report sits while the hook's replay looks elsewhere: fainter on a dark page */
+  --paper-faint: 0.26;
   --shadow: 15, 47, 95;
   --art-opacity: 1;
   /* the masthead's squares, softened: each status at its own strength over the page */
@@ -96,6 +98,7 @@ try { const t = localStorage.getItem("left-unsaid-theme"); if (t === "light" || 
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
     color-scheme: dark;
+    --paper-faint: 0.13;
     --page: #10151e;
     --white: #1f2734;
     --mist: #171e2a;
@@ -146,6 +149,7 @@ try { const t = localStorage.getItem("left-unsaid-theme"); if (t === "light" || 
 }
 :root[data-theme="dark"] {
   color-scheme: dark;
+  --paper-faint: 0.13;
   --page: #10151e;
   --white: #1f2734;
   --mist: #171e2a;
@@ -406,10 +410,12 @@ header.mast:has(.mast-art-w) { padding-top: 0; }
 }
 @media (max-width: 760px) { .hook { padding: 20px 16px 18px; border-radius: 14px; }
   .hk-q { padding: 16px; } .hk-t { font-size: 1.1rem; } }
-/* the hook's runs, played (user, 6 Nov): one tab per harness, and in each its agent's run in the harness's own
-   terminal, the questions asked about it one at a time, and the report it wrote, where each answer lights where the
-   report gives it. At rest, and under reduced motion, a run shows its unanswered question; playing, what has not been
-   reached yet waits faint in its place, and every run sits in the same cell, so nothing on the page moves */
+/* the hook's runs, stepped through (user, 7 Nov, picked "Step through" after the played replay was "too abrupt and
+   fast"): one tab per harness, and in each a short sequence the reader steps through, one moment per screen. The run in
+   its harness's own terminal, the report it wrote, then each question beside the step it asks about, looked for down
+   the report's own sections, and last the run's totals. It plays on its own, slowly, a bar filling for each step, and
+   stops as soon as the reader takes a step. Every step sits in the same cell, so nothing below moves; at rest, and
+   under reduced motion, a run shows its unanswered question */
 .hkp { display: grid; gap: 12px; }
 .hkp-bar { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 10px 16px; }
 .hkp-tabs { background: var(--mist-2); }
@@ -420,10 +426,37 @@ header.mast:has(.mast-art-w) { padding-top: 0; }
 .hkp-ex.on { visibility: visible; }
 .hkp-ex .hk-b::before { content: none; }
 .hkp-ex .hk-task::before { content: "·"; }
-.hkp-ex > .demo-say { min-height: 26px; }
-.hkp-stage { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.95fr) minmax(0, 1.05fr); grid-template-areas: "run qa rep"; gap: 14px; }
+/* the steps by name, Back and Next, and a bar that fills while a step plays on its own */
+.hks-bar { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 10px 16px; }
+.hks-dots { display: flex; flex-wrap: wrap; gap: 6px; margin: 0; padding: 0; list-style: none; counter-reset: hks; }
+.hks-dots li { margin: 0; }
+.hks-dots button { display: inline-flex; align-items: center; gap: 7px; padding: 3px 11px 3px 3px; border: 1px solid var(--edge);
+  border-radius: 999px; background: var(--white); color: var(--ink-3); font: 600 0.76rem/1.2 var(--sans); cursor: pointer;
+  transition: color 0.3s, border-color 0.3s, box-shadow 0.3s; }
+.hks-dots button::before { counter-increment: hks; content: counter(hks); display: inline-grid; place-items: center; width: 20px; height: 20px;
+  border-radius: 50%; background: var(--mist-2); color: var(--ink-3); font-size: 0.68rem; font-variant-numeric: tabular-nums; transition: background 0.3s, color 0.3s; }
+.hks-dots button:hover { color: var(--ink); border-color: var(--blue); }
+.hks-dots button[aria-current="step"] { color: var(--ink); border-color: var(--blue); box-shadow: 0 0 0 1px var(--blue); }
+.hks-dots button[aria-current="step"]::before { background: var(--navy); color: var(--page); }
+.hks-dots button:focus-visible, .hks-nav button:focus-visible { outline: 2px solid var(--blue); outline-offset: 2px; }
+.hks-nav { display: flex; gap: 6px; }
+.hks-nav button { padding: 6px 14px; border: 1px solid var(--edge); border-radius: 999px; background: var(--white); color: var(--ink-2);
+  font: 600 0.8rem var(--sans); cursor: pointer; }
+.hks-nav button:hover:not(:disabled) { border-color: var(--blue); color: var(--ink); }
+.hks-nav button:disabled { opacity: 0.4; cursor: default; }
+.hks-nav .hks-next { background: var(--navy); border-color: var(--navy); color: var(--page); }
+.hks-nav .hks-next:hover:not(:disabled) { color: var(--page); }
+.hks-prog { height: 3px; border-radius: 2px; background: var(--mist-2); overflow: hidden; }
+.hks-prog i { display: block; height: 100%; background: var(--blue); transform-origin: 0 50%; transform: scaleX(0); transition: opacity 0.3s; }
+.hkp-ex:not(.auto) .hks-prog i { opacity: 0; }
+.hks-steps { display: grid; }
+/* the step leaving fades out before the next fades in, so two never show at once */
+.hks-step { grid-area: 1 / 1; display: grid; align-content: start; gap: 14px; min-width: 0; visibility: hidden; opacity: 0;
+  transition: opacity 0.3s ease, visibility 0s linear 0.3s; }
+.hks-step.on { visibility: inherit; opacity: 1; transition: opacity 0.55s ease 0.3s, visibility 0s linear 0.3s; }
+.hkp-ex .hks-say { font-size: 1.1rem; }
 /* the agent's terminal, drawn as its harness draws it; a terminal is dark in either theme */
-.hkp-run { grid-area: run; display: grid; grid-template-rows: auto minmax(0, 1fr) auto; height: 400px; border-radius: 14px; overflow: hidden;
+.hkp-run { display: grid; grid-template-rows: auto minmax(0, 1fr) auto; height: 440px; border-radius: 14px; overflow: hidden;
   background: var(--t-bg); color: var(--t-ink); font: 0.74rem/1.55 var(--mono); }
 .hkp-run > .pane-h { display: flex; align-items: baseline; justify-content: space-between; gap: 10px; padding: 9px 14px; background: var(--t-bar);
   color: var(--t-dim); font: 600 0.72rem/1.3 var(--sans); letter-spacing: 0.06em; text-transform: uppercase; }
@@ -467,60 +500,77 @@ header.mast:has(.mast-art-w) { padding-top: 0; }
 .term-pi-coding-agent .t-blk { background: rgb(40, 50, 40); padding-inline: 6px; }
 .term-pi-coding-agent .t-o.t-blk { padding-left: 6px; color: #9a9a9a; }
 .term-pi-coding-agent .t-path { color: #8abeb7; }
-/* the questions, one at a time, and every question asked here as a chip that shows it */
-.hkp-qa { grid-area: qa; display: grid; grid-template-rows: minmax(0, 1fr) auto; gap: 12px; height: 400px; padding: 16px 16px 14px;
-  border-radius: 14px; background: var(--mist); transition: opacity 0.35s; }
-.hkp-qs { display: grid; min-height: 0; }
-.hkp-q { grid-area: 1 / 1; display: grid; align-content: start; gap: 10px; min-height: 0; overflow-y: auto; visibility: hidden; }
-/* inherit, not visible: a shown part of a run in another tab stays hidden with it */
-.hkp-q.on { visibility: inherit; }
+.hks-step.stream .t-steps li:not(.in) { display: none; }
+.hks-step.stream .t-steps li.in { animation: demo-in 0.3s ease-out; }
+/* the report it wrote, whole, on white paper */
+.hks-step .hkp-rep { height: 440px; }
+/* a question: the step it asks about, large, beside the question and the search of the report for its answer */
+.hks-q { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 18px; align-items: stretch; }
+.hks-moment { height: auto; min-height: 0; max-height: 440px; grid-template-rows: auto minmax(0, 1fr); font-size: 0.8rem; }
+.hks-moment .t-steps { padding-block: 12px; }
+.hks-moment .t-steps p { white-space: normal; }
+.hks-ask { display: grid; align-content: start; gap: 12px; min-height: 440px; padding: 16px 18px; border-radius: 14px; background: var(--mist); }
 .hkp-k { margin: 0; display: flex; align-items: center; justify-content: space-between; gap: 8px; font: 600 0.72rem/1.3 var(--sans);
   letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink-3); }
 .hkp-k .hk-tier { margin: 0; letter-spacing: 0; text-transform: none; background: var(--white); }
-.hkp .hkp-q .hk-t { margin: 0; font-size: 1.02rem; line-height: 1.42; max-width: none; }
-.hkp-v { margin: 0; display: flex; flex-direction: column; align-items: flex-start; gap: 10px; padding-top: 4px; font-size: 0.86rem; transition: opacity 0.35s; }
-.hkp-vw { display: inline-flex; align-items: center; gap: 8px; font-weight: 600; }
+.hkp .hks-ask .hk-t { margin: 0; font-size: 1.14rem; line-height: 1.42; max-width: none; }
+.hks-box { display: grid; }
+.hks-look, .hks-found { grid-area: 1 / 1; display: grid; align-content: start; gap: 10px; min-width: 0; transition: opacity 0.6s ease; }
+.hks-step[data-phase="ask"] :is(.hks-look, .hks-found), .hks-step[data-phase="look"] .hks-found,
+.hks-step[data-phase="found"] .hks-look { visibility: hidden; opacity: 0; transition: opacity 0.6s ease, visibility 0s linear 0.6s; }
+.hks-lk { margin: 0; font: 600 0.72rem/1.3 var(--sans); letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink-3); }
+.hks-ol { display: grid; gap: 1px; margin: 0; padding: 8px; list-style: none; border-radius: 10px; background: var(--paper);
+  box-shadow: inset 0 0 0 1px var(--edge); }
+.hks-ol li { position: relative; margin: 0; padding: 3px 8px 3px 26px; border-radius: 6px; font: 0.82rem/1.4 var(--sans); color: var(--paper-ink);
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis; transition: background 0.3s, color 0.3s; }
+.hks-ol li::before { content: ""; position: absolute; left: 9px; top: 0.62em; width: 7px; height: 7px; border-radius: 50%;
+  box-shadow: inset 0 0 0 1.5px var(--paper-dim); transition: background 0.3s, box-shadow 0.3s; }
+.hks-ol li.at { background: rgba(29, 91, 191, 0.1); }
+.hks-ol li.at::before { background: #1d5bbf; box-shadow: none; }
+.hks-ol li.read { color: var(--paper-dim); }
+.hks-ol li.read::before { background: var(--paper-dim); box-shadow: none; }
+.hkp-v { margin: 0; display: flex; flex-wrap: wrap; align-items: center; gap: 10px; font-size: 0.86rem; }
+.hkp-vw { display: inline-flex; align-items: center; gap: 8px; padding: 5px 10px; border-radius: 8px; font-weight: 600; font-size: 0.92rem;
+  background: color-mix(in srgb, currentColor 11%, transparent); }
 .hkp-vw::before { content: ""; width: 9px; height: 9px; border-radius: 2px; background: currentColor; }
 .v-covered { color: var(--covered-ink); } .v-missed { color: var(--silent-ink); } .v-unsupported { color: var(--wrong-ink); }
-.hkp-chips { display: flex; flex-wrap: wrap; gap: 5px; margin: 0; padding: 0; list-style: none; }
-.hkp-chips li { margin: 0; }
-.hkp-chip { display: inline-flex; align-items: center; gap: 5px; padding: 2px 9px 2px 2px; border: 1px solid var(--edge); border-radius: 999px;
-  background: var(--white); font: 600 0.72rem/1.2 var(--sans); cursor: pointer; }
-.hkp-chip b { display: inline-grid; place-items: center; width: 20px; height: 20px; border-radius: 50%; color: var(--on-solid); font-size: 0.7rem; }
-.hkp-chip.v-covered b { background: var(--covered); } .hkp-chip.v-missed b { background: var(--silent); } .hkp-chip.v-unsupported b { background: var(--wrong); }
-.hkp-chip[aria-pressed="true"] { border-color: var(--blue); box-shadow: 0 0 0 1px var(--blue); }
-.hkp-chip:focus-visible { outline: 2px solid var(--blue); outline-offset: 2px; }
-/* the report, where an answer lights where it is given, and a missing one is said to be nowhere */
-.hkp-rep { grid-area: rep; position: relative; height: 400px; }
-.hkp .demo-doc p[data-mark]::before { content: attr(data-mark); display: block; margin-bottom: 2px; font: 700 0.62rem/1.3 var(--sans);
+/* what the search found: the passage that answers, in the report's own words, or the answer found nowhere */
+.hks-pass { display: grid; gap: 8px; padding: 14px 16px; border-radius: 10px; background: var(--paper); box-shadow: inset 0 0 0 1px var(--edge); }
+.hks-pass p { margin: 0; font: 0.86rem/1.55 var(--sans); color: var(--paper-ink); }
+.hks-pass .hks-sec { font: 600 0.78rem/1.3 var(--sans); color: var(--paper-dim); }
+.hks-pass .hks-after { color: var(--paper-dim); display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+.hks-pass p[data-mark] { border-radius: 4px; }
+.hks-pass p[data-mark]::before { content: attr(data-mark); display: block; margin-bottom: 3px; font: 700 0.62rem/1.3 var(--sans);
   letter-spacing: 0.05em; text-transform: uppercase; }
-.hkp .demo-doc p.hit-covered::before { color: #1d7a4c; }
-.hkp .demo-doc p.hit-unsupported::before { color: #b3263a; }
-.hkp-none { position: absolute; left: 50%; bottom: 14px; transform: translateX(-50%); margin: 0; padding: 7px 14px; border-radius: 999px;
-  background: #fdebdc; color: #9a420d; font: 600 0.8rem/1.2 var(--sans); white-space: nowrap; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.14);
-  visibility: hidden; opacity: 0; transition: opacity 0.35s; }
-.hkp-ex.none .hkp-none { visibility: inherit; opacity: 1; }
-.hkp-ex.scan .demo-scan { opacity: 1; animation: demo-scan 1.2s ease-in-out infinite alternate; }
-.hkp-ex.play .t-steps li:not(.in) { display: none; }
-.hkp-ex.play .t-steps li.in { animation: demo-in 0.25s ease-out; }
-.hkp-ex.play:not(.rep) .hkp-rep { opacity: 0.3; }
-.hkp-ex.play:not(.asked) .hkp-qa { opacity: 0.3; }
-.hkp-ex.play .hkp-q:not(.done) .hkp-v { opacity: 0; }
-.hkp-ex.play .hkp-chip:not(.done) b { background: var(--mist-2); color: var(--ink-3); }
-.hkp-ex.play .hkp-chip:not(.done) span { visibility: hidden; }
-@media (max-width: 1000px) {
-  .hkp-stage { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); grid-template-areas: "run rep" "qa qa"; }
-  .hkp-qa { height: auto; }
-}
+.hks-pass p.hit-covered { background: #d8f1e4; box-shadow: 0 0 0 6px #d8f1e4; }
+.hks-pass p.hit-covered::before { color: #1d7a4c; }
+.hks-pass p.hit-unsupported { background: #fbdfe2; box-shadow: 0 0 0 6px #fbdfe2; }
+.hks-pass p.hit-unsupported::before { color: #b3263a; }
+.hks-none { margin: 0; padding: 22px 18px; border-radius: 10px; background: #fdebdc; color: #9a420d; text-align: center;
+  font: 600 1.02rem/1.35 var(--sans); box-shadow: inset 0 0 0 1px #f3c9a6; }
+.hks-none span { display: block; margin-top: 4px; font: 500 0.82rem/1.4 var(--sans); color: #a8541c; }
+/* the run's totals, after the questions asked of it */
+.hks-sum { display: grid; gap: 18px; }
+.hks-recap { display: grid; gap: 6px; margin: 0; padding: 0; list-style: none; }
+.hks-recap li { display: grid; grid-template-columns: auto minmax(0, 1fr) auto; align-items: center; gap: 12px; margin: 0; padding: 8px 12px;
+  border-radius: 10px; background: var(--mist); }
+.hks-recap b { display: inline-grid; place-items: center; width: 22px; height: 22px; border-radius: 50%; color: var(--on-solid); font: 600 0.72rem var(--sans); }
+.hks-recap .v-covered b { background: var(--covered); } .hks-recap .v-missed b { background: var(--silent); } .hks-recap .v-unsupported b { background: var(--wrong); }
+.hks-rq { font: 0.88rem/1.4 var(--sans); color: var(--ink-2); }
+.hks-recap .hkp-vw { font-size: 0.8rem; padding: 3px 8px; }
+.hks-step[data-kind="totals"] :is(.hk-stats, .hk-tiers) { margin: 0; }
 @media (max-width: 760px) {
   .hkp-ex { padding: 16px 14px 14px; }
-  .hkp-ex > .demo-say { min-height: 3.4em; }
   .hkp-ex .hk-task::before { content: none; }
-  .hkp-stage { grid-template-columns: minmax(0, 1fr); grid-template-areas: "run" "qa" "rep"; }
-  .hkp-run, .hkp-rep { height: 320px; }
+  .hks-q { grid-template-columns: minmax(0, 1fr); }
+  .hkp-run, .hks-step .hkp-rep { height: 300px; }
+  .hks-moment { height: auto; max-height: 280px; }
+  .hks-ask { min-height: 0; }
+  .hks-recap li { grid-template-columns: auto minmax(0, 1fr); }
+  .hks-recap .hkp-vw { grid-column: 2; justify-self: start; }
   .hkp-tabs button span { font-size: 0.76rem; }
 }
-@media (prefers-reduced-motion: reduce) { .hkp-qa, .hkp-v, .hkp-none, .t-steps li { transition: none; } }
+@media (prefers-reduced-motion: reduce) { .hks-step, .hks-look, .hks-found, .hks-ol li, .hks-dots button, .t-steps li { transition: none !important; } }
 /* the post's key findings: one line each, the finding in bold and its headline number bold inside the words */
 .keyfind { margin: 8px 0 30px; }
 .kf { list-style: none; margin: 0; padding: 0; display: grid; gap: 2px; }
@@ -1771,9 +1821,6 @@ footer { margin-top: 96px; border-top: 1px solid var(--rule); padding-top: 24px;
 .demo-doc .dd-pre { font: 0.72rem/1.5 var(--mono); white-space: pre-wrap; background: #f6f8fa; padding: 4px 8px; }
 .demo-doc p.hit-covered { background: #d8f1e4; box-shadow: 0 0 0 4px #d8f1e4; }
 .demo-doc p.hit-unsupported { background: #fbdfe2; box-shadow: 0 0 0 4px #fbdfe2; }
-.demo-scan { position: absolute; left: 0; right: 0; top: 0; height: 70px; pointer-events: none; opacity: 0;
-  background: linear-gradient(180deg, transparent, rgba(29, 91, 191, 0.13), transparent); }
-@keyframes demo-scan { from { transform: translateY(var(--scan-from, 0px)); } to { transform: translateY(var(--scan-to, 300px)); } }
 @keyframes demo-in { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .apx summary::before, .run-card { transition: none; } .run-card:hover { transform: none; }
   .show-view img { transition: none; } }
@@ -2215,132 +2262,149 @@ footer { margin-top: 96px; border-top: 1px solid var(--rule); padding-top: 24px;
     whileSeen(fig, () => { seen = true; cells.forEach(play); }, () => { seen = false; cells.forEach(pause); });
   });
 
-  // the hook's runs, played one after another, each in its harness's own terminal: the steps stream in, the report
-  // appears, and each question in turn lights the steps it asks about and is looked for in the report, where its answer
-  // lights, or is found nowhere. A tab shows that run and a question's chip shows that question, still; the button
-  // pauses and plays. It plays only while in view; under reduced motion each run rests on its unanswered question, and
-  // its tab and chips still show the rest
+  // the hook's runs, stepped through (user, 7 Nov, picked "Step through"): one moment per screen, the reader's pace.
+  // Each step fades in and plays its own small motion: the run's steps stream into its terminal, the report glides
+  // once, and a question is asked, then looked for down the report's sections, then answered with the passage that
+  // answers it or found nowhere. While the hook is in view the run also moves on by itself, a bar filling for each
+  // step, and at a run's last step goes to the next tab; Back, Next or a step's name takes over and stops it, and the
+  // button starts it again. Under reduced motion nothing moves on its own, each step shows as it ends, and each run
+  // rests on its unanswered question
   document.querySelectorAll(".hkp").forEach(box => {
     const exs = [...box.querySelectorAll(".hkp-ex")], tabs = [...box.querySelectorAll(".hkp-tabs [role=tab]")];
     const ctl = box.querySelector(".demo-ctl"), STOP = {};
-    let cur = 0, playing = false, paused = false, running = false, token = 0;
-    const P = exs.map(ex => {
-      const q = s => ex.querySelector(s), qa = s => [...ex.querySelectorAll(s)];
-      const p = { run: q(".t-steps"), steps: qa(".t-steps li"), doc: q(".demo-doc"), blocks: qa(".demo-doc p"), cards: qa(".hkp-q"),
-                  chips: qa(".hkp-chip"), say: q(".demo-say span:last-child"), num: q(".demo-n"), clock: q(".demo-clock"),
-                  words: JSON.parse(ex.dataset.say) };
-      p.rest = Math.max(0, p.cards.findIndex(c => c.classList.contains("on")));
-      p.end = p.clock.textContent;
-      return p;
-    });
+    let cur = 0, seen = false, paused = false, started = false, token = 0, elapsed = 0, last = performance.now();
+    const R = exs.map(ex => ({
+      ex, steps: [...ex.querySelectorAll(".hks-step")], dots: [...ex.querySelectorAll(".hks-dots button")],
+      back: ex.querySelector(".hks-back"), next: ex.querySelector(".hks-next"), bar: ex.querySelector(".hks-prog i"),
+      rest: +ex.dataset.rest, at: +ex.dataset.rest }));
+    const auto = () => seen && !paused && !still.matches;
+    // a pause that runs only while the hook is in view and stops with its step
     const sleep = (ms, mine) => new Promise((done, fail) => {
-      let left = ms, last = performance.now();
+      let left = ms, t = performance.now();
       const tick = now => {
         if (mine !== token) return fail(STOP);
-        if (playing) left -= now - last;
-        last = now; left <= 0 ? done() : requestAnimationFrame(tick);
+        if (seen) left -= now - t;
+        t = now; left <= 0 ? done() : requestAnimationFrame(tick);
       };
       requestAnimationFrame(tick);
     });
-    // scroll a pane so a line sits a share of the way down it, measured on screen
-    const into = (pane, el, where, smooth) => pane.scrollTo({ top: Math.max(0, pane.scrollTop + el.getBoundingClientRect().top
-      - pane.getBoundingClientRect().top - pane.clientHeight * where), behavior: smooth ? "smooth" : "auto" });
-    const say = (p, n, words) => { p.num.textContent = n; p.say.textContent = words; };
-    const unlight = (ex, p) => {
-      ex.classList.remove("none");
-      p.steps.forEach(s => s.classList.remove("lit"));
-      p.blocks.forEach(b => { b.classList.remove("hit-covered", "hit-unsupported"); delete b.dataset.mark; });
+    const ease = t => t < 0.5 ? 4 * t * t * t : 1 - (-2 * t + 2) ** 3 / 2;
+    const glide = (pane, top, ms, mine) => new Promise((done, fail) => {
+      const from = pane.scrollTop, to = Math.max(0, Math.min(top, pane.scrollHeight - pane.clientHeight));
+      let t = 0, then = performance.now();
+      const tick = now => {
+        if (mine !== token) return fail(STOP);
+        if (seen) t += now - then;
+        then = now;
+        const k = Math.min(1, t / ms);
+        pane.scrollTop = from + (to - from) * ease(k);
+        k >= 1 ? done() : requestAnimationFrame(tick);
+      };
+      requestAnimationFrame(tick);
+    });
+    // a step as it ends: every line in, the report at its top, the question answered
+    const settle = st => {
+      const lines = [...st.querySelectorAll(".hks-run .t-steps li")];
+      lines.forEach(l => l.classList.add("in"));
+      const run = st.querySelector(".hks-run .t-steps");
+      if (run) { run.scrollTop = run.scrollHeight; st.querySelector(".demo-clock").textContent = st.closest(".hkp-ex").dataset.end; }
+      const doc = st.querySelector(".demo-doc");
+      if (doc) doc.scrollTop = 0;
+      if (st.dataset.kind === "question") {
+        st.dataset.phase = "found";
+        st.querySelectorAll(".hks-ol li").forEach(li => li.classList.remove("at"));
+      }
     };
-    // one question on: its card and chip, and the steps it asks about lit
-    const ask = (ex, p, k, smooth) => {
-      unlight(ex, p);
-      p.cards.forEach((c, j) => c.classList.toggle("on", j === k));
-      p.chips.forEach((c, j) => c.setAttribute("aria-pressed", String(j === k)));
-      const lit = p.steps.filter(s => (s.dataset.q || "").split(" ").includes(String(k)));
-      lit.forEach(s => s.classList.add("lit"));
-      if (lit[0]) into(p.run, lit[0], 0.2, smooth);
-    };
-    // its answer: lit where the report gives it, or the report said to give none
-    const answer = (ex, p, k, smooth) => {
-      const card = p.cards[k], hit = card.dataset.hit;
-      if (hit !== undefined) {
-        const b = p.blocks[+hit];
-        b.classList.add(`hit-${card.dataset.v}`); b.dataset.mark = card.dataset.mark; into(p.doc, b, 0.2, smooth);
-      } else ex.classList.add("none");
-      card.classList.add("done"); p.chips[k].classList.add("done");
-      say(p, 3 + k, card.querySelector(".hkp-vw").textContent);
-    };
-    // a run at rest on one question: every part shown, that question answered
-    const rest = (i, k) => {
-      const ex = exs[i], p = P[i];
-      ex.classList.remove("play", "scan"); ex.classList.add("rep", "asked");
-      p.steps.forEach(s => s.classList.add("in")); p.cards.forEach(c => c.classList.add("done")); p.chips.forEach(c => c.classList.add("done"));
-      p.clock.textContent = p.end;
-      ask(ex, p, k, false); answer(ex, p, k, false);
+    // a step's own motion, from its start
+    async function animate(st, mine) {
+      const kind = st.dataset.kind;
+      if (kind === "run") {
+        const run = st.querySelector(".hks-run .t-steps"), clock = st.querySelector(".demo-clock");
+        const lines = [...run.children];
+        lines.forEach(l => l.classList.remove("in")); run.scrollTop = 0; st.classList.add("stream");
+        for (const l of lines) { l.classList.add("in"); clock.textContent = l.dataset.clock; run.scrollTop = run.scrollHeight; await sleep(140, mine); }
+        st.classList.remove("stream"); clock.textContent = st.closest(".hkp-ex").dataset.end;
+      } else if (kind === "report") {
+        const doc = st.querySelector(".demo-doc"); doc.scrollTop = 0;
+        await sleep(1200, mine); await glide(doc, doc.scrollHeight * 0.4, 4200, mine);
+      } else if (kind === "question") {
+        const items = [...st.querySelectorAll(".hks-ol li")], hit = st.dataset.hit;
+        items.forEach(li => li.classList.remove("at", "read"));
+        st.dataset.phase = "ask"; await sleep(2200, mine);
+        st.dataset.phase = "look"; await sleep(700, mine);
+        // down the report's sections, to the one that holds the answer, or past the last
+        const upto = hit === undefined ? items.length : Math.max(1, items.filter(li => +li.dataset.b < +hit).length);
+        const per = Math.min(420, 3000 / upto);
+        for (let j = 0; j < upto; j++) {
+          if (j) items[j - 1].classList.replace("at", "read");
+          items[j].classList.add("at"); await sleep(per, mine);
+        }
+        if (hit === undefined) items[upto - 1].classList.replace("at", "read");
+        await sleep(600, mine);
+        st.dataset.phase = "found";
+      }
+    }
+    // one step on: its name current, Back and Next as far as they go, and its motion played unless the reader
+    // asked for none
+    const go = (r, j, play) => {
+      const mine = ++token;
+      r.at = j; elapsed = 0;
+      r.steps.forEach((st, k) => st.classList.toggle("on", k === j));
+      r.dots.forEach((d, k) => k === j ? d.setAttribute("aria-current", "step") : d.removeAttribute("aria-current"));
+      r.back.disabled = j === 0; r.next.disabled = j === r.steps.length - 1 && exs.length === 1;
+      const st = r.steps[j];
+      if (play && !still.matches) animate(st, mine).catch(e => { if (e !== STOP) throw e; });
+      else settle(st);
     };
     const show = i => {
       cur = i;
       exs.forEach((e, j) => { e.classList.toggle("on", j === i); e.setAttribute("aria-hidden", String(j !== i)); });
       tabs.forEach((t, j) => t.setAttribute("aria-selected", String(j === i)));
     };
-    async function play(i, mine) {
-      const ex = exs[i], p = P[i];
-      ex.classList.add("play"); ex.classList.remove("rep", "asked", "scan");
-      unlight(ex, p);
-      p.steps.forEach(s => s.classList.remove("in"));
-      p.cards.forEach(c => c.classList.remove("done")); p.chips.forEach(c => { c.classList.remove("done"); c.setAttribute("aria-pressed", "false"); });
-      p.run.scrollTop = 0; p.doc.scrollTop = 0;
-      say(p, 1, p.words[0]);
-      for (const s of p.steps) {
-        s.classList.add("in"); p.clock.textContent = s.dataset.clock; p.run.scrollTop = p.run.scrollHeight;
-        await sleep(110, mine);
-      }
-      p.clock.textContent = p.end; await sleep(400, mine);
-      say(p, 2, p.words[1]); ex.classList.add("rep"); await sleep(500, mine);
-      p.doc.scrollTo({ top: p.doc.scrollHeight / 3, behavior: "smooth" }); await sleep(1300, mine);
-      p.doc.scrollTo({ top: 0, behavior: "smooth" }); await sleep(500, mine);
-      ex.classList.add("asked");
-      for (let k = 0; k < p.cards.length; k++) {
-        ask(ex, p, k, true);
-        say(p, 3 + k, `Question ${k + 1} asks about what it did ${p.cards[k].dataset.at} minutes in`);
-        await sleep(2400, mine);
-        say(p, 3 + k, p.words[2]);
-        ex.classList.add("scan");
-        p.doc.style.setProperty("--scan-from", "0px"); p.doc.style.setProperty("--scan-to", `${p.doc.clientHeight - 70}px`);
-        const hit = p.cards[k].dataset.hit;
-        if (hit !== undefined) { into(p.doc, p.blocks[+hit], 0.2, true); await sleep(1500, mine); }
-        else { p.doc.scrollTo({ top: p.doc.scrollHeight, behavior: "smooth" }); await sleep(1900, mine); }
-        ex.classList.remove("scan");
-        answer(ex, p, k, true); await sleep(3200, mine);
-      }
-      unlight(ex, p);
-      say(p, 3 + p.cards.length, p.words[3]); await sleep(3600, mine);
-      rest(i, p.rest);
-    }
-    async function loop(from) {
-      const mine = ++token; running = true;
-      try {
-        for (let i = from; ; i = (i + 1) % exs.length) { show(i); await play(i, mine); await sleep(1200, mine); }
-      } catch (e) { if (e !== STOP) throw e; }
-      if (mine === token) running = false;
-    }
-    const halt = () => { token++; running = false; };
-    exs.forEach((_, i) => rest(i, P[i].rest));
-    tabs.forEach((t, i) => t.addEventListener("click", () => {
-      halt(); show(i); rest(i, P[i].rest);
-      if (!still.matches && !paused && playing) loop(i);
-    }));
-    exs.forEach((ex, i) => P[i].chips.forEach((c, k) => c.addEventListener("click", () => {
-      halt(); rest(i, k);
-      if (!still.matches) { paused = true; playing = false; ctl.textContent = "Play"; ctl.setAttribute("aria-pressed", "true"); }
-    })));
+    // on to the next step, or the next run's first
+    const ahead = () => {
+      const r = R[cur];
+      if (r.at < r.steps.length - 1) go(r, r.at + 1, true);
+      else { show((cur + 1) % exs.length); go(R[cur], 0, true); }
+    };
+    // the reader takes over: nothing moves on by itself until the button says so, and the first sight of the hook no
+    // longer starts it from the top
+    const hold = () => {
+      paused = true; started = true; ctl.textContent = "Play"; ctl.setAttribute("aria-pressed", "true");
+      exs.forEach(e => e.classList.remove("auto"));
+    };
+    exs.forEach((ex, i) => { ex.dataset.end = R[i].steps[0].querySelector(".demo-clock").textContent; R[i].steps.forEach(settle); go(R[i], R[i].rest, false); });
+    R.forEach((r, i) => {
+      r.dots.forEach((d, j) => d.addEventListener("click", () => { hold(); go(r, j, true); }));
+      r.back.addEventListener("click", () => { hold(); go(r, Math.max(0, r.at - 1), true); });
+      r.next.addEventListener("click", () => {
+        hold();
+        if (r.at < r.steps.length - 1) go(r, r.at + 1, true); else { show((i + 1) % exs.length); go(R[cur], 0, true); }
+      });
+    });
+    tabs.forEach((t, i) => t.addEventListener("click", () => { show(i); go(R[i], still.matches ? R[i].rest : 0, true); }));
     if (still.matches) return;
-    const go = () => { if (paused) return; playing = true; ctl.hidden = false; if (!running) loop(cur); };
+    // the run moves on by itself while in view, unless the reader has taken over
+    const frame = now => {
+      if (auto()) {
+        elapsed += now - last;
+        const r = R[cur], ms = +r.steps[r.at].dataset.ms;
+        r.bar.style.transform = `scaleX(${Math.min(1, elapsed / ms)})`;
+        if (elapsed >= ms) ahead();
+      }
+      last = now; requestAnimationFrame(frame);
+    };
+    requestAnimationFrame(frame);
     ctl.addEventListener("click", () => {
       paused = !paused; ctl.textContent = paused ? "Play" : "Pause"; ctl.setAttribute("aria-pressed", String(paused));
-      paused ? (playing = false) : go();
+      exs.forEach(e => e.classList.toggle("auto", !paused));
+      if (!paused) elapsed = 0;
     });
-    whileSeen(box, go, () => { playing = false; });
+    whileSeen(box, () => {
+      seen = true; ctl.hidden = false;
+      if (!paused) exs.forEach(e => e.classList.add("auto"));
+      if (!started) { started = true; go(R[cur], 0, true); }
+    }, () => { seen = false; });
   });
   const flow = $("flow");
   if (flow) edges(flow.querySelector(".flow-grid"), JSON.parse(flow.dataset.edges));
