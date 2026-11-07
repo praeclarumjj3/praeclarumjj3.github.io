@@ -410,51 +410,48 @@ header.mast:has(.mast-art-w) { padding-top: 0; }
 }
 @media (max-width: 760px) { .hook { padding: 20px 16px 18px; border-radius: 14px; }
   .hk-q { padding: 16px; } .hk-t { font-size: 1.1rem; } }
-/* the hook's runs, stepped through (user, 7 Nov, picked "Step through" after the played replay was "too abrupt and
-   fast"): one tab per harness, and in each a short sequence the reader steps through, one moment per screen. The run in
-   its harness's own terminal, the report it wrote, then each question beside the step it asks about, looked for down
-   the report's own sections, and last the run's totals. It plays on its own, slowly, a bar filling for each step, and
-   stops as soon as the reader takes a step. Every step sits in the same cell, so nothing below moves; at rest, and
-   under reduced motion, a run shows its unanswered question */
+/* the hook's runs (user, 7 Nov: "animate but be quick", "give them control ... have diff tags for diff ques at top
+   that user can select and it moves the agent session and report accordingly", "stats ... as dots"): one tab per
+   harness; in each, the questions as tags, the run's terminal beside its report with every question's steps and
+   answer marked by its number, and under them every question about the run as a dot. A tag brings both panes to its
+   question in a moment; the hook moves through the tags on its own until the reader picks one or reaches into a
+   pane. At rest, and under reduced motion, a run shows its unanswered question */
 .hkp { display: grid; gap: 12px; }
 .hkp-bar { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 10px 16px; }
 .hkp-tabs { background: var(--mist-2); }
 .hkp-tabs button { display: inline-flex; align-items: center; gap: 8px; font-family: var(--mono); font-size: 0.82rem; }
 .hkp-tabs .hlogo { width: 16px; height: 16px; }
 .hkp-exs { display: grid; }
-.hkp-ex { grid-area: 1 / 1; display: grid; gap: 14px; padding: 20px 22px 18px; background: var(--white); border-radius: 14px; visibility: hidden; }
+.hkp-ex { grid-area: 1 / 1; display: grid; gap: 14px; padding: 18px 22px 18px; background: var(--white); border-radius: 14px; visibility: hidden; }
 .hkp-ex.on { visibility: visible; }
 .hkp-ex .hk-b::before { content: none; }
 .hkp-ex .hk-task::before { content: "·"; }
-/* the steps by name, Back and Next, and a bar that fills while a step plays on its own */
-.hks-bar { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 10px 16px; }
-.hks-dots { display: flex; flex-wrap: wrap; gap: 6px; margin: 0; padding: 0; list-style: none; counter-reset: hks; }
-.hks-dots li { margin: 0; }
-.hks-dots button { display: inline-flex; align-items: center; gap: 7px; padding: 3px 11px 3px 3px; border: 1px solid var(--edge);
-  border-radius: 999px; background: var(--white); color: var(--ink-3); font: 600 0.76rem/1.2 var(--sans); cursor: pointer;
-  transition: color 0.3s, border-color 0.3s, box-shadow 0.3s; }
-.hks-dots button::before { counter-increment: hks; content: counter(hks); display: inline-grid; place-items: center; width: 20px; height: 20px;
-  border-radius: 50%; background: var(--mist-2); color: var(--ink-3); font-size: 0.68rem; font-variant-numeric: tabular-nums; transition: background 0.3s, color 0.3s; }
-.hks-dots button:hover { color: var(--ink); border-color: var(--blue); }
-.hks-dots button[aria-current="step"] { color: var(--ink); border-color: var(--blue); box-shadow: 0 0 0 1px var(--blue); }
-.hks-dots button[aria-current="step"]::before { background: var(--navy); color: var(--page); }
-.hks-dots button:focus-visible, .hks-nav button:focus-visible { outline: 2px solid var(--blue); outline-offset: 2px; }
-.hks-nav { display: flex; gap: 6px; }
-.hks-nav button { padding: 6px 14px; border: 1px solid var(--edge); border-radius: 999px; background: var(--white); color: var(--ink-2);
-  font: 600 0.8rem var(--sans); cursor: pointer; }
-.hks-nav button:hover:not(:disabled) { border-color: var(--blue); color: var(--ink); }
-.hks-nav button:disabled { opacity: 0.4; cursor: default; }
-.hks-nav .hks-next { background: var(--navy); border-color: var(--navy); color: var(--page); }
-.hks-nav .hks-next:hover:not(:disabled) { color: var(--page); }
-.hks-prog { height: 3px; border-radius: 2px; background: var(--mist-2); overflow: hidden; }
-.hks-prog i { display: block; height: 100%; background: var(--blue); transform-origin: 0 50%; transform: scaleX(0); transition: opacity 0.3s; }
-.hkp-ex:not(.auto) .hks-prog i { opacity: 0; }
-.hks-steps { display: grid; }
-/* the step leaving fades out before the next fades in, so two never show at once */
-.hks-step { grid-area: 1 / 1; display: grid; align-content: start; gap: 14px; min-width: 0; visibility: hidden; opacity: 0;
-  transition: opacity 0.3s ease, visibility 0s linear 0.3s; }
-.hks-step.on { visibility: inherit; opacity: 1; transition: opacity 0.55s ease 0.3s, visibility 0s linear 0.3s; }
-.hkp-ex .hks-say { font-size: 1.1rem; }
+/* the questions as tags: a number, what became of it, its tier and when in the run it asks about */
+.hkq-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+.hkq-tag { position: relative; display: inline-flex; align-items: center; gap: 8px; padding: 5px 13px 5px 5px; overflow: hidden;
+  border: 1px solid var(--edge); border-radius: 999px; background: var(--white); color: var(--ink-2); font: 600 0.82rem/1.2 var(--sans);
+  cursor: pointer; transition: border-color 0.2s, box-shadow 0.2s, color 0.2s; }
+.hkq-tag b { display: inline-grid; place-items: center; width: 22px; height: 22px; border-radius: 50%; color: var(--on-solid); font-size: 0.74rem; }
+.hkq-tag.v-covered b { background: var(--covered); } .hkq-tag.v-missed b { background: var(--silent); } .hkq-tag.v-unsupported b { background: var(--wrong); }
+.hkq-tt { font-weight: 500; color: var(--ink-3); font-variant-numeric: tabular-nums; }
+.hkq-tag:hover { border-color: var(--blue); color: var(--ink); }
+.hkq-tag[aria-pressed="true"] { border-color: var(--blue); box-shadow: 0 0 0 1px var(--blue); color: var(--ink); }
+.hkq-tag:focus-visible { outline: 2px solid var(--blue); outline-offset: 2px; }
+/* while the hook moves on by itself, the picked tag fills along its foot */
+.hkq-tag i { position: absolute; left: 0; bottom: 0; height: 2px; width: 100%; background: var(--blue); transform-origin: 0 50%; transform: scaleX(0); }
+.hkp-ex:not(.auto) .hkq-tag i { opacity: 0; }
+/* the picked question, in the evaluator's words, and what became of it */
+.hkq-qs { display: grid; }
+.hkq-q { grid-area: 1 / 1; display: flex; flex-wrap: wrap; align-items: center; gap: 8px 16px; visibility: hidden; opacity: 0; transition: opacity 0.2s; }
+.hkq-q.on { visibility: inherit; opacity: 1; }
+.hkp .hkq-q .hk-t { flex: 1 1 32rem; margin: 0; font-size: 1.1rem; line-height: 1.4; max-width: none; }
+.hkp-v { margin: 0; display: flex; flex-wrap: wrap; align-items: center; gap: 10px; font-size: 0.86rem; }
+.hkp-vw { display: inline-flex; align-items: center; gap: 8px; padding: 5px 10px; border-radius: 8px; font-weight: 600; font-size: 0.9rem;
+  background: color-mix(in srgb, currentColor 11%, transparent); }
+.hkp-vw::before { content: ""; width: 9px; height: 9px; border-radius: 2px; background: currentColor; }
+.v-covered { color: var(--covered-ink); } .v-missed { color: var(--silent-ink); } .v-unsupported { color: var(--wrong-ink); }
+/* the run beside its report, each scrolled by the reader at will */
+.hkq-panes { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 14px; }
 /* the agent's terminal, drawn as its harness draws it; a terminal is dark in either theme */
 .hkp-run { display: grid; grid-template-rows: auto minmax(0, 1fr) auto; height: 440px; border-radius: 14px; overflow: hidden;
   background: var(--t-bg); color: var(--t-ink); font: 0.74rem/1.55 var(--mono); }
@@ -500,77 +497,60 @@ header.mast:has(.mast-art-w) { padding-top: 0; }
 .term-pi-coding-agent .t-blk { background: rgb(40, 50, 40); padding-inline: 6px; }
 .term-pi-coding-agent .t-o.t-blk { padding-left: 6px; color: #9a9a9a; }
 .term-pi-coding-agent .t-path { color: #8abeb7; }
-.hks-step.stream .t-steps li:not(.in) { display: none; }
-.hks-step.stream .t-steps li.in { animation: demo-in 0.3s ease-out; }
-/* the report it wrote, whole, on white paper */
-.hks-step .hkp-rep { height: 440px; }
-/* a question: the step it asks about, large, beside the question and the search of the report for its answer */
-.hks-q { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 18px; align-items: stretch; }
-.hks-moment { height: auto; min-height: 0; max-height: 440px; grid-template-rows: auto minmax(0, 1fr); font-size: 0.8rem; }
-.hks-moment .t-steps { padding-block: 12px; }
-.hks-moment .t-steps p { white-space: normal; }
-.hks-ask { display: grid; align-content: start; gap: 12px; min-height: 440px; padding: 16px 18px; border-radius: 14px; background: var(--mist); }
-.hkp-k { margin: 0; display: flex; align-items: center; justify-content: space-between; gap: 8px; font: 600 0.72rem/1.3 var(--sans);
-  letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink-3); }
-.hkp-k .hk-tier { margin: 0; letter-spacing: 0; text-transform: none; background: var(--white); }
-.hkp .hks-ask .hk-t { margin: 0; font-size: 1.14rem; line-height: 1.42; max-width: none; }
-.hks-box { display: grid; }
-.hks-look, .hks-found { grid-area: 1 / 1; display: grid; align-content: start; gap: 10px; min-width: 0; transition: opacity 0.6s ease; }
-.hks-step[data-phase="ask"] :is(.hks-look, .hks-found), .hks-step[data-phase="look"] .hks-found,
-.hks-step[data-phase="found"] .hks-look { visibility: hidden; opacity: 0; transition: opacity 0.6s ease, visibility 0s linear 0.6s; }
-.hks-lk { margin: 0; font: 600 0.72rem/1.3 var(--sans); letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink-3); }
-.hks-ol { display: grid; gap: 1px; margin: 0; padding: 8px; list-style: none; border-radius: 10px; background: var(--paper);
-  box-shadow: inset 0 0 0 1px var(--edge); }
-.hks-ol li { position: relative; margin: 0; padding: 3px 8px 3px 26px; border-radius: 6px; font: 0.82rem/1.4 var(--sans); color: var(--paper-ink);
-  white-space: nowrap; overflow: hidden; text-overflow: ellipsis; transition: background 0.3s, color 0.3s; }
-.hks-ol li::before { content: ""; position: absolute; left: 9px; top: 0.62em; width: 7px; height: 7px; border-radius: 50%;
-  box-shadow: inset 0 0 0 1.5px var(--paper-dim); transition: background 0.3s, box-shadow 0.3s; }
-.hks-ol li.at { background: rgba(29, 91, 191, 0.1); }
-.hks-ol li.at::before { background: #1d5bbf; box-shadow: none; }
-.hks-ol li.read { color: var(--paper-dim); }
-.hks-ol li.read::before { background: var(--paper-dim); box-shadow: none; }
-.hkp-v { margin: 0; display: flex; flex-wrap: wrap; align-items: center; gap: 10px; font-size: 0.86rem; }
-.hkp-vw { display: inline-flex; align-items: center; gap: 8px; padding: 5px 10px; border-radius: 8px; font-weight: 600; font-size: 0.92rem;
-  background: color-mix(in srgb, currentColor 11%, transparent); }
-.hkp-vw::before { content: ""; width: 9px; height: 9px; border-radius: 2px; background: currentColor; }
-.v-covered { color: var(--covered-ink); } .v-missed { color: var(--silent-ink); } .v-unsupported { color: var(--wrong-ink); }
-/* what the search found: the passage that answers, in the report's own words, or the answer found nowhere */
-.hks-pass { display: grid; gap: 8px; padding: 14px 16px; border-radius: 10px; background: var(--paper); box-shadow: inset 0 0 0 1px var(--edge); }
-.hks-pass p { margin: 0; font: 0.86rem/1.55 var(--sans); color: var(--paper-ink); }
-.hks-pass .hks-sec { font: 600 0.78rem/1.3 var(--sans); color: var(--paper-dim); }
-.hks-pass .hks-after { color: var(--paper-dim); display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
-.hks-pass p[data-mark] { border-radius: 4px; }
-.hks-pass p[data-mark]::before { content: attr(data-mark); display: block; margin-bottom: 3px; font: 700 0.62rem/1.3 var(--sans);
+/* a question's number on each step it asks about, and the step lit while its question is picked */
+.hkq-mks { display: inline-flex; gap: 3px; margin-right: 7px; vertical-align: 1px; }
+.hkq-mks b { display: inline-grid; place-items: center; min-width: 16px; height: 16px; padding: 0 3px; border-radius: 8px; color: #fff;
+  font: 700 0.62rem/1 var(--sans); }
+.hkq-mks b.v-covered { background: #2e9e6a; } .hkq-mks b.v-missed { background: #e07a2c; } .hkq-mks b.v-unsupported { background: #d4485a; }
+.t-steps li[data-q] { background: rgba(255, 255, 255, 0.03); }
+.t-steps li[data-q] p { white-space: normal; }
+.t-steps li.sel { background: var(--t-lit); box-shadow: inset 3px 0 var(--t-edge); }
+/* the report: every answer marked where it is given, the picked one strongest; one left unsaid is said to be nowhere */
+.hkq-panes .hkp-rep { position: relative; height: 440px; }
+.demo-doc p.hkq-hit { box-shadow: 0 0 0 4px transparent; }
+.demo-doc p.hkq-hit.v-covered { background: #ecf8f1; } .demo-doc p.hkq-hit.v-unsupported { background: #fdf0f1; }
+.demo-doc p.hkq-hit::before { content: attr(data-mark); display: block; margin-bottom: 2px; font: 700 0.62rem/1.3 var(--sans);
   letter-spacing: 0.05em; text-transform: uppercase; }
-.hks-pass p.hit-covered { background: #d8f1e4; box-shadow: 0 0 0 6px #d8f1e4; }
-.hks-pass p.hit-covered::before { color: #1d7a4c; }
-.hks-pass p.hit-unsupported { background: #fbdfe2; box-shadow: 0 0 0 6px #fbdfe2; }
-.hks-pass p.hit-unsupported::before { color: #b3263a; }
-.hks-none { margin: 0; padding: 22px 18px; border-radius: 10px; background: #fdebdc; color: #9a420d; text-align: center;
-  font: 600 1.02rem/1.35 var(--sans); box-shadow: inset 0 0 0 1px #f3c9a6; }
-.hks-none span { display: block; margin-top: 4px; font: 500 0.82rem/1.4 var(--sans); color: #a8541c; }
-/* the run's totals, after the questions asked of it */
-.hks-sum { display: grid; gap: 18px; }
-.hks-recap { display: grid; gap: 6px; margin: 0; padding: 0; list-style: none; }
-.hks-recap li { display: grid; grid-template-columns: auto minmax(0, 1fr) auto; align-items: center; gap: 12px; margin: 0; padding: 8px 12px;
-  border-radius: 10px; background: var(--mist); }
-.hks-recap b { display: inline-grid; place-items: center; width: 22px; height: 22px; border-radius: 50%; color: var(--on-solid); font: 600 0.72rem var(--sans); }
-.hks-recap .v-covered b { background: var(--covered); } .hks-recap .v-missed b { background: var(--silent); } .hks-recap .v-unsupported b { background: var(--wrong); }
-.hks-rq { font: 0.88rem/1.4 var(--sans); color: var(--ink-2); }
-.hks-recap .hkp-vw { font-size: 0.8rem; padding: 3px 8px; }
-.hks-step[data-kind="totals"] :is(.hk-stats, .hk-tiers) { margin: 0; }
+.demo-doc p.hkq-hit.v-covered::before { color: #1d7a4c; } .demo-doc p.hkq-hit.v-unsupported::before { color: #b3263a; }
+.demo-doc p.hkq-hit.sel.v-covered { background: #d2efdf; box-shadow: 0 0 0 4px #d2efdf; }
+.demo-doc p.hkq-hit.sel.v-unsupported { background: #fadadf; box-shadow: 0 0 0 4px #fadadf; }
+.hkq-none { position: absolute; left: 14px; right: 14px; top: 46px; z-index: 1; margin: 0; padding: 10px 14px; border-radius: 10px;
+  background: #fdebdc; color: #9a420d; font: 600 0.9rem/1.35 var(--sans); box-shadow: 0 0 0 1px #f3c9a6, 0 8px 20px -10px rgba(154, 66, 13, 0.4);
+  visibility: hidden; opacity: 0; transform: translateY(-4px); transition: opacity 0.2s, transform 0.2s, visibility 0s linear 0.2s; }
+.hkq-none b { margin-right: 6px; }
+.hkq-none.on { visibility: inherit; opacity: 1; transform: none; transition: opacity 0.2s, transform 0.2s; }
+.hkp-rep.nowhere .demo-doc { opacity: 0.55; }
+.hkp-rep .demo-doc { transition: opacity 0.2s; }
+/* a mark lights briefly as its question is picked */
+.t-steps li.flash, .demo-doc p.flash { animation: hkq-flash 0.7s ease-out; }
+@keyframes hkq-flash { 0% { filter: brightness(1.25); } 100% { filter: none; } }
+/* every question about the run as a dot, a row for each tier, answered first; the ones asked above carry their number */
+.hkq-all { display: grid; gap: 8px; }
+.hkq-all .hk-tk { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 6px 16px; margin: 0; }
+.hkq-legend { display: inline-flex; flex-wrap: wrap; gap: 4px 14px; font: 500 0.78rem/1.3 var(--sans); color: var(--ink-3); }
+.hkq-lg { display: inline-flex; align-items: center; gap: 6px; color: var(--ink-3); }
+.hkq-lg i, .hkq-ds i { display: inline-grid; place-items: center; width: 12px; height: 12px; border-radius: 50%; font-style: normal; }
+.hkq-lg.v-covered i, .hkq-ds i.v-covered { background: var(--covered); }
+.hkq-lg.v-missed i, .hkq-ds i.v-missed { background: var(--silent); }
+.hkq-lg.v-unsupported i, .hkq-ds i.v-unsupported { background: var(--wrong); }
+.hkq-row { display: grid; grid-template-columns: 5.2rem minmax(0, 1fr) 8.6rem; align-items: center; gap: 14px; font-size: 0.86rem; color: var(--ink-2); }
+.hkq-ds { display: flex; flex-wrap: wrap; gap: 4px; }
+.hkq-ds i.hkq-asked { width: 18px; height: 18px; color: var(--on-solid); font: 700 0.6rem/1 var(--sans); cursor: pointer;
+  box-shadow: 0 0 0 2px var(--white), 0 0 0 3px var(--ink-3); }
+.hkq-ds i.hkq-asked.sel { box-shadow: 0 0 0 2px var(--white), 0 0 0 4px var(--blue); }
+.hkp-ex .hk-stats { margin-top: 0; }
+.hkp-ex .hk-stats b { font-size: 1.35rem; }
+@media (max-width: 1000px) { .hkq-panes { grid-template-columns: minmax(0, 1fr); } .hkp-run, .hkq-panes .hkp-rep { height: 360px; } }
 @media (max-width: 760px) {
   .hkp-ex { padding: 16px 14px 14px; }
   .hkp-ex .hk-task::before { content: none; }
-  .hks-q { grid-template-columns: minmax(0, 1fr); }
-  .hkp-run, .hks-step .hkp-rep { height: 300px; }
-  .hks-moment { height: auto; max-height: 280px; }
-  .hks-ask { min-height: 0; }
-  .hks-recap li { grid-template-columns: auto minmax(0, 1fr); }
-  .hks-recap .hkp-vw { grid-column: 2; justify-self: start; }
+  .hkp-run, .hkq-panes .hkp-rep { height: 300px; }
+  .hkq-tt { display: none; }
+  .hkq-row { grid-template-columns: minmax(0, 1fr) auto; } .hkq-row .hkq-ds { grid-column: 1 / -1; grid-row: 2; }
   .hkp-tabs button span { font-size: 0.76rem; }
 }
-@media (prefers-reduced-motion: reduce) { .hks-step, .hks-look, .hks-found, .hks-ol li, .hks-dots button, .t-steps li { transition: none !important; } }
+@media (prefers-reduced-motion: reduce) { .hkq-q, .hkq-none, .hkq-tag, .t-steps li, .hkp-rep .demo-doc { transition: none !important; }
+  .t-steps li.flash, .demo-doc p.flash { animation: none; } }
 /* the post's key findings: one line each, the finding in bold and its headline number bold inside the words */
 .keyfind { margin: 8px 0 30px; }
 .kf { list-style: none; margin: 0; padding: 0; display: grid; gap: 2px; }
@@ -2262,148 +2242,95 @@ footer { margin-top: 96px; border-top: 1px solid var(--rule); padding-top: 24px;
     whileSeen(fig, () => { seen = true; cells.forEach(play); }, () => { seen = false; cells.forEach(pause); });
   });
 
-  // the hook's runs, stepped through (user, 7 Nov, picked "Step through"): one moment per screen, the reader's pace.
-  // Each step fades in and plays its own small motion: the run's steps stream into its terminal, the report glides
-  // once, and a question is asked, then looked for down the report's sections, then answered with the passage that
-  // answers it or found nowhere. While the hook is in view the run also moves on by itself, a bar filling for each
-  // step, and at a run's last step goes to the next tab; Back, Next or a step's name takes over and stops it, and the
-  // button starts it again. Under reduced motion nothing moves on its own, each step shows as it ends, and each run
-  // rests on its unanswered question
+  // the hook's runs: picking a question's tag brings the run to the step it asks about and the report to its answer,
+  // each in a quick glide, its marks lit a moment; one left unsaid says so over the report. While the hook is in
+  // view, and until the reader picks a tag or a dot or reaches into a pane, it moves through the tags on its own, the
+  // picked tag filling as it waits, and on to the next tab after the last. The button stops and starts it. Under
+  // reduced motion nothing moves by itself, and each run rests on its unanswered question
   document.querySelectorAll(".hkp").forEach(box => {
     const exs = [...box.querySelectorAll(".hkp-ex")], tabs = [...box.querySelectorAll(".hkp-tabs [role=tab]")];
-    const ctl = box.querySelector(".demo-ctl"), STOP = {};
-    let cur = 0, seen = false, paused = false, started = false, token = 0, elapsed = 0, last = performance.now();
-    const R = exs.map(ex => ({
-      ex, steps: [...ex.querySelectorAll(".hks-step")], dots: [...ex.querySelectorAll(".hks-dots button")],
-      back: ex.querySelector(".hks-back"), next: ex.querySelector(".hks-next"), bar: ex.querySelector(".hks-prog i"),
-      rest: +ex.dataset.rest, at: +ex.dataset.rest }));
-    const auto = () => seen && !paused && !still.matches;
-    // a pause that runs only while the hook is in view and stops with its step
-    const sleep = (ms, mine) => new Promise((done, fail) => {
-      let left = ms, t = performance.now();
-      const tick = now => {
-        if (mine !== token) return fail(STOP);
-        if (seen) left -= now - t;
-        t = now; left <= 0 ? done() : requestAnimationFrame(tick);
-      };
-      requestAnimationFrame(tick);
+    const ctl = box.querySelector(".demo-ctl"), CYCLE = +box.dataset.tagMs || 4500;
+    let cur = 0, seen = false, paused = false, elapsed = 0, last = performance.now();
+    const R = exs.map(ex => {
+      const q = s => ex.querySelector(s), qa = s => [...ex.querySelectorAll(s)];
+      return { ex, tags: qa(".hkq-tag"), cards: qa(".hkq-q"), run: q(".hkp-run .t-steps"), steps: qa(".hkp-run .t-steps li"),
+               rep: q(".hkp-rep"), doc: q(".demo-doc"), hits: qa(".demo-doc p.hkq-hit"), nones: qa(".hkq-none"),
+               dots: qa(".hkq-ds i.hkq-asked"), k: +ex.dataset.rest, glides: new Map() };
     });
+    const has = (el, k) => (el.dataset.q || "").split(" ").includes(String(k));
     const ease = t => t < 0.5 ? 4 * t * t * t : 1 - (-2 * t + 2) ** 3 / 2;
-    const glide = (pane, top, ms, mine) => new Promise((done, fail) => {
-      const from = pane.scrollTop, to = Math.max(0, Math.min(top, pane.scrollHeight - pane.clientHeight));
-      let t = 0, then = performance.now();
+    // a pane brought so a line sits near its top, in a short glide, or at once
+    const bring = (r, pane, el, at) => {
+      const to = Math.max(0, Math.min(pane.scrollHeight - pane.clientHeight,
+        pane.scrollTop + el.getBoundingClientRect().top - pane.getBoundingClientRect().top - pane.clientHeight * at));
+      cancelAnimationFrame(r.glides.get(pane));
+      if (still.matches || !seen) { pane.scrollTop = to; return; }
+      const from = pane.scrollTop, t0 = performance.now(), ms = 420;
       const tick = now => {
-        if (mine !== token) return fail(STOP);
-        if (seen) t += now - then;
-        then = now;
-        const k = Math.min(1, t / ms);
+        const k = Math.min(1, (now - t0) / ms);
         pane.scrollTop = from + (to - from) * ease(k);
-        k >= 1 ? done() : requestAnimationFrame(tick);
+        if (k < 1) r.glides.set(pane, requestAnimationFrame(tick));
       };
-      requestAnimationFrame(tick);
-    });
-    // a step as it ends: every line in, the report at its top, the question answered
-    const settle = st => {
-      const lines = [...st.querySelectorAll(".hks-run .t-steps li")];
-      lines.forEach(l => l.classList.add("in"));
-      const run = st.querySelector(".hks-run .t-steps");
-      if (run) { run.scrollTop = run.scrollHeight; st.querySelector(".demo-clock").textContent = st.closest(".hkp-ex").dataset.end; }
-      const doc = st.querySelector(".demo-doc");
-      if (doc) doc.scrollTop = 0;
-      if (st.dataset.kind === "question") {
-        st.dataset.phase = "found";
-        st.querySelectorAll(".hks-ol li").forEach(li => li.classList.remove("at"));
-      }
+      r.glides.set(pane, requestAnimationFrame(tick));
     };
-    // a step's own motion, from its start
-    async function animate(st, mine) {
-      const kind = st.dataset.kind;
-      if (kind === "run") {
-        const run = st.querySelector(".hks-run .t-steps"), clock = st.querySelector(".demo-clock");
-        const lines = [...run.children];
-        lines.forEach(l => l.classList.remove("in")); run.scrollTop = 0; st.classList.add("stream");
-        for (const l of lines) { l.classList.add("in"); clock.textContent = l.dataset.clock; run.scrollTop = run.scrollHeight; await sleep(140, mine); }
-        st.classList.remove("stream"); clock.textContent = st.closest(".hkp-ex").dataset.end;
-      } else if (kind === "report") {
-        const doc = st.querySelector(".demo-doc"); doc.scrollTop = 0;
-        await sleep(1200, mine); await glide(doc, doc.scrollHeight * 0.4, 4200, mine);
-      } else if (kind === "question") {
-        const items = [...st.querySelectorAll(".hks-ol li")], hit = st.dataset.hit;
-        items.forEach(li => li.classList.remove("at", "read"));
-        st.dataset.phase = "ask"; await sleep(2200, mine);
-        st.dataset.phase = "look"; await sleep(700, mine);
-        // down the report's sections, to the one that holds the answer, or past the last
-        const upto = hit === undefined ? items.length : Math.max(1, items.filter(li => +li.dataset.b < +hit).length);
-        const per = Math.min(420, 3000 / upto);
-        for (let j = 0; j < upto; j++) {
-          if (j) items[j - 1].classList.replace("at", "read");
-          items[j].classList.add("at"); await sleep(per, mine);
-        }
-        if (hit === undefined) items[upto - 1].classList.replace("at", "read");
-        await sleep(600, mine);
-        st.dataset.phase = "found";
-      }
-    }
-    // one step on: its name current, Back and Next as far as they go, and its motion played unless the reader
-    // asked for none
-    const go = (r, j, play) => {
-      const mine = ++token;
-      r.at = j; elapsed = 0;
-      r.steps.forEach((st, k) => st.classList.toggle("on", k === j));
-      r.dots.forEach((d, k) => k === j ? d.setAttribute("aria-current", "step") : d.removeAttribute("aria-current"));
-      r.back.disabled = j === 0; r.next.disabled = j === r.steps.length - 1 && exs.length === 1;
-      const st = r.steps[j];
-      if (play && !still.matches) animate(st, mine).catch(e => { if (e !== STOP) throw e; });
-      else settle(st);
+    const flash = els => els.forEach(el => { el.classList.remove("flash"); void el.offsetWidth; el.classList.add("flash"); });
+    // one question picked: its tag, its words, its steps and its answer lit, both panes brought to them
+    const pick = (r, k) => {
+      r.k = k; elapsed = 0;
+      r.tags.forEach((t, j) => { t.setAttribute("aria-pressed", String(j === k)); t.querySelector("i").style.transform = "scaleX(0)"; });
+      r.cards.forEach((c, j) => c.classList.toggle("on", j === k));
+      const lit = r.steps.filter(s => has(s, k)), hit = r.hits.filter(h => has(h, k));
+      r.steps.forEach(s => s.classList.toggle("sel", has(s, k)));
+      r.hits.forEach(h => h.classList.toggle("sel", has(h, k)));
+      r.dots.forEach(d => d.classList.toggle("sel", +d.dataset.q === k));
+      r.nones.forEach(n => n.classList.toggle("on", +n.dataset.q === k));
+      r.rep.classList.toggle("nowhere", !hit.length);
+      if (lit[0]) bring(r, r.run, lit[0], 0.18);
+      if (hit[0]) bring(r, r.doc, hit[0], 0.22);
+      if (seen && !still.matches) flash([...lit, ...hit]);
     };
     const show = i => {
       cur = i;
       exs.forEach((e, j) => { e.classList.toggle("on", j === i); e.setAttribute("aria-hidden", String(j !== i)); });
       tabs.forEach((t, j) => t.setAttribute("aria-selected", String(j === i)));
     };
-    // on to the next step, or the next run's first
-    const ahead = () => {
-      const r = R[cur];
-      if (r.at < r.steps.length - 1) go(r, r.at + 1, true);
-      else { show((cur + 1) % exs.length); go(R[cur], 0, true); }
-    };
-    // the reader takes over: nothing moves on by itself until the button says so, and the first sight of the hook no
-    // longer starts it from the top
+    // the reader takes over: nothing moves on by itself until the button says so
     const hold = () => {
-      paused = true; started = true; ctl.textContent = "Play"; ctl.setAttribute("aria-pressed", "true");
+      if (paused) return;
+      paused = true; ctl.textContent = "Play"; ctl.setAttribute("aria-pressed", "true");
       exs.forEach(e => e.classList.remove("auto"));
     };
-    exs.forEach((ex, i) => { ex.dataset.end = R[i].steps[0].querySelector(".demo-clock").textContent; R[i].steps.forEach(settle); go(R[i], R[i].rest, false); });
     R.forEach((r, i) => {
-      r.dots.forEach((d, j) => d.addEventListener("click", () => { hold(); go(r, j, true); }));
-      r.back.addEventListener("click", () => { hold(); go(r, Math.max(0, r.at - 1), true); });
-      r.next.addEventListener("click", () => {
-        hold();
-        if (r.at < r.steps.length - 1) go(r, r.at + 1, true); else { show((i + 1) % exs.length); go(R[cur], 0, true); }
-      });
+      pick(r, r.k);
+      r.tags.forEach((t, k) => t.addEventListener("click", () => { hold(); pick(r, k); }));
+      r.dots.forEach(d => d.addEventListener("click", () => { hold(); pick(r, +d.dataset.q); }));
+      [r.run, r.doc].forEach(pane => ["wheel", "touchstart", "pointerdown", "keydown"].forEach(e =>
+        pane.addEventListener(e, hold, { passive: true })));
     });
-    tabs.forEach((t, i) => t.addEventListener("click", () => { show(i); go(R[i], still.matches ? R[i].rest : 0, true); }));
+    tabs.forEach((t, i) => t.addEventListener("click", () => { show(i); pick(R[i], still.matches ? R[i].k : 0); }));
     if (still.matches) return;
-    // the run moves on by itself while in view, unless the reader has taken over
+    let started = false;
     const frame = now => {
-      if (auto()) {
+      if (seen && !paused) {
         elapsed += now - last;
-        const r = R[cur], ms = +r.steps[r.at].dataset.ms;
-        r.bar.style.transform = `scaleX(${Math.min(1, elapsed / ms)})`;
-        if (elapsed >= ms) ahead();
+        const r = R[cur], bar = r.tags[r.k].querySelector("i");
+        bar.style.transform = `scaleX(${Math.min(1, elapsed / CYCLE)})`;
+        if (elapsed >= CYCLE) {
+          if (r.k < r.tags.length - 1) pick(r, r.k + 1);
+          else { show((cur + 1) % exs.length); pick(R[cur], 0); }
+        }
       }
       last = now; requestAnimationFrame(frame);
     };
     requestAnimationFrame(frame);
     ctl.addEventListener("click", () => {
       paused = !paused; ctl.textContent = paused ? "Play" : "Pause"; ctl.setAttribute("aria-pressed", String(paused));
-      exs.forEach(e => e.classList.toggle("auto", !paused));
-      if (!paused) elapsed = 0;
+      exs.forEach(e => e.classList.toggle("auto", !paused)); elapsed = 0;
     });
     whileSeen(box, () => {
       seen = true; ctl.hidden = false;
       if (!paused) exs.forEach(e => e.classList.add("auto"));
-      if (!started) { started = true; go(R[cur], 0, true); }
+      if (!started && !paused) { started = true; pick(R[cur], 0); }
     }, () => { seen = false; });
   });
   const flow = $("flow");
