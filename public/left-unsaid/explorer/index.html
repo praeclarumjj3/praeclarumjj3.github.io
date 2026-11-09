@@ -95,23 +95,25 @@ try { const t = localStorage.getItem("left-unsaid-theme"); if (t === "light" || 
   /* which of a screenshot's two pictures shows: the light one here, the dark one in the dark twin */
 }
 /* the dark twin: the same tokens, once for the reader's system and once for the viewer's toggle */
+/* dark: a neutral graphite rather than navy, so the page sits with the terminals' own dark (user, 9 Nov: "for bg
+   color maybe we shud change theme for dark mode"); the accents and the verdicts' colours are unchanged */
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
     color-scheme: dark;
     --paper-faint: 0.13;
-    --page: #10151e;
-    --white: #1f2734;
-    --mist: #171e2a;
-    --mist-2: #222b39;
-    --hl: #17243a;
-    --hl-edge: #2c4469;
-    --rule: #283142;
-    --edge: #354055;
-    --ink: #e7ebf1;
-    --ink-2: #b0bac9;
-    --ink-3: #8c97a8;
+    --page: #121214;
+    --white: #1c1c20;
+    --mist: #18181b;
+    --mist-2: #232328;
+    --hl: #1a2130;
+    --hl-edge: #2f405e;
+    --rule: #2a2a30;
+    --edge: #3a3a42;
+    --ink: #ececef;
+    --ink-2: #b8b8c1;
+    --ink-3: #8f8f9a;
     --blue: #8db5f7;
-    --navy: #dde6f5;
+    --navy: #e2e5ee;
     --covered: #5abf94;
     --covered-tint: #17241f;
     --covered-ink: #96dcbc;
@@ -121,23 +123,23 @@ try { const t = localStorage.getItem("left-unsaid-theme"); if (t === "light" || 
     --wrong: #e97880;
     --wrong-tint: #271a1e;
     --wrong-ink: #f4adb3;
-    --unasked: #394354;
-    --unasked-line: #66728a;
+    --unasked: #3c3c45;
+    --unasked-line: #6e6e7a;
     --solid: #36609f;
     --btn: #3a6cc8;
     --shadow: 0, 0, 0;
     --art-opacity: 1;
   --art-covered: #5abf9480;
   --art-silent: #e8995e52;
-  --art-unasked: #39435480;
+  --art-unasked: #3c3c4580;
   --fv-edge: 38%;
-    --seg-on: #333e51;
-    --mark: #c9d2de;
+    --seg-on: #34343c;
+    --mark: #d0d0d6;
     --dot-opacity: 0.8;
     --ci: rgba(255, 255, 255, 0.2);
-    --term: #0a0f18;
-    --term-2: #131c2b;
-    --fx-faint: #74839b;
+    --term: #0c0c0e;
+    --term-2: #161618;
+    --fx-faint: #80808c;
     --fx-violet: #a593f2;
     --fx-cyan: #4cc3d6;
     --fx-magenta: #e07fc2;
@@ -150,19 +152,19 @@ try { const t = localStorage.getItem("left-unsaid-theme"); if (t === "light" || 
 :root[data-theme="dark"] {
   color-scheme: dark;
   --paper-faint: 0.13;
-  --page: #10151e;
-  --white: #1f2734;
-  --mist: #171e2a;
-  --mist-2: #222b39;
-  --hl: #17243a;
-  --hl-edge: #2c4469;
-  --rule: #283142;
-  --edge: #354055;
-  --ink: #e7ebf1;
-  --ink-2: #b0bac9;
-  --ink-3: #8c97a8;
+  --page: #121214;
+  --white: #1c1c20;
+  --mist: #18181b;
+  --mist-2: #232328;
+  --hl: #1a2130;
+  --hl-edge: #2f405e;
+  --rule: #2a2a30;
+  --edge: #3a3a42;
+  --ink: #ececef;
+  --ink-2: #b8b8c1;
+  --ink-3: #8f8f9a;
   --blue: #8db5f7;
-  --navy: #dde6f5;
+  --navy: #e2e5ee;
   --covered: #5abf94;
   --covered-tint: #17241f;
   --covered-ink: #96dcbc;
@@ -172,23 +174,23 @@ try { const t = localStorage.getItem("left-unsaid-theme"); if (t === "light" || 
   --wrong: #e97880;
   --wrong-tint: #271a1e;
   --wrong-ink: #f4adb3;
-  --unasked: #394354;
-  --unasked-line: #66728a;
+  --unasked: #3c3c45;
+  --unasked-line: #6e6e7a;
   --solid: #36609f;
   --btn: #3a6cc8;
   --shadow: 0, 0, 0;
   --art-opacity: 1;
   --art-covered: #5abf9480;
   --art-silent: #e8995e52;
-  --art-unasked: #39435480;
+  --art-unasked: #3c3c4580;
   --fv-edge: 38%;
-  --seg-on: #333e51;
-  --mark: #c9d2de;
+  --seg-on: #34343c;
+  --mark: #d0d0d6;
   --dot-opacity: 0.8;
   --ci: rgba(255, 255, 255, 0.2);
-  --term: #0a0f18;
-  --term-2: #131c2b;
-  --fx-faint: #74839b;
+  --term: #0c0c0e;
+  --term-2: #161618;
+  --fx-faint: #80808c;
   --fx-violet: #a593f2;
   --fx-cyan: #4cc3d6;
   --fx-magenta: #e07fc2;
@@ -569,11 +571,10 @@ header.mast:has(.mast-art-w) { padding-top: 0; }
 .t-steps li.sel { background: var(--t-lit); box-shadow: inset 3px 0 var(--t-edge); }
 /* the report: every answer marked where it is given, the picked one strongest; one left unsaid is said to be nowhere */
 .hkq-panes .hkp-rep { position: relative; height: 440px; }
+/* the report's own words, lit where they answer the picked question, and nothing written over them (user, 9 Nov:
+   "higlight for answered u overlay ... on top of reprt text bad"): the card above says what became of it */
 .demo-doc p.hkq-hit { box-shadow: 0 0 0 4px transparent; }
 .demo-doc p.hkq-hit.v-covered { background: #ecf8f1; } .demo-doc p.hkq-hit.v-unsupported { background: #fdf0f1; }
-.demo-doc p.hkq-hit::before { content: attr(data-mark); display: block; margin-bottom: 2px; font: 700 0.62rem/1.3 var(--sans);
-  letter-spacing: 0.05em; text-transform: uppercase; }
-.demo-doc p.hkq-hit.v-covered::before { color: #1d7a4c; } .demo-doc p.hkq-hit.v-unsupported::before { color: #b3263a; }
 .demo-doc p.hkq-hit.sel.v-covered { background: #d2efdf; box-shadow: 0 0 0 4px #d2efdf; }
 .demo-doc p.hkq-hit.sel.v-unsupported { background: #fadadf; box-shadow: 0 0 0 4px #fadadf; }
 /* a question the report leaves unanswered, or answers in words no single block holds, says so above the report, which
@@ -1780,6 +1781,10 @@ footer { margin-top: 96px; border-top: 1px solid var(--rule); padding-top: 24px;
    one window shows each version in turn, scrolling slowly down it, under tabs that carry what each answered; a tab
    or the window picks one and stops the loop, and a reader who asks for less motion gets the tabs alone */
 .show { display: grid; gap: 14px; margin-block: 26px 30px; }
+/* the post reads tighter (user, 9 Nov: "emtpy pace after and before eah fig is too uch in blog"): less air between one
+   part and the next */
+.pg-post .finding.card { margin-top: 40px; padding-top: 30px; gap: 14px; }
+.pg-post section.part { padding-top: 60px; }
 .show-tabs { display: grid; grid-template-columns: repeat(var(--n, 4), minmax(0, 1fr)); gap: 10px; }
 .show-tab { position: relative; display: grid; gap: 3px; align-content: start; text-align: left; padding: 11px 13px 13px;
   border: 1px solid var(--edge); border-radius: 12px; background: var(--white); color: var(--ink-3);
@@ -1795,7 +1800,9 @@ footer { margin-top: 96px; border-top: 1px solid var(--rule); padding-top: 24px;
   box-shadow: 0 0 0 1px var(--edge), 0 26px 50px -32px rgba(var(--shadow), 0.55); }
 .show-bar { display: flex; align-items: center; gap: 6px; padding: 9px 14px; background: var(--mist); border-bottom: 1px solid var(--edge);
   font: 500 0.76rem var(--sans); color: var(--ink-3); }
-.show-bar i { width: 10px; height: 10px; border-radius: 50%; background: var(--edge); }
+/* each window's three lights in a Mac's own colours (user, 9 Nov) */
+.show-bar i { flex: none; width: 10px; height: 10px; border-radius: 50%; background: #ff5f57; box-shadow: inset 0 0 0 0.5px rgba(0, 0, 0, 0.25); }
+.show-bar i:nth-of-type(2) { background: #febc2e; } .show-bar i:nth-of-type(3) { background: #28c840; }
 .show-bar span { margin-left: 8px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .show-view { position: relative; display: block; width: 100%; aspect-ratio: 16 / 9; padding: 0; border: 0; overflow: hidden;
   background: var(--paper); cursor: zoom-in; }
@@ -1816,9 +1823,12 @@ footer { margin-top: 96px; border-top: 1px solid var(--rule); padding-top: 24px;
 .sg-ctl:hover { border-color: var(--blue); color: var(--ink); }
 .sg-ctl:focus-visible { outline: 2px solid var(--blue); outline-offset: 2px; }
 .sg-ctl svg { width: 10px; height: 10px; fill: currentColor; }
+.sg-ctl.sg-max { margin-left: 2px; }
+.sg-max svg { width: 12px; height: 12px; fill: none; stroke: currentColor; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
 .sg-ctl .ic-play, .sg-ctl[aria-pressed="true"] .ic-pause { display: none; }
+.sg-max .ic-play { display: none; }
 .sg-ctl[aria-pressed="true"] .ic-play { display: block; }
-.show-side:not(.live) .sg-ctl { visibility: hidden; }
+.show-side:not(.live) .sg-ctl:not(.sg-max) { visibility: hidden; }
 .sg-cell { display: grid; gap: 8px; align-content: start; min-width: 0; }
 .sg-head { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 1px 12px; align-items: baseline;
   font: 0.78rem/1.4 var(--sans); color: var(--ink-3); }
@@ -1878,8 +1888,9 @@ footer { margin-top: 96px; border-top: 1px solid var(--rule); padding-top: 24px;
 body { counter-reset: fig; }
 :is(.pg-post, .pg-report) :is(.chart, .htable, .hplot, .hscore, .htiles, .hstrip, .durations, .tradeoff, .evmix, .wrun) {
   background: none; padding: 0; border-radius: 0; }
+/* a figure sits close to the words it belongs to (user, 9 Nov: "emtpy pace after and before eah fig is too uch") */
 :is(.pg-post, .pg-report) :is(.chart, .htable, .hplot, .hscore, .htiles, .hstrip, .durations, .tradeoff, .evmix, .wrun, .show, .checks, .flow, .sessions, .writers) {
-  margin-block: 34px 40px; }
+  margin-block: 18px 22px; }
 :is(.pg-post, .pg-report) figcaption.cap { order: 99; margin: 4px 0 0; padding-top: 14px; border-top: 1px solid var(--rule);
   font: 400 0.88rem/1.6 var(--sans); color: var(--ink-2); text-wrap: pretty; }
 figcaption.cap::before { counter-increment: fig; content: "Figure " counter(fig) ". "; font-weight: 650; color: var(--navy); }
@@ -1953,7 +1964,6 @@ figcaption.cap .cap-note { color: var(--ink-3); }
 .hook .demo-doc::after { content: ""; display: block; height: 55%; }
 /* only the picked question's answer is marked in the report */
 .hook .demo-doc p.hkq-hit:not(.sel) { background: none; box-shadow: none; }
-.hook .demo-doc p.hkq-hit:not(.sel)::before { content: none; }
 /* one left unsaid says so in a strip above the report, with what the run shows */
 .hook .hkq-nh { margin: 0; font: 600 0.9rem/1.4 var(--sans); color: #9a420d; text-wrap: balance; }
 .hook .hkq-nh::before { content: ""; display: inline-block; width: 10px; height: 10px; margin-right: 9px; border-radius: 2px; background: #e07a2c; }
@@ -2433,10 +2443,23 @@ html:has(.hkp-dlg[open]) { overflow: hidden; }
   // or a folder showing its pictures one after another (a folder's each scrolled too). Each window's own button
   // pauses it where it is and plays it on from there; selecting a window opens its picture at full size and pauses it
   document.querySelectorAll("figure.show-side").forEach(fig => {
+    // any window opens its picture at full size, from its icon or a click on it, with motion or without
+    fig.querySelectorAll(".sg-cell").forEach(cell => {
+      const open = e => {
+        e.stopPropagation();
+        if (!(big && big.showModal)) return;
+        const img = cell.querySelector(".show-view img.on") || cell.querySelector(".show-view img");
+        big.querySelector("img").src = img.src; big.querySelector("img").alt = img.alt;
+        cell.dispatchEvent(new Event("sg-open")); big.showModal();
+      };
+      cell.querySelector(".show-view").addEventListener("click", open);
+      cell.querySelector(".sg-max")?.addEventListener("click", open);
+    });
     if (still.matches) return;
     const TURN = 12000;
-    const cells = [...fig.querySelectorAll(".sg-cell")].map(c => ({ view: c.querySelector(".show-view"),
-      label: c.querySelector(".show-bar span"), btn: c.querySelector(".sg-ctl"), name: c.querySelector(".sg-head b").textContent,
+    const cells = [...fig.querySelectorAll(".sg-cell")].map(c => ({ el: c, view: c.querySelector(".show-view"),
+      label: c.querySelector(".show-bar span"), btn: c.querySelector(".sg-ctl:not(.sg-max)"),
+      name: c.querySelector(".sg-head b").textContent,
       imgs: [...c.querySelectorAll(".show-view img")], k: 0, pan: null, timer: 0, left: 0, since: 0, on: false, held: false, begun: false }));
     const each = c => TURN / c.imgs.length;
     const show = (c, k) => {
@@ -2463,11 +2486,8 @@ html:has(.hkp-dlg[open]) { overflow: hidden; }
     let seen = false;
     cells.forEach(c => {
       c.btn.addEventListener("click", e => { e.stopPropagation(); hold(c, !c.held); });
-      c.view.addEventListener("click", () => {
-        if (!(big && big.showModal)) return;
-        const img = c.imgs[c.k]; big.querySelector("img").src = img.src; big.querySelector("img").alt = img.alt;
-        hold(c, true); big.showModal();
-      });
+      // a window opened at full size stops where it is
+      c.el.addEventListener("sg-open", () => hold(c, true));
     });
     fig.classList.add("live");
     whileSeen(fig, () => { seen = true; cells.forEach(play); }, () => { seen = false; cells.forEach(pause); });
