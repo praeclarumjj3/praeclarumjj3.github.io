@@ -426,21 +426,14 @@ header.mast:has(.mast-art-w) { padding-top: 0; }
 .hkp-ex.on { visibility: visible; }
 .hkp-ex .hk-b::before { content: none; }
 .hkp-ex .hk-task::before { content: "·"; }
-/* the picked question, in the evaluator's words: its tier and when in the run it asks about, the number the head gives
-   it, and what became of it; while the hook moves on by itself, a line under it fills */
-.hkq-qs { position: relative; display: grid; padding-bottom: 10px; }
-.hkq-tick { position: absolute; left: 0; bottom: 0; height: 2px; width: 100%; background: var(--blue); transform-origin: 0 50%; transform: scaleX(0); }
-.hkp-ex:not(.auto) .hkq-tick { opacity: 0; }
+/* the picked question, in the evaluator's words: its tier, when in the run it asks about and what became of it; only
+   the picked one shows, and the page keeps the reader's dot where it was as its height changes */
+.hkq-qs { display: grid; }
 .hkq-qm { flex: 1 0 100%; margin: 0; display: flex; align-items: center; gap: 8px; font: 500 0.8rem/1.3 var(--sans); color: var(--ink-3);
   font-variant-numeric: tabular-nums; }
-.hkq-qm b { display: inline-grid; place-items: center; width: 20px; height: 20px; border-radius: 50%; color: var(--on-solid); font-size: 0.7rem; }
 .hkq-qm .hkp-vw { margin-left: auto; }
-.hkq-qm b.v-covered { background: var(--covered); } .hkq-qm b.v-missed { background: var(--silent); } .hkq-qm b.v-unsupported { background: var(--wrong); }
-.hkq-q { grid-area: 1 / 1; display: flex; flex-wrap: wrap; align-items: center; align-content: flex-start; gap: 8px 16px; visibility: hidden; opacity: 0; transition: opacity 0.2s; }
-.hkq-q.on { visibility: inherit; opacity: 1; }
-/* the numbered questions share one cell, so playing them never moves the page; any other takes its own height while
-   picked, and the page keeps the reader's dot where it was */
-.hkq-more:not(.on) { display: none; }
+.hkq-q { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 16px; }
+.hkq-q:not(.on) { display: none; }
 .hkp .hkq-q .hk-t { flex: 1 1 100%; margin: 0; font-size: 1.1rem; line-height: 1.4; max-width: none; }
 .hkp-v { margin: 0; display: flex; flex-wrap: wrap; align-items: center; gap: 10px; font-size: 0.86rem; }
 .hkp-vw { display: inline-flex; align-items: center; gap: 8px; padding: 5px 10px; border-radius: 8px; font-weight: 600; font-size: 0.9rem;
@@ -495,13 +488,23 @@ header.mast:has(.mast-art-w) { padding-top: 0; }
 .term-pi-coding-agent .t-blk { background: rgb(40, 50, 40); padding-inline: 6px; }
 .term-pi-coding-agent .t-o.t-blk { padding-left: 6px; color: #9a9a9a; }
 .term-pi-coding-agent .t-path { color: #8abeb7; }
-/* every run sits in a terminal window: its three lights, its title, and how long the run took */
-.hkp-run > .pane-h.t-win { position: relative; justify-content: center; padding: 8px 64px; }
-.t-win b { font: 500 0.76rem/1.3 var(--sans); color: var(--t-dim); letter-spacing: 0; text-transform: none;
-  white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-.t-lights { position: absolute; left: 13px; top: 50%; width: 10px; height: 10px; margin-top: -5px; border-radius: 50%;
-  background: #ec6a5e; box-shadow: 16px 0 #f4bf4f, 32px 0 #61c554; }
-.t-win .demo-clock { position: absolute; right: 14px; }
+/* every run in a Mac's Terminal window (user, 9 Nov: "design screen as macbook terminal with the three dots on top of
+   left hand corner"): its title bar with the three lights at the left, the folder the window shows where the run
+   records one, and its title, "folder — command — columns×rows", centred */
+.t-win { position: relative; display: flex; align-items: center; justify-content: center; height: 28px; padding: 0 76px;
+  background: #2c2c2e; border-bottom: 1px solid #111113; }
+.t-lights { position: absolute; left: 12px; top: 50%; display: flex; gap: 8px; margin-top: -6px; }
+.t-lights i { width: 12px; height: 12px; border-radius: 50%; background: #ff5f57; box-shadow: inset 0 0 0 0.5px rgba(0, 0, 0, 0.3); }
+.t-lights i:nth-child(2) { background: #febc2e; } .t-lights i:nth-child(3) { background: #28c840; }
+.t-win b { display: inline-flex; align-items: center; gap: 6px; min-width: 0;
+  font: 600 0.78rem/1 -apple-system, BlinkMacSystemFont, "SF Pro Text", var(--sans); color: #c9c9cd; }
+.t-title { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.t-dir { flex: none; width: 15px; height: 12px; fill: #7db3ea; }
+.t-paper { background: #ececec; border-bottom-color: #d3d3d3; }
+.t-paper b { color: #4b4b4f; }
+.t-paper .t-dir { width: 11px; height: 14px; fill: #b4b4b8; }
+.hkq-panes .hkp-rep { grid-template-rows: auto auto minmax(0, 1fr); grid-template-columns: minmax(0, 1fr); }
+.hkq-panes .hkp-rep > * { min-width: 0; }
 /* codex as its own terminal draws a session (0.159.0, the release's codex, replaying this run): no clock by each
    line and a blank line between cells, its box at the top, the user's message across the window on a light tint;
    under the transcript how long it has worked, its composer on a fainter tint, and the model and folder */
@@ -516,7 +519,6 @@ header.mast:has(.mast-art-w) { padding-top: 0; }
 .term-codex .t-o { padding-left: 2ch; }
 .term-codex .t-tree { display: inline-block; width: 2ch; margin: 0; color: var(--t-dim); }
 .term-codex .t-more { opacity: 1; padding-left: 4ch; }
-.term-codex .hkq-mks { float: right; margin: 0.15em 0 0 10px; }
 .t-card { display: inline-block; max-width: 100%; padding: 0.2em 1ch; border: 1px solid #5d606a; border-radius: 7px; }
 .t-steps .t-card p { overflow: hidden; text-overflow: ellipsis; }
 .t-card .t-gap { height: 1.55em; }
@@ -531,18 +533,8 @@ header.mast:has(.mast-art-w) { padding-top: 0; }
 .term-codex .t-ps b { color: var(--t-strong); }
 .term-codex .t-foot .t-st { padding: 0.55em 14px 0 calc(14px + 2ch); }
 .t-model { color: #f6e2b7; } .t-cwd { color: #abdfa7; }
-/* while the hook plays, codex's working line shimmers as codex's does */
-.hkp-ex.auto .t-shim { background: linear-gradient(90deg, var(--t-dim) 0 35%, var(--t-strong) 50%, var(--t-dim) 65% 100%) 0 0 / 300% 100%;
-  -webkit-background-clip: text; background-clip: text; color: transparent; animation: t-shim 2s linear infinite; }
-@keyframes t-shim { from { background-position: 100% 0; } to { background-position: 0 0; } }
-@media (prefers-reduced-motion: reduce) { .hkp-ex.auto .t-shim { animation: none; background: none; color: var(--t-ink); } }
 /* a question's number on each step it asks about, and the step lit while its question is picked */
-.hkq-mks { display: inline-flex; gap: 3px; margin-right: 7px; vertical-align: 1px; }
-.hkq-mks b { display: inline-grid; place-items: center; min-width: 16px; height: 16px; padding: 0 3px; border-radius: 8px; color: #fff;
-  font: 700 0.62rem/1 var(--sans); }
-.hkq-mks b.v-covered { background: #2e9e6a; } .hkq-mks b.v-missed { background: #e07a2c; } .hkq-mks b.v-unsupported { background: #d4485a; }
-.t-steps li.t-q { background: rgba(255, 255, 255, 0.03); }
-.t-steps li.t-q p, .t-steps li.sel p { white-space: normal; }
+.t-steps li.sel p { white-space: normal; }
 .t-steps li.sel { background: var(--t-lit); box-shadow: inset 3px 0 var(--t-edge); }
 /* the report: every answer marked where it is given, the picked one strongest; one left unsaid is said to be nowhere */
 .hkq-panes .hkp-rep { position: relative; height: 440px; }
@@ -553,17 +545,15 @@ header.mast:has(.mast-art-w) { padding-top: 0; }
 .demo-doc p.hkq-hit.v-covered::before { color: #1d7a4c; } .demo-doc p.hkq-hit.v-unsupported::before { color: #b3263a; }
 .demo-doc p.hkq-hit.sel.v-covered { background: #d2efdf; box-shadow: 0 0 0 4px #d2efdf; }
 .demo-doc p.hkq-hit.sel.v-unsupported { background: #fadadf; box-shadow: 0 0 0 4px #fadadf; }
-.hkq-none { position: absolute; left: 14px; right: 14px; top: 46px; z-index: 1; margin: 0; padding: 10px 14px; border-radius: 10px;
-  background: #fdebdc; color: #9a420d; font: 600 0.9rem/1.35 var(--sans); box-shadow: 0 0 0 1px #f3c9a6, 0 8px 20px -10px rgba(154, 66, 13, 0.4);
-  visibility: hidden; opacity: 0; transform: translateY(-4px); transition: opacity 0.2s, transform 0.2s, visibility 0s linear 0.2s; }
-.hkq-none b { margin-right: 6px; }
-.hkq-none.on { visibility: inherit; opacity: 1; transform: none; transition: opacity 0.2s, transform 0.2s; }
-.hkp-rep.nowhere .demo-doc { opacity: 0.55; }
-.hkp-rep .demo-doc { transition: opacity 0.2s; }
-/* a mark lights briefly as its question is picked */
-.t-steps li.flash, .demo-doc p.flash { animation: hkq-flash 0.7s ease-out; }
-@keyframes hkq-flash { 0% { filter: brightness(1.25); } 100% { filter: none; } }
-/* every question about the run as a dot, a row for each tier, answered first; the ones asked above carry their number */
+/* a question the report leaves unanswered, or answers in words no single block holds, says so above the report, which
+   stays where the reader can scroll it */
+.hkq-none { margin: 0; padding: 10px 16px 12px; border-bottom: 1px solid #f1d9c4; background: #fff7f0; color: var(--paper-ink);
+  font: 400 0.84rem/1.5 var(--sans); }
+.hkq-none:not(.on) { display: none; }
+.hkq-none.on { display: grid; gap: 6px; }
+.hkq-none.v-covered { border-bottom-color: #cfe9da; background: #eef8f2; }
+.hkq-none.v-unsupported { border-bottom-color: #f3cfd5; background: #fdf0f1; }
+/* every question about the run as a dot, a row for each tier, answered first */
 .hkq-all { display: grid; gap: 8px; }
 .hkq-all .hk-tk { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 6px 16px; margin: 0; }
 .hkq-legend { display: inline-flex; flex-wrap: wrap; gap: 4px 14px; font: 500 0.78rem/1.3 var(--sans); color: var(--ink-3); }
@@ -580,9 +570,6 @@ header.mast:has(.mast-art-w) { padding-top: 0; }
 .hkq-d.sel { box-shadow: 0 0 0 2px var(--white), 0 0 0 4px var(--blue); transform: none; }
 .hkq-row { display: grid; grid-template-columns: 5.2rem minmax(0, 1fr) 8.6rem; align-items: center; gap: 14px; font-size: 0.86rem; color: var(--ink-2); }
 .hkq-ds { display: flex; flex-wrap: wrap; gap: 4px; }
-.hkq-ds .hkq-asked { width: 18px; height: 18px; color: var(--on-solid); font: 700 0.6rem/1 var(--sans);
-  box-shadow: 0 0 0 2px var(--white), 0 0 0 3px var(--ink-3); }
-.hkq-ds .hkq-asked.sel { box-shadow: 0 0 0 2px var(--white), 0 0 0 4px var(--blue); }
 .hkp-ex .hk-stats { margin-top: 0; }
 .hkp-ex .hk-stats b { font-size: 1.35rem; }
 @media (max-width: 1000px) { .hkq-panes { grid-template-columns: minmax(0, 1fr); } .hkp-run, .hkq-panes .hkp-rep { height: 360px; } }
@@ -593,8 +580,7 @@ header.mast:has(.mast-art-w) { padding-top: 0; }
   .hkq-row { grid-template-columns: minmax(0, 1fr) auto; } .hkq-row .hkq-ds { grid-column: 1 / -1; grid-row: 2; }
   .hkp-tabs button span { font-size: 0.76rem; }
 }
-@media (prefers-reduced-motion: reduce) { .hkq-q, .hkq-none, .hkq-d, .t-steps li, .hkp-rep .demo-doc { transition: none !important; }
-  .t-steps li.flash, .demo-doc p.flash { animation: none; } }
+@media (prefers-reduced-motion: reduce) { .hkq-d, .t-steps li { transition: none !important; } }
 /* the post's key findings: one line each, the finding in bold and its headline number bold inside the words */
 .keyfind { margin: 8px 0 30px; }
 .kf { list-style: none; margin: 0; padding: 0; display: grid; gap: 2px; }
@@ -1919,30 +1905,34 @@ figcaption.cap .cap-note { color: var(--ink-3); }
 .hook .hkp-vw { font-size: 0.82rem; padding: 4px 9px; }
 .hook .hkq-panes { gap: 12px; }
 .hook .hkp-run, .hook .hkq-panes .hkp-rep { height: 380px; border-radius: 12px; }
+.hook .hkp-run { border-radius: 10px; box-shadow: 0 0 0 0.5px rgba(0, 0, 0, 0.6), 0 22px 44px -26px rgba(0, 0, 0, 0.6); }
+.hook .hkq-panes .hkp-rep { border-radius: 10px; box-shadow: 0 0 0 0.5px rgba(0, 0, 0, 0.28), 0 22px 44px -26px rgba(0, 0, 0, 0.45); }
+/* the box's corner opens the runs over the window */
+.hkp-exs { position: relative; }
+.hkp-max { position: absolute; top: 14px; right: 14px; z-index: 2; display: grid; place-items: center; width: 30px; height: 30px;
+  margin: 0; padding: 0; border: 1px solid var(--rule); border-radius: 8px; background: var(--white); color: var(--ink-2); cursor: pointer; }
+.hkp-max:hover { color: var(--ink); border-color: var(--edge); }
+.hkp-max:focus-visible { outline: 2px solid var(--blue); outline-offset: 2px; }
+.hook .hk-m { padding-right: 40px; }
 .hook .t-steps, .hook .demo-doc { -webkit-mask-image: linear-gradient(to bottom, #000 calc(100% - 36px), transparent);
   mask-image: linear-gradient(to bottom, #000 calc(100% - 36px), transparent); padding-bottom: 30px; }
 /* only the picked question's answer is marked in the report */
 .hook .demo-doc p.hkq-hit:not(.sel) { background: none; box-shadow: none; }
 .hook .demo-doc p.hkq-hit:not(.sel)::before { content: none; }
-/* one left unsaid: the report fades back and the card says so, with what the run shows */
-.hook .hkq-none { top: 38px; bottom: 0; left: 0; right: 0; display: grid; align-content: center; gap: 12px; padding: 22px 24px;
-  border-radius: 0; background: color-mix(in srgb, var(--paper) 86%, transparent); box-shadow: none; color: var(--paper-ink);
-  -webkit-backdrop-filter: blur(2px); backdrop-filter: blur(2px); font: 400 0.9rem/1.5 var(--sans); }
-.hook .hkq-nh { margin: 0; font: 600 1rem/1.4 var(--sans); color: #9a420d; text-wrap: balance; }
+/* one left unsaid says so in a strip above the report, with what the run shows */
+.hook .hkq-nh { margin: 0; font: 600 0.9rem/1.4 var(--sans); color: #9a420d; text-wrap: balance; }
 .hook .hkq-nh::before { content: ""; display: inline-block; width: 10px; height: 10px; margin-right: 9px; border-radius: 2px; background: #e07a2c; }
 .hook .hkq-nh b { font-weight: 700; margin-right: 4px; }
-.hook .hkq-gold { margin: 0; padding: 12px 14px 0; border-bottom: 12px solid #fff7f0; border-left: 3px solid #e07a2c; background: #fff7f0; border-radius: 0 8px 8px 0;
-  font-size: 0.84rem; line-height: 1.55; color: var(--paper-ink); display: -webkit-box; -webkit-box-orient: vertical;
-  -webkit-line-clamp: 7; overflow: hidden; max-height: none; flex: none; }
+.hook .hkq-gold { margin: 0; padding-left: 12px; border-left: 3px solid #e07a2c; font-size: 0.8rem; line-height: 1.5;
+  color: var(--paper-ink); display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 4; overflow: hidden; }
 .hook .hkq-gold span { display: block; margin-bottom: 4px; font: 700 0.64rem/1.3 var(--sans); letter-spacing: 0.08em; text-transform: uppercase; color: #9a420d; }
-.hook .hkp-rep.nowhere .demo-doc { opacity: 0.4; }
 /* one the report answers in words no single block holds: what a reader found in it, in the verdict's colour */
 .hook .hkq-none.v-covered .hkq-nh, .hook .hkq-none.v-covered .hkq-gold span { color: #1d7a4c; }
 .hook .hkq-none.v-covered .hkq-nh::before { background: #2e9e6a; }
-.hook .hkq-none.v-covered .hkq-gold { border-left-color: #2e9e6a; border-bottom-color: #eef8f2; background: #eef8f2; }
+.hook .hkq-none.v-covered .hkq-gold { border-left-color: #2e9e6a; }
 .hook .hkq-none.v-unsupported .hkq-nh, .hook .hkq-none.v-unsupported .hkq-gold span { color: #b3263a; }
 .hook .hkq-none.v-unsupported .hkq-nh::before { background: #d4485a; }
-.hook .hkq-none.v-unsupported .hkq-gold { border-left-color: #d4485a; border-bottom-color: #fdf0f1; background: #fdf0f1; }
+.hook .hkq-none.v-unsupported .hkq-gold { border-left-color: #d4485a; }
 /* every question about the run as a dot, its count beside each colour */
 .hook .hkq-all { gap: 8px; padding-top: 14px; border-top: 1px solid var(--rule); }
 .hook .hkq-all .hk-tk { font: 500 0.84rem/1.3 var(--sans); color: var(--ink-2); }
@@ -1953,7 +1943,6 @@ figcaption.cap .cap-note { color: var(--ink-3); }
 .hook .hkq-row { grid-template-columns: 4.6rem minmax(0, 1fr) 7.4rem; font-size: 0.82rem; gap: 12px; }
 .hook .hkq-ds { gap: 3px; }
 .hook .hkq-ds > * { width: 11px; height: 11px; }
-.hook .hkq-ds .hkq-asked { width: 17px; height: 17px; }
 .hook .hkq-legend { display: flex; flex-wrap: wrap; gap: 4px 16px; margin: 2px 0 0; font-size: 0.8rem; color: var(--ink-2); }
 .hook .hkq-lg { color: var(--ink-2); }
 .hook .hkq-lg b { font-weight: 650; color: var(--ink); font-variant-numeric: tabular-nums; }
@@ -1974,8 +1963,7 @@ figcaption.cap .cap-note { color: var(--ink-3); }
 /* the run's buttons: pause, and the view expanded (user, 9 Nov: "make the expanded view open as a full-screen
    overlay"): the runs move into a dialog over the whole window, the run and its report filling what the question
    leaves, every line whole; the button, Escape or a click outside the card brings them back */
-.hkp-ctls { display: flex; flex-wrap: wrap; gap: 8px; }
-.hkp-max svg { width: 14px; height: 14px; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+.hkp-max svg { width: 15px; height: 15px; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
 .hkp-max .i-in, .hook.max .hkp-max .i-out { display: none; }
 .hook.max .hkp-max .i-in { display: inline; }
 .hkp-dlg { position: fixed; inset: 0; width: 100%; height: 100%; max-width: none; max-height: none; margin: 0; border: 0; overflow: auto;
@@ -2445,33 +2433,32 @@ html:has(.hkp-dlg[open]) { overflow: hidden; }
   });
 
   // the hook's runs: picking any question's dot brings the run to the step it asks about and the report to its
-  // answer, each in a quick glide, its marks lit a moment; one left unsaid says so over the report. While the hook is
-  // in view, and until the reader picks a dot or reaches into a pane, it moves through the head's numbered questions
-  // on its own, a line under the question filling as it waits, and on to the next tab after the last. The button stops
-  // and starts it. Under reduced motion nothing moves by itself, and each run rests on its unanswered question. A
-  // second button opens the runs and their reports over the whole window, every line whole
+  // answer, each in a quick glide; one left unsaid says so above the report. Nothing moves by itself and nothing is
+  // lit but the picked question (user, 9 Nov: "why still aniation and 3 things highlighted always"): each run rests
+  // on its first Decisive question its report left unanswered. The button in the box's corner opens the runs and
+  // their reports over the whole window
   document.querySelectorAll(".hkp").forEach(box => {
     const exs = [...box.querySelectorAll(".hkp-ex")], tabs = [...box.querySelectorAll(".hkp-tabs [role=tab]")];
-    const ctl = box.querySelector(".demo-ctl:not(.hkp-max)"), max = box.querySelector(".hkp-max"), CYCLE = +box.dataset.tagMs || 4500;
-    let cur = 0, seen = false, paused = false, elapsed = 0, last = performance.now();
+    const max = box.querySelector(".hkp-max");
+    let cur = 0, ready = false;
     const R = exs.map(ex => {
       const q = s => ex.querySelector(s), qa = s => [...ex.querySelectorAll(s)];
-      return { ex, tick: q(".hkq-tick"), n: +ex.dataset.n || 1, cards: qa(".hkq-q"), run: q(".hkp-run .t-steps"),
-               steps: qa(".hkp-run .t-steps li"), rep: q(".hkp-rep"), doc: q(".demo-doc"), hits: qa(".demo-doc p.hkq-hit"),
-               nones: qa(".hkq-none"), dots: qa(".hkq-ds .hkq-d"), clock: q(".t-clock"), k: +ex.dataset.rest, glides: new Map() };
+      return { ex, cards: qa(".hkq-q"), run: q(".hkp-run .t-steps"), steps: qa(".hkp-run .t-steps li"), doc: q(".demo-doc"),
+               hits: qa(".demo-doc p.hkq-hit"), nones: qa(".hkq-none"), dots: qa(".hkq-ds .hkq-d"), clock: q(".t-clock"),
+               k: +ex.dataset.rest, glides: new Map() };
     });
     // how long codex had worked by a step, as its working line says it: 45s, 9m 05s, 1h 02m 03s
     const took = t => { const h = Math.floor(t / 3600), m = Math.floor(t / 60) % 60, sec = String(t % 60).padStart(2, "0");
       return h ? `${h}h ${String(m).padStart(2, "0")}m ${sec}s` : m ? `${m}m ${sec}s` : `${t % 60}s`; };
     const has = (el, k) => (el.dataset.q || "").split(" ").includes(String(k));
     const ease = t => t < 0.5 ? 4 * t * t * t : 1 - (-2 * t + 2) ** 3 / 2;
-    // a pane brought so a line sits near its top, in a short glide, or at once
+    // a pane brought so a line sits near its top: at once as the page opens, in a short glide once the reader picks
     const bring = (r, pane, el, at) => {
       const to = Math.max(0, Math.min(pane.scrollHeight - pane.clientHeight,
         pane.scrollTop + el.getBoundingClientRect().top - pane.getBoundingClientRect().top - pane.clientHeight * at));
       cancelAnimationFrame(r.glides.get(pane));
-      if (still.matches || !seen) { pane.scrollTop = to; return; }
-      const from = pane.scrollTop, t0 = performance.now(), ms = 420;
+      if (still.matches || !ready) { pane.scrollTop = to; return; }
+      const from = pane.scrollTop, t0 = performance.now(), ms = 380;
       const tick = now => {
         const k = Math.min(1, (now - t0) / ms);
         pane.scrollTop = from + (to - from) * ease(k);
@@ -2487,12 +2474,10 @@ html:has(.hkp-dlg[open]) { overflow: hidden; }
       const dy = el.getBoundingClientRect().top - y, open = box.closest("dialog[open]");
       if (dy) (open || document.scrollingElement).scrollBy(0, dy);
     };
-    const flash = els => els.forEach(el => { el.classList.remove("flash"); void el.offsetWidth; el.classList.add("flash"); });
     // one question picked: its dot, its words, its steps and its answer lit, both panes brought to them; a block that
     // answers several questions takes the picked one's mark and colour
     const pick = (r, k) => {
-      r.k = k; elapsed = 0;
-      if (r.tick) r.tick.style.transform = "scaleX(0)";
+      r.k = k;
       const card = r.cards.find(c => +c.dataset.q === k);
       r.cards.forEach(c => c.classList.toggle("on", c === card));
       const lit = r.steps.filter(s => has(s, k)), hit = r.hits.filter(h => has(h, k));
@@ -2502,44 +2487,35 @@ html:has(.hkp-dlg[open]) { overflow: hidden; }
       r.dots.forEach(d => { const on = +d.dataset.q === k; d.classList.toggle("sel", on); d.setAttribute("aria-pressed", String(on)); d.tabIndex = on ? 0 : -1; });
       r.nones.forEach(n => n.classList.toggle("on", +n.dataset.q === k));
       if (r.clock && lit[0]) r.clock.textContent = took(+lit[0].dataset.s || 0);
-      r.rep.classList.toggle("nowhere", !hit.length);
       if (lit[0]) bring(r, r.run, lit[0], 0.18);
       if (hit[0]) bring(r, r.doc, hit[0], 0.22);
-      if (seen && !still.matches) flash([...lit, ...hit]);
     };
     const show = i => {
       cur = i;
       exs.forEach((e, j) => { e.classList.toggle("on", j === i); e.setAttribute("aria-hidden", String(j !== i)); });
       tabs.forEach((t, j) => t.setAttribute("aria-selected", String(j === i)));
     };
-    // the reader takes over: nothing moves on by itself until the button says so
-    const hold = () => {
-      if (paused) return;
-      paused = true; ctl.textContent = "Play"; ctl.setAttribute("aria-pressed", "true");
-      exs.forEach(e => e.classList.remove("auto"));
-    };
-    R.forEach((r, i) => {
+    R.forEach(r => {
       pick(r, r.k);
       // the dots are one stop for the keyboard: the arrows walk them, and Home and End reach the ends
       r.dots.forEach((d, j) => {
-        d.addEventListener("click", () => steady(d, () => { hold(); pick(r, +d.dataset.q); }));
+        d.addEventListener("click", () => steady(d, () => pick(r, +d.dataset.q)));
         d.addEventListener("keydown", e => {
           const to = { ArrowRight: j + 1, ArrowDown: j + 1, ArrowLeft: j - 1, ArrowUp: j - 1, Home: 0, End: r.dots.length - 1 }[e.key];
           if (to === undefined) return;
           e.preventDefault();
           const next = r.dots[(to + r.dots.length) % r.dots.length];
-          steady(next, () => { hold(); pick(r, +next.dataset.q); }); next.focus({ preventScroll: true });
+          steady(next, () => pick(r, +next.dataset.q)); next.focus({ preventScroll: true });
         });
       });
-      [r.run, r.doc].forEach(pane => ["wheel", "touchstart", "pointerdown", "keydown"].forEach(e =>
-        pane.addEventListener(e, hold, { passive: true })));
     });
-    tabs.forEach((t, i) => t.addEventListener("click", () => { show(i); pick(R[i], still.matches ? R[i].k : 0); }));
-    // the view expanded into the figure's dialog over the whole window, or back: the reader is reading, so nothing
-    // moves on, and the panes come back to the question. A placeholder keeps the page's height while the runs are out
+    ready = true;
+    tabs.forEach((t, i) => t.addEventListener("click", () => { show(i); requestAnimationFrame(() => pick(R[i], R[i].k)); }));
+    // the view expanded into the figure's dialog over the whole window, or back, the panes back at the question. A
+    // placeholder keeps the page's height while the runs are out
     const fig = box.closest("figure"), dlg = fig.querySelector(".hkp-dlg"), spot = document.createElement("div");
     const label = on => {
-      max.setAttribute("aria-pressed", String(on)); max.querySelector("span").textContent = on ? "Collapse" : "Expand";
+      max.setAttribute("aria-pressed", String(on));
       max.setAttribute("aria-label", on ? "Collapse the run and its report" : "Expand the run and its report");
     };
     if (max && dlg && dlg.showModal) {
@@ -2547,7 +2523,7 @@ html:has(.hkp-dlg[open]) { overflow: hidden; }
         if (dlg.open) { dlg.close(); return; }
         spot.style.height = box.offsetHeight + "px"; box.before(spot); dlg.append(box);
         fig.classList.add("max"); label(true); dlg.showModal(); max.focus();
-        hold(); requestAnimationFrame(() => pick(R[cur], R[cur].k));
+        requestAnimationFrame(() => pick(R[cur], R[cur].k));
       });
       dlg.addEventListener("click", e => { if (e.target === dlg) dlg.close(); });
       dlg.addEventListener("close", () => {
@@ -2555,30 +2531,20 @@ html:has(.hkp-dlg[open]) { overflow: hidden; }
         requestAnimationFrame(() => pick(R[cur], R[cur].k));
       });
     } else if (max) max.hidden = true;
-    if (still.matches) return;
-    let started = false;
-    const frame = now => {
-      if (seen && !paused) {
-        elapsed += now - last;
-        const r = R[cur];
-        if (r.tick) r.tick.style.transform = `scaleX(${Math.min(1, elapsed / CYCLE)})`;
-        if (elapsed >= CYCLE) {
-          if (r.k < r.n - 1) pick(r, r.k + 1);
-          else { show((cur + 1) % exs.length); pick(R[cur], 0); }
-        }
-      }
-      last = now; requestAnimationFrame(frame);
-    };
-    requestAnimationFrame(frame);
-    ctl.addEventListener("click", () => {
-      paused = !paused; ctl.textContent = paused ? "Play" : "Pause"; ctl.setAttribute("aria-pressed", String(paused));
-      exs.forEach(e => e.classList.toggle("auto", !paused)); elapsed = 0;
+  });
+  // each run's window title ends on the window's size in characters, as a Mac's Terminal titles it, measured in the
+  // window's own font and kept as the window is resized
+  document.querySelectorAll(".hkp-run").forEach(run => {
+    const title = run.querySelector(".t-title"), body = run.querySelector(".t-steps");
+    if (!title || !body) return;
+    const base = title.textContent, probe = document.createElement("span");
+    probe.textContent = "0".repeat(20);
+    probe.style.cssText = `position:absolute;visibility:hidden;white-space:pre;font:${getComputedStyle(body).font}`;
+    run.append(probe);
+    sized(run, () => {
+      const cw = probe.getBoundingClientRect().width / 20, lh = parseFloat(getComputedStyle(body).lineHeight);
+      if (cw && lh && run.clientWidth) title.textContent = `${base} — ${Math.floor(run.clientWidth / cw)}×${Math.floor(body.clientHeight / lh)}`;
     });
-    whileSeen(box, () => {
-      seen = true; ctl.hidden = false;
-      if (!paused) exs.forEach(e => e.classList.add("auto"));
-      if (!started && !paused) { started = true; pick(R[cur], 0); }
-    }, () => { seen = false; });
   });
   const flow = $("flow");
   if (flow) edges(flow.querySelector(".flow-grid"), JSON.parse(flow.dataset.edges));
