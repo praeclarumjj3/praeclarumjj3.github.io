@@ -1922,14 +1922,28 @@ figcaption.cap .cap-note { color: var(--ink-3); }
 .term-codex { --t-user: rgba(255, 255, 255, 0.07); } .term-claude-code { --t-user: rgba(255, 255, 255, 0.09); }
 .term-letta-code { --t-user: rgba(255, 255, 255, 0.06); } .term-pi-coding-agent { --t-user: #343541; }
 .term-pi-coding-agent .t-u { padding-left: 8px; }
-/* the run's buttons: pause, and the view expanded to the window's width and most of its height, every line whole */
+/* the run's buttons: pause, and the view expanded (user, 9 Nov: "make the expanded view open as a full-screen
+   overlay"): the runs move into a dialog over the whole window, the run and its report filling what the question
+   leaves, every line whole; the button, Escape or a click outside the card brings them back */
 .hkp-ctls { display: flex; flex-wrap: wrap; gap: 8px; }
 .hkp-max svg { width: 14px; height: 14px; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
 .hkp-max .i-in, .hook.max .hkp-max .i-out { display: none; }
 .hook.max .hkp-max .i-in { display: inline; }
-:is(main, header):is(.pg-post, .pg-report) .hook.wide.max { position: relative; left: 50%; width: min(1240px, calc(100vw - 32px));
-  max-width: none; transform: translateX(-50%); }
-.hook.max .hkp-run, .hook.max .hkq-panes .hkp-rep { height: min(78vh, 860px); }
+.hkp-dlg { position: fixed; inset: 0; width: 100%; height: 100%; max-width: none; max-height: none; margin: 0; border: 0; overflow: auto;
+  padding: max(16px, env(safe-area-inset-top, 0px)) clamp(16px, 3vw, 36px) max(16px, env(safe-area-inset-bottom, 0px));
+  background: var(--page); color: var(--ink); }
+.hkp-dlg::backdrop { background: rgb(0 0 0 / 0.6); }
+html:has(.hkp-dlg[open]) { overflow: hidden; }
+.hkp-dlg > .hkp { max-width: 1680px; height: 100%; margin-inline: auto; grid-template-rows: auto minmax(0, 1fr); }
+.hkp-dlg .hkp-exs { min-height: 0; grid-template-rows: minmax(0, 1fr); }
+.hkp-dlg .hkp-ex { min-height: 0; grid-template-rows: auto auto auto minmax(300px, 1fr) auto; }
+.hkp-dlg .hkq-panes { min-height: 0; grid-auto-rows: minmax(0, 1fr); }
+.hkp-dlg .hkp-run, .hkp-dlg .hkq-panes .hkp-rep { height: auto; min-height: 0; }
+@media (max-width: 1000px) {
+  .hkp-dlg > .hkp { height: auto; }
+  .hkp-dlg .hkp-exs, .hkp-dlg .hkp-ex { grid-template-rows: none; }
+  .hkp-dlg .hkp-run, .hkp-dlg .hkq-panes .hkp-rep { height: 72dvh; }
+}
 .hook.max .hkp-run { font-size: 0.78rem; }
 .hook.max .demo-doc p { font-size: 0.86rem; }
 .hook.max .t-steps p { white-space: normal; }
@@ -2454,14 +2468,26 @@ figcaption.cap .cap-note { color: var(--ink-3); }
         pane.addEventListener(e, hold, { passive: true })));
     });
     tabs.forEach((t, i) => t.addEventListener("click", () => { show(i); pick(R[i], still.matches ? R[i].k : 0); }));
-    // the view expanded, or back: the reader is reading, so nothing moves on, and the panes come back to the question
-    if (max) max.addEventListener("click", () => {
-      const fig = box.closest("figure"), on = !fig.classList.contains("max");
-      fig.classList.toggle("max", on); max.setAttribute("aria-pressed", String(on));
-      max.querySelector("span").textContent = on ? "Collapse" : "Expand";
+    // the view expanded into the figure's dialog over the whole window, or back: the reader is reading, so nothing
+    // moves on, and the panes come back to the question. A placeholder keeps the page's height while the runs are out
+    const fig = box.closest("figure"), dlg = fig.querySelector(".hkp-dlg"), spot = document.createElement("div");
+    const label = on => {
+      max.setAttribute("aria-pressed", String(on)); max.querySelector("span").textContent = on ? "Collapse" : "Expand";
       max.setAttribute("aria-label", on ? "Collapse the run and its report" : "Expand the run and its report");
-      hold(); requestAnimationFrame(() => pick(R[cur], R[cur].k));
-    });
+    };
+    if (max && dlg && dlg.showModal) {
+      max.addEventListener("click", () => {
+        if (dlg.open) { dlg.close(); return; }
+        spot.style.height = box.offsetHeight + "px"; box.before(spot); dlg.append(box);
+        fig.classList.add("max"); label(true); dlg.showModal(); max.focus();
+        hold(); requestAnimationFrame(() => pick(R[cur], R[cur].k));
+      });
+      dlg.addEventListener("click", e => { if (e.target === dlg) dlg.close(); });
+      dlg.addEventListener("close", () => {
+        spot.replaceWith(box); fig.classList.remove("max"); label(false);
+        requestAnimationFrame(() => pick(R[cur], R[cur].k));
+      });
+    } else if (max) max.hidden = true;
     if (still.matches) return;
     let started = false;
     const frame = now => {
