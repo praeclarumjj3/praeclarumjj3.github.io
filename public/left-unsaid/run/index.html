@@ -505,6 +505,28 @@ header.mast:has(.mast-art-w) { padding-top: 0; }
 .t-paper { background: #ececec; border-bottom-color: #d3d3d3; }
 .t-paper b { color: #4b4b4f; }
 .t-paper .t-dir { width: 11px; height: 14px; fill: #b4b4b8; }
+/* the report window's own expand icon, at the right of its bar */
+.hkp-repmax { position: absolute; right: 8px; top: 50%; display: grid; place-items: center; width: 24px; height: 22px; margin-top: -11px;
+  padding: 0; border: 0; border-radius: 5px; background: none; color: #6b6b70; cursor: pointer; }
+.hkp-repmax:hover { color: #1d1d1f; background: rgba(0, 0, 0, 0.06); }
+.hkp-repmax:focus-visible { outline: 2px solid var(--blue); outline-offset: 1px; }
+.hkp-repmax svg { width: 13px; height: 13px; fill: none; stroke: currentColor; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
+.hkp-repmax .i-in, .hkp-rep.big .hkp-repmax .i-out { display: none; }
+.hkp-rep.big .hkp-repmax .i-in { display: inline; }
+/* the report window opened bigger over the page: as wide as reads well and as tall as the screen, its words larger,
+   the picked answer still lit, scrolled at will */
+.hkp-rdlg { position: fixed; inset: 0; width: 100%; height: 100%; max-width: none; max-height: none; margin: 0; border: 0;
+  padding: max(20px, env(safe-area-inset-top, 0px)) clamp(16px, 4vw, 48px) max(20px, env(safe-area-inset-bottom, 0px));
+  background: transparent; overflow: hidden; }
+.hkp-rdlg::backdrop { background: rgb(0 0 0 / 0.6); }
+html:has(.hkp-rdlg[open]) { overflow: hidden; }
+.hkp-rdlg > .hkp-rep { max-width: 1000px; height: 100%; margin-inline: auto; grid-template-rows: auto auto minmax(0, 1fr);
+  grid-template-columns: minmax(0, 1fr); border-radius: 10px; box-shadow: 0 30px 60px -30px rgba(0, 0, 0, 0.6); }
+.hkp-rdlg > .hkp-rep > * { min-width: 0; }
+.hkp-rdlg .demo-doc { padding: 22px 34px 30px; }
+.hkp-rdlg .demo-doc p { font-size: 0.95rem; }
+.hkp-rdlg .demo-doc .dd-h { font-size: 1.1rem; } .hkp-rdlg .demo-doc .dd-h1 { font-size: 1.35rem; }
+.hkp-rdlg .hkq-gold { display: block; -webkit-line-clamp: unset; }
 .hkq-panes .hkp-rep { grid-template-rows: auto auto minmax(0, 1fr); grid-template-columns: minmax(0, 1fr); }
 .hkq-panes .hkp-rep > * { min-width: 0; }
 /* codex as its own terminal draws a session (0.159.0, the release's codex, replaying this run): no clock by each
@@ -2528,7 +2550,7 @@ html:has(.hkp-dlg[open]) { overflow: hidden; }
     let cur = 0, ready = false;
     const R = exs.map(ex => {
       const q = s => ex.querySelector(s), qa = s => [...ex.querySelectorAll(s)];
-      return { ex, cards: qa(".hkq-q"), run: q(".hkp-run .t-steps"), steps: qa(".hkp-run .t-steps li"), doc: q(".demo-doc"),
+      return { ex, cards: qa(".hkq-q"), run: q(".hkp-run .t-steps"), steps: qa(".hkp-run .t-steps li"), rep: q(".hkp-rep"), doc: q(".demo-doc"),
                hits: qa(".demo-doc p.hkq-hit"), nones: qa(".hkq-none"), dots: qa(".hkq-ds .hkq-d"), clock: q(".t-clock"),
                k: +ex.dataset.rest, glides: new Map() };
     });
@@ -2618,6 +2640,34 @@ html:has(.hkp-dlg[open]) { overflow: hidden; }
         requestAnimationFrame(() => pick(R[cur], R[cur].k));
       });
     } else if (max) max.hidden = true;
+    // the report window alone, opened bigger over the page from the icon in its bar, the picked answer still lit;
+    // Escape, the icon again or a click outside puts it back where it was
+    const rdlg = document.createElement("dialog"), rspot = document.createElement("div");
+    rdlg.className = "hkp-rdlg"; rdlg.setAttribute("aria-label", "The report, bigger");
+    fig.append(rdlg);
+    let lifted = null;
+    const mark = (r, on) => {
+      const b = r.repmax;
+      b.setAttribute("aria-pressed", String(on)); b.setAttribute("aria-label", on ? "Put the report back" : "Open the report bigger");
+    };
+    R.forEach(r => {
+      const b = r.repmax = r.rep && r.rep.querySelector(".hkp-repmax");
+      if (!b) return;
+      if (!rdlg.showModal) { b.hidden = true; return; }
+      b.addEventListener("click", () => {
+        if (rdlg.open) { rdlg.close(); return; }
+        lifted = r; rspot.style.height = r.rep.offsetHeight + "px"; r.rep.before(rspot); rdlg.append(r.rep);
+        r.rep.classList.add("big"); mark(r, true); rdlg.showModal(); b.focus();
+        requestAnimationFrame(() => pick(r, r.k));
+      });
+    });
+    rdlg.addEventListener("click", e => { if (e.target === rdlg) rdlg.close(); });
+    rdlg.addEventListener("close", () => {
+      const r = lifted;
+      if (!r) return;
+      lifted = null; rspot.replaceWith(r.rep); r.rep.classList.remove("big"); mark(r, false);
+      requestAnimationFrame(() => pick(r, r.k));
+    });
   });
   // each run's window title ends on the window's size in characters, as a Mac's Terminal titles it, measured in the
   // window's own font and kept as the window is resized
