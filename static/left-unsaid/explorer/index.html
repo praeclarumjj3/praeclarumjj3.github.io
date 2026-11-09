@@ -426,25 +426,22 @@ header.mast:has(.mast-art-w) { padding-top: 0; }
 .hkp-ex.on { visibility: visible; }
 .hkp-ex .hk-b::before { content: none; }
 .hkp-ex .hk-task::before { content: "·"; }
-/* the questions as tags: a number, what became of it, its tier and when in the run it asks about */
-.hkq-tags { display: flex; flex-wrap: wrap; gap: 8px; }
-.hkq-tag { position: relative; display: inline-flex; align-items: center; gap: 8px; padding: 5px 13px 5px 5px; overflow: hidden;
-  border: 1px solid var(--edge); border-radius: 999px; background: var(--white); color: var(--ink-2); font: 600 0.82rem/1.2 var(--sans);
-  cursor: pointer; transition: border-color 0.2s, box-shadow 0.2s, color 0.2s; }
-.hkq-tag b { display: inline-grid; place-items: center; width: 22px; height: 22px; border-radius: 50%; color: var(--on-solid); font-size: 0.74rem; }
-.hkq-tag.v-covered b { background: var(--covered); } .hkq-tag.v-missed b { background: var(--silent); } .hkq-tag.v-unsupported b { background: var(--wrong); }
-.hkq-tt { font-weight: 500; color: var(--ink-3); font-variant-numeric: tabular-nums; }
-.hkq-tag:hover { border-color: var(--blue); color: var(--ink); }
-.hkq-tag[aria-pressed="true"] { border-color: var(--blue); box-shadow: 0 0 0 1px var(--blue); color: var(--ink); }
-.hkq-tag:focus-visible { outline: 2px solid var(--blue); outline-offset: 2px; }
-/* while the hook moves on by itself, the picked tag fills along its foot */
-.hkq-tag i { position: absolute; left: 0; bottom: 0; height: 2px; width: 100%; background: var(--blue); transform-origin: 0 50%; transform: scaleX(0); }
-.hkp-ex:not(.auto) .hkq-tag i { opacity: 0; }
-/* the picked question, in the evaluator's words, and what became of it */
-.hkq-qs { display: grid; }
-.hkq-q { grid-area: 1 / 1; display: flex; flex-wrap: wrap; align-items: center; gap: 8px 16px; visibility: hidden; opacity: 0; transition: opacity 0.2s; }
+/* the picked question, in the evaluator's words: its tier and when in the run it asks about, the number the head gives
+   it, and what became of it; while the hook moves on by itself, a line under it fills */
+.hkq-qs { position: relative; display: grid; padding-bottom: 10px; }
+.hkq-tick { position: absolute; left: 0; bottom: 0; height: 2px; width: 100%; background: var(--blue); transform-origin: 0 50%; transform: scaleX(0); }
+.hkp-ex:not(.auto) .hkq-tick { opacity: 0; }
+.hkq-qm { flex: 1 0 100%; margin: 0; display: flex; align-items: center; gap: 8px; font: 500 0.8rem/1.3 var(--sans); color: var(--ink-3);
+  font-variant-numeric: tabular-nums; }
+.hkq-qm b { display: inline-grid; place-items: center; width: 20px; height: 20px; border-radius: 50%; color: var(--on-solid); font-size: 0.7rem; }
+.hkq-qm .hkp-vw { margin-left: auto; }
+.hkq-qm b.v-covered { background: var(--covered); } .hkq-qm b.v-missed { background: var(--silent); } .hkq-qm b.v-unsupported { background: var(--wrong); }
+.hkq-q { grid-area: 1 / 1; display: flex; flex-wrap: wrap; align-items: center; align-content: flex-start; gap: 8px 16px; visibility: hidden; opacity: 0; transition: opacity 0.2s; }
 .hkq-q.on { visibility: inherit; opacity: 1; }
-.hkp .hkq-q .hk-t { flex: 1 1 32rem; margin: 0; font-size: 1.1rem; line-height: 1.4; max-width: none; }
+/* the numbered questions share one cell, so playing them never moves the page; any other takes its own height while
+   picked, and the page keeps the reader's dot where it was */
+.hkq-more:not(.on) { display: none; }
+.hkp .hkq-q .hk-t { flex: 1 1 100%; margin: 0; font-size: 1.1rem; line-height: 1.4; max-width: none; }
 .hkp-v { margin: 0; display: flex; flex-wrap: wrap; align-items: center; gap: 10px; font-size: 0.86rem; }
 .hkp-vw { display: inline-flex; align-items: center; gap: 8px; padding: 5px 10px; border-radius: 8px; font-weight: 600; font-size: 0.9rem;
   background: color-mix(in srgb, currentColor 11%, transparent); }
@@ -485,8 +482,9 @@ header.mast:has(.mast-art-w) { padding-top: 0; }
 .t-box { border: 1px solid var(--t-rule); border-radius: 4px; padding: 1px 8px; }
 /* each harness's own marks and colours: codex 0.159.0 and claude-code 2.1.284 as their transcripts draw a replayed
    session, letta-code 0.33.7's palette from its source, and pi 0.87.1's tinted tool blocks */
-.term-codex { --t-bg: #1b1c20; --t-bar: #26282d; --t-ink: #cdd6f4; --t-dim: #8f94a8; --t-strong: #eef1fa; --t-ok: #3fb67b; --t-bad: #f14c4c;
-  --t-rule: #383a41; --t-lit: rgba(137, 180, 250, 0.13); --t-edge: #89b4fa; }
+.term-codex { --t-bg: #141519; --t-bar: #23242a; --t-ink: #d9dce3; --t-dim: #868a96; --t-strong: #f3f4f7; --t-ok: #0dbc79; --t-bad: #f14c4c;
+  --t-rule: #34363e; --t-lit: rgba(99, 168, 248, 0.13); --t-edge: #63a8f8; --t-acc: #63a8f8;
+  --t-user: rgb(56, 57, 61); --t-comp: rgb(48, 48, 52); }
 .term-claude-code { --t-bg: #1c1c1c; --t-bar: #282828; --t-ink: #e6e6e6; --t-dim: #999999; --t-strong: #ffffff; --t-ok: #4eba65; --t-bad: #e5484d;
   --t-rule: #4b4b4b; --t-lit: rgba(215, 119, 87, 0.16); --t-edge: #d77757; }
 .term-letta-code { --t-bg: #1b1c1e; --t-bar: #26272b; --t-ink: #dee1e4; --t-dim: #a5a8ab; --t-strong: #ffffff; --t-ok: #64cf64; --t-bad: #f1689f;
@@ -497,13 +495,54 @@ header.mast:has(.mast-art-w) { padding-top: 0; }
 .term-pi-coding-agent .t-blk { background: rgb(40, 50, 40); padding-inline: 6px; }
 .term-pi-coding-agent .t-o.t-blk { padding-left: 6px; color: #9a9a9a; }
 .term-pi-coding-agent .t-path { color: #8abeb7; }
+/* every run sits in a terminal window: its three lights, its title, and how long the run took */
+.hkp-run > .pane-h.t-win { position: relative; justify-content: center; padding: 8px 64px; }
+.t-win b { font: 500 0.76rem/1.3 var(--sans); color: var(--t-dim); letter-spacing: 0; text-transform: none;
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.t-lights { position: absolute; left: 13px; top: 50%; width: 10px; height: 10px; margin-top: -5px; border-radius: 50%;
+  background: #ec6a5e; box-shadow: 16px 0 #f4bf4f, 32px 0 #61c554; }
+.t-win .demo-clock { position: absolute; right: 14px; }
+/* codex as its own terminal draws a session (0.159.0, the release's codex, replaying this run): no clock by each
+   line and a blank line between cells, its box at the top, the user's message across the window on a light tint;
+   under the transcript how long it has worked, its composer on a fainter tint, and the model and folder */
+.term-codex .t-steps { padding: 12px 0 8px; }
+.term-codex .t-steps li { grid-template-columns: minmax(0, 1fr); padding: 0 14px; }
+.term-codex .t-steps li + li { margin-top: 1.1em; }
+.term-codex .t-steps time { display: none; }
+.term-codex .t-steps li.t-user { padding: 0; }
+.term-codex .t-u { border-radius: 0; padding: 0.8em 14px; }
+.term-codex .t-u > .t-mk { width: 2ch; font-weight: 700; color: var(--t-dim); }
+.term-codex .t-mk { width: 2ch; }
+.term-codex .t-o { padding-left: 2ch; }
+.term-codex .t-tree { display: inline-block; width: 2ch; margin: 0; color: var(--t-dim); }
+.term-codex .t-more { opacity: 1; padding-left: 4ch; }
+.term-codex .hkq-mks { float: right; margin: 0.15em 0 0 10px; }
+.t-card { display: inline-block; max-width: 100%; padding: 0.2em 1ch; border: 1px solid #5d606a; border-radius: 7px; }
+.t-steps .t-card p { overflow: hidden; text-overflow: ellipsis; }
+.t-card .t-gap { height: 1.55em; }
+.t-lbl { display: inline-block; width: 13ch; }
+.t-acc { color: var(--t-acc); }
+.t-yolo { color: #d670d6; }
+.term-codex .t-foot { gap: 0; padding: 0.9em 0 10px; border-top: 0; }
+.term-codex .t-foot p { padding-inline: 14px; }
+.t-wk { padding-bottom: 0.8em !important; color: var(--t-ink); }
+.t-wk b { color: var(--t-strong); }
+.t-comp { padding: 0.8em 0; background: var(--t-comp); }
+.term-codex .t-ps b { color: var(--t-strong); }
+.term-codex .t-foot .t-st { padding: 0.55em 14px 0 calc(14px + 2ch); }
+.t-model { color: #f6e2b7; } .t-cwd { color: #abdfa7; }
+/* while the hook plays, codex's working line shimmers as codex's does */
+.hkp-ex.auto .t-shim { background: linear-gradient(90deg, var(--t-dim) 0 35%, var(--t-strong) 50%, var(--t-dim) 65% 100%) 0 0 / 300% 100%;
+  -webkit-background-clip: text; background-clip: text; color: transparent; animation: t-shim 2s linear infinite; }
+@keyframes t-shim { from { background-position: 100% 0; } to { background-position: 0 0; } }
+@media (prefers-reduced-motion: reduce) { .hkp-ex.auto .t-shim { animation: none; background: none; color: var(--t-ink); } }
 /* a question's number on each step it asks about, and the step lit while its question is picked */
 .hkq-mks { display: inline-flex; gap: 3px; margin-right: 7px; vertical-align: 1px; }
 .hkq-mks b { display: inline-grid; place-items: center; min-width: 16px; height: 16px; padding: 0 3px; border-radius: 8px; color: #fff;
   font: 700 0.62rem/1 var(--sans); }
 .hkq-mks b.v-covered { background: #2e9e6a; } .hkq-mks b.v-missed { background: #e07a2c; } .hkq-mks b.v-unsupported { background: #d4485a; }
-.t-steps li[data-q] { background: rgba(255, 255, 255, 0.03); }
-.t-steps li[data-q] p { white-space: normal; }
+.t-steps li.t-q { background: rgba(255, 255, 255, 0.03); }
+.t-steps li.t-q p, .t-steps li.sel p { white-space: normal; }
 .t-steps li.sel { background: var(--t-lit); box-shadow: inset 3px 0 var(--t-edge); }
 /* the report: every answer marked where it is given, the picked one strongest; one left unsaid is said to be nowhere */
 .hkq-panes .hkp-rep { position: relative; height: 440px; }
@@ -529,15 +568,21 @@ header.mast:has(.mast-art-w) { padding-top: 0; }
 .hkq-all .hk-tk { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 6px 16px; margin: 0; }
 .hkq-legend { display: inline-flex; flex-wrap: wrap; gap: 4px 14px; font: 500 0.78rem/1.3 var(--sans); color: var(--ink-3); }
 .hkq-lg { display: inline-flex; align-items: center; gap: 6px; color: var(--ink-3); }
-.hkq-lg i, .hkq-ds i { display: inline-grid; place-items: center; width: 12px; height: 12px; border-radius: 50%; font-style: normal; }
-.hkq-lg.v-covered i, .hkq-ds i.v-covered { background: var(--covered); }
-.hkq-lg.v-missed i, .hkq-ds i.v-missed { background: var(--silent); }
-.hkq-lg.v-unsupported i, .hkq-ds i.v-unsupported { background: var(--wrong); }
+.hkq-lg i, .hkq-ds > * { display: inline-grid; place-items: center; width: 12px; height: 12px; border-radius: 50%; font-style: normal; }
+.hkq-lg.v-covered i, .hkq-ds > .v-covered { background: var(--covered); }
+.hkq-lg.v-missed i, .hkq-ds > .v-missed { background: var(--silent); }
+.hkq-lg.v-unsupported i, .hkq-ds > .v-unsupported { background: var(--wrong); }
+/* any dot picks its question; its hit area reaches a little past it */
+.hkq-d { position: relative; margin: 0; padding: 0; border: 0; appearance: none; cursor: pointer; transition: transform 0.12s; }
+.hkq-d::after { content: ""; position: absolute; inset: -2px; border-radius: 50%; }
+.hkq-d:hover { transform: scale(1.3); }
+.hkq-d:focus-visible { outline: 2px solid var(--blue); outline-offset: 2px; }
+.hkq-d.sel { box-shadow: 0 0 0 2px var(--white), 0 0 0 4px var(--blue); transform: none; }
 .hkq-row { display: grid; grid-template-columns: 5.2rem minmax(0, 1fr) 8.6rem; align-items: center; gap: 14px; font-size: 0.86rem; color: var(--ink-2); }
 .hkq-ds { display: flex; flex-wrap: wrap; gap: 4px; }
-.hkq-ds i.hkq-asked { width: 18px; height: 18px; color: var(--on-solid); font: 700 0.6rem/1 var(--sans); cursor: pointer;
+.hkq-ds .hkq-asked { width: 18px; height: 18px; color: var(--on-solid); font: 700 0.6rem/1 var(--sans);
   box-shadow: 0 0 0 2px var(--white), 0 0 0 3px var(--ink-3); }
-.hkq-ds i.hkq-asked.sel { box-shadow: 0 0 0 2px var(--white), 0 0 0 4px var(--blue); }
+.hkq-ds .hkq-asked.sel { box-shadow: 0 0 0 2px var(--white), 0 0 0 4px var(--blue); }
 .hkp-ex .hk-stats { margin-top: 0; }
 .hkp-ex .hk-stats b { font-size: 1.35rem; }
 @media (max-width: 1000px) { .hkq-panes { grid-template-columns: minmax(0, 1fr); } .hkp-run, .hkq-panes .hkp-rep { height: 360px; } }
@@ -545,11 +590,10 @@ header.mast:has(.mast-art-w) { padding-top: 0; }
   .hkp-ex { padding: 16px 14px 14px; }
   .hkp-ex .hk-task::before { content: none; }
   .hkp-run, .hkq-panes .hkp-rep { height: 300px; }
-  .hkq-tt { display: none; }
   .hkq-row { grid-template-columns: minmax(0, 1fr) auto; } .hkq-row .hkq-ds { grid-column: 1 / -1; grid-row: 2; }
   .hkp-tabs button span { font-size: 0.76rem; }
 }
-@media (prefers-reduced-motion: reduce) { .hkq-q, .hkq-none, .hkq-tag, .t-steps li, .hkp-rep .demo-doc { transition: none !important; }
+@media (prefers-reduced-motion: reduce) { .hkq-q, .hkq-none, .hkq-d, .t-steps li, .hkp-rep .demo-doc { transition: none !important; }
   .t-steps li.flash, .demo-doc p.flash { animation: none; } }
 /* the post's key findings: one line each, the finding in bold and its headline number bold inside the words */
 .keyfind { margin: 8px 0 30px; }
@@ -1870,10 +1914,8 @@ figcaption.cap .cap-note { color: var(--ink-3); }
 .hook .hk-m > span + span::before { content: "·"; margin: 0 9px; color: var(--ink-3); font-family: var(--sans); }
 .hook .hk-m .hk-b { color: var(--ink); font-weight: 600; }
 .hook .hk-task { color: var(--ink-2); }
-.hook .hkq-tag { padding: 4px 12px 4px 4px; font-size: 0.8rem; }
-.hook .hkq-tag b { width: 20px; height: 20px; }
 .hook .hkq-q { gap: 10px 14px; }
-.hook .hkq-q .hk-t { flex: 1 1 26rem; font: 400 1.2rem/1.38 var(--display); }
+.hook .hkq-q .hk-t { flex: 1 1 100%; font: 400 1.2rem/1.38 var(--display); }
 .hook .hkp-vw { font-size: 0.82rem; padding: 4px 9px; }
 .hook .hkq-panes { gap: 12px; }
 .hook .hkp-run, .hook .hkq-panes .hkp-rep { height: 380px; border-radius: 12px; }
@@ -1894,6 +1936,13 @@ figcaption.cap .cap-note { color: var(--ink-3); }
   -webkit-line-clamp: 7; overflow: hidden; max-height: none; flex: none; }
 .hook .hkq-gold span { display: block; margin-bottom: 4px; font: 700 0.64rem/1.3 var(--sans); letter-spacing: 0.08em; text-transform: uppercase; color: #9a420d; }
 .hook .hkp-rep.nowhere .demo-doc { opacity: 0.4; }
+/* one the report answers in words no single block holds: what a reader found in it, in the verdict's colour */
+.hook .hkq-none.v-covered .hkq-nh, .hook .hkq-none.v-covered .hkq-gold span { color: #1d7a4c; }
+.hook .hkq-none.v-covered .hkq-nh::before { background: #2e9e6a; }
+.hook .hkq-none.v-covered .hkq-gold { border-left-color: #2e9e6a; border-bottom-color: #eef8f2; background: #eef8f2; }
+.hook .hkq-none.v-unsupported .hkq-nh, .hook .hkq-none.v-unsupported .hkq-gold span { color: #b3263a; }
+.hook .hkq-none.v-unsupported .hkq-nh::before { background: #d4485a; }
+.hook .hkq-none.v-unsupported .hkq-gold { border-left-color: #d4485a; border-bottom-color: #fdf0f1; background: #fdf0f1; }
 /* every question about the run as a dot, its count beside each colour */
 .hook .hkq-all { gap: 8px; padding-top: 14px; border-top: 1px solid var(--rule); }
 .hook .hkq-all .hk-tk { font: 500 0.84rem/1.3 var(--sans); color: var(--ink-2); }
@@ -1903,8 +1952,8 @@ figcaption.cap .cap-note { color: var(--ink-3); }
 .hook .hk-go:hover { text-decoration: underline; }
 .hook .hkq-row { grid-template-columns: 4.6rem minmax(0, 1fr) 7.4rem; font-size: 0.82rem; gap: 12px; }
 .hook .hkq-ds { gap: 3px; }
-.hook .hkq-ds i { width: 11px; height: 11px; }
-.hook .hkq-ds i.hkq-asked { width: 17px; height: 17px; }
+.hook .hkq-ds > * { width: 11px; height: 11px; }
+.hook .hkq-ds .hkq-asked { width: 17px; height: 17px; }
 .hook .hkq-legend { display: flex; flex-wrap: wrap; gap: 4px 16px; margin: 2px 0 0; font-size: 0.8rem; color: var(--ink-2); }
 .hook .hkq-lg { color: var(--ink-2); }
 .hook .hkq-lg b { font-weight: 650; color: var(--ink); font-variant-numeric: tabular-nums; }
@@ -1919,7 +1968,7 @@ figcaption.cap .cap-note { color: var(--ink-3); }
 .t-steps .t-u p { white-space: pre-wrap; overflow: visible; text-overflow: clip; }
 .t-steps .t-u .t-us { margin-bottom: 4px; color: var(--t-dim); }
 .t-steps .t-u .t-ut { display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 5; overflow: hidden; white-space: normal; }
-.term-codex { --t-user: rgba(255, 255, 255, 0.07); } .term-claude-code { --t-user: rgba(255, 255, 255, 0.09); }
+.term-claude-code { --t-user: rgba(255, 255, 255, 0.09); }
 .term-letta-code { --t-user: rgba(255, 255, 255, 0.06); } .term-pi-coding-agent { --t-user: #343541; }
 .term-pi-coding-agent .t-u { padding-left: 8px; }
 /* the run's buttons: pause, and the view expanded (user, 9 Nov: "make the expanded view open as a full-screen
@@ -1936,7 +1985,7 @@ figcaption.cap .cap-note { color: var(--ink-3); }
 html:has(.hkp-dlg[open]) { overflow: hidden; }
 .hkp-dlg > .hkp { max-width: 1680px; height: 100%; margin-inline: auto; grid-template-rows: auto minmax(0, 1fr); }
 .hkp-dlg .hkp-exs { min-height: 0; grid-template-rows: minmax(0, 1fr); }
-.hkp-dlg .hkp-ex { min-height: 0; grid-template-rows: auto auto auto minmax(300px, 1fr) auto; }
+.hkp-dlg .hkp-ex { min-height: 0; grid-template-rows: auto auto minmax(300px, 1fr) auto; }
 .hkp-dlg .hkq-panes { min-height: 0; grid-auto-rows: minmax(0, 1fr); }
 .hkp-dlg .hkp-run, .hkp-dlg .hkq-panes .hkp-rep { height: auto; min-height: 0; }
 @media (max-width: 1000px) {
@@ -2401,22 +2450,25 @@ html:has(.hkp-dlg[open]) { overflow: hidden; }
     whileSeen(fig, () => { seen = true; cells.forEach(play); }, () => { seen = false; cells.forEach(pause); });
   });
 
-  // the hook's runs: picking a question's tag brings the run to the step it asks about and the report to its answer,
-  // each in a quick glide, its marks lit a moment; one left unsaid says so over the report. While the hook is in
-  // view, and until the reader picks a tag or a dot or reaches into a pane, it moves through the tags on its own, the
-  // picked tag filling as it waits, and on to the next tab after the last. The button stops and starts it. Under
-  // reduced motion nothing moves by itself, and each run rests on its unanswered question. A second button expands the
-  // run and its report to the window's width, every line whole
+  // the hook's runs: picking any question's dot brings the run to the step it asks about and the report to its
+  // answer, each in a quick glide, its marks lit a moment; one left unsaid says so over the report. While the hook is
+  // in view, and until the reader picks a dot or reaches into a pane, it moves through the head's numbered questions
+  // on its own, a line under the question filling as it waits, and on to the next tab after the last. The button stops
+  // and starts it. Under reduced motion nothing moves by itself, and each run rests on its unanswered question. A
+  // second button opens the runs and their reports over the whole window, every line whole
   document.querySelectorAll(".hkp").forEach(box => {
     const exs = [...box.querySelectorAll(".hkp-ex")], tabs = [...box.querySelectorAll(".hkp-tabs [role=tab]")];
     const ctl = box.querySelector(".demo-ctl:not(.hkp-max)"), max = box.querySelector(".hkp-max"), CYCLE = +box.dataset.tagMs || 4500;
     let cur = 0, seen = false, paused = false, elapsed = 0, last = performance.now();
     const R = exs.map(ex => {
       const q = s => ex.querySelector(s), qa = s => [...ex.querySelectorAll(s)];
-      return { ex, tags: qa(".hkq-tag"), cards: qa(".hkq-q"), run: q(".hkp-run .t-steps"), steps: qa(".hkp-run .t-steps li"),
-               rep: q(".hkp-rep"), doc: q(".demo-doc"), hits: qa(".demo-doc p.hkq-hit"), nones: qa(".hkq-none"),
-               dots: qa(".hkq-ds i.hkq-asked"), k: +ex.dataset.rest, glides: new Map() };
+      return { ex, tick: q(".hkq-tick"), n: +ex.dataset.n || 1, cards: qa(".hkq-q"), run: q(".hkp-run .t-steps"),
+               steps: qa(".hkp-run .t-steps li"), rep: q(".hkp-rep"), doc: q(".demo-doc"), hits: qa(".demo-doc p.hkq-hit"),
+               nones: qa(".hkq-none"), dots: qa(".hkq-ds .hkq-d"), clock: q(".t-clock"), k: +ex.dataset.rest, glides: new Map() };
     });
+    // how long codex had worked by a step, as its working line says it: 45s, 9m 05s, 1h 02m 03s
+    const took = t => { const h = Math.floor(t / 3600), m = Math.floor(t / 60) % 60, sec = String(t % 60).padStart(2, "0");
+      return h ? `${h}h ${String(m).padStart(2, "0")}m ${sec}s` : m ? `${m}m ${sec}s` : `${t % 60}s`; };
     const has = (el, k) => (el.dataset.q || "").split(" ").includes(String(k));
     const ease = t => t < 0.5 ? 4 * t * t * t : 1 - (-2 * t + 2) ** 3 / 2;
     // a pane brought so a line sits near its top, in a short glide, or at once
@@ -2433,17 +2485,29 @@ html:has(.hkp-dlg[open]) { overflow: hidden; }
       };
       r.glides.set(pane, requestAnimationFrame(tick));
     };
+    // a question that changes the card's height moves what is under it: the page scrolls by as much, so the dot the
+    // reader picked stays under their pointer
+    const steady = (el, fn) => {
+      const y = el.getBoundingClientRect().top;
+      fn();
+      const dy = el.getBoundingClientRect().top - y, open = box.closest("dialog[open]");
+      if (dy) (open || document.scrollingElement).scrollBy(0, dy);
+    };
     const flash = els => els.forEach(el => { el.classList.remove("flash"); void el.offsetWidth; el.classList.add("flash"); });
-    // one question picked: its tag, its words, its steps and its answer lit, both panes brought to them
+    // one question picked: its dot, its words, its steps and its answer lit, both panes brought to them; a block that
+    // answers several questions takes the picked one's mark and colour
     const pick = (r, k) => {
       r.k = k; elapsed = 0;
-      r.tags.forEach((t, j) => { t.setAttribute("aria-pressed", String(j === k)); t.querySelector("i").style.transform = "scaleX(0)"; });
-      r.cards.forEach((c, j) => c.classList.toggle("on", j === k));
+      if (r.tick) r.tick.style.transform = "scaleX(0)";
+      const card = r.cards.find(c => +c.dataset.q === k);
+      r.cards.forEach(c => c.classList.toggle("on", c === card));
       const lit = r.steps.filter(s => has(s, k)), hit = r.hits.filter(h => has(h, k));
       r.steps.forEach(s => s.classList.toggle("sel", has(s, k)));
       r.hits.forEach(h => h.classList.toggle("sel", has(h, k)));
-      r.dots.forEach(d => d.classList.toggle("sel", +d.dataset.q === k));
+      hit.forEach(h => { h.dataset.mark = card.dataset.mark; ["covered", "missed", "unsupported"].forEach(w => h.classList.toggle("v-" + w, w === card.dataset.v)); });
+      r.dots.forEach(d => { const on = +d.dataset.q === k; d.classList.toggle("sel", on); d.setAttribute("aria-pressed", String(on)); d.tabIndex = on ? 0 : -1; });
       r.nones.forEach(n => n.classList.toggle("on", +n.dataset.q === k));
+      if (r.clock && lit[0]) r.clock.textContent = took(+lit[0].dataset.s || 0);
       r.rep.classList.toggle("nowhere", !hit.length);
       if (lit[0]) bring(r, r.run, lit[0], 0.18);
       if (hit[0]) bring(r, r.doc, hit[0], 0.22);
@@ -2462,8 +2526,17 @@ html:has(.hkp-dlg[open]) { overflow: hidden; }
     };
     R.forEach((r, i) => {
       pick(r, r.k);
-      r.tags.forEach((t, k) => t.addEventListener("click", () => { hold(); pick(r, k); }));
-      r.dots.forEach(d => d.addEventListener("click", () => { hold(); pick(r, +d.dataset.q); }));
+      // the dots are one stop for the keyboard: the arrows walk them, and Home and End reach the ends
+      r.dots.forEach((d, j) => {
+        d.addEventListener("click", () => steady(d, () => { hold(); pick(r, +d.dataset.q); }));
+        d.addEventListener("keydown", e => {
+          const to = { ArrowRight: j + 1, ArrowDown: j + 1, ArrowLeft: j - 1, ArrowUp: j - 1, Home: 0, End: r.dots.length - 1 }[e.key];
+          if (to === undefined) return;
+          e.preventDefault();
+          const next = r.dots[(to + r.dots.length) % r.dots.length];
+          steady(next, () => { hold(); pick(r, +next.dataset.q); }); next.focus({ preventScroll: true });
+        });
+      });
       [r.run, r.doc].forEach(pane => ["wheel", "touchstart", "pointerdown", "keydown"].forEach(e =>
         pane.addEventListener(e, hold, { passive: true })));
     });
@@ -2493,10 +2566,10 @@ html:has(.hkp-dlg[open]) { overflow: hidden; }
     const frame = now => {
       if (seen && !paused) {
         elapsed += now - last;
-        const r = R[cur], bar = r.tags[r.k].querySelector("i");
-        bar.style.transform = `scaleX(${Math.min(1, elapsed / CYCLE)})`;
+        const r = R[cur];
+        if (r.tick) r.tick.style.transform = `scaleX(${Math.min(1, elapsed / CYCLE)})`;
         if (elapsed >= CYCLE) {
-          if (r.k < r.tags.length - 1) pick(r, r.k + 1);
+          if (r.k < r.n - 1) pick(r, r.k + 1);
           else { show((cur + 1) % exs.length); pick(R[cur], 0); }
         }
       }
@@ -2663,8 +2736,10 @@ html:has(.hkp-dlg[open]) { overflow: hidden; }
   const RB = $("runs-browser");
   if (!RB) return;
   // the post shows one run in place (`data-run`): no list and no address of its own, the same task's other harnesses
-  // a tab away
-  const ONE = RB.dataset.run || "", SRC = ONE ? (DATA.embed || {}) : DATA, RUNS = SRC.runs || [];
+  // a tab away. The post's own run page (`data-only`) opens the run its address names, of the few the post links,
+  // with no list of the rest (user, 9 Nov: "when someon click on view whole run le's not allow them to see all runs")
+  const ONE = RB.dataset.run || "", ONLY = "only" in RB.dataset, LISTED = !ONE && !ONLY;
+  const SRC = ONE ? (DATA.embed || {}) : DATA, RUNS = SRC.runs || [];
   const HARN = SRC.harnesses || [], TASKS = SRC.tasks || {}, BENCHES = SRC.benchmarks || [];
   const byId = new Map(RUNS.map(r => [r.id, r]));
   const cellKey = (b, t, h) => `${b}|${t}|${h}`;
@@ -2675,22 +2750,22 @@ html:has(.hkp-dlg[open]) { overflow: hidden; }
   const unit = m => m.benchmark === "harvey-labs" ? "criteria" : "tests";
   const taskCount = BENCHES.reduce((n, b) => n + (TASKS[b] || []).length, 0);
   const later = HARN.filter(h => !present.has(h));
-  if (!ONE) $("rb-sum").innerHTML = `<b>${ROWS.length}</b> of ${taskCount * HARN.length} release runs scored: ` +
+  if (LISTED) $("rb-sum").innerHTML = `<b>${ROWS.length}</b> of ${taskCount * HARN.length} release runs scored: ` +
     COLS.map(h => `${esc(h)} <b>${ROWS.filter(r => r.harness === h).length}</b>`).join(", ") + "." +
     (later.length ? ` ${later.map(esc).join(" and ")} follow${later.length === 1 ? "s" : ""}.` : "");
   const most = {};
-  if (!ONE) ROWS.forEach(r => { const n = r.counts.covered + r.counts.missed + r.counts.unasked; most[r.benchmark] = Math.max(most[r.benchmark] || 1, n); });
-  if (!ONE) $("rb-key").innerHTML = `<span><i class="b-covered"></i>events its report covers</span><span><i class="b-missed"></i>events it misses</span><span><i class="b-unasked"></i>events no question reached</span><span>bar length: events in the run</span><span><i class="k-none"></i>no scored run</span>`;
+  if (LISTED) ROWS.forEach(r => { const n = r.counts.covered + r.counts.missed + r.counts.unasked; most[r.benchmark] = Math.max(most[r.benchmark] || 1, n); });
+  if (LISTED) $("rb-key").innerHTML = `<span><i class="b-covered"></i>events its report covers</span><span><i class="b-missed"></i>events it misses</span><span><i class="b-unasked"></i>events no question reached</span><span>bar length: events in the run</span><span><i class="k-none"></i>no scored run</span>`;
 
   let bench = "all", query = "";
-  if (!ONE) $("rb-bench").innerHTML = [["all", "All"], ...BENCHES.map(b => [b, BENCH[b] || b])].map(([b, l]) =>
+  if (LISTED) $("rb-bench").innerHTML = [["all", "All"], ...BENCHES.map(b => [b, BENCH[b] || b])].map(([b, l]) =>
     `<button type="button" role="tab" data-b="${b}" aria-selected="${b === bench}">${esc(l)}</button>`).join("");
-  if (!ONE) $("rb-bench").querySelectorAll("button").forEach(btn => btn.addEventListener("click", () => {
+  if (LISTED) $("rb-bench").querySelectorAll("button").forEach(btn => btn.addEventListener("click", () => {
     bench = btn.dataset.b;
     $("rb-bench").querySelectorAll("button").forEach(x => x.setAttribute("aria-selected", x === btn));
     drawRuns();
   }));
-  if (!ONE) $("rb-q").addEventListener("input", e => { query = e.target.value; drawRuns(); });
+  if (LISTED) $("rb-q").addEventListener("input", e => { query = e.target.value; drawRuns(); });
 
   function cell(b, t, h) {
     const r = byCell.get(cellKey(b, t.task_id, h));
@@ -2721,7 +2796,7 @@ html:has(.hkp-dlg[open]) { overflow: hidden; }
     }
     $("rb-list").innerHTML = html || `<p class="rb-empty">No task matches “${esc(query)}”.</p>`;
   }
-  if (!ONE) drawRuns();
+  if (LISTED) drawRuns();
 
   // one run, loaded from its own file the first time it is opened
   const EX = $("explorer"), LIST = $("rb-listview"), tip = $("tip");
@@ -2807,7 +2882,9 @@ html:has(.hkp-dlg[open]) { overflow: hidden; }
   }
   function route() {
     const m = location.hash.match(/^#run=([^&]+)(?:&view=([\w-]+))?(?:&b=([\w-]+))?/), id = m && decodeURIComponent(m[1]);
-    if (id && byId.has(id)) openRun(id, { view: m[2], branch: m[3] }); else showList();
+    if (id && byId.has(id)) openRun(id, { view: m[2], branch: m[3] });
+    else if (LISTED) showList();
+    else if (RUNS.length) openRun(RUNS[0].id, { view: "judge" });
   }
 
   // the map: this run's own pipeline, the post's method diagram with this run's counts; each node opens its panel
