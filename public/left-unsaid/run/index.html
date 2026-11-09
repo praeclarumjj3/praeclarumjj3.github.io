@@ -1009,6 +1009,8 @@ a.rb-cell:hover { background: var(--mist-2); color: var(--ink); }
 .finding.pending { margin-top: 56px; padding-top: 40px; gap: 22px; }
 /* the release post's cards: a finding in a few lines and one figure, then the way into the report */
 .finding.card { margin-top: 72px; padding-top: 44px; gap: 22px; }
+.finding:not(.card) .f-claim { margin: 8px 0 0; font: 500 0.92rem/1.5 var(--sans); color: var(--ink-2); }
+.finding:not(.card) .f-claim span { margin-right: 6px; font: 700 0.66rem/1 var(--sans); letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-3); }
 .finding.card .f-claim { margin: 12px 0 0; font: 500 1.05rem/1.5 var(--sans); color: var(--ink-2); text-wrap: balance; }
 .finding.card .f-body > p:first-child { font-size: 1.12rem; line-height: 1.7; color: var(--ink); }
 .more { margin: 0; font: 600 0.92rem var(--sans); }
@@ -1914,8 +1916,10 @@ figcaption.cap .cap-note { color: var(--ink-3); }
 .hkp-max:hover { color: var(--ink); border-color: var(--edge); }
 .hkp-max:focus-visible { outline: 2px solid var(--blue); outline-offset: 2px; }
 .hook .hk-m { padding-right: 40px; }
-.hook .t-steps, .hook .demo-doc { -webkit-mask-image: linear-gradient(to bottom, #000 calc(100% - 36px), transparent);
+.hook .t-steps { -webkit-mask-image: linear-gradient(to bottom, #000 calc(100% - 36px), transparent);
   mask-image: linear-gradient(to bottom, #000 calc(100% - 36px), transparent); padding-bottom: 30px; }
+/* the report is never faded over, and its last lines can scroll up to where an answer is shown */
+.hook .demo-doc::after { content: ""; display: block; height: 55%; }
 /* only the picked question's answer is marked in the report */
 .hook .demo-doc p.hkq-hit:not(.sel) { background: none; box-shadow: none; }
 .hook .demo-doc p.hkq-hit:not(.sel)::before { content: none; }
@@ -2454,8 +2458,10 @@ html:has(.hkp-dlg[open]) { overflow: hidden; }
     const ease = t => t < 0.5 ? 4 * t * t * t : 1 - (-2 * t + 2) ** 3 / 2;
     // a pane brought so a line sits near its top: at once as the page opens, in a short glide once the reader picks
     const bring = (r, pane, el, at) => {
+      // a line too tall to sit there whole starts just under the pane's top instead
+      const box = el.getBoundingClientRect(), room = pane.clientHeight * (1 - at) - 12;
       const to = Math.max(0, Math.min(pane.scrollHeight - pane.clientHeight,
-        pane.scrollTop + el.getBoundingClientRect().top - pane.getBoundingClientRect().top - pane.clientHeight * at));
+        pane.scrollTop + box.top - pane.getBoundingClientRect().top - (box.height > room ? 8 : pane.clientHeight * at)));
       cancelAnimationFrame(r.glides.get(pane));
       if (still.matches || !ready) { pane.scrollTop = to; return; }
       const from = pane.scrollTop, t0 = performance.now(), ms = 380;
