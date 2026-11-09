@@ -1827,6 +1827,20 @@ footer { margin-top: 96px; border-top: 1px solid var(--rule); padding-top: 24px;
 .sg-max svg { width: 12px; height: 12px; fill: none; stroke: currentColor; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
 .sg-ctl .ic-play, .sg-ctl[aria-pressed="true"] .ic-pause { display: none; }
 .sg-max .ic-play { display: none; }
+.sg-max .i-in, .show-win.big .sg-max .i-out { display: none; }
+.show-win.big .sg-max .i-in { display: inline; }
+/* a window opened bigger over the page: the window itself, as wide as the screen allows, its picture whole and
+   scrolled with the dialog, its bar kept at the top */
+.sg-dlg { position: fixed; inset: 0; width: 100%; height: 100%; max-width: none; max-height: none; margin: 0; border: 0;
+  padding: max(20px, env(safe-area-inset-top, 0px)) clamp(16px, 4vw, 48px) max(20px, env(safe-area-inset-bottom, 0px));
+  background: transparent; overflow: auto; }
+.sg-dlg::backdrop { background: rgb(0 0 0 / 0.6); }
+html:has(.sg-dlg[open]) { overflow: hidden; }
+.sg-dlg > .show-win { max-width: 1100px; margin-inline: auto; overflow: clip; }
+.sg-dlg .show-bar { position: sticky; top: 0; z-index: 1; padding-block: 11px; }
+.sg-dlg .show-view { aspect-ratio: auto; overflow: visible; cursor: default; }
+.sg-dlg .show-view img { position: static; display: none; opacity: 1; transform: none !important; transition: none; }
+.sg-dlg .show-view img.on { display: block; }
 .sg-ctl[aria-pressed="true"] .ic-play { display: block; }
 .show-side:not(.live) .sg-ctl:not(.sg-max) { visibility: hidden; }
 .sg-cell { display: grid; gap: 8px; align-content: start; min-width: 0; }
@@ -2443,17 +2457,33 @@ html:has(.hkp-dlg[open]) { overflow: hidden; }
   // or a folder showing its pictures one after another (a folder's each scrolled too). Each window's own button
   // pauses it where it is and plays it on from there; selecting a window opens its picture at full size and pauses it
   document.querySelectorAll("figure.show-side").forEach(fig => {
-    // any window opens its picture at full size, from its icon or a click on it, with motion or without
+    // any window opens bigger over the page, bar and lights and all, its picture whole (user, 9 Nov: "make the expand
+    // show the window bigger, not just the image"), from its icon or a click on it, with motion or without; Escape,
+    // the icon again or a click outside puts it back where it was
+    const dlg = document.createElement("dialog"), spot = document.createElement("div");
+    dlg.className = "sg-dlg";
+    fig.append(dlg);
+    dlg.addEventListener("click", e => { if (e.target === dlg) dlg.close(); });
+    dlg.addEventListener("close", () => {
+      const win = dlg.querySelector(".show-win");
+      if (!win) return;
+      spot.replaceWith(win); win.classList.remove("big");
+      const btn = win.querySelector(".sg-max");
+      if (btn) { btn.setAttribute("aria-label", btn.dataset.open); btn.setAttribute("aria-pressed", "false"); }
+    });
     fig.querySelectorAll(".sg-cell").forEach(cell => {
+      const win = cell.querySelector(".show-win"), btn = cell.querySelector(".sg-max");
+      if (btn) btn.dataset.open = btn.getAttribute("aria-label");
       const open = e => {
         e.stopPropagation();
-        if (!(big && big.showModal)) return;
-        const img = cell.querySelector(".show-view img.on") || cell.querySelector(".show-view img");
-        big.querySelector("img").src = img.src; big.querySelector("img").alt = img.alt;
-        cell.dispatchEvent(new Event("sg-open")); big.showModal();
+        if (dlg.open) { if (dlg.contains(win)) dlg.close(); return; }
+        if (!dlg.showModal) return;
+        spot.style.height = win.offsetHeight + "px"; win.before(spot); dlg.append(win); win.classList.add("big");
+        if (btn) { btn.setAttribute("aria-label", "Put the window back"); btn.setAttribute("aria-pressed", "true"); }
+        cell.dispatchEvent(new Event("sg-open")); dlg.showModal(); if (btn) btn.focus();
       };
-      cell.querySelector(".show-view").addEventListener("click", open);
-      cell.querySelector(".sg-max")?.addEventListener("click", open);
+      cell.querySelector(".show-view").addEventListener("click", e => { if (!dlg.open) open(e); });
+      if (btn) btn.addEventListener("click", open);
     });
     if (still.matches) return;
     const TURN = 12000;
