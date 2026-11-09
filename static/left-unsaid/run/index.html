@@ -508,12 +508,12 @@ header.mast:has(.mast-art-w) { padding-top: 0; }
 /* codex as its own terminal draws a session (0.159.0, the release's codex, replaying this run): no clock by each
    line and a blank line between cells, its box at the top, the user's message across the window on a light tint;
    under the transcript how long it has worked, its composer on a fainter tint, and the model and folder */
-.term-codex .t-steps { padding: 12px 0 8px; }
-.term-codex .t-steps li { grid-template-columns: minmax(0, 1fr); padding: 0 14px; }
-.term-codex .t-steps li + li { margin-top: 1.1em; }
-.term-codex .t-steps time { display: none; }
-.term-codex .t-steps li.t-user { padding: 0; }
-.term-codex .t-u { border-radius: 0; padding: 0.8em 14px; }
+.hkp-run .t-steps { padding: 12px 0 8px; }
+.hkp-run .t-steps li { grid-template-columns: minmax(0, 1fr); padding: 0 14px; }
+.hkp-run .t-steps li + li { margin-top: 1.1em; }
+.hkp-run .t-steps time { display: none; }
+.hkp-run .t-steps li.t-user { padding: 0; }
+.hkp-run .t-u { border-radius: 0; padding: 0.8em 14px; }
 .term-codex .t-u > .t-mk { width: 2ch; font-weight: 700; color: var(--t-dim); }
 .term-codex .t-mk { width: 2ch; }
 .term-codex .t-o { padding-left: 2ch; }
@@ -525,14 +525,45 @@ header.mast:has(.mast-art-w) { padding-top: 0; }
 .t-lbl { display: inline-block; width: 13ch; }
 .t-acc { color: var(--t-acc); }
 .t-yolo { color: #d670d6; }
-.term-codex .t-foot { gap: 0; padding: 0.9em 0 10px; border-top: 0; }
-.term-codex .t-foot p { padding-inline: 14px; }
+.hkp-run .t-foot { gap: 0; padding: 0.9em 0 10px; border-top: 0; }
+.hkp-run .t-foot p { padding-inline: 14px; }
 .t-wk { padding-bottom: 0.8em !important; color: var(--t-ink); }
 .t-wk b { color: var(--t-strong); }
 .t-comp { padding: 0.8em 0; background: var(--t-comp); }
 .term-codex .t-ps b { color: var(--t-strong); }
 .term-codex .t-foot .t-st { padding: 0.55em 14px 0 calc(14px + 2ch); }
 .t-model { color: #f6e2b7; } .t-cwd { color: #abdfa7; }
+/* claude-code 2.1.284, letta-code 0.33.7 and pi 0.87.1 as each draws a session (run live against a stand-in model,
+   9 Nov): claude-code's Clawd and letta-code's face beside their name, version, model and folder; claude-code's user
+   message on its grey with a dim ❯ and its orange working line over a composer between two rules; letta-code's
+   working line beside its name in violet, its composer between dim rules and its name and model under it; pi's name
+   and keys, its user message and tool calls on full-width tints, and "Working" in its composer's top border */
+.t-head2 { display: flex; align-items: flex-start; gap: 2ch; }
+.t-logo { flex: none; height: 4.65em; }
+.t-head2 p { overflow: hidden; text-overflow: ellipsis; }
+.term-claude-code .t-u > .t-mk { color: #505050; }
+.t-cc-wk { color: #d77757; }
+.t-cc-wk i { font-style: normal; margin-right: 0.4ch; }
+.term-claude-code .t-rule, .term-letta-code .t-rule { border-top-color: #888888; margin: 0 14px !important; padding: 0 !important; }
+.term-letta-code .t-rule { border-top-color: #4a4b4f; }
+.term-claude-code .t-foot .t-ps, .term-letta-code .t-foot .t-ps { padding-block: 0.35em; color: var(--t-strong); }
+.term-claude-code .t-foot .t-st, .term-letta-code .t-foot .t-st { padding-top: 0.35em; }
+.t-wk.t-cc-wk, .t-wk.t-lt-wk { padding-bottom: 0.8em !important; }
+.t-lt { color: #8c8cf9; }
+.t-lt-wk i { font-style: normal; color: #8c8cf9; margin-right: 0.4ch; }
+.t-lt-wk b { color: var(--t-strong); }
+.t-lt-wk .t-dim b { color: var(--t-ink); }
+.t-lt-new { margin-top: 0.9em !important; }
+.t-pi-name { color: #8abeb7; } .t-pi-dim { color: #666666; } .t-pi-mut { color: #808080; }
+.term-pi-coding-agent .t-steps li:has(.t-blk) { padding: 0; }
+.term-pi-coding-agent .t-steps li:has(.t-blk) > div { padding: 0.55em 14px; background: #283228; }
+.term-pi-coding-agent .t-blk, .term-pi-coding-agent .t-o.t-blk { padding-inline: 0; background: none; }
+.term-pi-coding-agent .t-o.t-blk { color: #808080; }
+.t-pi-work { display: flex; align-items: center; gap: 1ch; padding-inline: 0 !important; color: #505050; }
+.t-pi-work::before { content: ""; flex: none; width: 2ch; border-top: 1px solid #505050; }
+.t-pi-work::after { content: ""; flex: 1; border-top: 1px solid #505050; }
+.term-pi-coding-agent .t-foot .t-rule { margin: 0 !important; padding: 0 !important; border-top-color: #505050; }
+.term-pi-coding-agent .t-foot .t-st { color: #666666; }
 /* a question's number on each step it asks about, and the step lit while its question is picked */
 .t-steps li.sel p { white-space: normal; }
 .t-steps li.sel { background: var(--t-lit); box-shadow: inset 3px 0 var(--t-edge); }
@@ -1961,8 +1992,8 @@ figcaption.cap .cap-note { color: var(--ink-3); }
 .t-steps .t-u p { white-space: pre-wrap; overflow: visible; text-overflow: clip; }
 .t-steps .t-u .t-us { margin-bottom: 4px; color: var(--t-dim); }
 .t-steps .t-u .t-ut { display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 5; overflow: hidden; white-space: normal; }
-.term-claude-code { --t-user: rgba(255, 255, 255, 0.09); }
-.term-letta-code { --t-user: rgba(255, 255, 255, 0.06); } .term-pi-coding-agent { --t-user: #343541; }
+.term-claude-code { --t-user: #373737; }
+.term-letta-code { --t-user: #393939; } .term-pi-coding-agent { --t-user: #343541; }
 .term-pi-coding-agent .t-u { padding-left: 8px; }
 /* the run's buttons: pause, and the view expanded (user, 9 Nov: "make the expanded view open as a full-screen
    overlay"): the runs move into a dialog over the whole window, the run and its report filling what the question
