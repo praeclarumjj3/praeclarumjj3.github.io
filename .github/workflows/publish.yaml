@@ -70,3 +70,6 @@ jobs:
     - name: Deploy to GitHub Pages
       id: deployment
       uses: actions/deploy-pages@v4
+      with:
+        # Pages has been slow to take the site's large bundles (three 10-minute timeouts on 9 Nov 2026)
+        timeout: 1800000
