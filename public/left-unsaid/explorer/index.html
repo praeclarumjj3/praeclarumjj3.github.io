@@ -1804,6 +1804,123 @@ footer { margin-top: 96px; border-top: 1px solid var(--rule); padding-top: 24px;
 @keyframes demo-in { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .apx summary::before, .run-card { transition: none; } .run-card:hover { transform: none; }
   .show-view img { transition: none; } }
+/* one column (user, 9 Nov: "figures have very low margin on left and right but text has a lot seems unclean"): on the
+   post and the report every figure, the opener and the totals hold the words' own measure, so the page keeps one left
+   edge and one right edge; a figure needs no tinted panel to set it apart, and its caption sits under it (user: "we shud
+   have caption in every fig and table rather than heading at top"), numbered, its takeaway first */
+:is(main, header):is(.pg-post, .pg-report) .wide, main:is(.pg-post, .pg-report) > section.kind-later > ul.soon-list {
+  width: auto; max-width: var(--col); left: 0; transform: none; }
+:is(.pg-post, .pg-report) .scale-row { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+@media (max-width: 560px) { :is(.pg-post, .pg-report) .scale-row { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+body { counter-reset: fig; }
+:is(.pg-post, .pg-report) :is(.chart, .htable, .hplot, .hscore, .htiles, .hstrip, .durations, .tradeoff, .evmix, .wrun) {
+  background: none; padding: 0; border-radius: 0; }
+:is(.pg-post, .pg-report) :is(.chart, .htable, .hplot, .hscore, .htiles, .hstrip, .durations, .tradeoff, .evmix, .wrun, .show, .checks, .flow, .sessions, .writers) {
+  margin-block: 34px 40px; }
+:is(.pg-post, .pg-report) figcaption.cap { order: 99; margin: 4px 0 0; padding-top: 14px; border-top: 1px solid var(--rule);
+  font: 400 0.88rem/1.6 var(--sans); color: var(--ink-2); text-wrap: pretty; }
+figcaption.cap::before { counter-increment: fig; content: "Figure " counter(fig) ". "; font-weight: 650; color: var(--navy); }
+figcaption.cap .ck-take { font-weight: 600; color: var(--ink); }
+figcaption.cap .ck-what { display: inline; font-size: inherit; color: inherit; margin: 0; }
+figcaption.cap .cap-note { color: var(--ink-3); }
+:is(.pg-post, .pg-report) .chart { gap: 16px; }
+/* a bar's 95% interval, quietly (user, 9 Nov: "for bars shud we not display range of varaibce anymore ... can we find a
+   better way"): the bar is solid as far as its interval's low end, pale across the interval, and a fine mark of its
+   own colour stands at the estimate, so the uncertainty reads as the bar's own soft edge and nothing crosses it */
+.chart-row, .pair-bar { --bar: var(--blue); }
+.chart-row.tone-covered { --bar: var(--covered); } .chart-row.tone-silent { --bar: var(--silent); } .chart-row.tone-wrong { --bar: var(--wrong); }
+.grouped :is(.chart-row, .pair-bar) { --bar: var(--hc); }
+:is(.pg-post, .pg-report) .chart-track { height: 12px; background: var(--mist); border-radius: 3px; }
+:is(.pg-post, .pg-report) .chart-fill { background: var(--bar); border-radius: 3px; }
+:is(.pg-post, .pg-report) .chart-ci { top: 0; bottom: 0; height: auto; margin: 0; border-radius: 0 3px 3px 0; filter: none;
+  background: color-mix(in srgb, var(--bar) 34%, var(--mist)); }
+:is(.pg-post, .pg-report) .chart-ci::before, :is(.pg-post, .pg-report) .chart-ci::after { content: none; }
+:is(.pg-post, .pg-report) .chart-track[style*="--v"]::after { content: ""; position: absolute; top: -3px; bottom: -3px;
+  left: calc(var(--v) - 1px); width: 2px; border-radius: 1px; background: var(--bar); }
+.chart-row.thin .chart-fill, .pair-bar.thin .chart-fill { opacity: 0.45; }
+:is(.pg-post, .pg-report) .chart-v { font-size: 0.98rem; }
+:is(.pg-post, .pg-report) .chart-g { font-size: 0.92rem; }
+/* a figure's groups at this measure: side by side on one set of rows from a tablet up, the harnesses named once */
+:is(.pg-post, .pg-report) .grouped .chart-row { grid-template-columns: minmax(0, 10rem) minmax(0, 1fr) 4rem; gap: 12px; }
+:is(.pg-post, .pg-report) .chart.full.grouped .chart-row { grid-template-columns: minmax(0, 10rem) minmax(0, 1fr) 6.4rem; }
+@media (min-width: 700px) {
+  :is(.pg-post, .pg-report) .chart:not(.full) .chart-groups:is(.g2, .g3) { display: grid; column-gap: 28px; row-gap: 12px; }
+  :is(.pg-post, .pg-report) .chart:not(.full) .chart-groups.g3 { grid-template-columns: minmax(0, 1.75fr) minmax(0, 1fr) minmax(0, 1fr); }
+  :is(.pg-post, .pg-report) .chart:not(.full) .chart-groups.g2 { grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr); }
+  :is(.pg-post, .pg-report) .chart:not(.full) .chart-groups > .chart-group { grid-row: span var(--rows); grid-template-rows: subgrid; gap: 12px 0; }
+  :is(.pg-post, .pg-report) .chart:not(.full) .chart-groups > .chart-group + .chart-group { margin-top: 0; }
+  :is(.pg-post, .pg-report) .chart:not(.full) .chart-groups > .chart-group .chart-g { align-self: end; }
+  :is(.pg-post, .pg-report) .chart:not(.full) .chart-groups > .chart-group + .chart-group .chart-l { display: none; }
+  :is(.pg-post, .pg-report) .chart:not(.full) .chart-groups > .chart-group + .chart-group .chart-row { grid-template-columns: minmax(0, 1fr) 3.6rem; }
+  :is(.pg-post, .pg-report) .chart:not(.full) .chart-groups > .chart-group:first-child .chart-row { grid-template-columns: minmax(0, 9.5rem) minmax(0, 1fr) 3.6rem; }
+}
+/* the opener, quieter (user, 9 Nov: "What a run's report leaves out component and animation is stilll not clean and demo
+   ready"): no panel around it and no heading over it, its caption under it like every figure's; one framed card per
+   run with the run's facts in one line, the question large, the two panes faded at their foot so no line is cut, only
+   the picked question's answer marked in the report, and one left unsaid said plainly over the report with what the
+   run shows in its place; the run's totals are the dots and their counts, not tiles */
+:is(.pg-post, .pg-report) .hook { background: none; padding: 0; border-radius: 0; gap: 0; margin: 4px 0 30px; }
+.hook .hkp { gap: 12px; }
+.hook .hkp-ex { gap: 16px; padding: 20px 22px 18px; border: 1px solid var(--rule); border-radius: 16px; background: var(--white);
+  box-shadow: 0 1px 2px rgba(var(--shadow), 0.04), 0 18px 40px -26px rgba(var(--shadow), 0.28); }
+.hook figcaption.cap { margin-top: 16px; }
+.hook .hk-h { font: inherit; font-weight: 600; letter-spacing: 0; color: var(--ink); text-decoration: none; }
+.hook .hk-h:hover, .hook .hk-h:focus-visible { text-decoration: underline; text-decoration-color: var(--edge); text-underline-offset: 3px; }
+.hook .hk-m { gap: 4px 0; font-size: 0.82rem; color: var(--ink-3); }
+.hook .hk-m > span + span::before { content: "·"; margin: 0 9px; color: var(--ink-3); font-family: var(--sans); }
+.hook .hk-m .hk-b { color: var(--ink); font-weight: 600; }
+.hook .hk-task { color: var(--ink-2); }
+.hook .hkq-tag { padding: 4px 12px 4px 4px; font-size: 0.8rem; }
+.hook .hkq-tag b { width: 20px; height: 20px; }
+.hook .hkq-q { gap: 10px 14px; }
+.hook .hkq-q .hk-t { flex: 1 1 26rem; font: 400 1.2rem/1.38 var(--display); }
+.hook .hkp-vw { font-size: 0.82rem; padding: 4px 9px; }
+.hook .hkq-panes { gap: 12px; }
+.hook .hkp-run, .hook .hkq-panes .hkp-rep { height: 380px; border-radius: 12px; }
+.hook .t-steps, .hook .demo-doc { -webkit-mask-image: linear-gradient(to bottom, #000 calc(100% - 36px), transparent);
+  mask-image: linear-gradient(to bottom, #000 calc(100% - 36px), transparent); padding-bottom: 30px; }
+/* only the picked question's answer is marked in the report */
+.hook .demo-doc p.hkq-hit:not(.sel) { background: none; box-shadow: none; }
+.hook .demo-doc p.hkq-hit:not(.sel)::before { content: none; }
+/* one left unsaid: the report fades back and the card says so, with what the run shows */
+.hook .hkq-none { top: 38px; bottom: 0; left: 0; right: 0; display: grid; align-content: center; gap: 12px; padding: 22px 24px;
+  border-radius: 0; background: color-mix(in srgb, var(--paper) 86%, transparent); box-shadow: none; color: var(--paper-ink);
+  -webkit-backdrop-filter: blur(2px); backdrop-filter: blur(2px); font: 400 0.9rem/1.5 var(--sans); }
+.hook .hkq-nh { margin: 0; font: 600 1rem/1.4 var(--sans); color: #9a420d; text-wrap: balance; }
+.hook .hkq-nh::before { content: ""; display: inline-block; width: 10px; height: 10px; margin-right: 9px; border-radius: 2px; background: #e07a2c; }
+.hook .hkq-nh b { font-weight: 700; margin-right: 4px; }
+.hook .hkq-gold { margin: 0; padding: 12px 14px 0; border-bottom: 12px solid #fff7f0; border-left: 3px solid #e07a2c; background: #fff7f0; border-radius: 0 8px 8px 0;
+  font-size: 0.84rem; line-height: 1.55; color: var(--paper-ink); display: -webkit-box; -webkit-box-orient: vertical;
+  -webkit-line-clamp: 7; overflow: hidden; max-height: none; flex: none; }
+.hook .hkq-gold span { display: block; margin-bottom: 4px; font: 700 0.64rem/1.3 var(--sans); letter-spacing: 0.08em; text-transform: uppercase; color: #9a420d; }
+.hook .hkp-rep.nowhere .demo-doc { opacity: 0.4; }
+/* every question about the run as a dot, its count beside each colour */
+.hook .hkq-all { gap: 8px; padding-top: 14px; border-top: 1px solid var(--rule); }
+.hook .hkq-all .hk-tk { font: 500 0.84rem/1.3 var(--sans); color: var(--ink-2); }
+.hook .hkq-all .hk-tk b { color: var(--ink); font-weight: 650; }
+.hook .hk-go { font: 600 0.82rem var(--sans); color: var(--blue); text-decoration: none; }
+.hook .hk-go::after { content: " \2192"; }
+.hook .hk-go:hover { text-decoration: underline; }
+.hook .hkq-row { grid-template-columns: 4.6rem minmax(0, 1fr) 7.4rem; font-size: 0.82rem; gap: 12px; }
+.hook .hkq-ds { gap: 3px; }
+.hook .hkq-ds i { width: 11px; height: 11px; }
+.hook .hkq-ds i.hkq-asked { width: 17px; height: 17px; }
+.hook .hkq-legend { display: flex; flex-wrap: wrap; gap: 4px 16px; margin: 2px 0 0; font-size: 0.8rem; color: var(--ink-2); }
+.hook .hkq-lg { color: var(--ink-2); }
+.hook .hkq-lg b { font-weight: 650; color: var(--ink); font-variant-numeric: tabular-nums; }
+.hook .hkq-lg i { width: 10px; height: 10px; }
+@media (max-width: 760px) {
+  .hook .hkp-ex { padding: 16px 14px 14px; }
+  .hook .hkp-run, .hook .hkq-panes .hkp-rep { height: 320px; }
+  .hook .hkq-row { grid-template-columns: minmax(0, 1fr) auto; }
+}
+:is(.pg-post, .pg-report) .rf-chart { padding: 4px 0 0; border-radius: 0; background: none; box-shadow: none; }
+/* a record's gap, said once in the page's words: a quiet note under the words, not a dashed box */
+:is(.pg-post, .pg-report) .partial-box { display: block; border: 0; border-left: 2px solid var(--edge); border-radius: 0;
+  padding: 2px 0 2px 14px; margin: 0 0 16px; font-size: 0.86rem; line-height: 1.6; color: var(--ink-2); }
+:is(.pg-post, .pg-report) .partial-box .wait-k { display: inline; margin-right: 8px; font-size: 0.66rem; color: var(--ink-3); }
+/* the totals under the opener, at the column's measure: no panel, four to a row, what they count in the caption */
+:is(.pg-post, .pg-report) .scale-band { background: none; border: 0; border-radius: 0; padding: 0; gap: 0; }
 /* the harnesses' logos, one data URI each */
 .hl-claude-code{background-image:url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQ4IiBoZWlnaHQ9IjI0OCIgdmlld0JveD0iMCAwIDI0OCAyNDgiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxwYXRoIGQ9Ik01Mi40Mjg1IDE2Mi44NzNMOTguNzg0NCAxMzYuODc5TDk5LjU0ODUgMTM0LjYwMkw5OC43ODQ0IDEzMy4zMzRIOTYuNDkyMUw4OC43MjM3IDEzMi44NjJMNjIuMjM0NiAxMzIuMTUzTDM5LjMxMTMgMTMxLjIwN0wxNy4wMjQ5IDEzMC4wMjZMMTEuNDIxNCAxMjguODQ0TDYuMiAxMjEuODczTDYuNzA5NCAxMTguNDQ3TDExLjQyMTQgMTE1LjI1N0wxOC4xNzEgMTE1Ljg0N0wzMy4wNzExIDExNi45MTFMNTUuNDg1IDExOC40NDdMNzEuNjU4NiAxMTkuMzkyTDk1LjcyOCAxMjEuODczSDk5LjU0ODVMMTAwLjA1OCAxMjAuMzM3TDk4Ljc4NDQgMTE5LjM5Mkw5Ny43NjU2IDExOC40NDdMNzQuNTg3NyAxMDIuNzMyTDQ5LjQ5OTUgODYuMTkwNUwzNi4zODIzIDc2LjYyTDI5LjM3NzkgNzEuNzc1N0wyNS44MTIxIDY3LjI4NThMMjQuMjgzOSA1Ny4zNjA4TDMwLjY1MTUgNTAuMjcxNkwzOS4zMTEzIDUwLjg2MjNMNDEuNDc2MyA1MS40NTMxTDUwLjI2MzYgNTguMTg3OUw2OC45ODQyIDcyLjcyMDlMOTMuNDM1NyA5MC42ODA0TDk3LjAwMTUgOTMuNjM0M0w5OC40Mzc0IDkyLjY2NTJMOTguNjU3MSA5MS45ODAxTDk3LjAwMTUgODkuMjYyNUw4My43NTcgNjUuMjc3Mkw2OS42MjEgNDAuODE5Mkw2My4yNTM0IDMwLjY1NzlMNjEuNTk3OCAyNC42MzJDNjAuOTU2NSAyMi4xMDMyIDYwLjU3OSAyMC4wMTExIDYwLjU3OSAxNy40MjQ2TDY3LjgzODEgNy40OTk2NUw3MS45MTMzIDYuMTk5OTVMODEuNzE5MyA3LjQ5OTY1TDg1Ljc5NDYgMTEuMDQ0M0w5MS45MDc0IDI0Ljk4NjVMMTAxLjcxNCA0Ni44NDUxTDExNi45OTYgNzYuNjJMMTIxLjQ1MyA4NS40ODE2TDEyMy44NzMgOTMuNjM0M0wxMjQuNzY0IDk2LjExNTVIMTI2LjI5MlY5NC42OTc2TDEyNy41NjYgNzcuOTE5N0wxMjkuODU4IDU3LjM2MDhMMTMyLjE1IDMwLjg5NDJMMTMyLjkxNSAyMy40NTA1TDEzNi42MDggMTQuNDcwOEwxNDMuOTk0IDkuNjI2NDNMMTQ5LjcyNSAxMi4zNDRMMTU0LjQzNyAxOS4wNzg4TDE1My44IDIzLjQ1MDVMMTUwLjk5OCA0MS42NDYzTDE0NS41MjIgNzAuMTIxNUwxNDEuOTU3IDg5LjI2MjVIMTQzLjk5NEwxNDYuNDE0IDg2Ljc4MTNMMTU2LjA5MyA3NC4wMjA2TDE3Mi4yNjYgNTMuNjk4TDE3OS4zOTggNDUuNjYzNUwxODcuODAzIDM2LjgwMkwxOTMuMTUyIDMyLjU0ODRIMjAzLjM0TDIxMC43MjYgNDMuNjU0OUwyMDcuNDE1IDU1LjExNTlMMTk2Ljk3MiA2OC4zNDkyTDE4OC4zMTIgNzkuNTczOUwxNzUuODk2IDk2LjIwOTVMMTY4LjE5MSAxMDkuNTg1TDE2OC44ODIgMTEwLjY4OUwxNzAuNzM4IDExMC41M0wxOTguNzU1IDEwNC41MDRMMjEzLjkxIDEwMS43ODdMMjMxLjk5NCA5OC43MTQ5TDI0MC4xNDQgMTAyLjQ5NkwyNDEuMDM2IDEwNi4zOTVMMjM3Ljg1MiAxMTQuMzExTDIxOC40OTUgMTE5LjAzN0wxOTUuODI2IDEyMy42NDVMMTYyLjA3IDEzMS41OTJMMTYxLjY5NiAxMzEuODkzTDE2Mi4xMzcgMTMyLjU0N0wxNzcuMzYgMTMzLjkyNUwxODMuODU1IDEzNC4yNzlIMTk5Ljc3NEwyMjkuNDQ3IDEzNi41MjRMMjM3LjIxNSAxNDEuNjA1TDI0MS44IDE0Ny44NjdMMjQxLjAzNiAxNTIuNzExTDIyOS4wNjUgMTU4LjczN0wyMTMuMDE5IDE1NC45NTZMMTc1LjQ1IDE0NS45NzdMMTYyLjU4NyAxNDIuNzg3SDE2MC44MDVWMTQzLjg1TDE3MS41MDIgMTU0LjM2NkwxOTEuMjQyIDE3Mi4wODlMMjE1LjgyIDE5NS4wMTFMMjE3LjA5NCAyMDAuNjgyTDIxMy45MSAyMDUuMTcyTDIxMC41OTkgMjA0LjY5OUwxODguOTQ5IDE4OC4zOTRMMTgwLjU0NCAxODEuMDY5TDE2MS42OTYgMTY1LjExOEgxNjAuNDIyVjE2Ni43NzJMMTY0Ljc1MiAxNzMuMTUyTDE4Ny44MDMgMjA3Ljc3MUwxODguOTQ5IDIxOC40MDVMMTg3LjI5NCAyMjEuODMyTDE4MS4zMDggMjIzLjk1OUwxNzQuODEzIDIyMi43NzdMMTYxLjE4NyAyMDMuNzU0TDE0Ny4zMDUgMTgyLjQ4NkwxMzYuMDk4IDE2My4zNDVMMTM0Ljc0NSAxNjQuMkwxMjguMDc1IDIzNS40MkwxMjUuMDE5IDIzOS4wODJMMTE3Ljg4NyAyNDEuOEwxMTEuOTAyIDIzNy4zMUwxMDguNzE4IDIyOS45ODRMMTExLjkwMiAyMTUuNDUyTDExNS43MjIgMTk2LjU0N0wxMTguNzc5IDE4MS41NDFMMTIxLjU4IDE2Mi44NzNMMTIzLjI5MSAxNTYuNjM2TDEyMy4xNCAxNTYuMjE5TDEyMS43NzMgMTU2LjQ0OUwxMDcuNjk5IDE3NS43NTJMODYuMzA0IDIwNC42OTlMNjkuMzY2MyAyMjIuNzc3TDY1LjI5MSAyMjQuNDMxTDU4LjI4NjcgMjIwLjc2OEw1OC45MjM1IDIxNC4yN0w2Mi44NzEzIDIwOC40OEw4Ni4zMDQgMTc4LjcwNUwxMDAuNDQgMTYwLjE1NUwxMDkuNTUxIDE0OS41MDdMMTA5LjQ2MiAxNDcuOTY3TDEwOC45NTkgMTQ3LjkyNEw0Ni42OTc3IDE4OC41MTJMMzUuNjE4MiAxODkuOTNMMzAuNzc4OCAxODUuNDRMMzEuNDE1NiAxNzguMTE1TDMzLjcwNzkgMTc1Ljc1Mkw1Mi40Mjg1IDE2Mi44NzNaIiBmaWxsPSIjRDk3NzU3Ii8+Cjwvc3ZnPgo=")}
 .hl-codex{-webkit-mask:url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMWVtIiBoZWlnaHQ9IjFlbSIgdmlld0JveD0iMTAwIDEwMCA0MTEgNDExIiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGNsYXNzPSJoLTYgdy02IiBhcmlhLWhpZGRlbj0idHJ1ZSI+PHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik0yNTIuNzk0IDEwOC44MDJDMjg5LjE5MSA5OS4wNDg0IDMyNi4yNjUgMTEwLjMwNSAzNTEuMTQ4IDEzNS4xMzVDMzg1LjExMyAxMjYuMDcyIDQyMi44NSAxMzQuODYyIDQ0OS40OTIgMTYxLjUwNUM0NzYuMTM2IDE4OC4xNDkgNDg0LjkyNSAyMjUuODg4IDQ3NS44NjIgMjU5Ljg1VjI1OS44NTRDNTAwLjY5NiAyODQuNzM1IDUxMS45NSAzMjEuODEgNTAyLjE5OCAzNTguMjA3QzQ5Mi40NDcgMzk0LjYwMiA0NjQuMTYxIDQyMS4wODQgNDMwLjIxNSA0MzAuMjE3QzQyMS4wODMgNDY0LjE2MiAzOTQuNjAzIDQ5Mi40NDggMzU4LjIwNiA1MDIuMTk5QzMyMS44MTIgNTExLjk1MSAyODQuNzM0IDUwMC42OTMgMjU5Ljg1MiA0NzUuODY0QzIyNS44ODcgNDg0LjkyNyAxODguMTUgNDc2LjEzNyAxNjEuNTA3IDQ0OS40OTVDMTM0Ljg2NCA0MjIuODUxIDEyNi4wNzMgMzg1LjExMSAxMzUuMTM2IDM1MS4xNDlDMTEwLjMwNCAzMjYuMjY2IDk5LjA0OTYgMjg5LjE5MiAxMDguODAxIDI1Mi43OTVDMTE4LjU1MiAyMTYuNCAxNDYuODQgMTg5LjkxOCAxODAuNzg0IDE4MC43ODVDMTg5LjkxNyAxNDYuODQxIDIxNi4zOTYgMTE4LjU1MyAyNTIuNzk0IDEwOC44MDJaTTM3NC4yOTIgNDA3LjE0NUMzNzQuMjkyIDQxMS4yNzEgMzcyLjA5MiA0MTUuMDg2IDM2OC41MTcgNDE3LjE0OEwyODMuNzIzIDQ2Ni4xMDJDMzAyLjQ4NyA0ODAuNTg1IDMyNy41NTUgNDg2LjQ1OSAzNTIuMjE3IDQ3OS44NTJDMzg2Ljk5NyA0NzAuNTMyIDQxMC4wNjggNDM5LjMxMiA0MTAuNTU1IDQwNS4wMDZWMzE3LjcxN0M0MTAuNTU1IDMxNS4wOCA0MDkuMTI1IDMxMi42MjEgNDA2Ljg0MyAzMTEuMzAzTDM3NC4yOTIgMjkyLjUwOVY0MDcuMTQ1Wk0yNTEuODY4IDQxNS44OTdDMjQ4LjI5NiA0MTcuOTU5IDI0My44OTMgNDE3Ljk1OSAyNDAuMzE3IDQxNS44OTdMMTU1LjUyNiAzNjYuOTQyQzE1Mi4zNjYgMzkwLjQzNiAxNTkuODExIDQxNS4wOCAxNzcuODY2IDQzMy4xMzZIMTc3Ljg2M0MyMDMuMzI1IDQ1OC41OTQgMjQxLjg5NiA0NjIuOTYyIDI3MS44NSA0NDYuMjMyTDM0Ny40NDkgNDAyLjU4NkMzNDkuNzM1IDQwMS4yNjggMzUxLjE0OCAzOTguOCAzNTEuMTQ4IDM5Ni4xNjNWMzU4LjU3OUwyNTEuODY4IDQxNS44OTdaTTM2OC42MDIgMjIwLjYyOEMzNjYuMzE5IDIxOS4zMDkgMzYzLjQ3NCAyMTkuMzE4IDM2MS4xOTEgMjIwLjYzN0wzMjguNjQxIDIzOS40MzFMNDI3LjkyMSAyOTYuNzQ5QzQzMS40OTYgMjk4LjgxMSA0MzMuNjk3IDMwMi42MjcgNDMzLjY5NyAzMDYuNzUyVjQwNC42NjFDNDU1LjYyMiAzOTUuNjU0IDQ3My4yNDQgMzc2Ljg4MSA0NzkuODUxIDM1Mi4yMThDNDg5LjE2OSAzMTcuNDQyIDQ3My42NjggMjgxLjg1IDQ0NC4yMDEgMjY0LjI3NEwzNjguNjAyIDIyMC42MjhaTTE3Ny4zMDMgMjA2LjM0QzE1NS4zNzcgMjE1LjM0OCAxMzcuNzU2IDIzNC4xMjIgMTMxLjE0OCAyNTguNzgzQzEyMS44MzIgMjkzLjU2MSAxMzcuMzMxIDMyOS4xNTMgMTY2Ljc5OSAzNDYuNzI3TDI0Mi4zOTggMzkwLjM3M0MyNDQuNjggMzkxLjY5MiAyNDcuNTI1IDM5MS42ODQgMjQ5LjgwNyAzOTAuMzY2TDI4Mi4zNTcgMzcxLjU3MkwxODMuMDc4IDMxNC4yNTNDMTc5LjUwNCAzMTIuMTg5IDE3Ny4zMDMgMzA4LjM3NSAxNzcuMzAzIDMwNC4yNTFWMjA2LjM0Wk0yNTkuODQ5IDI3OS4xNDVWMzMxLjg1OEwzMDUuNSAzNTguMjEzTDM1MS4xNSAzMzEuODU4VjI3OS4xNDVMMzA1LjUgMjUyLjc4OUwyNTkuODQ5IDI3OS4xNDVaTTMyNy4yNzYgMTQ0LjlDMzA4LjUxMiAxMzAuNDE4IDI4My40NDUgMTI0LjU0MyAyNTguNzgyIDEzMS4xNUMyMjQuMDAyIDE0MC40NzEgMjAwLjkzMSAxNzEuNjkxIDIwMC40NDUgMjA1Ljk5NVYyOTMuMjg2QzIwMC40NDUgMjk1LjkyMyAyMDEuODc1IDI5OC4zODEgMjA0LjE1OCAyOTkuN0wyMzYuNzA3IDMxOC40OTNWMjAzLjg1NkMyMzYuNzA3IDE5OS43MzEgMjM4LjkwOSAxOTUuOTE2IDI0Mi40ODMgMTkzLjg1M0wzMjcuMjc2IDE0NC45Wk00MzMuMTM3IDE3Ny44NjdDNDA3LjY3NSAxNTIuNDA3IDM2OS4xMDMgMTQ4LjAzOCAzMzkuMTQ5IDE2NC43NjlMMjYzLjU1IDIwOC40MTVDMjYxLjI2NSAyMDkuNzM0IDI1OS44NTIgMjEyLjIwMiAyNTkuODUyIDIxNC44MzhWMjUyLjQyM0wzNTkuMTMyIDE5NS4xMDVDMzYyLjcwMyAxOTMuMDQxIDM2Ny4xMDggMTkzLjA0MSAzNzAuNjgyIDE5NS4xMDVMNDU1LjQ3MyAyNDQuMDZDNDU4LjYzNSAyMjAuNTY3IDQ1MS4xODkgMTk1LjkyMiA0MzMuMTM1IDE3Ny44NjdINDMzLjEzN1oiIGZpbGw9ImN1cnJlbnRDb2xvciI+PC9wYXRoPjwvc3ZnPg==") center/contain no-repeat;mask:url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMWVtIiBoZWlnaHQ9IjFlbSIgdmlld0JveD0iMTAwIDEwMCA0MTEgNDExIiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGNsYXNzPSJoLTYgdy02IiBhcmlhLWhpZGRlbj0idHJ1ZSI+PHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik0yNTIuNzk0IDEwOC44MDJDMjg5LjE5MSA5OS4wNDg0IDMyNi4yNjUgMTEwLjMwNSAzNTEuMTQ4IDEzNS4xMzVDMzg1LjExMyAxMjYuMDcyIDQyMi44NSAxMzQuODYyIDQ0OS40OTIgMTYxLjUwNUM0NzYuMTM2IDE4OC4xNDkgNDg0LjkyNSAyMjUuODg4IDQ3NS44NjIgMjU5Ljg1VjI1OS44NTRDNTAwLjY5NiAyODQuNzM1IDUxMS45NSAzMjEuODEgNTAyLjE5OCAzNTguMjA3QzQ5Mi40NDcgMzk0LjYwMiA0NjQuMTYxIDQyMS4wODQgNDMwLjIxNSA0MzAuMjE3QzQyMS4wODMgNDY0LjE2MiAzOTQuNjAzIDQ5Mi40NDggMzU4LjIwNiA1MDIuMTk5QzMyMS44MTIgNTExLjk1MSAyODQuNzM0IDUwMC42OTMgMjU5Ljg1MiA0NzUuODY0QzIyNS44ODcgNDg0LjkyNyAxODguMTUgNDc2LjEzNyAxNjEuNTA3IDQ0OS40OTVDMTM0Ljg2NCA0MjIuODUxIDEyNi4wNzMgMzg1LjExMSAxMzUuMTM2IDM1MS4xNDlDMTEwLjMwNCAzMjYuMjY2IDk5LjA0OTYgMjg5LjE5MiAxMDguODAxIDI1Mi43OTVDMTE4LjU1MiAyMTYuNCAxNDYuODQgMTg5LjkxOCAxODAuNzg0IDE4MC43ODVDMTg5LjkxNyAxNDYuODQxIDIxNi4zOTYgMTE4LjU1MyAyNTIuNzk0IDEwOC44MDJaTTM3NC4yOTIgNDA3LjE0NUMzNzQuMjkyIDQxMS4yNzEgMzcyLjA5MiA0MTUuMDg2IDM2OC41MTcgNDE3LjE0OEwyODMuNzIzIDQ2Ni4xMDJDMzAyLjQ4NyA0ODAuNTg1IDMyNy41NTUgNDg2LjQ1OSAzNTIuMjE3IDQ3OS44NTJDMzg2Ljk5NyA0NzAuNTMyIDQxMC4wNjggNDM5LjMxMiA0MTAuNTU1IDQwNS4wMDZWMzE3LjcxN0M0MTAuNTU1IDMxNS4wOCA0MDkuMTI1IDMxMi42MjEgNDA2Ljg0MyAzMTEuMzAzTDM3NC4yOTIgMjkyLjUwOVY0MDcuMTQ1Wk0yNTEuODY4IDQxNS44OTdDMjQ4LjI5NiA0MTcuOTU5IDI0My44OTMgNDE3Ljk1OSAyNDAuMzE3IDQxNS44OTdMMTU1LjUyNiAzNjYuOTQyQzE1Mi4zNjYgMzkwLjQzNiAxNTkuODExIDQxNS4wOCAxNzcuODY2IDQzMy4xMzZIMTc3Ljg2M0MyMDMuMzI1IDQ1OC41OTQgMjQxLjg5NiA0NjIuOTYyIDI3MS44NSA0NDYuMjMyTDM0Ny40NDkgNDAyLjU4NkMzNDkuNzM1IDQwMS4yNjggMzUxLjE0OCAzOTguOCAzNTEuMTQ4IDM5Ni4xNjNWMzU4LjU3OUwyNTEuODY4IDQxNS44OTdaTTM2OC42MDIgMjIwLjYyOEMzNjYuMzE5IDIxOS4zMDkgMzYzLjQ3NCAyMTkuMzE4IDM2MS4xOTEgMjIwLjYzN0wzMjguNjQxIDIzOS40MzFMNDI3LjkyMSAyOTYuNzQ5QzQzMS40OTYgMjk4LjgxMSA0MzMuNjk3IDMwMi42MjcgNDMzLjY5NyAzMDYuNzUyVjQwNC42NjFDNDU1LjYyMiAzOTUuNjU0IDQ3My4yNDQgMzc2Ljg4MSA0NzkuODUxIDM1Mi4yMThDNDg5LjE2OSAzMTcuNDQyIDQ3My42NjggMjgxLjg1IDQ0NC4yMDEgMjY0LjI3NEwzNjguNjAyIDIyMC42MjhaTTE3Ny4zMDMgMjA2LjM0QzE1NS4zNzcgMjE1LjM0OCAxMzcuNzU2IDIzNC4xMjIgMTMxLjE0OCAyNTguNzgzQzEyMS44MzIgMjkzLjU2MSAxMzcuMzMxIDMyOS4xNTMgMTY2Ljc5OSAzNDYuNzI3TDI0Mi4zOTggMzkwLjM3M0MyNDQuNjggMzkxLjY5MiAyNDcuNTI1IDM5MS42ODQgMjQ5LjgwNyAzOTAuMzY2TDI4Mi4zNTcgMzcxLjU3MkwxODMuMDc4IDMxNC4yNTNDMTc5LjUwNCAzMTIuMTg5IDE3Ny4zMDMgMzA4LjM3NSAxNzcuMzAzIDMwNC4yNTFWMjA2LjM0Wk0yNTkuODQ5IDI3OS4xNDVWMzMxLjg1OEwzMDUuNSAzNTguMjEzTDM1MS4xNSAzMzEuODU4VjI3OS4xNDVMMzA1LjUgMjUyLjc4OUwyNTkuODQ5IDI3OS4xNDVaTTMyNy4yNzYgMTQ0LjlDMzA4LjUxMiAxMzAuNDE4IDI4My40NDUgMTI0LjU0MyAyNTguNzgyIDEzMS4xNUMyMjQuMDAyIDE0MC40NzEgMjAwLjkzMSAxNzEuNjkxIDIwMC40NDUgMjA1Ljk5NVYyOTMuMjg2QzIwMC40NDUgMjk1LjkyMyAyMDEuODc1IDI5OC4zODEgMjA0LjE1OCAyOTkuN0wyMzYuNzA3IDMxOC40OTNWMjAzLjg1NkMyMzYuNzA3IDE5OS43MzEgMjM4LjkwOSAxOTUuOTE2IDI0Mi40ODMgMTkzLjg1M0wzMjcuMjc2IDE0NC45Wk00MzMuMTM3IDE3Ny44NjdDNDA3LjY3NSAxNTIuNDA3IDM2OS4xMDMgMTQ4LjAzOCAzMzkuMTQ5IDE2NC43NjlMMjYzLjU1IDIwOC40MTVDMjYxLjI2NSAyMDkuNzM0IDI1OS44NTIgMjEyLjIwMiAyNTkuODUyIDIxNC44MzhWMjUyLjQyM0wzNTkuMTMyIDE5NS4xMDVDMzYyLjcwMyAxOTMuMDQxIDM2Ny4xMDggMTkzLjA0MSAzNzAuNjgyIDE5NS4xMDVMNDU1LjQ3MyAyNDQuMDZDNDU4LjYzNSAyMjAuNTY3IDQ1MS4xODkgMTk1LjkyMiA0MzMuMTM1IDE3Ny44NjdINDMzLjEzN1oiIGZpbGw9ImN1cnJlbnRDb2xvciI+PC9wYXRoPjwvc3ZnPg==") center/contain no-repeat;background-color:var(--ink)}
