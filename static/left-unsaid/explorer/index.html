@@ -1866,7 +1866,7 @@ figcaption.cap .cap-note { color: var(--ink-3); }
 .hook figcaption.cap { margin-top: 16px; }
 .hook .hk-h { font: inherit; font-weight: 600; letter-spacing: 0; color: var(--ink); text-decoration: none; }
 .hook .hk-h:hover, .hook .hk-h:focus-visible { text-decoration: underline; text-decoration-color: var(--edge); text-underline-offset: 3px; }
-.hook .hk-m { gap: 4px 0; font-size: 0.82rem; color: var(--ink-3); }
+.hook .hk-m { display: block; font-size: 0.82rem; line-height: 1.6; color: var(--ink-3); }
 .hook .hk-m > span + span::before { content: "·"; margin: 0 9px; color: var(--ink-3); font-family: var(--sans); }
 .hook .hk-m .hk-b { color: var(--ink); font-weight: 600; }
 .hook .hk-task { color: var(--ink-2); }
@@ -1909,6 +1909,34 @@ figcaption.cap .cap-note { color: var(--ink-3); }
 .hook .hkq-lg { color: var(--ink-2); }
 .hook .hkq-lg b { font-weight: 650; color: var(--ink); font-variant-numeric: tabular-nums; }
 .hook .hkq-lg i { width: 10px; height: 10px; }
+/* the message that started the run, at the top of its transcript as the harness draws a user's message (user, 9 Nov:
+   "not showing instuction from user"): the standing instructions held in a line, then the task, a few lines of it
+   until the view is expanded */
+.t-steps li.t-user { padding-block: 6px 10px; }
+.t-u { display: flex; padding: 6px 10px 7px 4px; border-radius: 3px; background: var(--t-user); color: var(--t-strong); }
+.t-u > .t-mk { flex: none; width: 1.6em; }
+.t-u > div { min-width: 0; }
+.t-steps .t-u p { white-space: pre-wrap; overflow: visible; text-overflow: clip; }
+.t-steps .t-u .t-us { margin-bottom: 4px; color: var(--t-dim); }
+.t-steps .t-u .t-ut { display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 5; overflow: hidden; white-space: normal; }
+.term-codex { --t-user: rgba(255, 255, 255, 0.07); } .term-claude-code { --t-user: rgba(255, 255, 255, 0.09); }
+.term-letta-code { --t-user: rgba(255, 255, 255, 0.06); } .term-pi-coding-agent { --t-user: #343541; }
+.term-pi-coding-agent .t-u { padding-left: 8px; }
+/* the run's buttons: pause, and the view expanded to the window's width and most of its height, every line whole */
+.hkp-ctls { display: flex; flex-wrap: wrap; gap: 8px; }
+.hkp-max svg { width: 14px; height: 14px; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+.hkp-max .i-in, .hook.max .hkp-max .i-out { display: none; }
+.hook.max .hkp-max .i-in { display: inline; }
+:is(main, header):is(.pg-post, .pg-report) .hook.wide.max { position: relative; left: 50%; width: min(1240px, calc(100vw - 32px));
+  max-width: none; transform: translateX(-50%); }
+.hook.max .hkp-run, .hook.max .hkq-panes .hkp-rep { height: min(78vh, 860px); }
+.hook.max .hkp-run { font-size: 0.78rem; }
+.hook.max .demo-doc p { font-size: 0.86rem; }
+.hook.max .t-steps p { white-space: normal; }
+.hook.max .t-steps .t-u p { white-space: pre-wrap; }
+.hook.max .t-steps .t-u .t-ut { display: block; }
+.hook.max .t-steps, .hook.max .demo-doc { -webkit-mask-image: none; mask-image: none; padding-bottom: 14px; }
+.hook.max .hkq-gold { display: block; }
 @media (max-width: 760px) {
   .hook .hkp-ex { padding: 16px 14px 14px; }
   .hook .hkp-run, .hook .hkq-panes .hkp-rep { height: 320px; }
@@ -2363,10 +2391,11 @@ figcaption.cap .cap-note { color: var(--ink-3); }
   // each in a quick glide, its marks lit a moment; one left unsaid says so over the report. While the hook is in
   // view, and until the reader picks a tag or a dot or reaches into a pane, it moves through the tags on its own, the
   // picked tag filling as it waits, and on to the next tab after the last. The button stops and starts it. Under
-  // reduced motion nothing moves by itself, and each run rests on its unanswered question
+  // reduced motion nothing moves by itself, and each run rests on its unanswered question. A second button expands the
+  // run and its report to the window's width, every line whole
   document.querySelectorAll(".hkp").forEach(box => {
     const exs = [...box.querySelectorAll(".hkp-ex")], tabs = [...box.querySelectorAll(".hkp-tabs [role=tab]")];
-    const ctl = box.querySelector(".demo-ctl"), CYCLE = +box.dataset.tagMs || 4500;
+    const ctl = box.querySelector(".demo-ctl:not(.hkp-max)"), max = box.querySelector(".hkp-max"), CYCLE = +box.dataset.tagMs || 4500;
     let cur = 0, seen = false, paused = false, elapsed = 0, last = performance.now();
     const R = exs.map(ex => {
       const q = s => ex.querySelector(s), qa = s => [...ex.querySelectorAll(s)];
@@ -2425,6 +2454,14 @@ figcaption.cap .cap-note { color: var(--ink-3); }
         pane.addEventListener(e, hold, { passive: true })));
     });
     tabs.forEach((t, i) => t.addEventListener("click", () => { show(i); pick(R[i], still.matches ? R[i].k : 0); }));
+    // the view expanded, or back: the reader is reading, so nothing moves on, and the panes come back to the question
+    if (max) max.addEventListener("click", () => {
+      const fig = box.closest("figure"), on = !fig.classList.contains("max");
+      fig.classList.toggle("max", on); max.setAttribute("aria-pressed", String(on));
+      max.querySelector("span").textContent = on ? "Collapse" : "Expand";
+      max.setAttribute("aria-label", on ? "Collapse the run and its report" : "Expand the run and its report");
+      hold(); requestAnimationFrame(() => pick(R[cur], R[cur].k));
+    });
     if (still.matches) return;
     let started = false;
     const frame = now => {
