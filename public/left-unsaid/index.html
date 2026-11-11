@@ -593,9 +593,23 @@ html:has(.hkp-pdlg[open]) { overflow: hidden; }
 .term-pi-coding-agent .t-blk, .term-pi-coding-agent .t-o.t-blk { padding-inline: 0; background: none; }
 .term-pi-coding-agent .t-o.t-blk { color: #808080; }
 .term-pi-coding-agent .t-foot .t-st { color: #666666; }
-/* a question's number on each step it asks about, and the step lit while its question is picked */
+/* a question's number on each step it asks about, and the steps lit while its question is picked: one rounded box in
+   the harness's own colour over a faint tint around each run of lit steps, the same in every harness, so it reads even
+   on a step the harness tints itself (pi draws every tool call on green; user, 11 Nov). The box is drawn over the step,
+   so a harness's own tint never hides it. In the hook it is inset from the window's edges, the steps of one run join
+   with no gap between them, and the text stays where it was */
 .t-steps li.sel p { white-space: normal; }
-.t-steps li.sel { background: var(--t-lit); box-shadow: inset 3px 0 var(--t-edge); }
+.t-steps li.sel { position: relative; background: var(--t-lit); border-radius: 7px; overflow: hidden; }
+.t-steps li.sel::after { content: ""; position: absolute; inset: 0; border: 1.5px solid var(--t-edge); border-radius: inherit;
+  pointer-events: none; }
+.t-steps li.sel + li.sel { border-top-left-radius: 0; border-top-right-radius: 0; }
+.t-steps li.sel + li.sel::after { border-top: 0; }
+.t-steps li.sel:has(+ li.sel) { border-bottom-left-radius: 0; border-bottom-right-radius: 0; }
+.t-steps li.sel:has(+ li.sel)::after { border-bottom: 0; }
+.hkp-run .t-steps li.sel { margin-inline: 6px; padding-inline: 8px; }
+.hkp-run .t-steps li.sel + li.sel { margin-top: 0; padding-top: 1.1em; }
+.term-pi-coding-agent .t-steps li.sel:has(.t-blk) { padding-inline: 0; }
+.term-pi-coding-agent .t-steps li.sel:has(.t-blk) > div { padding-inline: 8px; }
 /* the report: every answer marked where it is given, the picked one strongest; one left unsaid is said to be nowhere */
 .hkq-panes .hkp-rep { position: relative; height: 440px; }
 /* the report's own words, lit where they answer the picked question, and nothing written over them (user, 9 Nov:
