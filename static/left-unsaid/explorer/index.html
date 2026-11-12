@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Left Unsaid · every run</title>
 <!-- the project's mark (user, 29 Oct): what reports answer fading into what they leave unsaid -->
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 32 32%22%3E%3Crect width=%2232%22 height=%2232%22 rx=%227%22 fill=%22%230f2f5f%22/%3E%3Cg stroke-width=%221.4%22%3E%3Crect x=%225%22 y=%225%22 width=%226%22 height=%226%22 rx=%221.5%22 fill=%22%231e9e6a%22/%3E%3Crect x=%2213%22 y=%225%22 width=%226%22 height=%226%22 rx=%221.5%22 fill=%22%231e9e6a%22/%3E%3Crect x=%2221%22 y=%225%22 width=%226%22 height=%226%22 rx=%221.5%22 fill=%22%23ea7a24%22/%3E%3Crect x=%225%22 y=%2213%22 width=%226%22 height=%226%22 rx=%221.5%22 fill=%22%231e9e6a%22/%3E%3Crect x=%2213%22 y=%2213%22 width=%226%22 height=%226%22 rx=%221.5%22 fill=%22%23ea7a24%22/%3E%3Crect x=%2221.7%22 y=%2213.7%22 width=%224.6%22 height=%224.6%22 rx=%221.2%22 fill=%22none%22 stroke=%22%23b3bfcf%22/%3E%3Crect x=%225%22 y=%2221%22 width=%226%22 height=%226%22 rx=%221.5%22 fill=%22%23ea7a24%22/%3E%3Crect x=%2213.7%22 y=%2221.7%22 width=%224.6%22 height=%224.6%22 rx=%221.2%22 fill=%22none%22 stroke=%22%23b3bfcf%22/%3E%3Crect x=%2221.7%22 y=%2221.7%22 width=%224.6%22 height=%224.6%22 rx=%221.2%22 fill=%22none%22 stroke=%22%23b3bfcf%22/%3E%3C/g%3E%3C/svg%3E">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 32 32%22%3E%3Crect width=%2232%22 height=%2232%22 rx=%227%22 fill=%22%230f2f5f%22/%3E%3Cg stroke-width=%221.4%22%3E%3Crect x=%225%22 y=%225%22 width=%226%22 height=%226%22 rx=%221.5%22 fill=%22%231e9e6a%22/%3E%3Crect x=%2213%22 y=%225%22 width=%226%22 height=%226%22 rx=%221.5%22 fill=%22%231e9e6a%22/%3E%3Crect x=%2221%22 y=%225%22 width=%226%22 height=%226%22 rx=%221.5%22 fill=%22%237a4ec2%22/%3E%3Crect x=%225%22 y=%2213%22 width=%226%22 height=%226%22 rx=%221.5%22 fill=%22%231e9e6a%22/%3E%3Crect x=%2213%22 y=%2213%22 width=%226%22 height=%226%22 rx=%221.5%22 fill=%22%237a4ec2%22/%3E%3Crect x=%2221.7%22 y=%2213.7%22 width=%224.6%22 height=%224.6%22 rx=%221.2%22 fill=%22none%22 stroke=%22%23b3bfcf%22/%3E%3Crect x=%225%22 y=%2221%22 width=%226%22 height=%226%22 rx=%221.5%22 fill=%22%237a4ec2%22/%3E%3Crect x=%2213.7%22 y=%2221.7%22 width=%224.6%22 height=%224.6%22 rx=%221.2%22 fill=%22none%22 stroke=%22%23b3bfcf%22/%3E%3Crect x=%2221.7%22 y=%2221.7%22 width=%224.6%22 height=%224.6%22 rx=%221.2%22 fill=%22none%22 stroke=%22%23b3bfcf%22/%3E%3C/g%3E%3C/svg%3E">
 <script>
 // the theme the reader picked here before, applied before anything is drawn (user, 29 Oct)
 try { const t = localStorage.getItem("left-unsaid-theme"); if (t === "light" || t === "dark") document.documentElement.dataset.theme = t; } catch (e) {}
@@ -15,7 +15,7 @@ try { const t = localStorage.getItem("left-unsaid-theme"); if (t === "light" || 
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,500;0,6..72,600;1,6..72,400&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap">
 <style>
-/* Layout: a white masthead that leads with four results, then one real run drawn as squares (one per consequential event, coloured by what its report did with it, a row per tier), then one 680px reading column with margin notes to its right. Three things break out to one 1080px measure: the hero, the run cards (drawn with the hero's squares) (each opens the explorer page, every run by task and harness, in a new tab) and the method's flow diagram. Contents sit in the flow, never fixed to an edge a viewer's overlay can cover. Light by default, blue and white (operator, 11 Oct), with a dark twin that follows the reader's system or the viewer's toggle (user, 22 Oct): the same roles on a deep blue-black ground. Green for what a report covers, orange for what it leaves out, in both. */
+/* Layout: a white masthead that leads with four results, then one real run drawn as squares (one per consequential event, coloured by what its report did with it, a row per tier), then one 680px reading column with margin notes to its right. Three things break out to one 1080px measure: the hero, the run cards (drawn with the hero's squares) (each opens the explorer page, every run by task and harness, in a new tab) and the method's flow diagram. Contents sit in the flow, never fixed to an edge a viewer's overlay can cover. Light by default, blue and white (operator, 11 Oct), with a dark twin that follows the reader's system or the viewer's toggle (user, 22 Oct): the same roles on a deep blue-black ground. Green for what a report covers, violet for what it leaves out, in both (user, 12 Nov: violet, as in the paper, so orange means claude-code alone). */
 :root {
   color-scheme: light;
   --page: #ffffff;
@@ -34,9 +34,9 @@ try { const t = localStorage.getItem("left-unsaid-theme"); if (t === "light" || 
   --covered: #1e9e6a;
   --covered-tint: #e2f4eb;
   --covered-ink: #11673f;
-  --silent: #ea7a24;
-  --silent-tint: #fdeedf;
-  --silent-ink: #9a4a0c;
+  --silent: #7a4ec2;
+  --silent-tint: #efe9f9;
+  --silent-ink: #4e2a8a;
   --wrong: #d14552;
   --wrong-tint: #fbe5e7;
   --wrong-ink: #962430;
@@ -54,7 +54,7 @@ try { const t = localStorage.getItem("left-unsaid-theme"); if (t === "light" || 
   --art-opacity: 1;
   /* the masthead's squares, softened: each status at its own strength over the page */
   --art-covered: #1e9e6a73;
-  --art-silent: #ea7a244d;
+  --art-silent: #7a4ec24d;
   --art-unasked: #b3bfcf59;
   --fv-edge: 0%;
   --seg-on: #ffffff;
@@ -117,9 +117,9 @@ try { const t = localStorage.getItem("left-unsaid-theme"); if (t === "light" || 
     --covered: #5abf94;
     --covered-tint: #213029;
     --covered-ink: #96dcbc;
-    --silent: #e8995e;
-    --silent-tint: #33291f;
-    --silent-ink: #f2c194;
+    --silent: #a98bf0;
+    --silent-tint: #2a2538;
+    --silent-ink: #d2c3f8;
     --wrong: #e97880;
     --wrong-tint: #352428;
     --wrong-ink: #f4adb3;
@@ -130,7 +130,7 @@ try { const t = localStorage.getItem("left-unsaid-theme"); if (t === "light" || 
     --shadow: 0, 0, 0;
     --art-opacity: 1;
   --art-covered: #5abf9480;
-  --art-silent: #e8995e52;
+  --art-silent: #a98bf052;
   --art-unasked: #4a4b5380;
   --fv-edge: 38%;
     --seg-on: #414248;
@@ -168,9 +168,9 @@ try { const t = localStorage.getItem("left-unsaid-theme"); if (t === "light" || 
   --covered: #5abf94;
   --covered-tint: #213029;
   --covered-ink: #96dcbc;
-  --silent: #e8995e;
-  --silent-tint: #33291f;
-  --silent-ink: #f2c194;
+  --silent: #a98bf0;
+  --silent-tint: #2a2538;
+  --silent-ink: #d2c3f8;
   --wrong: #e97880;
   --wrong-tint: #352428;
   --wrong-ink: #f4adb3;
@@ -181,7 +181,7 @@ try { const t = localStorage.getItem("left-unsaid-theme"); if (t === "light" || 
   --shadow: 0, 0, 0;
   --art-opacity: 1;
   --art-covered: #5abf9480;
-  --art-silent: #e8995e52;
+  --art-silent: #a98bf052;
   --art-unasked: #4a4b5380;
   --fv-edge: 38%;
   --seg-on: #414248;
@@ -606,7 +606,7 @@ html:has(.hkp-pdlg[open]) { overflow: hidden; }
 .demo-doc p.hkq-hit.sel.v-unsupported { background: #fadadf; box-shadow: 0 0 0 4px #fadadf; }
 /* a question the report leaves unanswered, or answers in words no single block holds, says so above the report, which
    stays where the reader can scroll it */
-.hkq-none { margin: 0; padding: 10px 16px 12px; border-bottom: 1px solid #f1d9c4; background: #fff7f0; color: var(--paper-ink);
+.hkq-none { margin: 0; padding: 10px 16px 12px; border-bottom: 1px solid #ddd2f1; background: #f7f3fd; color: var(--paper-ink);
   font: 400 0.84rem/1.5 var(--sans); }
 .hkq-none:not(.on) { display: none; }
 .hkq-none.on { display: grid; gap: 6px; }
@@ -2006,12 +2006,12 @@ figcaption.cap .cap-note { color: var(--ink-3); }
 /* only the picked question's answer is marked in the report */
 .hook .demo-doc p.hkq-hit:not(.sel) { background: none; box-shadow: none; }
 /* one left unsaid says so in a strip above the report, with what the run shows */
-.hook .hkq-nh { margin: 0; font: 600 0.9rem/1.4 var(--sans); color: #9a420d; text-wrap: balance; }
-.hook .hkq-nh::before { content: ""; display: inline-block; width: 10px; height: 10px; margin-right: 9px; border-radius: 2px; background: #e07a2c; }
+.hook .hkq-nh { margin: 0; font: 600 0.9rem/1.4 var(--sans); color: #4e2a8a; text-wrap: balance; }
+.hook .hkq-nh::before { content: ""; display: inline-block; width: 10px; height: 10px; margin-right: 9px; border-radius: 2px; background: #7a4ec2; }
 .hook .hkq-nh b { font-weight: 700; margin-right: 4px; }
-.hook .hkq-gold { margin: 0; padding-left: 12px; border-left: 3px solid #e07a2c; font-size: 0.8rem; line-height: 1.5;
+.hook .hkq-gold { margin: 0; padding-left: 12px; border-left: 3px solid #7a4ec2; font-size: 0.8rem; line-height: 1.5;
   color: var(--paper-ink); display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 4; overflow: hidden; }
-.hook .hkq-gold span { display: block; margin-bottom: 4px; font: 700 0.64rem/1.3 var(--sans); letter-spacing: 0.08em; text-transform: uppercase; color: #9a420d; }
+.hook .hkq-gold span { display: block; margin-bottom: 4px; font: 700 0.64rem/1.3 var(--sans); letter-spacing: 0.08em; text-transform: uppercase; color: #4e2a8a; }
 /* one the report answers in words no single block holds: what a reader found in it, in the verdict's colour */
 .hook .hkq-none.v-covered .hkq-nh, .hook .hkq-none.v-covered .hkq-gold span { color: #1d7a4c; }
 .hook .hkq-none.v-covered .hkq-nh::before { background: #2e9e6a; }
