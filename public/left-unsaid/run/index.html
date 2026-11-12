@@ -1045,6 +1045,7 @@ details.why p { margin: 8px 0 0; font-size: 0.92rem; line-height: 1.65; color: v
 .rb-cell { display: grid; gap: 6px; align-content: center; padding: 10px 12px; border-radius: 10px; background: var(--mist); color: var(--ink-2); text-decoration: none; font-size: 0.8rem; line-height: 1.35; font-variant-numeric: tabular-nums; min-width: 0; }
 a.rb-cell:hover { background: var(--mist-2); color: var(--ink); }
 .rb-cell.none { background: none; border: 1.5px dashed var(--rule); color: var(--ink-3); }
+.rb-cell.rb-out { grid-column: 2 / -1; }
 .rb-bar { display: flex; gap: 2px; height: 8px; }
 .rb-bar i { display: block; border-radius: 2px; min-width: 2px; }
 .b-covered { background: var(--covered); }
@@ -1057,7 +1058,7 @@ a.rb-cell:hover { background: var(--mist-2); color: var(--ink); }
 .rb-m { color: var(--ink-3); }
 .rb-h { display: none; font: 600 0.68rem var(--sans); letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-3); }
 .rb-empty { color: var(--ink-3); margin-top: 32px; }
-@media (max-width: 760px) { .rb-head { display: none; } .rb-row { grid-template-columns: repeat(2, minmax(0, 1fr)); } .rb-task { grid-column: 1 / -1; padding: 4px 0; } .rb-h { display: block; } }
+@media (max-width: 760px) { .rb-head { display: none; } .rb-row { grid-template-columns: repeat(2, minmax(0, 1fr)); } .rb-task, .rb-cell.rb-out { grid-column: 1 / -1; } .rb-task { padding: 4px 0; } .rb-h { display: block; } }
 .xp-main .explorer { margin-top: 8px; }
 .ex-main { display: grid; gap: 32px; }
 .back { font: 600 0.9rem var(--sans); text-decoration: none; }
@@ -2844,7 +2845,9 @@ html:has(.hkp-dlg[open]) { overflow: hidden; }
   const absentWord = h => present.has(h) ? "not scored yet" : "not in this build yet";
   const COLS = HARN.filter(h => present.has(h));
   const unit = m => m.benchmark === "harvey-labs" ? "criteria" : "tests";
-  const taskCount = BENCHES.reduce((n, b) => n + (TASKS[b] || []).length, 0);
+  // a task left out for every harness has no release run, so it is not counted in the runs to score
+  const kept = b => (TASKS[b] || []).filter(t => !t.left_out);
+  const taskCount = BENCHES.reduce((n, b) => n + kept(b).length, 0);
   const later = HARN.filter(h => !present.has(h));
   if (LISTED) $("rb-sum").innerHTML = `<b>${ROWS.length}</b> of ${taskCount * HARN.length} release runs scored: ` +
     COLS.map(h => `${esc(h)} <b>${ROWS.filter(r => r.harness === h).length}</b>`).join(", ") + "." +
@@ -2878,17 +2881,18 @@ html:has(.hkp-dlg[open]) { overflow: hidden; }
     let html = "";
     for (const b of BENCHES) {
       if (bench !== "all" && bench !== b) continue;
-      const rows = (TASKS[b] || []).map(t => {
-        const any = COLS.map(h => byCell.get(cellKey(b, t.task_id, h))).find(Boolean);
-        return { t, title: any?.task_title || t.task_id };
-      }).filter(({ t, title }) => !q || `${title} ${t.task_id} ${t.stratum}`.toLowerCase().includes(q));
+      const titleOf = id => COLS.map(h => byCell.get(cellKey(b, id, h))).find(Boolean)?.task_title || id;
+      const rows = (TASKS[b] || []).map(t => ({ t, title: titleOf(t.task_id) }))
+        .filter(({ t, title }) => !q || `${title} ${t.task_id} ${t.stratum}`.toLowerCase().includes(q));
       if (!rows.length) continue;
       const scored = ROWS.filter(r => r.benchmark === b).length;
-      html += `<section class="rb-group"><h2 class="rb-gh">${esc(BENCH[b] || b)}<small>${rows.length} tasks · ${scored} runs scored</small></h2>
+      const out = t => `<div class="rb-cell none rb-out">Left out for every harness because ${esc(t.left_out)}.` +
+        (t.replaced_by ? ` ${esc(titleOf(t.replaced_by))} takes its place.` : "") + `</div>`;
+      html += `<section class="rb-group"><h2 class="rb-gh">${esc(BENCH[b] || b)}<small>${rows.filter(({ t }) => !t.left_out).length} tasks · ${scored} runs scored</small></h2>
         <div class="rb-head" style="--nh:${COLS.length}"><span>Task</span>${COLS.map(h => `<span>${hmark(h)}${esc(h)}</span>`).join("")}</div>` +
         rows.map(({ t, title }) => `<div class="rb-row" style="--nh:${COLS.length}"><div class="rb-task"><span class="rb-title">${esc(title)}</span>
           <span class="rb-sub">${esc(t.stratum)}</span></div>
-          ${COLS.map(h => cell(b, t, h)).join("")}</div>`).join("") + `</section>`;
+          ${t.left_out ? out(t) : COLS.map(h => cell(b, t, h)).join("")}</div>`).join("") + `</section>`;
     }
     $("rb-list").innerHTML = html || `<p class="rb-empty">No task matches “${esc(query)}”.</p>`;
   }
