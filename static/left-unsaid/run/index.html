@@ -1070,7 +1070,7 @@ a.rb-cell:hover { background: var(--mist-2); color: var(--ink); }
 /* the release post's cards: a finding in a few lines and one figure, then the way into the report */
 .finding.card { margin-top: 72px; padding-top: 44px; gap: 22px; }
 .finding:not(.card) .f-claim { margin: 8px 0 0; font: 500 0.92rem/1.5 var(--sans); color: var(--ink-2); }
-.finding:not(.card) .f-claim span { margin-right: 6px; font: 700 0.66rem/1 var(--sans); letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-3); }
+.finding .f-claim span { margin-right: 6px; font: 700 0.66rem/1 var(--sans); letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-3); }
 .finding.card .f-claim { margin: 12px 0 0; font: 500 1.05rem/1.5 var(--sans); color: var(--ink-2); text-wrap: balance; }
 .finding.card .f-body > p:first-child { font-size: 1.12rem; line-height: 1.7; color: var(--ink); }
 .more { margin: 0; font: 600 0.92rem var(--sans); }
@@ -1560,7 +1560,9 @@ main .scale-band { margin: 40px 0 8px; }
 /* what else the report holds: one line a section, its title then what is there */
 /* the checks on the measurement: each a dot on its scale, its interval, the plan's bar as a tick */
 .checks { margin-block: 26px 32px; display: grid; gap: 12px; }
-.ck-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px 22px; }
+/* two panels side by side only where each still has room for its track: in the pages' column they stack, since
+   a label, a value and a badge left the track 0 px wide there (audit, 21 Nov) */
+.ck-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 34rem), 1fr)); gap: 14px 22px; }
 .ck-p { margin: 0; padding: 14px 16px 10px; border-radius: 14px; background: var(--mist); display: grid; gap: 4px; align-content: start; }
 .ck-p h4 { margin: 0 0 6px; font: 600 0.86rem var(--sans); color: var(--ink); }
 .ck-r { display: grid; grid-template-columns: minmax(0, 13rem) minmax(0, 1fr) 3.6rem 4.4rem; align-items: center; gap: 10px; min-height: 26px; }
@@ -1626,8 +1628,9 @@ main .scale-band { margin: 40px 0 8px; }
   .rf-r > .rf-name { grid-area: name; } .rf-r > .rf-t { grid-area: track; } .rf-r > .rf-v { grid-area: v; } .rf-r > .rf-len { grid-area: len; }
   .rf-r.rf-axis { grid-template-areas: "track track"; } .rf-r.rf-axis > span:first-child, .rf-r.rf-axis > span:nth-child(3), .rf-r.rf-axis > .rf-ax-len { display: none; }
   .rf-r.rf-axis > .rf-ax { grid-area: track; }
+  .rf-r.rf-axis { order: -1; margin-bottom: 4px; }
   .rf-head { display: none; }
-  .rf-len::before { content: "Words per event"; grid-column: 1 / -1; font: 600 0.66rem var(--sans); letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink-3); }
+  .rf-len::before { content: "Words per event"; grid-column: 1 / -1; font: 600 0.72rem var(--sans); letter-spacing: 0.01em; color: var(--ink-3); }
   .rf-br { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 4px 10px; padding-block: 6px; }
   .rf-br > .rf-name { grid-column: 1 / -1; }
   .rf-br.rf-head { display: none; }
@@ -1667,7 +1670,6 @@ main .scale-band { margin: 40px 0 8px; }
 .ck-m.in-order { color: var(--ink-2); background: var(--mist-2); }
 .ck-axis { margin: 4px 0 0; font-size: 0.7rem; color: var(--ink-3); }
 .checks > figcaption { max-width: var(--col); font-size: 0.88rem; line-height: 1.65; color: var(--ink-2); }
-@media (max-width: 900px) { .ck-grid { grid-template-columns: 1fr; } }
 @media (max-width: 520px) { .ck-r { grid-template-columns: minmax(0, 1fr) 3.2rem 4rem; } .ck-r .ck-l { grid-column: 1 / -1; }
   .vs .ck-r { grid-template-columns: minmax(0, 1fr) 4.4rem; } }
 /* a case study's question, as the evaluator scored it */
@@ -2084,7 +2086,17 @@ html:has(.hkp-dlg[open]) { overflow: hidden; }
 /* a record's gap, said once in the page's words: a quiet note under the words, not a dashed box */
 :is(.pg-post, .pg-report) .partial-box { display: block; border: 0; border-left: 2px solid var(--edge); border-radius: 0;
   padding: 2px 0 2px 14px; margin: 0 0 16px; font-size: 0.86rem; line-height: 1.6; color: var(--ink-2); }
-:is(.pg-post, .pg-report) .partial-box .wait-k { display: inline; margin-right: 8px; font-size: 0.66rem; color: var(--ink-3); }
+:is(.pg-post, .pg-report) .partial-box .wait-k { display: inline-flex; gap: 6px; vertical-align: 1px; margin-right: 8px; font-size: 0.66rem; color: var(--ink-3); }
+/* the post's labels in sentence case: uppercase key labels read as a machine's layout (audit, 21 Nov) */
+.toc.outline.flat .toc-k, .hook .hkq-gold span, .pg-post .tier-exk, .pg-post .cs-k, .pg-post .rf-head {
+  text-transform: none; letter-spacing: 0.01em; }
+/* a fold in the post's prose: an example or a detail a reader can open, set like the definitions' folds */
+.more { background: var(--mist); border-radius: 12px; padding: 4px 20px; margin: 0 0 22px; }
+.more > summary { cursor: pointer; padding: 12px 0; font: 600 0.98rem var(--sans); color: var(--navy); }
+.more > p { font-size: 0.95rem; line-height: 1.65; color: var(--ink-2); }
+.more > p:last-child { margin-bottom: 14px; }
+/* the BibTeX entry wraps on a phone instead of running off the screen */
+@media (max-width: 560px) { #citation pre { white-space: pre-wrap; overflow-wrap: anywhere; } }
 /* the totals under the opener, at the column's measure: no panel, four to a row, what they count in the caption */
 :is(.pg-post, .pg-report) .scale-band { background: none; border: 0; border-radius: 0; padding: 0; gap: 0; }
 /* the harnesses' logos, one data URI each */
