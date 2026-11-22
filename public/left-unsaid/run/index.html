@@ -1058,6 +1058,32 @@ a.rb-cell:hover { background: var(--mist-2); color: var(--ink); }
 .rb-m { color: var(--ink-3); }
 .rb-h { display: none; font: 600 0.68rem var(--sans); letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-3); }
 .rb-empty { color: var(--ink-3); margin-top: 32px; }
+/* which runs: the release's, or one ablation's set */
+.rb-sets { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 22px; }
+.rb-sets button { display: grid; gap: 2px; text-align: left; font: 600 0.9rem/1.25 var(--sans); color: var(--ink-2); background: var(--mist); border: 1px solid transparent; border-radius: 12px; padding: 10px 14px; cursor: pointer; }
+.rb-sets button:hover { color: var(--ink); background: var(--mist-2); }
+.rb-sets button[aria-selected="true"] { background: var(--seg-on); color: var(--navy); border-color: var(--edge); box-shadow: 0 1px 3px rgba(var(--shadow), 0.12); }
+.rb-sets button:focus-visible, .cmp-btn:focus-visible { outline: 2px solid var(--blue); outline-offset: 2px; }
+.rs-n { font: 400 0.78rem var(--sans); color: var(--ink-3); font-variant-numeric: tabular-nums; }
+.st-live { display: inline-block; font: 600 0.68rem/1 var(--sans); letter-spacing: 0.06em; text-transform: uppercase; color: var(--blue); border: 1px solid currentColor; border-radius: 999px; padding: 3px 7px; vertical-align: 1px; }
+.xp-note, .xp-live { display: block; margin-top: 8px; }
+.rb-tuned { font: 600 0.62rem/1 var(--sans); letter-spacing: 0.06em; color: var(--ink-2); background: var(--white); border: 1px solid var(--edge); border-radius: 999px; padding: 2px 6px; margin-left: 4px; vertical-align: 1px; }
+.cmp-btn { font: 600 0.86rem var(--sans); color: var(--navy); background: var(--white); border: 1px solid var(--edge); border-radius: 10px; padding: 8px 14px; cursor: pointer; }
+.cmp-btn:hover { background: var(--mist); }
+.cmp-btn[aria-pressed="true"] { background: var(--seg-on); box-shadow: inset 0 0 0 1.5px var(--blue); }
+.cmp-tiles { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; margin: 0 0 20px; }
+.cmp-tile { background: var(--mist); border-radius: 12px; padding: 14px 16px; }
+.cmp-tile .k { margin: 0 0 8px; }
+.cmp-n { display: flex; flex-wrap: wrap; gap: 8px 16px; margin: 0; font-variant-numeric: tabular-nums; }
+.cmp-n b { font-size: 1.05rem; }
+.cmp-v { display: inline-flex; align-items: center; gap: 8px; white-space: nowrap; }
+.cmp-arrow { color: var(--ink-3); }
+@media (max-width: 560px) { .row > summary > .cmp-v { grid-column: 1 / -1; } }
+.cmp-frames { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; margin-top: 28px; }
+.cmp-frames figure { margin: 0; min-width: 0; }
+.cmp-frames figcaption { font: 600 0.78rem var(--sans); color: var(--ink-2); margin: 0 0 8px; }
+@media (max-width: 1000px) { .cmp-frames { grid-template-columns: 1fr; } }
+@media (max-width: 560px) { .cmp-tiles { grid-template-columns: 1fr; } .rb-sets { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); } .rb-sets button { padding: 8px 10px; } }
 @media (max-width: 760px) { .rb-head { display: none; } .rb-row { grid-template-columns: repeat(2, minmax(0, 1fr)); } .rb-task, .rb-cell.rb-out { grid-column: 1 / -1; } .rb-task { padding: 4px 0; } .rb-h { display: block; } }
 .xp-main .explorer { margin-top: 8px; }
 .ex-main { display: grid; gap: 32px; }
@@ -2284,7 +2310,7 @@ html:has(.hkp-dlg[open]) { overflow: hidden; }
   // a harness's own logo, as the cards draw it
   const hmark = h => (DATA.logos || []).includes(h) ? `<span class="hlogo hl-${esc(h)}" aria-hidden="true"></span>` : "";
   const task = r => String(r.task_title || r.task_id || "").replace(/^[\w.-]+\/(?=\S+$)/, "");
-  const BENCH = { "harvey-labs": "Harvey LAB", "deep-swe": "deep-swe", "terminal-bench": "terminal-bench" };
+  const BENCH = { "harvey-labs": "Harvey LAB", "deep-swe": "deep-swe", "terminal-bench": "terminal-bench", "posttrainbench": "PostTrainBench" };
   const count = (run, s) => run.events.filter(e => e.status === s).length;
   const SAL_KEYS = ["outcome_critical", "major", "minor"], ST_KEYS = ["covered", "missed", "unasked"];
   const length = r => r.minutes !== null && r.minutes !== undefined ? `${Math.round(r.minutes)} min · ${r.turns} turns` : `${r.turns} turns`;
@@ -2861,12 +2887,58 @@ html:has(.hkp-dlg[open]) { overflow: hidden; }
   const kept = b => (TASKS[b] || []).filter(t => !t.left_out);
   const taskCount = BENCHES.reduce((n, b) => n + kept(b).length, 0);
   const later = HARN.filter(h => !present.has(h));
-  if (LISTED) $("rb-sum").innerHTML = `<b>${ROWS.length}</b> of ${taskCount * HARN.length} release runs scored: ` +
+  const releaseSum = `<b>${ROWS.length}</b> of ${taskCount * HARN.length} release runs scored: ` +
     COLS.map(h => `${esc(h)} <b>${ROWS.filter(r => r.harness === h).length}</b>`).join(", ") + "." +
     (later.length ? ` ${later.map(esc).join(" and ")} follow${later.length === 1 ? "s" : ""}.` : "");
   const most = {};
-  if (LISTED) ROWS.forEach(r => { const n = r.counts.covered + r.counts.missed + r.counts.unasked; most[r.benchmark] = Math.max(most[r.benchmark] || 1, n); });
-  if (LISTED) $("rb-key").innerHTML = `<span><i class="b-covered"></i>events its report covers</span><span><i class="b-missed"></i>events it misses</span><span><i class="b-unasked"></i>events no question reached</span><span>bar length: events in the run</span><span><i class="k-none"></i>no scored run</span>`;
+  const size = r => r.counts.covered + r.counts.missed + r.counts.unasked;
+  if (LISTED) ROWS.forEach(r => { most[r.benchmark] = Math.max(most[r.benchmark] || 1, size(r)); });
+
+  // beside the release runs, one set per ablation the plan ran: each report in one of the set's arms, paired with the
+  // release run of its task and harness (`vs`), and each report the set reads but that was not scored, with why
+  const SETS = LISTED ? (SRC.sets || []) : [];
+  const setById = new Map(SETS.map(s => [s.id, s]));
+  SETS.forEach(s => s.runs.forEach(r => { if (!byId.has(r.id)) byId.set(r.id, r); most[r.benchmark] = Math.max(most[r.benchmark] || 1, size(r)); }));
+  const armOf = (s, key) => (s.arms || []).find(a => a.key === key) || { key, label: key, how: "" };
+  const RELEASE_COL = { key: "release", label: "Release run" };
+  const setCols = s => [...(s.pairs ? [RELEASE_COL] : []), ...s.arms];
+  // a set's row is one task (in one harness, when the set spans harnesses); its cells are the release run and each arm
+  const rowKey = (s, r) => `${r.benchmark}|${r.task_id}|${s.by_harness ? r.harness : ""}`;
+  const liveTag = `<span class="st-live">still running</span>`;
+  let set = "release";
+  function setSum(s) {
+    const n = s.runs.length, k = (s.unscored || []).length;
+    return `${esc(s.about)} <b>${n}</b> report${n === 1 ? "" : "s"} scored${k ? `, and ${k} that could not be (each says why)` : ""}.` +
+      (s.note ? ` <span class="xp-note">${esc(s.note)}</span>` : "") +
+      (s.status === "done" ? "" : ` <span class="xp-live">${liveTag} The plan has not closed this experiment: these are its reports scored by ${esc(s.taken)}, and more join as each is scored.</span>`);
+  }
+  const KEY = `<span><i class="b-covered"></i>events its report covers</span><span><i class="b-missed"></i>events it misses</span><span><i class="b-unasked"></i>events no question reached</span><span>bar length: events in the run</span><span><i class="k-none"></i>no scored run</span>`;
+  function drawSets() {
+    if (!SETS.length) return;
+    const box = $("rb-sets");
+    box.hidden = false;
+    box.innerHTML = [["release", "Release runs", ROWS.length, "done"], ...SETS.map(s => [s.id, s.title, s.runs.length, s.status])].map(([id, title, n, st]) =>
+      `<button type="button" role="tab" data-set="${esc(id)}" aria-selected="${id === set}"><span class="rs-t">${esc(title)}</span>` +
+      `<span class="rs-n">${n} ${id === "release" ? "runs" : "reports"}${st === "done" ? "" : ` · ${liveTag}`}</span></button>`).join("");
+  }
+  function pickSet(id, push = true) {
+    set = setById.has(id) ? id : "release";
+    if (LISTED) {
+      $("rb-sum").innerHTML = set === "release" ? releaseSum : setSum(setById.get(set));
+      $("rb-key").innerHTML = KEY;
+      $("rb-sets").querySelectorAll("button").forEach(x => x.setAttribute("aria-selected", x.dataset.set === set));
+      // a set on other benchmarks than the release's (frontier models' runs) has no benchmark to pick
+      $("rb-bench").hidden = set !== "release" && !setById.get(set).runs.some(r => BENCHES.includes(r.benchmark));
+      drawRuns();
+      if (push) history.replaceState(null, "", set === "release" ? "#" : `#set=${encodeURIComponent(set)}`);
+    }
+  }
+  if (LISTED) {
+    $("rb-sum").innerHTML = releaseSum;
+    $("rb-key").innerHTML = KEY;
+    drawSets();
+    $("rb-sets").addEventListener("click", e => { const b = e.target.closest("button[data-set]"); if (b) pickSet(b.dataset.set); });
+  }
 
   let bench = "all", query = "";
   if (LISTED) $("rb-bench").innerHTML = [["all", "All"], ...BENCHES.map(b => [b, BENCH[b] || b])].map(([b, l]) =>
@@ -2878,17 +2950,21 @@ html:has(.hkp-dlg[open]) { overflow: hidden; }
   }));
   if (LISTED) $("rb-q").addEventListener("input", e => { query = e.target.value; drawRuns(); });
 
-  function cell(b, t, h) {
-    const r = byCell.get(cellKey(b, t.task_id, h));
-    if (!r) return `<div class="rb-cell none"><span class="rb-h">${hmark(h)}${esc(h)}</span>${absentWord(h)}</div>`;
+  function runCell(r, label, href) {
     const n = r.counts, o = r.outcome || {};
-    return `<a class="rb-cell" href="#run=${encodeURIComponent(r.id)}" aria-label="${esc(h)}: ${n.covered} events covered, ${n.missed} missed, ${n.unasked} not asked">
-      <span class="rb-h">${hmark(h)}${esc(h)}</span>
-      <span class="rb-bar" style="width:${Math.max(8, 100 * (n.covered + n.missed + n.unasked) / most[r.benchmark])}%">${ST_KEYS.map(s => n[s] ? `<i class="b-${s}" style="flex:${n[s]}"></i>` : "").join("")}</span>
+    return `<a class="rb-cell" href="${href}" aria-label="${esc(label)}: ${n.covered} events covered, ${n.missed} missed, ${n.unasked} not asked">
+      <span class="rb-h">${label === r.harness ? hmark(r.harness) : ""}${esc(label)}${r.tuned ? ` <span class="rb-tuned">tuned</span>` : ""}</span>
+      <span class="rb-bar" style="width:${Math.max(8, 100 * size(r) / most[r.benchmark])}%">${ST_KEYS.map(s => n[s] ? `<i class="b-${s}" style="flex:${n[s]}"></i>` : "").join("")}</span>
       <span class="rb-n"><span><b class="n-cov">${n.covered}</b> covered</span> · <span><b class="n-miss">${n.missed}</b> missed</span>${n.unasked ? ` · <span>${n.unasked} not asked</span>` : ""}</span>
       <span class="rb-m">${length(r)}${o.total ? ` · ${unit(r) === "criteria" ? `${o.satisfied}/${o.total} criteria` : `tests ${o.satisfied}/${o.total}`}` : ""}</span></a>`;
   }
+  function cell(b, t, h) {
+    const r = byCell.get(cellKey(b, t.task_id, h));
+    if (!r) return `<div class="rb-cell none"><span class="rb-h">${hmark(h)}${esc(h)}</span>${absentWord(h)}</div>`;
+    return runCell(r, h, `#run=${encodeURIComponent(r.id)}`);
+  }
   function drawRuns() {
+    if (set !== "release") return drawSet(setById.get(set));
     const q = query.trim().toLowerCase();
     let html = "";
     for (const b of BENCHES) {
@@ -2908,6 +2984,51 @@ html:has(.hkp-dlg[open]) { overflow: hidden; }
     }
     $("rb-list").innerHTML = html || `<p class="rb-empty">No task matches “${esc(query)}”.</p>`;
   }
+  // one ablation's runs: a row per task (and harness), the release run first, then a cell per arm
+  function drawSet(s) {
+    const q = query.trim().toLowerCase(), cols = setCols(s);
+    const order = b => new Map((TASKS[b] || []).map((t, i) => [t.task_id, i]));
+    const benches = [...new Set([...s.runs, ...(s.unscored || [])].map(r => r.benchmark))]
+      .sort((a, b) => (BENCHES.indexOf(a) + 1 || 99) - (BENCHES.indexOf(b) + 1 || 99));
+    let html = "";
+    for (const b of benches) {
+      if (bench !== "all" && bench !== b && BENCHES.includes(b)) continue;
+      const rows = new Map();
+      for (const r of [...s.runs.filter(r => r.benchmark === b), ...(s.unscored || []).filter(r => r.benchmark === b)]) {
+        const k = rowKey(s, r);
+        if (!rows.has(k)) rows.set(k, { first: r, cells: {} });
+        const entry = rows.get(k);
+        entry.cells[r.arm] = r;
+        if (r.vs) entry.vs = r.vs;
+        if (r.counts && !entry.run) entry.run = r;
+      }
+      const at = order(b);
+      const list = [...rows.values()].map(e => {
+        const base = e.vs && byId.get(e.vs), any = base || e.run || e.first;
+        return { ...e, title: any.task_title || task(any) || any.task_id, harness: any.harness, stratum: (base || e.run || {}).stratum || "" };
+      }).filter(e => !q || `${e.title} ${e.first.task_id} ${e.stratum} ${e.harness}`.toLowerCase().includes(q))
+        .sort((x, y) => ((at.get(x.first.task_id) ?? 999) - (at.get(y.first.task_id) ?? 999)) || x.title.localeCompare(y.title) || x.harness.localeCompare(y.harness));
+      if (!list.length) continue;
+      const scored = s.runs.filter(r => r.benchmark === b).length;
+      const ctx = `&set=${encodeURIComponent(s.id)}`;
+      const one = (e, c) => {
+        if (c.key === "release") {
+          const r = e.vs && byId.get(e.vs);
+          return r ? runCell(r, c.label, `#run=${encodeURIComponent(r.id)}${ctx}`) : `<div class="rb-cell none"><span class="rb-h">${esc(c.label)}</span>no release run</div>`;
+        }
+        const r = e.cells[c.key];
+        if (!r) return `<div class="rb-cell none"><span class="rb-h">${esc(c.label)}</span>not asked</div>`;
+        if (!r.counts) return `<div class="rb-cell none"><span class="rb-h">${esc(c.label)}</span>Not scored: ${esc(r.why)}.</div>`;
+        return runCell(r, c.label, `#run=${encodeURIComponent(r.id)}${ctx}`);
+      };
+      html += `<section class="rb-group"><h2 class="rb-gh">${esc(BENCH[b] || b)}<small>${list.length} ${list.length === 1 ? "row" : "rows"} · ${scored} reports scored</small></h2>
+        <div class="rb-head" style="--nh:${cols.length}"><span>${s.pairs ? "Task" : "Target benchmark"}</span>${cols.map(c => `<span>${esc(c.label)}</span>`).join("")}</div>` +
+        list.map(e => `<div class="rb-row" style="--nh:${cols.length}"><div class="rb-task"><span class="rb-title">${esc(e.title)}</span>
+          <span class="rb-sub">${[s.by_harness ? `${hmark(e.harness)}${esc(e.harness)}` : "", esc(e.stratum)].filter(Boolean).join(" · ")}</span></div>
+          ${cols.map(c => one(e, c)).join("")}</div>`).join("") + `</section>`;
+    }
+    $("rb-list").innerHTML = html || `<p class="rb-empty">No task matches “${esc(query)}”.</p>`;
+  }
   if (LISTED) drawRuns();
 
   // one run, loaded from its own file the first time it is opened
@@ -2921,6 +3042,32 @@ html:has(.hkp-dlg[open]) { overflow: hidden; }
     s.onerror = () => { delete pending[id]; s.remove(); fail(new Error("missing")); };
     document.head.appendChild(s);
   }));
+  // a set's report of its release run's own trajectory, on that run's own questions, carries only what differs: the
+  // task run, the census, the questions as written and the task's result are read from the release run's file
+  const whole = {};
+  const loadRun = id => whole[id] ? Promise.resolve(whole[id]) : fetchRun(id).then(own => !own.same_run ? own
+    : fetchRun(own.same_run).then(base => {
+      const bs = base.stages || {}, os = own.stages || {};
+      const spent = Object.fromEntries(Object.entries(os.spend || {}).filter(([, v]) => v && v.sessions));
+      const bq = new Map(base.questions.map(q => [q.id, q])), be = new Map(base.events.map(e => [e.id, e]));
+      return (whole[id] = { ...own, steps: base.steps, task_result: base.task_result, meta: { ...base.meta, ...own.meta },
+        questions: own.questions.map(q => ({ ...bq.get(q.id), ...q })), events: own.events.map(e => ({ ...be.get(e.id), ...e })),
+        stages: { ...os, census: bs.census, questions: bs.questions, spend: { ...(bs.spend || {}), ...spent } } });
+    }));
+  // the set a run was opened from, whose arms its tabs show; and a set's arm, by the run's own key
+  let ctx = null, VS = null;
+  const armFor = row => {
+    const s = (ctx && setById.get(ctx)) || SETS.find(x => x.runs.some(r => r.id === row.id));
+    return s && row.arm ? armOf(s, row.arm) : null;
+  };
+  function siblings(row) {
+    const s = setById.get(ctx);
+    if (!s) return null;
+    const mine = row.arm ? s.runs.filter(r => rowKey(s, r) === rowKey(s, row)) : s.runs.filter(r => r.vs === row.id);
+    const base = row.arm ? (row.vs && byId.get(row.vs)) : row;
+    const arms = s.arms.map(a => mine.find(r => r.arm === a.key)).filter(Boolean);
+    return [...(base && s.pairs ? [[base, RELEASE_COL.label]] : []), ...arms.map(r => [r, armOf(s, r.arm).label])];
+  }
 
   const LANES = [["task_transition", "Phase changes"], ["decision", "Decisions"], ["runtime_failure", "Failures"],
                  ["recovery", "Recoveries"], ["verification_outcome", "Checks"], ["unresolved_work", "Left unresolved"]];
@@ -2955,20 +3102,31 @@ html:has(.hkp-dlg[open]) { overflow: hidden; }
       document.body.classList.add("run-open");
     }
     EX.hidden = false; tip.hidden = true;
-    const fresh = current !== id;
+    const was = ctx;
+    ctx = want.set && setById.has(want.set) ? want.set : null;
+    const fresh = current !== id || was !== ctx;
     current = id;
-    $("ex-eyebrow").textContent = [BENCH[row.benchmark] || row.benchmark, row.stratum].filter(Boolean).join(" · ");
+    const S = ctx && setById.get(ctx), arm = armFor(row);
+    $("ex-eyebrow").textContent = [S ? S.title : "", BENCH[row.benchmark] || row.benchmark, row.stratum].filter(Boolean).join(" · ");
     $("ex-title").textContent = task(row);
     $("ex-line").textContent = headLine(row);
-    $("ex-runs").innerHTML = COLS.map(h => {
-      const r = byCell.get(cellKey(row.benchmark, row.task_id, h));
-      return r ? `<button type="button" role="tab" aria-selected="${h === row.harness}" data-id="${esc(r.id)}">${hmark(h)}${esc(h)}</button>` : "";
-    }).join("");
-    $("ex-runs").querySelectorAll("button[data-id]").forEach(b => b.addEventListener("click", () => { if (ONE) openRun(b.dataset.id, { view }); else location.hash = "run=" + encodeURIComponent(b.dataset.id); }));
+    const back = EX.querySelector(".back");
+    if (back) { back.href = S ? `#set=${encodeURIComponent(ctx)}` : "#"; back.textContent = S ? `← Every run in ${S.title}` : "← Every run"; }
+    const sib = siblings(row);
+    $("ex-runs").setAttribute("aria-label", sib ? "The same task, by arm" : "The same task, by harness");
+    $("ex-runs").innerHTML = sib ? sib.map(([r, label]) => `<button type="button" role="tab" aria-selected="${r.id === id}" data-id="${esc(r.id)}">${esc(label)}</button>`).join("")
+      : COLS.map(h => {
+        const r = byCell.get(cellKey(row.benchmark, row.task_id, h));
+        return r ? `<button type="button" role="tab" aria-selected="${h === row.harness}" data-id="${esc(r.id)}">${hmark(h)}${esc(h)}</button>` : "";
+      }).join("");
+    const where = rid => "run=" + encodeURIComponent(rid) + (ctx ? `&set=${encodeURIComponent(ctx)}` : "");
+    $("ex-runs").querySelectorAll("button[data-id]").forEach(b => b.addEventListener("click", () => { if (ONE) openRun(b.dataset.id, { view }); else location.hash = where(b.dataset.id); }));
+    const cmp = $("ex-cmp");
+    if (cmp) { cmp.hidden = !(arm && row.vs); cmp.textContent = "Compare with the release run"; }
     if (!fresh && D) { show(want.view || view, { branch: want.branch }); return; }
     $("ex-main").hidden = true; $("ex-loading").hidden = false; $("ex-loading").textContent = "Loading this run…";
     if (!ONE) scrollTo(0, 0);
-    fetchRun(id).then(record => {
+    loadRun(id).then(record => {
       if (current !== id) return;
       D = record; filt = want.filter ? { judge: want.filter } : {};
       $("ex-loading").hidden = true; $("ex-main").hidden = false;
@@ -2983,8 +3141,9 @@ html:has(.hkp-dlg[open]) { overflow: hidden; }
     });
   }
   function headLine(row, d) {
-    const o = row.outcome || {};
-    return [`${row.harness} on ${modelName(row.model)}`, length(row), d ? plural((d.steps || []).length, "step") : "",
+    const o = row.outcome || {}, arm = armFor(row);
+    // a set with no release run to pair with is a set of models, which the line already names
+    return [arm && row.vs ? arm.label : "", `${row.harness} on ${modelName(row.model)}`, length(row), d ? plural((d.steps || []).length, "step") : "",
             o.total ? `task result ${o.satisfied} of ${o.total} ${unit(row)}` : ""].filter(Boolean).join(" · ");
   }
   function showList() {
@@ -2993,9 +3152,9 @@ html:has(.hkp-dlg[open]) { overflow: hidden; }
     scrollTo(0, listScroll);
   }
   function route() {
-    const m = location.hash.match(/^#run=([^&]+)(?:&view=([\w-]+))?(?:&b=([\w-]+))?/), id = m && decodeURIComponent(m[1]);
-    if (id && byId.has(id)) openRun(id, { view: m[2], branch: m[3] });
-    else if (LISTED) showList();
+    const p = new URLSearchParams(location.hash.slice(1)), id = p.get("run");
+    if (id && byId.has(id)) openRun(id, { view: p.get("view"), branch: p.get("b"), set: p.get("set") });
+    else if (LISTED) { if (p.get("set") !== null || set !== "release") pickSet(p.get("set") || "release", false); showList(); }
     else if (RUNS.length) openRun(RUNS[0].id, { view: "judge" });
   }
 
@@ -3003,8 +3162,10 @@ html:has(.hkp-dlg[open]) { overflow: hidden; }
   const MAP_EDGES = [["task", "census"], ["census", "questions"], ["questions", "judge"], ["questions", "answer"],
     ["task", "reports"], ["b-html", "answer", "the report alone"], ["b-html", "claims"], ["answer", "judge"],
     ["judge", "v-answerable", "", "covered"], ["judge", "v-missing_from_report", "", "silent"], ["judge", "v-unsupported_or_contradicted", "", "wrong"]];
+  // a set's run carries the one report it was scored on, named by its arm
   const branches = () => (D.branches && D.branches.length) ? D.branches.filter(b => b.key in REPORT_LABEL)
-    : Object.keys(REPORT_LABEL).filter(k => D.reports[k]).map((k, i) => ({ key: k, label: REPORT_LABEL[k], order: i + 1, scored: k === "html", fork: { status: "unread" } }));
+    : Object.keys(REPORT_LABEL).filter(k => D.reports[k]).map((k, i) => ({ key: k, label: (k === "html" && (armFor(byId.get(current) || {}) || {}).label) || REPORT_LABEL[k],
+                                                                         order: i + 1, scored: k === "html", fork: { status: "unread" } }));
   function drawMap() {
     const m = D.meta, st = D.stages || {}, cen = st.census || {}, qs = st.questions || {}, tiers = cen.tiers || {};
     const nV = v => D.questions.filter(q => q.verdict === v).length;
@@ -3014,7 +3175,7 @@ html:has(.hkp-dlg[open]) { overflow: hidden; }
     const o = m.outcome || {};
     $("map-grid").innerHTML =
       node("task", "The agent works", plural((D.steps || []).length, "step"), [length(m), o.total ? `${o.satisfied}/${o.total} ${unit(m)}` : ""].filter(Boolean).join(" · "), "src") +
-      `<div class="mn-reports" data-n="reports"><span class="mn-k">Then, from the run's end, its reports</span>${branches().map(b => {
+      `<div class="mn-reports" data-n="reports"><span class="mn-k">${armFor(byId.get(current) || {}) ? "Then, the report this set asked for" : "Then, from the run's end, its reports"}</span>${branches().map(b => {
         const v = !b.scored && ((byId.get(current) || {}).versions || {})[b.key];
         return `<button type="button" class="bchip${b.scored || v ? " scored" : ""}" data-n="b-${b.key}" data-view="report" data-b="${b.key}"><span>${esc(b.label)}</span><span class="bchip-t">${b.scored ? "scored" : v ? `scored · ${v[0]} of ${v[1]} answered` : "not scored"}</span></button>`; }).join("")}</div>` +
       node("census", "Step 1 · Census", plural(D.events.length, "event"), `${tiers.outcome_critical || 0} decisive · ${tiers.major || 0} major · ${tiers.minor || 0} minor`) +
@@ -3034,17 +3195,20 @@ html:has(.hkp-dlg[open]) { overflow: hidden; }
     show(el.dataset.view, { branch: el.dataset.b, scroll: true });
   });
 
-  const PANELS = { task: taskPanel, report: reportPanel, census: censusPanel, questions: questionsPanel, answer: answerPanel, judge: judgePanel, claims: claimsPanel };
+  const PANELS = { task: taskPanel, report: reportPanel, census: censusPanel, questions: questionsPanel, answer: answerPanel, judge: judgePanel, claims: claimsPanel, compare: comparePanel };
   function show(v, o = {}) {
-    view = PANELS[v] ? v : "judge";
+    view = PANELS[v] && (v !== "compare" || (byId.get(current) || {}).vs) ? v : "judge";
     if (o.branch) branch = o.branch;
     $("map-grid").querySelectorAll("[data-view]").forEach(el => el.setAttribute("aria-current",
       el.dataset.view === view && (view !== "report" || el.dataset.b === branch) && (view !== "judge" || !el.dataset.v || el.dataset.v === filt.judge)));
+    const cmp = $("ex-cmp");
+    if (cmp) cmp.setAttribute("aria-pressed", view === "compare");
     $("panel").innerHTML = PANELS[view]();
     few();
     if (view === "report") mountReport();
     if (view === "census") drawTimeline();
-    if (!ONE) history.replaceState(null, "", `#run=${encodeURIComponent(current)}&view=${view}${view === "report" ? `&b=${branch}` : ""}`);
+    if (view === "compare") mountCompare();
+    if (!ONE) history.replaceState(null, "", `#run=${encodeURIComponent(current)}${ctx ? `&set=${encodeURIComponent(ctx)}` : ""}&view=${view}${view === "report" ? `&b=${branch}` : ""}`);
     // in the post the page moves only when the stage opened is out of sight below the map
     const below = $("panel").getBoundingClientRect().top;
     if (o.scroll && (!ONE || below > innerHeight * 0.8 || below < 0))
@@ -3119,6 +3283,14 @@ html:has(.hkp-dlg[open]) { overflow: hidden; }
   function reportPanel() {
     const B = branches(), b = B.find(x => x.key === branch) || B[0];
     branch = b.key;
+    const cur = byId.get(current) || {}, arm = armFor(cur);
+    if (arm) {
+      const said = [b.scored ? (cur.shared ? "Scored on the release run's own questions" : "Scored on questions of its own") : "",
+        b.seconds ? `written in ${hours(b.seconds)}` : "", b.retried ? "needed its one retry" : "",
+        b.valid && b.valid !== "valid" ? `report check: ${esc(b.valid)}` : ""].filter(Boolean).join(" · ");
+      return head("The report", esc(arm.label), `${esc(arm.how)} Shown byte for byte as it was written.`, said) +
+        `<div class="rp-wrap"><div class="rp-view"><iframe class="rp-frame" id="report-frame" title="${esc(arm.label)}, as it was written" sandbox="allow-same-origin"></iframe></div><aside class="rp-side" id="rp-side">${sideHtml(b, B)}</aside></div>`;
+    }
     const meta = [b.scored ? "Scored: the report this release measures" : "",
       b.seconds ? `written in ${hours(b.seconds)}` : "", b.retried ? "needed its one retry" : "",
       b.valid && b.valid !== "valid" ? `report check: ${esc(b.valid)}` : ""].filter(Boolean).join(" · ");
@@ -3149,6 +3321,7 @@ html:has(.hkp-dlg[open]) { overflow: hidden; }
     const note = f.status === "overwritten"
       ? `This report's own session was not kept. The harness saved the session of every report in one format to one file, so ${keeper ? `the later “${esc(keeper.label)}” session` : "a later session"} replaced it.${f.retry ? " Its retry turn was saved apart and is below." : ""}`
       : f.status === "missing" ? "No session was saved for this report."
+      : f.status === "unread" && armFor(byId.get(current) || {}) ? "The session that wrote this report is not in this build."
       : f.status === "unread" ? "This build does not read this harness's report sessions yet." : "";
     const stat = f.status === "kept" ? [f.turns ? plural(f.turns, "turn") : "", f.seconds ? hours(f.seconds) : ""].filter(Boolean).join(" · ") : "";
     return (note ? `<p class="note-box">${note}</p>` : "") + (stat ? `<p class="pn-spend">${stat}</p>` : "") + tx(f.steps || []) +
@@ -3323,6 +3496,53 @@ html:has(.hkp-dlg[open]) { overflow: hidden; }
         `<p class="prose">${esc(c.claim)}</p><p class="r-kind">${esc((c.type || "").replace(/_/g, " "))}${c.section ? ` · section ${esc(c.section)}` : ""}</p>` +
         (c.why ? `<p class="k">The check</p><p class="prose">${esc(c.why)}</p>` : ""))).join("")}</div>`;
   }
+
+  // a set's report beside its release run's: the verdict on each question both were asked, then the two reports
+  const tally = d => ["answerable", "missing_from_report", "unsupported_or_contradicted"].map(v => [v, d.questions.filter(q => q.verdict === v).length]);
+  function comparePanel() {
+    const cur = byId.get(current) || {}, arm = armFor(cur) || { label: "This report", how: "" };
+    const what = `The release run's own report, written by the agent at the end of its run, beside this one. ${esc(arm.how)}`;
+    if (!VS || VS.id !== cur.vs) {
+      const want = cur.vs;
+      loadRun(want).then(r => { VS = { id: want, d: r }; if (view === "compare" && (byId.get(current) || {}).vs === want) refresh(); })
+        .catch(() => { if (view === "compare") $("panel").querySelector(".rb-loading").textContent = "The release run's file did not load."; });
+      return head("Side by side", "This report and the release run's", what, "") + `<p class="rb-loading">Loading the release run…</p>`;
+    }
+    const R = VS.d, mine = new Map(D.questions.map(q => [q.id, q]));
+    const both = R.questions.filter(q => mine.has(q.id) && mine.get(q.id).question === q.question);
+    const sides = [["The release run's report", R], [arm.label, D]];
+    const tiles = `<div class="cmp-tiles">${sides.map(([label, d]) => `<div class="cmp-tile"><p class="k">${esc(label)}</p><p class="cmp-n">` +
+      tally(d).map(([v, n]) => `<span>${pill(`v-${v}`, VERDICT[v])} <b>${n}</b></span>`).join("") + `</p><p class="pn-spend">of ${plural(d.questions.length, "question")}</p></div>`).join("")}</div>`;
+    let body = "";
+    if (both.length) {
+      const differ = q => q.verdict !== mine.get(q.id).verdict;
+      const gained = q => q.verdict !== "answerable" && mine.get(q.id).verdict === "answerable";
+      const lost = q => q.verdict === "answerable" && mine.get(q.id).verdict !== "answerable";
+      const n = f => both.filter(f).length;
+      const f = filt.cmp || (n(differ) ? "differ" : "all");
+      const pick = both.filter(q => f === "all" || (f === "differ" ? differ(q) : f === "gained" ? gained(q) : lost(q)));
+      const said = q => q && q.quote && q.read !== "missing_from_report" ? `<dd class="quote">${esc(q.quote)}</dd>` : `<dd class="quote none">No answer in the report.</dd>`;
+      body = `<p class="pn-what">Both reports were asked the same ${plural(both.length, "question")}, written from the run alone, so each verdict pairs with the other.</p>` +
+        filters("cmp", [["all", `All ${both.length}`], ["differ", `Verdict differs ${n(differ)}`], ["gained", `Covered only here ${n(gained)}`], ["lost", `Covered only in the release run ${n(lost)}`]], f) +
+        `<div class="rows">${pick.map(q => { const m = mine.get(q.id); return row(`cmp-${q.id}`, "auto minmax(0, 1fr)",
+          `<span class="cmp-v">${pill(`v-${q.verdict}`, VERDICT[q.verdict] || q.verdict)}<span class="cmp-arrow" aria-label="then">→</span>${pill(`v-${m.verdict}`, VERDICT[m.verdict] || m.verdict)}</span><span class="r-sum">${esc(q.question)}</span>`,
+          `<dl class="qa"><dt>From the run</dt><dd>${esc(q.gold)}</dd><dt>The release run's report</dt>${said(q)}<dt>${esc(arm.label)}</dt>${said(m)}</dl>` +
+          `<p class="links">${go("judge", `data-q="${esc(q.id)}"`, "This report's verdict")}</p>`); }).join("")}</div>`;
+    } else {
+      body = `<p class="pn-what">This is a new run of the task, so its questions are its own, written from its own run, and the two reports are not asked the same questions. Each verdict count above is out of its own run's questions.</p>`;
+    }
+    return head("Side by side", "This report and the release run's", what, "") + tiles + body +
+      `<div class="cmp-frames"><figure><figcaption>The release run's report</figcaption><iframe class="rp-frame" id="cmp-a" title="The release run's report" sandbox="allow-same-origin"></iframe></figure>` +
+      `<figure><figcaption>${esc(arm.label)}</figcaption><iframe class="rp-frame" id="cmp-b" title="${esc(arm.label)}" sandbox="allow-same-origin"></iframe></figure></div>`;
+  }
+  function mountCompare() {
+    if (!VS) return;
+    const a = $("cmp-a"), b = $("cmp-b");
+    if (a) a.srcdoc = VS.d.reports.html || "";
+    if (b) b.srcdoc = D.reports.html || "";
+  }
+  const cmpBtn = $("ex-cmp");
+  if (cmpBtn) cmpBtn.addEventListener("click", () => show(view === "compare" ? "judge" : "compare", { scroll: true }));
 
   // open a row in whichever panel holds it
   function reveal(id) {
