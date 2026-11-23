@@ -2457,6 +2457,12 @@ Write your work product to `/app/workspace/concession-agreement-markup.docx, mar
 <p>Anthropic found the same pull in Claude's memory notes, since writing them in the moment "draws Claude's attention away from its main task", so Claude now tidies them afterwards<sup class="cite"><a href="https://www.anthropic.com/research/components-of-agent-memory" data-ref="25" title="Martin, 2026. The components of agent memory">25</a></sup>. Sleep-time compute likewise moves an agent's memory work to time it would otherwise sit idle<sup class="cite"><a href="https://arxiv.org/abs/2504.13171" data-ref="26" title="Lin et al., 2025. Sleep-time Compute: Beyond Inference Scaling at Test-time">26</a></sup>.</p>
 </details>
 
+<p>A picture helped little. Asked for its report again and required to include one picture from an image generator, <code class="hn hc-codex">codex</code> added one every time and labelled each an illustration. Those reports answered 1.7 points more of their runs' questions than its first ones, a gain we can't tell from none, and smaller still once the 10 tasks we tuned the instruction on are left out.</p>
+<details class="more"><summary>How we asked for the pictures</summary>
+
+<p>The generator, FLUX.1-dev, never saw the run, so <code class="hn hc-codex">codex</code> was told to declare each picture an illustration and to keep its own figures beside it. It was also told to ask for shapes and colours, never words or numbers, which the generator can't draw reliably. We settled on that wording after five versions on those same tasks, judging every picture by eye and never by a score. When the generator was only offered, no agent used it.</p>
+</details>
+
 <p>A second pass did help. A fresh reader, a second <code class="hn hc-codex">codex</code> agent on the same model, read each finished run and wrote its report again, answering 20.0 points more of the run's questions than the agent's own. It read the run in the step-by-step form our questions are written from, and we haven't yet tested how much of the gain that explains.</p>
 <p>Splitting the reading helped again. With several readers each taking one part of a long run and one writer working from their notes, the report answered 13.6 points more than one fresh reader's, most of it on events from the middle of the run.</p>
 </section>
@@ -2468,7 +2474,7 @@ Write your work product to `/app/workspace/concession-agreement-markup.docx, mar
 </details>
 </section>
 <section class="part kind-later" id="coming-soon"><h2>Coming soon</h2><p>The technical report, the paper and the code will answer these.</p>
-<ul class="later-list soon-list"><li><b>What does an agent forget when its memory is squeezed?</b><span>We compact its context, or delete its notes, and measure what the report loses.</span></li><li><b>Does a person read a report the way our evaluator does?</b><span>We label a sample of its verdicts by hand, without seeing them first.</span></li><li><b>Can a picture make a report better?</b><span>We give the agent an image generator, and check whether its pictures explain the run or pass for evidence.</span></li></ul>
+<ul class="later-list soon-list"><li><b>What does an agent forget when its memory is squeezed?</b><span>We compact its context, or delete its notes, and measure what the report loses.</span></li><li><b>Does a person read a report the way our evaluator does?</b><span>We label a sample of its verdicts by hand, without seeing them first.</span></li><li><b>Does a higher score mean a more useful report?</b><span>People rate how useful and how trustworthy each report is, and we check whether those ratings rise with our score.</span></li></ul>
 </section>
 <section class="part kind-citation" id="citation"><h2>Citation</h2><p>If you use these results, please cite this post.</p>
 <div class="cite-box"><button type="button" class="cite-copy">Copy</button><pre class="cite-bib"><code>@misc{jain2026leftunsaid,
