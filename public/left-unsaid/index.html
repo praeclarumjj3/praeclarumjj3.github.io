@@ -2426,7 +2426,9 @@ Write your work product to `/app/workspace/concession-agreement-markup.docx, mar
   const BENCH = { "harvey-labs": "Harvey LAB", "deep-swe": "deep-swe", "terminal-bench": "terminal-bench", "posttrainbench": "PostTrainBench" };
   const count = (run, s) => run.events.filter(e => e.status === s).length;
   const SAL_KEYS = ["outcome_critical", "major", "minor"], ST_KEYS = ["covered", "missed", "unasked"];
-  const length = r => r.minutes !== null && r.minutes !== undefined ? `${Math.round(r.minutes)} min · ${r.turns} turns` : `${r.turns} turns`;
+  // a run shorter than a minute (a frontier agent's, some) reads as under one, never as 0 min
+  const mins = m => m < 0.5 ? "under 1 min" : `${Math.round(m)} min`;
+  const length = r => r.minutes !== null && r.minutes !== undefined ? `${mins(r.minutes)} · ${r.turns} turns` : `${r.turns} turns`;
   const eventsOf = row => row.ev.map(([at, s, k]) => ({ at, salience: SAL_KEYS[s], status: ST_KEYS[k] }));
   // a run is drawn on minutes, or on turns when its steps carry no timestamps
   const tickLabel = (axis, t) => axis === "turn" ? `turn ${t}` : `${t} min`;
@@ -2449,7 +2451,7 @@ Write your work product to `/app/workspace/concession-agreement-markup.docx, mar
   // `timed` false leaves out how long the run took, where the panel beside it already says so on the wall clock
   function units(row, timed = true) {
     const events = eventsOf(row), n = (list, s) => list.filter(e => e.status === s).length;
-    const span = !timed ? "" : row.minutes !== null && row.minutes !== undefined ? ` in ${Math.round(row.minutes)} minutes` : ` over ${row.turns} turns`;
+    const span = !timed ? "" : row.minutes !== null && row.minutes !== undefined ? (row.minutes < 0.5 ? " in under a minute" : ` in ${Math.round(row.minutes)} minutes`) : ` over ${row.turns} turns`;
     const key = ST_KEYS.map(s => `<span><i class="u st-${s}"></i><b>${n(events, s)}</b> ${ST_SAID[s]}</span>`).join("");
     const rows = SAL_KEYS.map(t => {
       const tier = events.filter(e => e.salience === t);
