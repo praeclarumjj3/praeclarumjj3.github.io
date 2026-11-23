@@ -2389,7 +2389,7 @@ questions judged covered.</figcaption></figure>
 </details>
 
 <p>We haven't yet measured whether rewording a stage's prompt moves verdicts more than re-running it does.</p>
-</div><p class="partial-box"><span class="wait-k">Note</span><span>Our whole evaluator run again on GPT-6.1-terra stopped after only a few reports, too few for an interval, so the second-model check rests on GPT-6-luna.</span></p><p class="partial-box wait-box"><span class="wait-k">still to come</span><span>Human check isn't measured yet. It needs a person's labels from the human check of the evaluator, which are still being made, and appears here once they're in.</span></p>
+</div><p class="partial-box"><span class="wait-k">Note</span><span>Our whole evaluator run again on GPT-6.1-terra stopped after only a few reports, too few for an interval, so the second-model check rests on GPT-6-luna.</span></p><p class="partial-box wait-box"><span class="wait-k">still to come</span><span>Human check and coverage against what a reader gets aren't measured yet. They need a person's labels from the human check of the evaluator, which are still being made, and appear here once they're in.</span></p>
 
 <aside class="bar"><span class="bar-k">The bar, fixed in the plan before the data</span><ul class="bar-t"><li>Deleting the text that answers a question moves it off <code>answerable</code> at least 90% of the time.</li><li>Planted false claims are caught at least 80% of the time.</li><li>A fresh re-score agrees with the first (ICC at least 0.8).</li><li>No bias probe shows a preference beyond re-scoring variance.</li><li>Where coverage is lost, it is lost in the writing, not in the evaluator's reading.</li></ul><span class="bar-k">Against the bar</span><ul class="bar-t"><li>Planted false claims caught, met, 33 of 33.</li><li>Deleting the answer moves the question off answerable, not met, 76.9% (65.7% to 84.8%).</li><li>A fresh re-score agrees with the first, met, an ICC of 0.90.</li><li>No bias probe beyond re-scoring, not met as written. Padding a judged answer with sentences the report doesn't contain moves it 2.2 points, which is the judge doing its job.</li><li>Lost in the writing, not the reading, met (<a href="#lost-in-the-writing">Lost in the writing</a>).</li></ul></aside>
 </section>
@@ -10763,6 +10763,7 @@ updating examples/nosec.py, test_nosec&#x27;s expected …</p></div><div class="
     mark();
   };
   const place = () => { rail.style.top = `${top.getBoundingClientRect().bottom + scrollY + 40}px`; };
+  let shown = null;
   const mark = () => {
     let on = null;
     for (const a of links) {
@@ -10770,6 +10771,12 @@ updating examples/nosec.py, test_nosec&#x27;s expected …</p></div><div class="
       if (el && el.offsetParent !== null && el.getBoundingClientRect().top < 140) on = a;
     }
     links.forEach(a => a.classList.toggle("on", a === on));
+    // a rail taller than the window follows the marked entry: the rail scrolls, never the page (release-review's audit)
+    if (on && on !== shown) {
+      shown = on;
+      const r = on.getBoundingClientRect(), n = nav.getBoundingClientRect();
+      if (r.top < n.top + 24 || r.bottom > n.bottom - 24) nav.scrollTop += r.top - n.top - nav.clientHeight / 3;
+    }
   };
   let queued = false;
   addEventListener("scroll", () => { if (!queued) { queued = true; requestAnimationFrame(() => { queued = false; mark(); }); } }, { passive: true });

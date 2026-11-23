@@ -2394,6 +2394,7 @@ figcaption.cap::before { color: var(--ink); }
     mark();
   };
   const place = () => { rail.style.top = `${top.getBoundingClientRect().bottom + scrollY + 40}px`; };
+  let shown = null;
   const mark = () => {
     let on = null;
     for (const a of links) {
@@ -2401,6 +2402,12 @@ figcaption.cap::before { color: var(--ink); }
       if (el && el.offsetParent !== null && el.getBoundingClientRect().top < 140) on = a;
     }
     links.forEach(a => a.classList.toggle("on", a === on));
+    // a rail taller than the window follows the marked entry: the rail scrolls, never the page (release-review's audit)
+    if (on && on !== shown) {
+      shown = on;
+      const r = on.getBoundingClientRect(), n = nav.getBoundingClientRect();
+      if (r.top < n.top + 24 || r.bottom > n.bottom - 24) nav.scrollTop += r.top - n.top - nav.clientHeight / 3;
+    }
   };
   let queued = false;
   addEventListener("scroll", () => { if (!queued) { queued = true; requestAnimationFrame(() => { queued = false; mark(); }); } }, { passive: true });
