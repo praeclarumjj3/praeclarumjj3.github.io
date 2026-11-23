@@ -1090,7 +1090,12 @@ a.rb-cell:hover { background: var(--mist-2); color: var(--ink); }
 .rs-cols dd { margin: 0; font-size: 0.86rem; line-height: 1.5; color: var(--ink-2); }
 .rs-tip { margin: 12px 0 0; font-size: 0.84rem; line-height: 1.5; color: var(--ink-3); }
 .set-open .xp-deck, .set-open #rb-sum { display: none; }
-@media (max-width: 720px) { .sg { grid-template-columns: 1fr; padding: 20px 0; } .sg-list { grid-template-columns: 1fr; } .rs-cols dl div { grid-template-columns: 1fr; gap: 2px; } }
+/* on a phone the list of sets is a dropdown: it opens a set's screen, and stays above it to switch */
+.rs-pick { display: none; gap: 6px; margin: 0 0 24px; }
+.rs-pick label { font: 600 0.75rem/1.2 var(--sans); letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-3); }
+.rs-pick select { width: 100%; font: 600 1rem/1.3 var(--sans); color: var(--navy); background: var(--mist); border: 1px solid var(--edge); border-radius: 12px; padding: 12px 14px; }
+.rs-pick select:focus-visible { outline: 2px solid var(--blue); outline-offset: 2px; }
+@media (max-width: 720px) { .rs-pick { display: grid; } .rb-sets, .rs-back { display: none !important; } .rs-cols dl div { grid-template-columns: 1fr; gap: 2px; } }
 .st-live { display: inline-block; font: 600 0.68rem/1 var(--sans); letter-spacing: 0.06em; text-transform: uppercase; color: var(--blue); border: 1px solid currentColor; border-radius: 999px; padding: 3px 7px; vertical-align: 1px; }
 .xp-note, .xp-live { display: block; margin-top: 8px; }
 .rb-tuned { font: 600 0.62rem/1 var(--sans); letter-spacing: 0.06em; color: var(--ink-2); background: var(--white); border: 1px solid var(--edge); border-radius: 999px; padding: 2px 6px; margin-left: 4px; vertical-align: 1px; }
@@ -2951,6 +2956,12 @@ html:has(.hkp-dlg[open]) { overflow: hidden; }
     const items = [{ ...RELEASE_SET, id: "release", n: ROWS.length, unit: "runs", status: "done", cols: COLS },
       ...SETS.map(s => ({ id: s.id, title: s.title, group: s.group, asks: s.asks, about: s.about, n: s.runs.length,
                           unit: s.runs.length === 1 ? "report" : "reports", status: s.status, cols: setCols(s).map(c => c.label) }))];
+    const option = i => `<option value="${esc(i.id)}">${esc(i.title)} · ${i.n} ${i.unit}${i.status === "done" ? "" : " · still running"}</option>`;
+    $("rs-select").innerHTML = GROUPS.map(g => {
+      const mine = items.filter(i => i.group === g.key);
+      return mine.length ? `<optgroup label="${esc(g.title)}">${mine.map(option).join("")}</optgroup>` : "";
+    }).join("");
+    $("rs-pick").hidden = false;
     $("rb-sets").innerHTML = GROUPS.map(g => {
       const mine = items.filter(i => i.group === g.key);
       return !mine.length ? "" : `<section class="sg"><div class="sg-h"><h2 class="sg-t">${esc(g.title)}</h2><p>${esc(g.about)}</p></div><ul class="sg-list">` +
@@ -2977,6 +2988,7 @@ html:has(.hkp-dlg[open]) { overflow: hidden; }
   function pickSet(id) {
     set = setById.has(id) ? id : "release";
     const s = setById.get(set);
+    $("rs-select").value = set;
     $("rs-head").innerHTML = setHead(s);
     $("rb-key").innerHTML = KEY;
     // a set offers only the benchmarks it has runs on; one on other benchmarks (frontier models' runs) has none to pick
@@ -2987,11 +2999,16 @@ html:has(.hkp-dlg[open]) { overflow: hidden; }
     drawRuns();
   }
   // the list of sets, or one set's screen; with no sets the release runs are the page
-  function showSets(on) {
+  // the list of sets, or one set's screen; `chosen`, a set the reader picked, puts the page's own introduction away
+  function showSets(on, chosen = !on) {
     $("rb-sets").hidden = !on; $("rb-setview").hidden = on; $("rs-back").hidden = on || !SETS.length;
-    document.body.classList.toggle("set-open", !on);
+    document.body.classList.toggle("set-open", chosen);
   }
+  // on a phone the dropdown is the list: the page opens on the release runs with it above them
+  const PHONE = matchMedia("(max-width: 720px)");
   if (LISTED) {
+    $("rs-select").addEventListener("change", e => { location.hash = `#set=${encodeURIComponent(e.target.value)}`; });
+    PHONE.addEventListener("change", () => { if (current === null) { listKey = null; route(); } });
     $("rb-sum").innerHTML = SETS.length ? overview : "";
     $("rb-sum").hidden = !SETS.length;
     drawSets();
@@ -3214,10 +3231,11 @@ html:has(.hkp-dlg[open]) { overflow: hidden; }
     if (id && byId.has(id)) openRun(id, { view: p.get("view"), branch: p.get("b"), set: p.get("set") });
     else if (LISTED) {
       // the list of sets, or one set's screen; back from a run to the screen it was opened from keeps its place
-      const want = p.get("set"), key = want !== null || !SETS.length ? `set:${want || "release"}` : "sets";
+      const want = p.get("set"), landing = want === null && SETS.length > 0, listed = landing && !PHONE.matches;
+      const key = listed ? "sets" : `set:${want || "release"}`;
       const returning = current !== null && key === listKey;
-      if (key !== "sets" && !returning) pickSet(want || "release");
-      showSets(key === "sets");
+      if (!listed && !returning) pickSet(want || "release");
+      showSets(listed, !landing);
       listKey = key;
       showList(returning);
     }
