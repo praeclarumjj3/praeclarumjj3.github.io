@@ -1058,13 +1058,39 @@ a.rb-cell:hover { background: var(--mist-2); color: var(--ink); }
 .rb-m { color: var(--ink-3); }
 .rb-h { display: none; font: 600 0.68rem var(--sans); letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-3); }
 .rb-empty { color: var(--ink-3); margin-top: 32px; }
-/* which runs: the release's, or one ablation's set */
-.rb-sets { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 22px; }
-.rb-sets button { display: grid; gap: 2px; text-align: left; font: 600 0.9rem/1.25 var(--sans); color: var(--ink-2); background: var(--mist); border: 1px solid transparent; border-radius: 12px; padding: 10px 14px; cursor: pointer; }
-.rb-sets button:hover { color: var(--ink); background: var(--mist-2); }
-.rb-sets button[aria-selected="true"] { background: var(--seg-on); color: var(--navy); border-color: var(--edge); box-shadow: 0 1px 3px rgba(var(--shadow), 0.12); }
-.rb-sets button:focus-visible, .cmp-btn:focus-visible { outline: 2px solid var(--blue); outline-offset: 2px; }
-.rs-n { font: 400 0.78rem var(--sans); color: var(--ink-3); font-variant-numeric: tabular-nums; }
+/* the sets of runs: a list grouped by what each experiment changes, each set opening a screen of its own */
+.rb-sets { display: grid; margin: 4px 0 0; }
+.sg { display: grid; grid-template-columns: minmax(180px, 250px) minmax(0, 1fr); gap: 14px 32px; padding: 26px 0; border-top: 1px solid var(--rule); }
+.sg:first-child { border-top: 0; padding-top: 0; }
+.sg-h h2 { font: 500 1.25rem/1.25 var(--display); color: var(--navy); margin: 0 0 6px; }
+.sg-h p { font-size: 0.88rem; line-height: 1.55; color: var(--ink-2); margin: 0; }
+.sg-list { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 12px; }
+.si { display: grid; align-content: start; gap: 6px; height: 100%; box-sizing: border-box; padding: 14px 16px; border-radius: 14px; background: var(--mist); border: 1px solid transparent; color: var(--ink); text-decoration: none; }
+.si:hover { background: var(--mist-2); border-color: var(--edge); }
+.si:focus-visible, .cmp-btn:focus-visible { outline: 2px solid var(--blue); outline-offset: 2px; }
+.si-top { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: baseline; gap: 4px 12px; }
+.si-t { font: 600 1rem/1.3 var(--sans); color: var(--navy); }
+.si-t::after { content: "\00a0→"; color: var(--blue); }
+.si-n { font: 400 0.8rem var(--sans); color: var(--ink-3); font-variant-numeric: tabular-nums; text-align: right; }
+.si-q { font: 500 0.92rem/1.45 var(--sans); color: var(--ink); }
+.si-a { font-size: 0.84rem; line-height: 1.5; color: var(--ink-2); }
+.si-cols { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 2px; }
+.si-cols i { font: 500 0.72rem/1.3 var(--sans); font-style: normal; color: var(--ink-2); background: var(--seg-on); border: 1px solid var(--rule); border-radius: 999px; padding: 2px 8px; }
+.rs-back { margin: 0 0 18px; }
+.rs-head { margin: 0 0 26px; }
+.rs-head .eyebrow { margin-bottom: 8px; }
+.rs-title { font: 500 clamp(1.7rem, 3.5vw, 2.3rem)/1.15 var(--display); color: var(--navy); margin: 0 0 8px; }
+.rs-q { font: 500 1.05rem/1.5 var(--sans); color: var(--ink); margin: 0; max-width: 900px; }
+.rs-head .rs-sum { margin-top: 10px; padding-top: 0; border-top: 0; }
+.rs-cols { margin-top: 18px; padding: 16px 18px; border-radius: 14px; border: 1px solid var(--rule); max-width: 900px; }
+.rs-cols h3 { font: 600 0.75rem/1.2 var(--sans); letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-3); margin: 0 0 10px; }
+.rs-cols dl { display: grid; gap: 8px; margin: 0; }
+.rs-cols dl div { display: grid; grid-template-columns: minmax(140px, 200px) minmax(0, 1fr); gap: 12px; }
+.rs-cols dt { font: 600 0.88rem/1.45 var(--sans); color: var(--navy); }
+.rs-cols dd { margin: 0; font-size: 0.86rem; line-height: 1.5; color: var(--ink-2); }
+.rs-tip { margin: 12px 0 0; font-size: 0.84rem; line-height: 1.5; color: var(--ink-3); }
+.set-open .xp-deck, .set-open #rb-sum { display: none; }
+@media (max-width: 720px) { .sg { grid-template-columns: 1fr; padding: 20px 0; } .sg-list { grid-template-columns: 1fr; } .rs-cols dl div { grid-template-columns: 1fr; gap: 2px; } }
 .st-live { display: inline-block; font: 600 0.68rem/1 var(--sans); letter-spacing: 0.06em; text-transform: uppercase; color: var(--blue); border: 1px solid currentColor; border-radius: 999px; padding: 3px 7px; vertical-align: 1px; }
 .xp-note, .xp-live { display: block; margin-top: 8px; }
 .rb-tuned { font: 600 0.62rem/1 var(--sans); letter-spacing: 0.06em; color: var(--ink-2); background: var(--white); border: 1px solid var(--edge); border-radius: 999px; padding: 2px 6px; margin-left: 4px; vertical-align: 1px; }
@@ -1083,7 +1109,7 @@ a.rb-cell:hover { background: var(--mist-2); color: var(--ink); }
 .cmp-frames figure { margin: 0; min-width: 0; }
 .cmp-frames figcaption { font: 600 0.78rem var(--sans); color: var(--ink-2); margin: 0 0 8px; }
 @media (max-width: 1000px) { .cmp-frames { grid-template-columns: 1fr; } }
-@media (max-width: 560px) { .cmp-tiles { grid-template-columns: 1fr; } .rb-sets { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); } .rb-sets button { padding: 8px 10px; } }
+@media (max-width: 560px) { .cmp-tiles { grid-template-columns: 1fr; } }
 @media (max-width: 760px) { .rb-head { display: none; } .rb-row { grid-template-columns: repeat(2, minmax(0, 1fr)); } .rb-task, .rb-cell.rb-out { grid-column: 1 / -1; } .rb-task { padding: 4px 0; } .rb-h { display: block; } }
 .xp-main .explorer { margin-top: 8px; }
 .ex-main { display: grid; gap: 32px; }
@@ -11271,7 +11297,7 @@ updating examples/nosec.py, test_nosec&#x27;s expected …</p></div><div class="
   const setById = new Map(SETS.map(s => [s.id, s]));
   SETS.forEach(s => s.runs.forEach(r => { if (!byId.has(r.id)) byId.set(r.id, r); most[r.benchmark] = Math.max(most[r.benchmark] || 1, size(r)); }));
   const armOf = (s, key) => (s.arms || []).find(a => a.key === key) || { key, label: key, how: "" };
-  const RELEASE_COL = { key: "release", label: "Release run" };
+  const RELEASE_COL = { key: "release", label: "Release run", how: "The agent's own report, written at the end of the release run of the same task and harness." };
   const setCols = s => [...(s.pairs ? [RELEASE_COL] : []), ...s.arms];
   // a set's row is one task (in one harness, when the set spans harnesses); its cells are the release run and each arm
   const rowKey = (s, r) => `${r.benchmark}|${r.task_id}|${s.by_harness ? r.harness : ""}`;
@@ -11284,31 +11310,60 @@ updating examples/nosec.py, test_nosec&#x27;s expected …</p></div><div class="
       (s.status === "done" ? "" : ` <span class="xp-live">${liveTag} The plan has not closed this experiment: these are its reports scored by ${esc(s.taken)}, and more join as each is scored.</span>`);
   }
   const KEY = `<span><i class="b-covered"></i>events its report covers</span><span><i class="b-missed"></i>events it misses</span><span><i class="b-unasked"></i>events no question reached</span><span>bar length: events in the run</span><span><i class="k-none"></i>no scored run</span>`;
+  // the list of sets, grouped by what each experiment changes; a set opens a screen of its own (`#set=`)
+  const GROUPS = SRC.set_groups || [];
+  const RELEASE_SET = SRC.release_set || { title: "Release runs", group: "release", asks: "", about: "" };
+  const reports = SETS.reduce((n, s) => n + s.runs.length, 0);
+  const overview = `<b>${ROWS.length}</b> release runs, and <b>${reports}</b> reports from <b>${SETS.length}</b> experiments.`;
   function drawSets() {
     if (!SETS.length) return;
-    const box = $("rb-sets");
-    box.hidden = false;
-    box.innerHTML = [["release", "Release runs", ROWS.length, "done"], ...SETS.map(s => [s.id, s.title, s.runs.length, s.status])].map(([id, title, n, st]) =>
-      `<button type="button" role="tab" data-set="${esc(id)}" aria-selected="${id === set}"><span class="rs-t">${esc(title)}</span>` +
-      `<span class="rs-n">${n} ${id === "release" ? "runs" : "reports"}${st === "done" ? "" : ` · ${liveTag}`}</span></button>`).join("");
+    const items = [{ ...RELEASE_SET, id: "release", n: ROWS.length, unit: "runs", status: "done", cols: COLS },
+      ...SETS.map(s => ({ id: s.id, title: s.title, group: s.group, asks: s.asks, about: s.about, n: s.runs.length,
+                          unit: s.runs.length === 1 ? "report" : "reports", status: s.status, cols: setCols(s).map(c => c.label) }))];
+    $("rb-sets").innerHTML = GROUPS.map(g => {
+      const mine = items.filter(i => i.group === g.key);
+      return !mine.length ? "" : `<section class="sg"><div class="sg-h"><h2 class="sg-t">${esc(g.title)}</h2><p>${esc(g.about)}</p></div><ul class="sg-list">` +
+        mine.map(i => `<li><a class="si" href="#set=${encodeURIComponent(i.id)}"><span class="si-top"><span class="si-t">${esc(i.title)}</span>` +
+          `<span class="si-n">${i.n} ${i.unit}${i.status === "done" ? "" : ` · ${liveTag}`}</span></span>` +
+          `<span class="si-q">${esc(i.asks)}</span><span class="si-a">${esc(i.about)}</span>` +
+          `<span class="si-cols">${i.cols.map(c => `<i>${esc(c)}</i>`).join("")}</span></a></li>`).join("") + `</ul></section>`;
+    }).join("");
   }
-  function pickSet(id, push = true) {
+  // a set's own screen: what it asks, what it holds, and what each of its columns is, above its runs
+  function setHead(s) {
+    const g = GROUPS.find(x => x.key === (s ? s.group : RELEASE_SET.group));
+    const cols = s ? setCols(s).map(c => [c.label, c.how])
+      : [["One per harness", `${COLS.join(", ")}: each harness's run of the task, with the report the agent wrote at the end of it.`]];
+    const tip = s ? `Each row is one task. Open a report to read its run event by event${s.pairs ? ", and “Compare with the release run” on it to put it beside the release run's report" : ""}.`
+      : "Each row is one task. Open a run to read it event by event.";
+    return (g && SETS.length ? `<p class="eyebrow">${esc(g.title)}</p>` : "") +
+      `<h2 class="rs-title">${esc(s ? s.title : RELEASE_SET.title)}</h2>` +
+      ((s ? s.asks : RELEASE_SET.asks) ? `<p class="rs-q">${esc(s ? s.asks : RELEASE_SET.asks)}</p>` : "") +
+      `<p class="xp-sum rs-sum">${s ? setSum(s) : `${esc(RELEASE_SET.about)} ${releaseSum}`}</p>` +
+      `<div class="rs-cols"><h3>What each column is</h3><dl>${cols.map(([l, h]) => `<div><dt>${esc(l)}</dt><dd>${esc(h || "")}</dd></div>`).join("")}</dl>` +
+      `<p class="rs-tip">${tip}</p></div>`;
+  }
+  function pickSet(id) {
     set = setById.has(id) ? id : "release";
-    if (LISTED) {
-      $("rb-sum").innerHTML = set === "release" ? releaseSum : setSum(setById.get(set));
-      $("rb-key").innerHTML = KEY;
-      $("rb-sets").querySelectorAll("button").forEach(x => x.setAttribute("aria-selected", x.dataset.set === set));
-      // a set on other benchmarks than the release's (frontier models' runs) has no benchmark to pick
-      $("rb-bench").hidden = set !== "release" && !setById.get(set).runs.some(r => BENCHES.includes(r.benchmark));
-      drawRuns();
-      if (push) history.replaceState(null, "", set === "release" ? "#" : `#set=${encodeURIComponent(set)}`);
-    }
+    const s = setById.get(set);
+    $("rs-head").innerHTML = setHead(s);
+    $("rb-key").innerHTML = KEY;
+    // a set offers only the benchmarks it has runs on; one on other benchmarks (frontier models' runs) has none to pick
+    const has = b => b === "all" || !s || [...s.runs, ...(s.unscored || [])].some(r => r.benchmark === b);
+    $("rb-bench").hidden = !!s && !s.runs.some(r => BENCHES.includes(r.benchmark));
+    if (!has(bench)) bench = "all";
+    $("rb-bench").querySelectorAll("button").forEach(x => { x.hidden = !has(x.dataset.b); x.setAttribute("aria-selected", x.dataset.b === bench); });
+    drawRuns();
+  }
+  // the list of sets, or one set's screen; with no sets the release runs are the page
+  function showSets(on) {
+    $("rb-sets").hidden = !on; $("rb-setview").hidden = on; $("rs-back").hidden = on || !SETS.length;
+    document.body.classList.toggle("set-open", !on);
   }
   if (LISTED) {
-    $("rb-sum").innerHTML = releaseSum;
-    $("rb-key").innerHTML = KEY;
+    $("rb-sum").innerHTML = SETS.length ? overview : "";
+    $("rb-sum").hidden = !SETS.length;
     drawSets();
-    $("rb-sets").addEventListener("click", e => { const b = e.target.closest("button[data-set]"); if (b) pickSet(b.dataset.set); });
   }
 
   let bench = "all", query = "";
@@ -11454,6 +11509,7 @@ updating examples/nosec.py, test_nosec&#x27;s expected …</p></div><div class="
   const plural = (n, w, p = w + "s") => `${n} ${n === 1 ? w : p}`;
   const at = (axis, v) => v === null || v === undefined ? "" : axis === "turn" ? `turn ${v}` : `${v < 10 ? v.toFixed(1) : Math.round(v)} min`;
   const firstLine = s => String(s || "").split("\n").find(l => l.trim()) || "";
+  let listKey = null;
   let D = null, current = null, listScroll = 0, view = "judge", branch = "html", filt = {}, pendingQuote = null;
 
   function circle(x, y, r, status) {
@@ -11482,7 +11538,7 @@ updating examples/nosec.py, test_nosec&#x27;s expected …</p></div><div class="
     $("ex-title").textContent = task(row);
     $("ex-line").textContent = headLine(row);
     const back = EX.querySelector(".back");
-    if (back) { back.href = S ? `#set=${encodeURIComponent(ctx)}` : "#"; back.textContent = S ? `← Every run in ${S.title}` : "← Every run"; }
+    if (back) { back.href = S ? `#set=${encodeURIComponent(ctx)}` : SETS.length ? "#set=release" : "#"; back.textContent = S ? `← Every run in ${S.title}` : "← Every release run"; }
     const sib = siblings(row);
     $("ex-runs").setAttribute("aria-label", sib ? "The same task, by arm" : "The same task, by harness");
     $("ex-runs").innerHTML = sib ? sib.map(([r, label]) => `<button type="button" role="tab" aria-selected="${r.id === id}" data-id="${esc(r.id)}">${esc(label)}</button>`).join("")
@@ -11517,15 +11573,23 @@ updating examples/nosec.py, test_nosec&#x27;s expected …</p></div><div class="
     return [arm && row.vs ? arm.label : "", `${row.harness} on ${modelName(row.model)}`, length(row), d ? plural((d.steps || []).length, "step") : "",
             o.total ? `task result ${o.satisfied} of ${o.total} ${unit(row)}` : ""].filter(Boolean).join(" · ");
   }
-  function showList() {
+  function showList(restore = true) {
     current = null; EX.hidden = true; LIST.hidden = false; tip.hidden = true;
     document.body.classList.remove("run-open");
-    scrollTo(0, listScroll);
+    scrollTo(0, restore ? listScroll : 0);
   }
   function route() {
     const p = new URLSearchParams(location.hash.slice(1)), id = p.get("run");
     if (id && byId.has(id)) openRun(id, { view: p.get("view"), branch: p.get("b"), set: p.get("set") });
-    else if (LISTED) { if (p.get("set") !== null || set !== "release") pickSet(p.get("set") || "release", false); showList(); }
+    else if (LISTED) {
+      // the list of sets, or one set's screen; back from a run to the screen it was opened from keeps its place
+      const want = p.get("set"), key = want !== null || !SETS.length ? `set:${want || "release"}` : "sets";
+      const returning = current !== null && key === listKey;
+      if (key !== "sets" && !returning) pickSet(want || "release");
+      showSets(key === "sets");
+      listKey = key;
+      showList(returning);
+    }
     else if (RUNS.length) openRun(RUNS[0].id, { view: "judge" });
   }
 
