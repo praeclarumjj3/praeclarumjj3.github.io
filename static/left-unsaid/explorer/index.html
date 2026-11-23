@@ -2240,6 +2240,36 @@ figcaption.cap::before { color: var(--ink); }
 :is(.pg-post, .pg-report) :is(.eyebrow, .toc-k, .rp-k, .fn-k, .k, .hsc-g, .hp-g, .scale-k, .tile-g, .tier-exk, .rf-head, .cs-k, .bar-k,
   .later-rule, .ss-k, .ss-sl, .ss-who, .tbl th, .f-claim span, .demo-pane > :is(header, .pane-h)),
 :is(.pg-post, .pg-report) .htable tr.ht-group th { text-transform: none; letter-spacing: 0.005em; font-weight: 600; }
+/* the title block centred, as the reference sets it (user, 22 Nov: "add the left toc and center title", which replaces
+   the 29 Oct ask for a left-aligned title); the words under it keep the column's left edge */
+:is(.pg-post, .pg-report) .mast-top { justify-items: center; text-align: center; }
+:is(.pg-post, .pg-report) .mast-top .deck { margin-inline: auto; max-width: 720px; }
+:is(.pg-post, .pg-report) .mast-top .by-a, :is(.pg-post, .pg-report) .mast-top .rlinks { justify-content: center; }
+/* the contents in the left margin, from 1280px: the page's own contents, cloned beside it and stuck inside the page
+   (never fixed to the window's edge, which the artifact viewer's overlay covers), the section in view marked as one
+   reads. The figures already keep the column's width (user, 9 Nov), so the rail takes none from them; narrower windows
+   keep the contents where they were */
+.side-rail { display: none; }
+@media (min-width: 1280px) {
+  :root { --toc-w: 200px; }
+  body:has(> main:is(.pg-post, .pg-report)) { position: relative; }
+  .side-rail { display: block; position: absolute; left: var(--gutter); width: var(--toc-w); bottom: 96px; }
+  .side-toc { position: sticky; top: 36px; max-height: calc(100vh - 60px); overflow-y: auto; scrollbar-width: thin;
+    padding: 2px 8px 8px 0; font: 400 0.8rem/1.4 var(--sans); }
+  body:has(.topbar) .side-toc { top: 88px; max-height: calc(100vh - 112px); }
+  .side-toc .toc-k { display: block; margin: 0 0 10px; font: 500 0.8rem/1.3 var(--sans); letter-spacing: 0; text-transform: none; color: var(--ink); }
+  .side-toc ul { list-style: none; margin: 0; padding: 0; columns: auto; }
+  .side-toc li { margin: 0; break-inside: avoid; }
+  .side-toc ul.toc-sub { margin: 0 0 4px 12px; padding: 0; border: 0; font-size: inherit; }
+  .side-toc .toc-tab > div, .side-toc > div { margin: 0; }
+  .side-toc a { display: block; padding: 5px 0; color: var(--ink-3); text-decoration: none; font: inherit; }
+  .side-toc a.toc-ch { margin-top: 8px; font-weight: 500; color: var(--ink-2); }
+  .side-toc .toc-ch ~ ul { margin-left: 10px; }
+  .side-toc a:hover { color: var(--ink); }
+  .side-toc a.on { color: var(--ink); font-weight: 500; }
+  .side-toc .toc-tab > .toc-k { color: var(--ink); }
+  header:is(.pg-post) .toc.outline.flat { display: none; }
+}
 /* the harnesses' logos, one data URI each */
 .hl-claude-code{background-image:url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQ4IiBoZWlnaHQ9IjI0OCIgdmlld0JveD0iMCAwIDI0OCAyNDgiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxwYXRoIGQ9Ik01Mi40Mjg1IDE2Mi44NzNMOTguNzg0NCAxMzYuODc5TDk5LjU0ODUgMTM0LjYwMkw5OC43ODQ0IDEzMy4zMzRIOTYuNDkyMUw4OC43MjM3IDEzMi44NjJMNjIuMjM0NiAxMzIuMTUzTDM5LjMxMTMgMTMxLjIwN0wxNy4wMjQ5IDEzMC4wMjZMMTEuNDIxNCAxMjguODQ0TDYuMiAxMjEuODczTDYuNzA5NCAxMTguNDQ3TDExLjQyMTQgMTE1LjI1N0wxOC4xNzEgMTE1Ljg0N0wzMy4wNzExIDExNi45MTFMNTUuNDg1IDExOC40NDdMNzEuNjU4NiAxMTkuMzkyTDk1LjcyOCAxMjEuODczSDk5LjU0ODVMMTAwLjA1OCAxMjAuMzM3TDk4Ljc4NDQgMTE5LjM5Mkw5Ny43NjU2IDExOC40NDdMNzQuNTg3NyAxMDIuNzMyTDQ5LjQ5OTUgODYuMTkwNUwzNi4zODIzIDc2LjYyTDI5LjM3NzkgNzEuNzc1N0wyNS44MTIxIDY3LjI4NThMMjQuMjgzOSA1Ny4zNjA4TDMwLjY1MTUgNTAuMjcxNkwzOS4zMTEzIDUwLjg2MjNMNDEuNDc2MyA1MS40NTMxTDUwLjI2MzYgNTguMTg3OUw2OC45ODQyIDcyLjcyMDlMOTMuNDM1NyA5MC42ODA0TDk3LjAwMTUgOTMuNjM0M0w5OC40Mzc0IDkyLjY2NTJMOTguNjU3MSA5MS45ODAxTDk3LjAwMTUgODkuMjYyNUw4My43NTcgNjUuMjc3Mkw2OS42MjEgNDAuODE5Mkw2My4yNTM0IDMwLjY1NzlMNjEuNTk3OCAyNC42MzJDNjAuOTU2NSAyMi4xMDMyIDYwLjU3OSAyMC4wMTExIDYwLjU3OSAxNy40MjQ2TDY3LjgzODEgNy40OTk2NUw3MS45MTMzIDYuMTk5OTVMODEuNzE5MyA3LjQ5OTY1TDg1Ljc5NDYgMTEuMDQ0M0w5MS45MDc0IDI0Ljk4NjVMMTAxLjcxNCA0Ni44NDUxTDExNi45OTYgNzYuNjJMMTIxLjQ1MyA4NS40ODE2TDEyMy44NzMgOTMuNjM0M0wxMjQuNzY0IDk2LjExNTVIMTI2LjI5MlY5NC42OTc2TDEyNy41NjYgNzcuOTE5N0wxMjkuODU4IDU3LjM2MDhMMTMyLjE1IDMwLjg5NDJMMTMyLjkxNSAyMy40NTA1TDEzNi42MDggMTQuNDcwOEwxNDMuOTk0IDkuNjI2NDNMMTQ5LjcyNSAxMi4zNDRMMTU0LjQzNyAxOS4wNzg4TDE1My44IDIzLjQ1MDVMMTUwLjk5OCA0MS42NDYzTDE0NS41MjIgNzAuMTIxNUwxNDEuOTU3IDg5LjI2MjVIMTQzLjk5NEwxNDYuNDE0IDg2Ljc4MTNMMTU2LjA5MyA3NC4wMjA2TDE3Mi4yNjYgNTMuNjk4TDE3OS4zOTggNDUuNjYzNUwxODcuODAzIDM2LjgwMkwxOTMuMTUyIDMyLjU0ODRIMjAzLjM0TDIxMC43MjYgNDMuNjU0OUwyMDcuNDE1IDU1LjExNTlMMTk2Ljk3MiA2OC4zNDkyTDE4OC4zMTIgNzkuNTczOUwxNzUuODk2IDk2LjIwOTVMMTY4LjE5MSAxMDkuNTg1TDE2OC44ODIgMTEwLjY4OUwxNzAuNzM4IDExMC41M0wxOTguNzU1IDEwNC41MDRMMjEzLjkxIDEwMS43ODdMMjMxLjk5NCA5OC43MTQ5TDI0MC4xNDQgMTAyLjQ5NkwyNDEuMDM2IDEwNi4zOTVMMjM3Ljg1MiAxMTQuMzExTDIxOC40OTUgMTE5LjAzN0wxOTUuODI2IDEyMy42NDVMMTYyLjA3IDEzMS41OTJMMTYxLjY5NiAxMzEuODkzTDE2Mi4xMzcgMTMyLjU0N0wxNzcuMzYgMTMzLjkyNUwxODMuODU1IDEzNC4yNzlIMTk5Ljc3NEwyMjkuNDQ3IDEzNi41MjRMMjM3LjIxNSAxNDEuNjA1TDI0MS44IDE0Ny44NjdMMjQxLjAzNiAxNTIuNzExTDIyOS4wNjUgMTU4LjczN0wyMTMuMDE5IDE1NC45NTZMMTc1LjQ1IDE0NS45NzdMMTYyLjU4NyAxNDIuNzg3SDE2MC44MDVWMTQzLjg1TDE3MS41MDIgMTU0LjM2NkwxOTEuMjQyIDE3Mi4wODlMMjE1LjgyIDE5NS4wMTFMMjE3LjA5NCAyMDAuNjgyTDIxMy45MSAyMDUuMTcyTDIxMC41OTkgMjA0LjY5OUwxODguOTQ5IDE4OC4zOTRMMTgwLjU0NCAxODEuMDY5TDE2MS42OTYgMTY1LjExOEgxNjAuNDIyVjE2Ni43NzJMMTY0Ljc1MiAxNzMuMTUyTDE4Ny44MDMgMjA3Ljc3MUwxODguOTQ5IDIxOC40MDVMMTg3LjI5NCAyMjEuODMyTDE4MS4zMDggMjIzLjk1OUwxNzQuODEzIDIyMi43NzdMMTYxLjE4NyAyMDMuNzU0TDE0Ny4zMDUgMTgyLjQ4NkwxMzYuMDk4IDE2My4zNDVMMTM0Ljc0NSAxNjQuMkwxMjguMDc1IDIzNS40MkwxMjUuMDE5IDIzOS4wODJMMTE3Ljg4NyAyNDEuOEwxMTEuOTAyIDIzNy4zMUwxMDguNzE4IDIyOS45ODRMMTExLjkwMiAyMTUuNDUyTDExNS43MjIgMTk2LjU0N0wxMTguNzc5IDE4MS41NDFMMTIxLjU4IDE2Mi44NzNMMTIzLjI5MSAxNTYuNjM2TDEyMy4xNCAxNTYuMjE5TDEyMS43NzMgMTU2LjQ0OUwxMDcuNjk5IDE3NS43NTJMODYuMzA0IDIwNC42OTlMNjkuMzY2MyAyMjIuNzc3TDY1LjI5MSAyMjQuNDMxTDU4LjI4NjcgMjIwLjc2OEw1OC45MjM1IDIxNC4yN0w2Mi44NzEzIDIwOC40OEw4Ni4zMDQgMTc4LjcwNUwxMDAuNDQgMTYwLjE1NUwxMDkuNTUxIDE0OS41MDdMMTA5LjQ2MiAxNDcuOTY3TDEwOC45NTkgMTQ3LjkyNEw0Ni42OTc3IDE4OC41MTJMMzUuNjE4MiAxODkuOTNMMzAuNzc4OCAxODUuNDRMMzEuNDE1NiAxNzguMTE1TDMzLjcwNzkgMTc1Ljc1Mkw1Mi40Mjg1IDE2Mi44NzNaIiBmaWxsPSIjRDk3NzU3Ii8+Cjwvc3ZnPgo=")}
 .hl-codex{-webkit-mask:url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMWVtIiBoZWlnaHQ9IjFlbSIgdmlld0JveD0iMTAwIDEwMCA0MTEgNDExIiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGNsYXNzPSJoLTYgdy02IiBhcmlhLWhpZGRlbj0idHJ1ZSI+PHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik0yNTIuNzk0IDEwOC44MDJDMjg5LjE5MSA5OS4wNDg0IDMyNi4yNjUgMTEwLjMwNSAzNTEuMTQ4IDEzNS4xMzVDMzg1LjExMyAxMjYuMDcyIDQyMi44NSAxMzQuODYyIDQ0OS40OTIgMTYxLjUwNUM0NzYuMTM2IDE4OC4xNDkgNDg0LjkyNSAyMjUuODg4IDQ3NS44NjIgMjU5Ljg1VjI1OS44NTRDNTAwLjY5NiAyODQuNzM1IDUxMS45NSAzMjEuODEgNTAyLjE5OCAzNTguMjA3QzQ5Mi40NDcgMzk0LjYwMiA0NjQuMTYxIDQyMS4wODQgNDMwLjIxNSA0MzAuMjE3QzQyMS4wODMgNDY0LjE2MiAzOTQuNjAzIDQ5Mi40NDggMzU4LjIwNiA1MDIuMTk5QzMyMS44MTIgNTExLjk1MSAyODQuNzM0IDUwMC42OTMgMjU5Ljg1MiA0NzUuODY0QzIyNS44ODcgNDg0LjkyNyAxODguMTUgNDc2LjEzNyAxNjEuNTA3IDQ0OS40OTVDMTM0Ljg2NCA0MjIuODUxIDEyNi4wNzMgMzg1LjExMSAxMzUuMTM2IDM1MS4xNDlDMTEwLjMwNCAzMjYuMjY2IDk5LjA0OTYgMjg5LjE5MiAxMDguODAxIDI1Mi43OTVDMTE4LjU1MiAyMTYuNCAxNDYuODQgMTg5LjkxOCAxODAuNzg0IDE4MC43ODVDMTg5LjkxNyAxNDYuODQxIDIxNi4zOTYgMTE4LjU1MyAyNTIuNzk0IDEwOC44MDJaTTM3NC4yOTIgNDA3LjE0NUMzNzQuMjkyIDQxMS4yNzEgMzcyLjA5MiA0MTUuMDg2IDM2OC41MTcgNDE3LjE0OEwyODMuNzIzIDQ2Ni4xMDJDMzAyLjQ4NyA0ODAuNTg1IDMyNy41NTUgNDg2LjQ1OSAzNTIuMjE3IDQ3OS44NTJDMzg2Ljk5NyA0NzAuNTMyIDQxMC4wNjggNDM5LjMxMiA0MTAuNTU1IDQwNS4wMDZWMzE3LjcxN0M0MTAuNTU1IDMxNS4wOCA0MDkuMTI1IDMxMi42MjEgNDA2Ljg0MyAzMTEuMzAzTDM3NC4yOTIgMjkyLjUwOVY0MDcuMTQ1Wk0yNTEuODY4IDQxNS44OTdDMjQ4LjI5NiA0MTcuOTU5IDI0My44OTMgNDE3Ljk1OSAyNDAuMzE3IDQxNS44OTdMMTU1LjUyNiAzNjYuOTQyQzE1Mi4zNjYgMzkwLjQzNiAxNTkuODExIDQxNS4wOCAxNzcuODY2IDQzMy4xMzZIMTc3Ljg2M0MyMDMuMzI1IDQ1OC41OTQgMjQxLjg5NiA0NjIuOTYyIDI3MS44NSA0NDYuMjMyTDM0Ny40NDkgNDAyLjU4NkMzNDkuNzM1IDQwMS4yNjggMzUxLjE0OCAzOTguOCAzNTEuMTQ4IDM5Ni4xNjNWMzU4LjU3OUwyNTEuODY4IDQxNS44OTdaTTM2OC42MDIgMjIwLjYyOEMzNjYuMzE5IDIxOS4zMDkgMzYzLjQ3NCAyMTkuMzE4IDM2MS4xOTEgMjIwLjYzN0wzMjguNjQxIDIzOS40MzFMNDI3LjkyMSAyOTYuNzQ5QzQzMS40OTYgMjk4LjgxMSA0MzMuNjk3IDMwMi42MjcgNDMzLjY5NyAzMDYuNzUyVjQwNC42NjFDNDU1LjYyMiAzOTUuNjU0IDQ3My4yNDQgMzc2Ljg4MSA0NzkuODUxIDM1Mi4yMThDNDg5LjE2OSAzMTcuNDQyIDQ3My42NjggMjgxLjg1IDQ0NC4yMDEgMjY0LjI3NEwzNjguNjAyIDIyMC42MjhaTTE3Ny4zMDMgMjA2LjM0QzE1NS4zNzcgMjE1LjM0OCAxMzcuNzU2IDIzNC4xMjIgMTMxLjE0OCAyNTguNzgzQzEyMS44MzIgMjkzLjU2MSAxMzcuMzMxIDMyOS4xNTMgMTY2Ljc5OSAzNDYuNzI3TDI0Mi4zOTggMzkwLjM3M0MyNDQuNjggMzkxLjY5MiAyNDcuNTI1IDM5MS42ODQgMjQ5LjgwNyAzOTAuMzY2TDI4Mi4zNTcgMzcxLjU3MkwxODMuMDc4IDMxNC4yNTNDMTc5LjUwNCAzMTIuMTg5IDE3Ny4zMDMgMzA4LjM3NSAxNzcuMzAzIDMwNC4yNTFWMjA2LjM0Wk0yNTkuODQ5IDI3OS4xNDVWMzMxLjg1OEwzMDUuNSAzNTguMjEzTDM1MS4xNSAzMzEuODU4VjI3OS4xNDVMMzA1LjUgMjUyLjc4OUwyNTkuODQ5IDI3OS4xNDVaTTMyNy4yNzYgMTQ0LjlDMzA4LjUxMiAxMzAuNDE4IDI4My40NDUgMTI0LjU0MyAyNTguNzgyIDEzMS4xNUMyMjQuMDAyIDE0MC40NzEgMjAwLjkzMSAxNzEuNjkxIDIwMC40NDUgMjA1Ljk5NVYyOTMuMjg2QzIwMC40NDUgMjk1LjkyMyAyMDEuODc1IDI5OC4zODEgMjA0LjE1OCAyOTkuN0wyMzYuNzA3IDMxOC40OTNWMjAzLjg1NkMyMzYuNzA3IDE5OS43MzEgMjM4LjkwOSAxOTUuOTE2IDI0Mi40ODMgMTkzLjg1M0wzMjcuMjc2IDE0NC45Wk00MzMuMTM3IDE3Ny44NjdDNDA3LjY3NSAxNTIuNDA3IDM2OS4xMDMgMTQ4LjAzOCAzMzkuMTQ5IDE2NC43NjlMMjYzLjU1IDIwOC40MTVDMjYxLjI2NSAyMDkuNzM0IDI1OS44NTIgMjEyLjIwMiAyNTkuODUyIDIxNC44MzhWMjUyLjQyM0wzNTkuMTMyIDE5NS4xMDVDMzYyLjcwMyAxOTMuMDQxIDM2Ny4xMDggMTkzLjA0MSAzNzAuNjgyIDE5NS4xMDVMNDU1LjQ3MyAyNDQuMDZDNDU4LjYzNSAyMjAuNTY3IDQ1MS4xODkgMTk1LjkyMiA0MzMuMTM1IDE3Ny44NjdINDMzLjEzN1oiIGZpbGw9ImN1cnJlbnRDb2xvciI+PC9wYXRoPjwvc3ZnPg==") center/contain no-repeat;mask:url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMWVtIiBoZWlnaHQ9IjFlbSIgdmlld0JveD0iMTAwIDEwMCA0MTEgNDExIiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGNsYXNzPSJoLTYgdy02IiBhcmlhLWhpZGRlbj0idHJ1ZSI+PHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik0yNTIuNzk0IDEwOC44MDJDMjg5LjE5MSA5OS4wNDg0IDMyNi4yNjUgMTEwLjMwNSAzNTEuMTQ4IDEzNS4xMzVDMzg1LjExMyAxMjYuMDcyIDQyMi44NSAxMzQuODYyIDQ0OS40OTIgMTYxLjUwNUM0NzYuMTM2IDE4OC4xNDkgNDg0LjkyNSAyMjUuODg4IDQ3NS44NjIgMjU5Ljg1VjI1OS44NTRDNTAwLjY5NiAyODQuNzM1IDUxMS45NSAzMjEuODEgNTAyLjE5OCAzNTguMjA3QzQ5Mi40NDcgMzk0LjYwMiA0NjQuMTYxIDQyMS4wODQgNDMwLjIxNSA0MzAuMjE3QzQyMS4wODMgNDY0LjE2MiAzOTQuNjAzIDQ5Mi40NDggMzU4LjIwNiA1MDIuMTk5QzMyMS44MTIgNTExLjk1MSAyODQuNzM0IDUwMC42OTMgMjU5Ljg1MiA0NzUuODY0QzIyNS44ODcgNDg0LjkyNyAxODguMTUgNDc2LjEzNyAxNjEuNTA3IDQ0OS40OTVDMTM0Ljg2NCA0MjIuODUxIDEyNi4wNzMgMzg1LjExMSAxMzUuMTM2IDM1MS4xNDlDMTEwLjMwNCAzMjYuMjY2IDk5LjA0OTYgMjg5LjE5MiAxMDguODAxIDI1Mi43OTVDMTE4LjU1MiAyMTYuNCAxNDYuODQgMTg5LjkxOCAxODAuNzg0IDE4MC43ODVDMTg5LjkxNyAxNDYuODQxIDIxNi4zOTYgMTE4LjU1MyAyNTIuNzk0IDEwOC44MDJaTTM3NC4yOTIgNDA3LjE0NUMzNzQuMjkyIDQxMS4yNzEgMzcyLjA5MiA0MTUuMDg2IDM2OC41MTcgNDE3LjE0OEwyODMuNzIzIDQ2Ni4xMDJDMzAyLjQ4NyA0ODAuNTg1IDMyNy41NTUgNDg2LjQ1OSAzNTIuMjE3IDQ3OS44NTJDMzg2Ljk5NyA0NzAuNTMyIDQxMC4wNjggNDM5LjMxMiA0MTAuNTU1IDQwNS4wMDZWMzE3LjcxN0M0MTAuNTU1IDMxNS4wOCA0MDkuMTI1IDMxMi42MjEgNDA2Ljg0MyAzMTEuMzAzTDM3NC4yOTIgMjkyLjUwOVY0MDcuMTQ1Wk0yNTEuODY4IDQxNS44OTdDMjQ4LjI5NiA0MTcuOTU5IDI0My44OTMgNDE3Ljk1OSAyNDAuMzE3IDQxNS44OTdMMTU1LjUyNiAzNjYuOTQyQzE1Mi4zNjYgMzkwLjQzNiAxNTkuODExIDQxNS4wOCAxNzcuODY2IDQzMy4xMzZIMTc3Ljg2M0MyMDMuMzI1IDQ1OC41OTQgMjQxLjg5NiA0NjIuOTYyIDI3MS44NSA0NDYuMjMyTDM0Ny40NDkgNDAyLjU4NkMzNDkuNzM1IDQwMS4yNjggMzUxLjE0OCAzOTguOCAzNTEuMTQ4IDM5Ni4xNjNWMzU4LjU3OUwyNTEuODY4IDQxNS44OTdaTTM2OC42MDIgMjIwLjYyOEMzNjYuMzE5IDIxOS4zMDkgMzYzLjQ3NCAyMTkuMzE4IDM2MS4xOTEgMjIwLjYzN0wzMjguNjQxIDIzOS40MzFMNDI3LjkyMSAyOTYuNzQ5QzQzMS40OTYgMjk4LjgxMSA0MzMuNjk3IDMwMi42MjcgNDMzLjY5NyAzMDYuNzUyVjQwNC42NjFDNDU1LjYyMiAzOTUuNjU0IDQ3My4yNDQgMzc2Ljg4MSA0NzkuODUxIDM1Mi4yMThDNDg5LjE2OSAzMTcuNDQyIDQ3My42NjggMjgxLjg1IDQ0NC4yMDEgMjY0LjI3NEwzNjguNjAyIDIyMC42MjhaTTE3Ny4zMDMgMjA2LjM0QzE1NS4zNzcgMjE1LjM0OCAxMzcuNzU2IDIzNC4xMjIgMTMxLjE0OCAyNTguNzgzQzEyMS44MzIgMjkzLjU2MSAxMzcuMzMxIDMyOS4xNTMgMTY2Ljc5OSAzNDYuNzI3TDI0Mi4zOTggMzkwLjM3M0MyNDQuNjggMzkxLjY5MiAyNDcuNTI1IDM5MS42ODQgMjQ5LjgwNyAzOTAuMzY2TDI4Mi4zNTcgMzcxLjU3MkwxODMuMDc4IDMxNC4yNTNDMTc5LjUwNCAzMTIuMTg5IDE3Ny4zMDMgMzA4LjM3NSAxNzcuMzAzIDMwNC4yNTFWMjA2LjM0Wk0yNTkuODQ5IDI3OS4xNDVWMzMxLjg1OEwzMDUuNSAzNTguMjEzTDM1MS4xNSAzMzEuODU4VjI3OS4xNDVMMzA1LjUgMjUyLjc4OUwyNTkuODQ5IDI3OS4xNDVaTTMyNy4yNzYgMTQ0LjlDMzA4LjUxMiAxMzAuNDE4IDI4My40NDUgMTI0LjU0MyAyNTguNzgyIDEzMS4xNUMyMjQuMDAyIDE0MC40NzEgMjAwLjkzMSAxNzEuNjkxIDIwMC40NDUgMjA1Ljk5NVYyOTMuMjg2QzIwMC40NDUgMjk1LjkyMyAyMDEuODc1IDI5OC4zODEgMjA0LjE1OCAyOTkuN0wyMzYuNzA3IDMxOC40OTNWMjAzLjg1NkMyMzYuNzA3IDE5OS43MzEgMjM4LjkwOSAxOTUuOTE2IDI0Mi40ODMgMTkzLjg1M0wzMjcuMjc2IDE0NC45Wk00MzMuMTM3IDE3Ny44NjdDNDA3LjY3NSAxNTIuNDA3IDM2OS4xMDMgMTQ4LjAzOCAzMzkuMTQ5IDE2NC43NjlMMjYzLjU1IDIwOC40MTVDMjYxLjI2NSAyMDkuNzM0IDI1OS44NTIgMjEyLjIwMiAyNTkuODUyIDIxNC44MzhWMjUyLjQyM0wzNTkuMTMyIDE5NS4xMDVDMzYyLjcwMyAxOTMuMDQxIDM2Ny4xMDggMTkzLjA0MSAzNzAuNjgyIDE5NS4xMDVMNDU1LjQ3MyAyNDQuMDZDNDU4LjYzNSAyMjAuNTY3IDQ1MS4xODkgMTk1LjkyMiA0MzMuMTM1IDE3Ny44NjdINDMzLjEzN1oiIGZpbGw9ImN1cnJlbnRDb2xvciI+PC9wYXRoPjwvc3ZnPg==") center/contain no-repeat;background-color:var(--ink)}
@@ -2352,6 +2382,45 @@ figcaption.cap::before { color: var(--ink); }
   system.addEventListener("change", sync);
   new MutationObserver(sync).observe(root, { attributes: true, attributeFilter: ["data-theme"] });
   sync();
+})();
+// the contents in the left margin (user, 22 Nov: "add the left toc"): a clone of the page's own contents, the post's
+// list or the report's, kept in step with the report's open tab, set below the title block and stuck inside the page;
+// the section in view is marked as the reader scrolls. CSS shows it only where the margin holds it
+(() => {
+  const main = document.querySelector("main.pg-post, main.pg-report");
+  const src = document.querySelector(".tb-panel .toc") || document.querySelector("header.mast .toc");
+  const top = document.querySelector("header.mast .mast-top");
+  if (!main || !src || !top) return;
+  const rail = document.createElement("div");
+  rail.className = "side-rail";
+  const nav = document.createElement("nav");
+  nav.className = "side-toc";
+  nav.setAttribute("aria-label", "Contents, beside the page");
+  rail.appendChild(nav);
+  document.body.appendChild(rail);
+  let links = [];
+  const copy = () => {
+    nav.innerHTML = src.innerHTML;
+    nav.querySelectorAll("[id]").forEach(el => el.removeAttribute("id"));
+    links = [...nav.querySelectorAll('a[href^="#"]')].filter(a => !a.closest("[hidden]"));
+    mark();
+  };
+  const place = () => { rail.style.top = `${top.getBoundingClientRect().bottom + scrollY + 40}px`; };
+  const mark = () => {
+    let on = null;
+    for (const a of links) {
+      const el = document.getElementById(decodeURIComponent(a.getAttribute("href").slice(1)));
+      if (el && el.offsetParent !== null && el.getBoundingClientRect().top < 140) on = a;
+    }
+    links.forEach(a => a.classList.toggle("on", a === on));
+  };
+  let queued = false;
+  addEventListener("scroll", () => { if (!queued) { queued = true; requestAnimationFrame(() => { queued = false; mark(); }); } }, { passive: true });
+  addEventListener("resize", place);
+  new MutationObserver(copy).observe(src, { subtree: true, attributes: true, attributeFilter: ["hidden"] });
+  copy();
+  place();
+  if (document.fonts) document.fonts.ready.then(place);
 })();
 // the report's tabs: one shown at a time; a link into a section opens the tab that holds it, and a link to a source in
 // the references, which every tab shares, leaves the tab as it is
