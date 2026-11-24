@@ -776,88 +776,31 @@ section.part { padding-top: 96px; }
 
 /* method: the flow diagram */
 .flow { margin-block: 40px 44px; display: grid; gap: 22px; }
-.flow-grid { position: relative; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); grid-template-areas: "traj report" "census ." "questions ." "answer answer" "judge judge" "verdicts verdicts"; gap: 40px 20px; width: 100%; max-width: 640px; margin-inline: auto; }
-@media (min-width: 1100px) { .flow-grid { max-width: none; grid-template-columns: repeat(4, minmax(0, 1fr)) minmax(0, 1.2fr); grid-template-areas: "traj census questions judge verdicts" "report . answer judge verdicts"; gap: 44px 52px; } }
 .flow-lines { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; pointer-events: none; }
-.fn { position: relative; z-index: 1; display: grid; gap: 4px; align-content: start; background: var(--white); border: 1px solid var(--edge); border-radius: 14px; padding: 14px 16px 15px; }
-.fn[data-n="traj"] { grid-area: traj; }
-.fn[data-n="report"] { grid-area: report; }
-.fn[data-n="census"] { grid-area: census; }
-.fn[data-n="questions"] { grid-area: questions; }
-.fn[data-n="answer"] { grid-area: answer; }
-.fn[data-n="judge"] { grid-area: judge; align-self: center; }
-.fn-k { font: 600 0.68rem/1.4 var(--sans); letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-3); }
-.fn b { font: 600 1.02rem/1.3 var(--sans); color: var(--ink); }
-.fn-t { font-size: 0.86rem; line-height: 1.5; color: var(--ink-2); }
-.fn.src { background: var(--mist); border-color: transparent; align-self: start; }
-.fn.src b { font: 500 1.3rem/1.15 var(--display); color: var(--navy); }
-.fv { grid-area: verdicts; position: relative; z-index: 1; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; align-content: center; }
-@media (min-width: 1100px) { .fv { grid-template-columns: 1fr; gap: 12px; } }
-.fv > div { display: grid; gap: 6px; justify-items: start; align-content: start; padding: 12px 14px; border-radius: 12px; font-size: 0.84rem; line-height: 1.45; color: var(--ink-2); }
-@media (max-width: 520px) { .fv > div { padding: 10px; font-size: 0.78rem; } }
-.fv .v-ok { background: var(--covered-tint); box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--covered) var(--fv-edge), transparent); }
-.fv .v-miss { background: var(--silent-tint); box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--silent) var(--fv-edge), transparent); }
-.fv .v-bad { background: var(--wrong-tint); box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--wrong) var(--fv-edge), transparent); }
-.fv .pill { background: var(--white); border-radius: 8px; }
 .flow-lab { font: italic 400 12.5px var(--sans); fill: var(--ink-2); paint-order: stroke; stroke: var(--page); stroke-width: 7px; stroke-linejoin: round; }
-/* the method as SAGE draws its pipeline (user, 23 Oct): the two inputs on top, four stages in a row, each under
-   the inputs it reads and over what it made of one real question, in the evaluator's own fields */
-.flow-sg { gap: 14px; }
-.fs-in { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px 16px; margin: 0; }
-.fs-in p { margin: 0; display: grid; grid-template-columns: auto auto 1fr; align-items: baseline; gap: 2px 8px; padding: 10px 14px; border-radius: 10px; background: var(--mist); font-size: 0.82rem; line-height: 1.45; }
-.fs-in b { font: 600 0.86rem var(--sans); color: var(--ink); }
-.fs-in span:not(.tok) { color: var(--ink-2); font-style: italic; }
-.flow-sg mark { background: color-mix(in srgb, var(--blue) 18%, transparent); color: inherit; border-radius: 3px; padding: 0 2px; font-style: normal; }
-.flow-sg .fs-row { max-width: none; grid-template-columns: repeat(4, minmax(0, 1fr)); grid-template-areas: none; gap: 0 34px; }
-.fs-st { position: relative; z-index: 1; display: grid; grid-template-rows: auto auto 1fr; gap: 6px; align-content: start; }
-.fs-reads { margin: 0; display: flex; justify-content: center; gap: 4px; }
-.fs-box { display: grid; gap: 1px; justify-items: center; text-align: center; padding: 10px 8px; border-radius: 12px; border: 2px solid var(--navy); background: var(--white); }
-.fs-box b { font: 600 1rem/1.25 var(--sans); color: var(--navy); }
-.fs-box span { font-size: 0.76rem; line-height: 1.35; color: var(--ink-2); }
-.fs-box.fs-both { border-color: var(--blue); box-shadow: 0 0 0 3px color-mix(in srgb, var(--blue) 16%, transparent); }
-.fs-out { display: grid; gap: 4px; align-content: start; padding: 9px 11px; border-radius: 10px; background: var(--mist); font: 0.76rem/1.45 var(--sans); color: var(--ink); overflow-wrap: anywhere; }
-.fs-l i { font: 600 0.7rem var(--mono, ui-monospace, monospace); font-style: normal; color: var(--blue); margin-right: 3px; }
-.fs-l .tok { vertical-align: 1px; }
-.fs-l code { font: 600 0.74rem var(--mono, ui-monospace, monospace); color: var(--silent-ink); }
-.fs-l .ev-tier { margin-left: 0; }
-.fs-v { display: flex; flex-wrap: wrap; justify-content: center; gap: 6px; padding-block: 2px; }
-.fs-v .pill { font-size: 0.7rem; padding: 1px 9px; }
-.fs-v .pill:not(.this) { background: transparent; color: var(--ink-3); box-shadow: inset 0 0 0 1px var(--edge); }
-.fs-v .pill.this { box-shadow: inset 0 0 0 1.5px var(--silent); }
-.fs-band { display: none; }
-@media (min-width: 1100px) {
-  .fs-band { display: block; grid-row: 1; position: relative; z-index: 0; margin: -12px -16px; border-radius: 16px; }
-  .fs-band span { position: absolute; top: 10px; left: 16px; font: 600 0.74rem var(--sans); color: var(--ink); }
-  .fs-band.b-t { grid-column: 1 / 3; background: color-mix(in srgb, var(--blue) 7%, transparent); }
-  .fs-band.b-r { grid-column: 3 / 4; background: color-mix(in srgb, var(--covered) 9%, transparent); }
-  .fs-band.b-j { grid-column: 4 / 5; background: color-mix(in srgb, var(--silent) 10%, transparent); }
-  .fs-st { grid-row: 1; padding-top: 30px; }
-  .fs-st.s1 { grid-column: 1; } .fs-st.s2 { grid-column: 2; } .fs-st.s3 { grid-column: 3; } .fs-st.s4 { grid-column: 4; }
-  .flow-sg .fs-row { margin-block: 12px; }
-}
-/* each stage's agents: a row of glyphs for the crowd, who they are and what one of them handles */
-.fs-ag { list-style: none; margin: 8px 0 0; padding: 8px 0 0; border-top: 1px solid var(--edge); display: grid; gap: 5px; text-align: left; justify-self: stretch; }
-.fs-ag li { display: grid; grid-template-columns: 4.4rem minmax(0, 1fr); column-gap: 8px; align-items: baseline; }
-.fs-ag li b { font: 600 0.74rem var(--sans); color: var(--ink); }
-.fs-ag li > span:last-child { grid-column: 2; font-size: 0.7rem; line-height: 1.35; color: var(--ink-3); }
-.fs-gl { grid-row: span 2; align-self: center; display: inline-flex; flex-wrap: wrap; gap: 2px; }
-.fs-gl i { width: 7px; height: 7px; border-radius: 2px; background: var(--navy); opacity: 0.85; }
-.fs-gl i.more { background: transparent; box-shadow: inset 0 0 0 1px var(--navy); opacity: 0.5; }
-.fs-facts { list-style: none; margin: 4px 0 0; padding: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px 18px; }
-.fs-facts li { font-size: 0.78rem; line-height: 1.5; color: var(--ink-2); padding-top: 8px; border-top: 2px solid var(--navy); }
-.fs-facts b { color: var(--ink); }
-.fs-facts code { font-size: 0.72rem; }
-@media (max-width: 900px) { .fs-facts { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
-@media (max-width: 760px) { .fs-ag li { grid-template-columns: 1fr; } .fs-gl { grid-row: auto; margin-bottom: 2px; } }
-@media (max-width: 520px) { .fs-facts { grid-template-columns: 1fr; } }
-.tok { display: inline-grid; place-items: center; width: 1.35em; height: 1.35em; border-radius: 4px; font: 700 0.68rem/1 var(--sans); color: var(--white); background: var(--ink-3); }
-.tok-t { background: var(--navy); }
-.tok-r { background: var(--live); }
-.tok-q, .tok-k, .tok-a { background: transparent; color: var(--ink); box-shadow: inset 0 0 0 1.5px var(--ink-3); }
-@media (max-width: 760px) {
-  .fs-in { grid-template-columns: 1fr; }
-  .flow-sg .fs-row { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 26px 16px; }
-}
+/* the method as one workflow drawing (user, 23 Nov): the same block at every width, scaled whole, never reflowed */
+.flow-mf { gap: 18px; }
+.mf-wrap { width: 100%; max-width: 720px; margin-inline: auto; }
+.mf { display: block; width: 100%; height: auto; overflow: visible; font-family: var(--sans); }
+.mf-n rect { fill: var(--white); stroke: var(--edge); stroke-width: 1; }
+.mf-n.mf-src rect { fill: var(--solid); stroke: none; }
+.mf-n.mf-judge rect { stroke: var(--ink); stroke-width: 1.6; }
+.mf-k { font-size: 12px; font-weight: 500; fill: var(--ink-3); }
+.mf-t { font-size: 19px; font-weight: 600; fill: var(--ink); letter-spacing: -0.01em; }
+.mf-s { font-size: 12.5px; fill: var(--ink-2); }
+.mf-src .mf-k, .mf-src .mf-s { fill: var(--on-solid); opacity: 0.72; }
+.mf-src .mf-t { fill: var(--on-solid); }
+.mf-e { fill: none; stroke: var(--ink-3); stroke-width: 1.4; }
+.mf-head { fill: var(--ink-3); }
+.mf-lab { font-size: 12px; font-style: italic; fill: var(--ink-2); paint-order: stroke; stroke: var(--white); stroke-width: 6px; stroke-linejoin: round; }
+.mf-v rect { stroke: none; }
+.mf-vw { font-size: 15px; font-weight: 600; }
+.mf-v.mf-covered rect { fill: var(--covered-tint); } .mf-v.mf-covered .mf-vw { fill: var(--covered-ink); }
+.mf-v.mf-silent rect { fill: var(--silent-tint); } .mf-v.mf-silent .mf-vw { fill: var(--silent-ink); }
+.mf-v.mf-wrong rect { fill: var(--wrong-tint); } .mf-v.mf-wrong .mf-vw { fill: var(--wrong-ink); }
+.mf-e.mf-covered { stroke: var(--covered); } .mf-head.mf-covered { fill: var(--covered); }
+.mf-e.mf-silent { stroke: var(--silent); } .mf-head.mf-silent { fill: var(--silent); }
+.mf-e.mf-wrong { stroke: var(--wrong); } .mf-head.mf-wrong { fill: var(--wrong); }
 .flow figcaption { max-width: var(--col); width: 100%; margin-left: max(0px, calc((100% - var(--unit)) / 2)); font-size: 0.88rem; line-height: 1.65; color: var(--ink-2); }
 details.setup { margin: 8px 0 18px; border: 1px solid var(--rule); border-radius: 12px; padding: 18px 22px; }
 details.setup summary { cursor: pointer; font: 600 0.95rem var(--sans); color: var(--blue); }
@@ -2439,17 +2382,14 @@ Write your work product to `/app/workspace/concession-agreement-markup.docx, mar
 <p>Benchmarks score whether the task got done but don't check the report against the run. For every run in this release, we list what the agent did, ask its report about it and count what it leaves unsaid.</p>
 </section>
 <section class="part kind-method chapter" id="how-we-measure-it"><p class="eyebrow">Method</p><h2>How we measure it</h2><p>We don't ask the agent whether its report is complete. We read its trajectory, list what happened and check whether the report can answer questions about it.</p>
-<figure class="flow wide flow-sg" id="flow" data-edges='[["census", "questions", "", "", "wide"], ["questions", "reader", "", "", "wide"], ["reader", "judge", "", "", "wide"]]'>
-<div class="fs-in"><p><span class="tok tok-t">T</span><b>Trajectory</b><span>“Fixing the <mark>Schedule 6</mark> gaps (terrorism/political violence cover; Hartfield broker reference)”, 115 minutes in</span></p>
-<p><span class="tok tok-r">R</span><b>Report</b><span>“… §15.5, §16.1A, Article XXIII, <mark>Schedule 6</mark>) + cover legend”</span></p></div>
-<div class="flow-grid fs-row"><div class="fs-band b-t" aria-hidden="true"><span>Reads the trajectory</span></div><div class="fs-band b-r" aria-hidden="true"><span>Reads only the report</span></div><div class="fs-band b-j" aria-hidden="true"><span>Sees both, and judges</span></div><div class="fs-st s1"><p class="fs-reads"><span class="tok tok-t">T</span></p><div class="fs-box" data-n="census"><b>Census</b><span>lists and rates the events that mattered</span><ul class="fs-ag"><li><span class="fs-gl" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i class="more"></i></span><b>census agents</b><span>one per chunk of the trajectory</span></li><li><span class="fs-gl" aria-hidden="true"><i></i></span><b>merger</b><span>joins events split across chunks</span></li><li><span class="fs-gl" aria-hidden="true"><i></i><i></i><i class="more"></i></span><b>importance raters</b><span>one per 40 events</span></li></ul></div><div class="fs-out"><span class="fs-l"><i>tier</i> <span class="ev-tier ev-outcome-critical">Decisive</span></span><span class="fs-l"><i>kind</i> decision</span><span class="fs-l"><i>event</i> “…amend the already-built markup deliverable…”</span></div></div><div class="fs-st s2"><p class="fs-reads"><span class="tok tok-t">T</span></p><div class="fs-box" data-n="questions"><b>Questions</b><span>covering every event, each with a key from the run</span><ul class="fs-ag"><li><span class="fs-gl" aria-hidden="true"><i></i><i></i><i></i><i></i><i class="more"></i></span><b>question authors</b><span>one per batch of up to 40 events</span></li><li><span class="fs-gl" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i class="more"></i></span><b>key verifiers</b><span>one per question, never shown the report</span></li><li><span class="fs-gl" aria-hidden="true"><i></i><i></i><i></i><i class="more"></i></span><b>critics</b><span>one per 7 questions</span></li></ul></div><div class="fs-out"><span class="fs-l"><i><span class="tok tok-q">Q</span></i> “…what exactly did it change in Schedule 6?”</span><span class="fs-l"><i><span class="tok tok-k">K</span></i> “…was missing terrorism/political-violence cover and the sponsor&#x27;s broker reference”</span></div></div><div class="fs-st s3"><p class="fs-reads"><span class="tok tok-r">R</span><span class="tok tok-q">Q</span></p><div class="fs-box" data-n="reader"><b>Reader</b><span>answers from the report alone</span><ul class="fs-ag"><li><span class="fs-gl" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i class="more"></i></span><b>readers</b><span>one per question, shown only the report</span></li><li><span class="fs-gl" aria-hidden="true"><i></i><i></i><i></i><i class="more"></i></span><b>second readers</b><span>a fresh, blind read when the first finds nothing</span></li></ul></div><div class="fs-out"><span class="fs-l fs-miss"><i><span class="tok tok-a">A</span></i> <code>NOT_IN_REPORT</code></span></div></div><div class="fs-st s4"><p class="fs-reads"><span class="tok tok-t">T</span><span class="tok tok-r">R</span><span class="tok tok-q">Q</span><span class="tok tok-k">K</span><span class="tok tok-a">A</span></p><div class="fs-box fs-both" data-n="judge"><b>Judge</b><span>compares the answer with the key</span><ul class="fs-ag"><li><span class="fs-gl" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i class="more"></i></span><b>judges</b><span>one per question</span></li></ul></div><div class="fs-out"><span class="fs-v"><span class="pill v-answerable">covered</span><span class="pill v-missing_from_report this">missed</span><span class="pill v-unsupported_or_contradicted">unsupported</span></span><span class="fs-l"><i>why</i> “The report contains none of this.”</span></div></div><svg class="flow-lines" aria-hidden="true"></svg></div>
-<ul class="fs-facts"><li><b>299 agent sessions per report</b>, 71,721 across the release's 240 reports, many at once.</li><li><b>Every agent is a coding agent.</b> Qwen-3.8-27B in the codex CLI, with a shell in its own sandbox: it reads one record per file with <code>ls</code>, <code>cat</code> and <code>grep</code>, and writes delimited records.</li><li><b>Alongside the four stages,</b> a claim checker (an extractor per section of the report, a verifier per claim) and a regression judge per failure the census found.</li><li><b>Frozen</b> before any release task was scored, and the same on every harness and benchmark.</li></ul>
+<figure class="flow wide flow-mf" id="flow">
+<div class="mf-wrap"><svg class="mf" viewBox="-2 -2 814 264" role="img" aria-label="The method: the census and the questions come from the trajectory, the blind reader answers each question from the report alone, and the judge compares its answer with the key, marking the question covered, missed or unsupported."><path class="mf-e" d="M128,50.0 H160"/><path class="mf-head" d="M162,50.0 l-7,-4 v8 z"/><path class="mf-e" d="M290,50.0 H322"/><path class="mf-head" d="M324,50.0 l-7,-4 v8 z"/><path class="mf-e" d="M128,210.0 H322"/><path class="mf-head" d="M324,210.0 l-7,-4 v8 z"/><path class="mf-e" d="M388.0,100 V158"/><path class="mf-head" d="M388.0,160 l-4,-7 h8 z"/><path class="mf-e" d="M452,50.0 C469.0,50.0 469.0,112.0 484,112.0"/><path class="mf-head" d="M486,112.0 l-7,-4 v8 z"/><path class="mf-e" d="M452,210.0 C469.0,210.0 469.0,148.0 484,148.0"/><path class="mf-head" d="M486,148.0 l-7,-4 v8 z"/><path class="mf-e mf-covered" d="M632,130.0 C649.0,130.0 649.0,39.333333333333336 664,39.333333333333336"/><path class="mf-head mf-covered" d="M666,39.333333333333336 l-7,-4 v8 z"/><g class="mf-v mf-covered"><rect x="666" y="0.0" width="144" height="78.66666666666667" rx="12"/><text class="mf-vw" x="680" y="24.0">covered</text><text class="mf-s" x="680" y="43.0">the report</text><text class="mf-s" x="680" y="58.0">answers it</text></g><path class="mf-e mf-silent" d="M632,130.0 C649.0,130.0 649.0,130.0 664,130.0"/><path class="mf-head mf-silent" d="M666,130.0 l-7,-4 v8 z"/><g class="mf-v mf-silent"><rect x="666" y="90.66666666666667" width="144" height="78.66666666666667" rx="12"/><text class="mf-vw" x="680" y="114.66666666666667">missed</text><text class="mf-s" x="680" y="133.66666666666669">the report</text><text class="mf-s" x="680" y="148.66666666666669">is silent</text></g><path class="mf-e mf-wrong" d="M632,130.0 C649.0,130.0 649.0,220.66666666666669 664,220.66666666666669"/><path class="mf-head mf-wrong" d="M666,220.66666666666669 l-7,-4 v8 z"/><g class="mf-v mf-wrong"><rect x="666" y="181.33333333333334" width="144" height="78.66666666666667" rx="12"/><text class="mf-vw" x="680" y="205.33333333333334">unsupported</text><text class="mf-s" x="680" y="224.33333333333334">the run doesn&#x27;t</text><text class="mf-s" x="680" y="239.33333333333334">back it</text></g><g class="mf-n mf-src"><rect x="0" y="0" width="128" height="100" rx="12"/><text class="mf-k" x="14" y="24">The run</text><text class="mf-t" x="14" y="49">Trajectory</text><text class="mf-s" x="14" y="70">every step,</text><text class="mf-s" x="14" y="86">read in full</text></g><g class="mf-n mf-src"><rect x="0" y="160" width="128" height="100" rx="12"/><text class="mf-k" x="14" y="184">Its account</text><text class="mf-t" x="14" y="209">Report</text><text class="mf-s" x="14" y="230">written by the</text><text class="mf-s" x="14" y="246">agent itself</text></g><g class="mf-n"><rect x="162" y="0" width="128" height="100" rx="12"/><text class="mf-k" x="176" y="24">Step 1</text><text class="mf-t" x="176" y="49">Census</text><text class="mf-s" x="176" y="70">lists events</text><text class="mf-s" x="176" y="86">that mattered</text></g><g class="mf-n"><rect x="324" y="0" width="128" height="100" rx="12"/><text class="mf-k" x="338" y="24">Step 2</text><text class="mf-t" x="338" y="49">Questions</text><text class="mf-s" x="338" y="70">one per event,</text><text class="mf-s" x="338" y="86">each with a key</text></g><g class="mf-n"><rect x="324" y="160" width="128" height="100" rx="12"/><text class="mf-k" x="338" y="184">Step 3</text><text class="mf-t" x="338" y="209">Blind reader</text><text class="mf-s" x="338" y="230">never sees</text><text class="mf-s" x="338" y="246">the run</text></g><g class="mf-n mf-judge"><rect x="486" y="80.0" width="146" height="100" rx="12"/><text class="mf-k" x="500" y="104.0">Step 4</text><text class="mf-t" x="500" y="129.0">Judge</text><text class="mf-s" x="500" y="150.0">sees both, checks</text><text class="mf-s" x="500" y="166.0">answer with key</text></g><text class="mf-lab" x="226.0" y="202.0" text-anchor="middle">the report alone</text><text class="mf-lab" x="397.0" y="134.0">its question</text></svg></div>
 
-<figcaption class="cap"><span class="ck-take">How a question is scored.</span> Each stage is a crowd of agents working at once, each given one piece of
-the work: a chunk of the trajectory, a batch of events, one question. The census and the question writers read only the
-trajectory (T), the readers only the report (R), and the judges compare each reader's answer (A) with its answer key (K). Shown is one
-question from the run above: the report names Schedule 6 but never what changed in it. Coverage is the share of
-questions judged covered.</figcaption></figure>
+<figcaption class="cap"><span class="ck-take">How a question is scored.</span> The census and the question writers read only the trajectory, the reader
+only the report, and only the judge sees both. Each step is a crowd of coding agents working at once, one per chunk of
+the run, batch of events or question: 299 agent sessions score each report, 71,721 across the release's 240 reports, every one Qwen-3.8-27B in the codex CLI with a shell of its
+own. The evaluator was frozen before any release task was scored. Coverage is the share of questions judged covered,
+and what is left unsaid is the share judged missed.</figcaption></figure>
 
 <aside class="note"><strong>Left unsaid</strong>: the part of an agent's consequential work that its own report leaves unanswered. We measure it as the share of questions the judge marks <em>missed</em>.</aside>
 
@@ -11417,8 +11357,6 @@ updating examples/nosec.py, test_nosec&#x27;s expected …</p></div><div class="
       if (cw && lh && run.clientWidth) title.textContent = `${base} — ${Math.floor(run.clientWidth / cw)}×${Math.floor(body.clientHeight / lh)}`;
     });
   });
-  const flow = $("flow");
-  if (flow) edges(flow.querySelector(".flow-grid"), JSON.parse(flow.dataset.edges));
 
   // a card's scatter: one panel per harness on shared log axes, its reports in its colour over the others'
   // in grey, each panel redrawn at its width

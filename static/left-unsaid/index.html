@@ -790,88 +790,31 @@ section.part { padding-top: 96px; }
 
 /* method: the flow diagram */
 .flow { margin-block: 40px 44px; display: grid; gap: 22px; }
-.flow-grid { position: relative; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); grid-template-areas: "traj report" "census ." "questions ." "answer answer" "judge judge" "verdicts verdicts"; gap: 40px 20px; width: 100%; max-width: 640px; margin-inline: auto; }
-@media (min-width: 1100px) { .flow-grid { max-width: none; grid-template-columns: repeat(4, minmax(0, 1fr)) minmax(0, 1.2fr); grid-template-areas: "traj census questions judge verdicts" "report . answer judge verdicts"; gap: 44px 52px; } }
 .flow-lines { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; pointer-events: none; }
-.fn { position: relative; z-index: 1; display: grid; gap: 4px; align-content: start; background: var(--white); border: 1px solid var(--edge); border-radius: 14px; padding: 14px 16px 15px; }
-.fn[data-n="traj"] { grid-area: traj; }
-.fn[data-n="report"] { grid-area: report; }
-.fn[data-n="census"] { grid-area: census; }
-.fn[data-n="questions"] { grid-area: questions; }
-.fn[data-n="answer"] { grid-area: answer; }
-.fn[data-n="judge"] { grid-area: judge; align-self: center; }
-.fn-k { font: 600 0.68rem/1.4 var(--sans); letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-3); }
-.fn b { font: 600 1.02rem/1.3 var(--sans); color: var(--ink); }
-.fn-t { font-size: 0.86rem; line-height: 1.5; color: var(--ink-2); }
-.fn.src { background: var(--mist); border-color: transparent; align-self: start; }
-.fn.src b { font: 500 1.3rem/1.15 var(--display); color: var(--navy); }
-.fv { grid-area: verdicts; position: relative; z-index: 1; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; align-content: center; }
-@media (min-width: 1100px) { .fv { grid-template-columns: 1fr; gap: 12px; } }
-.fv > div { display: grid; gap: 6px; justify-items: start; align-content: start; padding: 12px 14px; border-radius: 12px; font-size: 0.84rem; line-height: 1.45; color: var(--ink-2); }
-@media (max-width: 520px) { .fv > div { padding: 10px; font-size: 0.78rem; } }
-.fv .v-ok { background: var(--covered-tint); box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--covered) var(--fv-edge), transparent); }
-.fv .v-miss { background: var(--silent-tint); box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--silent) var(--fv-edge), transparent); }
-.fv .v-bad { background: var(--wrong-tint); box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--wrong) var(--fv-edge), transparent); }
-.fv .pill { background: var(--white); border-radius: 8px; }
 .flow-lab { font: italic 400 12.5px var(--sans); fill: var(--ink-2); paint-order: stroke; stroke: var(--page); stroke-width: 7px; stroke-linejoin: round; }
-/* the method as SAGE draws its pipeline (user, 23 Oct): the two inputs on top, four stages in a row, each under
-   the inputs it reads and over what it made of one real question, in the evaluator's own fields */
-.flow-sg { gap: 14px; }
-.fs-in { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px 16px; margin: 0; }
-.fs-in p { margin: 0; display: grid; grid-template-columns: auto auto 1fr; align-items: baseline; gap: 2px 8px; padding: 10px 14px; border-radius: 10px; background: var(--mist); font-size: 0.82rem; line-height: 1.45; }
-.fs-in b { font: 600 0.86rem var(--sans); color: var(--ink); }
-.fs-in span:not(.tok) { color: var(--ink-2); font-style: italic; }
-.flow-sg mark { background: color-mix(in srgb, var(--blue) 18%, transparent); color: inherit; border-radius: 3px; padding: 0 2px; font-style: normal; }
-.flow-sg .fs-row { max-width: none; grid-template-columns: repeat(4, minmax(0, 1fr)); grid-template-areas: none; gap: 0 34px; }
-.fs-st { position: relative; z-index: 1; display: grid; grid-template-rows: auto auto 1fr; gap: 6px; align-content: start; }
-.fs-reads { margin: 0; display: flex; justify-content: center; gap: 4px; }
-.fs-box { display: grid; gap: 1px; justify-items: center; text-align: center; padding: 10px 8px; border-radius: 12px; border: 2px solid var(--navy); background: var(--white); }
-.fs-box b { font: 600 1rem/1.25 var(--sans); color: var(--navy); }
-.fs-box span { font-size: 0.76rem; line-height: 1.35; color: var(--ink-2); }
-.fs-box.fs-both { border-color: var(--blue); box-shadow: 0 0 0 3px color-mix(in srgb, var(--blue) 16%, transparent); }
-.fs-out { display: grid; gap: 4px; align-content: start; padding: 9px 11px; border-radius: 10px; background: var(--mist); font: 0.76rem/1.45 var(--sans); color: var(--ink); overflow-wrap: anywhere; }
-.fs-l i { font: 600 0.7rem var(--mono, ui-monospace, monospace); font-style: normal; color: var(--blue); margin-right: 3px; }
-.fs-l .tok { vertical-align: 1px; }
-.fs-l code { font: 600 0.74rem var(--mono, ui-monospace, monospace); color: var(--silent-ink); }
-.fs-l .ev-tier { margin-left: 0; }
-.fs-v { display: flex; flex-wrap: wrap; justify-content: center; gap: 6px; padding-block: 2px; }
-.fs-v .pill { font-size: 0.7rem; padding: 1px 9px; }
-.fs-v .pill:not(.this) { background: transparent; color: var(--ink-3); box-shadow: inset 0 0 0 1px var(--edge); }
-.fs-v .pill.this { box-shadow: inset 0 0 0 1.5px var(--silent); }
-.fs-band { display: none; }
-@media (min-width: 1100px) {
-  .fs-band { display: block; grid-row: 1; position: relative; z-index: 0; margin: -12px -16px; border-radius: 16px; }
-  .fs-band span { position: absolute; top: 10px; left: 16px; font: 600 0.74rem var(--sans); color: var(--ink); }
-  .fs-band.b-t { grid-column: 1 / 3; background: color-mix(in srgb, var(--blue) 7%, transparent); }
-  .fs-band.b-r { grid-column: 3 / 4; background: color-mix(in srgb, var(--covered) 9%, transparent); }
-  .fs-band.b-j { grid-column: 4 / 5; background: color-mix(in srgb, var(--silent) 10%, transparent); }
-  .fs-st { grid-row: 1; padding-top: 30px; }
-  .fs-st.s1 { grid-column: 1; } .fs-st.s2 { grid-column: 2; } .fs-st.s3 { grid-column: 3; } .fs-st.s4 { grid-column: 4; }
-  .flow-sg .fs-row { margin-block: 12px; }
-}
-/* each stage's agents: a row of glyphs for the crowd, who they are and what one of them handles */
-.fs-ag { list-style: none; margin: 8px 0 0; padding: 8px 0 0; border-top: 1px solid var(--edge); display: grid; gap: 5px; text-align: left; justify-self: stretch; }
-.fs-ag li { display: grid; grid-template-columns: 4.4rem minmax(0, 1fr); column-gap: 8px; align-items: baseline; }
-.fs-ag li b { font: 600 0.74rem var(--sans); color: var(--ink); }
-.fs-ag li > span:last-child { grid-column: 2; font-size: 0.7rem; line-height: 1.35; color: var(--ink-3); }
-.fs-gl { grid-row: span 2; align-self: center; display: inline-flex; flex-wrap: wrap; gap: 2px; }
-.fs-gl i { width: 7px; height: 7px; border-radius: 2px; background: var(--navy); opacity: 0.85; }
-.fs-gl i.more { background: transparent; box-shadow: inset 0 0 0 1px var(--navy); opacity: 0.5; }
-.fs-facts { list-style: none; margin: 4px 0 0; padding: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px 18px; }
-.fs-facts li { font-size: 0.78rem; line-height: 1.5; color: var(--ink-2); padding-top: 8px; border-top: 2px solid var(--navy); }
-.fs-facts b { color: var(--ink); }
-.fs-facts code { font-size: 0.72rem; }
-@media (max-width: 900px) { .fs-facts { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
-@media (max-width: 760px) { .fs-ag li { grid-template-columns: 1fr; } .fs-gl { grid-row: auto; margin-bottom: 2px; } }
-@media (max-width: 520px) { .fs-facts { grid-template-columns: 1fr; } }
-.tok { display: inline-grid; place-items: center; width: 1.35em; height: 1.35em; border-radius: 4px; font: 700 0.68rem/1 var(--sans); color: var(--white); background: var(--ink-3); }
-.tok-t { background: var(--navy); }
-.tok-r { background: var(--live); }
-.tok-q, .tok-k, .tok-a { background: transparent; color: var(--ink); box-shadow: inset 0 0 0 1.5px var(--ink-3); }
-@media (max-width: 760px) {
-  .fs-in { grid-template-columns: 1fr; }
-  .flow-sg .fs-row { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 26px 16px; }
-}
+/* the method as one workflow drawing (user, 23 Nov): the same block at every width, scaled whole, never reflowed */
+.flow-mf { gap: 18px; }
+.mf-wrap { width: 100%; max-width: 720px; margin-inline: auto; }
+.mf { display: block; width: 100%; height: auto; overflow: visible; font-family: var(--sans); }
+.mf-n rect { fill: var(--white); stroke: var(--edge); stroke-width: 1; }
+.mf-n.mf-src rect { fill: var(--solid); stroke: none; }
+.mf-n.mf-judge rect { stroke: var(--ink); stroke-width: 1.6; }
+.mf-k { font-size: 12px; font-weight: 500; fill: var(--ink-3); }
+.mf-t { font-size: 19px; font-weight: 600; fill: var(--ink); letter-spacing: -0.01em; }
+.mf-s { font-size: 12.5px; fill: var(--ink-2); }
+.mf-src .mf-k, .mf-src .mf-s { fill: var(--on-solid); opacity: 0.72; }
+.mf-src .mf-t { fill: var(--on-solid); }
+.mf-e { fill: none; stroke: var(--ink-3); stroke-width: 1.4; }
+.mf-head { fill: var(--ink-3); }
+.mf-lab { font-size: 12px; font-style: italic; fill: var(--ink-2); paint-order: stroke; stroke: var(--white); stroke-width: 6px; stroke-linejoin: round; }
+.mf-v rect { stroke: none; }
+.mf-vw { font-size: 15px; font-weight: 600; }
+.mf-v.mf-covered rect { fill: var(--covered-tint); } .mf-v.mf-covered .mf-vw { fill: var(--covered-ink); }
+.mf-v.mf-silent rect { fill: var(--silent-tint); } .mf-v.mf-silent .mf-vw { fill: var(--silent-ink); }
+.mf-v.mf-wrong rect { fill: var(--wrong-tint); } .mf-v.mf-wrong .mf-vw { fill: var(--wrong-ink); }
+.mf-e.mf-covered { stroke: var(--covered); } .mf-head.mf-covered { fill: var(--covered); }
+.mf-e.mf-silent { stroke: var(--silent); } .mf-head.mf-silent { fill: var(--silent); }
+.mf-e.mf-wrong { stroke: var(--wrong); } .mf-head.mf-wrong { fill: var(--wrong); }
 .flow figcaption { max-width: var(--col); width: 100%; margin-left: max(0px, calc((100% - var(--unit)) / 2)); font-size: 0.88rem; line-height: 1.65; color: var(--ink-2); }
 details.setup { margin: 8px 0 18px; border: 1px solid var(--rule); border-radius: 12px; padding: 18px 22px; }
 details.setup summary { cursor: pointer; font: 600 0.95rem var(--sans); color: var(--blue); }
@@ -3158,8 +3101,6 @@ Write your work product to `/app/workspace/concession-agreement-markup.docx, mar
       if (cw && lh && run.clientWidth) title.textContent = `${base} — ${Math.floor(run.clientWidth / cw)}×${Math.floor(body.clientHeight / lh)}`;
     });
   });
-  const flow = $("flow");
-  if (flow) edges(flow.querySelector(".flow-grid"), JSON.parse(flow.dataset.edges));
 
   // a card's scatter: one panel per harness on shared log axes, its reports in its colour over the others'
   // in grey, each panel redrawn at its width
