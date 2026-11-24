@@ -298,6 +298,10 @@ header.mast, .xp-head { position: relative; }
 .rtabs a:hover { color: var(--ink); }
 .rtabs a[aria-current="page"] { color: var(--navy); }
 .rtabs a[aria-current="page"]::after { content: ""; position: absolute; left: 12px; right: 12px; bottom: -1px; height: 2px; border-radius: 2px; background: var(--blue); }
+.rtabs a.rtab-out { display: inline-flex; align-items: center; gap: 5px; }
+.rtab-x { width: 0.72em; height: 0.72em; color: var(--ink-3); }
+.rtabs a.rtab-out:hover .rtab-x { color: currentColor; }
+.rl-t { white-space: nowrap; }
 .rtabs a:focus-visible, .rtab-next a:focus-visible, .tb-toc summary:focus-visible { outline: 2px solid var(--blue); outline-offset: -4px; border-radius: 8px; }
 .tb-toc { position: relative; }
 .tb-toc summary { list-style: none; display: flex; align-items: center; gap: 6px; cursor: pointer; padding: 8px 12px; border-radius: 9px;
@@ -2330,6 +2334,79 @@ body:has(.xp-main) .pop .tip-k { text-transform: none; letter-spacing: 0.005em; 
 .ss-stop b { color: var(--ink); }
 .tb-panel a { text-decoration: none; }
 .tb-panel a:hover, .tb-panel a:focus-visible { text-decoration: underline; text-decoration-color: var(--edge); }
+/* a run's task above its pipeline (the user, 23 Nov, by release-review: show the task prompt, the rubric and the
+   result): a card on a hairline, the task in the benchmark's own words on the left, clamped to a few lines with a pill
+   to read it whole and a fold for the whole message it came in, and on the right how the work was graded, a round-ended
+   bar per kind of criterion and a pill to the list of every one. On a phone the two stack */
+.ex-task { display: grid; grid-template-columns: minmax(0, 1fr) minmax(220px, 290px); gap: 18px 32px; margin: 0;
+  padding: 22px 24px 20px; border: 1px solid var(--rule); border-radius: 16px; background: var(--page); }
+.tk-k { margin: 0 0 8px; font: 500 0.86rem/1.3 var(--sans); color: var(--ink-3); }
+.tk-words { margin: 0; white-space: pre-wrap; overflow-wrap: anywhere; font: 400 0.95rem/1.6 var(--sans); color: var(--ink);
+  max-height: 9.6em; overflow: hidden; }
+.tk-words.clamped:not(.open) { -webkit-mask-image: linear-gradient(#000 62%, transparent); mask-image: linear-gradient(#000 62%, transparent); }
+.tk-words.open { max-height: none; }
+.tk-acts { display: flex; flex-wrap: wrap; align-items: flex-start; gap: 8px; margin-top: 12px; }
+:is(.tk-fold, .tk-go), .tk-sent > summary { display: inline-flex; align-items: center; gap: 8px; list-style: none; cursor: pointer;
+  border: 0; padding: 5px 12px; border-radius: 999px; background: var(--mist); font: 500 0.82rem/1.3 var(--sans); color: var(--ink); }
+.tk-sent > summary::-webkit-details-marker { display: none; }
+:is(.tk-fold, .tk-sent > summary)::after { content: "+"; font: 400 1rem/1 var(--sans); color: var(--ink-2); }
+.tk-fold[aria-expanded="true"]::after, .tk-sent[open] > summary::after { content: "\2212"; }
+:is(.tk-fold, .tk-go, .tk-sent > summary):hover { background: var(--mist-2); }
+.tk-sent[open] { flex-basis: 100%; }
+.tk-note { margin: 12px 0 8px; font-size: 0.86rem; color: var(--ink-3); }
+.tk-msg { margin: 0; max-height: 30em; overflow: auto; white-space: pre-wrap; overflow-wrap: anywhere; font: 400 0.86rem/1.55 var(--sans);
+  color: var(--ink-2); background: var(--mist); border-radius: 12px; padding: 14px 16px; }
+.tk-msg mark { color: var(--ink); background: var(--page); border-radius: 4px; padding: 1px 2px; box-decoration-break: clone; -webkit-box-decoration-break: clone; }
+.tk-why { margin: 0; font-size: 0.92rem; color: var(--ink-2); }
+.tk-graded { border-left: 1px solid var(--rule); padding-left: 28px; }
+.tk-score { margin: 0 0 14px; font: 400 0.95rem/1.3 var(--sans); color: var(--ink-2); font-variant-numeric: tabular-nums; }
+.tk-score b { font: 600 1.7rem/1 var(--sans); color: var(--ink); letter-spacing: -0.02em; margin-right: 2px; }
+.tk-kinds { list-style: none; margin: 0 0 16px; padding: 0; display: grid; gap: 12px; }
+.tk-kinds li { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 5px 10px; font-size: 0.86rem; line-height: 1.3; }
+.tk-kn { color: var(--ink-2); }
+.tk-kv { color: var(--ink-3); font-variant-numeric: tabular-nums; }
+.tk-kv b { color: var(--ink); font-weight: 600; }
+.tk-bar { grid-column: 1 / -1; height: 6px; border-radius: 999px; background: var(--mist-2); overflow: hidden; }
+.tk-bar i { display: block; height: 100%; border-radius: 999px; background: var(--ink-2); }
+.ex-line .link-btn { font: inherit; color: inherit; text-decoration: underline; text-decoration-color: var(--edge); text-underline-offset: 3px; }
+.ex-line .link-btn:hover { color: var(--ink); text-decoration-color: currentColor; }
+/* the list of criteria, a group per kind: its name and tally on a row that folds from a plus on its right */
+.crit-grp { border-top: 1px solid var(--rule); }
+.crit-grp:last-child { border-bottom: 1px solid var(--rule); }
+.crit-grp > summary { display: grid; grid-template-columns: minmax(0, 1fr) auto 32px; align-items: center; gap: 12px; list-style: none; cursor: pointer; padding: 12px 0; }
+.crit-grp > summary::-webkit-details-marker { display: none; }
+.crit-grp > summary::after { content: "+"; display: grid; place-items: center; width: 32px; height: 32px; border-radius: 50%; background: var(--mist);
+  font: 400 1.1rem/1 var(--sans); color: var(--ink-2); }
+.crit-grp[open] > summary::after { content: "\2212"; }
+.crit-grp > summary:hover::after { background: var(--mist-2); }
+.cg-name { font: 600 0.98rem/1.3 var(--sans); color: var(--ink); }
+.cg-n { font-size: 0.88rem; color: var(--ink-2); font-variant-numeric: tabular-nums; }
+.cg-what { margin: 0 0 10px; font-size: 0.86rem; color: var(--ink-3); }
+.cg-what:empty { display: none; }
+.crit-grp .crits { border-top: 1px solid var(--rule); margin-bottom: 14px; }
+.crit-grp .crit:last-child { border-bottom: 0; }
+.crit-grp .crit { grid-template-columns: 5.6em minmax(0, 1fr); }
+.crit-grp .crit > .pill { justify-self: start; }
+@media (max-width: 760px) {
+  .ex-task { grid-template-columns: minmax(0, 1fr); padding: 16px 14px 14px; }
+  .tk-graded { border-left: 0; padding-left: 0; border-top: 1px solid var(--rule); padding-top: 14px; }
+}
+.crit-d > summary.crit { list-style: none; cursor: pointer; align-items: center; grid-template-columns: 5.6em minmax(0, 1fr) 24px; }
+.crit-d > summary::-webkit-details-marker { display: none; }
+.crit-d > summary::after { content: "+"; display: grid; place-items: center; width: 24px; height: 24px; border-radius: 50%;
+  background: var(--mist); font: 400 0.95rem/1 var(--sans); color: var(--ink-2); }
+.crit-d[open] > summary::after { content: "\2212"; }
+.crit-d > summary:hover::after { background: var(--mist-2); }
+.crit-d[open] > summary.crit { border-bottom: 0; }
+.crit-why { margin: 0; padding: 0 40px 14px calc(5.6em + 22px); font-size: 0.9rem; line-height: 1.55; color: var(--ink-2);
+  border-bottom: 1px solid var(--rule); overflow-wrap: anywhere; }
+.crit-why .k { display: block; margin: 0 0 4px; color: var(--ink-3); }
+.crit-grp .crits > :last-child > :is(summary.crit, .crit-why) { border-bottom: 0; }
+@media (max-width: 640px) {
+  .crit-grp .crit { grid-template-columns: 4.2rem minmax(0, 1fr); gap: 10px; }
+  .crit-d > summary.crit { grid-template-columns: 4.2rem minmax(0, 1fr) 24px; }
+  .crit-why { padding: 0 8px 14px; }
+}
 /* the harnesses' logos, one data URI each */
 .hl-claude-code{background-image:url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQ4IiBoZWlnaHQ9IjI0OCIgdmlld0JveD0iMCAwIDI0OCAyNDgiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxwYXRoIGQ9Ik01Mi40Mjg1IDE2Mi44NzNMOTguNzg0NCAxMzYuODc5TDk5LjU0ODUgMTM0LjYwMkw5OC43ODQ0IDEzMy4zMzRIOTYuNDkyMUw4OC43MjM3IDEzMi44NjJMNjIuMjM0NiAxMzIuMTUzTDM5LjMxMTMgMTMxLjIwN0wxNy4wMjQ5IDEzMC4wMjZMMTEuNDIxNCAxMjguODQ0TDYuMiAxMjEuODczTDYuNzA5NCAxMTguNDQ3TDExLjQyMTQgMTE1LjI1N0wxOC4xNzEgMTE1Ljg0N0wzMy4wNzExIDExNi45MTFMNTUuNDg1IDExOC40NDdMNzEuNjU4NiAxMTkuMzkyTDk1LjcyOCAxMjEuODczSDk5LjU0ODVMMTAwLjA1OCAxMjAuMzM3TDk4Ljc4NDQgMTE5LjM5Mkw5Ny43NjU2IDExOC40NDdMNzQuNTg3NyAxMDIuNzMyTDQ5LjQ5OTUgODYuMTkwNUwzNi4zODIzIDc2LjYyTDI5LjM3NzkgNzEuNzc1N0wyNS44MTIxIDY3LjI4NThMMjQuMjgzOSA1Ny4zNjA4TDMwLjY1MTUgNTAuMjcxNkwzOS4zMTEzIDUwLjg2MjNMNDEuNDc2MyA1MS40NTMxTDUwLjI2MzYgNTguMTg3OUw2OC45ODQyIDcyLjcyMDlMOTMuNDM1NyA5MC42ODA0TDk3LjAwMTUgOTMuNjM0M0w5OC40Mzc0IDkyLjY2NTJMOTguNjU3MSA5MS45ODAxTDk3LjAwMTUgODkuMjYyNUw4My43NTcgNjUuMjc3Mkw2OS42MjEgNDAuODE5Mkw2My4yNTM0IDMwLjY1NzlMNjEuNTk3OCAyNC42MzJDNjAuOTU2NSAyMi4xMDMyIDYwLjU3OSAyMC4wMTExIDYwLjU3OSAxNy40MjQ2TDY3LjgzODEgNy40OTk2NUw3MS45MTMzIDYuMTk5OTVMODEuNzE5MyA3LjQ5OTY1TDg1Ljc5NDYgMTEuMDQ0M0w5MS45MDc0IDI0Ljk4NjVMMTAxLjcxNCA0Ni44NDUxTDExNi45OTYgNzYuNjJMMTIxLjQ1MyA4NS40ODE2TDEyMy44NzMgOTMuNjM0M0wxMjQuNzY0IDk2LjExNTVIMTI2LjI5MlY5NC42OTc2TDEyNy41NjYgNzcuOTE5N0wxMjkuODU4IDU3LjM2MDhMMTMyLjE1IDMwLjg5NDJMMTMyLjkxNSAyMy40NTA1TDEzNi42MDggMTQuNDcwOEwxNDMuOTk0IDkuNjI2NDNMMTQ5LjcyNSAxMi4zNDRMMTU0LjQzNyAxOS4wNzg4TDE1My44IDIzLjQ1MDVMMTUwLjk5OCA0MS42NDYzTDE0NS41MjIgNzAuMTIxNUwxNDEuOTU3IDg5LjI2MjVIMTQzLjk5NEwxNDYuNDE0IDg2Ljc4MTNMMTU2LjA5MyA3NC4wMjA2TDE3Mi4yNjYgNTMuNjk4TDE3OS4zOTggNDUuNjYzNUwxODcuODAzIDM2LjgwMkwxOTMuMTUyIDMyLjU0ODRIMjAzLjM0TDIxMC43MjYgNDMuNjU0OUwyMDcuNDE1IDU1LjExNTlMMTk2Ljk3MiA2OC4zNDkyTDE4OC4zMTIgNzkuNTczOUwxNzUuODk2IDk2LjIwOTVMMTY4LjE5MSAxMDkuNTg1TDE2OC44ODIgMTEwLjY4OUwxNzAuNzM4IDExMC41M0wxOTguNzU1IDEwNC41MDRMMjEzLjkxIDEwMS43ODdMMjMxLjk5NCA5OC43MTQ5TDI0MC4xNDQgMTAyLjQ5NkwyNDEuMDM2IDEwNi4zOTVMMjM3Ljg1MiAxMTQuMzExTDIxOC40OTUgMTE5LjAzN0wxOTUuODI2IDEyMy42NDVMMTYyLjA3IDEzMS41OTJMMTYxLjY5NiAxMzEuODkzTDE2Mi4xMzcgMTMyLjU0N0wxNzcuMzYgMTMzLjkyNUwxODMuODU1IDEzNC4yNzlIMTk5Ljc3NEwyMjkuNDQ3IDEzNi41MjRMMjM3LjIxNSAxNDEuNjA1TDI0MS44IDE0Ny44NjdMMjQxLjAzNiAxNTIuNzExTDIyOS4wNjUgMTU4LjczN0wyMTMuMDE5IDE1NC45NTZMMTc1LjQ1IDE0NS45NzdMMTYyLjU4NyAxNDIuNzg3SDE2MC44MDVWMTQzLjg1TDE3MS41MDIgMTU0LjM2NkwxOTEuMjQyIDE3Mi4wODlMMjE1LjgyIDE5NS4wMTFMMjE3LjA5NCAyMDAuNjgyTDIxMy45MSAyMDUuMTcyTDIxMC41OTkgMjA0LjY5OUwxODguOTQ5IDE4OC4zOTRMMTgwLjU0NCAxODEuMDY5TDE2MS42OTYgMTY1LjExOEgxNjAuNDIyVjE2Ni43NzJMMTY0Ljc1MiAxNzMuMTUyTDE4Ny44MDMgMjA3Ljc3MUwxODguOTQ5IDIxOC40MDVMMTg3LjI5NCAyMjEuODMyTDE4MS4zMDggMjIzLjk1OUwxNzQuODEzIDIyMi43NzdMMTYxLjE4NyAyMDMuNzU0TDE0Ny4zMDUgMTgyLjQ4NkwxMzYuMDk4IDE2My4zNDVMMTM0Ljc0NSAxNjQuMkwxMjguMDc1IDIzNS40MkwxMjUuMDE5IDIzOS4wODJMMTE3Ljg4NyAyNDEuOEwxMTEuOTAyIDIzNy4zMUwxMDguNzE4IDIyOS45ODRMMTExLjkwMiAyMTUuNDUyTDExNS43MjIgMTk2LjU0N0wxMTguNzc5IDE4MS41NDFMMTIxLjU4IDE2Mi44NzNMMTIzLjI5MSAxNTYuNjM2TDEyMy4xNCAxNTYuMjE5TDEyMS43NzMgMTU2LjQ0OUwxMDcuNjk5IDE3NS43NTJMODYuMzA0IDIwNC42OTlMNjkuMzY2MyAyMjIuNzc3TDY1LjI5MSAyMjQuNDMxTDU4LjI4NjcgMjIwLjc2OEw1OC45MjM1IDIxNC4yN0w2Mi44NzEzIDIwOC40OEw4Ni4zMDQgMTc4LjcwNUwxMDAuNDQgMTYwLjE1NUwxMDkuNTUxIDE0OS41MDdMMTA5LjQ2MiAxNDcuOTY3TDEwOC45NTkgMTQ3LjkyNEw0Ni42OTc3IDE4OC41MTJMMzUuNjE4MiAxODkuOTNMMzAuNzc4OCAxODUuNDRMMzEuNDE1NiAxNzguMTE1TDMzLjcwNzkgMTc1Ljc1Mkw1Mi40Mjg1IDE2Mi44NzNaIiBmaWxsPSIjRDk3NzU3Ii8+Cjwvc3ZnPgo=")}
 .hl-codex{-webkit-mask:url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMWVtIiBoZWlnaHQ9IjFlbSIgdmlld0JveD0iMTAwIDEwMCA0MTEgNDExIiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGNsYXNzPSJoLTYgdy02IiBhcmlhLWhpZGRlbj0idHJ1ZSI+PHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik0yNTIuNzk0IDEwOC44MDJDMjg5LjE5MSA5OS4wNDg0IDMyNi4yNjUgMTEwLjMwNSAzNTEuMTQ4IDEzNS4xMzVDMzg1LjExMyAxMjYuMDcyIDQyMi44NSAxMzQuODYyIDQ0OS40OTIgMTYxLjUwNUM0NzYuMTM2IDE4OC4xNDkgNDg0LjkyNSAyMjUuODg4IDQ3NS44NjIgMjU5Ljg1VjI1OS44NTRDNTAwLjY5NiAyODQuNzM1IDUxMS45NSAzMjEuODEgNTAyLjE5OCAzNTguMjA3QzQ5Mi40NDcgMzk0LjYwMiA0NjQuMTYxIDQyMS4wODQgNDMwLjIxNSA0MzAuMjE3QzQyMS4wODMgNDY0LjE2MiAzOTQuNjAzIDQ5Mi40NDggMzU4LjIwNiA1MDIuMTk5QzMyMS44MTIgNTExLjk1MSAyODQuNzM0IDUwMC42OTMgMjU5Ljg1MiA0NzUuODY0QzIyNS44ODcgNDg0LjkyNyAxODguMTUgNDc2LjEzNyAxNjEuNTA3IDQ0OS40OTVDMTM0Ljg2NCA0MjIuODUxIDEyNi4wNzMgMzg1LjExMSAxMzUuMTM2IDM1MS4xNDlDMTEwLjMwNCAzMjYuMjY2IDk5LjA0OTYgMjg5LjE5MiAxMDguODAxIDI1Mi43OTVDMTE4LjU1MiAyMTYuNCAxNDYuODQgMTg5LjkxOCAxODAuNzg0IDE4MC43ODVDMTg5LjkxNyAxNDYuODQxIDIxNi4zOTYgMTE4LjU1MyAyNTIuNzk0IDEwOC44MDJaTTM3NC4yOTIgNDA3LjE0NUMzNzQuMjkyIDQxMS4yNzEgMzcyLjA5MiA0MTUuMDg2IDM2OC41MTcgNDE3LjE0OEwyODMuNzIzIDQ2Ni4xMDJDMzAyLjQ4NyA0ODAuNTg1IDMyNy41NTUgNDg2LjQ1OSAzNTIuMjE3IDQ3OS44NTJDMzg2Ljk5NyA0NzAuNTMyIDQxMC4wNjggNDM5LjMxMiA0MTAuNTU1IDQwNS4wMDZWMzE3LjcxN0M0MTAuNTU1IDMxNS4wOCA0MDkuMTI1IDMxMi42MjEgNDA2Ljg0MyAzMTEuMzAzTDM3NC4yOTIgMjkyLjUwOVY0MDcuMTQ1Wk0yNTEuODY4IDQxNS44OTdDMjQ4LjI5NiA0MTcuOTU5IDI0My44OTMgNDE3Ljk1OSAyNDAuMzE3IDQxNS44OTdMMTU1LjUyNiAzNjYuOTQyQzE1Mi4zNjYgMzkwLjQzNiAxNTkuODExIDQxNS4wOCAxNzcuODY2IDQzMy4xMzZIMTc3Ljg2M0MyMDMuMzI1IDQ1OC41OTQgMjQxLjg5NiA0NjIuOTYyIDI3MS44NSA0NDYuMjMyTDM0Ny40NDkgNDAyLjU4NkMzNDkuNzM1IDQwMS4yNjggMzUxLjE0OCAzOTguOCAzNTEuMTQ4IDM5Ni4xNjNWMzU4LjU3OUwyNTEuODY4IDQxNS44OTdaTTM2OC42MDIgMjIwLjYyOEMzNjYuMzE5IDIxOS4zMDkgMzYzLjQ3NCAyMTkuMzE4IDM2MS4xOTEgMjIwLjYzN0wzMjguNjQxIDIzOS40MzFMNDI3LjkyMSAyOTYuNzQ5QzQzMS40OTYgMjk4LjgxMSA0MzMuNjk3IDMwMi42MjcgNDMzLjY5NyAzMDYuNzUyVjQwNC42NjFDNDU1LjYyMiAzOTUuNjU0IDQ3My4yNDQgMzc2Ljg4MSA0NzkuODUxIDM1Mi4yMThDNDg5LjE2OSAzMTcuNDQyIDQ3My42NjggMjgxLjg1IDQ0NC4yMDEgMjY0LjI3NEwzNjguNjAyIDIyMC42MjhaTTE3Ny4zMDMgMjA2LjM0QzE1NS4zNzcgMjE1LjM0OCAxMzcuNzU2IDIzNC4xMjIgMTMxLjE0OCAyNTguNzgzQzEyMS44MzIgMjkzLjU2MSAxMzcuMzMxIDMyOS4xNTMgMTY2Ljc5OSAzNDYuNzI3TDI0Mi4zOTggMzkwLjM3M0MyNDQuNjggMzkxLjY5MiAyNDcuNTI1IDM5MS42ODQgMjQ5LjgwNyAzOTAuMzY2TDI4Mi4zNTcgMzcxLjU3MkwxODMuMDc4IDMxNC4yNTNDMTc5LjUwNCAzMTIuMTg5IDE3Ny4zMDMgMzA4LjM3NSAxNzcuMzAzIDMwNC4yNTFWMjA2LjM0Wk0yNTkuODQ5IDI3OS4xNDVWMzMxLjg1OEwzMDUuNSAzNTguMjEzTDM1MS4xNSAzMzEuODU4VjI3OS4xNDVMMzA1LjUgMjUyLjc4OUwyNTkuODQ5IDI3OS4xNDVaTTMyNy4yNzYgMTQ0LjlDMzA4LjUxMiAxMzAuNDE4IDI4My40NDUgMTI0LjU0MyAyNTguNzgyIDEzMS4xNUMyMjQuMDAyIDE0MC40NzEgMjAwLjkzMSAxNzEuNjkxIDIwMC40NDUgMjA1Ljk5NVYyOTMuMjg2QzIwMC40NDUgMjk1LjkyMyAyMDEuODc1IDI5OC4zODEgMjA0LjE1OCAyOTkuN0wyMzYuNzA3IDMxOC40OTNWMjAzLjg1NkMyMzYuNzA3IDE5OS43MzEgMjM4LjkwOSAxOTUuOTE2IDI0Mi40ODMgMTkzLjg1M0wzMjcuMjc2IDE0NC45Wk00MzMuMTM3IDE3Ny44NjdDNDA3LjY3NSAxNTIuNDA3IDM2OS4xMDMgMTQ4LjAzOCAzMzkuMTQ5IDE2NC43NjlMMjYzLjU1IDIwOC40MTVDMjYxLjI2NSAyMDkuNzM0IDI1OS44NTIgMjEyLjIwMiAyNTkuODUyIDIxNC44MzhWMjUyLjQyM0wzNTkuMTMyIDE5NS4xMDVDMzYyLjcwMyAxOTMuMDQxIDM2Ny4xMDggMTkzLjA0MSAzNzAuNjgyIDE5NS4xMDVMNDU1LjQ3MyAyNDQuMDZDNDU4LjYzNSAyMjAuNTY3IDQ1MS4xODkgMTk1LjkyMiA0MzMuMTM1IDE3Ny44NjdINDMzLjEzN1oiIGZpbGw9ImN1cnJlbnRDb2xvciI+PC9wYXRoPjwvc3ZnPg==") center/contain no-repeat;mask:url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMWVtIiBoZWlnaHQ9IjFlbSIgdmlld0JveD0iMTAwIDEwMCA0MTEgNDExIiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGNsYXNzPSJoLTYgdy02IiBhcmlhLWhpZGRlbj0idHJ1ZSI+PHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik0yNTIuNzk0IDEwOC44MDJDMjg5LjE5MSA5OS4wNDg0IDMyNi4yNjUgMTEwLjMwNSAzNTEuMTQ4IDEzNS4xMzVDMzg1LjExMyAxMjYuMDcyIDQyMi44NSAxMzQuODYyIDQ0OS40OTIgMTYxLjUwNUM0NzYuMTM2IDE4OC4xNDkgNDg0LjkyNSAyMjUuODg4IDQ3NS44NjIgMjU5Ljg1VjI1OS44NTRDNTAwLjY5NiAyODQuNzM1IDUxMS45NSAzMjEuODEgNTAyLjE5OCAzNTguMjA3QzQ5Mi40NDcgMzk0LjYwMiA0NjQuMTYxIDQyMS4wODQgNDMwLjIxNSA0MzAuMjE3QzQyMS4wODMgNDY0LjE2MiAzOTQuNjAzIDQ5Mi40NDggMzU4LjIwNiA1MDIuMTk5QzMyMS44MTIgNTExLjk1MSAyODQuNzM0IDUwMC42OTMgMjU5Ljg1MiA0NzUuODY0QzIyNS44ODcgNDg0LjkyNyAxODguMTUgNDc2LjEzNyAxNjEuNTA3IDQ0OS40OTVDMTM0Ljg2NCA0MjIuODUxIDEyNi4wNzMgMzg1LjExMSAxMzUuMTM2IDM1MS4xNDlDMTEwLjMwNCAzMjYuMjY2IDk5LjA0OTYgMjg5LjE5MiAxMDguODAxIDI1Mi43OTVDMTE4LjU1MiAyMTYuNCAxNDYuODQgMTg5LjkxOCAxODAuNzg0IDE4MC43ODVDMTg5LjkxNyAxNDYuODQxIDIxNi4zOTYgMTE4LjU1MyAyNTIuNzk0IDEwOC44MDJaTTM3NC4yOTIgNDA3LjE0NUMzNzQuMjkyIDQxMS4yNzEgMzcyLjA5MiA0MTUuMDg2IDM2OC41MTcgNDE3LjE0OEwyODMuNzIzIDQ2Ni4xMDJDMzAyLjQ4NyA0ODAuNTg1IDMyNy41NTUgNDg2LjQ1OSAzNTIuMjE3IDQ3OS44NTJDMzg2Ljk5NyA0NzAuNTMyIDQxMC4wNjggNDM5LjMxMiA0MTAuNTU1IDQwNS4wMDZWMzE3LjcxN0M0MTAuNTU1IDMxNS4wOCA0MDkuMTI1IDMxMi42MjEgNDA2Ljg0MyAzMTEuMzAzTDM3NC4yOTIgMjkyLjUwOVY0MDcuMTQ1Wk0yNTEuODY4IDQxNS44OTdDMjQ4LjI5NiA0MTcuOTU5IDI0My44OTMgNDE3Ljk1OSAyNDAuMzE3IDQxNS44OTdMMTU1LjUyNiAzNjYuOTQyQzE1Mi4zNjYgMzkwLjQzNiAxNTkuODExIDQxNS4wOCAxNzcuODY2IDQzMy4xMzZIMTc3Ljg2M0MyMDMuMzI1IDQ1OC41OTQgMjQxLjg5NiA0NjIuOTYyIDI3MS44NSA0NDYuMjMyTDM0Ny40NDkgNDAyLjU4NkMzNDkuNzM1IDQwMS4yNjggMzUxLjE0OCAzOTguOCAzNTEuMTQ4IDM5Ni4xNjNWMzU4LjU3OUwyNTEuODY4IDQxNS44OTdaTTM2OC42MDIgMjIwLjYyOEMzNjYuMzE5IDIxOS4zMDkgMzYzLjQ3NCAyMTkuMzE4IDM2MS4xOTEgMjIwLjYzN0wzMjguNjQxIDIzOS40MzFMNDI3LjkyMSAyOTYuNzQ5QzQzMS40OTYgMjk4LjgxMSA0MzMuNjk3IDMwMi42MjcgNDMzLjY5NyAzMDYuNzUyVjQwNC42NjFDNDU1LjYyMiAzOTUuNjU0IDQ3My4yNDQgMzc2Ljg4MSA0NzkuODUxIDM1Mi4yMThDNDg5LjE2OSAzMTcuNDQyIDQ3My42NjggMjgxLjg1IDQ0NC4yMDEgMjY0LjI3NEwzNjguNjAyIDIyMC42MjhaTTE3Ny4zMDMgMjA2LjM0QzE1NS4zNzcgMjE1LjM0OCAxMzcuNzU2IDIzNC4xMjIgMTMxLjE0OCAyNTguNzgzQzEyMS44MzIgMjkzLjU2MSAxMzcuMzMxIDMyOS4xNTMgMTY2Ljc5OSAzNDYuNzI3TDI0Mi4zOTggMzkwLjM3M0MyNDQuNjggMzkxLjY5MiAyNDcuNTI1IDM5MS42ODQgMjQ5LjgwNyAzOTAuMzY2TDI4Mi4zNTcgMzcxLjU3MkwxODMuMDc4IDMxNC4yNTNDMTc5LjUwNCAzMTIuMTg5IDE3Ny4zMDMgMzA4LjM3NSAxNzcuMzAzIDMwNC4yNTFWMjA2LjM0Wk0yNTkuODQ5IDI3OS4xNDVWMzMxLjg1OEwzMDUuNSAzNTguMjEzTDM1MS4xNSAzMzEuODU4VjI3OS4xNDVMMzA1LjUgMjUyLjc4OUwyNTkuODQ5IDI3OS4xNDVaTTMyNy4yNzYgMTQ0LjlDMzA4LjUxMiAxMzAuNDE4IDI4My40NDUgMTI0LjU0MyAyNTguNzgyIDEzMS4xNUMyMjQuMDAyIDE0MC40NzEgMjAwLjkzMSAxNzEuNjkxIDIwMC40NDUgMjA1Ljk5NVYyOTMuMjg2QzIwMC40NDUgMjk1LjkyMyAyMDEuODc1IDI5OC4zODEgMjA0LjE1OCAyOTkuN0wyMzYuNzA3IDMxOC40OTNWMjAzLjg1NkMyMzYuNzA3IDE5OS43MzEgMjM4LjkwOSAxOTUuOTE2IDI0Mi40ODMgMTkzLjg1M0wzMjcuMjc2IDE0NC45Wk00MzMuMTM3IDE3Ny44NjdDNDA3LjY3NSAxNTIuNDA3IDM2OS4xMDMgMTQ4LjAzOCAzMzkuMTQ5IDE2NC43NjlMMjYzLjU1IDIwOC40MTVDMjYxLjI2NSAyMDkuNzM0IDI1OS44NTIgMjEyLjIwMiAyNTkuODUyIDIxNC44MzhWMjUyLjQyM0wzNTkuMTMyIDE5NS4xMDVDMzYyLjcwMyAxOTMuMDQxIDM2Ny4xMDggMTkzLjA0MSAzNzAuNjgyIDE5NS4xMDVMNDU1LjQ3MyAyNDQuMDZDNDU4LjYzNSAyMjAuNTY3IDQ1MS4xODkgMTk1LjkyMiA0MzMuMTM1IDE3Ny44NjdINDMzLjEzN1oiIGZpbGw9ImN1cnJlbnRDb2xvciI+PC9wYXRoPjwvc3ZnPg==") center/contain no-repeat;background-color:var(--ink)}
@@ -2355,6 +2432,7 @@ body:has(.xp-main) .pop .tip-k { text-transform: none; letter-spacing: 0.005em; 
 <header class="ex-head"><p class="eyebrow" id="ex-eyebrow"></p><h2 class="ex-title" id="ex-title"></h2><p class="ex-line" id="ex-line"></p></header>
 <p class="rb-loading" id="ex-loading" hidden></p>
 <div class="ex-main" id="ex-main">
+<section class="ex-task" id="ex-task" aria-label="The task and how it was graded" hidden></section>
 <figure class="map" aria-label="This run's pipeline: select a step to open it"><div class="map-grid" id="map-grid"></div></figure>
 <section class="panel" id="panel" aria-live="polite"></section>
 </div>
@@ -2489,7 +2567,8 @@ body:has(.xp-main) .pop .tip-k { text-transform: none; letter-spacing: 0.005em; 
   addEventListener("resize", edge);
   edge();
   if (document.fonts) document.fonts.ready.then(edge);
-  const tabs = [...bar.querySelectorAll("a")].map(a => a.dataset.tab);
+  // the last link in the bar leaves for the explorer, a page of its own: it is no tab
+  const tabs = [...bar.querySelectorAll("a[data-tab]")].map(a => a.dataset.tab);
   const menu = document.getElementById("tb-toc");
   // everything between a tab's mark and the next mark (or the end mark) is that tab's
   const held = [];
@@ -2503,7 +2582,7 @@ body:has(.xp-main) .pop .tip-k { text-transform: none; letter-spacing: 0.005em; 
   const show = tab => {
     current = tab;
     held.forEach(el => { el.hidden = el.dataset.tab !== tab; });
-    bar.querySelectorAll("a").forEach(a => a.setAttribute("aria-current", a.dataset.tab === tab ? "page" : "false"));
+    bar.querySelectorAll("a[data-tab]").forEach(a => a.setAttribute("aria-current", a.dataset.tab === tab ? "page" : "false"));
     // the contents menu lists the tab the reader is in
     document.querySelectorAll(".toc-tab").forEach(g => { g.hidden = g.dataset.for !== tab; });
     dispatchEvent(new Event("resize"));
@@ -3351,7 +3430,7 @@ body:has(.xp-main) .pop .tip-k { text-transform: none; letter-spacing: 0.005em; 
       const bs = base.stages || {}, os = own.stages || {};
       const spent = Object.fromEntries(Object.entries(os.spend || {}).filter(([, v]) => v && v.sessions));
       const bq = new Map(base.questions.map(q => [q.id, q])), be = new Map(base.events.map(e => [e.id, e]));
-      return (whole[id] = { ...own, steps: base.steps, task_result: base.task_result, meta: { ...base.meta, ...own.meta },
+      return (whole[id] = { ...own, steps: base.steps, task_result: base.task_result, task: base.task, meta: { ...base.meta, ...own.meta },
         questions: own.questions.map(q => ({ ...bq.get(q.id), ...q })), events: own.events.map(e => ({ ...be.get(e.id), ...e })),
         stages: { ...os, census: bs.census, questions: bs.questions, spend: { ...(bs.spend || {}), ...spent } } });
     }));
@@ -3411,7 +3490,7 @@ body:has(.xp-main) .pop .tip-k { text-transform: none; letter-spacing: 0.005em; 
     const S = ctx && setById.get(ctx), arm = armFor(row);
     $("ex-eyebrow").textContent = [S ? S.title : "", BENCH[row.benchmark] || row.benchmark, row.stratum].filter(Boolean).join(" · ");
     $("ex-title").textContent = task(row);
-    $("ex-line").textContent = headLine(row);
+    headInto(row);
     const back = EX.querySelector(".back");
     if (back) { back.href = S ? `#set=${encodeURIComponent(ctx)}` : SETS.length ? "#set=release" : "#"; back.textContent = S ? `← Every run in ${S.title}` : "← Every release run"; }
     const sib = siblings(row);
@@ -3432,7 +3511,8 @@ body:has(.xp-main) .pop .tip-k { text-transform: none; letter-spacing: 0.005em; 
       if (current !== id) return;
       D = record; filt = want.filter ? { judge: want.filter } : {};
       $("ex-loading").hidden = true; $("ex-main").hidden = false;
-      $("ex-line").textContent = headLine(row, D);
+      headInto(row, D);
+      drawTask();
       drawMap();
       show(want.view || "judge", { branch: want.branch || "html" });
       // a row opened for the reader leads its list, open, and the page stays where it is
@@ -3448,6 +3528,67 @@ body:has(.xp-main) .pop .tip-k { text-transform: none; letter-spacing: 0.005em; 
     return [arm && row.vs ? arm.label : "", `${row.harness} on ${modelName(row.model)}`, length(row), d ? plural((d.steps || []).length, "step") : "",
             o.total ? `task result ${o.satisfied} of ${o.total} ${unit(row)}` : ""].filter(Boolean).join(" · ");
   }
+  // where the run's task is shown above its pipeline (the explorer and the run page), the line's task result is a link
+  // to the list of every criterion; a run embedded in the post or the report keeps the line as words
+  function headInto(row, d) {
+    const line = headLine(row, d), o = row.outcome || {};
+    const result = o.total ? `task result ${o.satisfied} of ${o.total} ${unit(row)}` : "";
+    if (!$("ex-task") || !result || !line.endsWith(result)) { $("ex-line").textContent = line; return; }
+    $("ex-line").innerHTML = esc(line.slice(0, -result.length)) +
+      `<button type="button" class="link-btn" data-result="">${esc(result)}</button>`;
+  }
+
+  // the task as the agent was given it, and how its work was graded, above the run's pipeline (the user, 23 Nov, by
+  // release-review: "we shud show like task prompt etc? to tell user what the task was and maybe task rubrics too
+  // and task results like acc criteria pass etc?"). The task is in the benchmark's own words, byte for byte; the
+  // whole message it came in, with this study's own instruction before it, opens below it
+  const KINDS = {
+    f2p: ["Tests of the change", "The tests the task adds: each failed before the change and must pass after it."],
+    rubric: ["Rubric criteria", "The points the benchmark's grader checks the work product for."],
+    test: ["Tests", "The task's own tests, run on what the agent left."],
+    p2p: ["Existing tests", "The repository's tests from before: each must still pass after the change."],
+  };
+  const KIND_ORDER = ["f2p", "rubric", "test", "p2p"];
+  const kindsOf = by => Object.keys(by).sort((a, b) => ((KIND_ORDER.indexOf(a) + 1) || 99) - ((KIND_ORDER.indexOf(b) + 1) || 99));
+  const kindName = (k, m) => (KINDS[k] || [k ? k.replace(/_/g, " ").replace(/^./, c => c.toUpperCase()) : unit(m).replace(/^./, c => c.toUpperCase())])[0];
+  const byKind = o => o.by_kind && Object.keys(o.by_kind).length ? o.by_kind : { "": { satisfied: o.satisfied, total: o.total } };
+  function drawTask() {
+    const el = $("ex-task");
+    if (!el) return;
+    const t = D.task || {}, m = D.meta, o = m.outcome || {}, said = t.words || t.message;
+    el.hidden = !said && !t.why && !o.total;
+    if (el.hidden) return;
+    const word = unit(m) === "criteria" ? "met" : "pass", by = byKind(o);
+    const kinds = kindsOf(by).map(k => { const v = by[k];
+      return `<li><span class="tk-kn">${esc(kindName(k, m))}</span><span class="tk-kv"><b>${v.satisfied}</b> of ${v.total}</span>` +
+        `<span class="tk-bar" aria-hidden="true"><i style="width:${v.total ? (100 * v.satisfied / v.total).toFixed(1) : 0}%"></i></span></li>`; }).join("");
+    el.innerHTML = `<div class="tk-ask"><p class="tk-k">${t.words ? "The task, in the benchmark's own words" : "The message the agent was sent"}</p>` +
+      (said ? `<div class="tk-words" id="tk-words">${esc(said)}</div><div class="tk-acts">` +
+        `<button type="button" class="tk-fold" id="tk-more" aria-expanded="false" aria-controls="tk-words" hidden>The whole task</button>` +
+        (t.words && t.before !== undefined ? `<details class="tk-sent"><summary>The whole message it was sent</summary>` +
+          `<p class="tk-note">Everything the agent was sent to start the task, byte for byte. The benchmark's words are marked; the rest is this study's own instruction to it.</p>` +
+          `<pre class="tk-msg">${esc(t.before)}<mark>${esc(t.words)}</mark>${esc(t.after)}</pre></details>` : "") + `</div>`
+        : `<p class="tk-why">${esc(t.why ? t.why.replace(/^./, c => c.toUpperCase()) : "")}.</p>`) + `</div>` +
+      `<div class="tk-graded"><p class="tk-k">How its work was graded</p>` +
+      (o.total ? `<p class="tk-score"><b>${o.satisfied}</b> of ${o.total} ${unit(m)} ${word}</p><ul class="tk-kinds">${kinds}</ul>` +
+        `<button type="button" class="tk-go" data-result="">Each ${unit(m) === "criteria" ? "criterion" : "test"}, ${word === "met" ? "met or not" : "pass or fail"} <span aria-hidden="true">→</span></button>`
+        : `<p class="tk-why">This run was not graded.</p>`) + `</div>`;
+    const words = $("tk-words"), more = $("tk-more");
+    if (words && more) {
+      more.hidden = words.scrollHeight <= words.clientHeight + 4;
+      words.classList.toggle("clamped", !more.hidden);
+    }
+  }
+  EX.addEventListener("click", e => {
+    const more = e.target.closest("#tk-more");
+    if (more) {
+      const open = more.getAttribute("aria-expanded") !== "true";
+      more.setAttribute("aria-expanded", open);
+      $("tk-words").classList.toggle("open", open);
+      return;
+    }
+    if (e.target.closest("[data-result]")) { filt.task = "result"; show("task", { scroll: true }); }
+  });
   function showList(restore = true) {
     current = null; EX.hidden = true; LIST.hidden = false; tip.hidden = true;
     document.body.classList.remove("run-open");
@@ -3581,14 +3722,34 @@ body:has(.xp-main) .pop .tip-k { text-transform: none; letter-spacing: 0.005em; 
       "The task run as the evaluator read it: each step the agent took, the command it ran, what came back and its reasoning. A step that holds a consequential event carries that event's mark.", "") +
       filters("task", [["steps", "Steps"], ["result", `Task result${o.total ? ` · ${o.satisfied} of ${o.total}` : ""}`]], tab) + body;
   }
+  // each kind of criterion in a group of its own, what did not pass first. A kind too long for the run's file (a
+  // repository's existing tests, up to tens of thousands) lists what did not pass, and says so; a long group with
+  // nothing to show but passes starts folded
+  // a criterion the grader gave a reason for (Harvey LAB's rubric grader) opens on it (the user, 23 Nov: "add the harvey
+  // grader reasons too")
+  function critRow(x, word) {
+    const chip = pill(x.passed ? "pass" : "fail", x.passed ? word : word === "met" ? "not met" : "fail"), title = `<span>${esc(x.title || x.id)}</span>`;
+    return x.why ? `<details class="crit-d"><summary class="crit">${chip}${title}</summary><p class="crit-why"><span class="k">The grader's reason</span>${esc(x.why)}</p></details>`
+      : `<p class="crit">${chip}${title}</p>`;
+  }
   function resultHtml() {
     const r = D.task_result || {}, m = D.meta, o = m.outcome || {}, rows = r.rows || [];
-    const kinds = Object.entries(o.by_kind || {}).map(([k, v]) => `${k.replace(/_/g, " ")} ${v.satisfied} of ${v.total}`).join(" · ");
-    const word = unit(m) === "criteria" ? "met" : "pass";
-    const partial = r.total > rows.length;
-    return `<p class="pn-what">${o.total ? `${o.satisfied} of ${o.total} ${unit(m)} ${word}${kinds ? ` (${kinds})` : ""}. ` : "This run was not graded. "}` +
-      `${partial ? (rows.length ? `Listed: the ${rows.length} that do not ${word === "met" ? "hold" : "pass"}.` : "") : ""}</p>` +
-      (rows.length ? `<div class="crits">${rows.map(x => `<p class="crit">${pill(x.passed ? "pass" : "fail", x.passed ? word : `not ${word}`)}<span>${esc(x.title || x.id)}</span><span class="r-kind">${esc((x.kind || "").replace(/_/g, " "))}</span></p>`).join("")}</div>` : "");
+    if (!o.total) return `<p class="pn-what">This run was not graded.</p>`;
+    const word = unit(m) === "criteria" ? "met" : "pass", by = byKind(o), many = kindsOf(by).length > 1;
+    return `<p class="pn-what">${o.satisfied} of ${o.total} ${unit(m)} ${word}${many ? ", in " + plural(kindsOf(by).length, "group") : ""}. What did not ${word === "met" ? "hold" : "pass"} is listed first.</p>` +
+      kindsOf(by).map(k => {
+        const v = by[k], mine = rows.filter(x => !k || (x.kind || "") === k).sort((a, b) => a.passed - b.passed);
+        const failed = v.total - v.satisfied, whole = mine.length >= v.total;
+        const note = whole ? "" : !failed ? ` All ${v.total.toLocaleString("en-US")} pass; a list this long stays out of the run's file.`
+          : mine.length < failed ? ` Listed: the first ${mine.length} of the ${failed} that do not pass; a list this long stays out of the run's file.`
+          : ` Listed: ${failed === 1 ? "the one that does" : `the ${failed} that do`} not pass. The other ${v.satisfied.toLocaleString("en-US")} pass; a list this long stays out of the run's file.`;
+        const open = mine.length && (failed || mine.length <= 40 || !many);
+        return `<details class="crit-grp"${open ? " open" : ""}><summary><span class="cg-name">${esc(kindName(k, m))}</span>` +
+          `<span class="cg-n">${v.satisfied.toLocaleString("en-US")} of ${v.total.toLocaleString("en-US")} ${word}</span></summary>` +
+          `<p class="cg-what">${esc((KINDS[k] || ["", ""])[1])}${note}${mine.some(x => x.why) ? " Open one for the grader's reason." : ""}</p>` +
+          (mine.length ? `<div class="crits">${mine.map(x => critRow(x, word)).join("")}</div>` : "") +
+          `</details>`;
+      }).join("");
   }
 
   function reportPanel() {
