@@ -780,44 +780,112 @@ section.part { padding-top: 96px; }
 .flow { margin-block: 40px 44px; display: grid; gap: 22px; }
 .flow-lines { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; pointer-events: none; }
 .flow-lab { font: italic 400 12.5px var(--sans); fill: var(--ink-2); paint-order: stroke; stroke: var(--page); stroke-width: 7px; stroke-linejoin: round; }
-/* the method as one workflow drawing (user, 23 Nov): the same block at every width, scaled whole, never reflowed */
-.flow-mf { gap: 18px; }
-.mf-wrap { width: 100%; max-width: 720px; margin-inline: auto; }
-.mf { display: block; width: 100%; height: auto; overflow: visible; font-family: var(--sans); }
-.mf-n rect { fill: var(--white); stroke: var(--edge); stroke-width: 1; }
-.mf-n.mf-src rect { fill: var(--solid); stroke: none; }
-.mf-n.mf-judge rect { stroke: var(--ink); stroke-width: 1.6; }
-.mf-k { font-size: 12px; font-weight: 500; fill: var(--ink-3); }
-.mf-t { font-size: 19px; font-weight: 600; fill: var(--ink); letter-spacing: -0.01em; }
-.mf-s { font-size: 12.5px; fill: var(--ink-2); }
-.mf-src .mf-k, .mf-src .mf-s { fill: var(--on-solid); opacity: 0.72; }
-.mf-src .mf-t { fill: var(--on-solid); }
-.mf-e { fill: none; stroke: var(--ink-3); stroke-width: 1.4; }
-.mf-head { fill: var(--ink-3); }
-.mf-lab { font-size: 12px; font-style: italic; fill: var(--ink-2); paint-order: stroke; stroke: var(--white); stroke-width: 6px; stroke-linejoin: round; }
-.mf-v rect { stroke: none; }
-.mf-vw { font-size: 15px; font-weight: 600; }
-.mf-v.mf-covered rect { fill: var(--covered-tint); } .mf-v.mf-covered .mf-vw { fill: var(--covered-ink); }
-.mf-v.mf-silent rect { fill: var(--silent-tint); } .mf-v.mf-silent .mf-vw { fill: var(--silent-ink); }
-.mf-v.mf-wrong rect { fill: var(--wrong-tint); } .mf-v.mf-wrong .mf-vw { fill: var(--wrong-ink); }
-.mf-e.mf-covered { stroke: var(--covered); } .mf-head.mf-covered { fill: var(--covered); }
-.mf-e.mf-silent { stroke: var(--silent); } .mf-head.mf-silent { fill: var(--silent); }
-.mf-e.mf-wrong { stroke: var(--wrong); } .mf-head.mf-wrong { fill: var(--wrong); }
-/* the method plays one question through it while it is on screen, a verdict a pass (user, 24 Nov: "shud we animate
-   it?"): the pieces light in the order the work runs, each edge drawn as it is reached, the step at work outlined;
-   at rest, paused or under reduced motion it is the whole drawing, and the layout never moves */
+/* the method as the paper's Fig. 2 (user, 27 Nov: "Yes, send it"): one real question through the audit on the paper's
+   two-lane grid, every arrow straight. One block at every width: places in percent of its grid and type in cqw of the
+   block, so it scales whole and never reflows; below its floor it keeps that size and pans sideways in its frame */
+.flow-mf { gap: 14px; }
+.mf-wrap { width: 100%; min-width: 0; margin-inline: auto; }
+.pf-scroll { overflow-x: auto; overscroll-behavior-x: contain; scrollbar-width: thin; }
+.pf-scroll:focus-visible { outline: 2px solid var(--live); outline-offset: 2px; }
+.pf { --pf-amber: #e8a317; --pf-amber-tint: color-mix(in srgb, var(--pf-amber) 16%, var(--white)); --pf-unsaid: #7a4ec2;
+  position: relative; width: 100%; min-width: 660px; container-type: inline-size; font-family: var(--sans); color: var(--ink); }
+.pf > * { position: absolute; box-sizing: border-box; margin: 0; }
+.pf p { margin: 0; }
+.pf-head { font-size: 1.45cqw; line-height: 1.3; color: var(--ink-2); white-space: nowrap; }
+.pf-head b { display: block; color: var(--ink); font-size: 1.75cqw; font-weight: 650; }
+.pf-edges { inset: 0; width: 100%; height: 100%; overflow: visible; pointer-events: none; }
+.pf .mf-e { fill: none; stroke: var(--ink-2); stroke-width: 1.5; }
+.pf .mf-head { fill: var(--ink-2); }
+.pf-lab { font: italic 1.5cqw/1.2 var(--sans); color: var(--ink-2); white-space: nowrap; transform: translateY(-50%); }
+.pf-lab.above { transform: translate(-50%, -100%); }
+.pf-lab.left { transform: translate(-100%, -50%); text-align: right; }
+/* the run: its terminal, dark in either theme, the line at the event outlined in amber with the minute it came at */
+.pf-term { display: flex; flex-direction: column; border-radius: 1cqw; overflow: hidden; background: var(--t-bg); color: var(--t-ink);
+  box-shadow: 0 0 0 0.5px rgba(0, 0, 0, 0.55), 0 18px 40px -28px rgba(0, 0, 0, 0.6); }
+.pf .t-win { flex: none; height: 2.9cqw; padding: 0 1cqw 0 6.4cqw; border-bottom-width: 0.1cqw; }
+.pf .t-lights { left: 1.2cqw; gap: 0.7cqw; margin-top: -0.5cqw; }
+.pf .t-lights i { width: 1cqw; height: 1cqw; }
+.pf .t-win b { font-size: 1.22cqw; font-weight: 500; }
+.pf-lines { list-style: none; margin: 0; padding: 1.3cqw 1.5cqw; display: grid; align-content: start; gap: 0.9cqw; font: 1.32cqw/1.48 var(--mono); }
+.pf-lines li { margin: 0; }
+.pf-lines .dim, .pf-lines .ran span { color: var(--t-dim); }
+.pf-lines b { color: var(--t-strong); font-weight: 600; }
+.pf-lines .pf-hl { position: relative; margin-top: 1.5cqw; padding: 0.6cqw 0.8cqw; border: 0.2cqw solid var(--pf-amber); border-radius: 0.8cqw; color: var(--t-strong); }
+.pf-when { position: absolute; right: -0.2cqw; top: 0; transform: translateY(-100%); padding: 0.05cqw 0.6cqw; border-radius: 0.5cqw 0.5cqw 0 0;
+  background: var(--pf-amber); color: #1e2026; font: 650 1.2cqw/1.4 var(--sans); }
+/* the report the run wrote: the agent's own words, on the white paper it was written on in either theme */
+.pf-rep { display: flex; flex-direction: column; border-radius: 1cqw; overflow: hidden; background: #f7f9fc; box-shadow: 0 0 0 1px var(--edge); }
+.pf-page { flex: 1; min-height: 0; display: flex; flex-direction: column; padding: 1.1cqw 1.3cqw 1cqw; color: #1c2430;
+  font: 0.95cqw/1.45 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+.pf-page code { padding: 0 0.3em; border: 0; border-radius: 0.3em; background: #eef2f7; color: inherit; font: 0.92em ui-monospace, SFMono-Regular, Menlo, monospace; }
+.pf-h1 { font-size: 1.6cqw; font-weight: 700; line-height: 1.2; letter-spacing: -0.01em; }
+.pf .pf-sub { margin-top: 0.3cqw; color: #5a6b7f; }
+.pf .pf-meta { display: flex; flex-wrap: wrap; gap: 0.4cqw; margin-top: 0.6cqw; }
+.pf-meta span { padding: 0 0.6cqw; border: 1px solid #d8e0ea; border-radius: 99px; background: #eef2f7; color: #5a6b7f; font-size: 0.82cqw; white-space: nowrap; }
+.pf-meta b { color: #1c2430; }
+.pf .pf-more { margin: 0.6cqw 0 0.5cqw; padding-top: 0.2cqw; border-top: 0.18cqw solid #1c2430; color: #9aa6b4; font-size: 0.85cqw; letter-spacing: 0.3em; text-align: center; }
+.pf-why { position: relative; flex: 1; min-height: 0; }
+.pf-why-in { height: 100%; overflow: hidden; padding: 0.9cqw 1.1cqw; border: 1px solid #d8e0ea; border-radius: 0.6cqw; background: #ffffff; }
+.pf .pf-h2 { margin-bottom: 0.4cqw; color: #1f6feb; font-size: 1.08cqw; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; }
+.pf-why ul { margin: 0; padding-left: 1.4cqw; } .pf-why li { margin: 0 0 0.3cqw; }
+.pf-mark { position: absolute; inset: -0.35cqw; border: 0.2cqw dashed var(--pf-unsaid); border-radius: 0.9cqw; }
+.pf-mark span { position: absolute; right: -0.2cqw; bottom: -0.2cqw; padding: 0.05cqw 0.6cqw; border-radius: 0.5cqw; background: var(--pf-unsaid); color: #ffffff;
+  font: 650 1.2cqw/1.4 var(--sans); }
+/* the audit's steps: what each reads in chips on its top edge (the run dark, the report pale), what it is for, and
+   what it made of this question */
+.pf-card { display: flex; flex-direction: column; padding: 1.2cqw 1.3cqw 1.3cqw; border: 1px solid var(--edge); border-radius: 1.3cqw; background: var(--white); }
+.pf-top { display: flex; align-items: center; gap: 0.7cqw; min-height: 2.4cqw; }
+.pf-no { flex: none; display: grid; place-items: center; width: 2.3cqw; height: 2.3cqw; border-radius: 50%; background: var(--solid); color: var(--on-solid); font: 650 1.3cqw/1 var(--sans); }
+.pf-name { font: 650 2.05cqw/1.15 var(--sans); letter-spacing: -0.01em; white-space: nowrap; }
+.pf-reads { position: absolute; top: 0; right: 1.2cqw; display: flex; gap: 0.3cqw; transform: translateY(-50%); }
+.pf-chip { padding: 0.1cqw 0.55cqw; border-radius: 0.5cqw; font: 650 1.3cqw/1.35 var(--sans); }
+.pf-chip.run { background: #2a2d34; color: #ffffff; box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.14); }
+.pf-chip.rep { background: #dce6f3; color: #1f3a60; }
+.pf .pf-role { margin: 0.4cqw 0 0.9cqw; color: var(--ink-2); font-size: 1.46cqw; line-height: 1.3; }
+.pf-box { flex: 1; min-height: 0; display: grid; align-content: start; gap: 0.8cqw; padding: 1cqw 1.15cqw; border-radius: 1cqw; background: var(--mist); font-size: 1.62cqw; line-height: 1.4; }
+.pf-ev { display: inline-block; padding: 0.15cqw 0.7cqw; border: 0.15cqw solid var(--pf-amber); border-radius: 0.6cqw; background: var(--pf-amber-tint); font-size: 1.45cqw; font-weight: 650; }
+.pf-a span { margin-left: 0.5em; color: var(--ink-2); font-size: 0.86em; }
+.pf-pill, .pf-dot, .pf-key b { --c: var(--silent); --c-ink: var(--silent-ink); }
+.covered.pf-pill, .covered.pf-dot, .pf-key b.covered { --c: var(--covered); --c-ink: var(--covered-ink); }
+.wrong.pf-pill, .wrong.pf-dot, .pf-key b.wrong { --c: var(--wrong); --c-ink: var(--wrong-ink); }
+.pf-pills { flex: 1; display: grid; grid-auto-rows: 1fr; gap: 0.9cqw; margin-top: 1.1cqw; }
+.pf-pill { display: grid; place-items: center; border: 0.18cqw solid var(--c); border-radius: 1cqw; color: var(--c-ink); font: 650 1.55cqw/1.2 var(--sans); }
+.pf-pill.lit { background: var(--c); color: var(--page); }
+.pf-tally { padding: 1.2cqw 1cqw 1cqw; } .pf-tally .pf-box { padding: 0.9cqw 0.8cqw 0.8cqw; gap: 0.9cqw; }
+.pf-dots { display: grid; grid-template-columns: repeat(10, minmax(0, 1fr)); gap: 0.3cqw; }
+.pf-dot { aspect-ratio: 1; border-radius: 50%; background: var(--c); }
+.pf-dot.ring { box-shadow: 0 0 0 0.16cqw var(--mist), 0 0 0 0.36cqw var(--ink); }
+.pf-key { color: var(--ink-2); font-size: 1.45cqw; line-height: 1.35; }
+.pf-tally .pf-name { white-space: normal; }
+.pf-key b { color: var(--c-ink); font-weight: 650; }
+/* the play (user, 24 Nov: "shud we animate it?"): the pieces light in the order the work runs, each edge drawn as it
+   is reached and the step at work outlined; at rest, paused or under reduced motion it is the whole drawing, and the
+   layout never moves */
 .mf [data-s] { transition: opacity 0.35s ease; }
 .mf.mf-live [data-s]:not(.on) { opacity: 0.16; }
+.mf.mf-live .pf-mark:not(.on) { opacity: 0; }
 .mf.mf-live g.on > .mf-e { animation: mf-draw 0.6s ease-out both; }
 .mf.mf-live g.on > .mf-head { animation: mf-fade 0.2s ease-out 0.5s both; }
-.mf.mf-live .mf-n.now rect { stroke: var(--live); stroke-width: 2.4; }
+.mf.mf-live .pf-n.now { box-shadow: 0 0 0 0.25cqw var(--live); }
+.mf.mf-live .pf-term.on .pf-hl { animation: pf-hl 0.5s ease-out 0.7s both; }
+.mf.mf-live .pf-term.on .pf-when { animation: mf-fade 0.3s ease-out 1s both; }
+.mf.mf-live .pf-reader.on .pf-a { animation: mf-fade 0.4s ease-out 0.8s both; }
+.mf.mf-live .pf-verdict.on .pf-pill.lit { animation: pf-lit 0.45s ease-out 0.5s both; }
+.mf.mf-live .pf-tally.on .pf-dot { animation: pf-dot 0.3s ease-out both; animation-delay: calc(0.3s + var(--i) * 22ms); }
+.mf.mf-live .pf-tally.on .pf-dot.ring { animation: pf-dot 0.3s ease-out calc(0.3s + var(--i) * 22ms) both, pf-ring 0.5s ease-out 1.9s both; }
 @keyframes mf-draw { from { stroke-dasharray: 1; stroke-dashoffset: 1; } to { stroke-dasharray: 1; stroke-dashoffset: 0; } }
 @keyframes mf-fade { from { opacity: 0; } }
+@keyframes pf-hl { from { border-color: transparent; color: var(--t-ink); } }
+@keyframes pf-lit { from { background: transparent; color: var(--c-ink); } }
+@keyframes pf-dot { from { opacity: 0; transform: scale(0.3); } }
+@keyframes pf-ring { from { box-shadow: 0 0 0 0.16cqw var(--mist), 0 0 0 1.2cqw transparent; } }
 .mf-bar { display: flex; justify-content: flex-end; margin-top: 10px; }
 .flow-mf:not(.mf-ready) .mf-bar { visibility: hidden; }
 .mf-ctl svg { width: 10px; height: 10px; fill: currentColor; }
 .mf-ctl .ic-play, .mf-ctl[aria-pressed="true"] .ic-pause { display: none; }
 .mf-ctl[aria-pressed="true"] .ic-play { display: block; }
+.pf-hint { display: none; margin: 8px 0 0; color: var(--ink-3); font-size: 0.8rem; }
+.flow-mf.pf-pans .pf-hint { display: block; }
 @media (prefers-reduced-motion: reduce) { .mf-bar { display: none; } .mf [data-s] { transition: none; } }
 .flow figcaption { max-width: var(--col); width: 100%; margin-left: max(0px, calc((100% - var(--unit)) / 2)); font-size: 0.88rem; line-height: 1.65; color: var(--ink-2); }
 details.setup { margin: 8px 0 18px; border: 1px solid var(--rule); border-radius: 12px; padding: 18px 22px; }
@@ -2501,16 +2569,14 @@ table.nt.rw td:first-child { font-weight: 600; }
 <section class="part kind-method chapter" id="how-we-measure-it"><p class="eyebrow">Method</p><h2>How we measure it</h2><p><strong>Four harnesses ran the same sixty tasks, and for each run we list what happened, ask the report about it and count what it can't answer.</strong></p>
 <p>We don't ask the agent whether its report is complete. We read its trajectory, list what happened and check whether the report can answer questions about it.</p>
 <figure class="flow wide flow-mf" id="flow">
-<div class="mf-wrap"><svg class="mf" viewBox="-2 -2 814 264" role="img" aria-label="The method: the census and the questions come from the trajectory, the blind reader answers each question from the report alone, and the judge compares its answer with the key, marking the question covered, missed or unsupported."><g data-s="1"><path class="mf-e" pathLength="1" d="M128,50.0 H160"/><path class="mf-head" d="M162,50.0 l-7,-4 v8 z"/></g><g data-s="2"><path class="mf-e" pathLength="1" d="M290,50.0 H322"/><path class="mf-head" d="M324,50.0 l-7,-4 v8 z"/></g><g data-s="3"><path class="mf-e" pathLength="1" d="M128,210.0 H322"/><path class="mf-head" d="M324,210.0 l-7,-4 v8 z"/></g><g data-s="3"><path class="mf-e" pathLength="1" d="M388.0,100 V158"/><path class="mf-head" d="M388.0,160 l-4,-7 h8 z"/></g><g data-s="4"><path class="mf-e" pathLength="1" d="M452,50.0 C469.0,50.0 469.0,112.0 484,112.0"/><path class="mf-head" d="M486,112.0 l-7,-4 v8 z"/></g><g data-s="4"><path class="mf-e" pathLength="1" d="M452,210.0 C469.0,210.0 469.0,148.0 484,148.0"/><path class="mf-head" d="M486,148.0 l-7,-4 v8 z"/></g><g data-s="5" data-v="0"><path class="mf-e mf-covered" pathLength="1" d="M632,130.0 C649.0,130.0 649.0,39.333333333333336 664,39.333333333333336"/><path class="mf-head mf-covered" d="M666,39.333333333333336 l-7,-4 v8 z"/></g><g class="mf-v mf-covered" data-s="5" data-v="0"><rect x="666" y="0.0" width="144" height="78.66666666666667" rx="12"/><text class="mf-vw" x="680" y="24.0">covered</text><text class="mf-s" x="680" y="43.0">the report</text><text class="mf-s" x="680" y="58.0">answers it</text></g><g data-s="5" data-v="1"><path class="mf-e mf-silent" pathLength="1" d="M632,130.0 C649.0,130.0 649.0,130.0 664,130.0"/><path class="mf-head mf-silent" d="M666,130.0 l-7,-4 v8 z"/></g><g class="mf-v mf-silent" data-s="5" data-v="1"><rect x="666" y="90.66666666666667" width="144" height="78.66666666666667" rx="12"/><text class="mf-vw" x="680" y="114.66666666666667">missed</text><text class="mf-s" x="680" y="133.66666666666669">the report</text><text class="mf-s" x="680" y="148.66666666666669">is silent</text></g><g data-s="5" data-v="2"><path class="mf-e mf-wrong" pathLength="1" d="M632,130.0 C649.0,130.0 649.0,220.66666666666669 664,220.66666666666669"/><path class="mf-head mf-wrong" d="M666,220.66666666666669 l-7,-4 v8 z"/></g><g class="mf-v mf-wrong" data-s="5" data-v="2"><rect x="666" y="181.33333333333334" width="144" height="78.66666666666667" rx="12"/><text class="mf-vw" x="680" y="205.33333333333334">unsupported</text><text class="mf-s" x="680" y="224.33333333333334">the run doesn&#x27;t</text><text class="mf-s" x="680" y="239.33333333333334">back it</text></g><g class="mf-n mf-src" data-s="0"><rect x="0" y="0" width="128" height="100" rx="12"/><text class="mf-k" x="14" y="24">The run</text><text class="mf-t" x="14" y="49">Trajectory</text><text class="mf-s" x="14" y="70">every step,</text><text class="mf-s" x="14" y="86">read in full</text></g><g class="mf-n mf-src" data-s="0"><rect x="0" y="160" width="128" height="100" rx="12"/><text class="mf-k" x="14" y="184">Its account</text><text class="mf-t" x="14" y="209">Report</text><text class="mf-s" x="14" y="230">written by the</text><text class="mf-s" x="14" y="246">agent itself</text></g><g class="mf-n" data-s="1"><rect x="162" y="0" width="128" height="100" rx="12"/><text class="mf-k" x="176" y="24">Step 1</text><text class="mf-t" x="176" y="49">Census</text><text class="mf-s" x="176" y="70">lists events</text><text class="mf-s" x="176" y="86">that mattered</text></g><g class="mf-n" data-s="2"><rect x="324" y="0" width="128" height="100" rx="12"/><text class="mf-k" x="338" y="24">Step 2</text><text class="mf-t" x="338" y="49">Questions</text><text class="mf-s" x="338" y="70">one per event,</text><text class="mf-s" x="338" y="86">each with a key</text></g><g class="mf-n" data-s="3"><rect x="324" y="160" width="128" height="100" rx="12"/><text class="mf-k" x="338" y="184">Step 3</text><text class="mf-t" x="338" y="209">Blind reader</text><text class="mf-s" x="338" y="230">never sees</text><text class="mf-s" x="338" y="246">the run</text></g><g class="mf-n mf-judge" data-s="4"><rect x="486" y="80.0" width="146" height="100" rx="12"/><text class="mf-k" x="500" y="104.0">Step 4</text><text class="mf-t" x="500" y="129.0">Judge</text><text class="mf-s" x="500" y="150.0">sees both, checks</text><text class="mf-s" x="500" y="166.0">answer with key</text></g><text class="mf-lab" data-s="3" x="226.0" y="202.0" text-anchor="middle">the report alone</text><text class="mf-lab" data-s="3" x="397.0" y="134.0">its question</text></svg><div class="mf-bar"><button type="button" class="demo-ctl mf-ctl" aria-pressed="false"
+<div class="mf-wrap"><div class="pf-scroll" tabindex="0" aria-label="How a question is scored, drawn"><div class="mf pf" style="aspect-ratio:1000/692"><p class="pf-head" style="left:0.000%;top:0.000%;width:27.000%"><b>The run</b> and the report its agent wrote</p><p class="pf-head" style="left:29.400%;top:0.000%;width:70.600%"><b>The audit</b> four steps, each run by a crowd of agents; one of this run’s questions shown</p><svg class="pf-edges" viewBox="0 0 1000 692" preserveAspectRatio="none" aria-hidden="true"><g data-s="2"><path class="mf-e" pathLength="1" d="M273,207.0 H285"/><path class="mf-head" d="M291,207.0 l-8,-3.6 v7.2 z"/></g><g data-s="3"><path class="mf-e" pathLength="1" d="M447,207.0 H459"/><path class="mf-head" d="M465,207.0 l-8,-3.6 v7.2 z"/></g><g data-s="5"><path class="mf-e" pathLength="1" d="M671,207.0 H683"/><path class="mf-head" d="M689,207.0 l-8,-3.6 v7.2 z"/></g><g data-s="6"><path class="mf-e" pathLength="1" d="M845,207.0 H857"/><path class="mf-head" d="M863,207.0 l-8,-3.6 v7.2 z"/></g><g data-s="4"><path class="mf-e" pathLength="1" d="M273,547.0 H285"/><path class="mf-head" d="M291,547.0 l-8,-3.6 v7.2 z"/></g><g data-s="1"><path class="mf-e" pathLength="1" d="M135.0,355 V393"/><path class="mf-head" d="M135.0,399 l-3.6,-8 h7.2 z"/></g><g data-s="4"><path class="mf-e" pathLength="1" d="M568.0,355 V393"/><path class="mf-head" d="M568.0,399 l-3.6,-8 h7.2 z"/></g><g data-s="5"><path class="mf-e" pathLength="1" d="M767.0,399 V361"/><path class="mf-head" d="M767.0,355 l-3.6,8 h7.2 z"/></g><g data-s="7"><path class="mf-e" pathLength="1" d="M933.0,355 V393"/><path class="mf-head" d="M933.0,399 l-3.6,-8 h7.2 z"/></g></svg><section class="pf-n pf-term term-codex" data-s="0" style="left:0.000%;top:8.960%;width:27.000%;height:41.908%" aria-label="The run"><div class="t-win"><span class="t-lights" aria-hidden="true"><i></i><i></i><i></i></span><b><span class="t-title">codex · Qwen-3.8-27B · 54 min</span></b></div><ol class="pf-lines"><li class="dim">› Testem writes all results to one file …</li><li class="ran">• <b>Ran</b> <span>cat &gt; lib/utils/reporter.js …</span></li><li class="pf-hl"><span class="pf-when">10.6 min</span>• <i>Wait a moment—I've made a design mistake in this draft … Let me rethink the fan-out design.</i></li></ol></section><section class="pf-n pf-rep" data-s="1" style="left:0.000%;top:58.092%;width:27.000%;height:41.908%" aria-label="The report the run wrote"><div class="t-win t-paper"><span class="t-lights" aria-hidden="true"><i></i><i></i><i></i></span><b><span class="t-title">report.html · by the agent</span></b></div><div class="pf-page"><p class="pf-h1">Per-launcher report files for Testem</p><p class="pf-sub">Session report — template support (<code>&lt;launcher&gt;</code>, <code>&lt;date&gt;</code>, <code>&lt;timestamp&gt;</code>) and per-browser result partitioning in the <code>report_file</code> pipeline.</p><p class="pf-meta"><span><b>Repo</b> testem 3.18.0, /app</span><span><b>Branch</b> report-file-launcher-templates (from master)</span><span><b>Commit</b> bd4c580 — 13 files, +913/−19</span><span><b>Date</b> 2026-10-09</span></p><p class="pf-more" aria-hidden="true">• • •</p><div class="pf-why"><div class="pf-why-in"><p class="pf-h2">Why it was built this way</p><ul><li><b>Partition at the Reporter, not in each runner.</b> Runners already report results to a shared <code>Reporter</code>; splitting files there means every reporter type (tap, xunit, custom) gets per-launcher output for free, and the single-file behaviour is byte-for-byte unchanged when no template is present.</li><li><b>Lazy file creation.</b> Per-launcher files are opened on the first result for that launcher, so launchers that never report (or error out early) leave no empty files behind.</li></ul></div><p class="pf-mark" data-s="4"><span>no word of the draft</span></p></div></div></section><section class="pf-n pf-card" data-s="2" style="left:29.400%;top:8.960%;width:15.000%;height:41.908%" aria-label="Census"><p class="pf-top"><span class="pf-no">1</span><b class="pf-name">Census</b><span class="pf-reads"><span class="pf-chip run">run</span></span></p><p class="pf-role">lists events that mattered</p><div class="pf-box"><p><span class="pf-ev">Decision · decisive</span></p><p>Discards its reporter.js draft and redesigns it.</p></div></section><section class="pf-n pf-card" data-s="3" style="left:46.800%;top:8.960%;width:20.000%;height:41.908%" aria-label="Question writer"><p class="pf-top"><span class="pf-no">2</span><b class="pf-name">Question writer</b><span class="pf-reads"><span class="pf-chip run">run</span></span></p><p class="pf-role">one per event, with an answer key</p><div class="pf-box"><p><b>Q:</b> Why did the agent discard its first draft of reporter.js, and what did the redesigned version change?</p></div></section><section class="pf-n pf-card pf-reader" data-s="4" style="left:29.400%;top:58.092%;width:54.800%;height:41.908%" aria-label="Blind reader"><p class="pf-top"><span class="pf-no">3</span><b class="pf-name">Blind reader</b><span class="pf-reads"><span class="pf-chip rep">report</span></span></p><p class="pf-role">answers each question from the report alone; it never sees the run or the key</p><div class="pf-box"><p><b>Q:</b> Why did the agent discard its first draft of reporter.js, and what did the redesigned version change?</p><p class="pf-a"><b>A:</b> <i>Not in the report.</i> <span>Its “Why it was built this way” section never mentions a draft.</span></p></div></section><section class="pf-n pf-card" data-s="5" style="left:69.200%;top:8.960%;width:15.000%;height:41.908%" aria-label="Judge"><p class="pf-top"><span class="pf-no">4</span><b class="pf-name">Judge</b><span class="pf-reads"><span class="pf-chip run">run</span><span class="pf-chip rep">report</span></span></p><p class="pf-role">checks it against the key</p><div class="pf-box"><p>No answer, though the run shows a decisive redesign.</p></div></section><section class="pf-n pf-card pf-verdict" data-s="6" style="left:86.600%;top:8.960%;width:13.400%;height:41.908%" aria-label="Verdict"><p class="pf-top"><b class="pf-name">Verdict</b></p><div class="pf-pills"><span class="pf-pill covered">covered</span><span class="pf-pill silent lit">left unsaid</span><span class="pf-pill wrong">unsupported</span></div></section><section class="pf-n pf-card pf-tally" data-s="7" style="left:86.600%;top:58.092%;width:13.400%;height:41.908%" aria-label="All of this run's questions"><p class="pf-top"><b class="pf-name">All 60 questions</b></p><p class="pf-role">on this run, by verdict</p><div class="pf-box"><div class="pf-dots" aria-hidden="true"><i class="pf-dot covered" style="--i:0"></i><i class="pf-dot covered" style="--i:1"></i><i class="pf-dot covered" style="--i:2"></i><i class="pf-dot covered" style="--i:3"></i><i class="pf-dot covered" style="--i:4"></i><i class="pf-dot covered" style="--i:5"></i><i class="pf-dot covered" style="--i:6"></i><i class="pf-dot covered" style="--i:7"></i><i class="pf-dot covered" style="--i:8"></i><i class="pf-dot covered" style="--i:9"></i><i class="pf-dot covered" style="--i:10"></i><i class="pf-dot covered" style="--i:11"></i><i class="pf-dot covered" style="--i:12"></i><i class="pf-dot covered" style="--i:13"></i><i class="pf-dot covered" style="--i:14"></i><i class="pf-dot wrong" style="--i:15"></i><i class="pf-dot wrong" style="--i:16"></i><i class="pf-dot wrong" style="--i:17"></i><i class="pf-dot silent" style="--i:18"></i><i class="pf-dot silent" style="--i:19"></i><i class="pf-dot silent" style="--i:20"></i><i class="pf-dot silent" style="--i:21"></i><i class="pf-dot silent" style="--i:22"></i><i class="pf-dot silent" style="--i:23"></i><i class="pf-dot silent" style="--i:24"></i><i class="pf-dot silent ring" style="--i:25"></i><i class="pf-dot silent" style="--i:26"></i><i class="pf-dot silent" style="--i:27"></i><i class="pf-dot silent" style="--i:28"></i><i class="pf-dot silent" style="--i:29"></i><i class="pf-dot silent" style="--i:30"></i><i class="pf-dot silent" style="--i:31"></i><i class="pf-dot silent" style="--i:32"></i><i class="pf-dot silent" style="--i:33"></i><i class="pf-dot silent" style="--i:34"></i><i class="pf-dot silent" style="--i:35"></i><i class="pf-dot silent" style="--i:36"></i><i class="pf-dot silent" style="--i:37"></i><i class="pf-dot silent" style="--i:38"></i><i class="pf-dot silent" style="--i:39"></i><i class="pf-dot silent" style="--i:40"></i><i class="pf-dot silent" style="--i:41"></i><i class="pf-dot silent" style="--i:42"></i><i class="pf-dot silent" style="--i:43"></i><i class="pf-dot silent" style="--i:44"></i><i class="pf-dot silent" style="--i:45"></i><i class="pf-dot silent" style="--i:46"></i><i class="pf-dot silent" style="--i:47"></i><i class="pf-dot silent" style="--i:48"></i><i class="pf-dot silent" style="--i:49"></i><i class="pf-dot silent" style="--i:50"></i><i class="pf-dot silent" style="--i:51"></i><i class="pf-dot silent" style="--i:52"></i><i class="pf-dot silent" style="--i:53"></i><i class="pf-dot silent" style="--i:54"></i><i class="pf-dot silent" style="--i:55"></i><i class="pf-dot silent" style="--i:56"></i><i class="pf-dot silent" style="--i:57"></i><i class="pf-dot silent" style="--i:58"></i><i class="pf-dot silent" style="--i:59"></i></div><p class="pf-key"><b class="covered">15</b> covered, <b class="wrong">3</b> unsupported<br><b class="silent">42</b> left unsaid</p></div></section><span class="mf-lab pf-lab above" data-s="5" style="left:68.000%;top:29.191%">key</span><span class="mf-lab pf-lab right" data-s="1" style="left:14.200%;top:54.480%">writes its report</span><span class="mf-lab pf-lab right" data-s="4" style="left:57.500%;top:54.480%">question</span><span class="mf-lab pf-lab right" data-s="5" style="left:77.400%;top:54.480%">answer</span><span class="mf-lab pf-lab left" data-s="7" style="left:92.600%;top:54.480%">each<br>question</span></div></div>
+<p class="pf-hint">Scroll sideways for the whole drawing.</p>
+<div class="mf-bar"><button type="button" class="demo-ctl mf-ctl" aria-pressed="false"
 aria-label="Pause the method"><svg class="ic-pause" viewBox="0 0 10 10" aria-hidden="true"><rect x="1.5" y="1" width="2.4" height="8" rx="0.6"/>
 <rect x="6.1" y="1" width="2.4" height="8" rx="0.6"/></svg><svg class="ic-play" viewBox="0 0 10 10" aria-hidden="true"><path d="M2.5 1.2v7.6L8.8 5z"/></svg>
 <span>Pause</span></button></div></div>
 
-<figcaption class="cap"><span class="ck-take">How a question is scored.</span> The census and the question writers read only the trajectory, the reader
-only the report, and only the judge sees both. Each step is a crowd of coding agents working at once, one per chunk of
-the run, batch of events or question: 299 agent sessions score each report, 71,721 across the release's 240 reports, every one Qwen-3.8-27B in the codex CLI with a shell of its
-own. The evaluator was frozen before any release task was scored. Coverage is the share of questions judged covered,
-and what is left unsaid is the share judged missed.</figcaption></figure>
+<figcaption class="cap"><span class="ck-take">How a question is scored</span>, on one <code class="hn hc-codex">codex</code> run. At 10.6 minutes, in a run of 54 minutes and 235 turns, the agent discards its draft of a file and redesigns it, a decisive event its report never mentions. The census and the question writers read only the trajectory, the blind reader only the report, and only the judge sees both. Each step is a crowd of coding agents working at once, one per chunk of the run, batch of events or question: 299 agent sessions score each report, 71,721 across the release's 240 reports, every one Qwen-3.8-27B in the codex CLI with a shell of its own. The evaluator was frozen before any release task was scored. Dots are this run’s 60 questions by verdict, this one ringed; chips mark what each step reads. The terminal’s lines are the run’s own, shortened; the report is the agent’s own text; the outlines are ours.</figcaption></figure>
 
 <aside class="note"><strong>Left unsaid</strong>: the part of an agent's consequential work that its own report leaves unanswered. We measure it as the share of questions the judge marks <em>missed</em>.</aside>
 
@@ -12051,29 +12117,38 @@ updating examples/nosec.py, test_nosec&#x27;s expected …</p></div><div class="
     new IntersectionObserver(([e]) => (e.isIntersecting ? go() : stop()), { threshold: 0.35 }).observe(el);
   };
 
-  // the method figure plays one question through the workflow while it is on screen: the run and its report, the
-  // census, the questions, the blind reader, the judge, then one verdict, a different one each pass; the button
-  // pauses it, and paused, out of view or under reduced motion the drawing is whole
+  // the method figure plays one real question through the audit while it is on screen (user, 24 Nov: "shud we animate
+  // it?"; 27 Nov, the paper's Fig. 2): the run, its report, the census, the question writer, the blind reader, the
+  // judge, the verdict and the run's tally, each edge drawn as it is reached; the button pauses it, and paused, out of
+  // view or under reduced motion the drawing is whole. Where the drawing is wider than its frame (a phone), it pans to
+  // the step at work, until the reader scrolls it themself
   document.querySelectorAll("figure.flow-mf").forEach(fig => {
-    const svg = fig.querySelector("svg.mf"), btn = fig.querySelector(".mf-ctl");
-    if (!svg || !btn || still.matches) return;
-    const parts = [...svg.querySelectorAll("[data-s]")], LAST = Math.max(...parts.map(p => +p.dataset.s));
-    const STEP = 900, HOLD = 2600, REST = 700;
-    let at = -1, verdict = 0, timer = 0, playing = false, held = false;
-    const paint = () => parts.forEach(p => {
-      const mine = p.dataset.v === undefined || +p.dataset.v === verdict;
-      p.classList.toggle("on", mine && +p.dataset.s <= at);
-      p.classList.toggle("now", mine && +p.dataset.s === at);
-    });
+    const draw = fig.querySelector(".mf"), btn = fig.querySelector(".mf-ctl"), pane = fig.querySelector(".pf-scroll");
+    const pans = () => fig.classList.toggle("pf-pans", !!pane && pane.scrollWidth > pane.clientWidth + 1);
+    pans(); addEventListener("resize", pans);
+    if (!draw || !btn || still.matches) return;
+    const parts = [...draw.querySelectorAll("[data-s]")], LAST = Math.max(...parts.map(p => +p.dataset.s));
+    const STEP = 1500, HOLD = 4200, REST = 900;
+    let at = -1, timer = 0, playing = false, held = false, steered = false;
+    const follow = () => {
+      const now = draw.querySelector(".pf-n.now");
+      if (!pane || !now || steered || pane.scrollWidth <= pane.clientWidth + 1) return;
+      pane.scrollTo({ left: Math.max(0, now.offsetLeft + now.offsetWidth / 2 - pane.clientWidth / 2), behavior: "smooth" });
+    };
+    const paint = () => {
+      parts.forEach(p => { p.classList.toggle("on", +p.dataset.s <= at); p.classList.toggle("now", +p.dataset.s === at); });
+      follow();
+    };
     const tick = () => {
       if (at < LAST) { at += 1; paint(); timer = setTimeout(tick, at === LAST ? HOLD : STEP); return; }
-      at = -1; verdict = (verdict + 1) % 3; paint(); timer = setTimeout(tick, REST);
+      at = -1; paint(); timer = setTimeout(tick, REST);
     };
     const go = () => {
       if (held || playing || still.matches) return;
-      playing = true; at = -1; paint(); svg.classList.add("mf-live"); timer = setTimeout(tick, REST);
+      playing = true; at = -1; paint(); draw.classList.add("mf-live"); timer = setTimeout(tick, REST);
     };
-    const stop = () => { playing = false; clearTimeout(timer); svg.classList.remove("mf-live"); parts.forEach(p => p.classList.remove("on", "now")); };
+    const stop = () => { playing = false; clearTimeout(timer); draw.classList.remove("mf-live"); parts.forEach(p => p.classList.remove("on", "now")); };
+    if (pane) ["pointerdown", "wheel", "keydown"].forEach(t => pane.addEventListener(t, () => { steered = true; }, { passive: true }));
     btn.addEventListener("click", () => {
       held = !held; btn.setAttribute("aria-pressed", String(held));
       btn.setAttribute("aria-label", `${held ? "Play" : "Pause"} the method`); btn.querySelector("span").textContent = held ? "Play" : "Pause";
